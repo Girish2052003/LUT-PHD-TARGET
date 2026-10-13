@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.venv/
+.env
+.env.*
+.superpowers/
+.worktrees/
+third_party/
+tmp/
+*.egg-info/
