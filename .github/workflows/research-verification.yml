@@ -19,6 +19,20 @@ jobs:
         run: python -m pip install --disable-pip-version-check -e .
       - name: Run regression tests
         run: python -m unittest discover -s tests -v
+      - name: Run explicitly synthetic paper-pipeline reconstruction comparison
+        run: |
+          python scripts/run_paper_reconstruction_fixtures.py --output results/paper-reconstruction-fixture.json
+          python - <<'PY'
+          import json
+          record=json.load(open("results/paper-reconstruction-fixture.json"))
+          assert record["n_cases"] == 9
+          assert record["n_labeled_unsafe"] == 7
+          assert record["baseline_accepted_unsafe"] == 7
+          assert record["modified_accepted_unsafe"] == 0
+          assert record["modified_repaired"] == 7
+          assert record["modified_accepted"] == 9
+          assert record["actual_llm_calls"] == 0
+          PY
       - name: Re-run full deterministic experiment
         run: python scripts/run_experiments.py --output results/semantic
       - name: Audit raw observation consistency
@@ -28,7 +42,9 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: semantic-evidence
-          path: results/semantic/
+          path: |
+            results/semantic/
+            results/paper-reconstruction-fixture.json
           retention-days: 30
           if-no-files-found: warn
 
