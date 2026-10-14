@@ -26,7 +26,7 @@ SPDZEval: 313 source/target function pairs and tests (43 array, 97 loop, 34 bran
 - **Paper-reported OpenAI-o3-mini API Doc:** pass@1 **64.21%**, pass@2 74.44%.
 - The prose asserts the "best-performing baseline" pass@1 is 63.58%, while the very same table lists 64.21% for o3-mini. These exact published entries conflict. Do not silently "correct" the original.
 - Another table anomaly: the DeepSeek-V2.5 API Doc array pass@2 cell is printed **1.4** despite array pass@1 **79.07**; this violates monotonicity expected when k increases under the same sample procedure. It may be a typo or a different estimation/reporting issue; flag instead of guessing.
-**My status: original 313-task reproduction is still pending.** We do not possess 313 paired functions/tests or authentic GPT-4-turbo-2024-04-09 samples.
+**My status: original 313-task reproduction is still pending.** I have not obtained the 313 original function/test pairs or authentic GPT-4-turbo-2024-04-09 samples.
 
 ## Published RQ2 — contribution of refactor/repair (Section 5.2, Table 6)
 
@@ -62,7 +62,7 @@ Formal target under a chosen declassification contract:
 
 When F(x)=0, the baseline witness violates the implication because extra log output depends on x. For the modified fixture, all emitted **application-level print lines** are identical over the checked inputs, but internal protocol traces and arbitrary program security remain unproven.
 
-## What our implemented experiments mean
+## How I interpret my experiment results
 
 1. **Existing DomainSafety-24:** reconstructed host-Python eager-predication baseline vs arithmetic mask; 4,109/7,464 vs 7,464/7,464. Targeted, not SPDZEval.
 2. **Existing pinned MP-SPDZ emulation:** 27 selected cases spanning all 24 tasks with embedded sfix constants and player-0 runtime inputs. Both variants 27/27 per input mode at absolute/relative 0.05; no numerical improvement shown.
