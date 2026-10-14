@@ -30,6 +30,27 @@ CASES = [
     ("reciprocal", 0.0),
     ("reciprocal", 2.0),
     ("nested_signed_log", -2.0),
+    # Extend the runtime probe to touch every independent stress-suite family.
+    # These examples deliberately cover inactive partial-operation boundaries.
+    ("piecewise_affine", -2.0),
+    ("piecewise_square", -2.0),
+    ("interval_indicator", -3.0),
+    ("sqrt_shift", 1.0),
+    ("sqrt_relu", -4.0),
+    ("sqrt_upper", 4.0),
+    ("log_shift", 1.0),
+    ("log_negative", 2.0),
+    ("log_one_plus", -1.0),
+    ("ratio_shift", 1.0),
+    ("removable_singularity", -2.0),
+    ("inverse_square", 0.0),
+    ("nested_log_sqrt", 0.0),
+    ("nested_boundary_roots", 0.0),
+    ("nested_reciprocal_roots", 0.0),
+    ("log_of_root", 0.0),
+    ("inverse_root", 0.0),
+    ("root_of_log", 0.0),
+    ("root_of_inverse", 0.0),
 ]
 NUMBER = re.compile(r"SPDZ_AUDIT_RESULT:\s*([-+]?(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][-+]?\d+)?)")
 
