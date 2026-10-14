@@ -6,6 +6,9 @@ on:
   workflow_dispatch:
 permissions:
   contents: read
+concurrency:
+  group: paper-research-${{ github.workflow }}-${{ github.ref }}-${{ github.event_name }}
+  cancel-in-progress: true
 jobs:
   deterministic:
     runs-on: ubuntu-24.04
@@ -96,6 +99,10 @@ jobs:
         run: |
           git clone --quiet --no-checkout https://github.com/data61/MP-SPDZ.git /tmp/mp-spdz
           git -C /tmp/mp-spdz checkout --quiet 78fe3d8bad4e654276eb3a11a88173195e672f44
+          # Never use ARCH=-march=native on changeable GitHub runners: newer
+          # virtual CPU flags (e.g. AVX10) can break the pinned Clang compiler.
+          # Haswell is a stable minimum with AVX2 on the selected x86_64 image.
+          printf 'ARCH = -march=haswell\n' > /tmp/mp-spdz/CONFIG.mine
           make -C /tmp/mp-spdz -j 2 emulate.x
       - name: Check actual fixed-point output with official cleartext emulator
         run: python scripts/check_mpspdz.py --mpspdz /tmp/mp-spdz --output results/mpspdz-runtime --max-cases 27 --emulate
