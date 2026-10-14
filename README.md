@@ -13,8 +13,8 @@
 | Targeted Python semantic cases passed | 4,109 / 7,464 | **7,464 / 7,464** | GitHub Actions run 38488603949 |
 | Entire 24-function tasks passed | 4 / 24 | **24 / 24** | Same run; independent raw-row validator |
 | MP-SPDZ invoked programs compiled at pinned commit | 4 / 4 | **4 / 4** | GitHub Actions run 38488848728 |
-| MP-SPDZ emulator (secret-typed constants) | **4 / 4** | **4 / 4** | GitHub Actions run 38489081857; tolerance 5% |
-| MP-SPDZ emulator (party-0 runtime input) | **4 / 4** | **4 / 4** | GitHub Actions run 38489589290; `sfix.get_input_from(0)`; tolerance 5% |
+| MP-SPDZ emulator (secret-typed constants) | **27 / 27** | **27 / 27** | GitHub Actions run 38490443262; tolerance 5% |
+| MP-SPDZ emulator (party-0 runtime input) | **27 / 27** | **27 / 27** | GitHub Actions run 38490443262; `sfix.get_input_from(0)`; tolerance 5% |
 | Original published 313 SPDZEval tasks | Not run | Not run | Missing original runnable artifacts |
 
 The 24-function stress suite was **deliberately constructed to expose this specific defect**. These results are NOT an unbiased estimate of how often the bug occurs in real code, and they are NOT pass@k scores.
@@ -44,7 +44,7 @@ For genuine compiler validation, first obtain MP-SPDZ commit 78fe3d8bad4e654276e
 
     python scripts/check_mpspdz.py --mpspdz /path/to/MP-SPDZ --output results/mpspdz --max-cases 4
 
-To run the official **cleartext** emulator, build `emulate.x` in MP-SPDZ, then append `--emulate`. Add `--party-input` to create runtime input files and call `sfix.get_input_from(0)` instead of using literal constants. Both modes passed the tiny four-case emulator sample at a loose 5% tolerance; **no MP-SPDZ numerical improvement has yet been demonstrated**. Cleartext emulation is distinct from actual secure multiparty protocols.
+To run the official **cleartext** emulator, build `emulate.x` in MP-SPDZ, then append `--emulate`. Add `--party-input` to create runtime input files and call `sfix.get_input_from(0)` instead of using literal constants. Both modes passed all 27 deliberately selected emulator inputs covering each of the 24 functions at a loose 5% tolerance; **no MP-SPDZ numerical improvement has yet been demonstrated**. Cleartext emulation is distinct from actual secure multiparty protocols.
 
 All commands above also run or are configured in .github/workflows/research-verification.yml. Individual CI result artifacts are retained for 30 days.
 
