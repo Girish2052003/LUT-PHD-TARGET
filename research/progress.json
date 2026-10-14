@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_on": "2026-10-14",
+  "updated_on": "2026-10-15",
   "current_pr": "https://github.com/Girish2052003/LUT-PHD-TARGET/pull/5",
   "historical_remote_main": "0ae96a968022325f3f678b19db1fcd69de483b70",
   "historical_reviewed_head": "5ca3809f15e8e326ff2d0a9b2e23993704be3dda",
@@ -143,7 +143,8 @@
       ],
       "evidence_paths": [
         "docs/deep_paper_audit.md",
-        "docs/original_artifact_reproduction.md"
+        "docs/original_artifact_reproduction.md",
+        "research/original_source_audit.md"
       ],
       "evidence_commit": "5ca3809f15e8e326ff2d0a9b2e23993704be3dda",
       "verification": {
@@ -153,7 +154,7 @@
         "independently_checked": false,
         "reviewer": "Pending acceptance review"
       },
-      "next_action": "Inspect complete original source, dependencies, prompts and evaluator.",
+      "next_action": "Preserve source discrepancies; build authentic seven-task archived snapshot traces and connect them to controlled fresh evaluation.",
       "redo_only_if": "Relevant source, configuration, evidence, or acceptance scope changes; document why."
     },
     {
@@ -182,7 +183,7 @@
     {
       "id": "B2",
       "title": "Level 2: original evaluator replay",
-      "status": "NOT_STARTED",
+      "status": "IN_PROGRESS",
       "completion_scope": "Fresh compiler, MASCOT execution and original oracle on all available original candidates.",
       "dependencies": [
         "A",
@@ -197,7 +198,7 @@
         "independently_checked": false,
         "reviewer": "Pending acceptance review"
       },
-      "next_action": "After source/sandbox audit, smoke test then attempt all 313 tasks, retaining every failure.",
+      "next_action": "MP-SPDZ0.3.6 pinned; local namespace sandbox blocked. Establish credential-free network-restricted CI container smoke replay before full benchmark.",
       "redo_only_if": "Relevant source, configuration, evidence, or acceptance scope changes; document why."
     },
     {
@@ -229,7 +230,9 @@
         "M3"
       ],
       "evidence_paths": [
-        "research/reviews/pr5-independent-review.md"
+        "research/reviews/pr5-independent-review.md",
+        "research/evidence/2026-10-14/identity_verified_scores.json",
+        "research/original_source_audit.md"
       ],
       "evidence_commit": "5ca3809f15e8e326ff2d0a9b2e23993704be3dda",
       "verification": {
@@ -239,7 +242,7 @@
         "independently_checked": false,
         "reviewer": "Pending acceptance review"
       },
-      "next_action": "Close PR #5 task identity gap and verify boolean semantics from source.",
+      "next_action": "Exact ID/order joins and saved-flag semantics verified; finish runtime classification and template-specific oracle audit for fresh replay.",
       "redo_only_if": "Relevant source, configuration, evidence, or acceptance scope changes; document why."
     },
     {

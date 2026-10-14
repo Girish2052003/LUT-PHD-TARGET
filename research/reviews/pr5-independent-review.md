@@ -28,3 +28,21 @@ these helpers as the continuing provenance gate.
 
 This review does not certify fresh evaluation, model generation, or completion of
 the original-system improvement. Those gates remain open.
+
+## Follow-up verification — 15 October
+
+Independent `original_source_audit` reviewer verified all 313 IDs/order, 313
+template hashes, 28 source-file hashes and 1,252 candidate hashes against the raw
+TAR. Fresh parser output equals the preserved identity evidence; totals remain
+269/265/288 with 25 neither. Original evaluator flag semantics were confirmed.
+
+The reviewer found a malformed non-comma row could still be silently skipped.
+This was fixed by rejecting every nonblank nonmatching pre-separator line, with
+regressions for missing commas and unexpected headers. Authentic output remains
+byte-identical after the fix. The complete suite now passes 64 tests locally.
+
+The prior prerequisite and report-authorization guard gaps are fixed. The
+reviewer's recommendation is to merge for archival-provenance scope after these
+checks and successful exact-head CI. Fresh MASCOT replay and original-generation
+discrepancies remain open and do not invalidate the narrowly labeled archived
+results.

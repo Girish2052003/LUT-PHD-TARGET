@@ -32,6 +32,16 @@
       "path": "research/evidence/2026-10-14/tests-at-5ca3809.log",
       "sha256": "b536c2cced799cadc0ffea012c106dcbf3d484c8aad6fb4c048e7971036d1eb7",
       "bytes": 7287
+    },
+    {
+      "path": "research/evidence/2026-10-14/identity_verified_scores.json",
+      "bytes": 238151,
+      "sha256": "b85274f93cf0a655d2837e673b49c1e83ea09389fc636e0b01e544d346006fca",
+      "kind": "new exact-ID audit, independently checked against source archive",
+      "origin": "local_audit",
+      "generator_path": "scripts/reproduce_official_scores.py",
+      "generator_sha256": "ca763add3035fa8a1b493fd43b1902b422127c5825831fdc2eac450c92edd1c6"
     }
-  ]
+  ],
+  "source_commit_scope": "Historical downloaded workflow artifact; entries explicitly marked local_audit are later checks."
 }

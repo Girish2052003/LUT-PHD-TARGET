@@ -19,8 +19,8 @@ EXPECTED_MD5 = "3c6d7707d7aecc051d35312f81405c66"
 SPLITS = ("array_test", "loop_test", "branch_test", "math_test",
           "numpy_operation_test", "numpy_ufunc_test", "syntax_test")
 PAPER_SPLITS = {"array_test": 43, "loop_test": 97, "branch_test": 34,
-                "math_test": 38, "numpy_operation_test": None,
-                "numpy_ufunc_test": None, "syntax_test": 35}
+                "math_test": 38, "numpy_operation_test": 32,
+                "numpy_ufunc_test": 34, "syntax_test": 35}
 MAX_READ = 8_000_000
 
 
@@ -47,6 +47,22 @@ def summary_shape(obj: object) -> dict:
     if isinstance(obj, str):
         return {"type": "str", "length": len(obj)}
     return {"type": type(obj).__name__}
+
+
+def inspection_errors(report: dict) -> list[str]:
+    errors = []
+    if report.get("raw_mpc_task_count") != 313 or report.get("raw_mpc_categories") != PAPER_SPLITS:
+        errors.append("Native benchmark counts differ from the published 313-task splits")
+    for section in ("split", "stage3", "baseline"):
+        for split, expected in PAPER_SPLITS.items():
+            info = report.get(section, {}).get(split, {})
+            count = info.get("length" if section == "split" else "records")
+            if "error" in info or count != expected:
+                errors.append(f"Incomplete {section}/{split}: {info.get('error', count)}")
+    for path, info in report.get("script_previews", {}).items():
+        if "error" in info:
+            errors.append(f"Unreadable source preview {path}: {info['error']}")
+    return errors
 
 
 def inspect(archive_path: Path) -> dict:
@@ -122,10 +138,13 @@ def main() -> None:
     p.add_argument("--output", default="results/official_artifacts/native_data_audit.json")
     opts = p.parse_args()
     result = inspect(Path(opts.tar))
+    result["inspection_errors"] = inspection_errors(result)
     output = Path(opts.output)
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(result, indent=2, ensure_ascii=False) + "\n")
     print("NATIVE AUDIT REPORT:", output)
+    if result["inspection_errors"]:
+        raise SystemExit("Native inspection incomplete: " + "; ".join(result["inspection_errors"]))
 
 
 if __name__ == "__main__":

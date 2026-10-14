@@ -37,10 +37,9 @@ groups total 313. Files named `.json` under processed inputs contain JSON Lines.
 
 ## Current practical work
 
-Audit PR #5 against the checksum-pinned original source. Add exact task-ID joins
-between templates, processed inputs, both authentic candidate sets and saved
-outcomes. Read the evaluator before interpreting booleans or executing generated
-programs. Fix the provenance-helper issues in
+Audit PR #5 against the checksum-pinned original source. Exact task-ID joins now pass for templates, processed inputs, both authentic
+candidate sets and saved outcomes (313 tasks and 1,252 candidate hashes). The evaluator boolean semantics are documented in `research/original_source_audit.md`;
+finish controlled execution setup before running generated programs. Fix the provenance-helper issues in
 `research/reviews/pr5-independent-review.md`, then obtain review and CI evidence.
 
 After that, map the paper to real source paths, capture seven real stage traces,

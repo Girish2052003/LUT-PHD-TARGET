@@ -26,8 +26,8 @@ These are practical acceptance gates. Historical milestones do not replace origi
 - **Acceptance criteria:** Every major component traced with exact source paths.
 - **Known limitations:** Paper audit exists; source mapping incomplete.
 - **Verification reviewer:** Pending requirement acceptance; historical audit reviewed by code_review agent
-- **Evidence:** `docs/deep_paper_audit.md`
-- **Evidence commit:** 5ca3809f15e8e326ff2d0a9b2e23993704be3dda
+- **Evidence:** `docs/deep_paper_audit.md`, `research/original_source_audit.md`
+- **Evidence commit:** Pending
 - **Workflow identifiers:** https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557115103, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557128629, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557114938
 
 ## R2 — Reproduce original implementation
@@ -41,8 +41,8 @@ These are practical acceptance gates. Historical milestones do not replace origi
 - **Acceptance criteria:** Original execution evidenced; substitutions cannot count as PASS.
 - **Known limitations:** Archive retrieved; full generation needs credentials/model availability.
 - **Verification reviewer:** Pending requirement acceptance; historical audit reviewed by code_review agent
-- **Evidence:** `research/evidence/2026-10-14/source_provenance.json`
-- **Evidence commit:** 5ca3809f15e8e326ff2d0a9b2e23993704be3dda
+- **Evidence:** `research/evidence/2026-10-14/source_provenance.json`, `research/original_source_audit.md`
+- **Evidence commit:** Pending
 - **Workflow identifiers:** https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557115103, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557128629, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557114938
 
 ## R3 — Reproduce key results
@@ -56,8 +56,8 @@ These are practical acceptance gates. Historical milestones do not replace origi
 - **Acceptance criteria:** Independent compile/runtime/oracle evidence; archived flags alone insufficient.
 - **Known limitations:** Archived first 269/313, second 265/313, union 288/313; fresh replay pending.
 - **Verification reviewer:** Pending requirement acceptance; historical audit reviewed by code_review agent
-- **Evidence:** `research/evidence/2026-10-14/original_saved_evaluation_metrics.json`
-- **Evidence commit:** 5ca3809f15e8e326ff2d0a9b2e23993704be3dda
+- **Evidence:** `research/evidence/2026-10-14/original_saved_evaluation_metrics.json`, `research/original_source_audit.md`, `research/evidence/2026-10-14/identity_verified_scores.json`
+- **Evidence commit:** Pending
 - **Workflow identifiers:** https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557115103, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557128629, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557114938
 
 ## R4 — Explain actual methodology
@@ -71,8 +71,8 @@ These are practical acceptance gates. Historical milestones do not replace origi
 - **Acceptance criteria:** Each explanation linked to reproducible original-source traces.
 - **Known limitations:** Conceptual notes exist; original-source traces incomplete.
 - **Verification reviewer:** Pending requirement acceptance; historical audit reviewed by code_review agent
-- **Evidence:** `docs/paper_guide.md`
-- **Evidence commit:** 5ca3809f15e8e326ff2d0a9b2e23993704be3dda
+- **Evidence:** `docs/paper_guide.md`, `research/original_source_audit.md`
+- **Evidence commit:** Pending
 - **Workflow identifiers:** Pending
 
 ## R5 — Demonstrate substantive limitation
@@ -131,8 +131,8 @@ These are practical acceptance gates. Historical milestones do not replace origi
 - **Acceptance criteria:** Every attempted run or failure has an inspectable cause/status.
 - **Known limitations:** Initial failures documented; execution and full failure inventory ongoing.
 - **Verification reviewer:** Pending requirement acceptance; historical audit reviewed by code_review agent
-- **Evidence:** `docs/reproduction_log.md`, `research/reviews/pr5-independent-review.md`
-- **Evidence commit:** 5ca3809f15e8e326ff2d0a9b2e23993704be3dda
+- **Evidence:** `docs/reproduction_log.md`, `research/reviews/pr5-independent-review.md`, `research/original_source_audit.md`
+- **Evidence commit:** Pending
 - **Workflow identifiers:** https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557115103, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557128629, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557114938
 
 ## R9 — Final report readiness

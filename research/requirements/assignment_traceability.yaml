@@ -16,9 +16,10 @@
       ],
       "status": "IN_PROGRESS",
       "evidence_paths": [
-        "docs/deep_paper_audit.md"
+        "docs/deep_paper_audit.md",
+        "research/original_source_audit.md"
       ],
-      "exact_evidence_commit": "5ca3809f15e8e326ff2d0a9b2e23993704be3dda",
+      "exact_evidence_commit": null,
       "test_workflow_identifiers": [
         "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557115103",
         "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557128629",
@@ -32,7 +33,8 @@
         "executed": false,
         "evidence_preserved": true,
         "independently_checked": false
-      }
+      },
+      "historical_evidence_commit": "5ca3809f15e8e326ff2d0a9b2e23993704be3dda"
     },
     {
       "id": "R2",
@@ -50,9 +52,10 @@
       ],
       "status": "IN_PROGRESS",
       "evidence_paths": [
-        "research/evidence/2026-10-14/source_provenance.json"
+        "research/evidence/2026-10-14/source_provenance.json",
+        "research/original_source_audit.md"
       ],
-      "exact_evidence_commit": "5ca3809f15e8e326ff2d0a9b2e23993704be3dda",
+      "exact_evidence_commit": null,
       "test_workflow_identifiers": [
         "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557115103",
         "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557128629",
@@ -66,7 +69,8 @@
         "executed": false,
         "evidence_preserved": true,
         "independently_checked": false
-      }
+      },
+      "historical_evidence_commit": "5ca3809f15e8e326ff2d0a9b2e23993704be3dda"
     },
     {
       "id": "R3",
@@ -84,15 +88,17 @@
       ],
       "status": "IN_PROGRESS",
       "evidence_paths": [
-        "research/evidence/2026-10-14/original_saved_evaluation_metrics.json"
+        "research/evidence/2026-10-14/original_saved_evaluation_metrics.json",
+        "research/original_source_audit.md",
+        "research/evidence/2026-10-14/identity_verified_scores.json"
       ],
-      "exact_evidence_commit": "5ca3809f15e8e326ff2d0a9b2e23993704be3dda",
+      "exact_evidence_commit": null,
       "test_workflow_identifiers": [
         "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557115103",
         "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557128629",
         "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557114938"
       ],
-      "measured_results": "Archived first 269/313, second 265/313, union 288/313; fresh replay pending.",
+      "measured_results": "Archived first269/313, second265/313, union288/313; all313 IDs/order and1252 candidate hashes independently checked. No fresh secure replay yet.",
       "known_limitations": "Archived first 269/313, second 265/313, union 288/313; fresh replay pending.",
       "verification_reviewer": "Pending requirement acceptance; historical audit reviewed by code_review agent",
       "completion": {
@@ -100,7 +106,8 @@
         "executed": false,
         "evidence_preserved": true,
         "independently_checked": false
-      }
+      },
+      "historical_evidence_commit": "5ca3809f15e8e326ff2d0a9b2e23993704be3dda"
     },
     {
       "id": "R4",
@@ -116,9 +123,10 @@
       ],
       "status": "IN_PROGRESS",
       "evidence_paths": [
-        "docs/paper_guide.md"
+        "docs/paper_guide.md",
+        "research/original_source_audit.md"
       ],
-      "exact_evidence_commit": "5ca3809f15e8e326ff2d0a9b2e23993704be3dda",
+      "exact_evidence_commit": null,
       "test_workflow_identifiers": [],
       "measured_results": null,
       "known_limitations": "Conceptual notes exist; original-source traces incomplete.",
@@ -128,7 +136,8 @@
         "executed": false,
         "evidence_preserved": true,
         "independently_checked": false
-      }
+      },
+      "historical_evidence_commit": "5ca3809f15e8e326ff2d0a9b2e23993704be3dda"
     },
     {
       "id": "R5",
@@ -226,9 +235,10 @@
       "status": "IN_PROGRESS",
       "evidence_paths": [
         "docs/reproduction_log.md",
-        "research/reviews/pr5-independent-review.md"
+        "research/reviews/pr5-independent-review.md",
+        "research/original_source_audit.md"
       ],
-      "exact_evidence_commit": "5ca3809f15e8e326ff2d0a9b2e23993704be3dda",
+      "exact_evidence_commit": null,
       "test_workflow_identifiers": [
         "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557115103",
         "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557128629",
@@ -242,7 +252,8 @@
         "executed": false,
         "evidence_preserved": true,
         "independently_checked": false
-      }
+      },
+      "historical_evidence_commit": "5ca3809f15e8e326ff2d0a9b2e23993704be3dda"
     },
     {
       "id": "R9",

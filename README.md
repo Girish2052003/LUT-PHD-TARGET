@@ -15,7 +15,7 @@ it does not mean the whole assignment is finished.
 | M6 — Historical regression and CI checks | **PASS** | 53 passing tests and successful historical workflows at 5ca3809 only. |
 | A — Original source-to-paper audit | **IN_PROGRESS** | Complete source mapping and seven real stage traces required. |
 | B1 — Level 1: archived results | **PASS** | Archived flags only, same narrow completion as M4. |
-| B2 — Level 2: original evaluator replay | **NOT_STARTED** | Fresh compiler, MASCOT execution and original oracle on all available original candidates. |
+| B2 — Level 2: original evaluator replay | **IN_PROGRESS** | Fresh compiler, MASCOT execution and original oracle on all available original candidates. |
 | B3 — Level 3: original model generation | **BLOCKED** | Requires authorized credentials and verified historical model availability; no paid calls or substitute model authorized. |
 | C — Exact task identities and evaluator semantics | **IN_PROGRESS** | Reconcile native, processed, generated and outcome IDs; audit oracle, candidate order, MASCOT and tolerances. |
 | D — Demonstrated original-system limitation | **NOT_STARTED** | Investigate original 25 both-failed tasks and other candidate classes; choose one evidenced failure. |
