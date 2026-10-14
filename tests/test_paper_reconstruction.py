@@ -3,7 +3,7 @@ import unittest
 
 from spdz_audit.paper_reconstruction import (
     RULES, Attempt, Evaluation, PaperPipeline, PrivacyScreen, ReplayModel,
-    extract_code, match_rules
+    extract_code, match_rules, check_refactor_pattern_removed
 )
 
 
@@ -71,6 +71,23 @@ class PaperPipelineTests(unittest.TestCase):
         source = "def f(x):\n if x > 0:\n  return x\n"
         with self.assertRaisesRegex(ValueError, "signature"):
             PaperPipeline(model, lambda _: Evaluation(True)).run(source)
+
+    def test_fail_closed_on_unremoved_structural_rules(self):
+        with self.assertRaisesRegex(ValueError, "EliminateBreak"):
+            check_refactor_pattern_removed(
+                "EliminateBreak", "def f(x):\n for i in range(2):\n  break\n return x")
+        with self.assertRaisesRegex(ValueError, "RewriteWhileLoop"):
+            check_refactor_pattern_removed(
+                "RewriteWhileLoop", "def f(x):\n while x > 0:\n  x -= 1\n return x")
+        check_refactor_pattern_removed(
+            "EliminateBreak", "def f(x):\n return x")
+
+    def test_reveal_aliases_and_qualified_print_are_rejected(self):
+        gate = PrivacyScreen()
+        self.assertIn("explicit-secret-reveal",
+            gate.check("def f(x):\n    r = x.reveal\n    r()\n    return x"))
+        self.assertIn("unauthorized-output-or-dynamic-call",
+            gate.check("def f(x):\n    logger.print_ln('%s', x)\n    return x"))
 
     def test_privacy_gate_sees_reveals_and_public_secret_branches(self):
         gate = PrivacyScreen()
