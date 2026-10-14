@@ -1,0 +1,439 @@
+{
+  "name": "DomainSafety-24",
+  "origin": "independently authored targeted stress suite; NOT SPDZEval",
+  "construction": "All functions are disclosed. Fixed boundaries and three seeded grids are evaluated. Functions are not a blind held-out sample.",
+  "tasks": [
+    {
+      "id": "absolute",
+      "family": "control",
+      "source": "def f(x):\n    return x if x >= 0 else -x\n",
+      "boundaries": [
+        -16,
+        -4,
+        -2,
+        -1,
+        -0.5,
+        0,
+        0.5,
+        1,
+        2,
+        4,
+        16
+      ]
+    },
+    {
+      "id": "piecewise_affine",
+      "family": "control",
+      "source": "def f(x):\n    return 2 * x + 1 if x > 1 else 3 * x - 2\n",
+      "boundaries": [
+        -16,
+        -4,
+        -2,
+        -1,
+        -0.5,
+        0,
+        0.5,
+        1,
+        2,
+        4,
+        16
+      ]
+    },
+    {
+      "id": "piecewise_square",
+      "family": "control",
+      "source": "def f(x):\n    return x * x if x > 0 else x * x + 1\n",
+      "boundaries": [
+        -16,
+        -4,
+        -2,
+        -1,
+        -0.5,
+        0,
+        0.5,
+        1,
+        2,
+        4,
+        16
+      ]
+    },
+    {
+      "id": "interval_indicator",
+      "family": "control",
+      "source": "def f(x):\n    return 1 if -2 < x <= 2 else 0\n",
+      "boundaries": [
+        -16,
+        -4,
+        -2,
+        -1,
+        -0.5,
+        0,
+        0.5,
+        1,
+        2,
+        4,
+        16
+      ]
+    },
+    {
+      "id": "sqrt_abs",
+      "family": "sqrt",
+      "source": "def f(x):\n    return math.sqrt(x) if x > 0 else math.sqrt(-x)\n",
+      "boundaries": [
+        -16,
+        -4,
+        -2,
+        -1,
+        -0.5,
+        0,
+        0.5,
+        1,
+        2,
+        4,
+        16
+      ]
+    },
+    {
+      "id": "sqrt_shift",
+      "family": "sqrt",
+      "source": "def f(x):\n    return math.sqrt(x - 1) if x >= 1 else math.sqrt(1 - x)\n",
+      "boundaries": [
+        -16,
+        -4,
+        -2,
+        -1,
+        -0.5,
+        0,
+        0.5,
+        1,
+        2,
+        4,
+        16
+      ]
+    },
+    {
+      "id": "sqrt_relu",
+      "family": "sqrt",
+      "source": "def f(x):\n    return math.sqrt(x) if x >= 0 else 0\n",
+      "boundaries": [
+        -16,
+        -4,
+        -2,
+        -1,
+        -0.5,
+        0,
+        0.5,
+        1,
+        2,
+        4,
+        16
+      ]
+    },
+    {
+      "id": "sqrt_upper",
+      "family": "sqrt",
+      "source": "def f(x):\n    return math.sqrt(2 - x) if x <= 2 else x - 2\n",
+      "boundaries": [
+        -16,
+        -4,
+        -2,
+        -1,
+        -0.5,
+        0,
+        0.5,
+        1,
+        2,
+        4,
+        16
+      ]
+    },
+    {
+      "id": "log_positive",
+      "family": "log",
+      "source": "def f(x):\n    return math.log(x) if x > 0 else 0\n",
+      "boundaries": [
+        -16,
+        -4,
+        -2,
+        -1,
+        -0.5,
+        0,
+        0.5,
+        1,
+        2,
+        4,
+        16
+      ]
+    },
+    {
+      "id": "log_shift",
+      "family": "log",
+      "source": "def f(x):\n    return math.log(x - 1) if x > 1 else -x\n",
+      "boundaries": [
+        -16,
+        -4,
+        -2,
+        -1,
+        -0.5,
+        0,
+        0.5,
+        1,
+        2,
+        4,
+        16
+      ]
+    },
+    {
+      "id": "log_negative",
+      "family": "log",
+      "source": "def f(x):\n    return math.log(-x) if x < 0 else x\n",
+      "boundaries": [
+        -16,
+        -4,
+        -2,
+        -1,
+        -0.5,
+        0,
+        0.5,
+        1,
+        2,
+        4,
+        16
+      ]
+    },
+    {
+      "id": "log_one_plus",
+      "family": "log",
+      "source": "def f(x):\n    return math.log(x + 1) if x > -1 else -1\n",
+      "boundaries": [
+        -16,
+        -4,
+        -2,
+        -1,
+        -0.5,
+        0,
+        0.5,
+        1,
+        2,
+        4,
+        16
+      ]
+    },
+    {
+      "id": "reciprocal",
+      "family": "division",
+      "source": "def f(x):\n    return 1 / x if x != 0 else 0\n",
+      "boundaries": [
+        -16,
+        -4,
+        -2,
+        -1,
+        -0.5,
+        0,
+        0.5,
+        1,
+        2,
+        4,
+        16
+      ]
+    },
+    {
+      "id": "ratio_shift",
+      "family": "division",
+      "source": "def f(x):\n    return x / (x - 1) if x != 1 else 2\n",
+      "boundaries": [
+        -16,
+        -4,
+        -2,
+        -1,
+        -0.5,
+        0,
+        0.5,
+        1,
+        2,
+        4,
+        16
+      ]
+    },
+    {
+      "id": "removable_singularity",
+      "family": "division",
+      "source": "def f(x):\n    return (x + 2) / (x + 2) if x != -2 else 7\n",
+      "boundaries": [
+        -16,
+        -4,
+        -2,
+        -1,
+        -0.5,
+        0,
+        0.5,
+        1,
+        2,
+        4,
+        16
+      ]
+    },
+    {
+      "id": "inverse_square",
+      "family": "division",
+      "source": "def f(x):\n    return 1 / (x * x) if x * x > 0 else 0\n",
+      "boundaries": [
+        -16,
+        -4,
+        -2,
+        -1,
+        -0.5,
+        0,
+        0.5,
+        1,
+        2,
+        4,
+        16
+      ]
+    },
+    {
+      "id": "nested_log_sqrt",
+      "family": "nested",
+      "source": "def f(x):\n    if x > 0:\n        if x > 1:\n            return math.log(x - 1)\n        else:\n            return math.sqrt(1 - x)\n    else:\n        return 1 / (x - 1)\n",
+      "boundaries": [
+        -16,
+        -4,
+        -2,
+        -1,
+        -0.5,
+        0,
+        0.5,
+        1,
+        2,
+        4,
+        16
+      ]
+    },
+    {
+      "id": "nested_signed_log",
+      "family": "nested",
+      "source": "def f(x):\n    if x > 0:\n        return math.log(x)\n    else:\n        if x < 0:\n            return math.log(-x)\n        else:\n            return 0\n",
+      "boundaries": [
+        -16,
+        -4,
+        -2,
+        -1,
+        -0.5,
+        0,
+        0.5,
+        1,
+        2,
+        4,
+        16
+      ]
+    },
+    {
+      "id": "nested_boundary_roots",
+      "family": "nested",
+      "source": "def f(x):\n    if x > 2:\n        return math.sqrt(x - 2)\n    else:\n        if x < -2:\n            return math.sqrt(-x - 2)\n        else:\n            return 0\n",
+      "boundaries": [
+        -16,
+        -4,
+        -2,
+        -1,
+        -0.5,
+        0,
+        0.5,
+        1,
+        2,
+        4,
+        16
+      ]
+    },
+    {
+      "id": "nested_reciprocal_roots",
+      "family": "nested",
+      "source": "def f(x):\n    if x > 1:\n        return 1 / (x - 1)\n    else:\n        if x < 0:\n            return math.sqrt(-x)\n        else:\n            return math.sqrt(x)\n",
+      "boundaries": [
+        -16,
+        -4,
+        -2,
+        -1,
+        -0.5,
+        0,
+        0.5,
+        1,
+        2,
+        4,
+        16
+      ]
+    },
+    {
+      "id": "log_of_root",
+      "family": "composed",
+      "source": "def f(x):\n    return math.log(math.sqrt(x)) if x > 0 else 3\n",
+      "boundaries": [
+        -16,
+        -4,
+        -2,
+        -1,
+        -0.5,
+        0,
+        0.5,
+        1,
+        2,
+        4,
+        16
+      ]
+    },
+    {
+      "id": "inverse_root",
+      "family": "composed",
+      "source": "def f(x):\n    return 1 / math.sqrt(x) if x > 0 else 0\n",
+      "boundaries": [
+        -16,
+        -4,
+        -2,
+        -1,
+        -0.5,
+        0,
+        0.5,
+        1,
+        2,
+        4,
+        16
+      ]
+    },
+    {
+      "id": "root_of_log",
+      "family": "composed",
+      "source": "def f(x):\n    return math.sqrt(math.log(x)) if x >= 1 else 0\n",
+      "boundaries": [
+        -16,
+        -4,
+        -2,
+        -1,
+        -0.5,
+        0,
+        0.5,
+        1,
+        2,
+        4,
+        16
+      ]
+    },
+    {
+      "id": "root_of_inverse",
+      "family": "composed",
+      "source": "def f(x):\n    return math.sqrt(1 / x) if x > 0 else 0\n",
+      "boundaries": [
+        -16,
+        -4,
+        -2,
+        -1,
+        -0.5,
+        0,
+        0.5,
+        1,
+        2,
+        4,
+        16
+      ]
+    }
+  ]
+}
