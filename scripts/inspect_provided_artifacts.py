@@ -21,7 +21,7 @@ import zipfile
 
 ZENODO_ID = "18152253"
 ACM_DOI = "10.1145/3845985"
-MAX_FILES_TO_PRINT = 80
+MAX_FILES_TO_PRINT = 180
 MAX_TOTAL_ARCHIVE_ENTRIES = 20000
 
 
@@ -87,18 +87,53 @@ def inspect_archive(path: Path) -> dict:
     py = [x for x in names if x.endswith(".py")]
     suites = [x for x in names if re.search(r"spdzeval|benchmark|test|refactor|prompt|config|readme", x, re.I)]
     print(f"ARCHIVE: {path.name} ({archive_type}); {len(names)} files; {len(py)} Python files")
+    buckets = {}
+    for n in names:
+        top = n.strip("/").split("/")[0]
+        buckets[top] = buckets.get(top, 0) + 1
+    print("ARCHIVE TOP LEVEL:", json.dumps(buckets, sort_keys=True))
+    for name in names[:300]:
+        print("ARCHIVE ENTRY:", name)
     for name in suites[:MAX_FILES_TO_PRINT]:
         print(f"  FILE: {name}")
+    documentation = {}
+    if archive_type == "tar":
+        with tarfile.open(path, "r:*") as archive:
+            for entry in archive:
+                if not entry.isfile() or entry.size > 12000:
+                    continue
+                if not re.search(r"(^|/)(readme[^/]*|requirements[^/]*|license[^/]*|setup\\.py|pyproject\\.toml)$",
+                                 entry.name, re.I):
+                    continue
+                if len(documentation) >= 18:
+                    break
+                handle = archive.extractfile(entry)
+                if handle:
+                    content = handle.read(12001).decode("utf-8", errors="replace")
+                    documentation[entry.name] = content
+                    print("ARCHIVE DOCUMENT START:", entry.name)
+                    print(content[:6500])
+                    print("ARCHIVE DOCUMENT END:", entry.name)
     return {"type": archive_type, "n_files": len(names), "n_python": len(py),
-            "candidate_files": suites, "all_files": names}
+            "candidate_files": suites, "all_files": names,
+            "documentation": documentation}
 
 
 def download_archive(file: dict, dest: Path, size_cap: int) -> dict:
     name = file["name"]
     url = file.get("url")
     declared_size = file.get("size") or 0
-    if not url or not name.lower().endswith((".zip", ".tar", ".tar.gz", ".tgz")):
-        return {"downloaded": False, "reason": "not downloadable supported archive"}
+    if not url:
+        return {"downloaded": False, "reason": "no URL"}
+    if name.lower() in ("readme.md", "readme.txt"):
+        readme = fetch(url, max_bytes=50000).decode("utf-8", errors="replace")
+        print("OFFICIAL README START:", name)
+        print(readme)
+        print("OFFICIAL README END:", name)
+        (dest / ("zenodo_" + Path(name).name)).write_text(readme, encoding="utf-8")
+        return {"downloaded": True, "text": readme, "kind": "readme"}
+    if not name.lower().endswith((".zip", ".tar", ".tar.gz", ".tgz")):
+        return {"downloaded": False, "reason": "not a supported archive"}
     if not isinstance(declared_size, int) or declared_size > size_cap:
         return {"downloaded": False, "reason": "size exceeds configured cap", "declared_size": declared_size}
     data = fetch(url, max_bytes=size_cap)
@@ -120,7 +155,7 @@ def download_archive(file: dict, dest: Path, size_cap: int) -> dict:
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--output", default="results/official_artifacts")
-    parser.add_argument("--download-under-mib", type=int, default=60)
+    parser.add_argument("--download-under-mib", type=int, default=95)
     args = parser.parse_args()
     dest = Path(args.output)
     dest.mkdir(parents=True, exist_ok=True)
