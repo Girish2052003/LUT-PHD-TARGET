@@ -1,5 +1,22 @@
 # SPDZCoder research assignment — reproducible extension and honest reproduction status
 
+## Deep original-paper reconstruction track (14 October 2026)
+
+**Scientific status: original SPDZCoder source and SPDZEval not reproduced.** The professor supplied the paper link but not the author codebase/313 test cases; targeted public searches did not identify a verified complete release. The files below reconstruct the paper architecture; they are NOT the authors' implementation.
+
+- `src/spdz_audit/paper_reconstruction.py`: ten refactoring rules, AST selection, CFP, generation, reflection, bounded feedback repair and explicit stage evidence.
+- `src/spdz_audit/paper_prompts.py`: partial, disclosed, paper-grounded example prompts; not the complete author prompts.
+- `src/spdz_audit/model_adapter.py`: opt-in model backend with actual usage logging and API documentation baseline; **no live LLM calls made**.
+- `src/spdz_audit/spdzeval_import.py`: strict genuine original 313-task importer. Does not invent missing data.
+- `scripts/run_paper_reconstruction_fixtures.py`: nine labeled, scripted cases with an explicitly synthetic evaluator; seven unsafe examples repaired by an added privacy screen.
+- `scripts/check_information_flow_leak.py`: genuine pinned MP-SPDZ cleartext runtime demonstrates extra secret reveal while authorized output stays 0 ([logs](https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38492518496)).
+- `scripts/reproduce_paper_figure4.py`: reproduce the *actual published Figure 4 swap formulas* on six distinct-element permutations: faulty algorithm 0/6 ascending; repaired algorithm 6/6 (independent test inputs, not original SPDZEval).
+- `docs/deep_paper_audit.md`: original research questions RQ1–RQ4, reported paper results, discrepancies and remaining requirements.
+- `docs/professor_submission_interim.md`: full evidence-backed interim submission with limitations.
+
+44 unit tests have passed on the research branch. These results do not reproduce the paper's published 85.94%/92.01% or establish secure multiparty protocol noninterference. Original code, benchmark and historic model samples remain critical blockers: [issue #2](https://github.com/Girish2052003/LUT-PHD-TARGET/issues/2).
+
+
 **Researcher:** Girish Nallan Chakravathy.  
 **Supervisor's deadline:** **31 October 2026**.  
 **Source paper:** Dong et al., *SPDZCoder: Combining Expert Knowledge with LLMs for Generating Privacy-Computing Code*, arXiv:2501.00363v2.

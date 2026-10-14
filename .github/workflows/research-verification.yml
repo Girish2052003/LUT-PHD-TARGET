@@ -6,6 +6,9 @@ on:
   workflow_dispatch:
 permissions:
   contents: read
+concurrency:
+  group: paper-research-${{ github.workflow }}-${{ github.ref }}-${{ github.event_name }}
+  cancel-in-progress: true
 jobs:
   deterministic:
     runs-on: ubuntu-24.04
@@ -19,6 +22,20 @@ jobs:
         run: python -m pip install --disable-pip-version-check -e .
       - name: Run regression tests
         run: python -m unittest discover -s tests -v
+      - name: Run explicitly synthetic paper-pipeline reconstruction comparison
+        run: |
+          python scripts/run_paper_reconstruction_fixtures.py --output results/paper-reconstruction-fixture.json
+          python - <<'PY'
+          import json
+          record=json.load(open("results/paper-reconstruction-fixture.json"))
+          assert record["n_cases"] == 9
+          assert record["n_labeled_unsafe"] == 7
+          assert record["baseline_accepted_unsafe"] == 7
+          assert record["modified_accepted_unsafe"] == 0
+          assert record["modified_repaired"] == 7
+          assert record["modified_accepted"] == 9
+          assert record["actual_llm_calls"] == 0
+          PY
       - name: Re-run full deterministic experiment
         run: python scripts/run_experiments.py --output results/semantic
       - name: Audit raw observation consistency
@@ -28,7 +45,9 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: semantic-evidence
-          path: results/semantic/
+          path: |
+            results/semantic/
+            results/paper-reconstruction-fixture.json
           retention-days: 30
           if-no-files-found: warn
 
@@ -80,11 +99,19 @@ jobs:
         run: |
           git clone --quiet --no-checkout https://github.com/data61/MP-SPDZ.git /tmp/mp-spdz
           git -C /tmp/mp-spdz checkout --quiet 78fe3d8bad4e654276eb3a11a88173195e672f44
+          # Never use ARCH=-march=native on changeable GitHub runners: newer
+          # virtual CPU flags (e.g. AVX10) can break the pinned Clang compiler.
+          # Haswell is a stable minimum with AVX2 on the selected x86_64 image.
+          printf 'ARCH = -march=haswell\n' > /tmp/mp-spdz/CONFIG.mine
           make -C /tmp/mp-spdz -j 2 emulate.x
       - name: Check actual fixed-point output with official cleartext emulator
         run: python scripts/check_mpspdz.py --mpspdz /tmp/mp-spdz --output results/mpspdz-runtime --max-cases 27 --emulate
       - name: Emulate programs with actual player-0 secret-input instructions
         run: python scripts/check_mpspdz.py --mpspdz /tmp/mp-spdz --output results/mpspdz-party --max-cases 27 --emulate --party-input
+      - name: Reproduce concrete unauthorized disclosure despite identical function outputs
+        run: python scripts/check_information_flow_leak.py --mpspdz /tmp/mp-spdz --output results/privacy-witness
+      - name: Independently reproduce the paper's before-and-after Figure 4 bubble-sort logic
+        run: python scripts/reproduce_paper_figure4.py --mpspdz /tmp/mp-spdz --output results/paper-figure4
       - name: Preserve runtime programs and logs
         if: always()
         uses: actions/upload-artifact@v4
@@ -93,5 +120,7 @@ jobs:
           path: |
             results/mpspdz-runtime/
             results/mpspdz-party/
+            results/privacy-witness/
+            results/paper-figure4/
           retention-days: 30
           if-no-files-found: warn
