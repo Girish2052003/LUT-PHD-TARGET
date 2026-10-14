@@ -1,0 +1,179 @@
+name: Remove verified merged research branches
+
+# This runs only after the normal main-branch verification has succeeded.
+# It does not accept a branch name from a PR or from user-provided input.
+on:
+  workflow_run:
+    workflows: ["Research verification"]
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: read
+
+concurrency:
+  group: remove-verified-merged-branches
+  cancel-in-progress: false
+
+jobs:
+  remove-merged-branches:
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.workflow_run.conclusion == 'success' &&
+       github.event.workflow_run.event == 'push' &&
+       github.event.workflow_run.head_branch == 'main')
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Verify merged PRs and safely delete only the named source branches
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const { owner, repo } = context.repo;
+            const expected = [
+              {
+                name: 'research/continue-domain-safe-validation',
+                sha: '853d39ffe80abc3de11b69e41c886adaadf30766',
+                pull: 1
+              },
+              {
+                name: 'research/reconstruct-paper-pipeline',
+                sha: 'a0289ada13e5e4aa8c44533414a895e9123faba8',
+                pull: 3
+              },
+              {
+                name: 'docs/research-voice-20261014',
+                sha: 'fca93fe77c4f65b909f539e78e5cfb734231f872',
+                pull: 4
+              }
+            ];
+
+            const main = (await github.rest.repos.getBranch({
+              owner, repo, branch: 'main'
+            })).data;
+            const mainSha = main.commit.sha;
+
+            if (context.eventName === 'workflow_run') {
+              const source = context.payload.workflow_run;
+              if (source.conclusion !== 'success' ||
+                  source.event !== 'push' ||
+                  source.head_branch !== 'main' ||
+                  source.head_sha !== mainSha ||
+                  source.head_repository?.full_name !== `${owner}/${repo}`) {
+                core.setFailed('Not a successful verification of the current main HEAD.');
+                return;
+              }
+            } else if (context.ref !== 'refs/heads/main' ||
+                       context.sha !== mainSha) {
+              core.setFailed('Manual cleanup must run at the current main HEAD.');
+              return;
+            }
+
+            // Stage 1: verify *everything* before performing any deletion.
+            const verified = [];
+            for (const target of expected) {
+              if (target.name === 'main') {
+                core.setFailed('Refusing to delete default branch.');
+                return;
+              }
+              let branch;
+              try {
+                branch = (await github.rest.repos.getBranch({
+                  owner, repo, branch: target.name
+                })).data;
+              } catch (error) {
+                if (error.status === 404) {
+                  core.info('Already absent: ' + target.name);
+                  continue;
+                }
+                throw error;
+              }
+
+              const pr = (await github.rest.pulls.get({
+                owner, repo, pull_number: target.pull
+              })).data;
+
+              if (branch.protected ||
+                  branch.commit.sha !== target.sha ||
+                  pr.merged !== true ||
+                  pr.base.ref !== 'main' ||
+                  pr.head.ref !== target.name ||
+                  pr.head.sha !== target.sha ||
+                  !pr.merge_commit_sha) {
+                core.setFailed('Safety check failed for ' + target.name +
+                               ': branch changed, protected, or PR not merged.');
+                return;
+              }
+
+              // A squash merge is not an ancestor of its original source branch.
+              // Instead, verify that the actual resulting merge/squash commit is
+              // an ancestor of today's main branch.
+              const history = (await github.rest.repos.compareCommits({
+                owner, repo, base: pr.merge_commit_sha, head: 'main'
+              })).data;
+              if (!['ahead', 'identical'].includes(history.status) ||
+                  history.behind_by !== 0) {
+                core.setFailed('PR merge commit is not included in main: ' +
+                               target.name);
+                return;
+              }
+              verified.push({ name: target.name, sha: target.sha,
+                              pull: target.pull, merge: pr.merge_commit_sha });
+            }
+
+            core.info('Current main: ' + mainSha);
+            core.info('All branch and PR checks passed for ' +
+                      verified.length + ' branches.');
+
+            // Stage 2: delete only verified branch refs, with a second ref
+            // check to reduce the chance of racing with an external push.
+            for (const target of verified) {
+              const live = (await github.rest.repos.getBranch({
+                owner, repo, branch: target.name
+              })).data;
+              if (live.protected || live.commit.sha !== target.sha) {
+                core.setFailed('Branch moved immediately before deletion: ' +
+                               target.name);
+                return;
+              }
+              await github.rest.git.deleteRef({
+                owner, repo, ref: 'heads/' + target.name
+              });
+              core.info('Deleted: ' + target.name +
+                        ' (saved source SHA ' + target.sha + ')');
+            }
+
+            // Stage 3: check that nothing remains and main stayed unchanged.
+            const after = (await github.rest.repos.getBranch({
+              owner, repo, branch: 'main'
+            })).data;
+            if (after.commit.sha !== mainSha) {
+              core.setFailed('main changed during cleanup; review repository.');
+              return;
+            }
+            for (const target of expected) {
+              try {
+                await github.rest.repos.getBranch({
+                  owner, repo, branch: target.name
+                });
+                core.setFailed('Unexpected surviving branch: ' + target.name);
+                return;
+              } catch (error) {
+                if (error.status !== 404) throw error;
+              }
+            }
+
+            await core.summary
+              .addHeading('Merged-branch cleanup complete')
+              .addRaw('main unchanged: `' + mainSha + '`\n\n')
+              .addTable([
+                [{data:'Deleted branch', header:true},
+                 {data:'Merged PR', header:true},
+                 {data:'Original head SHA (recovery)', header:true}],
+                ...verified.map(t => [t.name, '#' + t.pull, t.sha])
+              ])
+              .addRaw('\nPRs, squash merge commits and workflow history remain available.')
+              .write();
