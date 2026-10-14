@@ -139,10 +139,12 @@ class PrivacyScreen:
         problems: set[str] = set()
         tree = ast.parse(code)
         for node in ast.walk(tree):
+            if isinstance(node, ast.Attribute) and node.attr in {"reveal", "reveal_list"}:
+                problems.add("explicit-secret-reveal")
             if isinstance(node, ast.Call):
                 fn = node.func
-                if isinstance(fn, ast.Attribute) and fn.attr in {"reveal", "reveal_list"}:
-                    problems.add("explicit-secret-reveal")
+                if isinstance(fn, ast.Attribute) and fn.attr in {"print_ln", "print_str", "print_float"}:
+                    problems.add("unauthorized-output-or-dynamic-call")
                 if isinstance(fn, ast.Name) and fn.id in {
                     "print", "print_ln", "print_str", "print_float",
                     "eval", "exec", "open", "__import__"}:
