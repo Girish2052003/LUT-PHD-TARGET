@@ -66,8 +66,9 @@ def inspect(archive_path: Path) -> dict:
         for split in SPLITS:
             path = "data/input_processed_data/" + split + ".json"
             try:
-                obj = json.loads(read_member(tar, path))
-                info = summary_shape(obj)
+                content = read_member(tar, path).decode("utf-8")
+                entries = [json.loads(line) for line in content.splitlines() if line.strip()]
+                info = summary_shape(entries)
                 report["split"][split] = info
                 print("OFFICIAL SPLIT:", split, json.dumps(info)[:1700])
             except (KeyError, ValueError) as e:
