@@ -1,78 +1,68 @@
-# SPDZCoder research assignment — reproducible extension and honest reproduction status
+# Reproducing and extending SPDZCoder
 
-## Deep original-paper reconstruction track (14 October 2026)
+I'm studying [SPDZCoder](https://arxiv.org/abs/2501.00363), which translates ordinary Python into privacy-preserving MP-SPDZ programs. My goal is to understand the original translation pipeline, reproduce its experiments where the source materials permit, and investigate whether a functionally correct translation can still introduce a privacy problem.
 
-**Scientific status: original SPDZCoder source and SPDZEval not reproduced.** The professor supplied the paper link but not the author codebase/313 test cases; targeted public searches did not identify a verified complete release. The files below reconstruct the paper architecture; they are NOT the authors' implementation.
+This repository is my working record for the coding assignment from Professor Prabhat Kumar at LUT University, due **31 October 2026**.
 
-- `src/spdz_audit/paper_reconstruction.py`: ten refactoring rules, AST selection, CFP, generation, reflection, bounded feedback repair and explicit stage evidence.
-- `src/spdz_audit/paper_prompts.py`: partial, disclosed, paper-grounded example prompts; not the complete author prompts.
-- `src/spdz_audit/model_adapter.py`: opt-in model backend with actual usage logging and API documentation baseline; **no live LLM calls made**.
-- `src/spdz_audit/spdzeval_import.py`: strict genuine original 313-task importer. Does not invent missing data.
-- `scripts/run_paper_reconstruction_fixtures.py`: nine labeled, scripted cases with an explicitly synthetic evaluator; seven unsafe examples repaired by an added privacy screen.
-- `scripts/check_information_flow_leak.py`: genuine pinned MP-SPDZ cleartext runtime demonstrates extra secret reveal while authorized output stays 0 ([logs](https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38492518496)).
-- `scripts/reproduce_paper_figure4.py`: reproduce the *actual published Figure 4 swap formulas* on six distinct-element permutations: faulty algorithm 0/6 ascending; repaired algorithm 6/6 (independent test inputs, not original SPDZEval).
-- `docs/deep_paper_audit.md`: original research questions RQ1–RQ4, reported paper results, discrepancies and remaining requirements.
-- `docs/professor_submission_interim.md`: full evidence-backed interim submission with limitations.
+## Where the work stands
 
-44 unit tests have passed on the research branch. These results do not reproduce the paper's published 85.94%/92.01% or establish secure multiparty protocol noninterference. Original code, benchmark and historic model samples remain critical blockers: [issue #2](https://github.com/Girish2052003/LUT-PHD-TARGET/issues/2).
+I've implemented and tested a reconstruction of the paper's refactoring, generation, self-reflection and repair workflow. I also reproduced the specific bubble-sort repair shown in Figure 4 and tested an additional privacy-validation step using the MP-SPDZ compiler and its cleartext emulator.
 
+**The full SPDZCoder reproduction is still open.** The paper describes a 313-task dataset called SPDZEval, but I have not obtained the authors' complete implementation or those original benchmark files. The professor's email supplied the paper URL without a separate code or dataset link, and my public searches have not located a verified release. The original published pass@1 and pass@2 figures below are therefore reference points, not scores that I measured.
 
-**Researcher:** Girish Nallan Chakravathy.  
-**Supervisor's deadline:** **31 October 2026**.  
-**Source paper:** Dong et al., *SPDZCoder: Combining Expert Knowledge with LLMs for Generating Privacy-Computing Code*, arXiv:2501.00363v2.
+## What I've implemented
 
-**Scope:** A verified **independent extension** investigating safe evaluation of oblivious branches. **This is not a complete reproduction of the authors' SPDZCoder**, because the original implementation, 313-task SPDZEval and original LLM runs have not been obtained.
+| Part | What it covers | Evidence |
+|---|---|---|
+| Paper workflow | Ten refactoring rules, AST rule selection, canonical Python, generation, self-reflection and a bounded repair loop | `src/spdz_audit/paper_reconstruction.py`, `paper_prompts.py` |
+| Model interface | Optional model adapter and API-documentation comparison interface; model responses and usage can be logged | `src/spdz_audit/model_adapter.py` |
+| Privacy checks | A limited AST screen for direct reveals, unapproved output, some secret-dependent branches, loop bounds and indices | `PrivacyScreen` in `paper_reconstruction.py` |
+| Benchmark preparation | Validation of original SPDZEval files, including 313 tasks and the six published category totals | `src/spdz_audit/spdzeval_import.py` |
+| Additional numerical study | Domain-sensitive branch lowering, a reconstructed eager baseline and a masked-argument alternative | `src/spdz_audit/lowering.py` |
 
-## Current measured evidence
+The paper's original code and complete prompts have not been recovered, so the pipeline is **my implementation based on its published description**, not a checkout of the authors' software. The scripted model responses used in the tests are fixtures, not actual LLM generations. No live model API experiments have been run yet.
 
-| Test | Reconstructed eager-predication baseline | Domain-safe extension | Evidence |
-|---|---:|---:|---|
-| Targeted Python semantic cases passed | 4,109 / 7,464 | **7,464 / 7,464** | GitHub Actions run 38488603949 |
-| Entire 24-function tasks passed | 4 / 24 | **24 / 24** | Same run; independent raw-row validator |
-| MP-SPDZ invoked programs compiled at pinned commit | 4 / 4 | **4 / 4** | GitHub Actions run 38488848728 |
-| MP-SPDZ emulator (secret-typed constants) | **27 / 27** | **27 / 27** | GitHub Actions run 38490443262; tolerance 5% |
-| MP-SPDZ emulator (party-0 runtime input) | **27 / 27** | **27 / 27** | GitHub Actions run 38490443262; `sfix.get_input_from(0)`; tolerance 5% |
-| Original published 313 SPDZEval tasks | Not run | Not run | Missing original runnable artifacts |
+## Results so far
 
-The 24-function stress suite was **deliberately constructed to expose this specific defect**. These results are NOT an unbiased estimate of how often the bug occurs in real code, and they are NOT pass@k scores.
+| Experiment | Measured result | What it establishes |
+|---|---|---|
+| Python regression tests | **44 passed** | Implementation behavior, repair control flow, import checks and selected security checks |
+| Figure 4 bubble-sort formulas | **0/6** ascending outputs before repair; **6/6** after repair | The correction illustrated in the paper works on six independently chosen permutations |
+| Information-flow counterexample | Both variants returned **0** for secret inputs −3 and 5; the deliberately leaky variant also printed the secret | Matching function outputs do not rule out extra public disclosures |
+| DomainSafety-24 Python study | Reconstructed eager baseline **4,109/7,464**; masked-argument version **7,464/7,464** | Improvement on a deliberately targeted Python stress set |
+| DomainSafety-24 MP-SPDZ emulation | Both variants passed **27/27** selected cases in each input mode, at 0.05 absolute/relative tolerance | Compiler/emulator compatibility on selected cases; **no numerical advantage demonstrated** |
 
-The paper reports 85.94% pass@1 and 92.01% pass@2, which are **published figures only** in this project.
+I used a pinned MP-SPDZ revision (`78fe3d8bad4e654276eb3a11a88173195e672f44`) for the compiler/emulator runs. These checks use the **cleartext emulator**, not a secure multiparty deployment or a formal security proof. The Figure 4 inputs, privacy-leak example and DomainSafety-24 tasks are my independent tests; they are **not** the original SPDZEval dataset.
 
-## Why this extension?
+For comparison, the paper reports **85.94% pass@1** and **92.01% pass@2** for SPDZCoder over SPDZEval. I have **not reproduced those results**, and I do not treat deterministic input-level accuracy as pass@k.
 
-A simple data-oblivious branch such as (x > 0) * sqrt(x) + (x <= 0) * sqrt(-x) calculates both roots. The inactive root can receive a negative input. Our restricted AST lowering propagates a secret activation mask m into the *arguments* of partial operations:
+## Reproduce the tests
 
-    masked_arg = m * argument + (1 - m) * 1
+Python 3.10+ is required.
 
-Thus inactive sqrt/log/division receive safe dummy arguments. Active invalid arguments remain invalid. No secret bit is revealed by the emitted control flow. We make **no claim of full cryptographic security** or support for arbitrary Python.
+```bash
+python -m pip install -e .
+python -m unittest discover -s tests -v
+python scripts/run_experiments.py --output results/semantic
+python scripts/verify_results.py --results results/semantic
+python scripts/run_paper_reconstruction_fixtures.py --output results/paper-reconstruction-fixture.json
+```
 
-## Reproduce the deterministic experiment
+The final command uses **nine scripted examples and a deliberately simplified functional checker**. It is useful for testing the privacy-check/repair workflow, not for estimating model quality.
 
-Requires Python 3.10+ and no paid LLM access:
+The MP-SPDZ tests run in [GitHub Actions](https://github.com/Girish2052003/LUT-PHD-TARGET/actions) and save the generated programs, logs and summaries. The reproducible [Figure 4 and privacy experiments](https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38494328178) were successful, including compilation, cleartext execution and the runtime-input checks.
 
-    python -m pip install -e .
-    python -m unittest discover -s tests -v
-    python scripts/run_experiments.py --output results/semantic
-    python scripts/verify_results.py --results results/semantic
+## Reading the repository
 
-The runner saves its raw JSONL observations, a gzip copy, generated Python and MP-SPDZ source, SHA-256 provenance, input-group summaries and verification result.
+- [Paper and methodology notes](docs/paper_guide.md) — what each SPDZCoder stage does.
+- [Detailed paper analysis](docs/deep_paper_audit.md) — the four research questions and reported results.
+- [My current research report](docs/professor_submission_interim.md) — implementation, experiments and limitations.
+- [Original artifact search](docs/artifact_discovery_log.md) — what I checked and what I still need.
+- [Experiment log](docs/reproduction_log.md) — environment, commit pin and links to test runs.
+- [Domain-safe lowering design](docs/engineering/domain_safe_lowering.md) — supported language and constraints.
 
-For genuine compiler validation, first obtain MP-SPDZ commit 78fe3d8bad4e654276eb3a11a88173195e672f44. Then run:
+## What I still need for the original reproduction
 
-    python scripts/check_mpspdz.py --mpspdz /path/to/MP-SPDZ --output results/mpspdz --max-cases 4
+I need access to the authors' SPDZCoder codebase (including its full prompts and experiment scripts), the original **313 SPDZEval tasks with their unit tests**, and their recommended setup/model configuration. Without those materials I can test examples from the paper and run my extension, but I cannot honestly compare my work against their exact experimental baseline or reproduce their split-wise pass@k results.
 
-To run the official **cleartext** emulator, build `emulate.x` in MP-SPDZ, then append `--emulate`. Add `--party-input` to create runtime input files and call `sfix.get_input_from(0)` instead of using literal constants. Both modes passed all 27 deliberately selected emulator inputs covering each of the 24 functions at a loose 5% tolerance; **no MP-SPDZ numerical improvement has yet been demonstrated**. Cleartext emulation is distinct from actual secure multiparty protocols.
-
-All commands above also run or are configured in .github/workflows/research-verification.yml. Individual CI result artifacts are retained for 30 days.
-
-## Start here
-
-- docs/report.md — interim assignment report, measured results, limitations and code explanation.
-- docs/paper_guide.md — explain SPDZCoder from first principles, including the benchmark and the exact model settings.
-- docs/reproduction_log.md — pinned environment, evidence ledger and unresolved blockers.
-- docs/superpowers/specs/2026-10-14-domain-safe-lowering-design.md — detailed scope and threat model.
-- src/spdz_audit/lowering.py — baseline and modified restricted lowering.
-- experiments/benchmark.json — all 24 independently authored test functions.
-- scripts/check_mpspdz.py — invokes generated secret-typed fixed-point programs through the real compiler and optional emulator.
-
-**Remaining blockers:** original source and full SPDZEval benchmark; actual generated model samples and paper RQ1–RQ4 runs; true secure multiparty network-protocol execution and full MPC security analysis. No invented scores, model outputs, datasets or compiler assurances should be substituted.
+I am continuing to record results and difficulties as I work toward the 31 October submission.
