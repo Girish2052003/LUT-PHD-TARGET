@@ -60,3 +60,34 @@ jobs:
           path: results/mpspdz/
           retention-days: 30
           if-no-files-found: warn
+
+  mpspdz-cleartext-emulator:
+    needs: mpspdz-compiler
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install project, numeric compiler libraries, and native dependencies
+        run: |
+          python -m pip install --disable-pip-version-check -e .
+          python -m pip install --disable-pip-version-check numpy sympy gmpy2 networkx pycryptodome
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends build-essential libboost-dev libboost-filesystem-dev libboost-iostreams-dev libboost-thread-dev libboost-program-options-dev libgmp-dev libsodium-dev libssl-dev libntl-dev
+      - name: Reconstruct pinned MP-SPDZ environment and build emulator
+        run: |
+          git clone --quiet --no-checkout https://github.com/data61/MP-SPDZ.git /tmp/mp-spdz
+          git -C /tmp/mp-spdz checkout --quiet 78fe3d8bad4e654276eb3a11a88173195e672f44
+          make -C /tmp/mp-spdz -j 2 emulate.x
+      - name: Check actual fixed-point output with official cleartext emulator
+        run: python scripts/check_mpspdz.py --mpspdz /tmp/mp-spdz --output results/mpspdz-runtime --max-cases 4 --emulate
+      - name: Preserve runtime programs and logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mpspdz-emulator-evidence
+          path: results/mpspdz-runtime/
+          retention-days: 30
+          if-no-files-found: warn
