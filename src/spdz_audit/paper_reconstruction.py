@@ -67,6 +67,28 @@ def match_rules(code: str) -> list[str]:
     return [name for name, _ in RULES if name in matched]
 
 
+def check_refactor_pattern_removed(rule: str, code: str) -> None:
+    """Check only syntactic obligations that can be decided from an AST.
+
+    Functional equivalence, proper secret-flow semantics and validity of
+    algorithmic replacements require additional testing; this check is
+    deliberately not represented as a complete CFP correctness proof.
+    """
+    nodes = list(ast.walk(ast.parse(code)))
+    failures = {
+        "EliminateBreak": any(isinstance(n, ast.Break) for n in nodes),
+        "EliminateContinue": any(isinstance(n, ast.Continue) for n in nodes),
+        "RewriteWhileLoop": any(isinstance(n, ast.While) for n in nodes),
+        "ChainedComparison": any(
+            isinstance(n, ast.Compare) and len(n.ops) > 1 for n in nodes),
+        "SyntaxSugar": any(isinstance(n, (ast.IfExp, ast.ListComp,
+                                          ast.DictComp, ast.GeneratorExp))
+                           for n in nodes),
+    }
+    if failures.get(rule, False):
+        raise ValueError("Refactor did not eliminate required pattern: " + rule)
+
+
 def signature(code: str) -> tuple[str, int]:
     tree = ast.parse(code)
     functions = [n for n in tree.body if isinstance(n, ast.FunctionDef)]
@@ -207,6 +229,7 @@ class PaperPipeline:
                     refactor_prompt(name, description), cfp)
                 if signature(cfp) != before:
                     raise ValueError("Refactor changed the function signature")
+                check_refactor_pattern_removed(name, cfp)
                 stages.append(stage)
         generated = self.ask("generate",
             generation_prompt(selected), cfp)
