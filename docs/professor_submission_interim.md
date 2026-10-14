@@ -1,5 +1,7 @@
 # SPDZCoder: reproduction progress and privacy-aware validation
 
+**14 October update:** Professor Kumar has since provided the [original source and benchmark on Zenodo](https://zenodo.org/records/18152253) and the [ACM version](https://doi.org/10.1145/3845985). The historical limitations in this interim report describe the state *before receiving those links*. The original package has now been checksum-verified; its 313 task programs and saved outputs were inventoried, and 269/313 first-candidate successes were independently counted from the archived evaluation records. I have **not yet** run the original secure-protocol evaluator or regenerated historic model outputs. See [original artifact reproduction](original_artifact_reproduction.md).
+
 **Girish Nallan Chakravathy** · Research progress as of 14 October 2026  
 **Paper:** Dong et al., *SPDZCoder: Combining Expert Knowledge with LLMs for Generating Privacy-Computing Code*, [arXiv:2501.00363v2](https://arxiv.org/abs/2501.00363)  
 **Assignment deadline:** 31 October 2026

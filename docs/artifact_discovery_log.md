@@ -1,5 +1,7 @@
 # Tracking down the original SPDZCoder code and SPDZEval data
 
+**Update — 14 October 2026:** Professor Kumar replied with the [official ACM paper](https://doi.org/10.1145/3845985) and [Zenodo archive](https://zenodo.org/records/18152253). I have now verified that the artifact contains the authors' code, 313 original MPC task programs, seven input split files, stored generated outputs and evaluation files. The earlier search notes below are a historical account **before this link was supplied**, not the current availability status. See [my verified artifact report](original_artifact_reproduction.md).
+
 **14 October 2026**
 
 I need the authors' implementation and original test data to compare my changes with their results. So far, I have not found a verifiable complete source release or the 313-task SPDZEval archive. That does not mean the files are unavailable; it means I have not been able to establish where to obtain them.
