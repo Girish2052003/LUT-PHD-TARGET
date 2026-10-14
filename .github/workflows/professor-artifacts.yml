@@ -23,6 +23,10 @@ jobs:
         run: |
           python -m unittest discover -s tests -p 'test_native_schema.py' -v
           python scripts/audit_original_archive.py --tar results/official_artifacts/SPDZCoder.tar --output results/official_artifacts/native_data_audit.json
+      - name: Recalculate published pass-at-k from authors' saved task flags
+        run: |
+          python -m unittest discover -s tests -p 'test_official_scores.py' -v
+          python scripts/reproduce_official_scores.py --tar results/official_artifacts/SPDZCoder.tar --output results/official_artifacts/original_saved_evaluation_metrics.json
       - name: Upload provenance record and safe archive file listings
         if: always()
         uses: actions/upload-artifact@v4
@@ -31,5 +35,6 @@ jobs:
           path: |
             results/official_artifacts/source_manifest.json
             results/official_artifacts/native_data_audit.json
+            results/official_artifacts/original_saved_evaluation_metrics.json
           retention-days: 30
           if-no-files-found: warn
