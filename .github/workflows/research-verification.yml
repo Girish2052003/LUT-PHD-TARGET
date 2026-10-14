@@ -82,9 +82,9 @@ jobs:
           git -C /tmp/mp-spdz checkout --quiet 78fe3d8bad4e654276eb3a11a88173195e672f44
           make -C /tmp/mp-spdz -j 2 emulate.x
       - name: Check actual fixed-point output with official cleartext emulator
-        run: python scripts/check_mpspdz.py --mpspdz /tmp/mp-spdz --output results/mpspdz-runtime --max-cases 4 --emulate
+        run: python scripts/check_mpspdz.py --mpspdz /tmp/mp-spdz --output results/mpspdz-runtime --max-cases 27 --emulate
       - name: Emulate programs with actual player-0 secret-input instructions
-        run: python scripts/check_mpspdz.py --mpspdz /tmp/mp-spdz --output results/mpspdz-party --max-cases 4 --emulate --party-input
+        run: python scripts/check_mpspdz.py --mpspdz /tmp/mp-spdz --output results/mpspdz-party --max-cases 27 --emulate --party-input
       - name: Preserve runtime programs and logs
         if: always()
         uses: actions/upload-artifact@v4
