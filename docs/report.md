@@ -1,4 +1,4 @@
-# Reproduction and extension of SPDZCoder — interim assignment report
+# Domain-safe branch lowering: supplementary experiment
 
 **Author:** Girish Nallan Chakravathy  
 **Assignment deadline:** 31 October 2026  
@@ -9,7 +9,7 @@
 
 SPDZCoder translates Python into privacy-preserving MP-SPDZ code by (a) expert-guided refactoring to Canonical Form Python, (b) LLM generation with dynamically selected examples and self-reflection, and (c) optional compiler/runtime/logic-error feedback. The paper evaluates 313 SPDZEval tasks across array, loop, branch, math, NumPy, and syntax splits. Its declared configuration is GPT-4-turbo-2024-04-09, temperature 0.7, two samples per function, and up to three repair rounds.
 
-The published overall result is **85.94% pass@1; 92.01% pass@2** (paper Table 4). **We have not reproduced those figures.** Original source, original SPDZEval test files and runnable implementation were not supplied in the user's originally empty target repository; repeated public/author-repository searches have not identified a verifiable source download. This absence from discovery is not proof the artifacts do not exist. No LLM calls have been made.
+The published overall result is **85.94% pass@1; 92.01% pass@2** (paper Table 4). **I have not reproduced those figures.** Original source, original SPDZEval test files and runnable implementation were not supplied in my initially empty assignment repository; repeated public/author-repository searches have not identified a verifiable source download. This absence from discovery is not proof the artifacts do not exist. No LLM calls have been made.
 
 ## 2. Concrete limitation and hypothesis
 
@@ -19,7 +19,7 @@ Section 2.2 of the paper demonstrates oblivious selection by evaluating both sqr
 
 ## 3. Independent implementation
 
-We implemented a restricted Python AST lowering tool with two modes: **baseline** (arithmetic predication resembling the paper's example) and **safe** (our improvement). For each branch activation bit m:
+I implemented a restricted Python AST lowering tool with two modes: **baseline** (arithmetic predication resembling the paper's example) and **safe** (our improvement). For each branch activation bit m:
 
     safe_arg = m * argument + (1 - m) * 1
     sqrt(safe_arg), log(safe_arg), or numerator / safe_denominator
@@ -39,7 +39,7 @@ Relevant code: src/spdz_audit/lowering.py, src/spdz_audit/experiment.py, scripts
 | Passing functions / 24 | 4 | **24** |
 | Input accuracy | 55.05% | **100.00%** |
 
-All 20 task-level changes are improvements, and no regressions occurred on this test set. This is a **44.95 percentage-point improvement on a deliberately constructed stress set**, **not** a generalization claim. The original author's LLM baseline and the original 313 tasks were not run. Deterministic accuracy must not be labeled pass@1/pass@2.
+All 20 task-level changes are improvements, and no regressions occurred on this test set. This is a **44.95 percentage-point improvement on a deliberately constructed stress set**, **not** a generalization claim. I did not run the authors' LLM baseline or the original 313 tasks. Deterministic accuracy must not be labeled pass@1/pass@2.
 
 **Independent verification:** GitHub Actions run 38488603949 succeeded: 22 unit tests, full rerun of the 24-task benchmark, raw row-pair consistency check, SHA-256 raw-observation provenance check, archived generated sources/observations/summary. URL: https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38488603949
 
@@ -57,4 +57,7 @@ An additional runner targets real MP-SPDZ at commit 78fe3d8bad4e654276eb3a11a881
 4. DomainSafety-24 deliberately selects domain-sensitive functions; 100% success here does not measure general code generation, arbitrary program privacy, overflowing intermediates, or unseen language constructs.
 5. Small MP-SPDZ fixed-point numerical deviations were observed, and the reconstructed eager baseline matched the modified version on all 27 selected official emulator cases in each input mode. A comprehensive accuracy and overhead study, and full secure multiparty execution, remain to be done. For logged evidence consult the CI runs in section 5.
 
-**Conclusion:** A narrow but substantive limitation in the paper's illustrative oblivious-lowering pattern can be mitigated by propagating secret activation masks into partial-operation arguments. The independent controlled Python experiment supports this claim on 24 targeted functions. **The supervisor's requirement to reproduce the original published implementation and key SPDZEval results remains open** until the original artifacts and experiment access are obtained. All measured and published results are deliberately distinguished.
+**My interpretation:** A narrow but substantive limitation in the paper's illustrative oblivious-lowering pattern can be mitigated by propagating secret activation masks into partial-operation arguments. The independent controlled Python experiment supports this claim on 24 targeted functions. **Reproducing the original published implementation and SPDZEval results remains unfinished** until the original artifacts and experiment access are obtained. All measured and published results are deliberately distinguished.
+
+
+This document covers my numerical extension only. The [main interim research report](professor_submission_interim.md) describes the paper's Figure 4 reproduction, the privacy-check extension and the outstanding original-code dependency.
