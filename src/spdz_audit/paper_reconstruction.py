@@ -8,6 +8,8 @@ import ast
 from dataclasses import dataclass, field
 import re
 from typing import Callable, Protocol
+from .paper_prompts import (refactor_prompt, generation_prompt,
+                            reflection_prompt, repair_prompt)
 
 # Rule names and categories from Dong et al., Table 1 (page 4).
 # Descriptions here are disclosed reconstructions, not verbatim original prompts.
@@ -202,18 +204,15 @@ class PaperPipeline:
             if name in selected:
                 stage = "refactor:" + name
                 cfp = self.ask(stage,
-                    "Refactor into simple explicit Python without changing functionality. " +
-                    name + ": " + description, cfp)
+                    refactor_prompt(name, description), cfp)
                 if signature(cfp) != before:
                     raise ValueError("Refactor changed the function signature")
                 stages.append(stage)
         generated = self.ask("generate",
-            "Generate MP-SPDZ code from CFP. Use sfix, sint, Compiler.mpc_math, " +
-            "oblivious operations and expert correspondences, without invented APIs.", cfp)
+            generation_prompt(selected), cfp)
         stages.append("generate")
         candidate = self.ask("reflect",
-            "Self-reflection: check MP-SPDZ imports, function names, fixed-point " +
-            "operations and secret control flow; correct mistakes.", generated)
+            reflection_prompt(), generated)
         stages.append("reflect")
         repairs = 0
         while True:
@@ -226,7 +225,7 @@ class PaperPipeline:
             repairs += 1
             stage = "repair:" + str(repairs)
             candidate = self.ask(stage,
-                "Repair MP-SPDZ after compilation/runtime or functional errors.",
+                repair_prompt(result.kind),
                 "Canonical Python:\n" + cfp + "\nMP-SPDZ code:\n" +
                 candidate + "\nError kind: " + result.kind +
                 "\nError: " + result.message)
