@@ -83,11 +83,15 @@ jobs:
           make -C /tmp/mp-spdz -j 2 emulate.x
       - name: Check actual fixed-point output with official cleartext emulator
         run: python scripts/check_mpspdz.py --mpspdz /tmp/mp-spdz --output results/mpspdz-runtime --max-cases 4 --emulate
+      - name: Emulate programs with actual player-0 secret-input instructions
+        run: python scripts/check_mpspdz.py --mpspdz /tmp/mp-spdz --output results/mpspdz-party --max-cases 4 --emulate --party-input
       - name: Preserve runtime programs and logs
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: mpspdz-emulator-evidence
-          path: results/mpspdz-runtime/
+          path: |
+            results/mpspdz-runtime/
+            results/mpspdz-party/
           retention-days: 30
           if-no-files-found: warn
