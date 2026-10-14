@@ -31,3 +31,32 @@ jobs:
           path: results/semantic/
           retention-days: 30
           if-no-files-found: warn
+
+  mpspdz-compiler:
+    needs: deterministic
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install compiler dependencies and local package
+        run: |
+          python -m pip install --disable-pip-version-check -e .
+          python -m pip install --disable-pip-version-check numpy sympy gmpy2 networkx pycryptodome
+      - name: Checkout the exact independent MP-SPDZ compatibility target
+        run: |
+          git clone --quiet --no-checkout https://github.com/data61/MP-SPDZ.git /tmp/mp-spdz
+          git -C /tmp/mp-spdz checkout --quiet 78fe3d8bad4e654276eb3a11a88173195e672f44
+          git -C /tmp/mp-spdz rev-parse HEAD
+      - name: Compile invoked fixed-point programs using the real compiler
+        run: python scripts/check_mpspdz.py --mpspdz /tmp/mp-spdz --output results/mpspdz --max-cases 4
+      - name: Store compiler logs and source files
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mpspdz-compiler-evidence
+          path: results/mpspdz/
+          retention-days: 30
+          if-no-files-found: warn
