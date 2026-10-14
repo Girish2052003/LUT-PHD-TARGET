@@ -46,14 +46,16 @@
       "secret_typed_literal",
       "runtime_secret_input_get_input_from_0"
     ],
-    "emulator_cases_per_mode": 4,
+    "emulator_cases_per_mode": 27,
     "evidence_runs": [
       38488603949,
       38488848728,
       38489081857,
-      38489589290
+      38489589290,
+      38490443262
     ],
     "original_spdzeval_reproduced": false,
-    "real_secure_mpc_executed": false
+    "real_secure_mpc_executed": false,
+    "emulator_case_functions_covered": 24
   }
 }
