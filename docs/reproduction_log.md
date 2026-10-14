@@ -16,3 +16,11 @@
   before requesting missing artifacts or API provisioning. This cannot replace
   the original-code/313-task reproduction requirement.
 - No original baseline generations or full SPDZEval results have been reproduced.
+
+### Independent verification milestones (not SPDZEval)
+
+- GitHub Actions [38488603949](https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38488603949): 22/22 tests; 24 functions, 7,464 identical input pairs; reconstructed host-Python baseline 4,109 passes (3,355 exceptions), domain-safe extension 7,464 passes. Independent raw observation/manifest and SHA-256 verification passed.
+- GitHub Actions [38488848728](https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38488848728): genuine pinned MP-SPDZ compiler accepted eight invoked fixed-point test programs (4 each mode), all using secret-typed literal inputs.
+- GitHub Actions [38489081857](https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38489081857): official MP-SPDZ cleartext emulator numerically passed all four cases in both modes at 0.05 absolute/relative tolerance; inputs were compile-time constants cast to secret types.
+- GitHub Actions [38489589290](https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38489589290): official emulator compiled and numerically passed four cases in both modes with runtime `sfix.get_input_from(0)` and party-0 input files. Neither method outperformed the other at the measured numerical tolerance.
+- Cleartext emulator results do not establish the behavior or security of a genuine multiparty network protocol. Tests use a tiny, targeted runtime sample. Original source/benchmark remains unresolved; see [issue #2](https://github.com/Girish2052003/LUT-PHD-TARGET/issues/2).
