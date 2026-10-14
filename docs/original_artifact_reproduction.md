@@ -37,7 +37,7 @@ The authors' saved final-stage evaluation logs report the following numbers of *
 | Syntax | 26 / 35 |
 | **Total** | **269 / 313 = 85.94%** |
 
-This agrees with the paper's reported first-candidate result. It is an **independent count of the authors' previously evaluated flags**, not a new invocation of the model or a rerun of their MPC protocol. Each task has two saved candidates; `scripts/reproduce_official_scores.py` recalculates pass@1 and pass@2 from those flags, including the **same-task union** for pass@2. The reported pass@2 target is 92.01%; the new independent run must succeed before I treat that value as recalculated.
+This agrees with the paper's reported first-candidate result. It is an **independent count of the authors' previously evaluated flags**, not a new invocation of the model or a rerun of their MPC protocol. Each task has two saved candidates; `scripts/reproduce_official_scores.py` recalculates pass@1 and pass@2 from those flags, including the **same-task union** for pass@2. The successful historical run also established **265/313 second-candidate success** and **288/313 = 92.01% same-task union**, leaving **25 tasks with neither candidate successful**. The preserved metrics and their hashes are indexed in `research/evidence/2026-10-14/receipt.json`. Exact task-identity joins and fresh original-evaluator replay are separate acceptance gates in `HANDOFF.md`.
 
 ## Repeat the provenance and saved-score checks
 

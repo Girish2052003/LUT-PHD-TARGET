@@ -1,21 +1,33 @@
 name: Inspect professor-provided original artifacts
 on:
   push:
-    branches: ["research/authors-artifacts-20261014"]
+    branches: ["main", "research/authors-artifacts-20261014"]
+  pull_request:
+    paths:
+      - 'scripts/*official*'
+      - 'scripts/*original*'
+      - 'scripts/inspect_provided_artifacts.py'
+      - 'scripts/check_handoff.py'
+      - 'tests/**'
+      - 'research/**'
+      - 'README.md'
+      - '.github/workflows/professor-artifacts.yml'
   workflow_dispatch:
 permissions:
   contents: read
 jobs:
   provenance:
     runs-on: ubuntu-24.04
-    timeout-minutes: 12
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Verify metadata parsing
-        run: python -m unittest discover -s tests -p 'test_source_metadata.py' -v
+      - name: Verify regression suite and durable phase markers
+        run: |
+          PYTHONPATH=src python -m unittest discover -s tests -v
+          python scripts/check_handoff.py
       - name: Retrieve publisher metadata and Zenodo file manifest
         run: |
           python scripts/inspect_provided_artifacts.py --output results/official_artifacts --download-under-mib 95
@@ -41,5 +53,5 @@ jobs:
             results/official_artifacts/native_data_audit.json
             results/official_artifacts/original_saved_evaluation_metrics.json
             results/official_artifacts/original_privacy_indicator_audit.json
-          retention-days: 30
-          if-no-files-found: warn
+          retention-days: 90
+          if-no-files-found: error

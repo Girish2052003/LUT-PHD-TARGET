@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "source_commit": "5ca3809f15e8e326ff2d0a9b2e23993704be3dda",
+  "artifact_id": 11889019951,
+  "artifact_name": "professor-provided-artifact-discovery",
+  "artifact_zip_sha256": "9f6b52f24abc0e4887e97bd2b8196f52349e37d15f884fb912d07d0adba6b422",
+  "artifact_expires_at": "2026-11-13T11:33:02Z",
+  "workflow_urls": [
+    "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557115103",
+    "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557128629",
+    "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557114938"
+  ],
+  "retrieved_and_checked_on": "2026-10-14",
+  "local_verification": "53 unittest tests passed at the source commit; log preserved",
+  "files": [
+    {
+      "path": "research/evidence/2026-10-14/original_privacy_indicator_audit.json",
+      "sha256": "bb6b41a103416af46ad1ab2a4a41ae778e4903c19b55d9211dd07101e8fae5e1",
+      "bytes": 281248
+    },
+    {
+      "path": "research/evidence/2026-10-14/original_saved_evaluation_metrics.json",
+      "sha256": "60eb7feab373de18740fa708f1b19c377d73fcfb51f7bdde2d76b77f7a3ea310",
+      "bytes": 2279
+    },
+    {
+      "path": "research/evidence/2026-10-14/source_provenance.json",
+      "sha256": "3eb3ddfcde26853c463ffe4d7a873cb26fc280a8687a03dc86ea9a55bd59f3f1",
+      "bytes": 515
+    },
+    {
+      "path": "research/evidence/2026-10-14/tests-at-5ca3809.log",
+      "sha256": "b536c2cced799cadc0ffea012c106dcbf3d484c8aad6fb4c048e7971036d1eb7",
+      "bytes": 7287
+    }
+  ]
+}

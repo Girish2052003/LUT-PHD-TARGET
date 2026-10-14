@@ -1,0 +1,81 @@
+{
+  "source": "https://zenodo.org/records/18152253",
+  "source_archive_md5": "3c6d7707d7aecc051d35312f81405c66",
+  "metric_source": "original authors' saved evaluation flags",
+  "fresh_compiler_evaluation": false,
+  "live_model_requests": 0,
+  "per_split": {
+    "array_test": {
+      "n": 43,
+      "first_correct": 36,
+      "second_correct": 35,
+      "at_least_one_correct": 40,
+      "pass_at_1_first_percent": 83.72093,
+      "pass_at_1_second_percent": 81.39535,
+      "pass_at_2_percent": 93.02326
+    },
+    "loop_test": {
+      "n": 97,
+      "first_correct": 82,
+      "second_correct": 85,
+      "at_least_one_correct": 90,
+      "pass_at_1_first_percent": 84.53608,
+      "pass_at_1_second_percent": 87.62887,
+      "pass_at_2_percent": 92.78351
+    },
+    "branch_test": {
+      "n": 34,
+      "first_correct": 34,
+      "second_correct": 29,
+      "at_least_one_correct": 34,
+      "pass_at_1_first_percent": 100.0,
+      "pass_at_1_second_percent": 85.29412,
+      "pass_at_2_percent": 100.0
+    },
+    "math_test": {
+      "n": 38,
+      "first_correct": 36,
+      "second_correct": 36,
+      "at_least_one_correct": 37,
+      "pass_at_1_first_percent": 94.73684,
+      "pass_at_1_second_percent": 94.73684,
+      "pass_at_2_percent": 97.36842
+    },
+    "numpy_operation_test": {
+      "n": 32,
+      "first_correct": 24,
+      "second_correct": 24,
+      "at_least_one_correct": 25,
+      "pass_at_1_first_percent": 75.0,
+      "pass_at_1_second_percent": 75.0,
+      "pass_at_2_percent": 78.125
+    },
+    "numpy_ufunc_test": {
+      "n": 34,
+      "first_correct": 31,
+      "second_correct": 31,
+      "at_least_one_correct": 32,
+      "pass_at_1_first_percent": 91.17647,
+      "pass_at_1_second_percent": 91.17647,
+      "pass_at_2_percent": 94.11765
+    },
+    "syntax_test": {
+      "n": 35,
+      "first_correct": 26,
+      "second_correct": 25,
+      "at_least_one_correct": 30,
+      "pass_at_1_first_percent": 74.28571,
+      "pass_at_1_second_percent": 71.42857,
+      "pass_at_2_percent": 85.71429
+    }
+  },
+  "overall": {
+    "n": 313,
+    "first_correct": 269,
+    "second_correct": 265,
+    "at_least_one_correct": 288,
+    "pass_at_1_first_percent": 85.94249,
+    "pass_at_1_second_percent": 84.66454,
+    "pass_at_2_percent": 92.01278
+  }
+}

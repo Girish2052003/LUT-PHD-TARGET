@@ -1,0 +1,355 @@
+{
+  "schema_version": 1,
+  "updated_on": "2026-10-14",
+  "current_pr": "https://github.com/Girish2052003/LUT-PHD-TARGET/pull/5",
+  "historical_remote_main": "0ae96a968022325f3f678b19db1fcd69de483b70",
+  "historical_reviewed_head": "5ca3809f15e8e326ff2d0a9b2e23993704be3dda",
+  "resume_phase": "C",
+  "report_authorized": false,
+  "phases": [
+    {
+      "id": "M1",
+      "title": "Independent paper reconstruction",
+      "status": "PASS",
+      "completion_scope": "Existing paper-inspired implementation and fixture tests only; not the original authors pipeline.",
+      "dependencies": [],
+      "evidence_paths": [
+        "src/spdz_audit/paper_reconstruction.py",
+        "research/evidence/2026-10-14/receipt.json"
+      ],
+      "evidence_commit": "5ca3809f15e8e326ff2d0a9b2e23993704be3dda",
+      "verification": {
+        "implemented": true,
+        "executed": true,
+        "evidence_preserved": true,
+        "independently_checked": true,
+        "reviewer": "code_review agent and primary-agent evidence check"
+      },
+      "next_action": "Preserve; use only as separate supporting work.",
+      "redo_only_if": "Relevant source, configuration, evidence, or acceptance scope changes; document why."
+    },
+    {
+      "id": "M2",
+      "title": "Independent experiments",
+      "status": "PASS",
+      "completion_scope": "Recorded Figure 4, disclosure witness and DomainSafety experiments only; no improvement over authentic original established.",
+      "dependencies": [],
+      "evidence_paths": [
+        "docs/reproduction_log.md",
+        "research/evidence/2026-10-14/receipt.json"
+      ],
+      "evidence_commit": "5ca3809f15e8e326ff2d0a9b2e23993704be3dda",
+      "verification": {
+        "implemented": true,
+        "executed": true,
+        "evidence_preserved": true,
+        "independently_checked": true,
+        "reviewer": "code_review agent and primary-agent evidence check"
+      },
+      "next_action": "Preserve original labels and raw CI evidence; do not substitute for Phase F.",
+      "redo_only_if": "Relevant source, configuration, evidence, or acceptance scope changes; document why."
+    },
+    {
+      "id": "M3",
+      "title": "Official artifact discovery",
+      "status": "PASS",
+      "completion_scope": "Official archive metadata and checksum validated in the historical CI run.",
+      "dependencies": [],
+      "evidence_paths": [
+        "research/evidence/2026-10-14/source_provenance.json",
+        "research/evidence/2026-10-14/receipt.json"
+      ],
+      "evidence_commit": "5ca3809f15e8e326ff2d0a9b2e23993704be3dda",
+      "verification": {
+        "implemented": true,
+        "executed": true,
+        "evidence_preserved": true,
+        "independently_checked": true,
+        "reviewer": "code_review agent and primary-agent evidence check"
+      },
+      "next_action": "Reuse the pinned archive; never repeat the artifact search.",
+      "redo_only_if": "Relevant source, configuration, evidence, or acceptance scope changes; document why."
+    },
+    {
+      "id": "M4",
+      "title": "Archived score reconstruction",
+      "status": "PASS",
+      "completion_scope": "Saved author booleans: first 269/313, second 265/313, union 288/313, neither 25. Exact identity gate is tracked separately in C.",
+      "dependencies": [],
+      "evidence_paths": [
+        "research/evidence/2026-10-14/original_saved_evaluation_metrics.json",
+        "research/evidence/2026-10-14/receipt.json"
+      ],
+      "evidence_commit": "5ca3809f15e8e326ff2d0a9b2e23993704be3dda",
+      "verification": {
+        "implemented": true,
+        "executed": true,
+        "evidence_preserved": true,
+        "independently_checked": true,
+        "reviewer": "code_review agent and primary-agent evidence check"
+      },
+      "next_action": "Preserve totals; extend with task-ID joins and original-evaluator semantics.",
+      "redo_only_if": "Relevant source, configuration, evidence, or acceptance scope changes; document why."
+    },
+    {
+      "id": "M5",
+      "title": "Static original-output indicators",
+      "status": "PASS",
+      "completion_scope": "Syntactic screen only: 11/626 vs 182/626 reveal indicators; not confirmed leaks.",
+      "dependencies": [],
+      "evidence_paths": [
+        "research/evidence/2026-10-14/original_privacy_indicator_audit.json",
+        "research/evidence/2026-10-14/receipt.json"
+      ],
+      "evidence_commit": "5ca3809f15e8e326ff2d0a9b2e23993704be3dda",
+      "verification": {
+        "implemented": true,
+        "executed": true,
+        "evidence_preserved": true,
+        "independently_checked": true,
+        "reviewer": "code_review agent and primary-agent evidence check"
+      },
+      "next_action": "Use for investigation, never as proof of disclosure.",
+      "redo_only_if": "Relevant source, configuration, evidence, or acceptance scope changes; document why."
+    },
+    {
+      "id": "M6",
+      "title": "Historical regression and CI checks",
+      "status": "PASS",
+      "completion_scope": "53 passing tests and successful historical workflows at 5ca3809 only.",
+      "dependencies": [],
+      "evidence_paths": [
+        "research/evidence/2026-10-14/tests-at-5ca3809.log",
+        "research/evidence/2026-10-14/receipt.json"
+      ],
+      "evidence_commit": "5ca3809f15e8e326ff2d0a9b2e23993704be3dda",
+      "verification": {
+        "implemented": true,
+        "executed": true,
+        "evidence_preserved": true,
+        "independently_checked": true,
+        "reviewer": "code_review agent and primary-agent evidence check"
+      },
+      "next_action": "Run changed-scope checks for later commits; do not relabel historical CI as current.",
+      "redo_only_if": "Relevant source, configuration, evidence, or acceptance scope changes; document why."
+    },
+    {
+      "id": "A",
+      "title": "Original source-to-paper audit",
+      "status": "IN_PROGRESS",
+      "completion_scope": "Complete source mapping and seven real stage traces required.",
+      "dependencies": [
+        "M3"
+      ],
+      "evidence_paths": [
+        "docs/deep_paper_audit.md",
+        "docs/original_artifact_reproduction.md"
+      ],
+      "evidence_commit": "5ca3809f15e8e326ff2d0a9b2e23993704be3dda",
+      "verification": {
+        "implemented": false,
+        "executed": false,
+        "evidence_preserved": true,
+        "independently_checked": false,
+        "reviewer": "Pending acceptance review"
+      },
+      "next_action": "Inspect complete original source, dependencies, prompts and evaluator.",
+      "redo_only_if": "Relevant source, configuration, evidence, or acceptance scope changes; document why."
+    },
+    {
+      "id": "B1",
+      "title": "Level 1: archived results",
+      "status": "PASS",
+      "completion_scope": "Archived flags only, same narrow completion as M4.",
+      "dependencies": [
+        "M4"
+      ],
+      "evidence_paths": [
+        "research/evidence/2026-10-14/original_saved_evaluation_metrics.json",
+        "research/evidence/2026-10-14/receipt.json"
+      ],
+      "evidence_commit": "5ca3809f15e8e326ff2d0a9b2e23993704be3dda",
+      "verification": {
+        "implemented": true,
+        "executed": true,
+        "evidence_preserved": true,
+        "independently_checked": true,
+        "reviewer": "code_review agent and primary-agent evidence check"
+      },
+      "next_action": "Do not repeat as a new experiment; finish the independent identity gate C.",
+      "redo_only_if": "Relevant source, configuration, evidence, or acceptance scope changes; document why."
+    },
+    {
+      "id": "B2",
+      "title": "Level 2: original evaluator replay",
+      "status": "NOT_STARTED",
+      "completion_scope": "Fresh compiler, MASCOT execution and original oracle on all available original candidates.",
+      "dependencies": [
+        "A",
+        "C"
+      ],
+      "evidence_paths": [],
+      "evidence_commit": null,
+      "verification": {
+        "implemented": false,
+        "executed": false,
+        "evidence_preserved": false,
+        "independently_checked": false,
+        "reviewer": "Pending acceptance review"
+      },
+      "next_action": "After source/sandbox audit, smoke test then attempt all 313 tasks, retaining every failure.",
+      "redo_only_if": "Relevant source, configuration, evidence, or acceptance scope changes; document why."
+    },
+    {
+      "id": "B3",
+      "title": "Level 3: original model generation",
+      "status": "BLOCKED",
+      "completion_scope": "Requires authorized credentials and verified historical model availability; no paid calls or substitute model authorized.",
+      "dependencies": [
+        "A"
+      ],
+      "evidence_paths": [],
+      "evidence_commit": null,
+      "verification": {
+        "implemented": false,
+        "executed": false,
+        "evidence_preserved": false,
+        "independently_checked": false,
+        "reviewer": "Pending acceptance review"
+      },
+      "next_action": "Record exact model/dependency constraints; continue Level 2 without paid calls.",
+      "redo_only_if": "Relevant source, configuration, evidence, or acceptance scope changes; document why."
+    },
+    {
+      "id": "C",
+      "title": "Exact task identities and evaluator semantics",
+      "status": "IN_PROGRESS",
+      "completion_scope": "Reconcile native, processed, generated and outcome IDs; audit oracle, candidate order, MASCOT and tolerances.",
+      "dependencies": [
+        "M3"
+      ],
+      "evidence_paths": [
+        "research/reviews/pr5-independent-review.md"
+      ],
+      "evidence_commit": "5ca3809f15e8e326ff2d0a9b2e23993704be3dda",
+      "verification": {
+        "implemented": false,
+        "executed": false,
+        "evidence_preserved": true,
+        "independently_checked": false,
+        "reviewer": "Pending acceptance review"
+      },
+      "next_action": "Close PR #5 task identity gap and verify boolean semantics from source.",
+      "redo_only_if": "Relevant source, configuration, evidence, or acceptance scope changes; document why."
+    },
+    {
+      "id": "D",
+      "title": "Demonstrated original-system limitation",
+      "status": "NOT_STARTED",
+      "completion_scope": "Investigate original 25 both-failed tasks and other candidate classes; choose one evidenced failure.",
+      "dependencies": [
+        "A",
+        "B2"
+      ],
+      "evidence_paths": [],
+      "evidence_commit": null,
+      "verification": {
+        "implemented": false,
+        "executed": false,
+        "evidence_preserved": false,
+        "independently_checked": false,
+        "reviewer": "Pending acceptance review"
+      },
+      "next_action": "Use authentic failures and original evaluator witnesses; do not select the old fix by convenience.",
+      "redo_only_if": "Relevant source, configuration, evidence, or acceptance scope changes; document why."
+    },
+    {
+      "id": "E",
+      "title": "Patch actual original system",
+      "status": "NOT_STARTED",
+      "completion_scope": "A runnable, narrowly scoped original-source patch with before/after regression evidence.",
+      "dependencies": [
+        "D"
+      ],
+      "evidence_paths": [],
+      "evidence_commit": null,
+      "verification": {
+        "implemented": false,
+        "executed": false,
+        "evidence_preserved": false,
+        "independently_checked": false,
+        "reviewer": "Pending acceptance review"
+      },
+      "next_action": "Implement only after D establishes a real original-system defect.",
+      "redo_only_if": "Relevant source, configuration, evidence, or acceptance scope changes; document why."
+    },
+    {
+      "id": "F",
+      "title": "Paired baseline and modification comparison",
+      "status": "NOT_STARTED",
+      "completion_scope": "Matched raw baseline/modified measurements, regressions, ablation, uncertainty and full failure matrix.",
+      "dependencies": [
+        "B2",
+        "E"
+      ],
+      "evidence_paths": [],
+      "evidence_commit": null,
+      "verification": {
+        "implemented": false,
+        "executed": false,
+        "evidence_preserved": false,
+        "independently_checked": false,
+        "reviewer": "Pending acceptance review"
+      },
+      "next_action": "Measure original and modified source with identical tasks, oracle and protocol.",
+      "redo_only_if": "Relevant source, configuration, evidence, or acceptance scope changes; document why."
+    },
+    {
+      "id": "G",
+      "title": "Practical evidence acceptance",
+      "status": "IN_PROGRESS",
+      "completion_scope": "Independent review, CI and durable evidence for every completed practical requirement.",
+      "dependencies": [
+        "M6"
+      ],
+      "evidence_paths": [
+        "research/reviews/pr5-independent-review.md"
+      ],
+      "evidence_commit": "5ca3809f15e8e326ff2d0a9b2e23993704be3dda",
+      "verification": {
+        "implemented": false,
+        "executed": false,
+        "evidence_preserved": true,
+        "independently_checked": false,
+        "reviewer": "Pending acceptance review"
+      },
+      "next_action": "Repair audit helpers, verify task identities, obtain current CI/review before merging PR #5.",
+      "redo_only_if": "Relevant source, configuration, evidence, or acceptance scope changes; document why."
+    },
+    {
+      "id": "REPORT",
+      "title": "Final report readiness (writing locked)",
+      "status": "BLOCKED",
+      "completion_scope": "Practical R1\u2013R8 accepted; report writing still requires separate explicit user authorization.",
+      "dependencies": [
+        "A",
+        "B2",
+        "D",
+        "E",
+        "F",
+        "G"
+      ],
+      "evidence_paths": [],
+      "evidence_commit": null,
+      "verification": {
+        "implemented": false,
+        "executed": false,
+        "evidence_preserved": false,
+        "independently_checked": false,
+        "reviewer": "Pending acceptance review"
+      },
+      "next_action": "Continue practical work. Ask for report permission only when readiness gate passes.",
+      "redo_only_if": "Relevant source, configuration, evidence, or acceptance scope changes; document why."
+    }
+  ]
+}

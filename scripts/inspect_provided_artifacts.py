@@ -57,8 +57,7 @@ def record_files(record: dict) -> list[dict]:
         results.append({
             "name": str(item.get("key") or item.get("filename") or item.get("id") or ""),
             "size": item.get("size", 0),
-            "checksum": item.get("checksum") or (item.get("checksum") or {}).get("md5")
-            if not isinstance(item.get("checksum"), dict) else item.get("checksum"),
+            "checksum": item.get("checksum"),
             "url": access.get("self") or access.get("content") or access.get("download"),
         })
     return results
@@ -119,6 +118,23 @@ def inspect_archive(path: Path) -> dict:
             "documentation": documentation}
 
 
+def validate_checksum(data: bytes, expected: object) -> None:
+    """Fail closed when published checksum metadata cannot be verified."""
+    if isinstance(expected, str) and ":" in expected:
+        algorithm, digest = expected.split(":", 1)
+        checksums = {algorithm.lower(): digest}
+    elif isinstance(expected, dict) and expected:
+        checksums = expected
+    else:
+        raise ValueError("Missing or malformed published checksum")
+    for algorithm, digest in checksums.items():
+        if algorithm not in {"md5", "sha256"} or not isinstance(digest, str):
+            raise ValueError("Unsupported published checksum format")
+        actual = hashlib.new(algorithm, data).hexdigest()
+        if digest.lower() != actual:
+            raise ValueError(f"Published {algorithm} checksum mismatch")
+
+
 def download_archive(file: dict, dest: Path, size_cap: int) -> dict:
     name = file["name"]
     url = file.get("url")
@@ -137,14 +153,11 @@ def download_archive(file: dict, dest: Path, size_cap: int) -> dict:
     if not isinstance(declared_size, int) or declared_size > size_cap:
         return {"downloaded": False, "reason": "size exceeds configured cap", "declared_size": declared_size}
     data = fetch(url, max_bytes=size_cap)
+    if declared_size and len(data) != declared_size:
+        raise ValueError(f"Published size mismatch for {name}")
     digest = hashlib.sha256(data).hexdigest()
     md5 = hashlib.md5(data).hexdigest()  # provenance only, not a security primitive
-    expected = file.get("checksum")
-    if isinstance(expected, str) and ":" in expected:
-        kind, value = expected.split(":", 1)
-        actual = {"md5": md5, "sha256": digest}.get(kind.lower())
-        if actual and value.lower() != actual:
-            raise ValueError(f"Published {kind} checksum mismatch for {name}")
+    validate_checksum(data, file.get("checksum"))
     path = dest / Path(name).name
     path.write_bytes(data)
     info = inspect_archive(path)
@@ -189,6 +202,7 @@ def main() -> int:
                     args.download_under_mib * 1024 * 1024)
             except Exception as exc:
                 f["inspection"] = {"error": str(exc)}
+                result["retrieval_errors"]["archive:" + f["name"]] = str(exc)
                 print("ARCHIVE DOWNLOAD ERROR:", f["name"], str(exc))
     except Exception as exc:
         print("ZENODO ERROR:", exc)

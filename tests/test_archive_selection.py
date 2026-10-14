@@ -13,5 +13,11 @@ class ArchiveSelectionTests(unittest.TestCase):
                   "SPDZCoder/Player-Data/key", "OTHER/src/pipeline.py"]:
             self.assertFalse(wanted(p), p)
 
+    def test_reject_noncanonical_paths_before_zip_export(self):
+        for p in ["SPDZCoder//src/x.py", "SPDZCoder/./src/x.py",
+                  "/SPDZCoder/src/x.py", "SPDZCoder/src/../src/x.py",
+                  "SPDZCoder/src\\x.py"]:
+            self.assertFalse(wanted(p), p)
+
 if __name__ == "__main__":
     unittest.main()

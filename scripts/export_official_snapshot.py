@@ -27,6 +27,9 @@ EXPECTED_MD5 = "3c6d7707d7aecc051d35312f81405c66"
 
 def wanted(name: str) -> bool:
     candidate = PurePosixPath(name)
+    # Validate exactly the spelling written to the ZIP, not a normalized alias.
+    if candidate.as_posix() != name or candidate.is_absolute() or "\\" in name:
+        return False
     parts = candidate.parts
     if len(parts) < 2 or parts[0] != "SPDZCoder":
         return False
@@ -57,6 +60,7 @@ def main() -> None:
     output = Path(args.output)
     output.parent.mkdir(parents=True, exist_ok=True)
     collected = []
+    seen = set()
     sizes = Counter()
     with tarfile.open(archive, "r:*") as src, zipfile.ZipFile(
             output, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=6) as dst:
@@ -75,6 +79,9 @@ def main() -> None:
             if len(raw) != member.size:
                 raise ValueError(f"File changed during reading: {member.name}")
             relative = member.name[len(ROOT):]
+            if relative in seen:
+                raise ValueError(f"Duplicate export path: {relative}")
+            seen.add(relative)
             dst.writestr(relative, raw)
             sizes[relative.split("/")[0]] += 1
             collected.append({"path": relative, "bytes": len(raw),

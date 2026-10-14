@@ -1,0 +1,277 @@
+{
+  "schema_version": 1,
+  "source": "research/requirements/execution_contract.md",
+  "requirements": [
+    {
+      "id": "R1",
+      "title": "Study original paper",
+      "source_sentence": "Please study the provided paper and its codebase, reproduce the implementation and key experimental results, and explain the paper’s main concepts and methodology.",
+      "scientific_interpretation": "Map all major paper claims to original code or a documented absence.",
+      "implementation_obligation": "Read complete paper, appendix and original source.",
+      "experimental_obligation": "Trace representative authentic tasks through all stages.",
+      "expected_outputs": "Paper-to-code map and seven task traces.",
+      "acceptance_criteria": "Every major component traced with exact source paths.",
+      "phase_ids": [
+        "A"
+      ],
+      "status": "IN_PROGRESS",
+      "evidence_paths": [
+        "docs/deep_paper_audit.md"
+      ],
+      "exact_evidence_commit": "5ca3809f15e8e326ff2d0a9b2e23993704be3dda",
+      "test_workflow_identifiers": [
+        "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557115103",
+        "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557128629",
+        "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557114938"
+      ],
+      "measured_results": null,
+      "known_limitations": "Paper audit exists; source mapping incomplete.",
+      "verification_reviewer": "Pending requirement acceptance; historical audit reviewed by code_review agent",
+      "completion": {
+        "implemented": false,
+        "executed": false,
+        "evidence_preserved": true,
+        "independently_checked": false
+      }
+    },
+    {
+      "id": "R2",
+      "title": "Reproduce original implementation",
+      "source_sentence": "Please study the provided paper and its codebase, reproduce the implementation and key experimental results, and explain the paper’s main concepts and methodology.",
+      "scientific_interpretation": "Execute author entry points in a pinned environment.",
+      "implementation_obligation": "Keep immutable original and separate modified source.",
+      "experimental_obligation": "Smoke then execute intended stages; disclose historical dependency blockers.",
+      "expected_outputs": "Source manifest, environment pins and run logs.",
+      "acceptance_criteria": "Original execution evidenced; substitutions cannot count as PASS.",
+      "phase_ids": [
+        "A",
+        "B2",
+        "B3"
+      ],
+      "status": "IN_PROGRESS",
+      "evidence_paths": [
+        "research/evidence/2026-10-14/source_provenance.json"
+      ],
+      "exact_evidence_commit": "5ca3809f15e8e326ff2d0a9b2e23993704be3dda",
+      "test_workflow_identifiers": [
+        "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557115103",
+        "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557128629",
+        "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557114938"
+      ],
+      "measured_results": null,
+      "known_limitations": "Archive retrieved; full generation needs credentials/model availability.",
+      "verification_reviewer": "Pending requirement acceptance; historical audit reviewed by code_review agent",
+      "completion": {
+        "implemented": false,
+        "executed": false,
+        "evidence_preserved": true,
+        "independently_checked": false
+      }
+    },
+    {
+      "id": "R3",
+      "title": "Reproduce key results",
+      "source_sentence": "Please study the provided paper and its codebase, reproduce the implementation and key experimental results, and explain the paper’s main concepts and methodology.",
+      "scientific_interpretation": "Fresh original evaluation, plus archived reconstruction as separate evidence.",
+      "implementation_obligation": "Use exact IDs, authentic candidates and original oracle.",
+      "experimental_obligation": "Attempt all 313 tasks, comparative baselines and available ablations.",
+      "expected_outputs": "Task-level outcomes, category metrics and logs.",
+      "acceptance_criteria": "Independent compile/runtime/oracle evidence; archived flags alone insufficient.",
+      "phase_ids": [
+        "B1",
+        "B2",
+        "C"
+      ],
+      "status": "IN_PROGRESS",
+      "evidence_paths": [
+        "research/evidence/2026-10-14/original_saved_evaluation_metrics.json"
+      ],
+      "exact_evidence_commit": "5ca3809f15e8e326ff2d0a9b2e23993704be3dda",
+      "test_workflow_identifiers": [
+        "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557115103",
+        "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557128629",
+        "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557114938"
+      ],
+      "measured_results": "Archived first 269/313, second 265/313, union 288/313; fresh replay pending.",
+      "known_limitations": "Archived first 269/313, second 265/313, union 288/313; fresh replay pending.",
+      "verification_reviewer": "Pending requirement acceptance; historical audit reviewed by code_review agent",
+      "completion": {
+        "implemented": false,
+        "executed": false,
+        "evidence_preserved": true,
+        "independently_checked": false
+      }
+    },
+    {
+      "id": "R4",
+      "title": "Explain actual methodology",
+      "source_sentence": "Please study the provided paper and its codebase, reproduce the implementation and key experimental results, and explain the paper’s main concepts and methodology.",
+      "scientific_interpretation": "Explain stage relationships using real implementation traces.",
+      "implementation_obligation": "Map input/refactor/generate/reflect/repair/evaluate entry points.",
+      "experimental_obligation": "Capture seven category traces without fabricated responses.",
+      "expected_outputs": "Source map and authentic intermediate representations.",
+      "acceptance_criteria": "Each explanation linked to reproducible original-source traces.",
+      "phase_ids": [
+        "A"
+      ],
+      "status": "IN_PROGRESS",
+      "evidence_paths": [
+        "docs/paper_guide.md"
+      ],
+      "exact_evidence_commit": "5ca3809f15e8e326ff2d0a9b2e23993704be3dda",
+      "test_workflow_identifiers": [],
+      "measured_results": null,
+      "known_limitations": "Conceptual notes exist; original-source traces incomplete.",
+      "verification_reviewer": "Pending requirement acceptance; historical audit reviewed by code_review agent",
+      "completion": {
+        "implemented": false,
+        "executed": false,
+        "evidence_preserved": true,
+        "independently_checked": false
+      }
+    },
+    {
+      "id": "R5",
+      "title": "Demonstrate substantive limitation",
+      "source_sentence": "Then identify one substantive limitation and address it through your own code modifications.",
+      "scientific_interpretation": "A reproducible defect belonging to the original system.",
+      "implementation_obligation": "Investigate candidate failure classes and root causes.",
+      "experimental_obligation": "Minimal witness, alternatives, affected scope and impact.",
+      "expected_outputs": "Limitation dossier and failing original case.",
+      "acceptance_criteria": "Authentic original-system witness executes and is independently checked.",
+      "phase_ids": [
+        "D"
+      ],
+      "status": "NOT_STARTED",
+      "evidence_paths": [],
+      "exact_evidence_commit": null,
+      "test_workflow_identifiers": [],
+      "measured_results": null,
+      "known_limitations": "Static reveals are indicators, not confirmed leaks; earlier tests used independent reconstruction.",
+      "verification_reviewer": "Pending requirement acceptance; historical audit reviewed by code_review agent",
+      "completion": {
+        "implemented": false,
+        "executed": false,
+        "evidence_preserved": false,
+        "independently_checked": false
+      }
+    },
+    {
+      "id": "R6",
+      "title": "Implement original-source modification",
+      "source_sentence": "Then identify one substantive limitation and address it through your own code modifications.",
+      "scientific_interpretation": "Modify authentic source or reproducibly apply a patch.",
+      "implementation_obligation": "Pin baseline and preserve licensed attribution.",
+      "experimental_obligation": "Meaningful before/after regression and scope tests.",
+      "expected_outputs": "Patch, source hashes, tests and run logs.",
+      "acceptance_criteria": "Modification addresses demonstrated failure without hidden oracle/input changes.",
+      "phase_ids": [
+        "E"
+      ],
+      "status": "NOT_STARTED",
+      "evidence_paths": [],
+      "exact_evidence_commit": null,
+      "test_workflow_identifiers": [],
+      "measured_results": null,
+      "known_limitations": "No qualifying original-source patch accepted yet.",
+      "verification_reviewer": "Pending requirement acceptance; historical audit reviewed by code_review agent",
+      "completion": {
+        "implemented": false,
+        "executed": false,
+        "evidence_preserved": false,
+        "independently_checked": false
+      }
+    },
+    {
+      "id": "R7",
+      "title": "Compare original and modified",
+      "source_sentence": "Please submit a brief report describing the limitation, your proposed solution, relevant code snippets, and experimental results comparing your modified implementation with the original baseline.",
+      "scientific_interpretation": "Fair matched experiments isolate the change.",
+      "implementation_obligation": "Build task-level paired comparison and failure accounting.",
+      "experimental_obligation": "Same candidates/input/oracle/protocol; ablation, regressions and uncertainty.",
+      "expected_outputs": "Raw paired results, metrics and complete failure matrix.",
+      "acceptance_criteria": "Measured baseline and modified results independently reproducible under equal conditions.",
+      "phase_ids": [
+        "F"
+      ],
+      "status": "NOT_STARTED",
+      "evidence_paths": [],
+      "exact_evidence_commit": null,
+      "test_workflow_identifiers": [],
+      "measured_results": null,
+      "known_limitations": "Independent DomainSafety results do not satisfy this requirement.",
+      "verification_reviewer": "Pending requirement acceptance; historical audit reviewed by code_review agent",
+      "completion": {
+        "implemented": false,
+        "executed": false,
+        "evidence_preserved": false,
+        "independently_checked": false
+      }
+    },
+    {
+      "id": "R8",
+      "title": "Document reproduction difficulties",
+      "source_sentence": "Please also document any difficulties encountered during reproduction.",
+      "scientific_interpretation": "Retain negative results and precise blockers.",
+      "implementation_obligation": "Maintain run manifests and difficulty log.",
+      "experimental_obligation": "Track environment, dependency, model, data, compiler and oracle failures.",
+      "expected_outputs": "Difficulty register tied to commands, logs and resolutions.",
+      "acceptance_criteria": "Every attempted run or failure has an inspectable cause/status.",
+      "phase_ids": [
+        "A",
+        "B2",
+        "B3",
+        "G"
+      ],
+      "status": "IN_PROGRESS",
+      "evidence_paths": [
+        "docs/reproduction_log.md",
+        "research/reviews/pr5-independent-review.md"
+      ],
+      "exact_evidence_commit": "5ca3809f15e8e326ff2d0a9b2e23993704be3dda",
+      "test_workflow_identifiers": [
+        "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557115103",
+        "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557128629",
+        "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557114938"
+      ],
+      "measured_results": null,
+      "known_limitations": "Initial failures documented; execution and full failure inventory ongoing.",
+      "verification_reviewer": "Pending requirement acceptance; historical audit reviewed by code_review agent",
+      "completion": {
+        "implemented": false,
+        "executed": false,
+        "evidence_preserved": true,
+        "independently_checked": false
+      }
+    },
+    {
+      "id": "R9",
+      "title": "Final report readiness",
+      "source_sentence": "Please submit a brief report describing the limitation, your proposed solution, relevant code snippets, and experimental results comparing your modified implementation with the original baseline.",
+      "scientific_interpretation": "Practical readiness only; report is explicitly deferred by user.",
+      "implementation_obligation": "Check R1–R8 evidence or explicit accepted exceptions.",
+      "experimental_obligation": "Independent final review of every practical acceptance gate.",
+      "expected_outputs": "Gate summary and user authorization record, then eventual report.",
+      "acceptance_criteria": "R1–R8 defensibly complete or exceptions accepted; user permission before drafting.",
+      "phase_ids": [
+        "REPORT"
+      ],
+      "status": "BLOCKED",
+      "evidence_paths": [
+        "HANDOFF.md",
+        "research/requirements/execution_contract.md"
+      ],
+      "exact_evidence_commit": null,
+      "test_workflow_identifiers": [],
+      "measured_results": null,
+      "known_limitations": "No accepted practical exceptions and no report authorization.",
+      "verification_reviewer": "Pending requirement acceptance; historical audit reviewed by code_review agent",
+      "completion": {
+        "implemented": false,
+        "executed": false,
+        "evidence_preserved": true,
+        "independently_checked": false
+      }
+    }
+  ]
+}
