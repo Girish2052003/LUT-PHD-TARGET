@@ -43,7 +43,7 @@ def run_process(cmd: list[str], cwd: Path, timeout: int) -> dict:
         return {"returncode": None, "output": str(error), "timed_out": True}
 
 
-def check(mpspdz: Path, output: Path, emulate: bool = False, max_cases: int = 4) -> dict:
+def check(mpspdz: Path, output: Path, emulate: bool = False, max_cases: int = 4, party_input: bool = False) -> dict:
     mpspdz = mpspdz.resolve()
     if not (mpspdz / "compile.py").is_file() or not (mpspdz / "Programs" / "Source").is_dir():
         raise ValueError("Expected MP-SPDZ checkout with compile.py and Programs/Source")
@@ -65,13 +65,14 @@ def check(mpspdz: Path, output: Path, emulate: bool = False, max_cases: int = 4)
             path = mpspdz / "Programs" / "Source" / (name + ".mpc")
             if path.exists():
                 raise FileExistsError("Refusing to overwrite " + str(path))
+            input_expression = "sfix.get_input_from(0)" if party_input else f"sfix({x!r})"
             code = (lower(task["source"], mode=mode, backend="mpspdz")
                     + "\nfrom Compiler.library import print_ln\n"
-                    + f"_spdz_audit_x = sfix({x!r})\n"
+                    + f"_spdz_audit_x = {input_expression}\n"
                     + f"_spdz_audit_y = f(_spdz_audit_x)\n"
                     + "print_ln('SPDZ_AUDIT_RESULT: %s', _spdz_audit_y.reveal())\n")
             record = {"task": task_id, "mode": mode, "x": x, "expected": expected,
-                      "secret_typed_constant": True, "actual_party_input": False,
+                      "secret_typed_constant": not party_input, "actual_party_input": party_input,
                       "compiler": "pending", "emulation": "not_requested"}
             (output / (name + ".mpc")).write_text(code)
             try:
@@ -82,7 +83,13 @@ def check(mpspdz: Path, output: Path, emulate: bool = False, max_cases: int = 4)
                 record["compiler"] = ("success" if compile_log["returncode"] == 0
                                       else "timeout" if compile_log.get("timed_out") else "failure")
                 if emulate and record["compiler"] == "success":
-                    runtime = run_process([str(emulator), name], mpspdz, 180)
+                    input_prefix = output.resolve() / (name + "_party")
+                    if party_input:
+                        Path(str(input_prefix) + "-P0-0").write_text(f"{x!r}\n")
+                    command = [str(emulator), name]
+                    if party_input:
+                        command.extend(["-IF", str(input_prefix)])
+                    runtime = run_process(command, mpspdz, 180)
                     (output / (name + ".emulate.log")).write_text(runtime["output"])
                     match = NUMBER.search(runtime["output"])
                     if runtime["returncode"] != 0:
@@ -106,6 +113,7 @@ def check(mpspdz: Path, output: Path, emulate: bool = False, max_cases: int = 4)
         "absolute_and_relative_tolerance": 0.05,
         "not_original_spdzeval": True,
         "not_security_proof": True,
+        "runtime_input_mode": "party_0_secret_input_file" if party_input else "compile_time_secret_typed_constant",
         "results": records
     }
     (output / "summary.json").write_text(json.dumps(result, indent=2) + "\n")
@@ -117,11 +125,13 @@ def main() -> None:
     p.add_argument("--mpspdz", type=Path, required=True)
     p.add_argument("--output", type=Path, default=ROOT / "results" / "mpspdz")
     p.add_argument("--emulate", action="store_true")
+    p.add_argument("--party-input", action="store_true", help="Use sfix.get_input_from(0) and a runtime input file")
     p.add_argument("--max-cases", type=int, default=4)
     args = p.parse_args()
     if not 1 <= args.max_cases <= len(CASES):
         p.error("--max-cases must be between 1 and " + str(len(CASES)))
-    result = check(args.mpspdz, args.output, emulate=args.emulate, max_cases=args.max_cases)
+    result = check(args.mpspdz, args.output, emulate=args.emulate, max_cases=args.max_cases,
+                   party_input=args.party_input)
     print(json.dumps(result, indent=2))
     if any(r["compiler"] != "success" for r in result["results"] if r["mode"] == "safe"):
         raise SystemExit("At least one modified program failed MP-SPDZ compilation")
