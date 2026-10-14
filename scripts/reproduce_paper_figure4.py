@@ -104,7 +104,10 @@ def main(mp: Path, dest: Path):
         kind: sum(o["correct"] for o in observations if o["variant"] == kind)
         for kind in ("before_repair", "after_repair")
     }
-    if counts["before_repair"] != 1 or counts["after_repair"] != 6:
+    # The broken Figure 4 swaps when left < right, so it sorts DESCENDING.
+    # All six inputs contain distinct values, so none are ascending after it.
+    # The corrected version swaps on >=, so all six become ascending.
+    if counts["before_repair"] != 0 or counts["after_repair"] != 6:
         raise AssertionError("Unexpected Figure 4 repaired/broken behavior: " + str(counts))
     result = dict(
         experiment="paper_figure4_algorithm_reproduction",
