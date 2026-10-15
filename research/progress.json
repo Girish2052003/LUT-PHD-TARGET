@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
   "updated_on": "2026-10-15",
-  "current_pr": "https://github.com/Girish2052003/LUT-PHD-TARGET/pull/5",
+  "current_pr": null,
   "historical_remote_main": "0ae96a968022325f3f678b19db1fcd69de483b70",
   "historical_reviewed_head": "5ca3809f15e8e326ff2d0a9b2e23993704be3dda",
-  "resume_phase": "C",
+  "resume_phase": "B2",
   "report_authorized": false,
   "phases": [
     {
@@ -189,16 +189,19 @@
         "A",
         "C"
       ],
-      "evidence_paths": [],
+      "evidence_paths": [
+        "research/replay/README.md",
+        "research/reviews/original-replay-review.md"
+      ],
       "evidence_commit": null,
       "verification": {
-        "implemented": false,
+        "implemented": true,
         "executed": false,
-        "evidence_preserved": false,
+        "evidence_preserved": true,
         "independently_checked": false,
-        "reviewer": "Pending acceptance review"
+        "reviewer": "replay_safety_review confirmed three fixes and approved the inspected single-candidate CI smoke; execution evidence pending"
       },
-      "next_action": "MP-SPDZ0.3.6 pinned; local namespace sandbox blocked. Establish credential-free network-restricted CI container smoke replay before full benchmark.",
+      "next_action": "Push reviewed runner and execute the first authentic MASCOT candidate in CI; inspect raw evidence before expanding all 313 tasks.",
       "redo_only_if": "Relevant source, configuration, evidence, or acceptance scope changes; document why."
     },
     {
@@ -222,12 +225,37 @@
       "redo_only_if": "Relevant source, configuration, evidence, or acceptance scope changes; document why."
     },
     {
+      "id": "C1",
+      "title": "Exact archived task identity and outcome semantics",
+      "status": "PASS",
+      "completion_scope": "313 IDs and order,1252 candidate hashes,313 template hashes and28 source-file hashes independently checked; saved-flag meaning verified. No fresh execution claimed.",
+      "dependencies": [
+        "M3"
+      ],
+      "evidence_paths": [
+        "research/evidence/2026-10-14/identity_verified_scores.json",
+        "research/original_source_audit.md",
+        "research/reviews/pr5-independent-review.md"
+      ],
+      "evidence_commit": "8d9cf2e5125fbcb8255e30c1e5b8841324223461",
+      "verification": {
+        "implemented": true,
+        "executed": true,
+        "evidence_preserved": true,
+        "independently_checked": true,
+        "reviewer": "original_source_audit agent; exact-head CI38640911552 and38640911559"
+      },
+      "next_action": "Preserve evidence; use it to enforce original-source pairing during Level2 replay.",
+      "redo_only_if": "Archive bytes, parser implementation or acceptance scope changes; record reason."
+    },
+    {
       "id": "C",
       "title": "Exact task identities and evaluator semantics",
       "status": "IN_PROGRESS",
       "completion_scope": "Reconcile native, processed, generated and outcome IDs; audit oracle, candidate order, MASCOT and tolerances.",
       "dependencies": [
-        "M3"
+        "M3",
+        "C1"
       ],
       "evidence_paths": [
         "research/reviews/pr5-independent-review.md",
@@ -326,7 +354,7 @@
         "independently_checked": false,
         "reviewer": "Pending acceptance review"
       },
-      "next_action": "Repair audit helpers, verify task identities, obtain current CI/review before merging PR #5.",
+      "next_action": "PR5 archival audit merged after independent review and exact-head CI. Review and execute original evaluator smoke on the new research branch.",
       "redo_only_if": "Relevant source, configuration, evidence, or acceptance scope changes; document why."
     },
     {
@@ -353,6 +381,19 @@
       },
       "next_action": "Continue practical work. Ask for report permission only when readiness gate passes.",
       "redo_only_if": "Relevant source, configuration, evidence, or acceptance scope changes; document why."
+    }
+  ],
+  "current_branch": "research/original-evaluator-replay-20261015",
+  "validated_main_commit": "5fbc6095eb4e5a37b8818be7d1ec7596753445cd",
+  "merged_prs": [
+    {
+      "number": 5,
+      "merge_commit": "5fbc6095eb4e5a37b8818be7d1ec7596753445cd",
+      "tested_head": "8d9cf2e5125fbcb8255e30c1e5b8841324223461",
+      "ci_runs": [
+        38640911552,
+        38640911559
+      ]
     }
   ]
 }

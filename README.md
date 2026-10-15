@@ -17,6 +17,7 @@ it does not mean the whole assignment is finished.
 | B1 — Level 1: archived results | **PASS** | Archived flags only, same narrow completion as M4. |
 | B2 — Level 2: original evaluator replay | **IN_PROGRESS** | Fresh compiler, MASCOT execution and original oracle on all available original candidates. |
 | B3 — Level 3: original model generation | **BLOCKED** | Requires authorized credentials and verified historical model availability; no paid calls or substitute model authorized. |
+| C1 — Exact archived task identity and outcome semantics | **PASS** | 313 IDs and order,1252 candidate hashes,313 template hashes and28 source-file hashes independently checked; saved-flag meaning verified. No fresh execution claimed. |
 | C — Exact task identities and evaluator semantics | **IN_PROGRESS** | Reconcile native, processed, generated and outcome IDs; audit oracle, candidate order, MASCOT and tolerances. |
 | D — Demonstrated original-system limitation | **NOT_STARTED** | Investigate original 25 both-failed tasks and other candidate classes; choose one evidenced failure. |
 | E — Patch actual original system | **NOT_STARTED** | A runnable, narrowly scoped original-source patch with before/after regression evidence. |

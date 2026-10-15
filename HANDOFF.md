@@ -13,8 +13,7 @@ Girish's explicit authorization.
    investigate that discrepancy; do not silently reset a completed phase.
 3. Read each phase's `next_action`, evidence and completion scope in
    `research/progress.json`. Continue the earliest unfinished dependency.
-4. Work on a research branch. Reuse PR #5 while its official-artifact audit is
-   unfinished. Require independent review and CI before merging. Preserve all
+4. Work on a research branch. PR #5 is complete; use the active original-evaluator research branch for new work. Require independent review and CI before merging. Preserve all
    unmerged branches.
 5. Update the phase record and requirement evidence after each meaningful run.
    Use `python scripts/check_handoff.py --render` to refresh the README table and
@@ -37,16 +36,19 @@ groups total 313. Files named `.json` under processed inputs contain JSON Lines.
 
 ## Current practical work
 
-Audit PR #5 against the checksum-pinned original source. Exact task-ID joins now pass for templates, processed inputs, both authentic
-candidate sets and saved outcomes (313 tasks and 1,252 candidate hashes). The evaluator boolean semantics are documented in `research/original_source_audit.md`;
-finish controlled execution setup before running generated programs. Fix the provenance-helper issues in
-`research/reviews/pr5-independent-review.md`, then obtain review and CI evidence.
+PR #5 is merged as `5fbc6095eb4e5a37b8818be7d1ec7596753445cd` after
+independent review and successful original-artifact/research CI at
+`8d9cf2e5125fbcb8255e30c1e5b8841324223461`. **Do not redo the archived
+provenance phase.** Exact joins and evaluator flag semantics are complete (C1).
 
-After that, map the paper to real source paths, capture seven real stage traces,
-and perform Level 2 replay with the original evaluator in a restricted environment.
-Do not run archived generated Python with credentials or unrestricted host access.
-Check actual MASCOT commands and oracle behavior; the earlier cleartext emulator
-is a separate experiment.
+Resume B2 on branch `research/original-evaluator-replay-20261015`. The restricted
+Docker runner is under review. First run one authentic archived candidate through
+the original MASCOT evaluator, verify its environment/output evidence, then
+expand coverage. The implementation existing is not an execution result.
+
+Read `research/original_source_audit.md` for original stage-1/repair discrepancies
+and oracle weaknesses. They are candidates for investigation, not accepted fixes.
+Keep seven-category stage traces tied to authentic source and actual outcomes.
 
 ## Sources and evidence
 
@@ -81,8 +83,10 @@ the practical gates and ask for report authorization. No email is authorized.
 
 ## Local continuity notes
 
-The active worktree is `LUT-official-review` on local branch
-`research/phase-ledger-20261014`, initially based on the PR #5 head. The older
+The active worktree is `LUT-replay` on branch
+`research/original-evaluator-replay-20261015`, based on merged main `5fbc609`.
+The older `LUT-official-review` worktree is preserved and may contain stale local
+state; use the committed remote checkpoints instead of copying it forward. The older
 `LUT-PHD-TARGET` worktree has preserved independent compiler work at `1b54aad`.
 Do not copy its stale tree over newer official-artifact work. Local paths are
 conveniences; the remote repository and evidence hashes are the durable state.

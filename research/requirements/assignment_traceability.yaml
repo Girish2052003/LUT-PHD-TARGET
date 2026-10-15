@@ -19,7 +19,7 @@
         "docs/deep_paper_audit.md",
         "research/original_source_audit.md"
       ],
-      "exact_evidence_commit": null,
+      "exact_evidence_commit": "8d9cf2e5125fbcb8255e30c1e5b8841324223461",
       "test_workflow_identifiers": [
         "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557115103",
         "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557128629",
@@ -55,7 +55,7 @@
         "research/evidence/2026-10-14/source_provenance.json",
         "research/original_source_audit.md"
       ],
-      "exact_evidence_commit": null,
+      "exact_evidence_commit": "8d9cf2e5125fbcb8255e30c1e5b8841324223461",
       "test_workflow_identifiers": [
         "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557115103",
         "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557128629",
@@ -84,7 +84,8 @@
       "phase_ids": [
         "B1",
         "B2",
-        "C"
+        "C",
+        "C1"
       ],
       "status": "IN_PROGRESS",
       "evidence_paths": [
@@ -92,7 +93,7 @@
         "research/original_source_audit.md",
         "research/evidence/2026-10-14/identity_verified_scores.json"
       ],
-      "exact_evidence_commit": null,
+      "exact_evidence_commit": "8d9cf2e5125fbcb8255e30c1e5b8841324223461",
       "test_workflow_identifiers": [
         "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557115103",
         "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557128629",
@@ -126,7 +127,7 @@
         "docs/paper_guide.md",
         "research/original_source_audit.md"
       ],
-      "exact_evidence_commit": null,
+      "exact_evidence_commit": "8d9cf2e5125fbcb8255e30c1e5b8841324223461",
       "test_workflow_identifiers": [],
       "measured_results": null,
       "known_limitations": "Conceptual notes exist; original-source traces incomplete.",
@@ -238,7 +239,7 @@
         "research/reviews/pr5-independent-review.md",
         "research/original_source_audit.md"
       ],
-      "exact_evidence_commit": null,
+      "exact_evidence_commit": "8d9cf2e5125fbcb8255e30c1e5b8841324223461",
       "test_workflow_identifiers": [
         "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557115103",
         "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557128629",
