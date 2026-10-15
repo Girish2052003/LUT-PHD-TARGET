@@ -1,0 +1,22 @@
+{
+  "id": 18152253,
+  "title": "SPDZCoder Artifacts",
+  "doi": "10.5281/zenodo.18152253",
+  "publication_date": "2026-01-02",
+  "creators": [
+    {
+      "name": "Dong, Xiaoning",
+      "affiliation": null
+    }
+  ],
+  "license": {
+    "id": "cc-by-4.0"
+  },
+  "source_url": "https://zenodo.org/records/18152253",
+  "archive": {
+    "name": "SPDZCoder.tar",
+    "bytes": 65761280,
+    "md5": "3c6d7707d7aecc051d35312f81405c66",
+    "sha256": "a8ea14150dc1d4ddf53eb4ead450d88139d09b680683f673029877ce0c6e00ac"
+  }
+}
