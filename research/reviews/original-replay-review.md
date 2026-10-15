@@ -58,3 +58,27 @@ original oracle outcome. Only then expand
 the run. Full Level 2 replay, limitation witness, modification, paired comparison
 and practical readiness remain open. Full generation has the separate historical
 model/credential blocker recorded in the requirement ledger.
+
+## Executed smoke and staged expansion
+
+Commit `554522da16fc22fd008b3f5b4c0a5bb6c62a5d45`, run `38673372763`,
+job `116221356127`, artifact `11944757660`: the genuine
+`array_test/indicate_positive`, candidate 0, compiled and completed two-party
+MASCOT with return code 0. The unchanged author oracle accepted the native
+`Pass the test` output. Candidate wall time was 7.437576699 seconds; party-0
+reported protocol time 6.94729 seconds including preprocessing. These are one
+measurement, not a comparative performance estimate.
+
+Independent reviewer `smoke_evidence_review` checked the ZIP and every archived
+evidence file, all 922 original source files, all 36 compiler/script files, the
+runtime binary, exact candidate/template insertion, combined-source hash,
+stdout/stderr and both party logs. All matched. The narrow B2a smoke gate passed.
+The entire 56,289-byte ZIP's 15 extracted files are now durable repository
+evidence, with a receipt and original artifact expiry (13 January 2027).
+
+The staged full-workflow review found no launch blocker. Additional acceptance
+checks now verify each exact command, require three attempts on final timeout,
+and bind source/runtime/package evidence to the reviewed smoke rather than
+merely agreeing across runs. Aggregation rejects missing/duplicate candidates,
+wrong hashes and malformed outcomes; it reports original acceptance separately
+from process completion. Full coverage and scientific acceptance are pending.

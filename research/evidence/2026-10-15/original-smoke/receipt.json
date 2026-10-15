@@ -1,0 +1,88 @@
+{
+  "scope": "One original archived SPDZCoder candidate with unchanged original evaluator; not full reproduction",
+  "research_commit": "554522da16fc22fd008b3f5b4c0a5bb6c62a5d45",
+  "workflow_run": 38673372763,
+  "workflow_url": "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38673372763",
+  "artifact_id": 11944757660,
+  "artifact_zip_sha256": "be9692e52fd4c43c8fcdc78be8ea5c7124fd8fe0b1aac47160a7826a55c610dc",
+  "artifact_bytes": 56289,
+  "artifact_expires_at": "2027-01-13T02:53:26Z",
+  "all_artifact_files_preserved": true,
+  "files": [
+    {
+      "path": "research/evidence/2026-10-15/original-smoke/base-image.json",
+      "bytes": 3266,
+      "sha256": "cd541a7b528eba51a8c96058332ccd81f70056a4dd8a6d3b00a975751da9dab2"
+    },
+    {
+      "path": "research/evidence/2026-10-15/original-smoke/replay-image.json",
+      "bytes": 4424,
+      "sha256": "fa20c8fd2aa448f66706dd736645b0930ab161645480cf9a3d70a7a3154fb971"
+    },
+    {
+      "path": "research/evidence/2026-10-15/original-smoke/smoke/environment.json",
+      "bytes": 1178,
+      "sha256": "e7ee31c23b6c62e4bdd4e10c26e87da9f5c370f13ab2103baf44c41710265040"
+    },
+    {
+      "path": "research/evidence/2026-10-15/original-smoke/smoke/installed-packages.txt",
+      "bytes": 423,
+      "sha256": "482062e5a1fa575904bd36c369852227e57124059e098ca83d6c0bbd4bbad423"
+    },
+    {
+      "path": "research/evidence/2026-10-15/original-smoke/smoke/logs/array_test/indicate_positive/spdzcoder/0/attempt-0-party-indicate_positive-0.log",
+      "bytes": 779,
+      "sha256": "9f65958e2e4666c0205eb673a7b432f78f6afa88b8a601bfd9a4c2adb8096b8f"
+    },
+    {
+      "path": "research/evidence/2026-10-15/original-smoke/smoke/logs/array_test/indicate_positive/spdzcoder/0/attempt-0-party-indicate_positive-1.log",
+      "bytes": 765,
+      "sha256": "82c82a91bcfd15774b02634eedd33ee2cb0e103d10a579ce5639e291a8645398"
+    },
+    {
+      "path": "research/evidence/2026-10-15/original-smoke/smoke/logs/array_test/indicate_positive/spdzcoder/0/attempt-0.mpc",
+      "bytes": 2558,
+      "sha256": "8bdc98867b83ca72af4a62e1d2a8f447f7db4d51e84e2bbcd1ab9c0d72901f91"
+    },
+    {
+      "path": "research/evidence/2026-10-15/original-smoke/smoke/logs/array_test/indicate_positive/spdzcoder/0/attempt-0.stderr.txt",
+      "bytes": 182,
+      "sha256": "bbc1d1698584d7950f0533a1d43a1d74e1e6e7be19ace98c1bf3b45316d84453"
+    },
+    {
+      "path": "research/evidence/2026-10-15/original-smoke/smoke/logs/array_test/indicate_positive/spdzcoder/0/attempt-0.stdout.txt",
+      "bytes": 1229,
+      "sha256": "82d0980c839f7e16fbd51d92a47ad095f2035ba677956c328bbaf18fc03cc957"
+    },
+    {
+      "path": "research/evidence/2026-10-15/original-smoke/smoke/logs/array_test/indicate_positive/spdzcoder/0/outcome.json",
+      "bytes": 1526,
+      "sha256": "0dc21f530d897041e05c378b78591fa9b7408b4151a427c074ab795b141e0205"
+    },
+    {
+      "path": "research/evidence/2026-10-15/original-smoke/smoke/os-packages.txt",
+      "bytes": 2687,
+      "sha256": "ef4477b1efd34b0dd98e1440815b468df79abcadbefcf814a217937bd2ad9c71"
+    },
+    {
+      "path": "research/evidence/2026-10-15/original-smoke/smoke/outcomes.jsonl",
+      "bytes": 1396,
+      "sha256": "6fd8979ee40f98a202d8ccfa8683cfd769b2b3882531be9dfcf8a37037e4d35c"
+    },
+    {
+      "path": "research/evidence/2026-10-15/original-smoke/smoke/source_manifest.json",
+      "bytes": 171582,
+      "sha256": "e8665e9ab89a022716f088a05ac99b478e190545e7dd93101c2ff214b4dd0326"
+    },
+    {
+      "path": "research/evidence/2026-10-15/original-smoke/smoke/ssl-setup.log",
+      "bytes": 2332,
+      "sha256": "634fb84bb9fa28cd0efad18bdcf82f60c609cc89b82b46cfadae9f983581e04e"
+    },
+    {
+      "path": "research/evidence/2026-10-15/original-smoke/smoke/summary.json",
+      "bytes": 209,
+      "sha256": "e28800ab7d225f41c06c5ac1559ced4f87c3ce5d33de1854bb7b3473e939e44b"
+    }
+  ]
+}

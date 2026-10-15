@@ -41,10 +41,24 @@ independent review and successful original-artifact/research CI at
 `8d9cf2e5125fbcb8255e30c1e5b8841324223461`. **Do not redo the archived
 provenance phase.** Exact joins and evaluator flag semantics are complete (C1).
 
-Resume B2 on branch `research/original-evaluator-replay-20261015`. The restricted
-Docker runner is under review. First run one authentic archived candidate through
-the original MASCOT evaluator, verify its environment/output evidence, then
-expand coverage. The implementation existing is not an execution result.
+Resume B2 on branch `research/original-evaluator-replay-20261015`, PR #6.
+**B2a is complete:** the first authentic archived candidate ran through the
+unchanged original evaluator and two-party MASCOT. Run `38673372763` at
+`554522da16fc22fd008b3f5b4c0a5bb6c62a5d45` passed; all 15 raw artifact files
+are preserved under `research/evidence/2026-10-15/original-smoke/` and independently
+hash-checked. Do not redo that smoke solely to rediscover its result.
+
+The next workflow validates both candidates in seven representative categories,
+then attempts all 1,252 SPDZCoder/GPT-4 candidates. The full run is requested only
+by a commit with `[full-replay]` in its message or explicit workflow dispatch.
+Inspect run/commit before launching another full run. A green smoke or an
+implemented aggregator is not full reproduction.
+
+Preserve the missing native oracle in `numpy_operation_test/np_basic_slicing_stride`
+as a benchmark limitation; do not invent tests or missing GPT-4 party inputs.
+Source-grounded oracle defects (`pass_or_not` filename contamination and three
+signed-relative comparisons) require actual runtime witnesses before choosing a
+main modification. See `research/replay/native_oracle_audit.md`.
 
 Read `research/original_source_audit.md` for original stage-1/repair discrepancies
 and oracle weaknesses. They are candidates for investigation, not accepted fixes.

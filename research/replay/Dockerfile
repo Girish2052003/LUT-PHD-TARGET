@@ -1,5 +1,5 @@
 # Record the resolved image digest in each run; author OS/Python were not pinned.
-ARG BASE_IMAGE=python:3.11.9-slim-bookworm
+ARG BASE_IMAGE=python@sha256:8fb099199b9f2d70342674bd9dbccd3ed03a258f26bbd1d556822c6dfc60c317
 FROM ${BASE_IMAGE}
 ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1
 RUN openssl version && dpkg-query -W > /tmp/os-packages.txt

@@ -81,11 +81,12 @@ def load_and_check():
         for dependency in record.get("dependencies", record.get("phase_ids", [])):
             if dependency not in phase_ids:
                 raise ValueError(f"Unknown phase reference: {dependency}")
-    receipt = json.loads(safe_file("research/evidence/2026-10-14/receipt.json").read_text())
-    for item in receipt["files"]:
-        raw = safe_file(item["path"]).read_bytes()
-        if len(raw) != item["bytes"] or hashlib.sha256(raw).hexdigest() != item["sha256"]:
-            raise ValueError(f"Preserved evidence changed: {item['path']}")
+    for receipt_path in sorted((ROOT / "research/evidence").rglob("receipt.json")):
+        receipt = json.loads(receipt_path.read_text())
+        for item in receipt["files"]:
+            raw = safe_file(item["path"]).read_bytes()
+            if len(raw) != item["bytes"] or hashlib.sha256(raw).hexdigest() != item["sha256"]:
+                raise ValueError(f"Preserved evidence changed: {item['path']}")
     validate_gates(phases, requirements, progress["report_authorized"], progress.get("report_authorization_record"))
     return progress, ledger
 

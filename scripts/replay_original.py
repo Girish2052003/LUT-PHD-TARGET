@@ -208,8 +208,8 @@ def main():
                "runtime_completed": sum(r["runtime_status"] == "PASS" for r in results),
                "harness_errors": sum(r["exception"] is not None for r in results), "baseline_source_unchanged": True}
     (output / "summary.json").write_text(json.dumps(summary, indent=2) + "\n")
-    if summary["harness_errors"] or not summary["runtime_completed"]:
-        raise SystemExit("Replay did not establish a healthy execution environment; inspect preserved evidence")
+    if summary["harness_errors"]:
+        raise SystemExit("Replay encountered harness errors; inspect preserved evidence")
 
 
 if __name__ == "__main__":

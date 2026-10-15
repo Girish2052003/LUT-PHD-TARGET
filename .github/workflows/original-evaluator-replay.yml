@@ -6,8 +6,10 @@ on:
       - 'scripts/prepare_original_replay.py'
       - 'scripts/replay_original.py'
       - 'scripts/run_original_replay_container.sh'
+      - 'scripts/summarize_original_replay.py'
       - 'research/replay/**'
       - 'tests/test_original_replay.py'
+      - 'tests/test_replay_summary.py'
       - '.github/workflows/original-evaluator-replay.yml'
   workflow_dispatch:
 permissions:
@@ -32,9 +34,9 @@ jobs:
       - name: Build evaluator-only environment with resolved base-image digest
         run: |
           mkdir -p results/original-replay
-          docker pull python:3.11.9-slim-bookworm
-          docker image inspect python:3.11.9-slim-bookworm > results/original-replay/base-image.json
-          BASE_DIGEST=$(docker image inspect --format '{{index .RepoDigests 0}}' python:3.11.9-slim-bookworm)
+          BASE_DIGEST=python@sha256:8fb099199b9f2d70342674bd9dbccd3ed03a258f26bbd1d556822c6dfc60c317
+          docker pull "$BASE_DIGEST"
+          docker image inspect "$BASE_DIGEST" > results/original-replay/base-image.json
           docker build --build-arg BASE_IMAGE="$BASE_DIGEST" -t original-spdz-replay tmp/original-replay-build
           docker image inspect original-spdz-replay > results/original-replay/replay-image.json
       - name: Run one authentic original candidate with the unmodified evaluator
@@ -51,11 +53,117 @@ jobs:
           assert result['baseline_source_unchanged'] and not result['harness_errors'], result
           print('Original MASCOT smoke completed; this is one candidate, not 313-task reproduction.')
           PY
+      - name: Probe both authentic candidates in all seven categories
+        run: |
+          for task in array_test/indicate_positive loop_test/second_largest branch_test/sin_or_cos math_test/next_integer numpy_operation_test/array_from_intrinsic_linspace numpy_ufunc_test/cross_entropy_loss syntax_test/exists_true; do
+            bash scripts/run_original_replay_container.sh original-spdz-replay "results/original-replay/probes/$task" \
+              --task "$task" --system spdzcoder --candidate both
+          done
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from scripts.summarize_original_replay import verify_run
+          runs = sorted(Path('results/original-replay/probes').rglob('summary.json'))
+          assert len(runs) == 7
+          for file in runs:
+              result = json.loads(file.read_text())
+              assert result['attempted'] == result['expected'] == 2, result
+              assert result['runtime_completed'] >= 1 and not result['harness_errors'], result
+              verify_run(file.parent)
+          print('Seven-category environment probe passed; full coverage remains a separate gate.')
+          PY
       - name: Preserve all smoke evidence, including failures
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: original-mascot-smoke-${{ github.sha }}
           path: results/original-replay
+          retention-days: 90
+          if-no-files-found: warn
+
+  full:
+    needs: smoke
+    if: contains(github.event.head_commit.message, '[full-replay]') || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    strategy:
+      fail-fast: false
+      max-parallel: 14
+      matrix:
+        system: [spdzcoder, gpt4_api_docs]
+        split: [array_test, loop_test, branch_test, math_test, numpy_operation_test, numpy_ufunc_test, syntax_test]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Prepare pinned sources
+        run: python scripts/prepare_original_replay.py
+      - name: Build identical pinned evaluator environment
+        run: |
+          BASE_DIGEST=python@sha256:8fb099199b9f2d70342674bd9dbccd3ed03a258f26bbd1d556822c6dfc60c317
+          mkdir -p results/full-environment
+          docker pull "$BASE_DIGEST"
+          docker image inspect "$BASE_DIGEST" > results/full-environment/base-image.json
+          docker build --build-arg BASE_IMAGE="$BASE_DIGEST" -t original-spdz-replay tmp/original-replay-build
+          docker image inspect original-spdz-replay > results/full-environment/replay-image.json
+      - name: Replay every original candidate in the assigned category
+        env:
+          REPLAY_SYSTEM: ${{ matrix.system }}
+          REPLAY_SPLIT: ${{ matrix.split }}
+        run: |
+          bash scripts/run_original_replay_container.sh original-spdz-replay "results/full/$REPLAY_SYSTEM/$REPLAY_SPLIT" \
+            --split "$REPLAY_SPLIT" --system "$REPLAY_SYSTEM" --candidate both
+          python - <<'PY'
+          import os
+          from pathlib import Path
+          from scripts.summarize_original_replay import verify_run
+          root = Path('results/full') / os.environ['REPLAY_SYSTEM'] / os.environ['REPLAY_SPLIT']
+          rows = verify_run(root)
+          print('Raw evidence verified for', len(rows), 'candidate outcomes, including failures.')
+          PY
+      - name: Preserve every result and failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: original-full-${{ matrix.system }}-${{ matrix.split }}-${{ github.sha }}
+          path: results/full
+          retention-days: 90
+          if-no-files-found: warn
+      - name: Preserve environment inspection
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: original-environment-${{ matrix.system }}-${{ matrix.split }}-${{ github.sha }}
+          path: results/full-environment
+          retention-days: 90
+          if-no-files-found: warn
+
+  aggregate:
+    needs: full
+    if: always() && needs.full.result != 'skipped'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: original-full-*-${{ github.sha }}
+          path: results/full
+          merge-multiple: true
+      - name: Require all 1252 original candidate outcomes and verify raw evidence
+        run: python scripts/summarize_original_replay.py --root results/full --output results/full-summary
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: original-full-summary-${{ github.sha }}
+          path: results/full-summary
           retention-days: 90
           if-no-files-found: warn

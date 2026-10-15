@@ -15,11 +15,12 @@ it does not mean the whole assignment is finished.
 | M6 — Historical regression and CI checks | **PASS** | 53 passing tests and successful historical workflows at 5ca3809 only. |
 | A — Original source-to-paper audit | **IN_PROGRESS** | Complete source mapping and seven real stage traces required. |
 | B1 — Level 1: archived results | **PASS** | Archived flags only, same narrow completion as M4. |
+| B2a — Original evaluator and two-party MASCOT smoke | **PASS** | One authentic archived candidate compiled, executed and accepted by unchanged author oracle; no full-benchmark claim. |
 | B2 — Level 2: original evaluator replay | **IN_PROGRESS** | Fresh compiler, MASCOT execution and original oracle on all available original candidates. |
 | B3 — Level 3: original model generation | **BLOCKED** | Requires authorized credentials and verified historical model availability; no paid calls or substitute model authorized. |
 | C1 — Exact archived task identity and outcome semantics | **PASS** | 313 IDs and order,1252 candidate hashes,313 template hashes and28 source-file hashes independently checked; saved-flag meaning verified. No fresh execution claimed. |
 | C — Exact task identities and evaluator semantics | **IN_PROGRESS** | Reconcile native, processed, generated and outcome IDs; audit oracle, candidate order, MASCOT and tolerances. |
-| D — Demonstrated original-system limitation | **NOT_STARTED** | Investigate original 25 both-failed tasks and other candidate classes; choose one evidenced failure. |
+| D — Demonstrated original-system limitation | **IN_PROGRESS** | Investigate original 25 both-failed tasks and other candidate classes; choose one evidenced failure. |
 | E — Patch actual original system | **NOT_STARTED** | A runnable, narrowly scoped original-source patch with before/after regression evidence. |
 | F — Paired baseline and modification comparison | **NOT_STARTED** | Matched raw baseline/modified measurements, regressions, ablation, uncertainty and full failure matrix. |
 | G — Practical evidence acceptance | **IN_PROGRESS** | Independent review, CI and durable evidence for every completed practical requirement. |
