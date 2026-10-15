@@ -59,8 +59,9 @@ def verify_baseline(manifest):
 
 
 class Recorder:
-    def __init__(self, folder: Path, task: str):
+    def __init__(self, folder: Path, task: str, combined_dir: Path | None = None):
         self.folder, self.task, self.attempts = folder, task, []
+        self.combined_dir = combined_dir or Path('/baseline/evaluation/evaluation_storage')
         folder.mkdir(parents=True)
 
     def run(self, command, *, shell, text, capture_output, timeout):
@@ -69,7 +70,7 @@ class Recorder:
             raise ValueError("Unexpected original subprocess contract")
         reset_execution_artifacts(Path("/run"))
         index = len(self.attempts)
-        combined = Path("/baseline/evaluation/evaluation_storage") / (self.task + ".mpc")
+        combined = self.combined_dir / (self.task + ".mpc")
         combined_hash = digest(combined)
         shutil.copyfile(combined, self.folder / f"attempt-{index}.mpc")
         started = time.monotonic()

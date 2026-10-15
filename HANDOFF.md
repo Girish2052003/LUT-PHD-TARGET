@@ -54,6 +54,20 @@ by a commit with `[full-replay]` in its message or explicit workflow dispatch.
 Inspect run/commit before launching another full run. A green smoke or an
 implemented aggregator is not full reproduction.
 
+Full run `38703569637` at `769bb12ce342b814590061ef04fdffbbe19c9990`
+finished 13 category/system jobs (1,176 candidates); the first SPDZCoder math job
+failed during a truncated Zenodo download. The completeness guard rejected the
+missing 76 records. Only failed jobs and their aggregate were retried at the same
+commit; inspect that retry before starting anything new. Attempt-1 metadata is
+in `research/evidence/2026-10-15/original-full/attempt-1.json`.
+
+Phase D now has an independently reviewed, separate 16-case diagnostic workflow
+for native oracle false positives and authentic intermediate public openings.
+See `research/replay/diagnostic_protocol.md` and
+`research/reviews/diagnostic-review.md`. Inspect its real results before declaring
+a witness or selecting a modification. Diagnostic mutations/private inputs are
+never included in archived-candidate benchmark denominators.
+
 Preserve the missing native oracle in `numpy_operation_test/np_basic_slicing_stride`
 as a benchmark limitation; do not invent tests or missing GPT-4 party inputs.
 Source-grounded oracle defects (`pass_or_not` filename contamination and three

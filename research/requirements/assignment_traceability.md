@@ -86,7 +86,7 @@ These are practical acceptance gates. Historical milestones do not replace origi
 - **Acceptance criteria:** Authentic original-system witness executes and is independently checked.
 - **Known limitations:** Source-grounded oracle/repair candidates; runtime witness and selection still pending.
 - **Verification reviewer:** Pending requirement acceptance; historical audit reviewed by code_review agent
-- **Evidence:** `research/replay/native_oracle_audit.md`, `research/original_source_audit.md`
+- **Evidence:** `research/replay/native_oracle_audit.md`, `research/original_source_audit.md`, `research/limitation_candidates.md`, `research/replay/diagnostic_protocol.md`, `research/reviews/diagnostic-review.md`
 - **Evidence commit:** Pending
 - **Workflow identifiers:** Pending
 
@@ -131,7 +131,7 @@ These are practical acceptance gates. Historical milestones do not replace origi
 - **Acceptance criteria:** Every attempted run or failure has an inspectable cause/status.
 - **Known limitations:** Initial failures documented; execution and full failure inventory ongoing.
 - **Verification reviewer:** Pending requirement acceptance; historical audit reviewed by code_review agent
-- **Evidence:** `docs/reproduction_log.md`, `research/reviews/pr5-independent-review.md`, `research/original_source_audit.md`, `research/evidence/2026-10-15/original-smoke/receipt.json`, `research/reviews/original-replay-review.md`
+- **Evidence:** `docs/reproduction_log.md`, `research/reviews/pr5-independent-review.md`, `research/original_source_audit.md`, `research/evidence/2026-10-15/original-smoke/receipt.json`, `research/reviews/original-replay-review.md`, `research/evidence/2026-10-15/original-full/attempt-1.json`
 - **Evidence commit:** 554522da16fc22fd008b3f5b4c0a5bb6c62a5d45
 - **Workflow identifiers:** https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557115103, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557128629, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557114938, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38673372763
 

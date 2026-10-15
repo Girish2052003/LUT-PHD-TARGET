@@ -217,7 +217,8 @@
       "evidence_paths": [
         "research/replay/README.md",
         "research/reviews/original-replay-review.md",
-        "research/evidence/2026-10-15/original-smoke/receipt.json"
+        "research/evidence/2026-10-15/original-smoke/receipt.json",
+        "research/evidence/2026-10-15/original-full/attempt-1.json"
       ],
       "evidence_commit": "554522da16fc22fd008b3f5b4c0a5bb6c62a5d45",
       "verification": {
@@ -227,7 +228,7 @@
         "independently_checked": false,
         "reviewer": "smoke_evidence_review accepted one-candidate B2a; full replay remains unverified"
       },
-      "next_action": "Inspect the staged full-replay workflow on PR6: seven-category probe then1252 authentic candidate attempts. Download and independently validate raw evidence; retain every failure and missing native oracle.",
+      "next_action": "Inspect retry of run38703569637 at769bb12:13 jobs produced1176 verified records; missing76math records are retrying after a truncated source download. Do not restart completed jobs or reduce denominator.",
       "redo_only_if": "Relevant source, configuration, evidence, or acceptance scope changes; document why."
     },
     {
@@ -310,7 +311,10 @@
       ],
       "evidence_paths": [
         "research/replay/native_oracle_audit.md",
-        "research/original_source_audit.md"
+        "research/original_source_audit.md",
+        "research/limitation_candidates.md",
+        "research/replay/diagnostic_protocol.md",
+        "research/reviews/diagnostic-review.md"
       ],
       "evidence_commit": null,
       "verification": {
@@ -320,7 +324,7 @@
         "independently_checked": false,
         "reviewer": "Pending acceptance review"
       },
-      "next_action": "Finish25-failure candidate dossier; execute original-oracle witnesses and compare limitation candidates before selecting the main modification.",
+      "next_action": "Execute independently reviewed16-case original-oracle/private-input diagnostics; validate raw evidence and choose main limitation before patching. Both authentic privacy candidates have fresh native acceptance.",
       "redo_only_if": "Relevant source, configuration, evidence, or acceptance scope changes; document why."
     },
     {

@@ -1,0 +1,44 @@
+name: Original limitation diagnostic witnesses
+on:
+  push:
+    branches: ["research/original-evaluator-replay-20261015"]
+    paths:
+      - 'scripts/probe_original_limitations.py'
+      - '.github/workflows/original-limitation-probes.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  witnesses:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify harness and prepare original baseline
+        run: |
+          PYTHONPATH=src python -m unittest discover -s tests -v
+          python scripts/check_handoff.py
+          python scripts/prepare_original_replay.py
+      - name: Build pinned diagnostic environment
+        run: |
+          docker build -t original-limitation-probes tmp/original-replay-build
+          mkdir -p results/limitation-environment
+          docker image inspect original-limitation-probes > results/limitation-environment/replay-image.json
+      - name: Execute explicitly labeled diagnostic cases
+        env:
+          REPLAY_HARNESS: probe_original_limitations.py
+        run: bash scripts/run_original_replay_container.sh original-limitation-probes results/limitation-probes
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: original-limitation-probes-${{ github.sha }}
+          path: |
+            results/limitation-probes
+            results/limitation-environment
+          retention-days: 90
+          if-no-files-found: warn

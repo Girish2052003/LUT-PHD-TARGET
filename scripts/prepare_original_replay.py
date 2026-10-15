@@ -112,7 +112,7 @@ def main():
                 "source_revision_note": "Python compiler/scripts from pinned git commit; runtime from official same-version release",
                 "api_calls_authorized": False}
     (build / "source_manifest.json").write_text(json.dumps(metadata, indent=2) + "\n")
-    for name in ("replay_original.py",):
+    for name in ("replay_original.py", "probe_original_limitations.py"):
         shutil.copy2(ROOT / "scripts" / name, build / name)
     for name in ("Dockerfile", "requirements.txt"):
         shutil.copy2(ROOT / "research" / "replay" / name, build / name)
