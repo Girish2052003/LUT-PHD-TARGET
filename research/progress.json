@@ -391,38 +391,49 @@
         "D"
       ],
       "evidence_paths": [
-        "research/reviews/secret-arithmetic-review-findings.md"
+        "research/modifications/README.md",
+        "research/modifications/secret_arithmetic.py",
+        "research/modifications/original-pipeline.patch",
+        "research/modifications/pinned-patch-manifest.json",
+        "scripts/apply_original_postprocess.py",
+        "research/reviews/secret-arithmetic-review-findings.md",
+        "research/reviews/paired-smoke-preexecution-review.md"
       ],
       "evidence_commit": null,
       "verification": {
-        "implemented": false,
+        "implemented": true,
         "executed": false,
-        "evidence_preserved": false,
+        "evidence_preserved": true,
         "independently_checked": false,
-        "reviewer": "Pending acceptance review"
+        "reviewer": "modification_review and replay_safety_review: bounded static/launch GO; actual runtime evidence acceptance pending"
       },
-      "next_action": "Initial postprocessor prototype has unresolved type-preservation counterexamples. Repair using verified MP-SPDZ value types, integrate a pinned original-source patch, then independently review and execute matched native/private-input comparisons.",
+      "next_action": "Execute reviewed 32-pair/64-execution smoke in isolated two-party MASCOT; inspect exact original finalizer integration, authorized outputs, opening traces and public-return regressions. lower_bound remains deferred.",
       "redo_only_if": "Relevant source, configuration, evidence, or acceptance scope changes; document why."
     },
     {
       "id": "F",
       "title": "Paired baseline and modification comparison",
-      "status": "NOT_STARTED",
+      "status": "IN_PROGRESS",
       "completion_scope": "Matched raw baseline/modified measurements, regressions, ablation, uncertainty and full failure matrix.",
       "dependencies": [
         "B2",
         "E"
       ],
-      "evidence_paths": [],
+      "evidence_paths": [
+        "scripts/replay_modified.py",
+        "scripts/verify_paired_replay.py",
+        "research/modifications/README.md",
+        "research/reviews/paired-smoke-preexecution-review.md"
+      ],
       "evidence_commit": null,
       "verification": {
-        "implemented": false,
+        "implemented": true,
         "executed": false,
-        "evidence_preserved": false,
+        "evidence_preserved": true,
         "independently_checked": false,
-        "reviewer": "Pending acceptance review"
+        "reviewer": "modification_review and replay_safety_review: bounded static/launch GO; actual runtime evidence acceptance pending"
       },
-      "next_action": "Measure original and modified source with identical tasks, oracle and protocol.",
+      "next_action": "Accept targeted paired smoke first; then extend to all626 authentic SPDZCoder candidates with full failure/paired uncertainty accounting. No full paired result exists yet.",
       "redo_only_if": "Relevant source, configuration, evidence, or acceptance scope changes; document why."
     },
     {

@@ -1,0 +1,59 @@
+name: Modified original pipeline paired smoke
+on:
+  push:
+    branches: ["research/original-evaluator-replay-20261015"]
+    paths:
+      - 'research/modifications/**'
+      - 'scripts/apply_original_postprocess.py'
+      - 'scripts/replay_modified.py'
+      - 'scripts/verify_paired_replay.py'
+      - 'tests/test_paired_replay.py'
+      - '.github/workflows/modified-original-comparison.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  paired-smoke:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify harness and pinned original-source patch
+        run: |
+          PYTHONPATH=src python -m unittest discover -s tests -v
+          python scripts/check_handoff.py
+          python scripts/prepare_original_replay.py
+          python scripts/apply_original_postprocess.py --build-dir tmp/original-replay-build
+      - name: Build identical paired environment
+        run: |
+          docker build -t modified-original-paired tmp/original-replay-build
+          mkdir -p results/paired-environment
+          docker image inspect modified-original-paired > results/paired-environment/image.json
+          uname -a > results/paired-environment/kernel.txt
+          lscpu > results/paired-environment/cpu.txt
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          names = ['ImageOS', 'ImageVersion', 'RUNNER_OS', 'RUNNER_ARCH', 'GITHUB_RUN_ID', 'GITHUB_RUN_ATTEMPT', 'GITHUB_SHA']
+          Path('results/paired-environment/runner.json').write_text(json.dumps({k: os.environ.get(k) for k in names}, indent=2) + '\n')
+          PY
+      - name: Execute matched native, private-input and regression pairs
+        env:
+          REPLAY_HARNESS: replay_modified.py
+        run: bash scripts/run_original_replay_container.sh modified-original-paired results/paired-smoke
+      - name: Recompute every source, input, insertion, outcome and privacy observation
+        run: python scripts/verify_paired_replay.py --root results/paired-smoke --baseline tmp/original-replay-build/baseline
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: modified-original-smoke-${{ github.sha }}
+          path: |
+            results/paired-smoke
+            results/paired-environment
+          retention-days: 90
+          if-no-files-found: warn

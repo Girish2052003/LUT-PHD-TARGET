@@ -15,7 +15,7 @@ image_id="$(docker image inspect --format '{{.Id}}' "$image_name")"
 revision="$(git rev-parse HEAD)"
 replay_harness="${REPLAY_HARNESS:-replay_original.py}"
 case "$replay_harness" in
-    replay_original.py|probe_original_limitations.py) ;;
+    replay_original.py|probe_original_limitations.py|replay_modified.py) ;;
     *) echo "Unknown reviewed harness" >&2; exit 1 ;;
 esac
 docker run --rm --network none --read-only --user 1000:1000 \

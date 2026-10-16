@@ -41,15 +41,15 @@ independent review and successful original-artifact/research CI at
 `8d9cf2e5125fbcb8255e30c1e5b8841324223461`. **Do not redo the archived
 provenance phase.** Exact joins and evaluator flag semantics are complete (C1).
 
-Resume B2 on branch `research/original-evaluator-replay-20261015`, PR #6.
+Resume E/F on branch `research/original-evaluator-replay-20261015`, PR #6.
 **B2a is complete:** the first authentic archived candidate ran through the
 unchanged original evaluator and two-party MASCOT. Run `38673372763` at
 `554522da16fc22fd008b3f5b4c0a5bb6c62a5d45` passed; all 15 raw artifact files
 are preserved under `research/evidence/2026-10-15/original-smoke/` and independently
 hash-checked. Do not redo that smoke solely to rediscover its result.
 
-The next workflow validates both candidates in seven representative categories,
-then attempts all 1,252 SPDZCoder/GPT-4 candidates. The full run is requested only
+The historical workflow validated both candidates in seven representative categories,
+then attempted all 1,252 SPDZCoder/GPT-4 candidates. The full run is requested only
 by a commit with `[full-replay]` in its message or explicit workflow dispatch.
 Inspect run/commit before launching another full run. A green smoke or an
 implemented aggregator is not full reproduction.
@@ -69,12 +69,27 @@ independently checked. The selected main limitation is unnecessary intermediate
 openings in otherwise functionally accepted translations. The policy is explicit;
 this is not a historical breach or a universal confidentiality proof.
 
-**Current work is E:** the initial secret-arithmetic postprocessor has unresolved
-review findings about type changes, loop facts and public comparisons. Read
-`research/reviews/secret-arithmetic-review-findings.md` before continuing. Do not
-accept the prototype because its syntax tests pass. Correct it, integrate a pinned
-patch into the original pipeline, independently review, then execute matched native
-and private-input comparisons. No modified runtime improvement is established yet.
+**Current work is E/F:** the narrowed secret-arithmetic postprocessor has bounded
+independent static approval for restricted runtime evaluation. Exactly two of 626
+archived candidates change; 624 remain byte-identical. The mixed fixed/integer
+`lower_bound` comparison is deferred. Review and correction history is in
+`research/reviews/secret-arithmetic-review-findings.md`.
+
+Both original pipeline entry points now have a reproducible, hash-pinned finalizer
+patch. The pre-specified paired smoke has 32 pairs / 64 executions: two native,
+28 private-input observed/control, and two locally authored fallback pairs.
+Read `research/modifications/README.md`. Execute only in the isolated Docker CI,
+then inspect raw evidence and obtain independent acceptance. Only the exact added
+finalizer slice is exercised on archived candidates; model stages are not simulated.
+No modified runtime improvement is established yet. Full626-candidate paired
+comparison remains separate and must follow accepted smoke evidence.
+
+Five practical milestones remain: accept the modified smoke; complete full paired
+comparison; complete seven-category source/methodology traces; finish available
+ablations and oracle checks; independently audit/consolidate evidence and validated
+main. Historical generation still needs Girish's explicit blocker decision, followed
+by separate report authorization. This sequence is not a guarantee against new
+experimental failures; preserve and investigate every one.
 
 A, C, broader B2/D, E/F/G and report readiness remain open. Preserve the accepted
 narrow subphases; never reset or promote their scope without evidence.
@@ -82,8 +97,8 @@ narrow subphases; never reset or promote their scope without evidence.
 Preserve the missing native oracle in `numpy_operation_test/np_basic_slicing_stride`
 as a benchmark limitation; do not invent tests or missing GPT-4 party inputs.
 Source-grounded oracle defects (`pass_or_not` filename contamination and three
-signed-relative comparisons) require actual runtime witnesses before choosing a
-main modification. See `research/replay/native_oracle_audit.md`.
+signed-relative comparisons) now have accepted D1 runtime witnesses. They remain
+separate from the selected privacy modification. See `research/replay/native_oracle_audit.md`.
 
 Read `research/original_source_audit.md` for original stage-1/repair discrepancies
 and oracle weaknesses. They are candidates for investigation, not accepted fixes.

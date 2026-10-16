@@ -11,7 +11,7 @@ These are practical acceptance gates. Historical milestones do not replace origi
 | R4 | Explain actual methodology | **IN_PROGRESS** | A |
 | R5 | Demonstrate substantive limitation | **IN_PROGRESS** | D, D1 |
 | R6 | Implement original-source modification | **IN_PROGRESS** | E |
-| R7 | Compare original and modified | **NOT_STARTED** | F |
+| R7 | Compare original and modified | **IN_PROGRESS** | F |
 | R8 | Document reproduction difficulties | **IN_PROGRESS** | A, B2, B3, G |
 | R9 | Final report readiness | **BLOCKED** | REPORT |
 
@@ -99,9 +99,9 @@ These are practical acceptance gates. Historical milestones do not replace origi
 - **Experimental obligation:** Meaningful before/after regression and scope tests.
 - **Expected outputs:** Patch, source hashes, tests and run logs.
 - **Acceptance criteria:** Modification addresses demonstrated failure without hidden oracle/input changes.
-- **Known limitations:** Initial AST prototype has reviewer-identified type-preservation defects; no runtime improvement or original-pipeline patch accepted yet.
-- **Verification reviewer:** Pending requirement acceptance; historical audit reviewed by code_review agent
-- **Evidence:** `research/reviews/secret-arithmetic-review-findings.md`
+- **Known limitations:** Only comparison-bit products with a supported secret-integer invariant. Mixed opened-operand comparisons including lower_bound are unchanged. Full model-dependent pipeline not executed.
+- **Verification reviewer:** modification_review: bounded GO for controlled runtime; final requirement acceptance pending
+- **Evidence:** `research/modifications/README.md`, `research/modifications/secret_arithmetic.py`, `research/modifications/original-pipeline.patch`, `research/modifications/pinned-patch-manifest.json`, `scripts/apply_original_postprocess.py`, `research/reviews/secret-arithmetic-review-findings.md`, `research/reviews/paired-smoke-preexecution-review.md`
 - **Evidence commit:** Pending
 - **Workflow identifiers:** Pending
 
@@ -114,9 +114,9 @@ These are practical acceptance gates. Historical milestones do not replace origi
 - **Experimental obligation:** Same candidates/input/oracle/protocol; ablation, regressions and uncertainty.
 - **Expected outputs:** Raw paired results, metrics and complete failure matrix.
 - **Acceptance criteria:** Measured baseline and modified results independently reproducible under equal conditions.
-- **Known limitations:** Independent DomainSafety results do not satisfy this requirement.
+- **Known limitations:** 32pairs/64executions pre-specified; execution pending. Full626-candidate paired comparison and independent evidence review remain open.
 - **Verification reviewer:** Pending requirement acceptance; historical audit reviewed by code_review agent
-- **Evidence:** Pending
+- **Evidence:** `scripts/replay_modified.py`, `scripts/verify_paired_replay.py`, `research/modifications/README.md`, `research/reviews/paired-smoke-preexecution-review.md`
 - **Evidence commit:** Pending
 - **Workflow identifiers:** Pending
 

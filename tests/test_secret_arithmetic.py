@@ -22,11 +22,9 @@ class SecretArithmeticTests(unittest.TestCase):
         self.assertEqual(len(events), 1)
         self.assertNotIn('.reveal()', changed)
 
-    def test_opened_comparison_used_only_by_secret_mask_is_removed(self):
-        _, (changed, events) = self.rewrite('best = sint(100)\nret = sint(-1)\nfor i in range(len(arr)):\n    eligible = arr[i] <= x\n    nearer = (x - arr[i]).reveal() < best.reveal()\n    choose = eligible * nearer\n    ret = choose.if_else(sint(i), ret)\n    best = choose.if_else(x - arr[i], best)\nreturn ret')
-        self.assertEqual(len(events), 2)
-        self.assertTrue(all(e['rule'] == 'secret_selector' for e in events))
-        self.assertNotIn('.reveal()', changed)
+    def test_mixed_comparison_rewrite_is_deferred_without_type_and_range_proof(self):
+        source, result = self.rewrite('best = sint(2**31 - 1)\nret = sint(-1)\nfor i in range(len(arr)):\n    eligible = arr[i] <= x\n    nearer = (x - arr[i]).reveal() < best.reveal()\n    choose = eligible * nearer\n    ret = choose.if_else(sint(i), ret)\n    best = choose.if_else(x - arr[i], best)\nreturn ret')
+        self.assertEqual(result, (source, []))
 
     def test_authorized_return_and_public_control_are_unchanged(self):
         bodies = [
@@ -57,4 +55,40 @@ class SecretArithmeticTests(unittest.TestCase):
         ):
             source, (changed, events) = self.rewrite(body)
             self.assertEqual((changed, events), (source, []))
+
+    def test_arithmetic_zero_simplification_cannot_reuse_secret_fact(self):
+        # MP-SPDZ _number.__mul__ returns Python zero for multiplication by zero.
+        source, result = self.rewrite('acc = sint(1)\nacc *= 0\nacc += 1\nacc *= (arr[0] != x).reveal()\nreturn acc')
+        self.assertEqual(result, (source, []))
+
+    def test_all_store_forms_invalidate_secret_accumulator_assumption(self):
+        for assignment in ('acc = other = cint(1)', 'acc, other = cint(1), 0',
+                           'acc: object = cint(1)', 'acc = cint(1)'):
+            with self.subTest(assignment=assignment):
+                source, result = self.rewrite('acc = sint(1)\n' + assignment + '\nacc *= (arr[0] != x).reveal()\nreturn acc')
+                self.assertEqual(result, (source, []))
+
+    def test_loop_carried_type_change_and_unsupported_loops_are_unchanged(self):
+        for loop in ('for i in range(2):\n    acc *= (arr[0] != x).reveal()\n    acc = cint(1)',
+                     'for acc in [cint(1)]:\n    pass\nacc *= (arr[0] != x).reveal()'):
+            with self.subTest(loop=loop):
+                source, result = self.rewrite('acc = sint(1)\n' + loop + '\nreturn acc')
+                self.assertEqual(result, (source, []))
+
+    def test_match_capture_cannot_rebind_an_accumulator(self):
+        source, result = self.rewrite('acc = sint(1)\nmatch cint(1):\n    case acc:\n        pass\nacc *= (arr[0] != x).reveal()\nreturn acc')
+        self.assertEqual(result, (source, []))
+
+    def test_module_match_capture_cannot_shadow_constructor(self):
+        source, _ = self.rewrite('acc = sint(1)\nacc *= (arr[0] != x).reveal()\nreturn acc')
+        source = 'match cint:\n    case sint:\n        pass\n' + source
+        self.assertEqual(preserve_secret_arithmetic(source, 'example'), (source, []))
+
+    def test_dynamic_calls_and_module_side_effects_are_outside_scope(self):
+        for statement in ('unknown(arr)', 'exec("sint = cint")'):
+            source, result = self.rewrite(statement + '\nacc = sint(1)\nacc *= (arr[0] != x).reveal()\nreturn acc')
+            self.assertEqual(result, (source, []))
+        source, _ = self.rewrite('acc = sint(1)\nacc *= (arr[0] != x).reveal()\nreturn acc')
+        source = 'mutate_globals()\n' + source
+        self.assertEqual(preserve_secret_arithmetic(source, 'example'), (source, []))
 

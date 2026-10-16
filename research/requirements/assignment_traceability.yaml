@@ -205,17 +205,23 @@
       ],
       "status": "IN_PROGRESS",
       "evidence_paths": [
-        "research/reviews/secret-arithmetic-review-findings.md"
+        "research/modifications/README.md",
+        "research/modifications/secret_arithmetic.py",
+        "research/modifications/original-pipeline.patch",
+        "research/modifications/pinned-patch-manifest.json",
+        "scripts/apply_original_postprocess.py",
+        "research/reviews/secret-arithmetic-review-findings.md",
+        "research/reviews/paired-smoke-preexecution-review.md"
       ],
       "exact_evidence_commit": null,
       "test_workflow_identifiers": [],
-      "measured_results": null,
-      "known_limitations": "Initial AST prototype has reviewer-identified type-preservation defects; no runtime improvement or original-pipeline patch accepted yet.",
-      "verification_reviewer": "Pending requirement acceptance; historical audit reviewed by code_review agent",
+      "measured_results": "Static only: exactly2/626candidateASTs changed;624byte-identical. No modified runtime result yet.",
+      "known_limitations": "Only comparison-bit products with a supported secret-integer invariant. Mixed opened-operand comparisons including lower_bound are unchanged. Full model-dependent pipeline not executed.",
+      "verification_reviewer": "modification_review: bounded GO for controlled runtime; final requirement acceptance pending",
       "completion": {
-        "implemented": false,
+        "implemented": true,
         "executed": false,
-        "evidence_preserved": false,
+        "evidence_preserved": true,
         "independently_checked": false
       }
     },
@@ -231,17 +237,22 @@
       "phase_ids": [
         "F"
       ],
-      "status": "NOT_STARTED",
-      "evidence_paths": [],
+      "status": "IN_PROGRESS",
+      "evidence_paths": [
+        "scripts/replay_modified.py",
+        "scripts/verify_paired_replay.py",
+        "research/modifications/README.md",
+        "research/reviews/paired-smoke-preexecution-review.md"
+      ],
       "exact_evidence_commit": null,
       "test_workflow_identifiers": [],
       "measured_results": null,
-      "known_limitations": "Independent DomainSafety results do not satisfy this requirement.",
+      "known_limitations": "32pairs/64executions pre-specified; execution pending. Full626-candidate paired comparison and independent evidence review remain open.",
       "verification_reviewer": "Pending requirement acceptance; historical audit reviewed by code_review agent",
       "completion": {
-        "implemented": false,
+        "implemented": true,
         "executed": false,
-        "evidence_preserved": false,
+        "evidence_preserved": true,
         "independently_checked": false
       }
     },
