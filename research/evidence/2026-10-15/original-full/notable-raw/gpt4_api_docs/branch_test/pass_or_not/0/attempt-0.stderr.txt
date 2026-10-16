@@ -1,0 +1,16 @@
+Running /mp-spdz/Scripts/../mascot-party.x 0 pass_or_not -pn 10402 -h localhost -N 2
+Running /mp-spdz/Scripts/../mascot-party.x 1 pass_or_not -pn 10402 -h localhost -N 2
+/mp-spdz/Scripts/run-common.sh: line 67:   566 Aborted                 (core dumped) $prefix $SPDZROOT/$bin $i $params 2>&1
+       567 Done                    | { if test "$BENCH"; then
+    if test $i = 0; then
+        tee -a $log;
+    else
+        cat >> $log;
+    fi;
+else
+    if test $i = 0; then
+        tee $log;
+    else
+        cat > $log;
+    fi;
+fi; }

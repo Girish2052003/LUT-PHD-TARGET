@@ -1,0 +1,81 @@
+[
+    {
+        "Id": "sha256:27d3d6c53f7a0454b09914940231cacc28295b649b07a80e72bedb8d2a3c04c2",
+        "RepoTags": [
+            "original-limitation-probes:latest"
+        ],
+        "RepoDigests": [],
+        "Parent": "",
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2026-10-15T13:27:03.890948324Z",
+        "DockerVersion": "",
+        "Author": "",
+        "Config": {
+            "Hostname": "",
+            "Domainname": "",
+            "User": "1000:1000",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LANG=C.UTF-8",
+                "GPG_KEY=A035C8C19219BA821ECEA86B64E628F8D684696D",
+                "PYTHON_VERSION=3.11.9",
+                "PYTHON_PIP_VERSION=24.0",
+                "PYTHON_SETUPTOOLS_VERSION=65.5.1",
+                "PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/def4aec84b261b939137dd1c69eff0aabb4a7bf4/public/get-pip.py",
+                "PYTHON_GET_PIP_SHA256=bc37786ec99618416cc0a0ca32833da447f4d91ab51d2c138dd15b7af21e8e9a",
+                "PYTHONDONTWRITEBYTECODE=1",
+                "PYTHONUNBUFFERED=1"
+            ],
+            "Cmd": null,
+            "ArgsEscaped": true,
+            "Image": "",
+            "Volumes": null,
+            "WorkingDir": "/run",
+            "Entrypoint": [
+                "python",
+                "/harness/replay_original.py"
+            ],
+            "OnBuild": null,
+            "Labels": null
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 287485316,
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/mnhqob0fy8q7ag5cwm0ihkwid/diff:/var/lib/docker/overlay2/x3drhhzyhz3gbasr3wp80vkej/diff:/var/lib/docker/overlay2/lv6xjgy7pzvmvewlcdlkrkhi7/diff:/var/lib/docker/overlay2/tcjn33wd1ou4tejit9pyferri/diff:/var/lib/docker/overlay2/qcbt03x81pukreq44pyyghlr8/diff:/var/lib/docker/overlay2/o8winvrv634zdxqot1yqwn0ge/diff:/var/lib/docker/overlay2/yzlymcvjcjurz37k3h0123yan/diff:/var/lib/docker/overlay2/4c3311ce616be8c67b46c7a371758f59b1ac9c972083fdf4538d39cef5e36683/diff:/var/lib/docker/overlay2/7c6d9276c1e42602ceab004a33c66d56b50d2a054ea88f87b90ab9ac105054b5/diff:/var/lib/docker/overlay2/9bbb00b648411aa69c8092427e05ec17e94ab64c0404ad87edae8908b34b5fd3/diff:/var/lib/docker/overlay2/c9d7f519b86371e23af218f48d7517035ad4f0d6a412dcd2e0ec73fd9a8d956c/diff:/var/lib/docker/overlay2/089b63f09b38dc103fd1e24ab4f0f4dd9264b6efb4b0f72e8ec54e9519d94b7e/diff",
+                "MergedDir": "/var/lib/docker/overlay2/ga0g28umdaj7uadptr68hde0o/merged",
+                "UpperDir": "/var/lib/docker/overlay2/ga0g28umdaj7uadptr68hde0o/diff",
+                "WorkDir": "/var/lib/docker/overlay2/ga0g28umdaj7uadptr68hde0o/work"
+            },
+            "Name": "overlay2"
+        },
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:8e2ab394fabf557b00041a8f080b10b4e91c7027b7c174f095332c7ebb6501cb",
+                "sha256:fbc55748732d0123d94fc4db6b7a810df835cc38db45a6ad1088d41f4cb2ef40",
+                "sha256:cadfff4b36cfd18d3a844aad4bc14f304c6baad6ad1f52cec0a99ee167915833",
+                "sha256:5c7e24e4a88ec3b59fd307e1d386b482be12334f7b53b06575a10d7b0a549669",
+                "sha256:7cb94502409a1280e22fcd64bb6570e5e4fc332725a928c96477994393be09db",
+                "sha256:6e9651ecca3472f0a5438a16dd44bd48396c0562584438c33e25a034af39de39",
+                "sha256:59ddd5c777a6c1d8480bd2b5f51c30c286c4f36df4eb1da6d20773d576bfccd0",
+                "sha256:e33856d14536a3628b67c5c20244e348c0db94f86aca7149968505984fdd336e",
+                "sha256:71bdd5c5578641004899dd1c5d9a14299a8b48c9023760a58bb491be6d6ae2b3",
+                "sha256:e568fd85ee304b2b4b48d76fea6d6dfac084556e490488128ed42c7f9b876134",
+                "sha256:e22b1f1a57cc0aa38381efdebcd2f627916823fdcf92c03a3aaac6de1a4968a7",
+                "sha256:75919ba18f46ac4798b1b880812d98d4310d3195669f6d16885e9c9789de3918",
+                "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2026-10-15T13:27:05.012367506Z"
+        }
+    }
+]

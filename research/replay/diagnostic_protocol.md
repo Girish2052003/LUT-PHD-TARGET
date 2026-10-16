@@ -54,7 +54,9 @@ ground-truth statement based on their incorrect constant output.
 
 ## Status
 
-Prepared for restricted CI execution; no witness is claimed yet. The full native
-replay remains a separate experiment at commit `769bb12`. A final choice of the
-main limitation and its modification follows measured evidence and independent
-review. Preserve negative findings and do not silently alter original tests.
+Executed successfully in run `38742644019` at `aa89eb6`; all 16 cases and 133 raw
+files independently checked. See `research/reviews/diagnostic-evidence-review.md`.
+The selected main limitation is unintended intermediate openings in otherwise
+functionally accepted candidates. A repaired implementation remains unaccepted.
+The full native replay is separate at `769bb12`; diagnostic cases never affect
+its benchmark denominators.

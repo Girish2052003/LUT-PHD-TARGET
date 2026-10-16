@@ -1,0 +1,34 @@
+{
+  "case_id": "loop_test--second_largest--archived_control",
+  "task_id": "loop_test/second_largest",
+  "source_kind": "archived_control",
+  "original_candidate_id": 0,
+  "diagnostic_intended_decision": "CONTROL",
+  "template_kind": "byte-identical native template",
+  "inputs": null,
+  "observer_sites": [],
+  "source_sha256": "eda2668b6763ce20e016bbbca6ee5a567f4aa8a09549f1cd77adb49ec0b38b39",
+  "template_sha256": "cddbda56d7eebf3b1fe67aed7b365aae3ecb066c722fc02721929a031598c00b",
+  "author_oracle_accepted": true,
+  "runtime_status": "PASS",
+  "attempts": [
+    {
+      "command": "/mp-spdz/Scripts/compile-run.py -E mascot /run/diagnostic-baseline/evaluation/evaluation_storage/second_largest.mpc",
+      "timeout_seconds": 60,
+      "returncode": 0,
+      "timed_out": false,
+      "schedule_present": true,
+      "runtime_launch_marker": true,
+      "duration_seconds": 9.712814554999994,
+      "combined_source_sha256": "3bf24bc5590542dcaf7b015a453f3cecf7e6b40bbb07e7408937c389ff35ff5c",
+      "stdout_sha256": "91114b2088bf9422e10b9944c04ce94a0e5f65760d738e24761c61bd967fee0b",
+      "stderr_sha256": "354b7f84a93be2005c4dcee075325fbccf967eac9679c0a5adb5ee6ca3f029e8",
+      "compile_status": "PASS",
+      "runtime_status": "PASS",
+      "failure_class": null
+    }
+  ],
+  "native_success_marker": true,
+  "authorized_outputs": [],
+  "public_openings": []
+}

@@ -1,0 +1,34 @@
+{
+  "case_id": "branch_test--pass_or_not--archived_control",
+  "task_id": "branch_test/pass_or_not",
+  "source_kind": "archived_control",
+  "original_candidate_id": 0,
+  "diagnostic_intended_decision": "CONTROL",
+  "template_kind": "byte-identical native template",
+  "inputs": null,
+  "observer_sites": [],
+  "source_sha256": "369aac5c9e63fe1909b167814560afaedac70e55989d26a7cd440bbecff2b486",
+  "template_sha256": "a5191c4bf15f74161afde62fdbe5f0dd520e1024a896599f10ec96be30644634",
+  "author_oracle_accepted": true,
+  "runtime_status": "PASS",
+  "attempts": [
+    {
+      "command": "/mp-spdz/Scripts/compile-run.py -E mascot /run/diagnostic-baseline/evaluation/evaluation_storage/pass_or_not.mpc",
+      "timeout_seconds": 60,
+      "returncode": 0,
+      "timed_out": false,
+      "schedule_present": true,
+      "runtime_launch_marker": true,
+      "duration_seconds": 5.014897822999984,
+      "combined_source_sha256": "2178860e6d85f2fb1fe943d8792795f6df21ecec87ad6b67737e811445224e23",
+      "stdout_sha256": "673d9516876dc26da895794de5f117e26a4e7aeb90f1bb3c0cd9428bbbea4fde",
+      "stderr_sha256": "1b5c0bd623b554a7e318a9b5f53dbd582b7c1750f90b2ddbac11f7863197f4b1",
+      "compile_status": "PASS",
+      "runtime_status": "PASS",
+      "failure_class": null
+    }
+  ],
+  "native_success_marker": true,
+  "authorized_outputs": [],
+  "public_openings": []
+}

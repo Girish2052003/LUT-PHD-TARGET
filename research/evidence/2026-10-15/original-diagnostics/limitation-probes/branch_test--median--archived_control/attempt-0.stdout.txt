@@ -1,0 +1,22 @@
+Default bit length: 64
+Default security parameter: 40
+Compiling file /run/diagnostic-baseline/evaluation/evaluation_storage/median.mpc
+Writing to Programs/Schedules/median.sch
+Writing to Programs/Bytecode/median-0.bc
+Hash: 64df9f23340968a2323225b62e5112dafc573e53df6a61e7f6ed5a8c71cc6322
+Program requires at most:
+        1944 integer bits
+          31 integer opens
+        1475 integer triples
+          65 virtual machine rounds
+Using security parameter 40
+Pass the test
+Significant amount of unused triples of SPDZ gfp. For more accurate benchmarks, consider reducing the batch size with --batch-size.
+Note that some protocols have larger minimum batch sizes.
+The following benchmarks are including preprocessing (offline phase).
+Time = 9.26572 seconds 
+Data sent = 78.0822 MB in ~309 rounds (party 0 only; use '-v' for more details)
+Global data sent = 156.164 MB (all parties)
+This program might benefit from some protocol options.
+Consider adding the following at the beginning of your code:
+	program.use_edabit(True)

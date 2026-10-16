@@ -1,0 +1,8 @@
+# Diagnostic harness, not an original native template.
+# Party 0 owns the values. Length (3), x (4 for lower_bound) and result are public.
+# insert here #
+secret_values = sfix.Array(3)
+for i in range(3):
+    secret_values[i] = sfix.get_input_from(0)
+answer = count_distinct(secret_values)
+print_ln('AUTHORIZED=%s', answer.reveal())

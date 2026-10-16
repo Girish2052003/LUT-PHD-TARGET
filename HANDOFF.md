@@ -54,19 +54,30 @@ by a commit with `[full-replay]` in its message or explicit workflow dispatch.
 Inspect run/commit before launching another full run. A green smoke or an
 implemented aggregator is not full reproduction.
 
-Full run `38703569637` at `769bb12ce342b814590061ef04fdffbbe19c9990`
-finished 13 category/system jobs (1,176 candidates); the first SPDZCoder math job
-failed during a truncated Zenodo download. The completeness guard rejected the
-missing 76 records. Only failed jobs and their aggregate were retried at the same
-commit; inspect that retry before starting anything new. Attempt-1 metadata is
-in `research/evidence/2026-10-15/original-full/attempt-1.json`.
+**B2b is complete:** full run `38703569637` at
+`769bb12ce342b814590061ef04fdffbbe19c9990` has all 1,252 candidate outcomes,
+independently audited. SPDZCoder first/second/union: **268/265/288 of 313**;
+GPT-4 API-doc: **95/112/154 of 313**. The initial source-download failure was
+recovered by retrying only failed jobs. Five archived/fresh disagreements remain
+explicit; see `research/reviews/full-replay-evidence-review.md`. Do not rerun this
+baseline merely to rediscover its results. Raw artifact retention ends January 2027.
 
-Phase D now has an independently reviewed, separate 16-case diagnostic workflow
-for native oracle false positives and authentic intermediate public openings.
-See `research/replay/diagnostic_protocol.md` and
-`research/reviews/diagnostic-review.md`. Inspect its real results before declaring
-a witness or selecting a modification. Diagnostic mutations/private inputs are
-never included in archived-candidate benchmark denominators.
+**D1 is complete:** run `38742644019` at `aa89eb6` establishes two authentic
+private-input/output-only disclosure witnesses and four separate native-oracle
+false positives, across 16 cases. All 133 diagnostic files are preserved and
+independently checked. The selected main limitation is unnecessary intermediate
+openings in otherwise functionally accepted translations. The policy is explicit;
+this is not a historical breach or a universal confidentiality proof.
+
+**Current work is E:** the initial secret-arithmetic postprocessor has unresolved
+review findings about type changes, loop facts and public comparisons. Read
+`research/reviews/secret-arithmetic-review-findings.md` before continuing. Do not
+accept the prototype because its syntax tests pass. Correct it, integrate a pinned
+patch into the original pipeline, independently review, then execute matched native
+and private-input comparisons. No modified runtime improvement is established yet.
+
+A, C, broader B2/D, E/F/G and report readiness remain open. Preserve the accepted
+narrow subphases; never reset or promote their scope without evidence.
 
 Preserve the missing native oracle in `numpy_operation_test/np_basic_slicing_stride`
 as a benchmark limitation; do not invent tests or missing GPT-4 party inputs.

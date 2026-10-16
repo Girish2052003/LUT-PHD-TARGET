@@ -1,0 +1,41 @@
+{
+  "case_id": "loop_test--lower_bound--pair-1--archived_private_input",
+  "task_id": "loop_test/lower_bound",
+  "source_kind": "archived_private_input",
+  "original_candidate_id": 1,
+  "original_source_sha256": "91e83e2e2090cfcd92f04b1b07cde15589a7d72f6856d0814d3ff74598b45280",
+  "template_kind": "explicit diagnostic private-input harness",
+  "inputs": [
+    2,
+    3,
+    6
+  ],
+  "expected_authorized_output": 1,
+  "observer_sites": [],
+  "source_sha256": "91e83e2e2090cfcd92f04b1b07cde15589a7d72f6856d0814d3ff74598b45280",
+  "template_sha256": "9b53a5f6b8675df7b7eec7b27bedb799dda3e7ca83a76a50be5837cb336d5f59",
+  "author_oracle_accepted": false,
+  "runtime_status": "PASS",
+  "attempts": [
+    {
+      "command": "/mp-spdz/Scripts/compile-run.py -E mascot /run/diagnostic-baseline/evaluation/evaluation_storage/lower_bound.mpc",
+      "timeout_seconds": 60,
+      "returncode": 0,
+      "timed_out": false,
+      "schedule_present": true,
+      "runtime_launch_marker": true,
+      "duration_seconds": 5.517386641000002,
+      "combined_source_sha256": "2ad9aca3d943733f30b224758c75cba2b2e858d708ad93b7d98df908159284ff",
+      "stdout_sha256": "56ba3dc0d203488f062817f21f9872e8d5b6a97a211db4191aceea759ccf2783",
+      "stderr_sha256": "d07ece2fa7930fc1ad5bf824a0f6a4bc1cee46b9ac8258b8a3ebca28c9ffa3bd",
+      "compile_status": "PASS",
+      "runtime_status": "PASS",
+      "failure_class": null
+    }
+  ],
+  "native_success_marker": false,
+  "authorized_outputs": [
+    "1"
+  ],
+  "public_openings": []
+}

@@ -1,0 +1,3 @@
+Using security parameter 40
+terminate called after throwing an instance of 'IO_Error'
+  what():  IO-Error : not enough inputs in Player-Data/Input-P0-0

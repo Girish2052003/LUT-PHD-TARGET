@@ -1,0 +1,200 @@
+{
+  "scope": "Fresh unchanged-author-evaluator acceptance; not independent proof of correctness or fresh model generation",
+  "candidate_records": 1252,
+  "task_count": 313,
+  "live_model_calls": 0,
+  "systems": {
+    "spdzcoder": {
+      "overall": {
+        "tasks": 313,
+        "first_accepted": 268,
+        "second_accepted": 265,
+        "union_accepted": 288,
+        "first_percent": 85.62300319488818,
+        "second_percent": 84.66453674121406,
+        "union_percent": 92.01277955271566
+      },
+      "categories": {
+        "array_test": {
+          "tasks": 43,
+          "first_accepted": 36,
+          "second_accepted": 35,
+          "union_accepted": 40,
+          "first_percent": 83.72093023255815,
+          "second_percent": 81.3953488372093,
+          "union_percent": 93.02325581395348
+        },
+        "branch_test": {
+          "tasks": 34,
+          "first_accepted": 34,
+          "second_accepted": 29,
+          "union_accepted": 34,
+          "first_percent": 100.0,
+          "second_percent": 85.29411764705883,
+          "union_percent": 100.0
+        },
+        "loop_test": {
+          "tasks": 97,
+          "first_accepted": 82,
+          "second_accepted": 85,
+          "union_accepted": 90,
+          "first_percent": 84.5360824742268,
+          "second_percent": 87.62886597938144,
+          "union_percent": 92.78350515463917
+        },
+        "math_test": {
+          "tasks": 38,
+          "first_accepted": 35,
+          "second_accepted": 36,
+          "union_accepted": 37,
+          "first_percent": 92.10526315789474,
+          "second_percent": 94.73684210526316,
+          "union_percent": 97.36842105263158
+        },
+        "numpy_operation_test": {
+          "tasks": 32,
+          "first_accepted": 24,
+          "second_accepted": 24,
+          "union_accepted": 25,
+          "first_percent": 75.0,
+          "second_percent": 75.0,
+          "union_percent": 78.125
+        },
+        "numpy_ufunc_test": {
+          "tasks": 34,
+          "first_accepted": 31,
+          "second_accepted": 31,
+          "union_accepted": 32,
+          "first_percent": 91.17647058823529,
+          "second_percent": 91.17647058823529,
+          "union_percent": 94.11764705882354
+        },
+        "syntax_test": {
+          "tasks": 35,
+          "first_accepted": 26,
+          "second_accepted": 25,
+          "union_accepted": 30,
+          "first_percent": 74.28571428571429,
+          "second_percent": 71.42857142857143,
+          "union_percent": 85.71428571428571
+        }
+      },
+      "compile_statuses": {
+        "FAIL": 75,
+        "PASS": 551
+      },
+      "runtime_statuses": {
+        "NOT_RUN": 75,
+        "PASS": 550,
+        "TIMEOUT": 1
+      },
+      "failure_classes": {
+        "compile_failure": 75,
+        "none": 533,
+        "oracle_reject": 17,
+        "timeout": 1
+      },
+      "accepted_without_completed_runtime": 0,
+      "total_candidate_wall_seconds": 11305.102566128999,
+      "historical_disagreements": 1
+    },
+    "gpt4_api_docs": {
+      "overall": {
+        "tasks": 313,
+        "first_accepted": 95,
+        "second_accepted": 112,
+        "union_accepted": 154,
+        "first_percent": 30.35143769968051,
+        "second_percent": 35.78274760383387,
+        "union_percent": 49.201277955271564
+      },
+      "categories": {
+        "array_test": {
+          "tasks": 43,
+          "first_accepted": 19,
+          "second_accepted": 20,
+          "union_accepted": 26,
+          "first_percent": 44.18604651162791,
+          "second_percent": 46.51162790697674,
+          "union_percent": 60.46511627906977
+        },
+        "branch_test": {
+          "tasks": 34,
+          "first_accepted": 9,
+          "second_accepted": 4,
+          "union_accepted": 11,
+          "first_percent": 26.470588235294116,
+          "second_percent": 11.764705882352942,
+          "union_percent": 32.35294117647059
+        },
+        "loop_test": {
+          "tasks": 97,
+          "first_accepted": 24,
+          "second_accepted": 35,
+          "union_accepted": 52,
+          "first_percent": 24.742268041237114,
+          "second_percent": 36.08247422680412,
+          "union_percent": 53.608247422680414
+        },
+        "math_test": {
+          "tasks": 38,
+          "first_accepted": 4,
+          "second_accepted": 8,
+          "union_accepted": 10,
+          "first_percent": 10.526315789473685,
+          "second_percent": 21.05263157894737,
+          "union_percent": 26.31578947368421
+        },
+        "numpy_operation_test": {
+          "tasks": 32,
+          "first_accepted": 18,
+          "second_accepted": 17,
+          "union_accepted": 20,
+          "first_percent": 56.25,
+          "second_percent": 53.125,
+          "union_percent": 62.5
+        },
+        "numpy_ufunc_test": {
+          "tasks": 34,
+          "first_accepted": 8,
+          "second_accepted": 12,
+          "union_accepted": 14,
+          "first_percent": 23.529411764705884,
+          "second_percent": 35.294117647058826,
+          "union_percent": 41.1764705882353
+        },
+        "syntax_test": {
+          "tasks": 35,
+          "first_accepted": 13,
+          "second_accepted": 16,
+          "union_accepted": 21,
+          "first_percent": 37.142857142857146,
+          "second_percent": 45.714285714285715,
+          "union_percent": 60.0
+        }
+      },
+      "compile_statuses": {
+        "FAIL": 312,
+        "PASS": 314
+      },
+      "runtime_statuses": {
+        "FAIL": 70,
+        "NOT_RUN": 312,
+        "PASS": 242,
+        "TIMEOUT": 2
+      },
+      "failure_classes": {
+        "compile_failure": 312,
+        "none": 206,
+        "oracle_reject": 36,
+        "runtime_failure": 70,
+        "timeout": 2
+      },
+      "accepted_without_completed_runtime": 1,
+      "total_candidate_wall_seconds": 5280.7793492360015,
+      "historical_disagreements": null
+    }
+  },
+  "research_commit": "769bb12ce342b814590061ef04fdffbbe19c9990",
+  "run_count": 14
+}

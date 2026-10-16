@@ -1,0 +1,14 @@
+from Compiler.types import sint
+
+def pass_or_not(score):
+    """
+    Determine if a student has passed based on their score.
+    """
+    # Comparison to generate a secret bit (sint) representing the condition
+    passed = score >= 60
+    
+    # Secure conditional assignment to set score and passed flag
+    score = passed.if_else(score, sint(59))
+    passed = passed.if_else(sint(1), sint(0))
+    
+    return score, passed

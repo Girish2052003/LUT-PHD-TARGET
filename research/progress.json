@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "updated_on": "2026-10-15",
+  "updated_on": "2026-10-16",
   "current_pr": 6,
   "historical_remote_main": "0ae96a968022325f3f678b19db1fcd69de483b70",
   "historical_reviewed_head": "5ca3809f15e8e326ff2d0a9b2e23993704be3dda",
-  "resume_phase": "B2",
+  "resume_phase": "E",
   "report_authorized": false,
   "phases": [
     {
@@ -206,6 +206,32 @@
       "redo_only_if": "Relevant original source, harness, compiler/runtime or environment changes; record why."
     },
     {
+      "id": "B2b",
+      "title": "Complete two-system archived-candidate replay",
+      "status": "PASS",
+      "completion_scope": "All1252 authentic final-stage SPDZCoder/GPT-4 candidates replayed; original acceptance counts268/265/288 and95/112/154. No new model generation or universal correctness claim.",
+      "dependencies": [
+        "M3",
+        "C1",
+        "B2a"
+      ],
+      "evidence_paths": [
+        "research/evidence/2026-10-15/original-full/receipt.json",
+        "research/evidence/2026-10-15/original-full/verified-summary/summary.json",
+        "research/reviews/full-replay-evidence-review.md"
+      ],
+      "evidence_commit": "769bb12ce342b814590061ef04fdffbbe19c9990",
+      "verification": {
+        "implemented": true,
+        "executed": true,
+        "evidence_preserved": true,
+        "independently_checked": true,
+        "reviewer": "full_replay_review independently audited1252records,1280attempts,6976rawfiles and all source/runtime pins"
+      },
+      "next_action": "Preserve. Investigate recorded disagreements separately; complete ablations and source traces without relabeling this as generation.",
+      "redo_only_if": "Source, environment, candidate or comparison conditions change; record the reason."
+    },
+    {
       "id": "B2",
       "title": "Level 2: original evaluator replay",
       "status": "IN_PROGRESS",
@@ -218,17 +244,19 @@
         "research/replay/README.md",
         "research/reviews/original-replay-review.md",
         "research/evidence/2026-10-15/original-smoke/receipt.json",
-        "research/evidence/2026-10-15/original-full/attempt-1.json"
+        "research/evidence/2026-10-15/original-full/attempt-1.json",
+        "research/evidence/2026-10-15/original-full/receipt.json",
+        "research/reviews/full-replay-evidence-review.md"
       ],
-      "evidence_commit": "554522da16fc22fd008b3f5b4c0a5bb6c62a5d45",
+      "evidence_commit": "769bb12ce342b814590061ef04fdffbbe19c9990",
       "verification": {
         "implemented": true,
-        "executed": false,
+        "executed": true,
         "evidence_preserved": true,
-        "independently_checked": false,
-        "reviewer": "smoke_evidence_review accepted one-candidate B2a; full replay remains unverified"
+        "independently_checked": true,
+        "reviewer": "full_replay_review accepted full two-system replay; broader dependency gates remain open"
       },
-      "next_action": "Inspect retry of run38703569637 at769bb12:13 jobs produced1176 verified records; missing76math records are retrying after a truncated source download. Do not restart completed jobs or reduce denominator.",
+      "next_action": "Preserve accepted1252-record replay (B2b). Investigate five archived/fresh disagreements, complete available stage2 ablation and source-trace dependencies; do not repeat the full baseline to rediscover it.",
       "redo_only_if": "Relevant source, configuration, evidence, or acceptance scope changes; document why."
     },
     {
@@ -301,6 +329,31 @@
       "redo_only_if": "Relevant source, configuration, evidence, or acceptance scope changes; document why."
     },
     {
+      "id": "D1",
+      "title": "Accepted authentic privacy witnesses",
+      "status": "PASS",
+      "completion_scope": "Two archived candidates distinguish private inputs with identical permitted outputs;16native/diagnostic controls independently checked under explicit policy.",
+      "dependencies": [
+        "B2b",
+        "C1"
+      ],
+      "evidence_paths": [
+        "research/evidence/2026-10-15/original-diagnostics/receipt.json",
+        "research/replay/diagnostic_protocol.md",
+        "research/reviews/diagnostic-evidence-review.md"
+      ],
+      "evidence_commit": "aa89eb661370480643a6637180b773d080009437",
+      "verification": {
+        "implemented": true,
+        "executed": true,
+        "evidence_preserved": true,
+        "independently_checked": true,
+        "reviewer": "diagnostic_review verified133rawfiles,16executions,exactarchivedASTs and bothpartylogs"
+      },
+      "next_action": "Preserve measured counterexamples. Validate an actual original-pipeline fix and output-preserving paired comparisons.",
+      "redo_only_if": "Candidate, input, observer, policy or runtime changes; record the reason."
+    },
+    {
       "id": "D",
       "title": "Demonstrated original-system limitation",
       "status": "IN_PROGRESS",
@@ -314,28 +367,32 @@
         "research/original_source_audit.md",
         "research/limitation_candidates.md",
         "research/replay/diagnostic_protocol.md",
-        "research/reviews/diagnostic-review.md"
+        "research/reviews/diagnostic-review.md",
+        "research/evidence/2026-10-15/original-diagnostics/receipt.json",
+        "research/reviews/diagnostic-evidence-review.md"
       ],
-      "evidence_commit": null,
+      "evidence_commit": "aa89eb661370480643a6637180b773d080009437",
       "verification": {
-        "implemented": false,
-        "executed": false,
-        "evidence_preserved": false,
-        "independently_checked": false,
-        "reviewer": "Pending acceptance review"
+        "implemented": true,
+        "executed": true,
+        "evidence_preserved": true,
+        "independently_checked": true,
+        "reviewer": "diagnostic_review accepted16case witness evidence; broaderA/B2 prerequisites remain open"
       },
-      "next_action": "Execute independently reviewed16-case original-oracle/private-input diagnostics; validate raw evidence and choose main limitation before patching. Both authentic privacy candidates have fresh native acceptance.",
+      "next_action": "Main limitation selected: functionality-only acceptance admits intermediate public openings. Two authentic private-input witnesses are independently accepted (D1). Continue original-pipeline modification and explicit scope tests.",
       "redo_only_if": "Relevant source, configuration, evidence, or acceptance scope changes; document why."
     },
     {
       "id": "E",
       "title": "Patch actual original system",
-      "status": "NOT_STARTED",
+      "status": "IN_PROGRESS",
       "completion_scope": "A runnable, narrowly scoped original-source patch with before/after regression evidence.",
       "dependencies": [
         "D"
       ],
-      "evidence_paths": [],
+      "evidence_paths": [
+        "research/reviews/secret-arithmetic-review-findings.md"
+      ],
       "evidence_commit": null,
       "verification": {
         "implemented": false,
@@ -344,7 +401,7 @@
         "independently_checked": false,
         "reviewer": "Pending acceptance review"
       },
-      "next_action": "Implement only after D establishes a real original-system defect.",
+      "next_action": "Initial postprocessor prototype has unresolved type-preservation counterexamples. Repair using verified MP-SPDZ value types, integrate a pinned original-source patch, then independently review and execute matched native/private-input comparisons.",
       "redo_only_if": "Relevant source, configuration, evidence, or acceptance scope changes; document why."
     },
     {
@@ -387,7 +444,7 @@
         "independently_checked": false,
         "reviewer": "Pending acceptance review"
       },
-      "next_action": "PR5 archival audit merged after independent review and exact-head CI. Review and execute original evaluator smoke on the new research branch.",
+      "next_action": "Preserve accepted full-replay and diagnostic reviews; obtain independent approval for the corrected postprocessor and matched experiments before merge. Main remains5fbc609.",
       "redo_only_if": "Relevant source, configuration, evidence, or acceptance scope changes; document why."
     },
     {

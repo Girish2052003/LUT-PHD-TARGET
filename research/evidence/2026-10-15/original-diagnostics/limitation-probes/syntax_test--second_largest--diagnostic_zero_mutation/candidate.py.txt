@@ -1,0 +1,2 @@
+def second_largest(arr):
+    return sfix(0)

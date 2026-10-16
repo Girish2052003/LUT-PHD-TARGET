@@ -1,0 +1,22 @@
+Default bit length: 64
+Default security parameter: 40
+Compiling file /run/diagnostic-baseline/evaluation/evaluation_storage/second_largest.mpc
+Writing to Programs/Schedules/second_largest.sch
+Writing to Programs/Bytecode/second_largest-0.bc
+Hash: 81ac8a9e27e02bc207aa6e1383d9ba809142a54dc6c7f858b93a5fa8a11f1f1e
+Program requires at most:
+        1872 integer bits
+          30 integer opens
+        1482 integer triples
+          56 virtual machine rounds
+Using security parameter 40
+Pass the test
+Significant amount of unused triples of SPDZ gfp. For more accurate benchmarks, consider reducing the batch size with --batch-size.
+Note that some protocols have larger minimum batch sizes.
+The following benchmarks are including preprocessing (offline phase).
+Time = 9.24763 seconds 
+Data sent = 78.0822 MB in ~283 rounds (party 0 only; use '-v' for more details)
+Global data sent = 156.164 MB (all parties)
+This program might benefit from some protocol options.
+Consider adding the following at the beginning of your code:
+	program.use_edabit(True)

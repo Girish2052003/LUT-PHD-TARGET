@@ -1,0 +1,2 @@
+def pass_or_not(score):
+    return sint(0), sint(0)
