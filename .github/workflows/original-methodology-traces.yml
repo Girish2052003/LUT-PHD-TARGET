@@ -6,6 +6,8 @@ on:
       - ".github/workflows/original-methodology-traces.yml"
       - "scripts/export_original_methodology_traces.py"
       - "tests/test_original_methodology_traces.py"
+      - "scripts/audit_saved_stage_evaluations.py"
+      - "tests/test_saved_stage_evaluations.py"
   workflow_dispatch:
 permissions:
   contents: read
@@ -23,6 +25,7 @@ jobs:
       - name: Run deterministic source-provenance and trace contract tests
         run: |
           python -m unittest discover -s tests -p test_original_methodology_traces.py -v
+          python -m unittest discover -s tests -p test_saved_stage_evaluations.py -v
           python scripts/check_handoff.py
       - name: Retrieve and pin genuine professor-provided Zenodo source
         run: |
@@ -45,6 +48,9 @@ jobs:
           python scripts/export_original_methodology_traces.py \
             --tar results/original-methodology/SPDZCoder.tar \
             --output results/original-methodology/traces
+          python scripts/audit_saved_stage_evaluations.py \
+            --tar results/original-methodology/SPDZCoder.tar \
+            --output results/original-methodology/traces/available-stage-evaluation.json
           python - <<'PY'
           import hashlib,json
           from pathlib import Path
