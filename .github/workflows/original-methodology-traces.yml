@@ -8,6 +8,8 @@ on:
       - "tests/test_original_methodology_traces.py"
       - "scripts/audit_saved_stage_evaluations.py"
       - "tests/test_saved_stage_evaluations.py"
+      - "scripts/inventory_original_ablations.py"
+      - "tests/test_original_ablation_inventory.py"
   workflow_dispatch:
 permissions:
   contents: read
@@ -26,6 +28,7 @@ jobs:
         run: |
           python -m unittest discover -s tests -p test_original_methodology_traces.py -v
           python -m unittest discover -s tests -p test_saved_stage_evaluations.py -v
+          python -m unittest discover -s tests -p test_original_ablation_inventory.py -v
           python scripts/check_handoff.py
       - name: Retrieve and pin genuine professor-provided Zenodo source
         run: |
@@ -51,6 +54,9 @@ jobs:
           python scripts/audit_saved_stage_evaluations.py \
             --tar results/original-methodology/SPDZCoder.tar \
             --output results/original-methodology/traces/available-stage-evaluation.json
+          python scripts/inventory_original_ablations.py \
+            --tar results/original-methodology/SPDZCoder.tar \
+            --output results/original-methodology/traces/original-ablation-file-inventory.json
           python - <<'PY'
           import hashlib,json
           from pathlib import Path
