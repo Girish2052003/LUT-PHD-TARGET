@@ -1,0 +1,18 @@
+from Compiler.types import sint
+
+def count_distinct(arr):
+    """
+    Return the number of distinct values in the array using an oblivious approach.
+    """
+    counter = sint(0)
+    n = len(arr)
+    for i in range(n):
+        unique = sint(1)
+        for j in range(i):
+            unique *= arr[j] != arr[i]
+        counter += unique
+    return counter
+
+def __witness_observe_open(value, site):
+    print_ln('OPEN[%s]=%s', site, value)
+    return value

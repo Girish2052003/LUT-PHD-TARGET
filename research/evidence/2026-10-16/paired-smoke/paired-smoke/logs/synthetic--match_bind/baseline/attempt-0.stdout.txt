@@ -1,0 +1,25 @@
+Default bit length: 64
+Default security parameter: 40
+Compiling file /run/paired-baseline/evaluation/evaluation_storage/public_return.mpc
+Writing to Programs/Schedules/public_return.sch
+Writing to Programs/Bytecode/public_return-0.bc
+Hash: e8cf86229884c32b969979d02d44ac5e6457fd873bb66172aadc366c9ed02c91
+Program requires at most:
+           1 integer inputs from player 0
+         104 integer bits
+           2 integer opens
+          63 integer triples
+           9 virtual machine rounds
+Using security parameter 40
+AUTHORIZED=1
+Significant amount of unused triples of SPDZ gfp. For more accurate benchmarks, consider reducing the batch size with --batch-size.
+Note that some protocols have larger minimum batch sizes.
+Significant amount of unused bits of SPDZ gfp. For more accurate benchmarks, consider reducing the batch size with --batch-size.
+Note that some protocols have larger minimum batch sizes.
+The following benchmarks are including preprocessing (offline phase).
+Time = 6.57678 seconds 
+Data sent = 59.5219 MB in ~125 rounds (party 0 only; use '-v' for more details)
+Global data sent = 98.5617 MB (all parties)
+This program might benefit from some protocol options.
+Consider adding the following at the beginning of your code:
+	program.use_edabit(True)

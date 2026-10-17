@@ -1,0 +1,6 @@
+def public_return(arr, x):
+    acc = sint(1)
+    acc *= 0
+    acc += 1
+    acc *= (arr[0] != x).reveal()
+    return acc

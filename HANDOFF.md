@@ -69,8 +69,8 @@ independently checked. The selected main limitation is unnecessary intermediate
 openings in otherwise functionally accepted translations. The policy is explicit;
 this is not a historical breach or a universal confidentiality proof.
 
-**Current work is E/F:** the narrowed secret-arithmetic postprocessor has bounded
-independent static approval for restricted runtime evaluation. Exactly two of 626
+**E1 is complete; current work is full F:** the narrowed secret-arithmetic postprocessor
+has independently accepted targeted runtime evidence. Exactly two of 626
 archived candidates change; 624 remain byte-identical. The mixed fixed/integer
 `lower_bound` comparison is deferred. Review and correction history is in
 `research/reviews/secret-arithmetic-review-findings.md`.
@@ -78,14 +78,17 @@ archived candidates change; 624 remain byte-identical. The mixed fixed/integer
 Both original pipeline entry points now have a reproducible, hash-pinned finalizer
 patch. The pre-specified paired smoke has 32 pairs / 64 executions: two native,
 28 private-input observed/control, and two locally authored fallback pairs.
-Read `research/modifications/README.md`. Execute only in the isolated Docker CI,
-then inspect raw evidence and obtain independent acceptance. Only the exact added
+Read `research/modifications/README.md`. Run38958484872 at35adfb0 completed all64
+executions; all718artifact files are preserved and independently checked.
+Both native candidates pass and all private/control outputs are preserved;
+50observed original opening events become zero. Only the exact added
 finalizer slice is exercised on archived candidates; model stages are not simulated.
-No modified runtime improvement is established yet. Full626-candidate paired
-comparison remains separate and must follow accepted smoke evidence.
+This accepts the narrow comparison-mask repair, with recorded extra multiplication
+costs. Full626-candidate paired comparison remains separate. Launch it with the
+reviewed gate and `[paired-full]`, preserving all failure and uncertainty results.
 
-Five practical milestones remain: accept the modified smoke; complete full paired
-comparison; complete seven-category source/methodology traces; finish available
+Four practical milestones remain: complete full paired comparison; complete
+seven-category source/methodology traces; finish available
 ablations and oracle checks; independently audit/consolidate evidence and validated
 main. Historical generation still needs Girish's explicit blocker decision, followed
 by separate report authorization. This sequence is not a guarantee against new

@@ -24,6 +24,7 @@ it does not mean the whole assignment is finished.
 | D1 — Accepted authentic privacy witnesses | **PASS** | Two archived candidates distinguish private inputs with identical permitted outputs;16native/diagnostic controls independently checked under explicit policy. |
 | D — Demonstrated original-system limitation | **IN_PROGRESS** | Investigate original 25 both-failed tasks and other candidate classes; choose one evidenced failure. |
 | E — Patch actual original system | **IN_PROGRESS** | A runnable, narrowly scoped original-source patch with before/after regression evidence. |
+| E1 — Accepted original-modification paired smoke | **PASS** | 32pairs/64executions;2authentictranslations preserve tested outputs and remove50observed openingevents. No full-regression or general privacy guarantee. |
 | F — Paired baseline and modification comparison | **IN_PROGRESS** | Matched raw baseline/modified measurements, regressions, ablation, uncertainty and full failure matrix. |
 | G — Practical evidence acceptance | **IN_PROGRESS** | Independent review, CI and durable evidence for every completed practical requirement. |
 | REPORT — Final report readiness (writing locked) | **BLOCKED** | Practical R1–R8 accepted; report writing still requires separate explicit user authorization. |

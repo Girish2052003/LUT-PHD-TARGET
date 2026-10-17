@@ -201,7 +201,8 @@
       "expected_outputs": "Patch, source hashes, tests and run logs.",
       "acceptance_criteria": "Modification addresses demonstrated failure without hidden oracle/input changes.",
       "phase_ids": [
-        "E"
+        "E",
+        "E1"
       ],
       "status": "IN_PROGRESS",
       "evidence_paths": [
@@ -211,18 +212,23 @@
         "research/modifications/pinned-patch-manifest.json",
         "scripts/apply_original_postprocess.py",
         "research/reviews/secret-arithmetic-review-findings.md",
-        "research/reviews/paired-smoke-preexecution-review.md"
+        "research/reviews/paired-smoke-preexecution-review.md",
+        "research/evidence/2026-10-16/paired-smoke/receipt.json",
+        "research/evidence/2026-10-16/paired-smoke/measurements.json",
+        "research/reviews/paired-smoke-evidence-review.md"
       ],
-      "exact_evidence_commit": null,
-      "test_workflow_identifiers": [],
-      "measured_results": "Static only: exactly2/626candidateASTs changed;624byte-identical. No modified runtime result yet.",
+      "exact_evidence_commit": "35adfb04c1132ae91d1b2c6e21cf791855eab768",
+      "test_workflow_identifiers": [
+        "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38958484872"
+      ],
+      "measured_results": "Accepted narrow32-pair/64-execution smoke:64compile/runtimePASS,4/4nativeACCEPT,all56privatecontroloutputs preserved,4syntheticfallbackexecutionspass;50observedintermediateopeningevents become0.",
       "known_limitations": "Only comparison-bit products with a supported secret-integer invariant. Mixed opened-operand comparisons including lower_bound are unchanged. Full model-dependent pipeline not executed.",
-      "verification_reviewer": "modification_review: bounded GO for controlled runtime; final requirement acceptance pending",
+      "verification_reviewer": "diagnostic_review accepted targeted smoke only; full native paired acceptance remains pending",
       "completion": {
         "implemented": true,
-        "executed": false,
+        "executed": true,
         "evidence_preserved": true,
-        "independently_checked": false
+        "independently_checked": true
       }
     },
     {
@@ -242,13 +248,18 @@
         "scripts/replay_modified.py",
         "scripts/verify_paired_replay.py",
         "research/modifications/README.md",
-        "research/reviews/paired-smoke-preexecution-review.md"
+        "research/reviews/paired-smoke-preexecution-review.md",
+        "research/evidence/2026-10-16/paired-smoke/receipt.json",
+        "research/evidence/2026-10-16/paired-smoke/measurements.json",
+        "research/reviews/paired-smoke-evidence-review.md"
       ],
-      "exact_evidence_commit": null,
-      "test_workflow_identifiers": [],
-      "measured_results": null,
-      "known_limitations": "32pairs/64executions pre-specified; execution pending. Full626-candidate paired comparison and independent evidence review remain open.",
-      "verification_reviewer": "Pending requirement acceptance; historical audit reviewed by code_review agent",
+      "exact_evidence_commit": "35adfb04c1132ae91d1b2c6e21cf791855eab768",
+      "test_workflow_identifiers": [
+        "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38958484872"
+      ],
+      "measured_results": "Accepted narrow32-pair/64-execution smoke:64compile/runtimePASS,4/4nativeACCEPT,all56privatecontroloutputs preserved,4syntheticfallbackexecutionspass;50observedintermediateopeningevents become0.",
+      "known_limitations": "Targeted32-pairsmoke accepted; complete626-pair native comparison, regressions and paired uncertainty analysis remain pending.",
+      "verification_reviewer": "diagnostic_review accepted targeted smoke only; full native paired acceptance remains pending",
       "completion": {
         "implemented": true,
         "executed": false,

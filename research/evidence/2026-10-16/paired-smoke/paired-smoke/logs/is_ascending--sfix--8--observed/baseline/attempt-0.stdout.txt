@@ -1,0 +1,27 @@
+Default bit length: 64
+Default security parameter: 40
+Compiling file /run/paired-baseline/evaluation/evaluation_storage/is_ascending.mpc
+Writing to Programs/Schedules/is_ascending.sch
+Writing to Programs/Bytecode/is_ascending-0.bc
+Hash: 52fe8af24bfa40230b0a50a112e2895912810bbdf66593d0f7d3f2913f611ccc
+Program requires at most:
+           3 integer inputs from player 0
+         144 integer bits
+           5 integer opens
+         110 integer triples
+           9 virtual machine rounds
+Using security parameter 40
+OPEN[0]=1
+OPEN[0]=0
+AUTHORIZED=0
+Significant amount of unused triples of SPDZ gfp. For more accurate benchmarks, consider reducing the batch size with --batch-size.
+Note that some protocols have larger minimum batch sizes.
+Significant amount of unused bits of SPDZ gfp. For more accurate benchmarks, consider reducing the batch size with --batch-size.
+Note that some protocols have larger minimum batch sizes.
+The following benchmarks are including preprocessing (offline phase).
+Time = 6.37308 seconds 
+Data sent = 59.5235 MB in ~127 rounds (party 0 only; use '-v' for more details)
+Global data sent = 98.565 MB (all parties)
+This program might benefit from some protocol options.
+Consider adding the following at the beginning of your code:
+	program.use_edabit(True)

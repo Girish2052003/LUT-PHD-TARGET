@@ -3,7 +3,8 @@ on:
   push:
     branches: ["research/original-evaluator-replay-20261015"]
     paths:
-      - 'research/modifications/**'
+      - 'research/modifications/secret_arithmetic.py'
+      - 'research/modifications/Dockerfile'
       - 'scripts/apply_original_postprocess.py'
       - 'scripts/replay_modified.py'
       - 'scripts/verify_paired_replay.py'
@@ -14,6 +15,9 @@ permissions:
   contents: read
 jobs:
   paired-smoke:
+    # A full launch separately verifies that these exact sources already passed
+    # the accepted smoke. Documentation/evidence checkpoints do not rerun it.
+    if: ${{ github.event_name != 'push' || !contains(github.event.head_commit.message, '[paired-full]') }}
     runs-on: ubuntu-24.04
     timeout-minutes: 40
     steps:

@@ -1,0 +1,51 @@
+{
+  "pair_id": "loop_test--is_ascending--c0--native",
+  "task_id": "loop_test/is_ascending",
+  "candidate_id": 0,
+  "kind": "native",
+  "inputs": null,
+  "input_type": null,
+  "rewrite_events": [
+    {
+      "rule": "secret_product",
+      "line": 19,
+      "column": 31,
+      "original": "condition.reveal()",
+      "replacement": "condition"
+    }
+  ],
+  "variant": "baseline",
+  "pair_index": 1,
+  "execution_order": 1,
+  "source_sha256": "45db3f3d0f9e87c1818458209f15727b3a4c8714a563d4ccaf2df7dc69c6c305",
+  "original_source_sha256": "45db3f3d0f9e87c1818458209f15727b3a4c8714a563d4ccaf2df7dc69c6c305",
+  "transformed_source_sha256": "654715443ae4598dc08a9de626916a16b13e96713e4a52e6b920c34d7df41127",
+  "template_sha256": "872383199ddc07c0f90d299282c1a9abec6bd99f64a0365fea407d3821ccef7a",
+  "inputs_sha256": null,
+  "compile_status": "PASS",
+  "runtime_status": "PASS",
+  "failure_class": null,
+  "oracle_status": "ACCEPT",
+  "duration_seconds": 14.679939095999998,
+  "exception": null,
+  "attempts": [
+    {
+      "command": "/mp-spdz/Scripts/compile-run.py -E mascot /run/paired-baseline/evaluation/evaluation_storage/is_ascending.mpc",
+      "timeout_seconds": 60,
+      "returncode": 0,
+      "timed_out": false,
+      "schedule_present": true,
+      "runtime_launch_marker": true,
+      "duration_seconds": 14.679325030000001,
+      "combined_source_sha256": "b56e8f126c7706b06790a068e9e11937394c28e0657350f60ad3debc736d668f",
+      "stdout_sha256": "0173d2e91fae3f1f14bccd476ed3425bf0ec5c2d765851cffa6776d6a6347926",
+      "stderr_sha256": "0ca2fd35a2ecc7af011be33f2aebba8f1c527634930a261ff1ee0ef49f139958",
+      "compile_status": "PASS",
+      "runtime_status": "PASS",
+      "failure_class": null
+    }
+  ],
+  "log_path": "logs/loop_test--is_ascending--c0--native/baseline",
+  "authorized_outputs": [],
+  "public_openings": []
+}

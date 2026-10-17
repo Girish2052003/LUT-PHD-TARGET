@@ -1,0 +1,94 @@
+name: Full native paired original comparison
+on:
+  push:
+    branches: ["research/original-evaluator-replay-20261015"]
+    paths:
+      - '.github/workflows/modified-original-full.yml'
+      - 'scripts/summarize_paired_replay.py'
+      - 'research/evidence/2026-10-16/paired-smoke/receipt.json'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  native:
+    if: contains(github.event.head_commit.message, '[paired-full]') || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    strategy:
+      fail-fast: false
+      max-parallel: 7
+      matrix:
+        split: [array_test, loop_test, branch_test, math_test, numpy_operation_test, numpy_ufunc_test, syntax_test]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Require accepted targeted evidence and prepare identical sources
+        run: |
+          PYTHONPATH=src python -m unittest discover -s tests -v
+          python scripts/check_handoff.py
+          python scripts/prepare_original_replay.py
+          python scripts/apply_original_postprocess.py --build-dir tmp/original-replay-build
+          python scripts/check_paired_smoke_gate.py --receipt research/evidence/2026-10-16/paired-smoke/receipt.json --built-manifest tmp/original-replay-build/modified/modification_manifest.json
+      - name: Build matched evaluator image and capture runner conditions
+        env:
+          REPLAY_SPLIT: ${{ matrix.split }}
+        run: |
+          docker build -t modified-original-paired tmp/original-replay-build
+          mkdir -p "results/paired-environment/$REPLAY_SPLIT"
+          docker image inspect modified-original-paired > "results/paired-environment/$REPLAY_SPLIT/image.json"
+          uname -a > "results/paired-environment/$REPLAY_SPLIT/kernel.txt"
+          lscpu > "results/paired-environment/$REPLAY_SPLIT/cpu.txt"
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          names = ['ImageOS', 'ImageVersion', 'RUNNER_OS', 'RUNNER_ARCH', 'GITHUB_RUN_ID', 'GITHUB_RUN_ATTEMPT', 'GITHUB_SHA']
+          (Path('results/paired-environment') / os.environ['REPLAY_SPLIT'] / 'runner.json').write_text(json.dumps({k: os.environ.get(k) for k in names}, indent=2) + '\n')
+          PY
+      - name: Evaluate all authentic candidates with finalizer disabled and enabled
+        env:
+          REPLAY_HARNESS: replay_modified.py
+          REPLAY_SPLIT: ${{ matrix.split }}
+        run: |
+          bash scripts/run_original_replay_container.sh modified-original-paired "results/paired-full/$REPLAY_SPLIT" --split "$REPLAY_SPLIT"
+          python scripts/verify_paired_replay.py --root "results/paired-full/$REPLAY_SPLIT" --baseline tmp/original-replay-build/baseline
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: paired-native-${{ matrix.split }}-${{ github.sha }}
+          path: |
+            results/paired-full
+            results/paired-environment
+          retention-days: 90
+          if-no-files-found: warn
+  aggregate:
+    needs: native
+    if: always() && needs.native.result != 'skipped'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: paired-native-*-${{ github.sha }}
+          path: results/paired-artifacts
+          merge-multiple: true
+      - name: Require all626native pairs and preserve every failure and disagreement
+        run: |
+          python scripts/prepare_original_replay.py
+          python scripts/summarize_paired_replay.py --root results/paired-artifacts/paired-full --baseline tmp/original-replay-build/baseline --output results/paired-summary
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: paired-native-summary-${{ github.sha }}
+          path: results/paired-summary
+          retention-days: 90
+          if-no-files-found: warn

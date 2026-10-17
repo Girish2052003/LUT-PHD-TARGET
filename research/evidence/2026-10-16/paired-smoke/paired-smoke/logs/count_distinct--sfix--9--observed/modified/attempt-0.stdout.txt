@@ -1,0 +1,25 @@
+Default bit length: 64
+Default security parameter: 40
+Compiling file /run/paired-baseline/evaluation/evaluation_storage/count_distinct.mpc
+Writing to Programs/Schedules/count_distinct.sch
+Writing to Programs/Bytecode/count_distinct-0.bc
+Hash: e42964bdb0ba4452305738b711e62f964e230f83cfa3653a93eb652335dd5f0b
+Program requires at most:
+           3 integer inputs from player 0
+         213 integer bits
+           4 integer opens
+          93 integer triples
+          10 virtual machine rounds
+Using security parameter 40
+AUTHORIZED=3
+Significant amount of unused triples of SPDZ gfp. For more accurate benchmarks, consider reducing the batch size with --batch-size.
+Note that some protocols have larger minimum batch sizes.
+Significant amount of unused bits of SPDZ gfp. For more accurate benchmarks, consider reducing the batch size with --batch-size.
+Note that some protocols have larger minimum batch sizes.
+The following benchmarks are including preprocessing (offline phase).
+Time = 6.403 seconds 
+Data sent = 59.5229 MB in ~127 rounds (party 0 only; use '-v' for more details)
+Global data sent = 98.5637 MB (all parties)
+This program might benefit from some protocol options.
+Consider adding the following at the beginning of your code:
+	program.use_edabit(True)

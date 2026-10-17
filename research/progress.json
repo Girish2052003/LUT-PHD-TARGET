@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "updated_on": "2026-10-16",
+  "updated_on": "2026-10-17",
   "current_pr": 6,
   "historical_remote_main": "0ae96a968022325f3f678b19db1fcd69de483b70",
   "historical_reviewed_head": "5ca3809f15e8e326ff2d0a9b2e23993704be3dda",
-  "resume_phase": "E",
+  "resume_phase": "F",
   "report_authorized": false,
   "phases": [
     {
@@ -397,18 +397,47 @@
         "research/modifications/pinned-patch-manifest.json",
         "scripts/apply_original_postprocess.py",
         "research/reviews/secret-arithmetic-review-findings.md",
-        "research/reviews/paired-smoke-preexecution-review.md"
+        "research/reviews/paired-smoke-preexecution-review.md",
+        "research/evidence/2026-10-16/paired-smoke/receipt.json",
+        "research/evidence/2026-10-16/paired-smoke/measurements.json",
+        "research/reviews/paired-smoke-evidence-review.md"
       ],
-      "evidence_commit": null,
+      "evidence_commit": "35adfb04c1132ae91d1b2c6e21cf791855eab768",
       "verification": {
         "implemented": true,
-        "executed": false,
+        "executed": true,
         "evidence_preserved": true,
-        "independently_checked": false,
-        "reviewer": "modification_review and replay_safety_review: bounded static/launch GO; actual runtime evidence acceptance pending"
+        "independently_checked": true,
+        "reviewer": "diagnostic_review accepted narrow E1 smoke; fullregression and broaderD dependencies remain open"
       },
-      "next_action": "Execute reviewed 32-pair/64-execution smoke in isolated two-party MASCOT; inspect exact original finalizer integration, authorized outputs, opening traces and public-return regressions. lower_bound remains deferred.",
+      "next_action": "Preserve accepted E1 modification. Complete full native paired regression and broader D dependencies before closing E.",
       "redo_only_if": "Relevant source, configuration, evidence, or acceptance scope changes; document why."
+    },
+    {
+      "id": "E1",
+      "title": "Accepted original-modification paired smoke",
+      "status": "PASS",
+      "completion_scope": "32pairs/64executions;2authentictranslations preserve tested outputs and remove50observed openingevents. No full-regression or general privacy guarantee.",
+      "dependencies": [
+        "D1",
+        "B2b",
+        "C1"
+      ],
+      "evidence_paths": [
+        "research/evidence/2026-10-16/paired-smoke/receipt.json",
+        "research/evidence/2026-10-16/paired-smoke/measurements.json",
+        "research/reviews/paired-smoke-evidence-review.md"
+      ],
+      "evidence_commit": "35adfb04c1132ae91d1b2c6e21cf791855eab768",
+      "verification": {
+        "implemented": true,
+        "executed": true,
+        "evidence_preserved": true,
+        "independently_checked": true,
+        "reviewer": "diagnostic_review independently checked718files,64executions,exactpipelinepatches andoutput/openingtraces"
+      },
+      "next_action": "Preserve; run complete626candidate paired native comparison using the exact accepted modification and critical harness pins.",
+      "redo_only_if": "Modification, critical harness, input/policy or environment changes; record the reason."
     },
     {
       "id": "F",
@@ -423,9 +452,14 @@
         "scripts/replay_modified.py",
         "scripts/verify_paired_replay.py",
         "research/modifications/README.md",
-        "research/reviews/paired-smoke-preexecution-review.md"
+        "research/reviews/paired-smoke-preexecution-review.md",
+        "research/evidence/2026-10-16/paired-smoke/receipt.json",
+        "research/reviews/paired-smoke-evidence-review.md",
+        "research/reviews/full-paired-preexecution-review.md",
+        "scripts/summarize_paired_replay.py",
+        "scripts/check_paired_smoke_gate.py"
       ],
-      "evidence_commit": null,
+      "evidence_commit": "35adfb04c1132ae91d1b2c6e21cf791855eab768",
       "verification": {
         "implemented": true,
         "executed": false,
@@ -433,7 +467,7 @@
         "independently_checked": false,
         "reviewer": "modification_review and replay_safety_review: bounded static/launch GO; actual runtime evidence acceptance pending"
       },
-      "next_action": "Accept targeted paired smoke first; then extend to all626 authentic SPDZCoder candidates with full failure/paired uncertainty accounting. No full paired result exists yet.",
+      "next_action": "Launch reviewed complete626-pair/1252-execution native comparison via[paired-full], inspect all outcomes/costs/disagreements and independently audit.32-pairsmoke accepted; fullresult pending.",
       "redo_only_if": "Relevant source, configuration, evidence, or acceptance scope changes; document why."
     },
     {

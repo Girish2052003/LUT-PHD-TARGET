@@ -1,0 +1,63 @@
+{
+  "pair_id": "is_ascending--sfix--3--control",
+  "task_id": "loop_test/is_ascending",
+  "candidate_id": 0,
+  "kind": "private_control",
+  "inputs": [
+    1,
+    2,
+    2
+  ],
+  "input_type": "sfix",
+  "expected_output": 0,
+  "expected_baseline_openings": [],
+  "rewrite_events": [
+    {
+      "rule": "secret_product",
+      "line": 19,
+      "column": 31,
+      "original": "condition.reveal()",
+      "replacement": "condition"
+    }
+  ],
+  "observer_sites": {
+    "baseline": [],
+    "modified": []
+  },
+  "variant": "baseline",
+  "pair_index": 21,
+  "execution_order": 1,
+  "source_sha256": "45db3f3d0f9e87c1818458209f15727b3a4c8714a563d4ccaf2df7dc69c6c305",
+  "original_source_sha256": "45db3f3d0f9e87c1818458209f15727b3a4c8714a563d4ccaf2df7dc69c6c305",
+  "transformed_source_sha256": "654715443ae4598dc08a9de626916a16b13e96713e4a52e6b920c34d7df41127",
+  "template_sha256": "ba5aed4f570d97bfd7a81d4b02e76e0b40621be257f81cf9a293e5919be6d00f",
+  "inputs_sha256": "d67df7df61d6152c4a61c23939931c5a90e51646e78d82e70a4e67d84eca097c",
+  "compile_status": "PASS",
+  "runtime_status": "PASS",
+  "failure_class": "oracle_reject",
+  "oracle_status": "REJECT",
+  "duration_seconds": 6.816019732000029,
+  "exception": null,
+  "attempts": [
+    {
+      "command": "/mp-spdz/Scripts/compile-run.py -E mascot /run/paired-baseline/evaluation/evaluation_storage/is_ascending.mpc",
+      "timeout_seconds": 60,
+      "returncode": 0,
+      "timed_out": false,
+      "schedule_present": true,
+      "runtime_launch_marker": true,
+      "duration_seconds": 6.8156391249999615,
+      "combined_source_sha256": "b9855c87a55090cff738d6ce8d44065a3d830f0ffebb9100ed149d20eac8e2e3",
+      "stdout_sha256": "c2f93e8a7cc416c3c8583465b88623c5e73367409d0dd98e0f737f24d2380c3b",
+      "stderr_sha256": "93169ff6ec071fcfa5f3dfe9e3e0dfe92d23dc2c1caaa7f2ed54dc331de4ffb4",
+      "compile_status": "PASS",
+      "runtime_status": "PASS",
+      "failure_class": null
+    }
+  ],
+  "log_path": "logs/is_ascending--sfix--3--control/baseline",
+  "authorized_outputs": [
+    "0"
+  ],
+  "public_openings": []
+}

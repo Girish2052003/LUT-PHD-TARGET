@@ -1,6 +1,6 @@
 # Scoped original-pipeline comparison-mask modification
 
-Status: independently reviewed for controlled execution; runtime results pending.
+Status: narrow E1 paired smoke independently accepted; complete native regression pending.
 This is a technical experiment record, not the professor-facing report.
 
 ## Defect and supported correction
@@ -83,6 +83,28 @@ The smoke workflow records CPU/kernel/runner information and both variants' raw
 cost output. Timing is descriptive; no speed advantage is asserted from one run.
 Complete native paired coverage and statistical/regression analysis remain a
 separate Phase F gate after the smoke evidence is accepted.
+
+## Accepted E1 result
+
+Run38958484872 at35adfb04c1132ae91d1b2c6e21cf791855eab768 completed all64executions.
+Both native candidate pairs pass before and after; all private/control and
+synthetic expected outputs are preserved. Across24observed private probes,
+50original intermediate opening events become zero. Both equal-output witness
+pairs lose their distinguishing explicit opening traces. All718artifact files
+are preserved and independently audited; see
+`research/reviews/paired-smoke-evidence-review.md`.
+
+The measured tradeoff is extra secret multiplication:93additional integer triples
+for native count_distinct and17for is_ascending. Timing/communication measurements
+are retained as single-run descriptive observations, not performance guarantees.
+Compiler opens include internal protocol operations; zero observed intermediate
+openings does not mean zero cryptographic protocol openings.
+
+The full launch gate binds the exact accepted modification manifest and ten
+critical harness/source files to this receipt. A later code change cannot reuse
+the old smoke approval. Full coverage uses626candidate pairs, reports all failures
+and original-oracle decisions, separates changed versus byte-identical sources,
+and includes exploratory task-level paired uncertainty with explicit limitations.
 
 ## Reproduction commands
 

@@ -1,0 +1,67 @@
+{
+  "pair_id": "is_ascending--sfix--1--observed",
+  "task_id": "loop_test/is_ascending",
+  "candidate_id": 0,
+  "kind": "private_observed",
+  "inputs": [
+    0
+  ],
+  "input_type": "sfix",
+  "expected_output": 1,
+  "expected_baseline_openings": [],
+  "rewrite_events": [
+    {
+      "rule": "secret_product",
+      "line": 19,
+      "column": 31,
+      "original": "condition.reveal()",
+      "replacement": "condition"
+    }
+  ],
+  "observer_sites": {
+    "baseline": [
+      {
+        "site": 0,
+        "line": 19,
+        "expression": "condition.reveal()"
+      }
+    ],
+    "modified": []
+  },
+  "variant": "modified",
+  "pair_index": 17,
+  "execution_order": 0,
+  "source_sha256": "8cbecf7afb2b0c0f45f7bf79bad77cc4caabc85e0913db7688fdbdb14505568c",
+  "original_source_sha256": "45db3f3d0f9e87c1818458209f15727b3a4c8714a563d4ccaf2df7dc69c6c305",
+  "transformed_source_sha256": "654715443ae4598dc08a9de626916a16b13e96713e4a52e6b920c34d7df41127",
+  "template_sha256": "1bb8548e2429e88dc600bf8d47bc963e2e6b6f678aeb1a967b627478d5ac9f45",
+  "inputs_sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+  "compile_status": "PASS",
+  "runtime_status": "PASS",
+  "failure_class": "oracle_reject",
+  "oracle_status": "REJECT",
+  "duration_seconds": 1.0637753199999906,
+  "exception": null,
+  "attempts": [
+    {
+      "command": "/mp-spdz/Scripts/compile-run.py -E mascot /run/paired-baseline/evaluation/evaluation_storage/is_ascending.mpc",
+      "timeout_seconds": 60,
+      "returncode": 0,
+      "timed_out": false,
+      "schedule_present": true,
+      "runtime_launch_marker": true,
+      "duration_seconds": 1.0633153520000178,
+      "combined_source_sha256": "3a8ee68bd103a0f54569109d012d0a16799b53a2467de2e02ba3f0fc82cdfbfa",
+      "stdout_sha256": "3793df898a989faee0da84de07383af2a5ab76524629a15f536c4327f5d2df99",
+      "stderr_sha256": "75d021e6c329cdabc42c7d0151be6991b0ec94ac8f20531a8690aaf13c0b946e",
+      "compile_status": "PASS",
+      "runtime_status": "PASS",
+      "failure_class": null
+    }
+  ],
+  "log_path": "logs/is_ascending--sfix--1--observed/modified",
+  "authorized_outputs": [
+    "1"
+  ],
+  "public_openings": []
+}

@@ -10,7 +10,7 @@ These are practical acceptance gates. Historical milestones do not replace origi
 | R3 | Reproduce key results | **IN_PROGRESS** | B1, B2, C, C1, B2a, B2b |
 | R4 | Explain actual methodology | **IN_PROGRESS** | A |
 | R5 | Demonstrate substantive limitation | **IN_PROGRESS** | D, D1 |
-| R6 | Implement original-source modification | **IN_PROGRESS** | E |
+| R6 | Implement original-source modification | **IN_PROGRESS** | E, E1 |
 | R7 | Compare original and modified | **IN_PROGRESS** | F |
 | R8 | Document reproduction difficulties | **IN_PROGRESS** | A, B2, B3, G |
 | R9 | Final report readiness | **BLOCKED** | REPORT |
@@ -100,10 +100,10 @@ These are practical acceptance gates. Historical milestones do not replace origi
 - **Expected outputs:** Patch, source hashes, tests and run logs.
 - **Acceptance criteria:** Modification addresses demonstrated failure without hidden oracle/input changes.
 - **Known limitations:** Only comparison-bit products with a supported secret-integer invariant. Mixed opened-operand comparisons including lower_bound are unchanged. Full model-dependent pipeline not executed.
-- **Verification reviewer:** modification_review: bounded GO for controlled runtime; final requirement acceptance pending
-- **Evidence:** `research/modifications/README.md`, `research/modifications/secret_arithmetic.py`, `research/modifications/original-pipeline.patch`, `research/modifications/pinned-patch-manifest.json`, `scripts/apply_original_postprocess.py`, `research/reviews/secret-arithmetic-review-findings.md`, `research/reviews/paired-smoke-preexecution-review.md`
-- **Evidence commit:** Pending
-- **Workflow identifiers:** Pending
+- **Verification reviewer:** diagnostic_review accepted targeted smoke only; full native paired acceptance remains pending
+- **Evidence:** `research/modifications/README.md`, `research/modifications/secret_arithmetic.py`, `research/modifications/original-pipeline.patch`, `research/modifications/pinned-patch-manifest.json`, `scripts/apply_original_postprocess.py`, `research/reviews/secret-arithmetic-review-findings.md`, `research/reviews/paired-smoke-preexecution-review.md`, `research/evidence/2026-10-16/paired-smoke/receipt.json`, `research/evidence/2026-10-16/paired-smoke/measurements.json`, `research/reviews/paired-smoke-evidence-review.md`
+- **Evidence commit:** 35adfb04c1132ae91d1b2c6e21cf791855eab768
+- **Workflow identifiers:** https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38958484872
 
 ## R7 — Compare original and modified
 
@@ -114,11 +114,11 @@ These are practical acceptance gates. Historical milestones do not replace origi
 - **Experimental obligation:** Same candidates/input/oracle/protocol; ablation, regressions and uncertainty.
 - **Expected outputs:** Raw paired results, metrics and complete failure matrix.
 - **Acceptance criteria:** Measured baseline and modified results independently reproducible under equal conditions.
-- **Known limitations:** 32pairs/64executions pre-specified; execution pending. Full626-candidate paired comparison and independent evidence review remain open.
-- **Verification reviewer:** Pending requirement acceptance; historical audit reviewed by code_review agent
-- **Evidence:** `scripts/replay_modified.py`, `scripts/verify_paired_replay.py`, `research/modifications/README.md`, `research/reviews/paired-smoke-preexecution-review.md`
-- **Evidence commit:** Pending
-- **Workflow identifiers:** Pending
+- **Known limitations:** Targeted32-pairsmoke accepted; complete626-pair native comparison, regressions and paired uncertainty analysis remain pending.
+- **Verification reviewer:** diagnostic_review accepted targeted smoke only; full native paired acceptance remains pending
+- **Evidence:** `scripts/replay_modified.py`, `scripts/verify_paired_replay.py`, `research/modifications/README.md`, `research/reviews/paired-smoke-preexecution-review.md`, `research/evidence/2026-10-16/paired-smoke/receipt.json`, `research/evidence/2026-10-16/paired-smoke/measurements.json`, `research/reviews/paired-smoke-evidence-review.md`
+- **Evidence commit:** 35adfb04c1132ae91d1b2c6e21cf791855eab768
+- **Workflow identifiers:** https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38958484872
 
 ## R8 — Document reproduction difficulties
 

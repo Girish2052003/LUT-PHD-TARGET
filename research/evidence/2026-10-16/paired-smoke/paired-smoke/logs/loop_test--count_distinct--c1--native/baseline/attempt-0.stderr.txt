@@ -1,0 +1,2 @@
+Running /mp-spdz/Scripts/../mascot-party.x 0 count_distinct -pn 18951 -h localhost -N 2
+Running /mp-spdz/Scripts/../mascot-party.x 1 count_distinct -pn 18951 -h localhost -N 2

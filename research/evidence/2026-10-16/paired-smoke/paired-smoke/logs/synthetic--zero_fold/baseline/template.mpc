@@ -1,0 +1,5 @@
+# Locally authored public-return regression fixture.
+# insert here #
+arr = sint.Array(1)
+arr[0] = sint.get_input_from(0)
+print_ln('AUTHORIZED=%s', public_return(arr, 2))
