@@ -128,17 +128,26 @@ def main():
     roots = sorted(f.parent for f in args.root.rglob("outcomes.jsonl"))
     if not roots:
         raise ValueError("No stage-2 results discovered")
-    records, ledgers, pins = [], [], set()
+    records, ledgers, pins, image_ids = [], [], set(), {}
     for root in roots:
         rows, ledger = validate_stage2_run(root)
         records.extend(rows)
         ledgers.append(ledger)
         env = json.loads((root / "environment.json").read_text())
+        image_id = env.get("container_image_id")
+        # Each category is built in a separate runner: image-layer timestamps may
+        # change the image identifier even when every pinned source and installed
+        # package byte remains identical. Record ALL IDs, never equate them.
+        import re
+        if not isinstance(image_id, str) or not re.fullmatch(r"sha256:[a-f0-9]{64}", image_id):
+            raise ValueError("Missing or invalid category Docker image provenance")
+        image_ids[str(root)] = image_id
         pins.add((sha(root / "stage2_identity.json"), sha(root / "source_manifest.json"),
                   sha(root / "installed-packages.txt"), sha(root / "os-packages.txt"),
-                  env["research_commit"], env["container_image_id"]))
+                  env["research_commit"], env["mp_spdz_commit"],
+                  env["mascot_binary_sha256"], env["original_evaluator_sha256"]))
     if len(pins) != 1 or any(ledger != ledgers[0] for ledger in ledgers):
-        raise ValueError("Mixed stage-2 source, environment, research revision or image")
+        raise ValueError("Mixed stage-2 source, package manifests, original evaluator or research revision")
     if args.smoke:
         wanted = {
             "array_test/reverse_and_concat", "loop_test/max_adjacent_product",
@@ -159,6 +168,8 @@ def main():
         if len(roots) != 7 or len(records) != 626:
             raise ValueError("Original full stage-2 replay requires seven splits and 626 cases")
         summary = summarize_full(records, ledgers[0])
+    summary["native_run_image_ids_by_output_root"] = dict(sorted(image_ids.items()))
+    summary["pinned_source_and_package_identity"] = list(next(iter(pins)))
     if args.output.exists():
         raise ValueError("Output summary directory must be fresh")
     args.output.mkdir(parents=True)
