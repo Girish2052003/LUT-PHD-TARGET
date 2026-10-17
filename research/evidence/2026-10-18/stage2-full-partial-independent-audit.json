@@ -19,7 +19,12 @@
       "rejected": 30,
       "compiler_pass": 44,
       "compiler_fail": 26,
-      "historical_flag_disagreements": 0
+      "historical_flag_disagreements": 0,
+      "original_first_second_task_union": {
+        "first": 21,
+        "second": 19,
+        "union": 24
+      }
     },
     {
       "category": "numpy_operation_test",
@@ -30,7 +35,12 @@
       "rejected": 24,
       "compiler_pass": 43,
       "compiler_fail": 21,
-      "historical_flag_disagreements": 0
+      "historical_flag_disagreements": 0,
+      "original_first_second_task_union": {
+        "first": 21,
+        "second": 19,
+        "union": 24
+      }
     },
     {
       "category": "array_test",
@@ -41,7 +51,12 @@
       "rejected": 21,
       "compiler_pass": 67,
       "compiler_fail": 19,
-      "historical_flag_disagreements": 0
+      "historical_flag_disagreements": 0,
+      "original_first_second_task_union": {
+        "first": 32,
+        "second": 33,
+        "union": 39
+      }
     }
   ],
   "verified_executions": 220,
@@ -111,5 +126,10 @@
       "observation": "Unsupported bitwise xor between sint operands"
     }
   ],
-  "compile_issue_scope_note": "Counts computed from final terminal exception lines in SHA256-verified original native stderr for only 3 accepted partial split artifacts (220 stage2 candidates, 66 compile failures). Type grouping is descriptive, NOT a root-cause proof or full seven-category failure report."
+  "compile_issue_scope_note": "Counts computed from final terminal exception lines in SHA256-verified original native stderr for only 3 accepted partial split artifacts (220 stage2 candidates, 66 compile failures). Type grouping is descriptive, NOT a root-cause proof or full seven-category failure report.",
+  "partial_original_stage2_first_count": 74,
+  "partial_original_stage2_second_count": 71,
+  "partial_original_stage2_at_least_one_successful_task_count": 87,
+  "partial_original_tasks": 110,
+  "full_benchmark_denominator_warning": "Counts 74/110 first and 87/110 union cover only three categories. Do NOT extrapolate partial percentages to the original full 313-task benchmark."
 }
