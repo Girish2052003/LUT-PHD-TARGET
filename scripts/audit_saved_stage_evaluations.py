@@ -11,7 +11,11 @@ import hashlib
 import json
 from pathlib import Path
 import tarfile
+import sys
 
+# Direct command-line invocation starts with scripts/ on sys.path, not repo root.
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
 from scripts.reproduce_official_scores import COUNTS, parse_results
 
 ZENODO_SHA = "a8ea14150dc1d4ddf53eb4ead450d88139d09b680683f673029877ce0c6e00ac"
