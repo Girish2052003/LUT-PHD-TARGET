@@ -1,0 +1,72 @@
+{
+  "scope": "Independent read-only audit of three completed native categories from the still-running original-stage2 626-candidate MASCOT experiment; PARTIAL, NOT full Phase C acceptance",
+  "date": "2026-10-18",
+  "source_run_id": 39075744038,
+  "source_run_commit": "1e3c95d5357cd8b913a11916e562b6de7d633ccb",
+  "status": "PARTIAL_VERIFIED",
+  "original_source_archive_sha256": "a8ea14150dc1d4ddf53eb4ead450d88139d09b680683f673029877ce0c6e00ac",
+  "source_manifest_sha256": "e8665e9ab89a022716f088a05ac99b478e190545e7dd93101c2ff214b4dd0326",
+  "stage2_identity_sha256": "ecb275c1cb189398e8b0747afbb37f85848e37a855f961a386c7d02ac644fc09",
+  "installed_packages_sha256": "482062e5a1fa575904bd36c369852227e57124059e098ca83d6c0bbd4bbad423",
+  "os_packages_sha256": "ef4477b1efd34b0dd98e1440815b468df79abcadbefcf814a217937bd2ad9c71",
+  "completed_categories": [
+    {
+      "category": "syntax_test",
+      "artifact_id": 12117610306,
+      "zip_sha256": "abe0ac8871153fdd8970c86435ede7e52e7341eda7f1479ea8dd31bc2304b73d",
+      "candidates": 70,
+      "accepted": 40,
+      "rejected": 30,
+      "compiler_pass": 44,
+      "compiler_fail": 26,
+      "historical_flag_disagreements": 0
+    },
+    {
+      "category": "numpy_operation_test",
+      "artifact_id": 12116744908,
+      "zip_sha256": "019deb164dc0d88058fbfb97cd39948616a15e7c6fa9594ba9d705b1b72b2369",
+      "candidates": 64,
+      "accepted": 40,
+      "rejected": 24,
+      "compiler_pass": 43,
+      "compiler_fail": 21,
+      "historical_flag_disagreements": 0
+    },
+    {
+      "category": "array_test",
+      "artifact_id": 12117009220,
+      "zip_sha256": "12ac90652fdbeed1034a555dbf140a91fe298f8b860bdbcdc385e1977977e119",
+      "candidates": 86,
+      "accepted": 65,
+      "rejected": 21,
+      "compiler_pass": 67,
+      "compiler_fail": 19,
+      "historical_flag_disagreements": 0
+    }
+  ],
+  "verified_executions": 220,
+  "observed_native_accepted": 145,
+  "observed_native_rejected": 75,
+  "source_stdout_stderr_hash_checks": 660,
+  "historical_flag_disagreements": 0,
+  "checks": {
+    "zip_crc": true,
+    "per_candidate_unique_task_and_candidate": true,
+    "original_candidate_source_hash_matches_stage2_identity": true,
+    "original_template_hash_matches": true,
+    "per_case_outcome_json_matches_combined_jsonl": true,
+    "raw_input_mpc_sha256_matches": true,
+    "raw_stdout_sha256_matches": true,
+    "raw_stderr_sha256_matches": true,
+    "original_author_stdout_oracle_recomputed": true,
+    "pinned_source_package_manifests_identical": true
+  },
+  "open_categories": [
+    "loop_test",
+    "branch_test",
+    "math_test",
+    "numpy_ufunc_test"
+  ],
+  "provenance_caveat": "Separately built Docker images have different IDs while exact pinned source and package manifests match; distinct image IDs must be recorded rather than treated as changing the original algorithm.",
+  "interpretation": "This is three-category raw-evidence acceptance only; exact 313-task/626-candidate global denominators, full native oracle variability and aggregate result are not yet verified. No fresh LLM generation and no causal ablation inference."
+}
