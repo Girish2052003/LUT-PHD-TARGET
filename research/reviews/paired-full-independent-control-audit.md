@@ -59,3 +59,22 @@ The accepted smoke run [38958484872](https://github.com/Girish2052003/LUT-PHD-TA
 5. Maintain PR #6 as draft until broader verification and user authorization. Do not begin final report writing.
 
 All inputs remain traceable to GitHub's pinned workflow artifacts; archival retention and rerun instructions should stay with the primary handoff.
+
+
+## Independent cross-run original replay comparison
+
+This section compares the separately accepted original-only 626 SPDZCoder candidate replays in [run 38703569637](https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38703569637) with the 626 baseline-label executions in [paired run 38989067493](https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38989067493). Task/candidate joins used exact case-sensitive identifier ordering and retained both failed and accepted cases. The earlier original-only acceptance count was 533/626 (268 first + 265 second); the later paired original-label count was 536/626 (270 + 266).
+
+**Three candidate decisions differ between the two independently executed original baselines:**
+
+| Authentic candidate | Earlier original-only replay | Paired original baseline |
+|---|---|---|
+| `loop_test/choppy_array` candidate 0 | REJECT | ACCEPT |
+| `math_test/pi_to_the_x` candidate 1 | REJECT | ACCEPT |
+| `math_test/spring_rocket` candidate 0 | REJECT | ACCEPT |
+
+A separate comparison of the earlier original-only replay with the paired **modified-label** outputs has five differences: the common `choppy_array` and `spring_rocket` changes, plus `standard_deviation` candidate 1 (ACCEPT→REJECT), `next_perfect_square` candidate 1 (ACCEPT→REJECT), and `pi_to_the_x` candidate 0 (REJECT→ACCEPT). These additional three are **unchanged-source controls**, not caused by the postprocessor. The two actually changed candidates remain ACCEPT in the full paired run.
+
+This is independent cross-run original-evaluator acceptance evidence, not evidence of new model generation or true correctness improvement. Do not collapse it into a single deterministic pass@k claim. Source hashes for the paired dataset are checked by the raw artifact verifier; historical original-only candidate identity was validated in its accepted replay evidence.
+
+A targeted follow-up to test the repeatability hypothesis is [workflow `unchanged-control-repeats.yml`](../../.github/workflows/unchanged-control-repeats.yml), launched at commit `dd46d91d3f668a120e0c6cfaeb629b3e94cf6a60`: four unchanged authentic candidate identifiers, four isolated original-only MASCOT runs each, no replacement oracle or extra model calls. Its results must be independently checked before attributing a cause.
