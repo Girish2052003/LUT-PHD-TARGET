@@ -83,6 +83,14 @@ class AuthenticStage2Tests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "disagree"):
                 build_stage2_ledger(Path(tmp), original, manifest)
 
+    def test_missing_original_source_manifest_entry_is_rejected(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            original, manifest = fixture(tmp)
+            manifest["baseline_files"] = [r for r in manifest["baseline_files"]
+                                          if "experiment-1-math_test.jsonl" not in r["path"]]
+            with self.assertRaisesRegex(ValueError, "pinned archive"):
+                build_stage2_ledger(Path(tmp), original, manifest)
+
     def test_reject_unpinned_original_source(self):
         with tempfile.TemporaryDirectory() as tmp:
             original, manifest = fixture(tmp)
