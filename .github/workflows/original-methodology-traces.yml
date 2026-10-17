@@ -1,0 +1,73 @@
+name: Verify seven original methodology stage traces
+on:
+  push:
+    branches: ["research/authentic-methodology-traces-20261018"]
+    paths:
+      - ".github/workflows/original-methodology-traces.yml"
+      - "scripts/export_original_methodology_traces.py"
+      - "tests/test_original_methodology_traces.py"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  official-seven-category-traces:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Run deterministic source-provenance and trace contract tests
+        run: |
+          python -m unittest discover -s tests -p test_original_methodology_traces.py -v
+          python scripts/check_handoff.py
+      - name: Retrieve and pin genuine professor-provided Zenodo source
+        run: |
+          mkdir -p results/original-methodology
+          curl -fLsS --retry 3 --max-time 600 --speed-limit 1024 --speed-time 45 \
+            "https://zenodo.org/records/18152253/files/SPDZCoder.tar?download=1" \
+            -o results/original-methodology/SPDZCoder.tar
+          python - <<'PY'
+          from pathlib import Path
+          import hashlib
+          p=Path("results/original-methodology/SPDZCoder.tar")
+          raw=p.read_bytes()
+          expected="a8ea14150dc1d4ddf53eb4ead450d88139d09b680683f673029877ce0c6e00ac"
+          if len(raw)!=65761280 or hashlib.sha256(raw).hexdigest()!=expected:
+              raise ValueError("Official authors' TAR changed or is incomplete")
+          print("Published original archive hash and length verified")
+          PY
+      - name: Export authentic saved stage snapshots for one task in every category
+        run: |
+          python scripts/export_original_methodology_traces.py \
+            --tar results/original-methodology/SPDZCoder.tar \
+            --output results/original-methodology/traces
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          root=Path("results/original-methodology/traces")
+          m=json.loads((root/"manifest.json").read_text())
+          if m["sample_count"]!=7 or m["original_task_count"]!=313 or m["fresh_author_model_calls"]!=0 or m["fresh_stage_execution"]:
+              raise ValueError("Historical stage trace mislabeled")
+          if len({r["task_id"].split("/")[0] for r in m["traces"]})!=7:
+              raise ValueError("Missing physical category")
+          for t in m["traces"]:
+              raw=(root/t["artifact_path"]).read_bytes()
+              if hashlib.sha256(raw).hexdigest()!=t["artifact_sha256"]:
+                  raise ValueError("Stage artifact hash differs")
+              obj=json.loads(raw)
+              if len(obj["stages"])!=4 or obj["task_id"]!=t["task_id"]:
+                  raise ValueError("Stage trace incomplete")
+          print("All seven original historical stage snapshots and provenance identities verified")
+          PY
+      - name: Preserve source-grounded trace artifacts and failure logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: author-seven-category-methodology-${{ github.sha }}
+          path: results/original-methodology/traces
+          retention-days: 90
+          if-no-files-found: warn
