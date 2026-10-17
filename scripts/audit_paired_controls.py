@@ -112,10 +112,21 @@ def audit(summary_zip, split_zips):
                     "same_mpc_sha256": before["mpc_sha256"] == after["mpc_sha256"],
                     "same_compiler_hash": before["compiled_hash"] == after["compiled_hash"],
                     "compiler_hash": before["compiled_hash"],
+                    "baseline_execution_order": b["execution_order"],
+                    "modified_execution_order": a["execution_order"],
                 })
             for variant, entry in (("baseline", before), ("modified", after)):
                 if (entry["row"]["oracle_status"] == "ACCEPT") != entry["success_marker"]:
                     marker_disagreements.append([t, candidate, variant])
+    # An execution-order association does not establish an order-caused effect.
+    order_pattern = all(
+        (f["baseline_execution_order"] == 1 and f["baseline"] == "ACCEPT"
+         and f["modified_execution_order"] == 0 and f["modified"] == "REJECT")
+        or
+        (f["baseline_execution_order"] == 0 and f["baseline"] == "REJECT"
+         and f["modified_execution_order"] == 1 and f["modified"] == "ACCEPT")
+        for f in flips
+    )
     # These are observations specific to this pinned run, not universal assumptions.
     if len(changed) != 2 or len(flips) != 4 or any(f["source_changed"] for f in flips):
         raise ValueError("Unexpected outcome/source change pattern; manual review required")
@@ -138,6 +149,7 @@ def audit(summary_zip, split_zips):
         "executions": len(records), "attempts_checked": attempts_checked,
         "changed_candidates": changed, "unchanged_source_flips": flips,
         "outcomes": outcomes, "oracle_marker_disagreements": marker_disagreements,
+        "all_unchanged_source_flips_accept_on_second_execution": order_pattern,
         "interpretation": "Identical-source flips cannot be credited to the postprocessor. "
                           "Causes of outcome variability not established. "
                           "The audit does not rerun MASCOT or prove confidentiality.",
