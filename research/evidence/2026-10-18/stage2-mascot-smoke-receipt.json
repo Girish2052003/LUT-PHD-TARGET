@@ -62,5 +62,12 @@
   },
   "interpretation": "Accept narrow smoke: 14 original stage-2 candidate texts freshly passed through pinned original MASCOT; authentic failed native programs retained. Full 626-stage2 comparison NOT YET measured. No historic LLM regeneration or causal repair-ablation claim.",
   "original_comparison_artifact": 12116316330,
-  "independent_auditor_script_local": "/mnt/data/audit_stage2_smoke_independent.py"
+  "reproducible_independent_audit": {
+    "script": "scripts/audit_stage2_smoke_zip.py",
+    "tests": "tests/test_stage2_smoke_zip_audit.py",
+    "smoke_artifact_id": 12116746822,
+    "historical_saved_snapshot_artifact_id": 12116316330,
+    "command": "python scripts/audit_stage2_smoke_zip.py --smoke-zip /path/to/github-actions-artifact-12116746822.zip --historical-traces-zip /path/to/github-actions-artifact-12116316330.zip --output /tmp/stage2-smoke-audit.json",
+    "no_untrusted_code_execution": true
+  }
 }
