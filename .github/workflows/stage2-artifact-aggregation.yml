@@ -1,0 +1,65 @@
+name: Independently aggregate pinned stage2 MASCOT category artifacts
+on:
+  push:
+    branches: ["research/original-stage2-mascot-20261018"]
+    paths:
+      - ".github/workflows/stage2-artifact-aggregation.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  aggregate-existing-seven-native-splits:
+    if: contains(github.event.head_commit.message, '[stage2-aggregate]') || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Check formal phase integrity and source review tests
+        run: |
+          python scripts/check_handoff.py
+          python -m unittest discover -s tests -p test_stage2_mascot_replay.py -v
+      - name: Download ONLY original seven native evidence artifacts from exact source run
+        uses: actions/download-artifact@v4
+        with:
+          run-id: 39075744038
+          github-token: ${{ github.token }}
+          pattern: stage2-original-native-*-1e3c95d5357cd8b913a11916e562b6de7d633ccb
+          path: results/stage2-artifacts
+          merge-multiple: true
+      - name: Rebuild 626 original native outcomes from raw stdout and pinned task identities
+        run: |
+          python scripts/verify_stage2_replay.py \
+            --root results/stage2-artifacts \
+            --output results/stage2-independent-aggregate
+      - name: Record pinned experiment/run provenance and outcome coverage
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          output=Path('results/stage2-independent-aggregate')
+          summary=json.loads((output/'summary.json').read_text())
+          if summary['tasks']!=313 or summary['candidate_records']!=626:
+              raise ValueError('Stage2 full original test coverage incomplete')
+          provenance={'original_native_run_id':39075744038,
+                      'original_native_commit':'1e3c95d5357cd8b913a11916e562b6de7d633ccb',
+                      'source_archive_sha256':'a8ea14150dc1d4ddf53eb4ead450d88139d09b680683f673029877ce0c6e00ac',
+                      'stage2_live_llm_calls':0,
+                      'complete_native_records':summary['candidate_records'],
+                      'limitations':'Raw original author oracle results; not historical model regeneration, formal confidentiality, or causal repair ablation'}
+          (output/'provenance.json').write_text(json.dumps(provenance,indent=2)+'\n')
+          print(json.dumps(summary['fresh'], indent=2))
+          PY
+      - name: Preserve verified seven-category stage2 summary and complete candidate table
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: stage2-original-reaggregated-${{ github.sha }}
+          path: results/stage2-independent-aggregate
+          retention-days: 90
+          if-no-files-found: warn
