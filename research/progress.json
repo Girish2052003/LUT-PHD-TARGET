@@ -318,7 +318,10 @@
         "research/original_source_audit.md",
         "research/evidence/2026-10-18/stage2-mascot-smoke-receipt.json",
         "research/reviews/stage2-smoke-independent-review.md",
-        "research/replay/stage2-protocol.md"
+        "research/replay/stage2-protocol.md",
+        "research/evidence/2026-10-18/stage2-original-full-independent-acceptance.json",
+        "research/reviews/stage2-full-original-mascot-independent-acceptance.md",
+        "research/evidence/2026-10-18/stage2-full-6split-independent-audit.json"
       ],
       "evidence_commit": "5ca3809f15e8e326ff2d0a9b2e23993704be3dda",
       "verification": {
@@ -328,7 +331,7 @@
         "independently_checked": false,
         "reviewer": "Pending acceptance review"
       },
-      "next_action": "Preserve independently accepted 14-execution authentic saved-stage2 original MASCOT smoke (run39075137852). Complete seven-category full 626-candidate original stage2 run39075744038, independently verify all raw outcomes, then continue original oracle/ablation checks. No live-model regeneration or causal repair claim.",
+      "next_action": "Accepted authentic saved-stage2 original native reproduction: 313 tasks, 626 candidates, 7/7 MASCOT splits and independent TAR-to-executed-MPC byte verification; raw native run 39075744038 (7 PASS category jobs, old aggregate path failure), artifact-only successful recovery 39080161119. Fresh 229/216/262 (first/second/union), archived 229/213/261. Remaining Phase C: review weak native oracles, classify remaining ablations and accept broader source/paper dependencies. Preserve three archival/fresh differences; no fabricated model regeneration.",
       "redo_only_if": "Relevant source, configuration, evidence, or acceptance scope changes; document why."
     },
     {
