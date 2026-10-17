@@ -1,3 +1,5 @@
+# Approval gate 18 Oct 2026: all seven source-run native category jobs completed successfully;
+# raw artifact recovery is authorized, but no new MPC candidate execution occurs.
 name: Independently aggregate pinned stage2 MASCOT category artifacts
 on:
   push:
