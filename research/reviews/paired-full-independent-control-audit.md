@@ -42,7 +42,7 @@ Download and provide the eight GitHub Actions ZIPs to the script (summary first,
 | `math_test/pi_to_the_x`, 0 | REJECT | ACCEPT | Both identical |
 | `math_test/pi_to_the_x`, 1 | ACCEPT | REJECT | Both identical |
 
-All four programs compiled successfully. The final stdout success marker appears only for the accepting execution; raw input MPC and compiler hash are identical across each pair. The original oracle criteria are sensitive to approximate arithmetic in some cases, but the specific cause of each flip is **not proven**. Do not assert a numerical or cryptographic mechanism without controlled repeated-run evidence.
+All four programs compiled successfully. The final stdout success marker appears only for the accepting execution; raw input MPC and compiler hash are identical across each pair. **All four accepted outcomes occurred on execution-order 1, while all four rejected outcomes occurred on execution-order 0; this holds regardless of the baseline/modified label.** This is an order-associated observation, not proof of warm-up effects or any particular root cause. The original oracle criteria are sensitive to approximate arithmetic in some cases, but the specific cause of each flip is **not proven**. Do not assert a numerical or cryptographic mechanism without controlled repeated-run evidence.
 
 A single native evaluation can report a different acceptance marker even for unchanged code. Neither the apparent +1 first-candidate gain nor -3 second-candidate loss is attributable to the finalizer. The 290→290 task-union result is an observed outcome, **not proof of semantic equivalence**.
 
@@ -53,7 +53,7 @@ The accepted smoke run [38958484872](https://github.com/Girish2052003/LUT-PHD-TA
 ## Limitations and follow-up acceptance gates
 
 1. This verifies **artifact consistency and the confounding unchanged-source outcome variability**, not original-sample historical regeneration, model repair stage execution, formal confidentiality, or independently re-running all MASCOT programs.
-2. If an exact mechanism for the four outcome flips is claimed, reproduce each with controlled same-source repeated MASCOT runs and examine numerical oracle values, RNG and runtime configuration. Do not weaken original test thresholds.
+2. The four unchanged-source flips all favor the second execution, so any causal claim requires independently controlled, repeated same-source MASCOT trials with randomized order, alongside numerical-oracle values, RNG inputs and runtime configuration. Do not weaken original test thresholds.
 3. Finish seven-category original-source methodology traces, available ablations, oracle inventory, interpretation of the paired failure matrix and source-linked limitations.
 4. Have the primary research team reconcile `research/progress.json`, `HANDOFF.md` and the requirement ledger; this audit is offered as a review checkpoint, **not an automatic phase-status change**.
 5. Maintain PR #6 as draft until broader verification and user authorization. Do not begin final report writing.
