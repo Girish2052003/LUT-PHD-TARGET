@@ -20,7 +20,10 @@ import sys
 import time
 from types import SimpleNamespace
 
-from replay_original import EVALUATOR_SHA, Recorder, digest, reset_execution_artifacts, verify_baseline
+if __package__:
+    from .replay_original import EVALUATOR_SHA, Recorder, digest, reset_execution_artifacts, verify_baseline
+else:
+    from replay_original import EVALUATOR_SHA, Recorder, digest, reset_execution_artifacts, verify_baseline
 
 
 def sha(raw):
