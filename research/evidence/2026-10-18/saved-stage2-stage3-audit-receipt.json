@@ -1,0 +1,40 @@
+{
+  "date": "2026-10-18",
+  "research_scope": "Original SPDZCoder release stage-2 (without-logged-repair) versus stage-3 historical evaluator flags; observational paired identity comparison, not fresh original generation",
+  "source_workflow_run": 39073915415,
+  "tested_commit": "b17fc7c57f331e604bf675c745a1eb6c8a1a5e9a",
+  "artifact_id": 12116316330,
+  "artifact_zip_sha256": "5ae5d2312a54617797168a67ff4f1fcc49da8dc12506a30ad5a8090c6a2098c4",
+  "source_archive_sha256": "a8ea14150dc1d4ddf53eb4ead450d88139d09b680683f673029877ce0c6e00ac",
+  "all_7_stage2_evaluation_files_found": true,
+  "original_313_task_identifiers_unchanged": true,
+  "task_count": 313,
+  "candidate_count": 626,
+  "stage2": {
+    "first": 229,
+    "second": 213,
+    "union": 261,
+    "first_percent": 73.16294,
+    "union_percent": 83.38658
+  },
+  "stage3": {
+    "first": 269,
+    "second": 265,
+    "union": 288,
+    "first_percent": 85.94249,
+    "union_percent": 92.01278
+  },
+  "candidate_pair_transitions": {
+    "rejected_to_accepted": 93,
+    "accepted_to_rejected": 1,
+    "unchanged": 532
+  },
+  "stage3_regression": {
+    "task_id": "math_test/pi_to_the_x",
+    "candidate_id": 0,
+    "stage2_accepted": true,
+    "stage3_accepted": false
+  },
+  "provenance": "Saved author evaluation logs and task-id positions verified against the official identity ledger. No MPC or LLM execution in the stage-audit job. Exact source code of each candidate is not re-evaluated here; separately accepted B2b does rerun final stage only.",
+  "interpretation_limits": "Not a fresh controlled no-repair ablation or causal repair efficacy estimate. Saved stage2/3 candidate strings and token metadata may differ without complete intermediate repair transcripts. Paper's no-repair values verified by recalculation of author-saved flags."
+}
