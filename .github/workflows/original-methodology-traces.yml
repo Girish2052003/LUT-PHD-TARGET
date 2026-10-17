@@ -10,6 +10,8 @@ on:
       - "tests/test_saved_stage_evaluations.py"
       - "scripts/inventory_original_ablations.py"
       - "tests/test_original_ablation_inventory.py"
+      - "scripts/find_original_no_refactoring_evaluations.py"
+      - "tests/test_no_refactoring_flag_search.py"
   workflow_dispatch:
 permissions:
   contents: read
@@ -29,6 +31,7 @@ jobs:
           python -m unittest discover -s tests -p test_original_methodology_traces.py -v
           python -m unittest discover -s tests -p test_saved_stage_evaluations.py -v
           python -m unittest discover -s tests -p test_original_ablation_inventory.py -v
+          python -m unittest discover -s tests -p test_no_refactoring_flag_search.py -v
           python scripts/check_handoff.py
       - name: Retrieve and pin genuine professor-provided Zenodo source
         run: |
@@ -57,6 +60,9 @@ jobs:
           python scripts/inventory_original_ablations.py \
             --tar results/original-methodology/SPDZCoder.tar \
             --output results/original-methodology/traces/original-ablation-file-inventory.json
+          python scripts/find_original_no_refactoring_evaluations.py \
+            --tar results/original-methodology/SPDZCoder.tar \
+            --output results/original-methodology/traces/no-refactoring-evaluation-group-search.json
           python - <<'PY'
           import hashlib,json
           from pathlib import Path
