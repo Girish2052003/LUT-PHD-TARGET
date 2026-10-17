@@ -24,6 +24,8 @@ jobs:
         run: |
           python scripts/check_handoff.py
           python -m unittest discover -s tests -p test_stage2_mascot_replay.py -v
+          python -m unittest discover -s tests -p test_stage2_full_zip_audit.py -v
+          python -m unittest discover -s tests -p test_stage2_author_tar_source_audit.py -v
       - name: Download ONLY original seven native evidence artifacts from exact source run
         uses: actions/download-artifact@v4
         with:
@@ -37,6 +39,54 @@ jobs:
           python scripts/verify_stage2_replay.py \
             --root results/stage2-artifacts \
             --output results/stage2-independent-aggregate
+      - name: Recover seven raw category ZIP views without re-executing original candidates
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from zipfile import ZipFile, ZIP_DEFLATED
+          root=Path('results/stage2-artifacts')
+          expect={'array_test','loop_test','branch_test','math_test','numpy_operation_test','numpy_ufunc_test','syntax_test'}
+          got={p.name for p in root.iterdir() if p.is_dir()}
+          if got != expect: raise ValueError('Original native category evidence incomplete')
+          target=Path('results/stage2-category-zips')
+          target.mkdir(parents=True,exist_ok=False)
+          for split in sorted(expect):
+              entries=[p for p in (root/split).rglob('*') if p.is_file()]
+              if not entries or not (root/split/'outcomes.jsonl').exists(): raise ValueError('Missing original raw files')
+              with ZipFile(target/(split+'.zip'),'w',ZIP_DEFLATED) as z:
+                  for p in sorted(entries):
+                      if p.is_symlink(): raise ValueError('Untrusted symlink in GitHub evidence')
+                      z.write(p,p.relative_to(root).as_posix())
+          print('All seven original run ZIP source views rebuilt without rerunning candidates')
+          PY
+      - name: Verify original stage2 raw ZIPs against untouched authors' program strings
+        run: |
+          mkdir -p results/stage2-verified reports
+          curl -fLsS --retry 3 --max-time 600 --speed-limit 1024 --speed-time 45 \
+            "https://zenodo.org/records/18152253/files/SPDZCoder.tar?download=1" \
+            -o results/stage2-verified/SPDZCoder.tar
+          python scripts/audit_stage2_full_zips.py results/stage2-category-zips/*.zip \
+            --output reports/independent-seven-zip-audit.json
+          python scripts/check_native_stage2_mpc_against_tar.py \
+            --author-tar results/stage2-verified/SPDZCoder.tar \
+            results/stage2-category-zips/*.zip \
+            --output reports/independent-original-tar-mpc-byte-audit.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          raw=json.loads(Path('reports/independent-seven-zip-audit.json').read_text())
+          src=json.loads(Path('reports/independent-original-tar-mpc-byte-audit.json').read_text())
+          saved=json.loads(Path('results/stage2-independent-aggregate/summary.json').read_text())
+          if raw['fresh'] != saved['fresh'] or raw['historical'] != saved['historical']:
+              raise ValueError('Independent raw acceptance differs from original harness outcome aggregator')
+          if raw['candidate_count'] != src['verified_candidate_count'] != 626:
+              raise ValueError('Independent source-in-MPC verification incomplete')
+          print('626 original author texts and original oracle outcome agreement: verified')
+          PY
+      - name: Preserve independently recomputed source audit and original run summary
+        run: |
+          cp reports/independent-seven-zip-audit.json results/stage2-independent-aggregate/
+          cp reports/independent-original-tar-mpc-byte-audit.json results/stage2-independent-aggregate/
       - name: Record pinned experiment/run provenance and outcome coverage
         run: |
           python - <<'PY'
