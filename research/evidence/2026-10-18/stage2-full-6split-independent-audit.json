@@ -1,0 +1,131 @@
+{
+  "review_date": "2026-10-18",
+  "status": "PARTIAL_ONLY_6_OF_7",
+  "source_run": 39075744038,
+  "source_commit": "1e3c95d5357cd8b913a11916e562b6de7d633ccb",
+  "original_source_archive_sha256": "a8ea14150dc1d4ddf53eb4ead450d88139d09b680683f673029877ce0c6e00ac",
+  "native_candidate_count_checked": 558,
+  "original_tasks_checked": 279,
+  "accepted": 396,
+  "rejected": 162,
+  "saved_author_flag_disagreements": 3,
+  "source_package_sha256": {
+    "source_manifest": "e8665e9ab89a022716f088a05ac99b478e190545e7dd93101c2ff214b4dd0326",
+    "stage2_identity": "ecb275c1cb189398e8b0747afbb37f85848e37a855f961a386c7d02ac644fc09",
+    "installed_packages": "482062e5a1fa575904bd36c369852227e57124059e098ca83d6c0bbd4bbad423",
+    "os_packages": "ef4477b1efd34b0dd98e1440815b468df79abcadbefcf814a217937bd2ad9c71"
+  },
+  "categories": [
+    {
+      "category": "array_test",
+      "artifact_id": 12117009220,
+      "zip_sha256": "12ac90652fdbeed1034a555dbf140a91fe298f8b860bdbcdc385e1977977e119",
+      "tasks": 43,
+      "candidates": 86,
+      "first": 32,
+      "second": 33,
+      "union": 39,
+      "accept": 65,
+      "compile_fail": 19,
+      "attempts": 86,
+      "disagreements": 0
+    },
+    {
+      "category": "loop_test",
+      "artifact_id": 12118480819,
+      "zip_sha256": "9c19d30baa11c39a2368c6947406fe7d639920fa21f70a4966ac8c0464ee4cf0",
+      "tasks": 97,
+      "candidates": 194,
+      "first": 70,
+      "second": 66,
+      "union": 82,
+      "accept": 136,
+      "compile_fail": 47,
+      "attempts": 199,
+      "disagreements": 0
+    },
+    {
+      "category": "branch_test",
+      "artifact_id": 12117428647,
+      "zip_sha256": "f9ea20c2ed58d0853fc0659448a8cf5759cfbdf2b4ccdfffe5669973f5d1a3bd",
+      "tasks": 34,
+      "candidates": 68,
+      "first": 29,
+      "second": 25,
+      "union": 29,
+      "accept": 54,
+      "compile_fail": 6,
+      "attempts": 75,
+      "disagreements": 1
+    },
+    {
+      "category": "math_test",
+      "artifact_id": 12118110941,
+      "zip_sha256": "f8e452799031df3fac1d6e6cd818b80783b2479392ab33664a86a15c4a16c253",
+      "tasks": 38,
+      "candidates": 76,
+      "first": 30,
+      "second": 31,
+      "union": 36,
+      "accept": 61,
+      "compile_fail": 11,
+      "attempts": 76,
+      "disagreements": 2
+    },
+    {
+      "category": "numpy_operation_test",
+      "artifact_id": 12116744908,
+      "zip_sha256": "019deb164dc0d88058fbfb97cd39948616a15e7c6fa9594ba9d705b1b72b2369",
+      "tasks": 32,
+      "candidates": 64,
+      "first": 21,
+      "second": 19,
+      "union": 24,
+      "accept": 40,
+      "compile_fail": 21,
+      "attempts": 64,
+      "disagreements": 0
+    },
+    {
+      "category": "syntax_test",
+      "artifact_id": 12117610306,
+      "zip_sha256": "abe0ac8871153fdd8970c86435ede7e52e7341eda7f1479ea8dd31bc2304b73d",
+      "tasks": 35,
+      "candidates": 70,
+      "first": 21,
+      "second": 19,
+      "union": 24,
+      "accept": 40,
+      "compile_fail": 26,
+      "attempts": 70,
+      "disagreements": 0
+    }
+  ],
+  "original_stage2_fresh_vs_archived_differences": [
+    {
+      "task_id": "branch_test/choice_of_the_knight",
+      "candidate_id": 1,
+      "archived_accepted": false,
+      "fresh_accepted": true,
+      "original_mascot_attempts": 2,
+      "reason_observed": "First attempt timed out after 60s; second attempt (90s budget) completed and printed Pass the test. Same compiled-program hash. Not evidence that postprocessor changed code."
+    },
+    {
+      "task_id": "math_test/pi_to_the_x",
+      "candidate_id": 1,
+      "archived_accepted": false,
+      "fresh_accepted": true,
+      "reason_observed": "Original final stdout success marker in fresh MASCOT run; numerical cause not established."
+    },
+    {
+      "task_id": "math_test/spring_rocket",
+      "candidate_id": 1,
+      "archived_accepted": false,
+      "fresh_accepted": true,
+      "reason_observed": "Original final stdout success marker in fresh MASCOT run; cause not established."
+    }
+  ],
+  "checks": "Every raw candidate outcome from six original category ZIPs verified against task/category source hashes; final original oracle recomputed from original stdout; each recorded original MPC input/stdout/stderr SHA256 recomputed; per-candidate outcome JSON compared to combined category JSONL; original source/packages identical across independent runner images; all failures and retries preserved.",
+  "remaining_category": "numpy_ufunc_test",
+  "scientific_limits": "NOT a complete 313-task denominator. Original stage2 code is historically saved, model-generated stage2 programs are not regenerated. Native author evaluator retains known false positives and numerical variability. Fresh-vs-archived changes are not modifications or causal repair improvements. Do NOT mark Phase C PASS."
+}
