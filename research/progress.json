@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_on": "2026-10-17",
+  "updated_on": "2026-10-18",
   "current_pr": 6,
   "historical_remote_main": "0ae96a968022325f3f678b19db1fcd69de483b70",
   "historical_reviewed_head": "5ca3809f15e8e326ff2d0a9b2e23993704be3dda",
@@ -315,7 +315,10 @@
       "evidence_paths": [
         "research/reviews/pr5-independent-review.md",
         "research/evidence/2026-10-14/identity_verified_scores.json",
-        "research/original_source_audit.md"
+        "research/original_source_audit.md",
+        "research/evidence/2026-10-18/stage2-mascot-smoke-receipt.json",
+        "research/reviews/stage2-smoke-independent-review.md",
+        "research/replay/stage2-protocol.md"
       ],
       "evidence_commit": "5ca3809f15e8e326ff2d0a9b2e23993704be3dda",
       "verification": {
@@ -325,7 +328,7 @@
         "independently_checked": false,
         "reviewer": "Pending acceptance review"
       },
-      "next_action": "Exact ID/order joins and saved-flag semantics verified; finish runtime classification and template-specific oracle audit for fresh replay.",
+      "next_action": "Preserve independently accepted 14-execution authentic saved-stage2 original MASCOT smoke (run39075137852). Complete seven-category full 626-candidate original stage2 run39075744038, independently verify all raw outcomes, then continue original oracle/ablation checks. No live-model regeneration or causal repair claim.",
       "redo_only_if": "Relevant source, configuration, evidence, or acceptance scope changes; document why."
     },
     {
@@ -496,7 +499,7 @@
       "id": "REPORT",
       "title": "Final report readiness (writing locked)",
       "status": "BLOCKED",
-      "completion_scope": "Practical R1\u2013R8 accepted; report writing still requires separate explicit user authorization.",
+      "completion_scope": "Practical R1–R8 accepted; report writing still requires separate explicit user authorization.",
       "dependencies": [
         "A",
         "B2",
