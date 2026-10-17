@@ -1,0 +1,10 @@
+{
+  "fresh_original_evaluator_replay": true,
+  "live_model_calls": 0,
+  "attempted": 1,
+  "expected": 1,
+  "accepted": 1,
+  "runtime_completed": 1,
+  "harness_errors": 0,
+  "baseline_source_unchanged": true
+}

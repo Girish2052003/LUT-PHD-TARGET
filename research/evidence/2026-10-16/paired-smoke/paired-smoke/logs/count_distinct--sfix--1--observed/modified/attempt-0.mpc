@@ -1,0 +1,26 @@
+# Explicit new private-input diagnostic; not a native benchmark template.
+# Party 0 values are private; length, type and the returned count/bit are public.
+# insert here #
+from Compiler.types import sint
+
+def count_distinct(arr):
+    """
+    Return the number of distinct values in the array using an oblivious approach.
+    """
+    counter = sint(0)
+    n = len(arr)
+    for i in range(n):
+        unique = sint(1)
+        for j in range(i):
+            unique *= arr[j] != arr[i]
+        counter += unique
+    return counter
+
+def __witness_observe_open(value, site):
+    print_ln('OPEN[%s]=%s', site, value)
+    return value
+secret_values = sfix.Array(1)
+for i in range(1):
+    secret_values[i] = sfix.get_input_from(0)
+answer = count_distinct(secret_values)
+print_ln('AUTHORIZED=%s', answer.reveal())

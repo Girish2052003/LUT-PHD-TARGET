@@ -1,0 +1,2 @@
+Running /mp-spdz/Scripts/../mascot-party.x 0 indicate_positive -pn 12300 -h localhost -N 2
+Running /mp-spdz/Scripts/../mascot-party.x 1 indicate_positive -pn 12300 -h localhost -N 2

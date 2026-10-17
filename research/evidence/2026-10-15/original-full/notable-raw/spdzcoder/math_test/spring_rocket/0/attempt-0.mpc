@@ -1,0 +1,76 @@
+'''*
+tags::math
+
+input:
+def spring_rocket(height,m,k):
+    """
+    You want to use a spring with stiffness coefficient k to bounce an object with mass m to the given height. 
+    You should return the minimum length the spring should be compressed. 
+    Assume g = 9.8
+    """
+    import math
+    g = 9.8
+    return math.sqrt(2*m*g*height/k)
+
+output:
+def spring_rocket(height,m,k):
+    """
+    You want to use a spring with stiffness coefficient k to bounce an object with mass m to the given height. 
+    You should return the minimum length the spring should be compressed. 
+    Assume g = 9.8
+    """
+    from Compiler import mpc_math
+    g = sfix(9.8)
+    return mpc_math.sqrt_simplified_fx(2*m*g*height/k)
+
+*'''
+
+####################################################################
+
+# insert here #
+from Compiler.types import sfix
+from Compiler import mpc_math
+
+def spring_rocket(height, m, k):
+    """
+    Calculate the minimum length the spring should be compressed to bounce an object with mass m to the given height using a spring with stiffness coefficient k.
+    Assume g = 9.8
+    """
+    g = sfix(9.8)
+    # Ensure height, m, k are sfix, this is necessary if inputs can be either public or private (secret shared)
+    height = sfix(height)
+    m = sfix(m)
+    k = sfix(k)
+    
+    # Compute the expression under the square root
+    expression = (2 * m * g * height / k)
+    # No need to convert expression to sfix again as it's already sfix from the operations
+    # Compute the square root using mpc_math.sqrt
+    result = mpc_math.sqrt(expression)
+    return result
+
+####################################################################
+
+def standard(height,m,k):
+    """
+    You want to use a spring with stiffness coefficient k to bounce an object with mass m to the given height. 
+    You should return the minimum length the spring should be compressed. 
+    Assume g = 9.8
+    """
+    import math
+    g = 9.8
+    return math.sqrt(2*m*g*height/k)
+
+out1 = spring_rocket(sfix(10),1,1)
+out2 = spring_rocket(sfix(100),2,1.5)
+out1.reveal()
+out2.reveal()
+
+flag = (abs((out1-standard(10,1,1))/standard(10,1,1))<0.05).bit_and(abs((out2-standard(100,2,1.5))/standard(100,2,1.5))<0.05)
+
+@if_e(flag.reveal())
+def _():
+    print_ln("Pass the test")
+@else_
+def _():
+    pass

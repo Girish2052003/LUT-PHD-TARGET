@@ -1,0 +1,24 @@
+# Explicit new private-input diagnostic; not a native benchmark template.
+# Party 0 values are private; length, type and the returned count/bit are public.
+# insert here #
+from Compiler.types import sint, Array
+
+def is_ascending(arr):
+    """
+    Return whether or not the array is in strictly ascending order.
+    If the length of input array is 1, you should return True.
+    """
+    result = sint(1)
+    for i in range(len(arr) - 1):
+        condition = arr[i] >= arr[i + 1]
+        result = result * (1 - __witness_observe_open(condition.reveal(), 0))
+    return result
+
+def __witness_observe_open(value, site):
+    print_ln('OPEN[%s]=%s', site, value)
+    return value
+secret_values = sfix.Array(3)
+for i in range(3):
+    secret_values[i] = sfix.get_input_from(0)
+answer = is_ascending(secret_values)
+print_ln('AUTHORIZED=%s', answer.reveal())

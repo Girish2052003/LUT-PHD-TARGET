@@ -1,0 +1,3632 @@
+{
+  "scope": "32-pair/64-execution original-pipeline finalizer smoke; independently accepted by diagnostic_review",
+  "research_commit": "35adfb04c1132ae91d1b2c6e21cf791855eab768",
+  "workflow_run": 38958484872,
+  "workflow_url": "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38958484872",
+  "artifact_id": 12072157406,
+  "artifact_zip_sha256": "5803b934764c15b5ef02e0b1fc5f865e0c8a25c9281148ec6d5d64a566bd3fdc",
+  "artifact_bytes": 569647,
+  "artifact_expires_at": "2027-01-14T19:55:37Z",
+  "all_artifact_files_preserved": true,
+  "acceptance": {
+    "status": "PASS",
+    "scope": "32-pair restricted smoke",
+    "independently_checked": true,
+    "launch_source_sha256": {
+      "research/modifications/Dockerfile": "0bf5a65bee49c23449f028fbec5f02522b1466709483528b5d0baf90b00ecaad",
+      "research/modifications/secret_arithmetic.py": "8c93f4687569c7419b573b20b1349b2d67563a39ce50dba16fda38dd197d8aa2",
+      "research/replay/requirements.txt": "0f95ca98887fe3e6ef70097db1d31899dcce7ee9b2572c1e77f79959be0d33cf",
+      "scripts/apply_original_postprocess.py": "24173f44cdcdd316f9ca331e9a0b398f57ac7894323279829e46125ed52a03c7",
+      "scripts/prepare_original_replay.py": "2a4b2e9eda1a3198523c22490728c91f65f0662bf39e638abffea4159a05f2cc",
+      "scripts/probe_original_limitations.py": "d49c75c18ce1079decd78c7d23a05e2daa9b189e041f4df1013afffd7b680084",
+      "scripts/replay_modified.py": "58de75c99504738d32551cec3abcf246b5cdc8d2cc5a0a7efdf0576262ed85f1",
+      "scripts/replay_original.py": "a86121a66ab99ab9823db9bc6491be36bb7625224ad9a98d871ce8e59c10a70e",
+      "scripts/run_original_replay_container.sh": "e72a2a5449b7b90608a6baaf4699fc203e3a5dad8e793b02bc07a39c04894e07",
+      "scripts/verify_paired_replay.py": "f1452c8cf2d0e29cc03545e8973e60f06757c27c89ed31c546a6e5eb21891881"
+    },
+    "modification_manifest": {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/modification_manifest.json",
+      "sha256": "0549c76f56d7c1924aeb05f10c421dc9f717b73cd74fdc0cd50d2f6f99fcaaa1"
+    },
+    "reviewer": "diagnostic_review",
+    "review_path": "research/reviews/paired-smoke-evidence-review.md"
+  },
+  "regeneration": "Use the pinned source preparation, patcher, Docker launcher and raw verifier at35adfb04c1132ae91d1b2c6e21cf791855eab768; no model calls. All original artifact files preserved below.",
+  "files": [
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/measurements.json",
+      "bytes": 2067,
+      "sha256": "6af7a56bca213042bf123ba18e54f49cc6277e5380366745240f45ea8d912641"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-environment/cpu.txt",
+      "bytes": 3189,
+      "sha256": "4476e601951bb5e5dc85ca4b9d2e3bc795bb83c0d4e62b8d9f2bdec6659b0e7a"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-environment/image.json",
+      "bytes": 4573,
+      "sha256": "18fa2448a0dee0b038104475125984777d7334f73c86563bc2cd0639e96cac99"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-environment/kernel.txt",
+      "bytes": 113,
+      "sha256": "cd8e31ad3f05d597238a1403bb5c2d25c975d53959c3d48af034216515712dc5"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-environment/runner.json",
+      "bytes": 235,
+      "sha256": "3d207a830628c8f68ea13566374ad9b359e035058f8cac9aa21e827f5f91475d"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/case-specifications.json",
+      "bytes": 22484,
+      "sha256": "9aecab089fcb70fc93a09ac29d336d41dbaef1d7699b8dd5d57f4fa2cb043d6e"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/environment.json",
+      "bytes": 930,
+      "sha256": "f3ca6c8876aa8a84ce4e104a3a9192b81c6d71db64fd26dc0e9ab5db2378d259"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/identity.json",
+      "bytes": 238151,
+      "sha256": "b85274f93cf0a655d2837e673b49c1e83ea09389fc636e0b01e544d346006fca"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/installed-packages.txt",
+      "bytes": 423,
+      "sha256": "482062e5a1fa575904bd36c369852227e57124059e098ca83d6c0bbd4bbad423"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--0--observed/baseline/Input-P0-0.txt",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--0--observed/baseline/attempt-0-party-count_distinct-0.log",
+      "bytes": 263,
+      "sha256": "321f1736e2d524648f529a64da37ffc9d2e998c97ed572a0e854c635fcc29512"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--0--observed/baseline/attempt-0-party-count_distinct-1.log",
+      "bytes": 250,
+      "sha256": "5b87c8654b32b646b2905e18daa7f3036718d61a011922a2656d7a456d0ff9fc"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--0--observed/baseline/attempt-0.mpc",
+      "bytes": 831,
+      "sha256": "41f003f5eeeb79e3864e2e4a2fc0321a33fa3467a662e5ecbe4512d6416cc254"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--0--observed/baseline/attempt-0.stderr.txt",
+      "bytes": 176,
+      "sha256": "0e82740a2a8235128bdf11cfedc878123d3361f504dd049e21ef2a22eddbe46a"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--0--observed/baseline/attempt-0.stdout.txt",
+      "bytes": 660,
+      "sha256": "da923d32b28540d32359e76e319e7763ae244c1756f98651465c89ff158a387b"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--0--observed/baseline/candidate.py.txt",
+      "bytes": 493,
+      "sha256": "ecc3105a8541419b87f424751ddc1f5e1c69b93b6c1c37c13eb5bec7a5290dc2"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--0--observed/baseline/original.py.txt",
+      "bytes": 573,
+      "sha256": "e3dcacd51d5e09ca45377f20e6ea2f11f2ac004e644bf5f00f547bc537771275"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--0--observed/baseline/record.json",
+      "bytes": 2194,
+      "sha256": "0e47e6721e918796d148b2d917a57261958df3a1ce5214dbeebcd32636de500e"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--0--observed/baseline/template.mpc",
+      "bytes": 338,
+      "sha256": "c6c055486abceca2499ddb3ad6d6e88b8316cff730e5f94112ad4acc6080b291"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--0--observed/baseline/transformed.py.txt",
+      "bytes": 355,
+      "sha256": "05ca25eb2994520d5ac3227a60280530df29471af89f1be64a8f7569c523478b"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--0--observed/modified/Input-P0-0.txt",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--0--observed/modified/attempt-0-party-count_distinct-0.log",
+      "bytes": 263,
+      "sha256": "a4378a212d313e8eccc61ceb888f357f5b3f54c32cf5eb7af0f43b0075d5a826"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--0--observed/modified/attempt-0-party-count_distinct-1.log",
+      "bytes": 250,
+      "sha256": "f287cd96ccb5f2bae33f0c13916fbdde00dc7168d94d52aa0be56ede51ea6951"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--0--observed/modified/attempt-0.mpc",
+      "bytes": 793,
+      "sha256": "09ab89fb6784a94e9e4e0481ba6c1550bbecbdf5924d48d33f4287ebd000c03e"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--0--observed/modified/attempt-0.stderr.txt",
+      "bytes": 176,
+      "sha256": "9dba66e8664af55a3292a6b8f3e47206eeaf3857b0cdcc9dc3afc1441b858bc6"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--0--observed/modified/attempt-0.stdout.txt",
+      "bytes": 660,
+      "sha256": "1d1cbe3ebdfb51298c556b22e647013ce0a3486e195ecddcde5023f2e195f1d6"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--0--observed/modified/candidate.py.txt",
+      "bytes": 455,
+      "sha256": "11915101b10976f447f8660495f8e5ab70d0d9f01082cf2db1ebd69e83285abf"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--0--observed/modified/original.py.txt",
+      "bytes": 573,
+      "sha256": "e3dcacd51d5e09ca45377f20e6ea2f11f2ac004e644bf5f00f547bc537771275"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--0--observed/modified/record.json",
+      "bytes": 2192,
+      "sha256": "b23c16bd483fa933686045182764b7bd17d32ba76dd24b27b6234a1c2d244544"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--0--observed/modified/template.mpc",
+      "bytes": 338,
+      "sha256": "c6c055486abceca2499ddb3ad6d6e88b8316cff730e5f94112ad4acc6080b291"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--0--observed/modified/transformed.py.txt",
+      "bytes": 355,
+      "sha256": "05ca25eb2994520d5ac3227a60280530df29471af89f1be64a8f7569c523478b"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--1--observed/baseline/Input-P0-0.txt",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--1--observed/baseline/attempt-0-party-count_distinct-0.log",
+      "bytes": 259,
+      "sha256": "b76f284cfbfb72e36957b3d7f5ab045cf5daad6773a8afad262745f3e14d00d5"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--1--observed/baseline/attempt-0-party-count_distinct-1.log",
+      "bytes": 245,
+      "sha256": "3016267099dac374d1115050e4b677c5c758601f6d1a7c1e3094676d86024f2e"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--1--observed/baseline/attempt-0.mpc",
+      "bytes": 842,
+      "sha256": "0a31737f571e1e91479e85f22088500ece49da1f93bf41d87bff7b97d5d50846"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--1--observed/baseline/attempt-0.stderr.txt",
+      "bytes": 176,
+      "sha256": "77c95512b2e1c52506734d7b36a80b9e39b7714fdda9706f0c6e957a7f96cefe"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--1--observed/baseline/attempt-0.stdout.txt",
+      "bytes": 698,
+      "sha256": "c8d6aeaf9188e7a267ca5db45750b8a6d057c39adb6a16d153c00709fbb1a837"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--1--observed/baseline/candidate.py.txt",
+      "bytes": 493,
+      "sha256": "ecc3105a8541419b87f424751ddc1f5e1c69b93b6c1c37c13eb5bec7a5290dc2"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--1--observed/baseline/original.py.txt",
+      "bytes": 573,
+      "sha256": "e3dcacd51d5e09ca45377f20e6ea2f11f2ac004e644bf5f00f547bc537771275"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--1--observed/baseline/record.json",
+      "bytes": 2200,
+      "sha256": "0d7d0c4f22710813699ff25c5a37c1756d38d781459942bfbc1a578020b134ca"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--1--observed/baseline/template.mpc",
+      "bytes": 349,
+      "sha256": "cc9d86a6d6f0b8eb16f94292bfb697eb1c5ff1734d089266e464fd516caa7833"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--1--observed/baseline/transformed.py.txt",
+      "bytes": 355,
+      "sha256": "05ca25eb2994520d5ac3227a60280530df29471af89f1be64a8f7569c523478b"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--1--observed/modified/Input-P0-0.txt",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--1--observed/modified/attempt-0-party-count_distinct-0.log",
+      "bytes": 259,
+      "sha256": "a900fb350de7c28c1876c5ae5194bea6c482a9be1585b7a95f027fba1d0a6369"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--1--observed/modified/attempt-0-party-count_distinct-1.log",
+      "bytes": 245,
+      "sha256": "038e42735faa32656ce33d0efe1b3f1d0f041a27916f4f63804df6de0b1765ce"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--1--observed/modified/attempt-0.mpc",
+      "bytes": 804,
+      "sha256": "9ce8e25ec6ade23e9741a2a0b70da67808a78bdac2bf6a10dd087311ad594247"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--1--observed/modified/attempt-0.stderr.txt",
+      "bytes": 176,
+      "sha256": "d83126d685c6511c39782cae4dedac127d7fae7ec4d9ffc66baa3a001a71fe3a"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--1--observed/modified/attempt-0.stdout.txt",
+      "bytes": 698,
+      "sha256": "c8a38384c64b94eddd898d77afa3a691af7f78ef946bfd64c50a121be5c349fb"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--1--observed/modified/candidate.py.txt",
+      "bytes": 455,
+      "sha256": "11915101b10976f447f8660495f8e5ab70d0d9f01082cf2db1ebd69e83285abf"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--1--observed/modified/original.py.txt",
+      "bytes": 573,
+      "sha256": "e3dcacd51d5e09ca45377f20e6ea2f11f2ac004e644bf5f00f547bc537771275"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--1--observed/modified/record.json",
+      "bytes": 2201,
+      "sha256": "59e3ad2274471c01dc953b1e7143d95ed932c371b16ae7c0971125a4923430d7"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--1--observed/modified/template.mpc",
+      "bytes": 349,
+      "sha256": "cc9d86a6d6f0b8eb16f94292bfb697eb1c5ff1734d089266e464fd516caa7833"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--1--observed/modified/transformed.py.txt",
+      "bytes": 355,
+      "sha256": "05ca25eb2994520d5ac3227a60280530df29471af89f1be64a8f7569c523478b"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--2--control/baseline/Input-P0-0.txt",
+      "bytes": 6,
+      "sha256": "6e3efc811d40b03baab295f398ccc5f3a0b8c8c98c77fcd857540eea09e69f33"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--2--control/baseline/attempt-0-party-count_distinct-0.log",
+      "bytes": 778,
+      "sha256": "a15162ff400adc5d13a7ec09660e534ff2f2aa3428605646e7cb18abf6163d92"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--2--control/baseline/attempt-0-party-count_distinct-1.log",
+      "bytes": 765,
+      "sha256": "3518ed6964bbf428af2fcc3eeb29b24ad1aae71c42107189866b23e47c55103b"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--2--control/baseline/attempt-0.mpc",
+      "bytes": 922,
+      "sha256": "4474b5be9ea06d2ba806c6055463fb780938f61c1f4d63756ba9f6f17221d8c5"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--2--control/baseline/attempt-0.stderr.txt",
+      "bytes": 176,
+      "sha256": "a208ed5c53741cbbc4fa11373e0eaebe2233950e7eafe5d37675c87e0330f929"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--2--control/baseline/attempt-0.stdout.txt",
+      "bytes": 1272,
+      "sha256": "d5582a7c92969f9ed411fb8f461a6e3c9c8f3a0bc823c9a936bdd4facc316362"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--2--control/baseline/candidate.py.txt",
+      "bytes": 573,
+      "sha256": "e3dcacd51d5e09ca45377f20e6ea2f11f2ac004e644bf5f00f547bc537771275"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--2--control/baseline/original.py.txt",
+      "bytes": 573,
+      "sha256": "e3dcacd51d5e09ca45377f20e6ea2f11f2ac004e644bf5f00f547bc537771275"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--2--control/baseline/record.json",
+      "bytes": 2098,
+      "sha256": "5abe93d55ff21f9675ea577c6e17844582cef16a29939b3204a90d3e662a8fd4"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--2--control/baseline/template.mpc",
+      "bytes": 349,
+      "sha256": "7ff78cb944076d3ac6ba8605abcd78e94cdaab4d8d9b1a2f1d228c6a5078e0cc"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--2--control/baseline/transformed.py.txt",
+      "bytes": 355,
+      "sha256": "05ca25eb2994520d5ac3227a60280530df29471af89f1be64a8f7569c523478b"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--2--control/modified/Input-P0-0.txt",
+      "bytes": 6,
+      "sha256": "6e3efc811d40b03baab295f398ccc5f3a0b8c8c98c77fcd857540eea09e69f33"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--2--control/modified/attempt-0-party-count_distinct-0.log",
+      "bytes": 778,
+      "sha256": "c7afbb5b4b8e8657c3a473dd6da7eae1d9aa3f0c05d2ce2ee04549f043a297b6"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--2--control/modified/attempt-0-party-count_distinct-1.log",
+      "bytes": 765,
+      "sha256": "c6adb3446bed2ecc7391298e23dc508af58d59dda53eceb6940b27b94691814e"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--2--control/modified/attempt-0.mpc",
+      "bytes": 704,
+      "sha256": "24baec0e9ea3ca66f1b015b6e8038749f222f04cadc5e77f5b47f4b81e9ee2b6"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--2--control/modified/attempt-0.stderr.txt",
+      "bytes": 176,
+      "sha256": "498381c1fd2a39d718fa1f05414b7261e92cc1b520128e26a88fc78558c54132"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--2--control/modified/attempt-0.stdout.txt",
+      "bytes": 1272,
+      "sha256": "8af7bf35354adcdcabc59ef6717339a82ed34341b5bce4c7839cd11c6129bf2a"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--2--control/modified/candidate.py.txt",
+      "bytes": 355,
+      "sha256": "05ca25eb2994520d5ac3227a60280530df29471af89f1be64a8f7569c523478b"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--2--control/modified/original.py.txt",
+      "bytes": 573,
+      "sha256": "e3dcacd51d5e09ca45377f20e6ea2f11f2ac004e644bf5f00f547bc537771275"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--2--control/modified/record.json",
+      "bytes": 2092,
+      "sha256": "f73bd641ae7340d2f168123fda3bc0c108595a013a17c024551dd01f3926becd"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--2--control/modified/template.mpc",
+      "bytes": 349,
+      "sha256": "7ff78cb944076d3ac6ba8605abcd78e94cdaab4d8d9b1a2f1d228c6a5078e0cc"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--2--control/modified/transformed.py.txt",
+      "bytes": 355,
+      "sha256": "05ca25eb2994520d5ac3227a60280530df29471af89f1be64a8f7569c523478b"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--2--observed/baseline/Input-P0-0.txt",
+      "bytes": 6,
+      "sha256": "6e3efc811d40b03baab295f398ccc5f3a0b8c8c98c77fcd857540eea09e69f33"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--2--observed/baseline/attempt-0-party-count_distinct-0.log",
+      "bytes": 808,
+      "sha256": "85935900d9945d8ab4b446e4bc9699eac699ccc0ac80e190299e643a6784de88"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--2--observed/baseline/attempt-0-party-count_distinct-1.log",
+      "bytes": 765,
+      "sha256": "648207a91b1d3027d50b3c9f8eceaf0a4a482bb4f8ecef6239705dd570f631ea"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--2--observed/baseline/attempt-0.mpc",
+      "bytes": 842,
+      "sha256": "eec747c41978bdaf9bf8fc8fa4606a2dc2b07a3971fc66a139704888d0d5f8bb"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--2--observed/baseline/attempt-0.stderr.txt",
+      "bytes": 176,
+      "sha256": "2cedae9c65bc26fc6d5b65975ef99ee2508c5d17e6f68f54ee6274c31c479e6e"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--2--observed/baseline/attempt-0.stdout.txt",
+      "bytes": 1302,
+      "sha256": "854e89a14be1f6c65549010d8b8a96b6936df6e6560772b3e10caf9514b98f95"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--2--observed/baseline/candidate.py.txt",
+      "bytes": 493,
+      "sha256": "ecc3105a8541419b87f424751ddc1f5e1c69b93b6c1c37c13eb5bec7a5290dc2"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--2--observed/baseline/original.py.txt",
+      "bytes": 573,
+      "sha256": "e3dcacd51d5e09ca45377f20e6ea2f11f2ac004e644bf5f00f547bc537771275"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--2--observed/baseline/record.json",
+      "bytes": 2415,
+      "sha256": "e6bf6e2f94854678f5c650532c6d2e3e408504b7b210831e39b9856c5cbf9307"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--2--observed/baseline/template.mpc",
+      "bytes": 349,
+      "sha256": "7ff78cb944076d3ac6ba8605abcd78e94cdaab4d8d9b1a2f1d228c6a5078e0cc"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--2--observed/baseline/transformed.py.txt",
+      "bytes": 355,
+      "sha256": "05ca25eb2994520d5ac3227a60280530df29471af89f1be64a8f7569c523478b"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--2--observed/modified/Input-P0-0.txt",
+      "bytes": 6,
+      "sha256": "6e3efc811d40b03baab295f398ccc5f3a0b8c8c98c77fcd857540eea09e69f33"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--2--observed/modified/attempt-0-party-count_distinct-0.log",
+      "bytes": 778,
+      "sha256": "de4450dcdb72ca56bb4954a15f42fb321de745d5a1604153a8a1c9e3a02377df"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--2--observed/modified/attempt-0-party-count_distinct-1.log",
+      "bytes": 765,
+      "sha256": "52dac0ae61534f22ed3fde9501b2591e6957d453fb555361abdb18acef0cadfa"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--2--observed/modified/attempt-0.mpc",
+      "bytes": 804,
+      "sha256": "f22256143ba3807caab5c951266a6074ce42386403975397670dbb85c202c71e"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--2--observed/modified/attempt-0.stderr.txt",
+      "bytes": 176,
+      "sha256": "62407beefce31ecdd69af0f957dd01d3a2202abdb2f23610e1f70860bfe08ac6"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--2--observed/modified/attempt-0.stdout.txt",
+      "bytes": 1272,
+      "sha256": "3c89d3c159b6bfa230be4b2eb12ddd03f312ab5200e22138b1b741a3dc02c368"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--2--observed/modified/candidate.py.txt",
+      "bytes": 455,
+      "sha256": "11915101b10976f447f8660495f8e5ab70d0d9f01082cf2db1ebd69e83285abf"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--2--observed/modified/original.py.txt",
+      "bytes": 573,
+      "sha256": "e3dcacd51d5e09ca45377f20e6ea2f11f2ac004e644bf5f00f547bc537771275"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--2--observed/modified/record.json",
+      "bytes": 2310,
+      "sha256": "e9e703f5e7ca506bb00e7ae38748f839be2b231bfbfae0284b3935b3e0656ae9"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--2--observed/modified/template.mpc",
+      "bytes": 349,
+      "sha256": "7ff78cb944076d3ac6ba8605abcd78e94cdaab4d8d9b1a2f1d228c6a5078e0cc"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--2--observed/modified/transformed.py.txt",
+      "bytes": 355,
+      "sha256": "05ca25eb2994520d5ac3227a60280530df29471af89f1be64a8f7569c523478b"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--3--control/baseline/Input-P0-0.txt",
+      "bytes": 6,
+      "sha256": "d67df7df61d6152c4a61c23939931c5a90e51646e78d82e70a4e67d84eca097c"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--3--control/baseline/attempt-0-party-count_distinct-0.log",
+      "bytes": 778,
+      "sha256": "3e2c47edf617f211eaf79995e31bf9666bc30191b054fb95ac2ceca9cdd9172b"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--3--control/baseline/attempt-0-party-count_distinct-1.log",
+      "bytes": 765,
+      "sha256": "10af0f43f1fe2062bf9769a3b5abd172fe94341ea8cf6d6211d0be344fa1eefe"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--3--control/baseline/attempt-0.mpc",
+      "bytes": 922,
+      "sha256": "4474b5be9ea06d2ba806c6055463fb780938f61c1f4d63756ba9f6f17221d8c5"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--3--control/baseline/attempt-0.stderr.txt",
+      "bytes": 176,
+      "sha256": "d0f2bac9ffb669a1ac0679906269e2747dbe7b6bf23391aca10928491f6f4d4d"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--3--control/baseline/attempt-0.stdout.txt",
+      "bytes": 1272,
+      "sha256": "0fd8f15bec82d5c1a999e1d7cbdb44007a4159e33ec55df5de9fbc038fc6a67c"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--3--control/baseline/candidate.py.txt",
+      "bytes": 573,
+      "sha256": "e3dcacd51d5e09ca45377f20e6ea2f11f2ac004e644bf5f00f547bc537771275"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--3--control/baseline/original.py.txt",
+      "bytes": 573,
+      "sha256": "e3dcacd51d5e09ca45377f20e6ea2f11f2ac004e644bf5f00f547bc537771275"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--3--control/baseline/record.json",
+      "bytes": 2097,
+      "sha256": "23feb646a0f550c2827c65fb67c1678c0db5224e7be702c06898aa9578269c4b"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--3--control/baseline/template.mpc",
+      "bytes": 349,
+      "sha256": "7ff78cb944076d3ac6ba8605abcd78e94cdaab4d8d9b1a2f1d228c6a5078e0cc"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--3--control/baseline/transformed.py.txt",
+      "bytes": 355,
+      "sha256": "05ca25eb2994520d5ac3227a60280530df29471af89f1be64a8f7569c523478b"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--3--control/modified/Input-P0-0.txt",
+      "bytes": 6,
+      "sha256": "d67df7df61d6152c4a61c23939931c5a90e51646e78d82e70a4e67d84eca097c"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--3--control/modified/attempt-0-party-count_distinct-0.log",
+      "bytes": 778,
+      "sha256": "2b02056cf1510352e08b1f8d455dd81562df69b17b44c741c0da486956c7a6c6"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--3--control/modified/attempt-0-party-count_distinct-1.log",
+      "bytes": 765,
+      "sha256": "54c18d372c4e645c8848f3b805ff30f717d2eb9aba3652604ba033babc7e73c6"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--3--control/modified/attempt-0.mpc",
+      "bytes": 704,
+      "sha256": "24baec0e9ea3ca66f1b015b6e8038749f222f04cadc5e77f5b47f4b81e9ee2b6"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--3--control/modified/attempt-0.stderr.txt",
+      "bytes": 176,
+      "sha256": "4d908290b5320c399a2a18bacd05f4fc8e0f0ff3b561c20cd4124c858f46a053"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--3--control/modified/attempt-0.stdout.txt",
+      "bytes": 1272,
+      "sha256": "8a71579dd2e330b65677e673d86cdf5a57ab633a15a5635d78f907c406d1c0fe"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--3--control/modified/candidate.py.txt",
+      "bytes": 355,
+      "sha256": "05ca25eb2994520d5ac3227a60280530df29471af89f1be64a8f7569c523478b"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--3--control/modified/original.py.txt",
+      "bytes": 573,
+      "sha256": "e3dcacd51d5e09ca45377f20e6ea2f11f2ac004e644bf5f00f547bc537771275"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--3--control/modified/record.json",
+      "bytes": 2092,
+      "sha256": "f4732b2f6721bb17d0762f0df3baca1bd7c50b550569cdeead0ca01aca570c5c"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--3--control/modified/template.mpc",
+      "bytes": 349,
+      "sha256": "7ff78cb944076d3ac6ba8605abcd78e94cdaab4d8d9b1a2f1d228c6a5078e0cc"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--3--control/modified/transformed.py.txt",
+      "bytes": 355,
+      "sha256": "05ca25eb2994520d5ac3227a60280530df29471af89f1be64a8f7569c523478b"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--3--observed/baseline/Input-P0-0.txt",
+      "bytes": 6,
+      "sha256": "d67df7df61d6152c4a61c23939931c5a90e51646e78d82e70a4e67d84eca097c"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--3--observed/baseline/attempt-0-party-count_distinct-0.log",
+      "bytes": 807,
+      "sha256": "8d285cc9d48d5744c6144a8da6e2caa5844c455c301b114554b71a913e84d97d"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--3--observed/baseline/attempt-0-party-count_distinct-1.log",
+      "bytes": 765,
+      "sha256": "663aa0750cdb0308500749381f0dea1fa33ec1a5581431536d706978fe7d974c"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--3--observed/baseline/attempt-0.mpc",
+      "bytes": 842,
+      "sha256": "eec747c41978bdaf9bf8fc8fa4606a2dc2b07a3971fc66a139704888d0d5f8bb"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--3--observed/baseline/attempt-0.stderr.txt",
+      "bytes": 176,
+      "sha256": "e48ffa4318296f4b8fed4fda2b5de19a4e5b481d62c11bf7c6791cc3670ee957"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--3--observed/baseline/attempt-0.stdout.txt",
+      "bytes": 1301,
+      "sha256": "207737eae13054c0565cb65d19a66eccd9a1567337d205f9ba5ff504b8717fe6"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--3--observed/baseline/candidate.py.txt",
+      "bytes": 493,
+      "sha256": "ecc3105a8541419b87f424751ddc1f5e1c69b93b6c1c37c13eb5bec7a5290dc2"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--3--observed/baseline/original.py.txt",
+      "bytes": 573,
+      "sha256": "e3dcacd51d5e09ca45377f20e6ea2f11f2ac004e644bf5f00f547bc537771275"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--3--observed/baseline/record.json",
+      "bytes": 2414,
+      "sha256": "48c85a1400fc49dc13fef70fca80c8b846577b9303c24e6f317c7718625d29a8"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--3--observed/baseline/template.mpc",
+      "bytes": 349,
+      "sha256": "7ff78cb944076d3ac6ba8605abcd78e94cdaab4d8d9b1a2f1d228c6a5078e0cc"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--3--observed/baseline/transformed.py.txt",
+      "bytes": 355,
+      "sha256": "05ca25eb2994520d5ac3227a60280530df29471af89f1be64a8f7569c523478b"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--3--observed/modified/Input-P0-0.txt",
+      "bytes": 6,
+      "sha256": "d67df7df61d6152c4a61c23939931c5a90e51646e78d82e70a4e67d84eca097c"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--3--observed/modified/attempt-0-party-count_distinct-0.log",
+      "bytes": 778,
+      "sha256": "e298433b3eb9cca7e2b94f88924e7a71304c190ccdf1ca51e2c241002741b451"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--3--observed/modified/attempt-0-party-count_distinct-1.log",
+      "bytes": 765,
+      "sha256": "98ce07176b924d6fd2c9bd234c71250f45312b054a32b59b92c7f4d2cb7d6d93"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--3--observed/modified/attempt-0.mpc",
+      "bytes": 804,
+      "sha256": "f22256143ba3807caab5c951266a6074ce42386403975397670dbb85c202c71e"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--3--observed/modified/attempt-0.stderr.txt",
+      "bytes": 176,
+      "sha256": "0e3e9c94e27b0afed5cc747cadeb9e1a54fae370a93c8a745beb0b1199671fa8"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--3--observed/modified/attempt-0.stdout.txt",
+      "bytes": 1272,
+      "sha256": "4fb24f2fb934582d53ae883ba33ddbd45bc6184c33041d7c03378c48a25c4e20"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--3--observed/modified/candidate.py.txt",
+      "bytes": 455,
+      "sha256": "11915101b10976f447f8660495f8e5ab70d0d9f01082cf2db1ebd69e83285abf"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--3--observed/modified/original.py.txt",
+      "bytes": 573,
+      "sha256": "e3dcacd51d5e09ca45377f20e6ea2f11f2ac004e644bf5f00f547bc537771275"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--3--observed/modified/record.json",
+      "bytes": 2312,
+      "sha256": "79f2311246c13581481b6987d5067746a1cd4cf44297c66e6e2ec727d84e3ea1"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--3--observed/modified/template.mpc",
+      "bytes": 349,
+      "sha256": "7ff78cb944076d3ac6ba8605abcd78e94cdaab4d8d9b1a2f1d228c6a5078e0cc"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--3--observed/modified/transformed.py.txt",
+      "bytes": 355,
+      "sha256": "05ca25eb2994520d5ac3227a60280530df29471af89f1be64a8f7569c523478b"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--4--observed/baseline/Input-P0-0.txt",
+      "bytes": 8,
+      "sha256": "7c51c4f648a8ade05d02e7eaf87ea2a3fab6c44c377f21324818c259d3dd61be"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--4--observed/baseline/attempt-0-party-count_distinct-0.log",
+      "bytes": 808,
+      "sha256": "dc1dbfab681119857248b0a4a0c3d6543c93640cc1c0bca191cc33f316338fcf"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--4--observed/baseline/attempt-0-party-count_distinct-1.log",
+      "bytes": 765,
+      "sha256": "aecc2ed5e139e4cd7cc3d8ce0d66a4f5c756e763d0e5721632d66088a8ed4194"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--4--observed/baseline/attempt-0.mpc",
+      "bytes": 842,
+      "sha256": "eec747c41978bdaf9bf8fc8fa4606a2dc2b07a3971fc66a139704888d0d5f8bb"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--4--observed/baseline/attempt-0.stderr.txt",
+      "bytes": 176,
+      "sha256": "eae65f3b44583aa87c301b6cf65815f722a920060a655cae1d75d36b7f74cf0f"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--4--observed/baseline/attempt-0.stdout.txt",
+      "bytes": 1302,
+      "sha256": "f20070af0dccbf83785f29c93b57c0eb58ab40a1fa1752a488c735950fe46fd6"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--4--observed/baseline/candidate.py.txt",
+      "bytes": 493,
+      "sha256": "ecc3105a8541419b87f424751ddc1f5e1c69b93b6c1c37c13eb5bec7a5290dc2"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--4--observed/baseline/original.py.txt",
+      "bytes": 573,
+      "sha256": "e3dcacd51d5e09ca45377f20e6ea2f11f2ac004e644bf5f00f547bc537771275"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--4--observed/baseline/record.json",
+      "bytes": 2418,
+      "sha256": "c22089d79293f80f7ea2649b326cad96b7587792cc8297455e91351a0e074fd1"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--4--observed/baseline/template.mpc",
+      "bytes": 349,
+      "sha256": "7ff78cb944076d3ac6ba8605abcd78e94cdaab4d8d9b1a2f1d228c6a5078e0cc"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--4--observed/baseline/transformed.py.txt",
+      "bytes": 355,
+      "sha256": "05ca25eb2994520d5ac3227a60280530df29471af89f1be64a8f7569c523478b"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--4--observed/modified/Input-P0-0.txt",
+      "bytes": 8,
+      "sha256": "7c51c4f648a8ade05d02e7eaf87ea2a3fab6c44c377f21324818c259d3dd61be"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--4--observed/modified/attempt-0-party-count_distinct-0.log",
+      "bytes": 778,
+      "sha256": "15c9008502b000f238da3a7de6bff2051a323ed8541d9e7c1225bc16b0e127be"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--4--observed/modified/attempt-0-party-count_distinct-1.log",
+      "bytes": 765,
+      "sha256": "4d838bc3cee6c23b3c835c1f27d216aeb64a100ba69b8ed0c584fc5f6bd1c5a3"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--4--observed/modified/attempt-0.mpc",
+      "bytes": 804,
+      "sha256": "f22256143ba3807caab5c951266a6074ce42386403975397670dbb85c202c71e"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--4--observed/modified/attempt-0.stderr.txt",
+      "bytes": 176,
+      "sha256": "a0ad2f77d896513fa39bf1bc6670c81022895a5d0f6c772e6ffa740a6020a2c5"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--4--observed/modified/attempt-0.stdout.txt",
+      "bytes": 1272,
+      "sha256": "4bdf923c24020216da0d8ca37f54ac88a901a30bdb1b09ccda7df1dcad64075c"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--4--observed/modified/candidate.py.txt",
+      "bytes": 455,
+      "sha256": "11915101b10976f447f8660495f8e5ab70d0d9f01082cf2db1ebd69e83285abf"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--4--observed/modified/original.py.txt",
+      "bytes": 573,
+      "sha256": "e3dcacd51d5e09ca45377f20e6ea2f11f2ac004e644bf5f00f547bc537771275"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--4--observed/modified/record.json",
+      "bytes": 2314,
+      "sha256": "cfea99deb380b31e8578270863379157ac85c17a70bc93af396e8985acedbd7c"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--4--observed/modified/template.mpc",
+      "bytes": 349,
+      "sha256": "7ff78cb944076d3ac6ba8605abcd78e94cdaab4d8d9b1a2f1d228c6a5078e0cc"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--4--observed/modified/transformed.py.txt",
+      "bytes": 355,
+      "sha256": "05ca25eb2994520d5ac3227a60280530df29471af89f1be64a8f7569c523478b"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--5--observed/baseline/Input-P0-0.txt",
+      "bytes": 6,
+      "sha256": "7d4e170b3b7a3429b5c48cd27387d1b00e98e175c005e64413cff0df76c3eda5"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--5--observed/baseline/attempt-0-party-count_distinct-0.log",
+      "bytes": 808,
+      "sha256": "d853e67e892536e92e7df2ce5628a184dadc7720a5c927cde26f8df6278778d0"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--5--observed/baseline/attempt-0-party-count_distinct-1.log",
+      "bytes": 765,
+      "sha256": "0fa39e9a244e410062edd021b1695a2126e5fcef5673e7315205d06b670474a2"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--5--observed/baseline/attempt-0.mpc",
+      "bytes": 842,
+      "sha256": "eec747c41978bdaf9bf8fc8fa4606a2dc2b07a3971fc66a139704888d0d5f8bb"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--5--observed/baseline/attempt-0.stderr.txt",
+      "bytes": 176,
+      "sha256": "be5e6e0bda78a2ddb67efb7c595e94452199fe8bbf5eefb68ddcddd843525ab3"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--5--observed/baseline/attempt-0.stdout.txt",
+      "bytes": 1302,
+      "sha256": "f39636ea104c5ab0af40fe4245123f372e85711ad44e595cbadf16c23167c525"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--5--observed/baseline/candidate.py.txt",
+      "bytes": 493,
+      "sha256": "ecc3105a8541419b87f424751ddc1f5e1c69b93b6c1c37c13eb5bec7a5290dc2"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--5--observed/baseline/original.py.txt",
+      "bytes": 573,
+      "sha256": "e3dcacd51d5e09ca45377f20e6ea2f11f2ac004e644bf5f00f547bc537771275"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--5--observed/baseline/record.json",
+      "bytes": 2415,
+      "sha256": "fe255cacfeb099b674c594ff8b928b02f436dabee3ffb984a731f352a6d8e6bf"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--5--observed/baseline/template.mpc",
+      "bytes": 349,
+      "sha256": "7ff78cb944076d3ac6ba8605abcd78e94cdaab4d8d9b1a2f1d228c6a5078e0cc"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--5--observed/baseline/transformed.py.txt",
+      "bytes": 355,
+      "sha256": "05ca25eb2994520d5ac3227a60280530df29471af89f1be64a8f7569c523478b"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--5--observed/modified/Input-P0-0.txt",
+      "bytes": 6,
+      "sha256": "7d4e170b3b7a3429b5c48cd27387d1b00e98e175c005e64413cff0df76c3eda5"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--5--observed/modified/attempt-0-party-count_distinct-0.log",
+      "bytes": 778,
+      "sha256": "13c54b24eee807d9e9e161b95ed433e14f9a841c4cc1707884e031b0e1b09074"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--5--observed/modified/attempt-0-party-count_distinct-1.log",
+      "bytes": 765,
+      "sha256": "75483f8742d96c06f08b2e90750bfde6336c835118a6d544019597bea551a4e3"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--5--observed/modified/attempt-0.mpc",
+      "bytes": 804,
+      "sha256": "f22256143ba3807caab5c951266a6074ce42386403975397670dbb85c202c71e"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--5--observed/modified/attempt-0.stderr.txt",
+      "bytes": 176,
+      "sha256": "1991aeacf9ea1b17961ed2f73f69d08e52812bfe05b584c5ff0892faa7a41cd8"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--5--observed/modified/attempt-0.stdout.txt",
+      "bytes": 1272,
+      "sha256": "c995d789b43f45f4aaa881672f68773cf68830def7ad5e8899db69d4d75b183f"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--5--observed/modified/candidate.py.txt",
+      "bytes": 455,
+      "sha256": "11915101b10976f447f8660495f8e5ab70d0d9f01082cf2db1ebd69e83285abf"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--5--observed/modified/original.py.txt",
+      "bytes": 573,
+      "sha256": "e3dcacd51d5e09ca45377f20e6ea2f11f2ac004e644bf5f00f547bc537771275"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--5--observed/modified/record.json",
+      "bytes": 2311,
+      "sha256": "31b97c9f7138c79d7721a5338e75021305a61220cd3fa287f67485ed31e72ddd"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--5--observed/modified/template.mpc",
+      "bytes": 349,
+      "sha256": "7ff78cb944076d3ac6ba8605abcd78e94cdaab4d8d9b1a2f1d228c6a5078e0cc"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--5--observed/modified/transformed.py.txt",
+      "bytes": 355,
+      "sha256": "05ca25eb2994520d5ac3227a60280530df29471af89f1be64a8f7569c523478b"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--6--observed/baseline/Input-P0-0.txt",
+      "bytes": 6,
+      "sha256": "a17138988e1387532b5cb0bd7a23f18a11d537123873e67154dada3c6359e53e"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--6--observed/baseline/attempt-0-party-count_distinct-0.log",
+      "bytes": 808,
+      "sha256": "2faa5b27c4b787ca40374e979981693a02593de7b86672980623eba57db331cd"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--6--observed/baseline/attempt-0-party-count_distinct-1.log",
+      "bytes": 765,
+      "sha256": "b4e8f16608ac50834db9169695b0019c66a90c9e08092f2c2e97494cfe6753d1"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--6--observed/baseline/attempt-0.mpc",
+      "bytes": 842,
+      "sha256": "eec747c41978bdaf9bf8fc8fa4606a2dc2b07a3971fc66a139704888d0d5f8bb"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--6--observed/baseline/attempt-0.stderr.txt",
+      "bytes": 176,
+      "sha256": "a773a063d4a679e6533eaa0dec39f2677c9aad1733655dd49178b39babc68da9"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--6--observed/baseline/attempt-0.stdout.txt",
+      "bytes": 1302,
+      "sha256": "a92a1e7c0bfc9110347fa98361c954567c29ec3c7c4475a2d82c78035cfdcd4c"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--6--observed/baseline/candidate.py.txt",
+      "bytes": 493,
+      "sha256": "ecc3105a8541419b87f424751ddc1f5e1c69b93b6c1c37c13eb5bec7a5290dc2"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--6--observed/baseline/original.py.txt",
+      "bytes": 573,
+      "sha256": "e3dcacd51d5e09ca45377f20e6ea2f11f2ac004e644bf5f00f547bc537771275"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--6--observed/baseline/record.json",
+      "bytes": 2416,
+      "sha256": "bac4dd3051d95b607a9da4378689213ed4d861b11d42d5caf7af330c20e6013b"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--6--observed/baseline/template.mpc",
+      "bytes": 349,
+      "sha256": "7ff78cb944076d3ac6ba8605abcd78e94cdaab4d8d9b1a2f1d228c6a5078e0cc"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--6--observed/baseline/transformed.py.txt",
+      "bytes": 355,
+      "sha256": "05ca25eb2994520d5ac3227a60280530df29471af89f1be64a8f7569c523478b"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--6--observed/modified/Input-P0-0.txt",
+      "bytes": 6,
+      "sha256": "a17138988e1387532b5cb0bd7a23f18a11d537123873e67154dada3c6359e53e"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--6--observed/modified/attempt-0-party-count_distinct-0.log",
+      "bytes": 778,
+      "sha256": "9fe79d89353b538954e1e0b3699dece45cfc534c925304e6200398a7fb9b0c2c"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--6--observed/modified/attempt-0-party-count_distinct-1.log",
+      "bytes": 765,
+      "sha256": "07a0916bbde2357a0dfb7f41456677e20ac59430e85c33a37a4302592934a13f"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--6--observed/modified/attempt-0.mpc",
+      "bytes": 804,
+      "sha256": "f22256143ba3807caab5c951266a6074ce42386403975397670dbb85c202c71e"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--6--observed/modified/attempt-0.stderr.txt",
+      "bytes": 176,
+      "sha256": "6a1e79d1bbb3eaafc0db7ef6fbae6f5b6d749c11a561438e0b47c83d7b109628"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--6--observed/modified/attempt-0.stdout.txt",
+      "bytes": 1272,
+      "sha256": "692b4de2aa1a6cf8d0aab3cb47b80d0a623a01ee77d37f174f386e1af8d3ab1a"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--6--observed/modified/candidate.py.txt",
+      "bytes": 455,
+      "sha256": "11915101b10976f447f8660495f8e5ab70d0d9f01082cf2db1ebd69e83285abf"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--6--observed/modified/original.py.txt",
+      "bytes": 573,
+      "sha256": "e3dcacd51d5e09ca45377f20e6ea2f11f2ac004e644bf5f00f547bc537771275"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--6--observed/modified/record.json",
+      "bytes": 2312,
+      "sha256": "95d06ee756669e58b98a86c15fd896c853fe5d06990a651bc3d0ad4bcba5dd31"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--6--observed/modified/template.mpc",
+      "bytes": 349,
+      "sha256": "7ff78cb944076d3ac6ba8605abcd78e94cdaab4d8d9b1a2f1d228c6a5078e0cc"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--6--observed/modified/transformed.py.txt",
+      "bytes": 355,
+      "sha256": "05ca25eb2994520d5ac3227a60280530df29471af89f1be64a8f7569c523478b"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--7--observed/baseline/Input-P0-0.txt",
+      "bytes": 11,
+      "sha256": "226fc8b8612f2bc00b3ba38b788f38b898157c0612b4796e6bab7dba135b6389"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--7--observed/baseline/attempt-0-party-count_distinct-0.log",
+      "bytes": 808,
+      "sha256": "6075b3b5d4ec35d493028a3e97ed93ee0eea6c150fd01e5f24e040664e6f4d89"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--7--observed/baseline/attempt-0-party-count_distinct-1.log",
+      "bytes": 765,
+      "sha256": "ce1498b19ecf892d24d18989419653affc0e489837d1b08ce94af30ff7097083"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--7--observed/baseline/attempt-0.mpc",
+      "bytes": 842,
+      "sha256": "eec747c41978bdaf9bf8fc8fa4606a2dc2b07a3971fc66a139704888d0d5f8bb"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--7--observed/baseline/attempt-0.stderr.txt",
+      "bytes": 176,
+      "sha256": "64b3df6650411ab49fd9518a5ad90afb73fb13ed6eb993064f3df64b3cac8956"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--7--observed/baseline/attempt-0.stdout.txt",
+      "bytes": 1302,
+      "sha256": "dcf9c2f9864ae092fba315e9137d30618f01f1eb2c2c01f6858c12161cf3f067"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--7--observed/baseline/candidate.py.txt",
+      "bytes": 493,
+      "sha256": "ecc3105a8541419b87f424751ddc1f5e1c69b93b6c1c37c13eb5bec7a5290dc2"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--7--observed/baseline/original.py.txt",
+      "bytes": 573,
+      "sha256": "e3dcacd51d5e09ca45377f20e6ea2f11f2ac004e644bf5f00f547bc537771275"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--7--observed/baseline/record.json",
+      "bytes": 2422,
+      "sha256": "6f2f5c75560706382aba488f0b4c5961652ee5337d32d33fec16dd662d0e060b"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--7--observed/baseline/template.mpc",
+      "bytes": 349,
+      "sha256": "7ff78cb944076d3ac6ba8605abcd78e94cdaab4d8d9b1a2f1d228c6a5078e0cc"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--7--observed/baseline/transformed.py.txt",
+      "bytes": 355,
+      "sha256": "05ca25eb2994520d5ac3227a60280530df29471af89f1be64a8f7569c523478b"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--7--observed/modified/Input-P0-0.txt",
+      "bytes": 11,
+      "sha256": "226fc8b8612f2bc00b3ba38b788f38b898157c0612b4796e6bab7dba135b6389"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--7--observed/modified/attempt-0-party-count_distinct-0.log",
+      "bytes": 778,
+      "sha256": "f2320302a6ab2c71d7a69f996964c8d1886d02ebb2aca3d95cebad316c4facf8"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--7--observed/modified/attempt-0-party-count_distinct-1.log",
+      "bytes": 765,
+      "sha256": "0b06abf3729901fdb0fa1571a90279ec61f7306aa83412f484b045f97539f736"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--7--observed/modified/attempt-0.mpc",
+      "bytes": 804,
+      "sha256": "f22256143ba3807caab5c951266a6074ce42386403975397670dbb85c202c71e"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--7--observed/modified/attempt-0.stderr.txt",
+      "bytes": 176,
+      "sha256": "125b3cb4bff16c73109b9a323cac85f6ab9faa38a8f8bbb9589a46d604042b94"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--7--observed/modified/attempt-0.stdout.txt",
+      "bytes": 1272,
+      "sha256": "8a0d01ef038f1605ce086ac03a401c599f653e7351452302b98d42aa84709fd5"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--7--observed/modified/candidate.py.txt",
+      "bytes": 455,
+      "sha256": "11915101b10976f447f8660495f8e5ab70d0d9f01082cf2db1ebd69e83285abf"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--7--observed/modified/original.py.txt",
+      "bytes": 573,
+      "sha256": "e3dcacd51d5e09ca45377f20e6ea2f11f2ac004e644bf5f00f547bc537771275"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--7--observed/modified/record.json",
+      "bytes": 2317,
+      "sha256": "88c8af18af6bc3d647d39ad4492372c449d7f719e51079a393fa3a41c2893792"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--7--observed/modified/template.mpc",
+      "bytes": 349,
+      "sha256": "7ff78cb944076d3ac6ba8605abcd78e94cdaab4d8d9b1a2f1d228c6a5078e0cc"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--7--observed/modified/transformed.py.txt",
+      "bytes": 355,
+      "sha256": "05ca25eb2994520d5ac3227a60280530df29471af89f1be64a8f7569c523478b"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--8--observed/baseline/Input-P0-0.txt",
+      "bytes": 13,
+      "sha256": "30cba1ec39bfcaee869e5ab52e1676a6fd2381d41e7a61f116a5a3a77bc1a70f"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--8--observed/baseline/attempt-0-party-count_distinct-0.log",
+      "bytes": 807,
+      "sha256": "d2a25af3e2d6fc4a1175561608e42dd3d621a27c337eb80c43ddbc40d939b8f2"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--8--observed/baseline/attempt-0-party-count_distinct-1.log",
+      "bytes": 765,
+      "sha256": "be557f96eb48604d38130266cc52b045d2b7dda1cd51cb891da9026c8ad08abf"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--8--observed/baseline/attempt-0.mpc",
+      "bytes": 842,
+      "sha256": "eec747c41978bdaf9bf8fc8fa4606a2dc2b07a3971fc66a139704888d0d5f8bb"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--8--observed/baseline/attempt-0.stderr.txt",
+      "bytes": 176,
+      "sha256": "6b7f81061b67465ab4180c4546c399710ba62034d2f479d26bd7449c41bee62b"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--8--observed/baseline/attempt-0.stdout.txt",
+      "bytes": 1301,
+      "sha256": "fb7518b871130013cb6ac38bd209a430899640f465b2f86bb3acc0784f473c5d"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--8--observed/baseline/candidate.py.txt",
+      "bytes": 493,
+      "sha256": "ecc3105a8541419b87f424751ddc1f5e1c69b93b6c1c37c13eb5bec7a5290dc2"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--8--observed/baseline/original.py.txt",
+      "bytes": 573,
+      "sha256": "e3dcacd51d5e09ca45377f20e6ea2f11f2ac004e644bf5f00f547bc537771275"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--8--observed/baseline/record.json",
+      "bytes": 2423,
+      "sha256": "0befb6357a63cbacacd19ff993288a824ac0de947284e97a2c6f257adba80050"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--8--observed/baseline/template.mpc",
+      "bytes": 349,
+      "sha256": "7ff78cb944076d3ac6ba8605abcd78e94cdaab4d8d9b1a2f1d228c6a5078e0cc"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--8--observed/baseline/transformed.py.txt",
+      "bytes": 355,
+      "sha256": "05ca25eb2994520d5ac3227a60280530df29471af89f1be64a8f7569c523478b"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--8--observed/modified/Input-P0-0.txt",
+      "bytes": 13,
+      "sha256": "30cba1ec39bfcaee869e5ab52e1676a6fd2381d41e7a61f116a5a3a77bc1a70f"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--8--observed/modified/attempt-0-party-count_distinct-0.log",
+      "bytes": 777,
+      "sha256": "6098929ae11420dbe5116866919a87f5233f95c93d6bd64d647201cfe2ea1ab4"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--8--observed/modified/attempt-0-party-count_distinct-1.log",
+      "bytes": 765,
+      "sha256": "62b1825826a7eb28d651e42c4ac791743819dc74103dad8cc71b053b79f5e428"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--8--observed/modified/attempt-0.mpc",
+      "bytes": 804,
+      "sha256": "f22256143ba3807caab5c951266a6074ce42386403975397670dbb85c202c71e"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--8--observed/modified/attempt-0.stderr.txt",
+      "bytes": 176,
+      "sha256": "bc9502e3209c95a99bd108238fa8f3b6f9e833a95867d7f04e89869b61777806"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--8--observed/modified/attempt-0.stdout.txt",
+      "bytes": 1271,
+      "sha256": "11c794bc80398c37a6f8fdbb2d28780cf1ebc5bff978cbc7a31ae0aa5c73a960"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--8--observed/modified/candidate.py.txt",
+      "bytes": 455,
+      "sha256": "11915101b10976f447f8660495f8e5ab70d0d9f01082cf2db1ebd69e83285abf"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--8--observed/modified/original.py.txt",
+      "bytes": 573,
+      "sha256": "e3dcacd51d5e09ca45377f20e6ea2f11f2ac004e644bf5f00f547bc537771275"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--8--observed/modified/record.json",
+      "bytes": 2320,
+      "sha256": "936ad6f3db674cc5e9289325fbfccb082567e38f87a7c587cbdfdebb5478cc68"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--8--observed/modified/template.mpc",
+      "bytes": 349,
+      "sha256": "7ff78cb944076d3ac6ba8605abcd78e94cdaab4d8d9b1a2f1d228c6a5078e0cc"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--8--observed/modified/transformed.py.txt",
+      "bytes": 355,
+      "sha256": "05ca25eb2994520d5ac3227a60280530df29471af89f1be64a8f7569c523478b"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--9--observed/baseline/Input-P0-0.txt",
+      "bytes": 13,
+      "sha256": "113290bbffce1c4fbd1fad248056546bbac55031ba2d9bfca964a5b08bd78dcb"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--9--observed/baseline/attempt-0-party-count_distinct-0.log",
+      "bytes": 808,
+      "sha256": "96576ccff21dbebecc9f7c877343ef7c77eec6208741c3ae39a95b51416c0347"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--9--observed/baseline/attempt-0-party-count_distinct-1.log",
+      "bytes": 765,
+      "sha256": "b7b69aec060ecc971051822407c4f3250bd1058e8861acb8a2e44a83677059f7"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--9--observed/baseline/attempt-0.mpc",
+      "bytes": 842,
+      "sha256": "eec747c41978bdaf9bf8fc8fa4606a2dc2b07a3971fc66a139704888d0d5f8bb"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--9--observed/baseline/attempt-0.stderr.txt",
+      "bytes": 176,
+      "sha256": "541fad4323e773339cbb9ab9dda280b8ba39c342dca5fd85ffe0fc452c21fd1b"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--9--observed/baseline/attempt-0.stdout.txt",
+      "bytes": 1302,
+      "sha256": "15b763699c58661f789faa7bc2d1ddeaf1fb42f6d025c94890c33ad175d60ee9"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--9--observed/baseline/candidate.py.txt",
+      "bytes": 493,
+      "sha256": "ecc3105a8541419b87f424751ddc1f5e1c69b93b6c1c37c13eb5bec7a5290dc2"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--9--observed/baseline/original.py.txt",
+      "bytes": 573,
+      "sha256": "e3dcacd51d5e09ca45377f20e6ea2f11f2ac004e644bf5f00f547bc537771275"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--9--observed/baseline/record.json",
+      "bytes": 2424,
+      "sha256": "59ab49449806fe27b7af4dab32a6e0ffb13f5fd0cb33d39530e9abdcc69b9c32"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--9--observed/baseline/template.mpc",
+      "bytes": 349,
+      "sha256": "7ff78cb944076d3ac6ba8605abcd78e94cdaab4d8d9b1a2f1d228c6a5078e0cc"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--9--observed/baseline/transformed.py.txt",
+      "bytes": 355,
+      "sha256": "05ca25eb2994520d5ac3227a60280530df29471af89f1be64a8f7569c523478b"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--9--observed/modified/Input-P0-0.txt",
+      "bytes": 13,
+      "sha256": "113290bbffce1c4fbd1fad248056546bbac55031ba2d9bfca964a5b08bd78dcb"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--9--observed/modified/attempt-0-party-count_distinct-0.log",
+      "bytes": 776,
+      "sha256": "78c2b285c58801895655c9398cf2380f0ff645778ba5ed2238516b033d4ac415"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--9--observed/modified/attempt-0-party-count_distinct-1.log",
+      "bytes": 765,
+      "sha256": "0eb87158ecdf6942a17675c6762db96df2ffd35faa5bb624a407c2957e7fd2c1"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--9--observed/modified/attempt-0.mpc",
+      "bytes": 804,
+      "sha256": "f22256143ba3807caab5c951266a6074ce42386403975397670dbb85c202c71e"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--9--observed/modified/attempt-0.stderr.txt",
+      "bytes": 176,
+      "sha256": "02ff231754a75ebec4b254bcb89e04c5c3b5daec8103d95f965e21f492693641"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--9--observed/modified/attempt-0.stdout.txt",
+      "bytes": 1270,
+      "sha256": "ef31a9f93b628990757e2353903830ac175a9975d511b24c78993126bc5e0782"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--9--observed/modified/candidate.py.txt",
+      "bytes": 455,
+      "sha256": "11915101b10976f447f8660495f8e5ab70d0d9f01082cf2db1ebd69e83285abf"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--9--observed/modified/original.py.txt",
+      "bytes": 573,
+      "sha256": "e3dcacd51d5e09ca45377f20e6ea2f11f2ac004e644bf5f00f547bc537771275"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--9--observed/modified/record.json",
+      "bytes": 2319,
+      "sha256": "c072031e21ba816d8cdc24447c034be63aafafeec02cf0b369d68585b6081ab3"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--9--observed/modified/template.mpc",
+      "bytes": 349,
+      "sha256": "7ff78cb944076d3ac6ba8605abcd78e94cdaab4d8d9b1a2f1d228c6a5078e0cc"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sfix--9--observed/modified/transformed.py.txt",
+      "bytes": 355,
+      "sha256": "05ca25eb2994520d5ac3227a60280530df29471af89f1be64a8f7569c523478b"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sint--10--observed/baseline/Input-P0-0.txt",
+      "bytes": 6,
+      "sha256": "6e3efc811d40b03baab295f398ccc5f3a0b8c8c98c77fcd857540eea09e69f33"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sint--10--observed/baseline/attempt-0-party-count_distinct-0.log",
+      "bytes": 807,
+      "sha256": "6bc46c1378ad18bbd5e3f356c30f4884742e7b3ff881d0944689d2f8ffdf833f"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sint--10--observed/baseline/attempt-0-party-count_distinct-1.log",
+      "bytes": 764,
+      "sha256": "3f63933e55b0b33b758ca6bac4403ec0397701e784e0d281237cf2baa050f1b4"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sint--10--observed/baseline/attempt-0.mpc",
+      "bytes": 842,
+      "sha256": "2dc32113d145caf0836ab922c3f56bfb739dcd26ab68cc717ad58343d0f00f1d"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sint--10--observed/baseline/attempt-0.stderr.txt",
+      "bytes": 176,
+      "sha256": "1c5f92d75a2fabe83479d12c4c20962361a82730ba9e7296bff9e4e8797afcca"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sint--10--observed/baseline/attempt-0.stdout.txt",
+      "bytes": 1301,
+      "sha256": "369d71fe8ca2e318fcaf88f8d3eb2491212e43d0ff28b5ab7268dde176fed37e"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sint--10--observed/baseline/candidate.py.txt",
+      "bytes": 493,
+      "sha256": "ecc3105a8541419b87f424751ddc1f5e1c69b93b6c1c37c13eb5bec7a5290dc2"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sint--10--observed/baseline/original.py.txt",
+      "bytes": 573,
+      "sha256": "e3dcacd51d5e09ca45377f20e6ea2f11f2ac004e644bf5f00f547bc537771275"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sint--10--observed/baseline/record.json",
+      "bytes": 2417,
+      "sha256": "3f43f9943d5e435b369f0e7ed00699130e208b724dde4d9c77a6e27db51f6897"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sint--10--observed/baseline/template.mpc",
+      "bytes": 349,
+      "sha256": "3d74c10857270caafe4850967d95bfad042eda8e5b31d99efa3febb9b2e9eed2"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sint--10--observed/baseline/transformed.py.txt",
+      "bytes": 355,
+      "sha256": "05ca25eb2994520d5ac3227a60280530df29471af89f1be64a8f7569c523478b"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sint--10--observed/modified/Input-P0-0.txt",
+      "bytes": 6,
+      "sha256": "6e3efc811d40b03baab295f398ccc5f3a0b8c8c98c77fcd857540eea09e69f33"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sint--10--observed/modified/attempt-0-party-count_distinct-0.log",
+      "bytes": 776,
+      "sha256": "703a57b90031fea26e9e6c71045d7d84a089cb519927fd3a3ba20ee55be13dc5"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sint--10--observed/modified/attempt-0-party-count_distinct-1.log",
+      "bytes": 762,
+      "sha256": "147b69b03407d911a2fa5405021dffc8e6fa0a534634f5f89e9be14dc737b24e"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sint--10--observed/modified/attempt-0.mpc",
+      "bytes": 804,
+      "sha256": "d10b07d450bd06ccdc95c265f59efc92e8ceb393b1392c49bf5724557b1f753a"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sint--10--observed/modified/attempt-0.stderr.txt",
+      "bytes": 176,
+      "sha256": "a57e503cd9e6171d7a585ff96e5f3094c3a3eff374a4239bde60f926eed25097"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sint--10--observed/modified/attempt-0.stdout.txt",
+      "bytes": 1270,
+      "sha256": "8e7cc0121fda0e68bee6883ce0a844b503d400fea7f21da3b239a88da5936bf9"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sint--10--observed/modified/candidate.py.txt",
+      "bytes": 455,
+      "sha256": "11915101b10976f447f8660495f8e5ab70d0d9f01082cf2db1ebd69e83285abf"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sint--10--observed/modified/original.py.txt",
+      "bytes": 573,
+      "sha256": "e3dcacd51d5e09ca45377f20e6ea2f11f2ac004e644bf5f00f547bc537771275"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sint--10--observed/modified/record.json",
+      "bytes": 2313,
+      "sha256": "a95ff53ca8b6bc0a264a4399d784ba04b18c1eef78dd47f08f004406757aa0a2"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sint--10--observed/modified/template.mpc",
+      "bytes": 349,
+      "sha256": "3d74c10857270caafe4850967d95bfad042eda8e5b31d99efa3febb9b2e9eed2"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sint--10--observed/modified/transformed.py.txt",
+      "bytes": 355,
+      "sha256": "05ca25eb2994520d5ac3227a60280530df29471af89f1be64a8f7569c523478b"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sint--11--observed/baseline/Input-P0-0.txt",
+      "bytes": 25,
+      "sha256": "97a0f5da22ffbe7b99180ac56f3d61fd1869668a65dacf7397660b7c06eb4775"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sint--11--observed/baseline/attempt-0-party-count_distinct-0.log",
+      "bytes": 807,
+      "sha256": "3f69d22bb3456f22a7c0b108df046e137de86e6f73fbb029e1d3f641821823bf"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sint--11--observed/baseline/attempt-0-party-count_distinct-1.log",
+      "bytes": 764,
+      "sha256": "d933926de381c36b9bf409683ea4a7d12599bcf066c47095c8626fea00ce1822"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sint--11--observed/baseline/attempt-0.mpc",
+      "bytes": 842,
+      "sha256": "2dc32113d145caf0836ab922c3f56bfb739dcd26ab68cc717ad58343d0f00f1d"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sint--11--observed/baseline/attempt-0.stderr.txt",
+      "bytes": 176,
+      "sha256": "6190b6b932ea8bb03562d143758a23fe0501558cb79bee282a5198a4336468ff"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sint--11--observed/baseline/attempt-0.stdout.txt",
+      "bytes": 1301,
+      "sha256": "5a57ce5867c76a46cac4fc46bbd17766ac44212e25d1c5dc6f06ef255ac8cae2"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sint--11--observed/baseline/candidate.py.txt",
+      "bytes": 493,
+      "sha256": "ecc3105a8541419b87f424751ddc1f5e1c69b93b6c1c37c13eb5bec7a5290dc2"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sint--11--observed/baseline/original.py.txt",
+      "bytes": 573,
+      "sha256": "e3dcacd51d5e09ca45377f20e6ea2f11f2ac004e644bf5f00f547bc537771275"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sint--11--observed/baseline/record.json",
+      "bytes": 2437,
+      "sha256": "d1863517e1b835c9c470f4910355a1342757a0c1ad5df882e723a0297d42c092"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sint--11--observed/baseline/template.mpc",
+      "bytes": 349,
+      "sha256": "3d74c10857270caafe4850967d95bfad042eda8e5b31d99efa3febb9b2e9eed2"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sint--11--observed/baseline/transformed.py.txt",
+      "bytes": 355,
+      "sha256": "05ca25eb2994520d5ac3227a60280530df29471af89f1be64a8f7569c523478b"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sint--11--observed/modified/Input-P0-0.txt",
+      "bytes": 25,
+      "sha256": "97a0f5da22ffbe7b99180ac56f3d61fd1869668a65dacf7397660b7c06eb4775"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sint--11--observed/modified/attempt-0-party-count_distinct-0.log",
+      "bytes": 776,
+      "sha256": "af3d7063a666d93132aa5464c8d8c43b849efdc2b9925a10e195a8ab7557d9ab"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sint--11--observed/modified/attempt-0-party-count_distinct-1.log",
+      "bytes": 762,
+      "sha256": "c9719a4ec52fc9e32796232f5ab8649d772138df137d747fc2b570cdace24ebf"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sint--11--observed/modified/attempt-0.mpc",
+      "bytes": 804,
+      "sha256": "d10b07d450bd06ccdc95c265f59efc92e8ceb393b1392c49bf5724557b1f753a"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sint--11--observed/modified/attempt-0.stderr.txt",
+      "bytes": 176,
+      "sha256": "9c2308a8ef1f64c99249786ef6a80ab982dcda0b0ab80efbd2fcebc7edba2c61"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sint--11--observed/modified/attempt-0.stdout.txt",
+      "bytes": 1270,
+      "sha256": "36f7c442ac6543ceb6db212ee6c2c38215ee1277a957fec87c00981f210defcb"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sint--11--observed/modified/candidate.py.txt",
+      "bytes": 455,
+      "sha256": "11915101b10976f447f8660495f8e5ab70d0d9f01082cf2db1ebd69e83285abf"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sint--11--observed/modified/original.py.txt",
+      "bytes": 573,
+      "sha256": "e3dcacd51d5e09ca45377f20e6ea2f11f2ac004e644bf5f00f547bc537771275"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sint--11--observed/modified/record.json",
+      "bytes": 2334,
+      "sha256": "937b06162a10d3a2a36a0ccc14c688251671f363e8eb07c2d8aaa2e8873daf1a"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sint--11--observed/modified/template.mpc",
+      "bytes": 349,
+      "sha256": "3d74c10857270caafe4850967d95bfad042eda8e5b31d99efa3febb9b2e9eed2"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/count_distinct--sint--11--observed/modified/transformed.py.txt",
+      "bytes": 355,
+      "sha256": "05ca25eb2994520d5ac3227a60280530df29471af89f1be64a8f7569c523478b"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--0--observed/baseline/Input-P0-0.txt",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--0--observed/baseline/attempt-0-party-is_ascending-0.log",
+      "bytes": 263,
+      "sha256": "fbd66fba04aaba364cd671e282b119de58b663be5d825ec76c6213846fa3d784"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--0--observed/baseline/attempt-0-party-is_ascending-1.log",
+      "bytes": 249,
+      "sha256": "ad83cb12e68e00ac17f49ab4a36c389428bb367496483885e1e34e722efdc83d"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--0--observed/baseline/attempt-0.mpc",
+      "bytes": 838,
+      "sha256": "7fe2e6d762c3785222aa7e643e4b34162f56d1ee8ad46ca2b01b14a9db537896"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--0--observed/baseline/attempt-0.stderr.txt",
+      "bytes": 172,
+      "sha256": "bdb3c9946f76305b5c74bfa512730d921b76d0e93b7ea724a2c0500e3259ec13"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--0--observed/baseline/attempt-0.stdout.txt",
+      "bytes": 654,
+      "sha256": "be0b8cef3b6e73950b431120cd0365ec009dafce63260b2f9d58f6f0eb5dc93a"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--0--observed/baseline/candidate.py.txt",
+      "bytes": 502,
+      "sha256": "518234dbe4823aa1a2af3c6263e88e1739dbe5b93eb2c3b091b454118989d7d5"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--0--observed/baseline/original.py.txt",
+      "bytes": 923,
+      "sha256": "45db3f3d0f9e87c1818458209f15727b3a4c8714a563d4ccaf2df7dc69c6c305"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--0--observed/baseline/record.json",
+      "bytes": 2160,
+      "sha256": "a244d8a3c6590c1fe69b31fbec289cfc9c497b9b295b97e4ab244c3d74fa0911"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--0--observed/baseline/template.mpc",
+      "bytes": 336,
+      "sha256": "4f559e75f0fa4a5cd6110c9406760300543f7af06ee568d60d3a51dc2422708b"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--0--observed/baseline/transformed.py.txt",
+      "bytes": 366,
+      "sha256": "654715443ae4598dc08a9de626916a16b13e96713e4a52e6b920c34d7df41127"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--0--observed/modified/Input-P0-0.txt",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--0--observed/modified/attempt-0-party-is_ascending-0.log",
+      "bytes": 263,
+      "sha256": "30b935a84c15d5f983350c35cdc638dc856dcee1488aa88dcdfe7e7c05072531"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--0--observed/modified/attempt-0-party-is_ascending-1.log",
+      "bytes": 250,
+      "sha256": "1276714f5251c95f8a5566ba8f8c8c6281fbf419aed18daaab3734e9e66a931e"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--0--observed/modified/attempt-0.mpc",
+      "bytes": 802,
+      "sha256": "0ca87dc6c14ad64801a6a8043b7f4381c69bba72f3c9f30dce9114f8423ebc20"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--0--observed/modified/attempt-0.stderr.txt",
+      "bytes": 172,
+      "sha256": "b54395f10c65277b8f465ae550da461a20580343ee2972ab65b2be0687eefcf1"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--0--observed/modified/attempt-0.stdout.txt",
+      "bytes": 654,
+      "sha256": "bb796b9887ad938f9a75be4023274ea7448f586273a6432c109a312195c04740"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--0--observed/modified/candidate.py.txt",
+      "bytes": 466,
+      "sha256": "8cbecf7afb2b0c0f45f7bf79bad77cc4caabc85e0913db7688fdbdb14505568c"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--0--observed/modified/original.py.txt",
+      "bytes": 923,
+      "sha256": "45db3f3d0f9e87c1818458209f15727b3a4c8714a563d4ccaf2df7dc69c6c305"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--0--observed/modified/record.json",
+      "bytes": 2160,
+      "sha256": "c13d4ad9c598bb7c8e3ac3c34df1a0abf58802cbd082e2d97d10018b4ec356c0"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--0--observed/modified/template.mpc",
+      "bytes": 336,
+      "sha256": "4f559e75f0fa4a5cd6110c9406760300543f7af06ee568d60d3a51dc2422708b"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--0--observed/modified/transformed.py.txt",
+      "bytes": 366,
+      "sha256": "654715443ae4598dc08a9de626916a16b13e96713e4a52e6b920c34d7df41127"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--1--observed/baseline/Input-P0-0.txt",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--1--observed/baseline/attempt-0-party-is_ascending-0.log",
+      "bytes": 258,
+      "sha256": "8ae74731f00ba3017fe22bc036037d7037d185d555c1843a5a68c9b09191ddda"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--1--observed/baseline/attempt-0-party-is_ascending-1.log",
+      "bytes": 245,
+      "sha256": "981e701085b6169cefaf10d0f7f2ca99515b9b7e17d6d743fcfb834219ea768b"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--1--observed/baseline/attempt-0.mpc",
+      "bytes": 849,
+      "sha256": "663885b5c67213e4287bef1a251c08602daaefbff9d92234931f1940698e5a4e"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--1--observed/baseline/attempt-0.stderr.txt",
+      "bytes": 172,
+      "sha256": "fc8f8a36dd04854e0d5d9c46e0ebbd2a4f671dd60815d8eb300e0d3438d22301"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--1--observed/baseline/attempt-0.stdout.txt",
+      "bytes": 691,
+      "sha256": "d320bbc28b929586febc18c3ac47ea76a760c1f31cc55fcb03284bef5cd914ee"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--1--observed/baseline/candidate.py.txt",
+      "bytes": 502,
+      "sha256": "518234dbe4823aa1a2af3c6263e88e1739dbe5b93eb2c3b091b454118989d7d5"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--1--observed/baseline/original.py.txt",
+      "bytes": 923,
+      "sha256": "45db3f3d0f9e87c1818458209f15727b3a4c8714a563d4ccaf2df7dc69c6c305"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--1--observed/baseline/record.json",
+      "bytes": 2168,
+      "sha256": "201c914a1da9de636ec0a19e88194f19a888013b6ef737178414ea5a2ebe3d33"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--1--observed/baseline/template.mpc",
+      "bytes": 347,
+      "sha256": "1bb8548e2429e88dc600bf8d47bc963e2e6b6f678aeb1a967b627478d5ac9f45"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--1--observed/baseline/transformed.py.txt",
+      "bytes": 366,
+      "sha256": "654715443ae4598dc08a9de626916a16b13e96713e4a52e6b920c34d7df41127"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--1--observed/modified/Input-P0-0.txt",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--1--observed/modified/attempt-0-party-is_ascending-0.log",
+      "bytes": 259,
+      "sha256": "9300bc362132d6137871ce8c9e6987e6a3408e212c8741e263871d34731a8543"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--1--observed/modified/attempt-0-party-is_ascending-1.log",
+      "bytes": 245,
+      "sha256": "98b313960ea4dbbd06fddef46e31518edcd08fe65638ddf35ed7554a59d0a5f9"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--1--observed/modified/attempt-0.mpc",
+      "bytes": 813,
+      "sha256": "3a8ee68bd103a0f54569109d012d0a16799b53a2467de2e02ba3f0fc82cdfbfa"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--1--observed/modified/attempt-0.stderr.txt",
+      "bytes": 172,
+      "sha256": "75d021e6c329cdabc42c7d0151be6991b0ec94ac8f20531a8690aaf13c0b946e"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--1--observed/modified/attempt-0.stdout.txt",
+      "bytes": 692,
+      "sha256": "3793df898a989faee0da84de07383af2a5ab76524629a15f536c4327f5d2df99"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--1--observed/modified/candidate.py.txt",
+      "bytes": 466,
+      "sha256": "8cbecf7afb2b0c0f45f7bf79bad77cc4caabc85e0913db7688fdbdb14505568c"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--1--observed/modified/original.py.txt",
+      "bytes": 923,
+      "sha256": "45db3f3d0f9e87c1818458209f15727b3a4c8714a563d4ccaf2df7dc69c6c305"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--1--observed/modified/record.json",
+      "bytes": 2169,
+      "sha256": "09b5184d7e93ceb566c1bbd678d682a6a04177ed87f7df5fc920bbd88f827fb0"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--1--observed/modified/template.mpc",
+      "bytes": 347,
+      "sha256": "1bb8548e2429e88dc600bf8d47bc963e2e6b6f678aeb1a967b627478d5ac9f45"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--1--observed/modified/transformed.py.txt",
+      "bytes": 366,
+      "sha256": "654715443ae4598dc08a9de626916a16b13e96713e4a52e6b920c34d7df41127"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--2--control/baseline/Input-P0-0.txt",
+      "bytes": 6,
+      "sha256": "6e3efc811d40b03baab295f398ccc5f3a0b8c8c98c77fcd857540eea09e69f33"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--2--control/baseline/attempt-0-party-is_ascending-0.log",
+      "bytes": 777,
+      "sha256": "6aaa47cd6f238a8bf6865b7b8c746cecdab8dd4325d709e36370638efae81843"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--2--control/baseline/attempt-0-party-is_ascending-1.log",
+      "bytes": 763,
+      "sha256": "5ad1ac292d1a20eebb2f20e7e7dd343f974224c1b54181eaf9439bce8004b0a6"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--2--control/baseline/attempt-0.mpc",
+      "bytes": 1270,
+      "sha256": "b9855c87a55090cff738d6ce8d44065a3d830f0ffebb9100ed149d20eac8e2e3"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--2--control/baseline/attempt-0.stderr.txt",
+      "bytes": 172,
+      "sha256": "41f096d20b31640f0eb25cdece64012750c2d508a4bcd8e3a7aab13a4a5dd73d"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--2--control/baseline/attempt-0.stdout.txt",
+      "bytes": 1265,
+      "sha256": "fb8b2d5bf5e28ccb5ac2815c1b85a85387f8eded1bae4323e1e71e324bd662bc"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--2--control/baseline/candidate.py.txt",
+      "bytes": 923,
+      "sha256": "45db3f3d0f9e87c1818458209f15727b3a4c8714a563d4ccaf2df7dc69c6c305"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--2--control/baseline/original.py.txt",
+      "bytes": 923,
+      "sha256": "45db3f3d0f9e87c1818458209f15727b3a4c8714a563d4ccaf2df7dc69c6c305"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--2--control/baseline/record.json",
+      "bytes": 2075,
+      "sha256": "70dc95956ca728c4986900ff988d199f993623cd349245e5364f953da9f31e41"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--2--control/baseline/template.mpc",
+      "bytes": 347,
+      "sha256": "ba5aed4f570d97bfd7a81d4b02e76e0b40621be257f81cf9a293e5919be6d00f"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--2--control/baseline/transformed.py.txt",
+      "bytes": 366,
+      "sha256": "654715443ae4598dc08a9de626916a16b13e96713e4a52e6b920c34d7df41127"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--2--control/modified/Input-P0-0.txt",
+      "bytes": 6,
+      "sha256": "6e3efc811d40b03baab295f398ccc5f3a0b8c8c98c77fcd857540eea09e69f33"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--2--control/modified/attempt-0-party-is_ascending-0.log",
+      "bytes": 778,
+      "sha256": "a32ac0400bb4b09f12c665ab2323c5623e78a26363c0be62aad64574ecc19e68"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--2--control/modified/attempt-0-party-is_ascending-1.log",
+      "bytes": 765,
+      "sha256": "1026842d940fb36453dd0fb647f7ec36afddaf5c35ab301e54609afc8e01ec8d"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--2--control/modified/attempt-0.mpc",
+      "bytes": 713,
+      "sha256": "bc80cec5508be33807e97e02f19704a39c7ac2037d35853f7b754da85701fe08"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--2--control/modified/attempt-0.stderr.txt",
+      "bytes": 172,
+      "sha256": "f69c85b1f2943fc9b8e668b8e2284a490c6e07114fef34ddde78413cc8b079a3"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--2--control/modified/attempt-0.stdout.txt",
+      "bytes": 1266,
+      "sha256": "53cfa654d46f6b8ddbe11294772ca18a2780167590df2aa7e83a72681e12252e"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--2--control/modified/candidate.py.txt",
+      "bytes": 366,
+      "sha256": "654715443ae4598dc08a9de626916a16b13e96713e4a52e6b920c34d7df41127"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--2--control/modified/original.py.txt",
+      "bytes": 923,
+      "sha256": "45db3f3d0f9e87c1818458209f15727b3a4c8714a563d4ccaf2df7dc69c6c305"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--2--control/modified/record.json",
+      "bytes": 2075,
+      "sha256": "0a46fca8c8bb1f927e592d66e2ccb2e2513f4d15c386a0a0ba7598077586b96b"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--2--control/modified/template.mpc",
+      "bytes": 347,
+      "sha256": "ba5aed4f570d97bfd7a81d4b02e76e0b40621be257f81cf9a293e5919be6d00f"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--2--control/modified/transformed.py.txt",
+      "bytes": 366,
+      "sha256": "654715443ae4598dc08a9de626916a16b13e96713e4a52e6b920c34d7df41127"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--2--observed/baseline/Input-P0-0.txt",
+      "bytes": 6,
+      "sha256": "6e3efc811d40b03baab295f398ccc5f3a0b8c8c98c77fcd857540eea09e69f33"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--2--observed/baseline/attempt-0-party-is_ascending-0.log",
+      "bytes": 797,
+      "sha256": "943fae8a0fce506f7736692a448fb2e77986d1df235e7da74bc8b9e943446bfa"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--2--observed/baseline/attempt-0-party-is_ascending-1.log",
+      "bytes": 764,
+      "sha256": "a88491f4e56d70490e7e47c7a209b0ad5063f8102701376993725875166c7f2a"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--2--observed/baseline/attempt-0.mpc",
+      "bytes": 849,
+      "sha256": "87d4a6fe8bbd7f7a378ab76123e736b6c2d5539660370c6eadb21312246b35b4"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--2--observed/baseline/attempt-0.stderr.txt",
+      "bytes": 172,
+      "sha256": "007c1c3aaace11b6708b5d411d73ce29b1c5a5cae598179ea0536deb1b4134a7"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--2--observed/baseline/attempt-0.stdout.txt",
+      "bytes": 1285,
+      "sha256": "df16d69c805d48f7dac4dbbe5239235fb50d4d8335fefaea50b9d491637409d6"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--2--observed/baseline/candidate.py.txt",
+      "bytes": 502,
+      "sha256": "518234dbe4823aa1a2af3c6263e88e1739dbe5b93eb2c3b091b454118989d7d5"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--2--observed/baseline/original.py.txt",
+      "bytes": 923,
+      "sha256": "45db3f3d0f9e87c1818458209f15727b3a4c8714a563d4ccaf2df7dc69c6c305"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--2--observed/baseline/record.json",
+      "bytes": 2317,
+      "sha256": "72ccc8151e85269b6a3a4bf3d700d0a8bd4568a4892f89633c20e883577195aa"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--2--observed/baseline/template.mpc",
+      "bytes": 347,
+      "sha256": "ba5aed4f570d97bfd7a81d4b02e76e0b40621be257f81cf9a293e5919be6d00f"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--2--observed/baseline/transformed.py.txt",
+      "bytes": 366,
+      "sha256": "654715443ae4598dc08a9de626916a16b13e96713e4a52e6b920c34d7df41127"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--2--observed/modified/Input-P0-0.txt",
+      "bytes": 6,
+      "sha256": "6e3efc811d40b03baab295f398ccc5f3a0b8c8c98c77fcd857540eea09e69f33"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--2--observed/modified/attempt-0-party-is_ascending-0.log",
+      "bytes": 778,
+      "sha256": "10c0af417fe7868a643549cab5ce96f7645b1b689dc6601fe5745cbbde33bb76"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--2--observed/modified/attempt-0-party-is_ascending-1.log",
+      "bytes": 765,
+      "sha256": "f2aecb4731d1cdfa3b70f1391dbd1db19eb3d925cf7d079914a22fa4c58ac7bf"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--2--observed/modified/attempt-0.mpc",
+      "bytes": 813,
+      "sha256": "5575a7ae0b253ca067f4e7be092274371d099beee5fdbab0ad24d46cc82cfe9f"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--2--observed/modified/attempt-0.stderr.txt",
+      "bytes": 172,
+      "sha256": "700d5b3f76490ceaf5035cce041c06c9f38bef031aa59848a0e68672fcf35986"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--2--observed/modified/attempt-0.stdout.txt",
+      "bytes": 1266,
+      "sha256": "3dcfcb2da5b5af741ed3e900372ad79001c8edcdccd037e066a75bc535f2a74d"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--2--observed/modified/candidate.py.txt",
+      "bytes": 466,
+      "sha256": "8cbecf7afb2b0c0f45f7bf79bad77cc4caabc85e0913db7688fdbdb14505568c"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--2--observed/modified/original.py.txt",
+      "bytes": 923,
+      "sha256": "45db3f3d0f9e87c1818458209f15727b3a4c8714a563d4ccaf2df7dc69c6c305"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--2--observed/modified/record.json",
+      "bytes": 2247,
+      "sha256": "bb968f0e58277a3363d48be4b2b9cf44357a9d23a7852f9240fd8a464b729d28"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--2--observed/modified/template.mpc",
+      "bytes": 347,
+      "sha256": "ba5aed4f570d97bfd7a81d4b02e76e0b40621be257f81cf9a293e5919be6d00f"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--2--observed/modified/transformed.py.txt",
+      "bytes": 366,
+      "sha256": "654715443ae4598dc08a9de626916a16b13e96713e4a52e6b920c34d7df41127"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--3--control/baseline/Input-P0-0.txt",
+      "bytes": 6,
+      "sha256": "d67df7df61d6152c4a61c23939931c5a90e51646e78d82e70a4e67d84eca097c"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--3--control/baseline/attempt-0-party-is_ascending-0.log",
+      "bytes": 777,
+      "sha256": "83fde2235dd12cda3fd7822f37e2d25ccb2f07336586d8040c75e9a69a982674"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--3--control/baseline/attempt-0-party-is_ascending-1.log",
+      "bytes": 764,
+      "sha256": "efb6232fb88d5394a44e6db60d0c830705de779a6f52749cc7226e56a5ee7a3b"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--3--control/baseline/attempt-0.mpc",
+      "bytes": 1270,
+      "sha256": "b9855c87a55090cff738d6ce8d44065a3d830f0ffebb9100ed149d20eac8e2e3"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--3--control/baseline/attempt-0.stderr.txt",
+      "bytes": 172,
+      "sha256": "93169ff6ec071fcfa5f3dfe9e3e0dfe92d23dc2c1caaa7f2ed54dc331de4ffb4"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--3--control/baseline/attempt-0.stdout.txt",
+      "bytes": 1265,
+      "sha256": "c2f93e8a7cc416c3c8583465b88623c5e73367409d0dd98e0f737f24d2380c3b"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--3--control/baseline/candidate.py.txt",
+      "bytes": 923,
+      "sha256": "45db3f3d0f9e87c1818458209f15727b3a4c8714a563d4ccaf2df7dc69c6c305"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--3--control/baseline/original.py.txt",
+      "bytes": 923,
+      "sha256": "45db3f3d0f9e87c1818458209f15727b3a4c8714a563d4ccaf2df7dc69c6c305"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--3--control/baseline/record.json",
+      "bytes": 2076,
+      "sha256": "9c42e35e89a7064445993430224042a59225121c39eafeca7b4501631799feab"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--3--control/baseline/template.mpc",
+      "bytes": 347,
+      "sha256": "ba5aed4f570d97bfd7a81d4b02e76e0b40621be257f81cf9a293e5919be6d00f"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--3--control/baseline/transformed.py.txt",
+      "bytes": 366,
+      "sha256": "654715443ae4598dc08a9de626916a16b13e96713e4a52e6b920c34d7df41127"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--3--control/modified/Input-P0-0.txt",
+      "bytes": 6,
+      "sha256": "d67df7df61d6152c4a61c23939931c5a90e51646e78d82e70a4e67d84eca097c"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--3--control/modified/attempt-0-party-is_ascending-0.log",
+      "bytes": 778,
+      "sha256": "9dd47d19bcf7b474f5594a5cdbbe83f21df3adb73f9517d8b7469b4d904a4993"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--3--control/modified/attempt-0-party-is_ascending-1.log",
+      "bytes": 765,
+      "sha256": "4d13cc6e38a438973b33453f580e44d6b48c55dddb2afa134938b4e0acb6ab07"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--3--control/modified/attempt-0.mpc",
+      "bytes": 713,
+      "sha256": "bc80cec5508be33807e97e02f19704a39c7ac2037d35853f7b754da85701fe08"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--3--control/modified/attempt-0.stderr.txt",
+      "bytes": 172,
+      "sha256": "e55620a0b823ce030425445f91f0130c7f8a8a46063df33e081e0fd0bbba2532"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--3--control/modified/attempt-0.stdout.txt",
+      "bytes": 1266,
+      "sha256": "3101683c2ea513890f7d2779d78cf2704b7dd8e4d67c251b9f7f0274a7bf7f10"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--3--control/modified/candidate.py.txt",
+      "bytes": 366,
+      "sha256": "654715443ae4598dc08a9de626916a16b13e96713e4a52e6b920c34d7df41127"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--3--control/modified/original.py.txt",
+      "bytes": 923,
+      "sha256": "45db3f3d0f9e87c1818458209f15727b3a4c8714a563d4ccaf2df7dc69c6c305"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--3--control/modified/record.json",
+      "bytes": 2076,
+      "sha256": "f186cf3037b6f95e692652146db91c4027c36871f70962953f875f0b943c1cfe"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--3--control/modified/template.mpc",
+      "bytes": 347,
+      "sha256": "ba5aed4f570d97bfd7a81d4b02e76e0b40621be257f81cf9a293e5919be6d00f"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--3--control/modified/transformed.py.txt",
+      "bytes": 366,
+      "sha256": "654715443ae4598dc08a9de626916a16b13e96713e4a52e6b920c34d7df41127"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--3--observed/baseline/Input-P0-0.txt",
+      "bytes": 6,
+      "sha256": "d67df7df61d6152c4a61c23939931c5a90e51646e78d82e70a4e67d84eca097c"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--3--observed/baseline/attempt-0-party-is_ascending-0.log",
+      "bytes": 797,
+      "sha256": "61469c6a572514a0e6b9b065f16a94f9a039882d9872a80b6092447f6e124a0a"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--3--observed/baseline/attempt-0-party-is_ascending-1.log",
+      "bytes": 764,
+      "sha256": "499a93d85105f1ef9abf5e49c8feffd624ad303e9f2e565c289de4d0b98b7f51"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--3--observed/baseline/attempt-0.mpc",
+      "bytes": 849,
+      "sha256": "87d4a6fe8bbd7f7a378ab76123e736b6c2d5539660370c6eadb21312246b35b4"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--3--observed/baseline/attempt-0.stderr.txt",
+      "bytes": 172,
+      "sha256": "c91d90666ff742c24dc7735ac8fb48c121b2bbfb7c21afbddc766ae057ec3e4e"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--3--observed/baseline/attempt-0.stdout.txt",
+      "bytes": 1285,
+      "sha256": "c904cabf6e4e4c4e5cc61771a7cb0e36219d91949ef7295da8d7e016c27bf015"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--3--observed/baseline/candidate.py.txt",
+      "bytes": 502,
+      "sha256": "518234dbe4823aa1a2af3c6263e88e1739dbe5b93eb2c3b091b454118989d7d5"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--3--observed/baseline/original.py.txt",
+      "bytes": 923,
+      "sha256": "45db3f3d0f9e87c1818458209f15727b3a4c8714a563d4ccaf2df7dc69c6c305"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--3--observed/baseline/record.json",
+      "bytes": 2317,
+      "sha256": "0953c994e9b00450f6b7c0ed10311ee825bd27206e6a33a9a1afb469279653ae"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--3--observed/baseline/template.mpc",
+      "bytes": 347,
+      "sha256": "ba5aed4f570d97bfd7a81d4b02e76e0b40621be257f81cf9a293e5919be6d00f"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--3--observed/baseline/transformed.py.txt",
+      "bytes": 366,
+      "sha256": "654715443ae4598dc08a9de626916a16b13e96713e4a52e6b920c34d7df41127"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--3--observed/modified/Input-P0-0.txt",
+      "bytes": 6,
+      "sha256": "d67df7df61d6152c4a61c23939931c5a90e51646e78d82e70a4e67d84eca097c"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--3--observed/modified/attempt-0-party-is_ascending-0.log",
+      "bytes": 778,
+      "sha256": "91561860c80fe1e42bf78c191dc0e516a05d8a06bbdea33f0b491c566da1fea5"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--3--observed/modified/attempt-0-party-is_ascending-1.log",
+      "bytes": 765,
+      "sha256": "7eded4eb90183ae44bc4bc069f09a7da7e352f2dd44ae0d0b76dd720c2488e5b"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--3--observed/modified/attempt-0.mpc",
+      "bytes": 813,
+      "sha256": "5575a7ae0b253ca067f4e7be092274371d099beee5fdbab0ad24d46cc82cfe9f"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--3--observed/modified/attempt-0.stderr.txt",
+      "bytes": 172,
+      "sha256": "b733e08efaad71622e1c899a57cdf8b7f2f38bcf8fbb4d007943f3f137e60cd5"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--3--observed/modified/attempt-0.stdout.txt",
+      "bytes": 1266,
+      "sha256": "c67f5fe388cbbb699e04c80f06a678b34d7f072d432426a066e4f4273a70d6fe"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--3--observed/modified/candidate.py.txt",
+      "bytes": 466,
+      "sha256": "8cbecf7afb2b0c0f45f7bf79bad77cc4caabc85e0913db7688fdbdb14505568c"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--3--observed/modified/original.py.txt",
+      "bytes": 923,
+      "sha256": "45db3f3d0f9e87c1818458209f15727b3a4c8714a563d4ccaf2df7dc69c6c305"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--3--observed/modified/record.json",
+      "bytes": 2247,
+      "sha256": "6094ffa7302e54e88129360394426eb55a5ffc7964ff3ea32ad9609f3ccafeff"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--3--observed/modified/template.mpc",
+      "bytes": 347,
+      "sha256": "ba5aed4f570d97bfd7a81d4b02e76e0b40621be257f81cf9a293e5919be6d00f"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--3--observed/modified/transformed.py.txt",
+      "bytes": 366,
+      "sha256": "654715443ae4598dc08a9de626916a16b13e96713e4a52e6b920c34d7df41127"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--4--observed/baseline/Input-P0-0.txt",
+      "bytes": 8,
+      "sha256": "7c51c4f648a8ade05d02e7eaf87ea2a3fab6c44c377f21324818c259d3dd61be"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--4--observed/baseline/attempt-0-party-is_ascending-0.log",
+      "bytes": 797,
+      "sha256": "7d7b9b1698a3e33883cd80f44a8a64f7af4ae9e2b165885be86c7ae91478eaae"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--4--observed/baseline/attempt-0-party-is_ascending-1.log",
+      "bytes": 764,
+      "sha256": "e3b8f3bec4cd2fa893b71f883127514893500bb53b2a1fba051b35ec32d26a87"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--4--observed/baseline/attempt-0.mpc",
+      "bytes": 849,
+      "sha256": "87d4a6fe8bbd7f7a378ab76123e736b6c2d5539660370c6eadb21312246b35b4"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--4--observed/baseline/attempt-0.stderr.txt",
+      "bytes": 172,
+      "sha256": "256e6bf6098fd6eae04334199fe32daefea9a7216245bb28868ab8be88761a32"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--4--observed/baseline/attempt-0.stdout.txt",
+      "bytes": 1285,
+      "sha256": "7875ea1d7f6013a0a06a43c93ebc315d75252c307c201c3d1cc48c654326d44c"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--4--observed/baseline/candidate.py.txt",
+      "bytes": 502,
+      "sha256": "518234dbe4823aa1a2af3c6263e88e1739dbe5b93eb2c3b091b454118989d7d5"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--4--observed/baseline/original.py.txt",
+      "bytes": 923,
+      "sha256": "45db3f3d0f9e87c1818458209f15727b3a4c8714a563d4ccaf2df7dc69c6c305"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--4--observed/baseline/record.json",
+      "bytes": 2319,
+      "sha256": "06531382ac2716ed4d0e8a88ae3f4c8105183a02e156919a2fd5a09473433750"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--4--observed/baseline/template.mpc",
+      "bytes": 347,
+      "sha256": "ba5aed4f570d97bfd7a81d4b02e76e0b40621be257f81cf9a293e5919be6d00f"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--4--observed/baseline/transformed.py.txt",
+      "bytes": 366,
+      "sha256": "654715443ae4598dc08a9de626916a16b13e96713e4a52e6b920c34d7df41127"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--4--observed/modified/Input-P0-0.txt",
+      "bytes": 8,
+      "sha256": "7c51c4f648a8ade05d02e7eaf87ea2a3fab6c44c377f21324818c259d3dd61be"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--4--observed/modified/attempt-0-party-is_ascending-0.log",
+      "bytes": 777,
+      "sha256": "189093c3d3f41d8a8c2925c60adf02e42bbe39ffc4d3dab2ee23d71a9e3b4a58"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--4--observed/modified/attempt-0-party-is_ascending-1.log",
+      "bytes": 765,
+      "sha256": "754bd1ee9e3d60cc734fcd7ebcdcb4df6cac9e06771173680d7c5da959882b03"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--4--observed/modified/attempt-0.mpc",
+      "bytes": 813,
+      "sha256": "5575a7ae0b253ca067f4e7be092274371d099beee5fdbab0ad24d46cc82cfe9f"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--4--observed/modified/attempt-0.stderr.txt",
+      "bytes": 172,
+      "sha256": "8866a996d85d7d7a2ddc81e8bac56497d452c15fdcdd600fe56a79d5dd51b299"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--4--observed/modified/attempt-0.stdout.txt",
+      "bytes": 1265,
+      "sha256": "084861ee9991b98d2a0894655b1cbea342a5b39f3f85a4c10771c7906edff9e6"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--4--observed/modified/candidate.py.txt",
+      "bytes": 466,
+      "sha256": "8cbecf7afb2b0c0f45f7bf79bad77cc4caabc85e0913db7688fdbdb14505568c"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--4--observed/modified/original.py.txt",
+      "bytes": 923,
+      "sha256": "45db3f3d0f9e87c1818458209f15727b3a4c8714a563d4ccaf2df7dc69c6c305"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--4--observed/modified/record.json",
+      "bytes": 2248,
+      "sha256": "da069b7f60c5a1de81ea846d501e1fac1c032cf463f45cef4a091222616399fd"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--4--observed/modified/template.mpc",
+      "bytes": 347,
+      "sha256": "ba5aed4f570d97bfd7a81d4b02e76e0b40621be257f81cf9a293e5919be6d00f"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--4--observed/modified/transformed.py.txt",
+      "bytes": 366,
+      "sha256": "654715443ae4598dc08a9de626916a16b13e96713e4a52e6b920c34d7df41127"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--5--observed/baseline/Input-P0-0.txt",
+      "bytes": 6,
+      "sha256": "7d4e170b3b7a3429b5c48cd27387d1b00e98e175c005e64413cff0df76c3eda5"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--5--observed/baseline/attempt-0-party-is_ascending-0.log",
+      "bytes": 797,
+      "sha256": "9389966346706ab6032b0436eaf8a74f412ae0a3ad3b6f3f7a1d0e851a803c25"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--5--observed/baseline/attempt-0-party-is_ascending-1.log",
+      "bytes": 763,
+      "sha256": "7d7ce5744ff93f35b370f0e8c26a5388afa3ee24cc631c5bc41229893f016960"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--5--observed/baseline/attempt-0.mpc",
+      "bytes": 849,
+      "sha256": "87d4a6fe8bbd7f7a378ab76123e736b6c2d5539660370c6eadb21312246b35b4"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--5--observed/baseline/attempt-0.stderr.txt",
+      "bytes": 172,
+      "sha256": "01788ff18ce7d4dc6d11aef46eca58a6e9a1ae397a03920a5286490fc578f35e"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--5--observed/baseline/attempt-0.stdout.txt",
+      "bytes": 1285,
+      "sha256": "6e94267058a09b5f509228f0c0a33b89cef7c19356e60d08a1408631a9219e70"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--5--observed/baseline/candidate.py.txt",
+      "bytes": 502,
+      "sha256": "518234dbe4823aa1a2af3c6263e88e1739dbe5b93eb2c3b091b454118989d7d5"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--5--observed/baseline/original.py.txt",
+      "bytes": 923,
+      "sha256": "45db3f3d0f9e87c1818458209f15727b3a4c8714a563d4ccaf2df7dc69c6c305"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--5--observed/baseline/record.json",
+      "bytes": 2318,
+      "sha256": "5e7875f661600576ef942afb597d72f0b225aa35db158308f626261caad9966e"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--5--observed/baseline/template.mpc",
+      "bytes": 347,
+      "sha256": "ba5aed4f570d97bfd7a81d4b02e76e0b40621be257f81cf9a293e5919be6d00f"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--5--observed/baseline/transformed.py.txt",
+      "bytes": 366,
+      "sha256": "654715443ae4598dc08a9de626916a16b13e96713e4a52e6b920c34d7df41127"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--5--observed/modified/Input-P0-0.txt",
+      "bytes": 6,
+      "sha256": "7d4e170b3b7a3429b5c48cd27387d1b00e98e175c005e64413cff0df76c3eda5"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--5--observed/modified/attempt-0-party-is_ascending-0.log",
+      "bytes": 778,
+      "sha256": "9d17cd7be00efa1a612a595314ebeca0cb06ac6281a6ff325cbe8f3e918ba4d1"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--5--observed/modified/attempt-0-party-is_ascending-1.log",
+      "bytes": 765,
+      "sha256": "b6bb6d05198c348bb85ac0d32e6919358ff9dd13c39764d1731350aac300df4e"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--5--observed/modified/attempt-0.mpc",
+      "bytes": 813,
+      "sha256": "5575a7ae0b253ca067f4e7be092274371d099beee5fdbab0ad24d46cc82cfe9f"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--5--observed/modified/attempt-0.stderr.txt",
+      "bytes": 172,
+      "sha256": "b8b8ccb2aded22fb61908894e76eb6bb5fb65d3937023ff69828899cd93a7bff"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--5--observed/modified/attempt-0.stdout.txt",
+      "bytes": 1266,
+      "sha256": "9d43c2f7167b771247f8048f2473de0b9a37bcd3a713cf5deac4bbf5a7afb807"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--5--observed/modified/candidate.py.txt",
+      "bytes": 466,
+      "sha256": "8cbecf7afb2b0c0f45f7bf79bad77cc4caabc85e0913db7688fdbdb14505568c"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--5--observed/modified/original.py.txt",
+      "bytes": 923,
+      "sha256": "45db3f3d0f9e87c1818458209f15727b3a4c8714a563d4ccaf2df7dc69c6c305"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--5--observed/modified/record.json",
+      "bytes": 2247,
+      "sha256": "2a4149c6d1843f590a3ff30f73ebaee04949f95dc5be103061a23e8ec1ecce95"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--5--observed/modified/template.mpc",
+      "bytes": 347,
+      "sha256": "ba5aed4f570d97bfd7a81d4b02e76e0b40621be257f81cf9a293e5919be6d00f"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--5--observed/modified/transformed.py.txt",
+      "bytes": 366,
+      "sha256": "654715443ae4598dc08a9de626916a16b13e96713e4a52e6b920c34d7df41127"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--6--observed/baseline/Input-P0-0.txt",
+      "bytes": 6,
+      "sha256": "a17138988e1387532b5cb0bd7a23f18a11d537123873e67154dada3c6359e53e"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--6--observed/baseline/attempt-0-party-is_ascending-0.log",
+      "bytes": 797,
+      "sha256": "f1f946fe132940db6d028e308bd6ece2e10b04de6ad8c29ab10a7a63c703be6b"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--6--observed/baseline/attempt-0-party-is_ascending-1.log",
+      "bytes": 764,
+      "sha256": "b37cf4eddfede6dbbd4f4c3311235f644356fb22a1dfe1b7eee6a0f3577525ad"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--6--observed/baseline/attempt-0.mpc",
+      "bytes": 849,
+      "sha256": "87d4a6fe8bbd7f7a378ab76123e736b6c2d5539660370c6eadb21312246b35b4"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--6--observed/baseline/attempt-0.stderr.txt",
+      "bytes": 172,
+      "sha256": "dd824173800a4cd7e3d1542bc14e24ec83470ce6a9cb6520ed44d83099e1d59b"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--6--observed/baseline/attempt-0.stdout.txt",
+      "bytes": 1285,
+      "sha256": "c1f87b3689c91a7c64cf8a7d75f0fd716123cc22ac21fad84d10965ad8a9be1f"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--6--observed/baseline/candidate.py.txt",
+      "bytes": 502,
+      "sha256": "518234dbe4823aa1a2af3c6263e88e1739dbe5b93eb2c3b091b454118989d7d5"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--6--observed/baseline/original.py.txt",
+      "bytes": 923,
+      "sha256": "45db3f3d0f9e87c1818458209f15727b3a4c8714a563d4ccaf2df7dc69c6c305"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--6--observed/baseline/record.json",
+      "bytes": 2317,
+      "sha256": "99382ed97e0511bf4c81e9989d7ef4738396047933ca250b5d5fdad5c81df6ef"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--6--observed/baseline/template.mpc",
+      "bytes": 347,
+      "sha256": "ba5aed4f570d97bfd7a81d4b02e76e0b40621be257f81cf9a293e5919be6d00f"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--6--observed/baseline/transformed.py.txt",
+      "bytes": 366,
+      "sha256": "654715443ae4598dc08a9de626916a16b13e96713e4a52e6b920c34d7df41127"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--6--observed/modified/Input-P0-0.txt",
+      "bytes": 6,
+      "sha256": "a17138988e1387532b5cb0bd7a23f18a11d537123873e67154dada3c6359e53e"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--6--observed/modified/attempt-0-party-is_ascending-0.log",
+      "bytes": 778,
+      "sha256": "e29d7829eb62b6d1d21282d1a3d8ed855e7127245acab1efcefce659f9f21688"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--6--observed/modified/attempt-0-party-is_ascending-1.log",
+      "bytes": 762,
+      "sha256": "91301e8295b2f7b6253ef4a0fa56e5da69458dbe4658366270e3409c22ac94c2"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--6--observed/modified/attempt-0.mpc",
+      "bytes": 813,
+      "sha256": "5575a7ae0b253ca067f4e7be092274371d099beee5fdbab0ad24d46cc82cfe9f"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--6--observed/modified/attempt-0.stderr.txt",
+      "bytes": 172,
+      "sha256": "1723edc0a2cc99265d0f37b2a87e4a3fa3964e25bd765d511e8d67bcac4ed224"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--6--observed/modified/attempt-0.stdout.txt",
+      "bytes": 1266,
+      "sha256": "d6ec3c6c552b5989437845ddd89c4ee7aa1ec6e4d71b8dab974ed6cd8f950b82"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--6--observed/modified/candidate.py.txt",
+      "bytes": 466,
+      "sha256": "8cbecf7afb2b0c0f45f7bf79bad77cc4caabc85e0913db7688fdbdb14505568c"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--6--observed/modified/original.py.txt",
+      "bytes": 923,
+      "sha256": "45db3f3d0f9e87c1818458209f15727b3a4c8714a563d4ccaf2df7dc69c6c305"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--6--observed/modified/record.json",
+      "bytes": 2247,
+      "sha256": "ffc683462eeecb182d34b85292a89f2781bf22305eb48cb949c62789f4acce44"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--6--observed/modified/template.mpc",
+      "bytes": 347,
+      "sha256": "ba5aed4f570d97bfd7a81d4b02e76e0b40621be257f81cf9a293e5919be6d00f"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--6--observed/modified/transformed.py.txt",
+      "bytes": 366,
+      "sha256": "654715443ae4598dc08a9de626916a16b13e96713e4a52e6b920c34d7df41127"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--7--observed/baseline/Input-P0-0.txt",
+      "bytes": 11,
+      "sha256": "226fc8b8612f2bc00b3ba38b788f38b898157c0612b4796e6bab7dba135b6389"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--7--observed/baseline/attempt-0-party-is_ascending-0.log",
+      "bytes": 797,
+      "sha256": "1002de5f9959c09fcd9922938bdf4030cabec101f75a1ce5ca571240ec593245"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--7--observed/baseline/attempt-0-party-is_ascending-1.log",
+      "bytes": 763,
+      "sha256": "5bb1f129275ba2dbe0f7cb3b46a25cf2227fd5cf41b29ade582e9ed64e30e860"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--7--observed/baseline/attempt-0.mpc",
+      "bytes": 849,
+      "sha256": "87d4a6fe8bbd7f7a378ab76123e736b6c2d5539660370c6eadb21312246b35b4"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--7--observed/baseline/attempt-0.stderr.txt",
+      "bytes": 172,
+      "sha256": "36b998b5447113e44f7b08bb47393415cf11be2d562e73bc3e76e25e9843f452"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--7--observed/baseline/attempt-0.stdout.txt",
+      "bytes": 1285,
+      "sha256": "9bf3896c7e66ca1660929388b19ce8ce1b29c777bcedaa626281e3c6f22c3032"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--7--observed/baseline/candidate.py.txt",
+      "bytes": 502,
+      "sha256": "518234dbe4823aa1a2af3c6263e88e1739dbe5b93eb2c3b091b454118989d7d5"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--7--observed/baseline/original.py.txt",
+      "bytes": 923,
+      "sha256": "45db3f3d0f9e87c1818458209f15727b3a4c8714a563d4ccaf2df7dc69c6c305"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--7--observed/baseline/record.json",
+      "bytes": 2322,
+      "sha256": "6b2ae65e3c3cb3cc3e7d99f567cb56c3f7ad341bbffe5dabcb341c6b0823a03c"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--7--observed/baseline/template.mpc",
+      "bytes": 347,
+      "sha256": "ba5aed4f570d97bfd7a81d4b02e76e0b40621be257f81cf9a293e5919be6d00f"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--7--observed/baseline/transformed.py.txt",
+      "bytes": 366,
+      "sha256": "654715443ae4598dc08a9de626916a16b13e96713e4a52e6b920c34d7df41127"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--7--observed/modified/Input-P0-0.txt",
+      "bytes": 11,
+      "sha256": "226fc8b8612f2bc00b3ba38b788f38b898157c0612b4796e6bab7dba135b6389"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--7--observed/modified/attempt-0-party-is_ascending-0.log",
+      "bytes": 778,
+      "sha256": "90b4446f482bdbc870ed06e3392f9555e25ecf1e3d585da827e70655411d6d9e"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--7--observed/modified/attempt-0-party-is_ascending-1.log",
+      "bytes": 765,
+      "sha256": "1eebdb4d59b324aeb481a7377b392dc6e59cc928d88665f4c1bc542a367864f6"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--7--observed/modified/attempt-0.mpc",
+      "bytes": 813,
+      "sha256": "5575a7ae0b253ca067f4e7be092274371d099beee5fdbab0ad24d46cc82cfe9f"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--7--observed/modified/attempt-0.stderr.txt",
+      "bytes": 172,
+      "sha256": "09c90fdf7f372e24de0b61cbf4a6afb43933f1feb4b2d7071edca2a1249b9faa"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--7--observed/modified/attempt-0.stdout.txt",
+      "bytes": 1266,
+      "sha256": "858cb31e4563bbb0ce7ea25fcb53380c642fce408a49b7fc89788ebe219a40d4"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--7--observed/modified/candidate.py.txt",
+      "bytes": 466,
+      "sha256": "8cbecf7afb2b0c0f45f7bf79bad77cc4caabc85e0913db7688fdbdb14505568c"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--7--observed/modified/original.py.txt",
+      "bytes": 923,
+      "sha256": "45db3f3d0f9e87c1818458209f15727b3a4c8714a563d4ccaf2df7dc69c6c305"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--7--observed/modified/record.json",
+      "bytes": 2253,
+      "sha256": "3a904e334c3439e74b09e454882641b6a7f792f77b92c4c57680f74e8e02dba0"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--7--observed/modified/template.mpc",
+      "bytes": 347,
+      "sha256": "ba5aed4f570d97bfd7a81d4b02e76e0b40621be257f81cf9a293e5919be6d00f"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--7--observed/modified/transformed.py.txt",
+      "bytes": 366,
+      "sha256": "654715443ae4598dc08a9de626916a16b13e96713e4a52e6b920c34d7df41127"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--8--observed/baseline/Input-P0-0.txt",
+      "bytes": 13,
+      "sha256": "30cba1ec39bfcaee869e5ab52e1676a6fd2381d41e7a61f116a5a3a77bc1a70f"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--8--observed/baseline/attempt-0-party-is_ascending-0.log",
+      "bytes": 797,
+      "sha256": "d6b77afd808005736caaf7804c640f5f8f48f7d125ffeb299581b6c882da3208"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--8--observed/baseline/attempt-0-party-is_ascending-1.log",
+      "bytes": 764,
+      "sha256": "07fab2f9362a89123cc9f2bc7a7d8f094238b2834777cc143b285a9a9f3ba222"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--8--observed/baseline/attempt-0.mpc",
+      "bytes": 849,
+      "sha256": "87d4a6fe8bbd7f7a378ab76123e736b6c2d5539660370c6eadb21312246b35b4"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--8--observed/baseline/attempt-0.stderr.txt",
+      "bytes": 172,
+      "sha256": "61c3d6e382efdcf586cc632b211790e1a1a6f439664cbb6c4f1b2e1e047970d3"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--8--observed/baseline/attempt-0.stdout.txt",
+      "bytes": 1285,
+      "sha256": "1f8558942af15e18323a8bebe67adb7dcda1ee728a46d81197d768f94229024f"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--8--observed/baseline/candidate.py.txt",
+      "bytes": 502,
+      "sha256": "518234dbe4823aa1a2af3c6263e88e1739dbe5b93eb2c3b091b454118989d7d5"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--8--observed/baseline/original.py.txt",
+      "bytes": 923,
+      "sha256": "45db3f3d0f9e87c1818458209f15727b3a4c8714a563d4ccaf2df7dc69c6c305"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--8--observed/baseline/record.json",
+      "bytes": 2325,
+      "sha256": "6edc87e4024e28200867e5efb1220a53940f88ca491a1e5037e420026086b2fb"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--8--observed/baseline/template.mpc",
+      "bytes": 347,
+      "sha256": "ba5aed4f570d97bfd7a81d4b02e76e0b40621be257f81cf9a293e5919be6d00f"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--8--observed/baseline/transformed.py.txt",
+      "bytes": 366,
+      "sha256": "654715443ae4598dc08a9de626916a16b13e96713e4a52e6b920c34d7df41127"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--8--observed/modified/Input-P0-0.txt",
+      "bytes": 13,
+      "sha256": "30cba1ec39bfcaee869e5ab52e1676a6fd2381d41e7a61f116a5a3a77bc1a70f"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--8--observed/modified/attempt-0-party-is_ascending-0.log",
+      "bytes": 778,
+      "sha256": "6e36c315c65be9fa778323b3d1b4b48dff54a5e6931ce71ceb279e0c4b227613"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--8--observed/modified/attempt-0-party-is_ascending-1.log",
+      "bytes": 765,
+      "sha256": "f5dde0a60e247a074bdf074c24375f2a5bb3347ec742c76cdec03b0c6e7b68e5"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--8--observed/modified/attempt-0.mpc",
+      "bytes": 813,
+      "sha256": "5575a7ae0b253ca067f4e7be092274371d099beee5fdbab0ad24d46cc82cfe9f"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--8--observed/modified/attempt-0.stderr.txt",
+      "bytes": 172,
+      "sha256": "0f3c1fd1e649baaec3c5bd9d0b1ea49687ec64408fc98a66cae4289e7c0f25a6"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--8--observed/modified/attempt-0.stdout.txt",
+      "bytes": 1266,
+      "sha256": "849292832651b2eb6b63944766d4f1169e7381e9ca7fcab62e2050cf8dee8fee"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--8--observed/modified/candidate.py.txt",
+      "bytes": 466,
+      "sha256": "8cbecf7afb2b0c0f45f7bf79bad77cc4caabc85e0913db7688fdbdb14505568c"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--8--observed/modified/original.py.txt",
+      "bytes": 923,
+      "sha256": "45db3f3d0f9e87c1818458209f15727b3a4c8714a563d4ccaf2df7dc69c6c305"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--8--observed/modified/record.json",
+      "bytes": 2254,
+      "sha256": "be586b7c6218b3767687d3b1de8471862dfe3a6fc894a1de378036ef3dfc8b00"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--8--observed/modified/template.mpc",
+      "bytes": 347,
+      "sha256": "ba5aed4f570d97bfd7a81d4b02e76e0b40621be257f81cf9a293e5919be6d00f"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--8--observed/modified/transformed.py.txt",
+      "bytes": 366,
+      "sha256": "654715443ae4598dc08a9de626916a16b13e96713e4a52e6b920c34d7df41127"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--9--observed/baseline/Input-P0-0.txt",
+      "bytes": 13,
+      "sha256": "113290bbffce1c4fbd1fad248056546bbac55031ba2d9bfca964a5b08bd78dcb"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--9--observed/baseline/attempt-0-party-is_ascending-0.log",
+      "bytes": 797,
+      "sha256": "58a1c281b71165c6aee43957262bd90b9d07c0d5be966f4e70df05dac5e599d1"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--9--observed/baseline/attempt-0-party-is_ascending-1.log",
+      "bytes": 764,
+      "sha256": "2cedeb6e5b2e9c7931519fab27fed394faa6c3d75a22860804584c93508383e4"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--9--observed/baseline/attempt-0.mpc",
+      "bytes": 849,
+      "sha256": "87d4a6fe8bbd7f7a378ab76123e736b6c2d5539660370c6eadb21312246b35b4"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--9--observed/baseline/attempt-0.stderr.txt",
+      "bytes": 172,
+      "sha256": "ed964deff02405906cb874d6d97473918f510706c9a640637c74e397c89b4187"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--9--observed/baseline/attempt-0.stdout.txt",
+      "bytes": 1285,
+      "sha256": "1778e2f61c7acc38722b6867f9b6ff0e6feab4c2fd280d59002f0f37375852d2"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--9--observed/baseline/candidate.py.txt",
+      "bytes": 502,
+      "sha256": "518234dbe4823aa1a2af3c6263e88e1739dbe5b93eb2c3b091b454118989d7d5"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--9--observed/baseline/original.py.txt",
+      "bytes": 923,
+      "sha256": "45db3f3d0f9e87c1818458209f15727b3a4c8714a563d4ccaf2df7dc69c6c305"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--9--observed/baseline/record.json",
+      "bytes": 2324,
+      "sha256": "d8d9e514f4b0539fad41bad03cd9d1a63bbc449d28e7c5bd8b927c811d4c0228"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--9--observed/baseline/template.mpc",
+      "bytes": 347,
+      "sha256": "ba5aed4f570d97bfd7a81d4b02e76e0b40621be257f81cf9a293e5919be6d00f"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--9--observed/baseline/transformed.py.txt",
+      "bytes": 366,
+      "sha256": "654715443ae4598dc08a9de626916a16b13e96713e4a52e6b920c34d7df41127"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--9--observed/modified/Input-P0-0.txt",
+      "bytes": 13,
+      "sha256": "113290bbffce1c4fbd1fad248056546bbac55031ba2d9bfca964a5b08bd78dcb"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--9--observed/modified/attempt-0-party-is_ascending-0.log",
+      "bytes": 778,
+      "sha256": "05f51ba46d7d3612be296da7c3d0e98d752d25956aa58a586033e5315a9aced2"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--9--observed/modified/attempt-0-party-is_ascending-1.log",
+      "bytes": 764,
+      "sha256": "b8dac41d7c3e4e6773c3e3e2dfb8fba8670ad2d04122244c33ed09a61798d6f7"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--9--observed/modified/attempt-0.mpc",
+      "bytes": 813,
+      "sha256": "5575a7ae0b253ca067f4e7be092274371d099beee5fdbab0ad24d46cc82cfe9f"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--9--observed/modified/attempt-0.stderr.txt",
+      "bytes": 172,
+      "sha256": "c484df580830519a1127b9d9a8f58740ed1224dbb0b498f148d60400579337f3"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--9--observed/modified/attempt-0.stdout.txt",
+      "bytes": 1266,
+      "sha256": "424086c44965968cf8f2ee6b3d29b45cdf7fde491deb0df09e658f9b81dc4558"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--9--observed/modified/candidate.py.txt",
+      "bytes": 466,
+      "sha256": "8cbecf7afb2b0c0f45f7bf79bad77cc4caabc85e0913db7688fdbdb14505568c"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--9--observed/modified/original.py.txt",
+      "bytes": 923,
+      "sha256": "45db3f3d0f9e87c1818458209f15727b3a4c8714a563d4ccaf2df7dc69c6c305"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--9--observed/modified/record.json",
+      "bytes": 2254,
+      "sha256": "f2a298756900dce7cf3a928bc9a14878b4d7906b534d389f2b1b2479179192c3"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--9--observed/modified/template.mpc",
+      "bytes": 347,
+      "sha256": "ba5aed4f570d97bfd7a81d4b02e76e0b40621be257f81cf9a293e5919be6d00f"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sfix--9--observed/modified/transformed.py.txt",
+      "bytes": 366,
+      "sha256": "654715443ae4598dc08a9de626916a16b13e96713e4a52e6b920c34d7df41127"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sint--10--observed/baseline/Input-P0-0.txt",
+      "bytes": 6,
+      "sha256": "6e3efc811d40b03baab295f398ccc5f3a0b8c8c98c77fcd857540eea09e69f33"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sint--10--observed/baseline/attempt-0-party-is_ascending-0.log",
+      "bytes": 798,
+      "sha256": "d52d37610c6730c8f497ac510d69d0fca714b46ab6da794be1a13744636760ca"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sint--10--observed/baseline/attempt-0-party-is_ascending-1.log",
+      "bytes": 765,
+      "sha256": "1dec29b36b2d041a52354f6a6bf04ae1b73023eeb5f2045160e4d4cbe6dd2c06"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sint--10--observed/baseline/attempt-0.mpc",
+      "bytes": 849,
+      "sha256": "37163f3bf310a0c37c54bd9eae7fd3a1f1ad6f1faa1c35fa2bb3df44808897ac"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sint--10--observed/baseline/attempt-0.stderr.txt",
+      "bytes": 172,
+      "sha256": "771ae2fb01f064db32ff03637f0b923bf65ef6be5af4a7d81f72d1b409d3c5f0"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sint--10--observed/baseline/attempt-0.stdout.txt",
+      "bytes": 1286,
+      "sha256": "cfb891baaecaa26ab4779c1529c57f75869dff345718e4bd33103ffde717d968"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sint--10--observed/baseline/candidate.py.txt",
+      "bytes": 502,
+      "sha256": "518234dbe4823aa1a2af3c6263e88e1739dbe5b93eb2c3b091b454118989d7d5"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sint--10--observed/baseline/original.py.txt",
+      "bytes": 923,
+      "sha256": "45db3f3d0f9e87c1818458209f15727b3a4c8714a563d4ccaf2df7dc69c6c305"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sint--10--observed/baseline/record.json",
+      "bytes": 2320,
+      "sha256": "e2530984d595842fdb251caf2460791b75ba50101300a4f3d7ac43e0429bdd3f"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sint--10--observed/baseline/template.mpc",
+      "bytes": 347,
+      "sha256": "065e44ef334e5fee2c9e66d3ab6da5ef4c04f0233d03c63502bbf812a29fa919"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sint--10--observed/baseline/transformed.py.txt",
+      "bytes": 366,
+      "sha256": "654715443ae4598dc08a9de626916a16b13e96713e4a52e6b920c34d7df41127"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sint--10--observed/modified/Input-P0-0.txt",
+      "bytes": 6,
+      "sha256": "6e3efc811d40b03baab295f398ccc5f3a0b8c8c98c77fcd857540eea09e69f33"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sint--10--observed/modified/attempt-0-party-is_ascending-0.log",
+      "bytes": 778,
+      "sha256": "1617a0ee92fe260763442a4706c1bf48df74e9e2a0bbc0ebc3db3a6495e7d81f"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sint--10--observed/modified/attempt-0-party-is_ascending-1.log",
+      "bytes": 765,
+      "sha256": "b6323a0fea965bc52617527b86929632cf0fbd24374e4be349c9484c447bf39e"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sint--10--observed/modified/attempt-0.mpc",
+      "bytes": 813,
+      "sha256": "0600a2a06d14e7d9c0c8bd543daa278739dace9e0b33bc32bfd21b2d46e3adb8"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sint--10--observed/modified/attempt-0.stderr.txt",
+      "bytes": 172,
+      "sha256": "7a7bc600af389cd24cf29c72b8a60f715859cc7a116c8368eac7c04fb86fde71"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sint--10--observed/modified/attempt-0.stdout.txt",
+      "bytes": 1266,
+      "sha256": "189f00a2ee4f8becbcd5c4b3031d8dff6e6452ffc177aaf4bea2763d70e9d6fc"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sint--10--observed/modified/candidate.py.txt",
+      "bytes": 466,
+      "sha256": "8cbecf7afb2b0c0f45f7bf79bad77cc4caabc85e0913db7688fdbdb14505568c"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sint--10--observed/modified/original.py.txt",
+      "bytes": 923,
+      "sha256": "45db3f3d0f9e87c1818458209f15727b3a4c8714a563d4ccaf2df7dc69c6c305"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sint--10--observed/modified/record.json",
+      "bytes": 2249,
+      "sha256": "96e9e0cc175f269dc635a1d13ac8465c27fe750c0ac12b9245dda1b6c10f4c96"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sint--10--observed/modified/template.mpc",
+      "bytes": 347,
+      "sha256": "065e44ef334e5fee2c9e66d3ab6da5ef4c04f0233d03c63502bbf812a29fa919"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sint--10--observed/modified/transformed.py.txt",
+      "bytes": 366,
+      "sha256": "654715443ae4598dc08a9de626916a16b13e96713e4a52e6b920c34d7df41127"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sint--11--observed/baseline/Input-P0-0.txt",
+      "bytes": 25,
+      "sha256": "97a0f5da22ffbe7b99180ac56f3d61fd1869668a65dacf7397660b7c06eb4775"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sint--11--observed/baseline/attempt-0-party-is_ascending-0.log",
+      "bytes": 798,
+      "sha256": "247619159755a3936bd9dfa82d92ed209dcd7557d944736d1e1dad168edf5aef"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sint--11--observed/baseline/attempt-0-party-is_ascending-1.log",
+      "bytes": 765,
+      "sha256": "c428e51d3b7ebab6c82821e63cd08587592516ea613bc493b1d9f50835648ba1"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sint--11--observed/baseline/attempt-0.mpc",
+      "bytes": 849,
+      "sha256": "37163f3bf310a0c37c54bd9eae7fd3a1f1ad6f1faa1c35fa2bb3df44808897ac"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sint--11--observed/baseline/attempt-0.stderr.txt",
+      "bytes": 172,
+      "sha256": "c0810b9a3ffe058405d0a2ecfcc7b965df9ef62f0222f784d016c8785de53618"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sint--11--observed/baseline/attempt-0.stdout.txt",
+      "bytes": 1286,
+      "sha256": "98b269d640c399126f053d37366cc6fbe1360c39719b987f31c2010551e7582e"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sint--11--observed/baseline/candidate.py.txt",
+      "bytes": 502,
+      "sha256": "518234dbe4823aa1a2af3c6263e88e1739dbe5b93eb2c3b091b454118989d7d5"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sint--11--observed/baseline/original.py.txt",
+      "bytes": 923,
+      "sha256": "45db3f3d0f9e87c1818458209f15727b3a4c8714a563d4ccaf2df7dc69c6c305"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sint--11--observed/baseline/record.json",
+      "bytes": 2338,
+      "sha256": "84e5d8c84c6f711503eb67edd21c58837e38061fd3b7cde43f9d119c37679275"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sint--11--observed/baseline/template.mpc",
+      "bytes": 347,
+      "sha256": "065e44ef334e5fee2c9e66d3ab6da5ef4c04f0233d03c63502bbf812a29fa919"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sint--11--observed/baseline/transformed.py.txt",
+      "bytes": 366,
+      "sha256": "654715443ae4598dc08a9de626916a16b13e96713e4a52e6b920c34d7df41127"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sint--11--observed/modified/Input-P0-0.txt",
+      "bytes": 25,
+      "sha256": "97a0f5da22ffbe7b99180ac56f3d61fd1869668a65dacf7397660b7c06eb4775"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sint--11--observed/modified/attempt-0-party-is_ascending-0.log",
+      "bytes": 778,
+      "sha256": "a011b55eb83bbe5d694f0fd0c15c6feea8321300ae0c06c8bfc41eea8f4ade63"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sint--11--observed/modified/attempt-0-party-is_ascending-1.log",
+      "bytes": 765,
+      "sha256": "08fdfdc87bad1ccb3f084382b6cb3668f4538b4e1609d695efef102acd0e7b22"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sint--11--observed/modified/attempt-0.mpc",
+      "bytes": 813,
+      "sha256": "0600a2a06d14e7d9c0c8bd543daa278739dace9e0b33bc32bfd21b2d46e3adb8"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sint--11--observed/modified/attempt-0.stderr.txt",
+      "bytes": 172,
+      "sha256": "8409281099717ce759e3a8b70fa2fe3b49313c5e464ae94bf39e04570ea147e0"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sint--11--observed/modified/attempt-0.stdout.txt",
+      "bytes": 1266,
+      "sha256": "b6710d8ba7fffb5e993ecc815249c8df570eb81243f9f0566d001dd37a26adf7"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sint--11--observed/modified/candidate.py.txt",
+      "bytes": 466,
+      "sha256": "8cbecf7afb2b0c0f45f7bf79bad77cc4caabc85e0913db7688fdbdb14505568c"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sint--11--observed/modified/original.py.txt",
+      "bytes": 923,
+      "sha256": "45db3f3d0f9e87c1818458209f15727b3a4c8714a563d4ccaf2df7dc69c6c305"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sint--11--observed/modified/record.json",
+      "bytes": 2268,
+      "sha256": "0bff15e550848080253703d9aa2dc4051c397adeb04b81311e665f93cf2b31a4"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sint--11--observed/modified/template.mpc",
+      "bytes": 347,
+      "sha256": "065e44ef334e5fee2c9e66d3ab6da5ef4c04f0233d03c63502bbf812a29fa919"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/is_ascending--sint--11--observed/modified/transformed.py.txt",
+      "bytes": 366,
+      "sha256": "654715443ae4598dc08a9de626916a16b13e96713e4a52e6b920c34d7df41127"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/loop_test--count_distinct--c1--native/baseline/attempt-0-party-count_distinct-0.log",
+      "bytes": 402,
+      "sha256": "b907d4ada1bddaf4aea6140561486e529ce3a7e41a003575b6768357a5031c15"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/loop_test--count_distinct--c1--native/baseline/attempt-0-party-count_distinct-1.log",
+      "bytes": 388,
+      "sha256": "cabc5b0405332fce0b78c82d3048bfa42aed342aa2f87bd277c5b62fd03fe0d0"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/loop_test--count_distinct--c1--native/baseline/attempt-0.mpc",
+      "bytes": 1913,
+      "sha256": "9857400f7ff93c83e0055ccd663948de25f0b22fdaa78a283e93c8540f630afb"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/loop_test--count_distinct--c1--native/baseline/attempt-0.stderr.txt",
+      "bytes": 176,
+      "sha256": "b807be220863fc19f9e4156a38a6d471259d9ea96ee56271097e22d5352c1b5c"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/loop_test--count_distinct--c1--native/baseline/attempt-0.stdout.txt",
+      "bytes": 854,
+      "sha256": "77fd1e68ef9f97fed000f089e00514e985b03f29603941a65dd626081169a766"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/loop_test--count_distinct--c1--native/baseline/candidate.py.txt",
+      "bytes": 573,
+      "sha256": "e3dcacd51d5e09ca45377f20e6ea2f11f2ac004e644bf5f00f547bc537771275"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/loop_test--count_distinct--c1--native/baseline/original.py.txt",
+      "bytes": 573,
+      "sha256": "e3dcacd51d5e09ca45377f20e6ea2f11f2ac004e644bf5f00f547bc537771275"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/loop_test--count_distinct--c1--native/baseline/record.json",
+      "bytes": 1868,
+      "sha256": "ee7230ac25b508edcf857306f554c7db4609936615cbe68eb649247eade42ed7"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/loop_test--count_distinct--c1--native/baseline/template.mpc",
+      "bytes": 1340,
+      "sha256": "fe8172ef90f7b15b2e10b32cbdb791ddf56305994ebd0701ffe782aa64a75eae"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/loop_test--count_distinct--c1--native/baseline/transformed.py.txt",
+      "bytes": 355,
+      "sha256": "05ca25eb2994520d5ac3227a60280530df29471af89f1be64a8f7569c523478b"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/loop_test--count_distinct--c1--native/modified/attempt-0-party-count_distinct-0.log",
+      "bytes": 592,
+      "sha256": "155ba11ea5a71bbfe0a8e41342bc704a6c51b8f2573bc1711f0c958c7329ac4d"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/loop_test--count_distinct--c1--native/modified/attempt-0-party-count_distinct-1.log",
+      "bytes": 578,
+      "sha256": "5d6b26c0ef01caf20624b41ed383297aa2dbf33c0c3722f80c4cb776ed4cc42e"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/loop_test--count_distinct--c1--native/modified/attempt-0.mpc",
+      "bytes": 1695,
+      "sha256": "1a7d7562a98d0289c97732fc1f906b047e7e8bbb8902ca95d2dee24c405bf4f4"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/loop_test--count_distinct--c1--native/modified/attempt-0.stderr.txt",
+      "bytes": 176,
+      "sha256": "62e425d6a60409a21db5c1750c9f936b913643983e0d77acd6b867c376ffe902"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/loop_test--count_distinct--c1--native/modified/attempt-0.stdout.txt",
+      "bytes": 1044,
+      "sha256": "bf53f58fde11ee41c4bbb7396ae3b864a4e9c1be25a56f2a535bc19d4ddbbaca"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/loop_test--count_distinct--c1--native/modified/candidate.py.txt",
+      "bytes": 355,
+      "sha256": "05ca25eb2994520d5ac3227a60280530df29471af89f1be64a8f7569c523478b"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/loop_test--count_distinct--c1--native/modified/original.py.txt",
+      "bytes": 573,
+      "sha256": "e3dcacd51d5e09ca45377f20e6ea2f11f2ac004e644bf5f00f547bc537771275"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/loop_test--count_distinct--c1--native/modified/record.json",
+      "bytes": 1862,
+      "sha256": "530e6a58e06ac278c62dd10292bd4784b937aee10d75879789d5984e8d176c18"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/loop_test--count_distinct--c1--native/modified/template.mpc",
+      "bytes": 1340,
+      "sha256": "fe8172ef90f7b15b2e10b32cbdb791ddf56305994ebd0701ffe782aa64a75eae"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/loop_test--count_distinct--c1--native/modified/transformed.py.txt",
+      "bytes": 355,
+      "sha256": "05ca25eb2994520d5ac3227a60280530df29471af89f1be64a8f7569c523478b"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/loop_test--is_ascending--c0--native/baseline/attempt-0-party-is_ascending-0.log",
+      "bytes": 779,
+      "sha256": "fdfa182dbb702278692a75b11e82e4e15a166ccb99baef6dcb9bd7d72eb5c5c9"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/loop_test--is_ascending--c0--native/baseline/attempt-0-party-is_ascending-1.log",
+      "bytes": 765,
+      "sha256": "111813bdeb1e0c4d44dd596c43433af0e92255ca0171a89fb3fdfaf8916baa3c"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/loop_test--is_ascending--c0--native/baseline/attempt-0.mpc",
+      "bytes": 2220,
+      "sha256": "b56e8f126c7706b06790a068e9e11937394c28e0657350f60ad3debc736d668f"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/loop_test--is_ascending--c0--native/baseline/attempt-0.stderr.txt",
+      "bytes": 172,
+      "sha256": "0ca2fd35a2ecc7af011be33f2aebba8f1c527634930a261ff1ee0ef49f139958"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/loop_test--is_ascending--c0--native/baseline/attempt-0.stdout.txt",
+      "bytes": 1225,
+      "sha256": "0173d2e91fae3f1f14bccd476ed3425bf0ec5c2d765851cffa6776d6a6347926"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/loop_test--is_ascending--c0--native/baseline/candidate.py.txt",
+      "bytes": 923,
+      "sha256": "45db3f3d0f9e87c1818458209f15727b3a4c8714a563d4ccaf2df7dc69c6c305"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/loop_test--is_ascending--c0--native/baseline/original.py.txt",
+      "bytes": 923,
+      "sha256": "45db3f3d0f9e87c1818458209f15727b3a4c8714a563d4ccaf2df7dc69c6c305"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/loop_test--is_ascending--c0--native/baseline/record.json",
+      "bytes": 1844,
+      "sha256": "763693d03db730fe2331b2a3c44015684533e7241b9d87b2d3ee239faf693bc7"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/loop_test--is_ascending--c0--native/baseline/template.mpc",
+      "bytes": 1297,
+      "sha256": "872383199ddc07c0f90d299282c1a9abec6bd99f64a0365fea407d3821ccef7a"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/loop_test--is_ascending--c0--native/baseline/transformed.py.txt",
+      "bytes": 366,
+      "sha256": "654715443ae4598dc08a9de626916a16b13e96713e4a52e6b920c34d7df41127"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/loop_test--is_ascending--c0--native/modified/attempt-0-party-is_ascending-0.log",
+      "bytes": 779,
+      "sha256": "7cec866a106efdb93ee41c2e284f3defc7dee279a8c750c8b64dbcf4bb018295"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/loop_test--is_ascending--c0--native/modified/attempt-0-party-is_ascending-1.log",
+      "bytes": 765,
+      "sha256": "c43edfe8f08e9d9659aed476cc22b16c163194faffbd36d74a186f27695a3c26"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/loop_test--is_ascending--c0--native/modified/attempt-0.mpc",
+      "bytes": 1663,
+      "sha256": "5050def138bfd90ae6d8f67efef36cd69ffbe41e06dc931e552581d667a07820"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/loop_test--is_ascending--c0--native/modified/attempt-0.stderr.txt",
+      "bytes": 172,
+      "sha256": "7c97128b0c686df0f95d725d4fb53e27901ba7d829fc3d114201ef0fa302911d"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/loop_test--is_ascending--c0--native/modified/attempt-0.stdout.txt",
+      "bytes": 1225,
+      "sha256": "c3c1b280fe79533acbfe07f9037665e755cd25eca76828a6d44cbf77cc465993"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/loop_test--is_ascending--c0--native/modified/candidate.py.txt",
+      "bytes": 366,
+      "sha256": "654715443ae4598dc08a9de626916a16b13e96713e4a52e6b920c34d7df41127"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/loop_test--is_ascending--c0--native/modified/original.py.txt",
+      "bytes": 923,
+      "sha256": "45db3f3d0f9e87c1818458209f15727b3a4c8714a563d4ccaf2df7dc69c6c305"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/loop_test--is_ascending--c0--native/modified/record.json",
+      "bytes": 1844,
+      "sha256": "acd3abcf18df02777ecd7c97149535c125f0bfbd9d0ba81671a74b4a4bbcf234"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/loop_test--is_ascending--c0--native/modified/template.mpc",
+      "bytes": 1297,
+      "sha256": "872383199ddc07c0f90d299282c1a9abec6bd99f64a0365fea407d3821ccef7a"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/loop_test--is_ascending--c0--native/modified/transformed.py.txt",
+      "bytes": 366,
+      "sha256": "654715443ae4598dc08a9de626916a16b13e96713e4a52e6b920c34d7df41127"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/synthetic--match_bind/baseline/Input-P0-0.txt",
+      "bytes": 2,
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/synthetic--match_bind/baseline/attempt-0-party-public_return-0.log",
+      "bytes": 778,
+      "sha256": "51f694f6adc21fdaacd0a7a5196270ef1ce18cc468bacad8bfa283fd96b90534"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/synthetic--match_bind/baseline/attempt-0-party-public_return-1.log",
+      "bytes": 765,
+      "sha256": "794c7db1e203b8417121791fbd9a7ec759ed8b518866036ee6435df243efa275"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/synthetic--match_bind/baseline/attempt-0.mpc",
+      "bytes": 318,
+      "sha256": "84fa794959250677dba21725c3b0a976250c5cff76c9e07ed44d7defadd2eb75"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/synthetic--match_bind/baseline/attempt-0.stderr.txt",
+      "bytes": 174,
+      "sha256": "4f10552365f688990024b7e70d523831f1071ad54c5a29d151ca8e278e4b4831"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/synthetic--match_bind/baseline/attempt-0.stdout.txt",
+      "bytes": 1269,
+      "sha256": "c2fd8e5665379a48856c545078c0ba80a99ebcf10183f33ccc03ced7a5407628"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/synthetic--match_bind/baseline/candidate.py.txt",
+      "bytes": 148,
+      "sha256": "7f41bec52c08f1ddf1e86c0ed50ba91452a62f6d13f5492b90bee731928df043"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/synthetic--match_bind/baseline/original.py.txt",
+      "bytes": 148,
+      "sha256": "7f41bec52c08f1ddf1e86c0ed50ba91452a62f6d13f5492b90bee731928df043"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/synthetic--match_bind/baseline/record.json",
+      "bytes": 1829,
+      "sha256": "a7b61c189a4379b5bde5dcf438cafaac715846df167a5a108a01260c0e7f7ce0"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/synthetic--match_bind/baseline/template.mpc",
+      "bytes": 170,
+      "sha256": "6cda487dc9afa7ab8b61bbf2f26b1f34d063353296df58ad42c77f1c3e16007b"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/synthetic--match_bind/baseline/transformed.py.txt",
+      "bytes": 148,
+      "sha256": "7f41bec52c08f1ddf1e86c0ed50ba91452a62f6d13f5492b90bee731928df043"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/synthetic--match_bind/modified/Input-P0-0.txt",
+      "bytes": 2,
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/synthetic--match_bind/modified/attempt-0-party-public_return-0.log",
+      "bytes": 777,
+      "sha256": "7b752445790cc54e39683347f6d3dad778f543562fb7c73ce6793e41dc0a6825"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/synthetic--match_bind/modified/attempt-0-party-public_return-1.log",
+      "bytes": 765,
+      "sha256": "645f90bb4aa908e68b95222e7cb94d99d4b477e76ac9e17ac09a37779df08892"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/synthetic--match_bind/modified/attempt-0.mpc",
+      "bytes": 318,
+      "sha256": "84fa794959250677dba21725c3b0a976250c5cff76c9e07ed44d7defadd2eb75"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/synthetic--match_bind/modified/attempt-0.stderr.txt",
+      "bytes": 174,
+      "sha256": "6854be4d1c2db46dfcf08ad9dba4ccae94bff686c30209624e9fc073e9333aae"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/synthetic--match_bind/modified/attempt-0.stdout.txt",
+      "bytes": 1268,
+      "sha256": "89dba679ecd8a75b95636f9738b3269b1dcf9f26ec8da4714c1f281043408b88"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/synthetic--match_bind/modified/candidate.py.txt",
+      "bytes": 148,
+      "sha256": "7f41bec52c08f1ddf1e86c0ed50ba91452a62f6d13f5492b90bee731928df043"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/synthetic--match_bind/modified/original.py.txt",
+      "bytes": 148,
+      "sha256": "7f41bec52c08f1ddf1e86c0ed50ba91452a62f6d13f5492b90bee731928df043"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/synthetic--match_bind/modified/record.json",
+      "bytes": 1828,
+      "sha256": "2409d0663ba4a24e7dbb2961632dfe4731b5212ff4f25d28d2c73f909205e2d7"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/synthetic--match_bind/modified/template.mpc",
+      "bytes": 170,
+      "sha256": "6cda487dc9afa7ab8b61bbf2f26b1f34d063353296df58ad42c77f1c3e16007b"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/synthetic--match_bind/modified/transformed.py.txt",
+      "bytes": 148,
+      "sha256": "7f41bec52c08f1ddf1e86c0ed50ba91452a62f6d13f5492b90bee731928df043"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/synthetic--zero_fold/baseline/Input-P0-0.txt",
+      "bytes": 2,
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/synthetic--zero_fold/baseline/attempt-0-party-public_return-0.log",
+      "bytes": 778,
+      "sha256": "a5a6a54b0c947b9358afe168d370b7d8d4426e1f3d33b5866827519b5e7ddccd"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/synthetic--zero_fold/baseline/attempt-0-party-public_return-1.log",
+      "bytes": 765,
+      "sha256": "c00f813bd4f8b76294e9685f8cda365cc2c5a26cd1d6e888d680386de60c52ff"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/synthetic--zero_fold/baseline/attempt-0.mpc",
+      "bytes": 290,
+      "sha256": "666323a17782685d8b4c6b855a52f1c9e342e6270734c6865d29a1c205f03bdf"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/synthetic--zero_fold/baseline/attempt-0.stderr.txt",
+      "bytes": 174,
+      "sha256": "4c6d7f700caf57f83af38dd4d3d7db2f50eea97e6921a1e49e114c3172621421"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/synthetic--zero_fold/baseline/attempt-0.stdout.txt",
+      "bytes": 1269,
+      "sha256": "cce18a5ab5a84eb473993233a6901d1254819ecae6cbf6a68ab12b87c807bd1d"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/synthetic--zero_fold/baseline/candidate.py.txt",
+      "bytes": 120,
+      "sha256": "da99bcce21c3db8cf31445d07444b983823b545301d790e541758838ab6a5e8b"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/synthetic--zero_fold/baseline/original.py.txt",
+      "bytes": 120,
+      "sha256": "da99bcce21c3db8cf31445d07444b983823b545301d790e541758838ab6a5e8b"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/synthetic--zero_fold/baseline/record.json",
+      "bytes": 1826,
+      "sha256": "ecf5a30d74e55b7b4613f7e3f4ae49fb5f85965578debe4648dec6d27f682824"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/synthetic--zero_fold/baseline/template.mpc",
+      "bytes": 170,
+      "sha256": "6cda487dc9afa7ab8b61bbf2f26b1f34d063353296df58ad42c77f1c3e16007b"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/synthetic--zero_fold/baseline/transformed.py.txt",
+      "bytes": 120,
+      "sha256": "da99bcce21c3db8cf31445d07444b983823b545301d790e541758838ab6a5e8b"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/synthetic--zero_fold/modified/Input-P0-0.txt",
+      "bytes": 2,
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/synthetic--zero_fold/modified/attempt-0-party-public_return-0.log",
+      "bytes": 778,
+      "sha256": "31be5dfcefef3e65f3a9fa84f3daa5e400113eb1742711d6fe81901f0370121f"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/synthetic--zero_fold/modified/attempt-0-party-public_return-1.log",
+      "bytes": 765,
+      "sha256": "de62ec3383da96229b65ada74a737c3c2f5b7edb16f5c57c6a41539f756c2d7a"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/synthetic--zero_fold/modified/attempt-0.mpc",
+      "bytes": 290,
+      "sha256": "666323a17782685d8b4c6b855a52f1c9e342e6270734c6865d29a1c205f03bdf"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/synthetic--zero_fold/modified/attempt-0.stderr.txt",
+      "bytes": 174,
+      "sha256": "208bf1996fca4fbd42aa720182c4c65b0078d50477c6137b8f036cbfc6360e56"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/synthetic--zero_fold/modified/attempt-0.stdout.txt",
+      "bytes": 1269,
+      "sha256": "090390b45359970b6ca40c4353e90bfaed4d83097281af93fd76b752f9bfc7a3"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/synthetic--zero_fold/modified/candidate.py.txt",
+      "bytes": 120,
+      "sha256": "da99bcce21c3db8cf31445d07444b983823b545301d790e541758838ab6a5e8b"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/synthetic--zero_fold/modified/original.py.txt",
+      "bytes": 120,
+      "sha256": "da99bcce21c3db8cf31445d07444b983823b545301d790e541758838ab6a5e8b"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/synthetic--zero_fold/modified/record.json",
+      "bytes": 1825,
+      "sha256": "b10e1f0f145a70eafeafda500c4af69580edee214d0e004b210388ba0b76ff6a"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/synthetic--zero_fold/modified/template.mpc",
+      "bytes": 170,
+      "sha256": "6cda487dc9afa7ab8b61bbf2f26b1f34d063353296df58ad42c77f1c3e16007b"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/logs/synthetic--zero_fold/modified/transformed.py.txt",
+      "bytes": 120,
+      "sha256": "da99bcce21c3db8cf31445d07444b983823b545301d790e541758838ab6a5e8b"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/modification_manifest.json",
+      "bytes": 1123,
+      "sha256": "0549c76f56d7c1924aeb05f10c421dc9f717b73cd74fdc0cd50d2f6f99fcaaa1"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/modified-entrypoints/pipeline-mp.py",
+      "bytes": 4494,
+      "sha256": "cdc1b8cb5a37522f978f91c218ac509f1977f70dbd1e27a498b741cc01ca3511"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/modified-entrypoints/pipeline.py",
+      "bytes": 4957,
+      "sha256": "85cc76f388561e65d9839bdeea94d1d0cba39b6dd7af4ea3b88cce931f8b6de8"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/modified-entrypoints/secret_arithmetic.py",
+      "bytes": 10655,
+      "sha256": "8c93f4687569c7419b573b20b1349b2d67563a39ce50dba16fda38dd197d8aa2"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/original-pipeline.patch",
+      "bytes": 2107,
+      "sha256": "21fba36fc7df71fc3e8f3053a12a3893e29cc6a09d052f204d1d217c6cbbd328"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/os-packages.txt",
+      "bytes": 2687,
+      "sha256": "ef4477b1efd34b0dd98e1440815b468df79abcadbefcf814a217937bd2ad9c71"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/paired-records.jsonl",
+      "bytes": 122101,
+      "sha256": "2b69c566d074fe6e8113eed0dc65a0e4c2670c5558a1e2301dc54ef48a10c1d4"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/paired-summary.json",
+      "bytes": 378,
+      "sha256": "ce3dcf7f0727d21f0151f3f5afa3bf46a1bf04d2842cf2ebfeed957c4d84a014"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/source_manifest.json",
+      "bytes": 171582,
+      "sha256": "e8665e9ab89a022716f088a05ac99b478e190545e7dd93101c2ff214b4dd0326"
+    },
+    {
+      "path": "research/evidence/2026-10-16/paired-smoke/paired-smoke/ssl-setup.log",
+      "bytes": 3248,
+      "sha256": "573a67c408fb9e75501bc0165d717ee5994dd406b0d90c3176ec6aa334940bbe"
+    }
+  ]
+}

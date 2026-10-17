@@ -1,0 +1,11 @@
+# Locally authored public-return regression fixture.
+# insert here #
+def public_return(arr, x):
+    acc = sint(1)
+    acc *= 0
+    acc += 1
+    acc *= (arr[0] != x).reveal()
+    return acc
+arr = sint.Array(1)
+arr[0] = sint.get_input_from(0)
+print_ln('AUTHORIZED=%s', public_return(arr, 2))

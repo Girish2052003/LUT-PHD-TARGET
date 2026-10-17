@@ -1,0 +1,2 @@
+Running /mp-spdz/Scripts/../mascot-party.x 0 public_return -pn 15708 -h localhost -N 2
+Running /mp-spdz/Scripts/../mascot-party.x 1 public_return -pn 15708 -h localhost -N 2

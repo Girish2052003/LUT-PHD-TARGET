@@ -1,0 +1,34 @@
+{
+  "case_id": "branch_test--median--archived_control",
+  "task_id": "branch_test/median",
+  "source_kind": "archived_control",
+  "original_candidate_id": 0,
+  "diagnostic_intended_decision": "CONTROL",
+  "template_kind": "byte-identical native template",
+  "inputs": null,
+  "observer_sites": [],
+  "source_sha256": "88d19f706d38a2027bedbf717003c7daf8dca57af5c4e4dd6ab74846cb83397d",
+  "template_sha256": "7286a4bb5f111a18e13e305c46c81280f2127d1359a1a2d8352f96e474b5be76",
+  "author_oracle_accepted": true,
+  "runtime_status": "PASS",
+  "attempts": [
+    {
+      "command": "/mp-spdz/Scripts/compile-run.py -E mascot /run/diagnostic-baseline/evaluation/evaluation_storage/median.mpc",
+      "timeout_seconds": 60,
+      "returncode": 0,
+      "timed_out": false,
+      "schedule_present": true,
+      "runtime_launch_marker": true,
+      "duration_seconds": 9.754119075000006,
+      "combined_source_sha256": "6240801205ed3efc3e02d900dd370530433bb65fa31554d56b268441236f37a6",
+      "stdout_sha256": "6fe78151b7fe6863539de567799ca88e1d8dfbb4287e5763067502f81f3bba97",
+      "stderr_sha256": "e4f935bfef0a01593756548f42c280dc63f3d34ce6d69ba30c632326aed02648",
+      "compile_status": "PASS",
+      "runtime_status": "PASS",
+      "failure_class": null
+    }
+  ],
+  "native_success_marker": true,
+  "authorized_outputs": [],
+  "public_openings": []
+}

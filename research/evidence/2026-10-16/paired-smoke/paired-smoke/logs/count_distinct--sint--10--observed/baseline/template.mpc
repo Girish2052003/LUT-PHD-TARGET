@@ -1,0 +1,8 @@
+# Explicit new private-input diagnostic; not a native benchmark template.
+# Party 0 values are private; length, type and the returned count/bit are public.
+# insert here #
+secret_values = sint.Array(3)
+for i in range(3):
+    secret_values[i] = sint.get_input_from(0)
+answer = count_distinct(secret_values)
+print_ln('AUTHORIZED=%s', answer.reveal())

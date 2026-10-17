@@ -52,8 +52,9 @@ The original evaluator SHA-256 is
 
 ## Original defects and discrepancies to investigate
 
-These are source findings and limitation candidates. They are not completed
-runtime witnesses, fixes, or measured improvements.
+These originated as source findings and limitation candidates. The weak native
+oracle now has independently accepted runtime counterexamples (D1); the remaining
+source discrepancies are not automatically demonstrated benchmark failures.
 
 1. **Stage-1 successful responses are discarded.** In
    `src/apply_high_rules.py:72–89`, the retry loop ends at line 79. The successful
@@ -69,9 +70,10 @@ runtime witnesses, fixes, or measured improvements.
    `249d3af10e7ea031450de7aa66954215d48b40919e5b28455202e63ed5e978a8`.
 3. **Acceptance is a weak stdout check.**
    `evaluation/evaluate_experimental-mp.py:88–99` accepts `pass` anywhere in
-   stdout unless stderr contains `Traceback`; it ignores returncode. A runtime
-   witness must establish the practical consequences before selecting this as
-   the main modification.
+   stdout unless stderr contains `Traceback`; it ignores returncode. D1 now
+   preserves four known-wrong accepted native executions, including filename
+   contamination and signed-relative errors. These are separate from the selected
+   comparison-mask privacy modification.
 4. **Generation prompt selection defects.**
    `src/apply_low_rules.py:94–96` appends data-type entries 8/9 while describing
    MemValue entries 10/11. The singleton logical-operation visitor is never reset
@@ -124,12 +126,15 @@ fill this gap.
   Do not run the multi-model shell script: it also launches extra API workloads.
 - Local nested Bubblewrap attempts failed with network-namespace/UID-map
   permission errors. No arbitrary generated candidate was executed as a result.
-  Establish a restricted execution environment before replay; CI containers are
-  a prospective route, not an already completed run.
+  The restricted CI Docker path subsequently enabled accepted B2a/B2b and D1
+  execution. Keep that confinement for all downloaded candidates.
 - The first local source download timed out after 120 seconds. Resuming the
   official download completed it; exact size, MD5 and SHA-256 matched before
   source inspection.
 
-Phase B2, the real limitation witness, original-source patch and paired
-comparison remain open. Full model generation needs separately authorized
-credentials and a documented decision about historical model availability.
+Status on 17 October: B2a/B2b and D1 are accepted narrow subphases. The original
+pipeline modification has independently accepted targeted paired evidence (E1).
+Broad B2 dependencies, complete source traces,
+available ablations and full paired comparison remain open. Full model generation
+needs separately authorized credentials and a documented decision about historical
+model availability. The current machine-readable state is authoritative.

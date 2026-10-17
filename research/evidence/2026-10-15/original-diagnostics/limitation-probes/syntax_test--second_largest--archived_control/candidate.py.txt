@@ -1,0 +1,40 @@
+from Compiler.types import sint, Array
+
+def second_largest(arr):
+    """
+    Return the second largest element in the array in an oblivious manner.
+    """
+    # Initialize potential results
+    result = sint(0)  # Default for fewer than two elements
+    first_largest = sint(0)
+    second_largest = sint(0)
+
+    # Prepare for oblivious comparison
+    # Here we convert the boolean into a secure integer type suitable for if_else
+    has_two_elements = sint(len(arr) >= 2)
+    
+    # Conditionally initialize first_largest and second_largest
+    if len(arr) >= 2:
+        first_largest = arr[0]
+        second_largest = arr[1]
+        condition = arr[0] > arr[1]
+
+        # Oblivious swapping of first_largest and second_largest
+        first_largest, second_largest = condition.if_else(arr[0], arr[1]), condition.if_else(arr[1], arr[0])
+
+    for i in range(2, len(arr)):
+        # Conditions for updating first_largest and second_largest
+        is_greater_than_first = arr[i] > first_largest
+        is_greater_than_second = arr[i] > second_largest
+
+        # Oblivious updating of first_largest
+        old_first_largest = first_largest  # Store old first_largest
+        first_largest = is_greater_than_first.if_else(arr[i], first_largest)
+        
+        # Update second_largest based on the previous first_largest
+        second_largest = is_greater_than_first.if_else(old_first_largest, is_greater_than_second.if_else(arr[i], second_largest))
+
+    # Update result based on the number of elements condition
+    result = has_two_elements.if_else(second_largest, result)
+
+    return result  # Single return statement for all cases

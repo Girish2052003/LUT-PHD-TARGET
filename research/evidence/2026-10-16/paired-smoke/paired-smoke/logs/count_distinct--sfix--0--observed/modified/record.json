@@ -1,0 +1,65 @@
+{
+  "pair_id": "count_distinct--sfix--0--observed",
+  "task_id": "loop_test/count_distinct",
+  "candidate_id": 1,
+  "kind": "private_observed",
+  "inputs": [],
+  "input_type": "sfix",
+  "expected_output": 0,
+  "expected_baseline_openings": [],
+  "rewrite_events": [
+    {
+      "rule": "secret_product",
+      "line": 13,
+      "column": 22,
+      "original": "(arr[j] != arr[i]).reveal()",
+      "replacement": "arr[j] != arr[i]"
+    }
+  ],
+  "observer_sites": {
+    "baseline": [
+      {
+        "site": 0,
+        "line": 13,
+        "expression": "(arr[j] != arr[i]).reveal()"
+      }
+    ],
+    "modified": []
+  },
+  "variant": "modified",
+  "pair_index": 2,
+  "execution_order": 1,
+  "source_sha256": "11915101b10976f447f8660495f8e5ab70d0d9f01082cf2db1ebd69e83285abf",
+  "original_source_sha256": "e3dcacd51d5e09ca45377f20e6ea2f11f2ac004e644bf5f00f547bc537771275",
+  "transformed_source_sha256": "05ca25eb2994520d5ac3227a60280530df29471af89f1be64a8f7569c523478b",
+  "template_sha256": "c6c055486abceca2499ddb3ad6d6e88b8316cff730e5f94112ad4acc6080b291",
+  "inputs_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+  "compile_status": "PASS",
+  "runtime_status": "PASS",
+  "failure_class": "oracle_reject",
+  "oracle_status": "REJECT",
+  "duration_seconds": 0.40415312799999015,
+  "exception": null,
+  "attempts": [
+    {
+      "command": "/mp-spdz/Scripts/compile-run.py -E mascot /run/paired-baseline/evaluation/evaluation_storage/count_distinct.mpc",
+      "timeout_seconds": 60,
+      "returncode": 0,
+      "timed_out": false,
+      "schedule_present": true,
+      "runtime_launch_marker": true,
+      "duration_seconds": 0.403705274999993,
+      "combined_source_sha256": "09ab89fb6784a94e9e4e0481ba6c1550bbecbdf5924d48d33f4287ebd000c03e",
+      "stdout_sha256": "1d1cbe3ebdfb51298c556b22e647013ce0a3486e195ecddcde5023f2e195f1d6",
+      "stderr_sha256": "9dba66e8664af55a3292a6b8f3e47206eeaf3857b0cdcc9dc3afc1441b858bc6",
+      "compile_status": "PASS",
+      "runtime_status": "PASS",
+      "failure_class": null
+    }
+  ],
+  "log_path": "logs/count_distinct--sfix--0--observed/modified",
+  "authorized_outputs": [
+    "0"
+  ],
+  "public_openings": []
+}

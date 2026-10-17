@@ -1,0 +1,2 @@
+Running /mp-spdz/Scripts/../mascot-party.x 0 spring_rocket -pn 11439 -h localhost -N 2
+Running /mp-spdz/Scripts/../mascot-party.x 1 spring_rocket -pn 11439 -h localhost -N 2

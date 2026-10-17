@@ -1,0 +1,36 @@
+{
+  "task_id": "math_test/spring_rocket",
+  "category": "math_test",
+  "system": "spdzcoder",
+  "candidate_id": 0,
+  "source_sha256": "673c9caa20e59e5f97e00ba45b77c9f7cdfbdb6f0a1711505222242f2d0005b5",
+  "template_sha256": "14fd5c1ce9395c94793ff2b2c0e096f1667e40ea62d6e0ad2d91e5d55da21a8c",
+  "compile_status": "PASS",
+  "combined_source_sha256": "0c40beaf449b09d71a7120f5d7dbb071e34ac50586717c21afb0e685af83db06",
+  "runtime_status": "PASS",
+  "oracle_status": "REJECT",
+  "oracle": "unmodified author insert_compile_run",
+  "output_digest": "b46c084cd9a919f0888e66dd29c9114cbd0ee845bd07c1b7e1634366e8ca1d9f",
+  "duration_seconds": 28.834584855999765,
+  "failure_class": "oracle_reject",
+  "log_path": "logs/math_test/spring_rocket/spdzcoder/0",
+  "exception": null,
+  "attempts": [
+    {
+      "command": "/mp-spdz/Scripts/compile-run.py -E mascot /baseline/evaluation/evaluation_storage/spring_rocket.mpc",
+      "timeout_seconds": 150,
+      "returncode": 0,
+      "timed_out": false,
+      "schedule_present": true,
+      "runtime_launch_marker": true,
+      "duration_seconds": 28.834144379999998,
+      "combined_source_sha256": "0c40beaf449b09d71a7120f5d7dbb071e34ac50586717c21afb0e685af83db06",
+      "stdout_sha256": "b46c084cd9a919f0888e66dd29c9114cbd0ee845bd07c1b7e1634366e8ca1d9f",
+      "stderr_sha256": "cc7e0684fcd9a617feecf292c30fcd089cb8be60a312df99248148c6487461c2",
+      "compile_status": "PASS",
+      "runtime_status": "PASS",
+      "failure_class": null
+    }
+  ],
+  "historical_author_flag": true
+}

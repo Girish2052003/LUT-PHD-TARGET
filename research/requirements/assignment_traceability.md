@@ -7,11 +7,11 @@ These are practical acceptance gates. Historical milestones do not replace origi
 |---|---|---|---|
 | R1 | Study original paper | **IN_PROGRESS** | A |
 | R2 | Reproduce original implementation | **IN_PROGRESS** | A, B2, B3 |
-| R3 | Reproduce key results | **IN_PROGRESS** | B1, B2, C |
+| R3 | Reproduce key results | **IN_PROGRESS** | B1, B2, C, C1, B2a, B2b |
 | R4 | Explain actual methodology | **IN_PROGRESS** | A |
-| R5 | Demonstrate substantive limitation | **NOT_STARTED** | D |
-| R6 | Implement original-source modification | **NOT_STARTED** | E |
-| R7 | Compare original and modified | **NOT_STARTED** | F |
+| R5 | Demonstrate substantive limitation | **IN_PROGRESS** | D, D1 |
+| R6 | Implement original-source modification | **IN_PROGRESS** | E, E1 |
+| R7 | Compare original and modified | **IN_PROGRESS** | F |
 | R8 | Document reproduction difficulties | **IN_PROGRESS** | A, B2, B3, G |
 | R9 | Final report readiness | **BLOCKED** | REPORT |
 
@@ -27,7 +27,7 @@ These are practical acceptance gates. Historical milestones do not replace origi
 - **Known limitations:** Paper audit exists; source mapping incomplete.
 - **Verification reviewer:** Pending requirement acceptance; historical audit reviewed by code_review agent
 - **Evidence:** `docs/deep_paper_audit.md`, `research/original_source_audit.md`
-- **Evidence commit:** Pending
+- **Evidence commit:** 8d9cf2e5125fbcb8255e30c1e5b8841324223461
 - **Workflow identifiers:** https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557115103, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557128629, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557114938
 
 ## R2 — Reproduce original implementation
@@ -41,9 +41,9 @@ These are practical acceptance gates. Historical milestones do not replace origi
 - **Acceptance criteria:** Original execution evidenced; substitutions cannot count as PASS.
 - **Known limitations:** Archive retrieved; full generation needs credentials/model availability.
 - **Verification reviewer:** Pending requirement acceptance; historical audit reviewed by code_review agent
-- **Evidence:** `research/evidence/2026-10-14/source_provenance.json`, `research/original_source_audit.md`
-- **Evidence commit:** Pending
-- **Workflow identifiers:** https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557115103, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557128629, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557114938
+- **Evidence:** `research/evidence/2026-10-14/source_provenance.json`, `research/original_source_audit.md`, `research/evidence/2026-10-15/original-smoke/receipt.json`, `research/reviews/original-replay-review.md`, `research/evidence/2026-10-15/original-full/receipt.json`, `research/reviews/full-replay-evidence-review.md`
+- **Evidence commit:** 769bb12ce342b814590061ef04fdffbbe19c9990
+- **Workflow identifiers:** https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557115103, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557128629, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557114938, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38673372763, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38703569637
 
 ## R3 — Reproduce key results
 
@@ -54,11 +54,11 @@ These are practical acceptance gates. Historical milestones do not replace origi
 - **Experimental obligation:** Attempt all 313 tasks, comparative baselines and available ablations.
 - **Expected outputs:** Task-level outcomes, category metrics and logs.
 - **Acceptance criteria:** Independent compile/runtime/oracle evidence; archived flags alone insufficient.
-- **Known limitations:** Archived first 269/313, second 265/313, union 288/313; fresh replay pending.
-- **Verification reviewer:** Pending requirement acceptance; historical audit reviewed by code_review agent
-- **Evidence:** `research/evidence/2026-10-14/original_saved_evaluation_metrics.json`, `research/original_source_audit.md`, `research/evidence/2026-10-14/identity_verified_scores.json`
-- **Evidence commit:** Pending
-- **Workflow identifiers:** https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557115103, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557128629, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557114938
+- **Known limitations:** Smoke is not full replay. One native template has no oracle; historical generation requires separately authorized model access.
+- **Verification reviewer:** full_replay_review; narrowB2b accepted, broaderR3 stillinprogress
+- **Evidence:** `research/evidence/2026-10-14/original_saved_evaluation_metrics.json`, `research/original_source_audit.md`, `research/evidence/2026-10-14/identity_verified_scores.json`, `research/evidence/2026-10-15/original-smoke/receipt.json`, `research/reviews/original-replay-review.md`, `research/evidence/2026-10-15/original-full/receipt.json`, `research/reviews/full-replay-evidence-review.md`
+- **Evidence commit:** 769bb12ce342b814590061ef04fdffbbe19c9990
+- **Workflow identifiers:** https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557115103, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557128629, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557114938, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38673372763, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38703569637
 
 ## R4 — Explain actual methodology
 
@@ -72,7 +72,7 @@ These are practical acceptance gates. Historical milestones do not replace origi
 - **Known limitations:** Conceptual notes exist; original-source traces incomplete.
 - **Verification reviewer:** Pending requirement acceptance; historical audit reviewed by code_review agent
 - **Evidence:** `docs/paper_guide.md`, `research/original_source_audit.md`
-- **Evidence commit:** Pending
+- **Evidence commit:** 8d9cf2e5125fbcb8255e30c1e5b8841324223461
 - **Workflow identifiers:** Pending
 
 ## R5 — Demonstrate substantive limitation
@@ -84,11 +84,11 @@ These are practical acceptance gates. Historical milestones do not replace origi
 - **Experimental obligation:** Minimal witness, alternatives, affected scope and impact.
 - **Expected outputs:** Limitation dossier and failing original case.
 - **Acceptance criteria:** Authentic original-system witness executes and is independently checked.
-- **Known limitations:** Static reveals are indicators, not confirmed leaks; earlier tests used independent reconstruction.
-- **Verification reviewer:** Pending requirement acceptance; historical audit reviewed by code_review agent
-- **Evidence:** Pending
-- **Evidence commit:** Pending
-- **Workflow identifiers:** Pending
+- **Known limitations:** Conditional candidate-level policy witnesses; not historical breaches or universal confidentiality findings. BroaderD prerequisites open.
+- **Verification reviewer:** diagnostic_review acceptedD1; modificationnotaccepted
+- **Evidence:** `research/replay/native_oracle_audit.md`, `research/original_source_audit.md`, `research/limitation_candidates.md`, `research/replay/diagnostic_protocol.md`, `research/reviews/diagnostic-review.md`, `research/evidence/2026-10-15/original-diagnostics/receipt.json`, `research/reviews/diagnostic-evidence-review.md`
+- **Evidence commit:** aa89eb661370480643a6637180b773d080009437
+- **Workflow identifiers:** https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38742644019
 
 ## R6 — Implement original-source modification
 
@@ -99,11 +99,11 @@ These are practical acceptance gates. Historical milestones do not replace origi
 - **Experimental obligation:** Meaningful before/after regression and scope tests.
 - **Expected outputs:** Patch, source hashes, tests and run logs.
 - **Acceptance criteria:** Modification addresses demonstrated failure without hidden oracle/input changes.
-- **Known limitations:** No qualifying original-source patch accepted yet.
-- **Verification reviewer:** Pending requirement acceptance; historical audit reviewed by code_review agent
-- **Evidence:** Pending
-- **Evidence commit:** Pending
-- **Workflow identifiers:** Pending
+- **Known limitations:** Only comparison-bit products with a supported secret-integer invariant. Mixed opened-operand comparisons including lower_bound are unchanged. Full model-dependent pipeline not executed.
+- **Verification reviewer:** diagnostic_review accepted targeted smoke only; full native paired acceptance remains pending
+- **Evidence:** `research/modifications/README.md`, `research/modifications/secret_arithmetic.py`, `research/modifications/original-pipeline.patch`, `research/modifications/pinned-patch-manifest.json`, `scripts/apply_original_postprocess.py`, `research/reviews/secret-arithmetic-review-findings.md`, `research/reviews/paired-smoke-preexecution-review.md`, `research/evidence/2026-10-16/paired-smoke/receipt.json`, `research/evidence/2026-10-16/paired-smoke/measurements.json`, `research/reviews/paired-smoke-evidence-review.md`
+- **Evidence commit:** 35adfb04c1132ae91d1b2c6e21cf791855eab768
+- **Workflow identifiers:** https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38958484872
 
 ## R7 — Compare original and modified
 
@@ -114,11 +114,11 @@ These are practical acceptance gates. Historical milestones do not replace origi
 - **Experimental obligation:** Same candidates/input/oracle/protocol; ablation, regressions and uncertainty.
 - **Expected outputs:** Raw paired results, metrics and complete failure matrix.
 - **Acceptance criteria:** Measured baseline and modified results independently reproducible under equal conditions.
-- **Known limitations:** Independent DomainSafety results do not satisfy this requirement.
-- **Verification reviewer:** Pending requirement acceptance; historical audit reviewed by code_review agent
-- **Evidence:** Pending
-- **Evidence commit:** Pending
-- **Workflow identifiers:** Pending
+- **Known limitations:** Targeted32-pairsmoke accepted; complete626-pair native comparison, regressions and paired uncertainty analysis remain pending.
+- **Verification reviewer:** diagnostic_review accepted targeted smoke only; full native paired acceptance remains pending
+- **Evidence:** `scripts/replay_modified.py`, `scripts/verify_paired_replay.py`, `research/modifications/README.md`, `research/reviews/paired-smoke-preexecution-review.md`, `research/evidence/2026-10-16/paired-smoke/receipt.json`, `research/evidence/2026-10-16/paired-smoke/measurements.json`, `research/reviews/paired-smoke-evidence-review.md`
+- **Evidence commit:** 35adfb04c1132ae91d1b2c6e21cf791855eab768
+- **Workflow identifiers:** https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38958484872
 
 ## R8 — Document reproduction difficulties
 
@@ -131,9 +131,9 @@ These are practical acceptance gates. Historical milestones do not replace origi
 - **Acceptance criteria:** Every attempted run or failure has an inspectable cause/status.
 - **Known limitations:** Initial failures documented; execution and full failure inventory ongoing.
 - **Verification reviewer:** Pending requirement acceptance; historical audit reviewed by code_review agent
-- **Evidence:** `docs/reproduction_log.md`, `research/reviews/pr5-independent-review.md`, `research/original_source_audit.md`
-- **Evidence commit:** Pending
-- **Workflow identifiers:** https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557115103, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557128629, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557114938
+- **Evidence:** `docs/reproduction_log.md`, `research/reviews/pr5-independent-review.md`, `research/original_source_audit.md`, `research/evidence/2026-10-15/original-smoke/receipt.json`, `research/reviews/original-replay-review.md`, `research/evidence/2026-10-15/original-full/attempt-1.json`, `research/evidence/2026-10-15/original-full/receipt.json`, `research/reviews/full-replay-evidence-review.md`
+- **Evidence commit:** 769bb12ce342b814590061ef04fdffbbe19c9990
+- **Workflow identifiers:** https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557115103, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557128629, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557114938, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38673372763, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38703569637
 
 ## R9 — Final report readiness
 

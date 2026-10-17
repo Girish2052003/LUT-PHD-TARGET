@@ -1,0 +1,2 @@
+Running /mp-spdz/Scripts/../mascot-party.x 0 second_largest -pn 12200 -h localhost -N 2
+Running /mp-spdz/Scripts/../mascot-party.x 1 second_largest -pn 12200 -h localhost -N 2

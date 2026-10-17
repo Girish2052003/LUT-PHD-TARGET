@@ -1,0 +1,18 @@
+Default bit length: 64
+Default security parameter: 40
+Compiling file /baseline/evaluation/evaluation_storage/pass_or_not.mpc
+Writing to Programs/Schedules/pass_or_not.sch
+Writing to Programs/Bytecode/pass_or_not-0.bc
+Hash: a7d28c6186fa9c7b6b3a95a7128c9e128396e286d69fd43dcb01a743d8642419
+Program requires at most:
+           1 integer inputs from player 0
+         732 integer bits
+          10 integer opens
+         678 integer triples
+          21 virtual machine rounds
+Using security parameter 40
+terminate called after throwing an instance of 'IO_Error'
+  what():  IO-Error : not enough inputs in Player-Data/Input-P0-0
+=== Party 1
+Using security parameter 40
+terminate called after throwing an instance of 'closed_connection'

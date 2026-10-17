@@ -13,8 +13,7 @@ Girish's explicit authorization.
    investigate that discrepancy; do not silently reset a completed phase.
 3. Read each phase's `next_action`, evidence and completion scope in
    `research/progress.json`. Continue the earliest unfinished dependency.
-4. Work on a research branch. Reuse PR #5 while its official-artifact audit is
-   unfinished. Require independent review and CI before merging. Preserve all
+4. Work on a research branch. PR #5 is complete; use the active original-evaluator research branch for new work. Require independent review and CI before merging. Preserve all
    unmerged branches.
 5. Update the phase record and requirement evidence after each meaningful run.
    Use `python scripts/check_handoff.py --render` to refresh the README table and
@@ -37,16 +36,76 @@ groups total 313. Files named `.json` under processed inputs contain JSON Lines.
 
 ## Current practical work
 
-Audit PR #5 against the checksum-pinned original source. Exact task-ID joins now pass for templates, processed inputs, both authentic
-candidate sets and saved outcomes (313 tasks and 1,252 candidate hashes). The evaluator boolean semantics are documented in `research/original_source_audit.md`;
-finish controlled execution setup before running generated programs. Fix the provenance-helper issues in
-`research/reviews/pr5-independent-review.md`, then obtain review and CI evidence.
+PR #5 is merged as `5fbc6095eb4e5a37b8818be7d1ec7596753445cd` after
+independent review and successful original-artifact/research CI at
+`8d9cf2e5125fbcb8255e30c1e5b8841324223461`. **Do not redo the archived
+provenance phase.** Exact joins and evaluator flag semantics are complete (C1).
 
-After that, map the paper to real source paths, capture seven real stage traces,
-and perform Level 2 replay with the original evaluator in a restricted environment.
-Do not run archived generated Python with credentials or unrestricted host access.
-Check actual MASCOT commands and oracle behavior; the earlier cleartext emulator
-is a separate experiment.
+Resume E/F on branch `research/original-evaluator-replay-20261015`, PR #6.
+**B2a is complete:** the first authentic archived candidate ran through the
+unchanged original evaluator and two-party MASCOT. Run `38673372763` at
+`554522da16fc22fd008b3f5b4c0a5bb6c62a5d45` passed; all 15 raw artifact files
+are preserved under `research/evidence/2026-10-15/original-smoke/` and independently
+hash-checked. Do not redo that smoke solely to rediscover its result.
+
+The historical workflow validated both candidates in seven representative categories,
+then attempted all 1,252 SPDZCoder/GPT-4 candidates. The full run is requested only
+by a commit with `[full-replay]` in its message or explicit workflow dispatch.
+Inspect run/commit before launching another full run. A green smoke or an
+implemented aggregator is not full reproduction.
+
+**B2b is complete:** full run `38703569637` at
+`769bb12ce342b814590061ef04fdffbbe19c9990` has all 1,252 candidate outcomes,
+independently audited. SPDZCoder first/second/union: **268/265/288 of 313**;
+GPT-4 API-doc: **95/112/154 of 313**. The initial source-download failure was
+recovered by retrying only failed jobs. Five archived/fresh disagreements remain
+explicit; see `research/reviews/full-replay-evidence-review.md`. Do not rerun this
+baseline merely to rediscover its results. Raw artifact retention ends January 2027.
+
+**D1 is complete:** run `38742644019` at `aa89eb6` establishes two authentic
+private-input/output-only disclosure witnesses and four separate native-oracle
+false positives, across 16 cases. All 133 diagnostic files are preserved and
+independently checked. The selected main limitation is unnecessary intermediate
+openings in otherwise functionally accepted translations. The policy is explicit;
+this is not a historical breach or a universal confidentiality proof.
+
+**E1 is complete; current work is full F:** the narrowed secret-arithmetic postprocessor
+has independently accepted targeted runtime evidence. Exactly two of 626
+archived candidates change; 624 remain byte-identical. The mixed fixed/integer
+`lower_bound` comparison is deferred. Review and correction history is in
+`research/reviews/secret-arithmetic-review-findings.md`.
+
+Both original pipeline entry points now have a reproducible, hash-pinned finalizer
+patch. The pre-specified paired smoke has 32 pairs / 64 executions: two native,
+28 private-input observed/control, and two locally authored fallback pairs.
+Read `research/modifications/README.md`. Run38958484872 at35adfb0 completed all64
+executions; all718artifact files are preserved and independently checked.
+Both native candidates pass and all private/control outputs are preserved;
+50observed original opening events become zero. Only the exact added
+finalizer slice is exercised on archived candidates; model stages are not simulated.
+This accepts the narrow comparison-mask repair, with recorded extra multiplication
+costs. Full626-candidate paired comparison remains separate. Launch it with the
+reviewed gate and `[paired-full]`, preserving all failure and uncertainty results.
+
+Four practical milestones remain: complete full paired comparison; complete
+seven-category source/methodology traces; finish available
+ablations and oracle checks; independently audit/consolidate evidence and validated
+main. Historical generation still needs Girish's explicit blocker decision, followed
+by separate report authorization. This sequence is not a guarantee against new
+experimental failures; preserve and investigate every one.
+
+A, C, broader B2/D, E/F/G and report readiness remain open. Preserve the accepted
+narrow subphases; never reset or promote their scope without evidence.
+
+Preserve the missing native oracle in `numpy_operation_test/np_basic_slicing_stride`
+as a benchmark limitation; do not invent tests or missing GPT-4 party inputs.
+Source-grounded oracle defects (`pass_or_not` filename contamination and three
+signed-relative comparisons) now have accepted D1 runtime witnesses. They remain
+separate from the selected privacy modification. See `research/replay/native_oracle_audit.md`.
+
+Read `research/original_source_audit.md` for original stage-1/repair discrepancies
+and oracle weaknesses. They are candidates for investigation, not accepted fixes.
+Keep seven-category stage traces tied to authentic source and actual outcomes.
 
 ## Sources and evidence
 
@@ -81,8 +140,10 @@ the practical gates and ask for report authorization. No email is authorized.
 
 ## Local continuity notes
 
-The active worktree is `LUT-official-review` on local branch
-`research/phase-ledger-20261014`, initially based on the PR #5 head. The older
+The active worktree is `LUT-replay` on branch
+`research/original-evaluator-replay-20261015`, based on merged main `5fbc609`.
+The older `LUT-official-review` worktree is preserved and may contain stale local
+state; use the committed remote checkpoints instead of copying it forward. The older
 `LUT-PHD-TARGET` worktree has preserved independent compiler work at `1b54aad`.
 Do not copy its stale tree over newer official-artifact work. Local paths are
 conveniences; the remote repository and evidence hashes are the durable state.

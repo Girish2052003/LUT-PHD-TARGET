@@ -1,0 +1,95 @@
+{
+  "pair_id": "count_distinct--sfix--2--observed",
+  "task_id": "loop_test/count_distinct",
+  "candidate_id": 1,
+  "kind": "private_observed",
+  "inputs": [
+    1,
+    1,
+    2
+  ],
+  "input_type": "sfix",
+  "expected_output": 2,
+  "expected_baseline_openings": [
+    [
+      0,
+      0.0
+    ],
+    [
+      0,
+      1.0
+    ],
+    [
+      0,
+      1.0
+    ]
+  ],
+  "rewrite_events": [
+    {
+      "rule": "secret_product",
+      "line": 13,
+      "column": 22,
+      "original": "(arr[j] != arr[i]).reveal()",
+      "replacement": "arr[j] != arr[i]"
+    }
+  ],
+  "observer_sites": {
+    "baseline": [
+      {
+        "site": 0,
+        "line": 13,
+        "expression": "(arr[j] != arr[i]).reveal()"
+      }
+    ],
+    "modified": []
+  },
+  "variant": "baseline",
+  "pair_index": 4,
+  "execution_order": 0,
+  "source_sha256": "ecc3105a8541419b87f424751ddc1f5e1c69b93b6c1c37c13eb5bec7a5290dc2",
+  "original_source_sha256": "e3dcacd51d5e09ca45377f20e6ea2f11f2ac004e644bf5f00f547bc537771275",
+  "transformed_source_sha256": "05ca25eb2994520d5ac3227a60280530df29471af89f1be64a8f7569c523478b",
+  "template_sha256": "7ff78cb944076d3ac6ba8605abcd78e94cdaab4d8d9b1a2f1d228c6a5078e0cc",
+  "inputs_sha256": "6e3efc811d40b03baab295f398ccc5f3a0b8c8c98c77fcd857540eea09e69f33",
+  "compile_status": "PASS",
+  "runtime_status": "PASS",
+  "failure_class": "oracle_reject",
+  "oracle_status": "REJECT",
+  "duration_seconds": 6.751989237000004,
+  "exception": null,
+  "attempts": [
+    {
+      "command": "/mp-spdz/Scripts/compile-run.py -E mascot /run/paired-baseline/evaluation/evaluation_storage/count_distinct.mpc",
+      "timeout_seconds": 60,
+      "returncode": 0,
+      "timed_out": false,
+      "schedule_present": true,
+      "runtime_launch_marker": true,
+      "duration_seconds": 6.751606568999989,
+      "combined_source_sha256": "eec747c41978bdaf9bf8fc8fa4606a2dc2b07a3971fc66a139704888d0d5f8bb",
+      "stdout_sha256": "854e89a14be1f6c65549010d8b8a96b6936df6e6560772b3e10caf9514b98f95",
+      "stderr_sha256": "2cedae9c65bc26fc6d5b65975ef99ee2508c5d17e6f68f54ee6274c31c479e6e",
+      "compile_status": "PASS",
+      "runtime_status": "PASS",
+      "failure_class": null
+    }
+  ],
+  "log_path": "logs/count_distinct--sfix--2--observed/baseline",
+  "authorized_outputs": [
+    "2"
+  ],
+  "public_openings": [
+    [
+      "0",
+      "0"
+    ],
+    [
+      "0",
+      "1"
+    ],
+    [
+      "0",
+      "1"
+    ]
+  ]
+}

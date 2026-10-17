@@ -1,0 +1,63 @@
+{
+  "pair_id": "count_distinct--sfix--2--control",
+  "task_id": "loop_test/count_distinct",
+  "candidate_id": 1,
+  "kind": "private_control",
+  "inputs": [
+    1,
+    1,
+    2
+  ],
+  "input_type": "sfix",
+  "expected_output": 2,
+  "expected_baseline_openings": [],
+  "rewrite_events": [
+    {
+      "rule": "secret_product",
+      "line": 13,
+      "column": 22,
+      "original": "(arr[j] != arr[i]).reveal()",
+      "replacement": "arr[j] != arr[i]"
+    }
+  ],
+  "observer_sites": {
+    "baseline": [],
+    "modified": []
+  },
+  "variant": "baseline",
+  "pair_index": 5,
+  "execution_order": 1,
+  "source_sha256": "e3dcacd51d5e09ca45377f20e6ea2f11f2ac004e644bf5f00f547bc537771275",
+  "original_source_sha256": "e3dcacd51d5e09ca45377f20e6ea2f11f2ac004e644bf5f00f547bc537771275",
+  "transformed_source_sha256": "05ca25eb2994520d5ac3227a60280530df29471af89f1be64a8f7569c523478b",
+  "template_sha256": "7ff78cb944076d3ac6ba8605abcd78e94cdaab4d8d9b1a2f1d228c6a5078e0cc",
+  "inputs_sha256": "6e3efc811d40b03baab295f398ccc5f3a0b8c8c98c77fcd857540eea09e69f33",
+  "compile_status": "PASS",
+  "runtime_status": "PASS",
+  "failure_class": "oracle_reject",
+  "oracle_status": "REJECT",
+  "duration_seconds": 6.842338672000011,
+  "exception": null,
+  "attempts": [
+    {
+      "command": "/mp-spdz/Scripts/compile-run.py -E mascot /run/paired-baseline/evaluation/evaluation_storage/count_distinct.mpc",
+      "timeout_seconds": 60,
+      "returncode": 0,
+      "timed_out": false,
+      "schedule_present": true,
+      "runtime_launch_marker": true,
+      "duration_seconds": 6.841879997999996,
+      "combined_source_sha256": "4474b5be9ea06d2ba806c6055463fb780938f61c1f4d63756ba9f6f17221d8c5",
+      "stdout_sha256": "d5582a7c92969f9ed411fb8f461a6e3c9c8f3a0bc823c9a936bdd4facc316362",
+      "stderr_sha256": "a208ed5c53741cbbc4fa11373e0eaebe2233950e7eafe5d37675c87e0330f929",
+      "compile_status": "PASS",
+      "runtime_status": "PASS",
+      "failure_class": null
+    }
+  ],
+  "log_path": "logs/count_distinct--sfix--2--control/baseline",
+  "authorized_outputs": [
+    "2"
+  ],
+  "public_openings": []
+}

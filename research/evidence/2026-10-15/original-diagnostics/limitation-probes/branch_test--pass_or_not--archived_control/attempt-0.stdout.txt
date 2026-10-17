@@ -1,0 +1,24 @@
+Default bit length: 64
+Default security parameter: 40
+Compiling file /run/diagnostic-baseline/evaluation/evaluation_storage/pass_or_not.mpc
+Writing to Programs/Schedules/pass_or_not.sch
+Writing to Programs/Bytecode/pass_or_not-0.bc
+Hash: 972b5a5d973edcf8f8c5efd0638c74e76c84e2ff663d179a303205951da94f20
+Program requires at most:
+         627 integer bits
+           7 integer opens
+         560 integer triples
+          19 virtual machine rounds
+Using security parameter 40
+Pass the test
+Significant amount of unused triples of SPDZ gfp. For more accurate benchmarks, consider reducing the batch size with --batch-size.
+Note that some protocols have larger minimum batch sizes.
+Significant amount of unused bits of SPDZ gfp. For more accurate benchmarks, consider reducing the batch size with --batch-size.
+Note that some protocols have larger minimum batch sizes.
+The following benchmarks are including preprocessing (offline phase).
+Time = 4.62639 seconds 
+Data sent = 39.0558 MB in ~141 rounds (party 0 only; use '-v' for more details)
+Global data sent = 78.1115 MB (all parties)
+This program might benefit from some protocol options.
+Consider adding the following at the beginning of your code:
+	program.use_edabit(True)

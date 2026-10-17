@@ -1,0 +1,1170 @@
+[
+  {
+    "pair_id": "loop_test--count_distinct--c1--native",
+    "task_id": "loop_test/count_distinct",
+    "candidate_id": 1,
+    "kind": "native",
+    "inputs": null,
+    "input_type": null,
+    "rewrite_events": [
+      {
+        "rule": "secret_product",
+        "line": 13,
+        "column": 22,
+        "original": "(arr[j] != arr[i]).reveal()",
+        "replacement": "arr[j] != arr[i]"
+      }
+    ]
+  },
+  {
+    "pair_id": "loop_test--is_ascending--c0--native",
+    "task_id": "loop_test/is_ascending",
+    "candidate_id": 0,
+    "kind": "native",
+    "inputs": null,
+    "input_type": null,
+    "rewrite_events": [
+      {
+        "rule": "secret_product",
+        "line": 19,
+        "column": 31,
+        "original": "condition.reveal()",
+        "replacement": "condition"
+      }
+    ]
+  },
+  {
+    "pair_id": "count_distinct--sfix--0--observed",
+    "task_id": "loop_test/count_distinct",
+    "candidate_id": 1,
+    "kind": "private_observed",
+    "inputs": [],
+    "input_type": "sfix",
+    "expected_output": 0,
+    "expected_baseline_openings": [],
+    "rewrite_events": [
+      {
+        "rule": "secret_product",
+        "line": 13,
+        "column": 22,
+        "original": "(arr[j] != arr[i]).reveal()",
+        "replacement": "arr[j] != arr[i]"
+      }
+    ],
+    "observer_sites": {
+      "baseline": [
+        {
+          "site": 0,
+          "line": 13,
+          "expression": "(arr[j] != arr[i]).reveal()"
+        }
+      ],
+      "modified": []
+    }
+  },
+  {
+    "pair_id": "count_distinct--sfix--1--observed",
+    "task_id": "loop_test/count_distinct",
+    "candidate_id": 1,
+    "kind": "private_observed",
+    "inputs": [
+      0
+    ],
+    "input_type": "sfix",
+    "expected_output": 1,
+    "expected_baseline_openings": [],
+    "rewrite_events": [
+      {
+        "rule": "secret_product",
+        "line": 13,
+        "column": 22,
+        "original": "(arr[j] != arr[i]).reveal()",
+        "replacement": "arr[j] != arr[i]"
+      }
+    ],
+    "observer_sites": {
+      "baseline": [
+        {
+          "site": 0,
+          "line": 13,
+          "expression": "(arr[j] != arr[i]).reveal()"
+        }
+      ],
+      "modified": []
+    }
+  },
+  {
+    "pair_id": "count_distinct--sfix--2--observed",
+    "task_id": "loop_test/count_distinct",
+    "candidate_id": 1,
+    "kind": "private_observed",
+    "inputs": [
+      1,
+      1,
+      2
+    ],
+    "input_type": "sfix",
+    "expected_output": 2,
+    "expected_baseline_openings": [
+      [
+        0,
+        0.0
+      ],
+      [
+        0,
+        1.0
+      ],
+      [
+        0,
+        1.0
+      ]
+    ],
+    "rewrite_events": [
+      {
+        "rule": "secret_product",
+        "line": 13,
+        "column": 22,
+        "original": "(arr[j] != arr[i]).reveal()",
+        "replacement": "arr[j] != arr[i]"
+      }
+    ],
+    "observer_sites": {
+      "baseline": [
+        {
+          "site": 0,
+          "line": 13,
+          "expression": "(arr[j] != arr[i]).reveal()"
+        }
+      ],
+      "modified": []
+    }
+  },
+  {
+    "pair_id": "count_distinct--sfix--2--control",
+    "task_id": "loop_test/count_distinct",
+    "candidate_id": 1,
+    "kind": "private_control",
+    "inputs": [
+      1,
+      1,
+      2
+    ],
+    "input_type": "sfix",
+    "expected_output": 2,
+    "expected_baseline_openings": [],
+    "rewrite_events": [
+      {
+        "rule": "secret_product",
+        "line": 13,
+        "column": 22,
+        "original": "(arr[j] != arr[i]).reveal()",
+        "replacement": "arr[j] != arr[i]"
+      }
+    ],
+    "observer_sites": {
+      "baseline": [],
+      "modified": []
+    }
+  },
+  {
+    "pair_id": "count_distinct--sfix--3--observed",
+    "task_id": "loop_test/count_distinct",
+    "candidate_id": 1,
+    "kind": "private_observed",
+    "inputs": [
+      1,
+      2,
+      2
+    ],
+    "input_type": "sfix",
+    "expected_output": 2,
+    "expected_baseline_openings": [
+      [
+        0,
+        1.0
+      ],
+      [
+        0,
+        1.0
+      ],
+      [
+        0,
+        0.0
+      ]
+    ],
+    "rewrite_events": [
+      {
+        "rule": "secret_product",
+        "line": 13,
+        "column": 22,
+        "original": "(arr[j] != arr[i]).reveal()",
+        "replacement": "arr[j] != arr[i]"
+      }
+    ],
+    "observer_sites": {
+      "baseline": [
+        {
+          "site": 0,
+          "line": 13,
+          "expression": "(arr[j] != arr[i]).reveal()"
+        }
+      ],
+      "modified": []
+    }
+  },
+  {
+    "pair_id": "count_distinct--sfix--3--control",
+    "task_id": "loop_test/count_distinct",
+    "candidate_id": 1,
+    "kind": "private_control",
+    "inputs": [
+      1,
+      2,
+      2
+    ],
+    "input_type": "sfix",
+    "expected_output": 2,
+    "expected_baseline_openings": [],
+    "rewrite_events": [
+      {
+        "rule": "secret_product",
+        "line": 13,
+        "column": 22,
+        "original": "(arr[j] != arr[i]).reveal()",
+        "replacement": "arr[j] != arr[i]"
+      }
+    ],
+    "observer_sites": {
+      "baseline": [],
+      "modified": []
+    }
+  },
+  {
+    "pair_id": "count_distinct--sfix--4--observed",
+    "task_id": "loop_test/count_distinct",
+    "candidate_id": 1,
+    "kind": "private_observed",
+    "inputs": [
+      -2,
+      -1,
+      0
+    ],
+    "input_type": "sfix",
+    "expected_output": 3,
+    "expected_baseline_openings": [
+      [
+        0,
+        1.0
+      ],
+      [
+        0,
+        1.0
+      ],
+      [
+        0,
+        1.0
+      ]
+    ],
+    "rewrite_events": [
+      {
+        "rule": "secret_product",
+        "line": 13,
+        "column": 22,
+        "original": "(arr[j] != arr[i]).reveal()",
+        "replacement": "arr[j] != arr[i]"
+      }
+    ],
+    "observer_sites": {
+      "baseline": [
+        {
+          "site": 0,
+          "line": 13,
+          "expression": "(arr[j] != arr[i]).reveal()"
+        }
+      ],
+      "modified": []
+    }
+  },
+  {
+    "pair_id": "count_distinct--sfix--5--observed",
+    "task_id": "loop_test/count_distinct",
+    "candidate_id": 1,
+    "kind": "private_observed",
+    "inputs": [
+      3,
+      2,
+      1
+    ],
+    "input_type": "sfix",
+    "expected_output": 3,
+    "expected_baseline_openings": [
+      [
+        0,
+        1.0
+      ],
+      [
+        0,
+        1.0
+      ],
+      [
+        0,
+        1.0
+      ]
+    ],
+    "rewrite_events": [
+      {
+        "rule": "secret_product",
+        "line": 13,
+        "column": 22,
+        "original": "(arr[j] != arr[i]).reveal()",
+        "replacement": "arr[j] != arr[i]"
+      }
+    ],
+    "observer_sites": {
+      "baseline": [
+        {
+          "site": 0,
+          "line": 13,
+          "expression": "(arr[j] != arr[i]).reveal()"
+        }
+      ],
+      "modified": []
+    }
+  },
+  {
+    "pair_id": "count_distinct--sfix--6--observed",
+    "task_id": "loop_test/count_distinct",
+    "candidate_id": 1,
+    "kind": "private_observed",
+    "inputs": [
+      0,
+      0,
+      0
+    ],
+    "input_type": "sfix",
+    "expected_output": 1,
+    "expected_baseline_openings": [
+      [
+        0,
+        0.0
+      ],
+      [
+        0,
+        0.0
+      ],
+      [
+        0,
+        0.0
+      ]
+    ],
+    "rewrite_events": [
+      {
+        "rule": "secret_product",
+        "line": 13,
+        "column": 22,
+        "original": "(arr[j] != arr[i]).reveal()",
+        "replacement": "arr[j] != arr[i]"
+      }
+    ],
+    "observer_sites": {
+      "baseline": [
+        {
+          "site": 0,
+          "line": 13,
+          "expression": "(arr[j] != arr[i]).reveal()"
+        }
+      ],
+      "modified": []
+    }
+  },
+  {
+    "pair_id": "count_distinct--sfix--7--observed",
+    "task_id": "loop_test/count_distinct",
+    "candidate_id": 1,
+    "kind": "private_observed",
+    "inputs": [
+      -0.5,
+      0,
+      0.5
+    ],
+    "input_type": "sfix",
+    "expected_output": 3,
+    "expected_baseline_openings": [
+      [
+        0,
+        1.0
+      ],
+      [
+        0,
+        1.0
+      ],
+      [
+        0,
+        1.0
+      ]
+    ],
+    "rewrite_events": [
+      {
+        "rule": "secret_product",
+        "line": 13,
+        "column": 22,
+        "original": "(arr[j] != arr[i]).reveal()",
+        "replacement": "arr[j] != arr[i]"
+      }
+    ],
+    "observer_sites": {
+      "baseline": [
+        {
+          "site": 0,
+          "line": 13,
+          "expression": "(arr[j] != arr[i]).reveal()"
+        }
+      ],
+      "modified": []
+    }
+  },
+  {
+    "pair_id": "count_distinct--sfix--8--observed",
+    "task_id": "loop_test/count_distinct",
+    "candidate_id": 1,
+    "kind": "private_observed",
+    "inputs": [
+      0.5,
+      -0.5,
+      0.5
+    ],
+    "input_type": "sfix",
+    "expected_output": 2,
+    "expected_baseline_openings": [
+      [
+        0,
+        1.0
+      ],
+      [
+        0,
+        0.0
+      ],
+      [
+        0,
+        1.0
+      ]
+    ],
+    "rewrite_events": [
+      {
+        "rule": "secret_product",
+        "line": 13,
+        "column": 22,
+        "original": "(arr[j] != arr[i]).reveal()",
+        "replacement": "arr[j] != arr[i]"
+      }
+    ],
+    "observer_sites": {
+      "baseline": [
+        {
+          "site": 0,
+          "line": 13,
+          "expression": "(arr[j] != arr[i]).reveal()"
+        }
+      ],
+      "modified": []
+    }
+  },
+  {
+    "pair_id": "count_distinct--sfix--9--observed",
+    "task_id": "loop_test/count_distinct",
+    "candidate_id": 1,
+    "kind": "private_observed",
+    "inputs": [
+      -1024,
+      0,
+      1024
+    ],
+    "input_type": "sfix",
+    "expected_output": 3,
+    "expected_baseline_openings": [
+      [
+        0,
+        1.0
+      ],
+      [
+        0,
+        1.0
+      ],
+      [
+        0,
+        1.0
+      ]
+    ],
+    "rewrite_events": [
+      {
+        "rule": "secret_product",
+        "line": 13,
+        "column": 22,
+        "original": "(arr[j] != arr[i]).reveal()",
+        "replacement": "arr[j] != arr[i]"
+      }
+    ],
+    "observer_sites": {
+      "baseline": [
+        {
+          "site": 0,
+          "line": 13,
+          "expression": "(arr[j] != arr[i]).reveal()"
+        }
+      ],
+      "modified": []
+    }
+  },
+  {
+    "pair_id": "count_distinct--sint--10--observed",
+    "task_id": "loop_test/count_distinct",
+    "candidate_id": 1,
+    "kind": "private_observed",
+    "inputs": [
+      1,
+      1,
+      2
+    ],
+    "input_type": "sint",
+    "expected_output": 2,
+    "expected_baseline_openings": [
+      [
+        0,
+        0.0
+      ],
+      [
+        0,
+        1.0
+      ],
+      [
+        0,
+        1.0
+      ]
+    ],
+    "rewrite_events": [
+      {
+        "rule": "secret_product",
+        "line": 13,
+        "column": 22,
+        "original": "(arr[j] != arr[i]).reveal()",
+        "replacement": "arr[j] != arr[i]"
+      }
+    ],
+    "observer_sites": {
+      "baseline": [
+        {
+          "site": 0,
+          "line": 13,
+          "expression": "(arr[j] != arr[i]).reveal()"
+        }
+      ],
+      "modified": []
+    }
+  },
+  {
+    "pair_id": "count_distinct--sint--11--observed",
+    "task_id": "loop_test/count_distinct",
+    "candidate_id": 1,
+    "kind": "private_observed",
+    "inputs": [
+      -1073741824,
+      0,
+      1073741824
+    ],
+    "input_type": "sint",
+    "expected_output": 3,
+    "expected_baseline_openings": [
+      [
+        0,
+        1.0
+      ],
+      [
+        0,
+        1.0
+      ],
+      [
+        0,
+        1.0
+      ]
+    ],
+    "rewrite_events": [
+      {
+        "rule": "secret_product",
+        "line": 13,
+        "column": 22,
+        "original": "(arr[j] != arr[i]).reveal()",
+        "replacement": "arr[j] != arr[i]"
+      }
+    ],
+    "observer_sites": {
+      "baseline": [
+        {
+          "site": 0,
+          "line": 13,
+          "expression": "(arr[j] != arr[i]).reveal()"
+        }
+      ],
+      "modified": []
+    }
+  },
+  {
+    "pair_id": "is_ascending--sfix--0--observed",
+    "task_id": "loop_test/is_ascending",
+    "candidate_id": 0,
+    "kind": "private_observed",
+    "inputs": [],
+    "input_type": "sfix",
+    "expected_output": 1,
+    "expected_baseline_openings": [],
+    "rewrite_events": [
+      {
+        "rule": "secret_product",
+        "line": 19,
+        "column": 31,
+        "original": "condition.reveal()",
+        "replacement": "condition"
+      }
+    ],
+    "observer_sites": {
+      "baseline": [
+        {
+          "site": 0,
+          "line": 19,
+          "expression": "condition.reveal()"
+        }
+      ],
+      "modified": []
+    }
+  },
+  {
+    "pair_id": "is_ascending--sfix--1--observed",
+    "task_id": "loop_test/is_ascending",
+    "candidate_id": 0,
+    "kind": "private_observed",
+    "inputs": [
+      0
+    ],
+    "input_type": "sfix",
+    "expected_output": 1,
+    "expected_baseline_openings": [],
+    "rewrite_events": [
+      {
+        "rule": "secret_product",
+        "line": 19,
+        "column": 31,
+        "original": "condition.reveal()",
+        "replacement": "condition"
+      }
+    ],
+    "observer_sites": {
+      "baseline": [
+        {
+          "site": 0,
+          "line": 19,
+          "expression": "condition.reveal()"
+        }
+      ],
+      "modified": []
+    }
+  },
+  {
+    "pair_id": "is_ascending--sfix--2--observed",
+    "task_id": "loop_test/is_ascending",
+    "candidate_id": 0,
+    "kind": "private_observed",
+    "inputs": [
+      1,
+      1,
+      2
+    ],
+    "input_type": "sfix",
+    "expected_output": 0,
+    "expected_baseline_openings": [
+      [
+        0,
+        1.0
+      ],
+      [
+        0,
+        0.0
+      ]
+    ],
+    "rewrite_events": [
+      {
+        "rule": "secret_product",
+        "line": 19,
+        "column": 31,
+        "original": "condition.reveal()",
+        "replacement": "condition"
+      }
+    ],
+    "observer_sites": {
+      "baseline": [
+        {
+          "site": 0,
+          "line": 19,
+          "expression": "condition.reveal()"
+        }
+      ],
+      "modified": []
+    }
+  },
+  {
+    "pair_id": "is_ascending--sfix--2--control",
+    "task_id": "loop_test/is_ascending",
+    "candidate_id": 0,
+    "kind": "private_control",
+    "inputs": [
+      1,
+      1,
+      2
+    ],
+    "input_type": "sfix",
+    "expected_output": 0,
+    "expected_baseline_openings": [],
+    "rewrite_events": [
+      {
+        "rule": "secret_product",
+        "line": 19,
+        "column": 31,
+        "original": "condition.reveal()",
+        "replacement": "condition"
+      }
+    ],
+    "observer_sites": {
+      "baseline": [],
+      "modified": []
+    }
+  },
+  {
+    "pair_id": "is_ascending--sfix--3--observed",
+    "task_id": "loop_test/is_ascending",
+    "candidate_id": 0,
+    "kind": "private_observed",
+    "inputs": [
+      1,
+      2,
+      2
+    ],
+    "input_type": "sfix",
+    "expected_output": 0,
+    "expected_baseline_openings": [
+      [
+        0,
+        0.0
+      ],
+      [
+        0,
+        1.0
+      ]
+    ],
+    "rewrite_events": [
+      {
+        "rule": "secret_product",
+        "line": 19,
+        "column": 31,
+        "original": "condition.reveal()",
+        "replacement": "condition"
+      }
+    ],
+    "observer_sites": {
+      "baseline": [
+        {
+          "site": 0,
+          "line": 19,
+          "expression": "condition.reveal()"
+        }
+      ],
+      "modified": []
+    }
+  },
+  {
+    "pair_id": "is_ascending--sfix--3--control",
+    "task_id": "loop_test/is_ascending",
+    "candidate_id": 0,
+    "kind": "private_control",
+    "inputs": [
+      1,
+      2,
+      2
+    ],
+    "input_type": "sfix",
+    "expected_output": 0,
+    "expected_baseline_openings": [],
+    "rewrite_events": [
+      {
+        "rule": "secret_product",
+        "line": 19,
+        "column": 31,
+        "original": "condition.reveal()",
+        "replacement": "condition"
+      }
+    ],
+    "observer_sites": {
+      "baseline": [],
+      "modified": []
+    }
+  },
+  {
+    "pair_id": "is_ascending--sfix--4--observed",
+    "task_id": "loop_test/is_ascending",
+    "candidate_id": 0,
+    "kind": "private_observed",
+    "inputs": [
+      -2,
+      -1,
+      0
+    ],
+    "input_type": "sfix",
+    "expected_output": 1,
+    "expected_baseline_openings": [
+      [
+        0,
+        0.0
+      ],
+      [
+        0,
+        0.0
+      ]
+    ],
+    "rewrite_events": [
+      {
+        "rule": "secret_product",
+        "line": 19,
+        "column": 31,
+        "original": "condition.reveal()",
+        "replacement": "condition"
+      }
+    ],
+    "observer_sites": {
+      "baseline": [
+        {
+          "site": 0,
+          "line": 19,
+          "expression": "condition.reveal()"
+        }
+      ],
+      "modified": []
+    }
+  },
+  {
+    "pair_id": "is_ascending--sfix--5--observed",
+    "task_id": "loop_test/is_ascending",
+    "candidate_id": 0,
+    "kind": "private_observed",
+    "inputs": [
+      3,
+      2,
+      1
+    ],
+    "input_type": "sfix",
+    "expected_output": 0,
+    "expected_baseline_openings": [
+      [
+        0,
+        1.0
+      ],
+      [
+        0,
+        1.0
+      ]
+    ],
+    "rewrite_events": [
+      {
+        "rule": "secret_product",
+        "line": 19,
+        "column": 31,
+        "original": "condition.reveal()",
+        "replacement": "condition"
+      }
+    ],
+    "observer_sites": {
+      "baseline": [
+        {
+          "site": 0,
+          "line": 19,
+          "expression": "condition.reveal()"
+        }
+      ],
+      "modified": []
+    }
+  },
+  {
+    "pair_id": "is_ascending--sfix--6--observed",
+    "task_id": "loop_test/is_ascending",
+    "candidate_id": 0,
+    "kind": "private_observed",
+    "inputs": [
+      0,
+      0,
+      0
+    ],
+    "input_type": "sfix",
+    "expected_output": 0,
+    "expected_baseline_openings": [
+      [
+        0,
+        1.0
+      ],
+      [
+        0,
+        1.0
+      ]
+    ],
+    "rewrite_events": [
+      {
+        "rule": "secret_product",
+        "line": 19,
+        "column": 31,
+        "original": "condition.reveal()",
+        "replacement": "condition"
+      }
+    ],
+    "observer_sites": {
+      "baseline": [
+        {
+          "site": 0,
+          "line": 19,
+          "expression": "condition.reveal()"
+        }
+      ],
+      "modified": []
+    }
+  },
+  {
+    "pair_id": "is_ascending--sfix--7--observed",
+    "task_id": "loop_test/is_ascending",
+    "candidate_id": 0,
+    "kind": "private_observed",
+    "inputs": [
+      -0.5,
+      0,
+      0.5
+    ],
+    "input_type": "sfix",
+    "expected_output": 1,
+    "expected_baseline_openings": [
+      [
+        0,
+        0.0
+      ],
+      [
+        0,
+        0.0
+      ]
+    ],
+    "rewrite_events": [
+      {
+        "rule": "secret_product",
+        "line": 19,
+        "column": 31,
+        "original": "condition.reveal()",
+        "replacement": "condition"
+      }
+    ],
+    "observer_sites": {
+      "baseline": [
+        {
+          "site": 0,
+          "line": 19,
+          "expression": "condition.reveal()"
+        }
+      ],
+      "modified": []
+    }
+  },
+  {
+    "pair_id": "is_ascending--sfix--8--observed",
+    "task_id": "loop_test/is_ascending",
+    "candidate_id": 0,
+    "kind": "private_observed",
+    "inputs": [
+      0.5,
+      -0.5,
+      0.5
+    ],
+    "input_type": "sfix",
+    "expected_output": 0,
+    "expected_baseline_openings": [
+      [
+        0,
+        1.0
+      ],
+      [
+        0,
+        0.0
+      ]
+    ],
+    "rewrite_events": [
+      {
+        "rule": "secret_product",
+        "line": 19,
+        "column": 31,
+        "original": "condition.reveal()",
+        "replacement": "condition"
+      }
+    ],
+    "observer_sites": {
+      "baseline": [
+        {
+          "site": 0,
+          "line": 19,
+          "expression": "condition.reveal()"
+        }
+      ],
+      "modified": []
+    }
+  },
+  {
+    "pair_id": "is_ascending--sfix--9--observed",
+    "task_id": "loop_test/is_ascending",
+    "candidate_id": 0,
+    "kind": "private_observed",
+    "inputs": [
+      -1024,
+      0,
+      1024
+    ],
+    "input_type": "sfix",
+    "expected_output": 1,
+    "expected_baseline_openings": [
+      [
+        0,
+        0.0
+      ],
+      [
+        0,
+        0.0
+      ]
+    ],
+    "rewrite_events": [
+      {
+        "rule": "secret_product",
+        "line": 19,
+        "column": 31,
+        "original": "condition.reveal()",
+        "replacement": "condition"
+      }
+    ],
+    "observer_sites": {
+      "baseline": [
+        {
+          "site": 0,
+          "line": 19,
+          "expression": "condition.reveal()"
+        }
+      ],
+      "modified": []
+    }
+  },
+  {
+    "pair_id": "is_ascending--sint--10--observed",
+    "task_id": "loop_test/is_ascending",
+    "candidate_id": 0,
+    "kind": "private_observed",
+    "inputs": [
+      1,
+      1,
+      2
+    ],
+    "input_type": "sint",
+    "expected_output": 0,
+    "expected_baseline_openings": [
+      [
+        0,
+        1.0
+      ],
+      [
+        0,
+        0.0
+      ]
+    ],
+    "rewrite_events": [
+      {
+        "rule": "secret_product",
+        "line": 19,
+        "column": 31,
+        "original": "condition.reveal()",
+        "replacement": "condition"
+      }
+    ],
+    "observer_sites": {
+      "baseline": [
+        {
+          "site": 0,
+          "line": 19,
+          "expression": "condition.reveal()"
+        }
+      ],
+      "modified": []
+    }
+  },
+  {
+    "pair_id": "is_ascending--sint--11--observed",
+    "task_id": "loop_test/is_ascending",
+    "candidate_id": 0,
+    "kind": "private_observed",
+    "inputs": [
+      -1073741824,
+      0,
+      1073741824
+    ],
+    "input_type": "sint",
+    "expected_output": 1,
+    "expected_baseline_openings": [
+      [
+        0,
+        0.0
+      ],
+      [
+        0,
+        0.0
+      ]
+    ],
+    "rewrite_events": [
+      {
+        "rule": "secret_product",
+        "line": 19,
+        "column": 31,
+        "original": "condition.reveal()",
+        "replacement": "condition"
+      }
+    ],
+    "observer_sites": {
+      "baseline": [
+        {
+          "site": 0,
+          "line": 19,
+          "expression": "condition.reveal()"
+        }
+      ],
+      "modified": []
+    }
+  },
+  {
+    "pair_id": "synthetic--zero_fold",
+    "task_id": "diagnostic/public_return",
+    "candidate_id": null,
+    "kind": "synthetic_fallback",
+    "inputs": [
+      1
+    ],
+    "input_type": "sint",
+    "expected_output": 1,
+    "expected_baseline_openings": [],
+    "rewrite_events": []
+  },
+  {
+    "pair_id": "synthetic--match_bind",
+    "task_id": "diagnostic/public_return",
+    "candidate_id": null,
+    "kind": "synthetic_fallback",
+    "inputs": [
+      1
+    ],
+    "input_type": "sint",
+    "expected_output": 1,
+    "expected_baseline_openings": [],
+    "rewrite_events": []
+  }
+]

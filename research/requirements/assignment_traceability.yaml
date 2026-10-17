@@ -5,7 +5,7 @@
     {
       "id": "R1",
       "title": "Study original paper",
-      "source_sentence": "Please study the provided paper and its codebase, reproduce the implementation and key experimental results, and explain the paper’s main concepts and methodology.",
+      "source_sentence": "Please study the provided paper and its codebase, reproduce the implementation and key experimental results, and explain the paper\u2019s main concepts and methodology.",
       "scientific_interpretation": "Map all major paper claims to original code or a documented absence.",
       "implementation_obligation": "Read complete paper, appendix and original source.",
       "experimental_obligation": "Trace representative authentic tasks through all stages.",
@@ -19,7 +19,7 @@
         "docs/deep_paper_audit.md",
         "research/original_source_audit.md"
       ],
-      "exact_evidence_commit": null,
+      "exact_evidence_commit": "8d9cf2e5125fbcb8255e30c1e5b8841324223461",
       "test_workflow_identifiers": [
         "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557115103",
         "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557128629",
@@ -39,7 +39,7 @@
     {
       "id": "R2",
       "title": "Reproduce original implementation",
-      "source_sentence": "Please study the provided paper and its codebase, reproduce the implementation and key experimental results, and explain the paper’s main concepts and methodology.",
+      "source_sentence": "Please study the provided paper and its codebase, reproduce the implementation and key experimental results, and explain the paper\u2019s main concepts and methodology.",
       "scientific_interpretation": "Execute author entry points in a pinned environment.",
       "implementation_obligation": "Keep immutable original and separate modified source.",
       "experimental_obligation": "Smoke then execute intended stages; disclose historical dependency blockers.",
@@ -53,13 +53,19 @@
       "status": "IN_PROGRESS",
       "evidence_paths": [
         "research/evidence/2026-10-14/source_provenance.json",
-        "research/original_source_audit.md"
+        "research/original_source_audit.md",
+        "research/evidence/2026-10-15/original-smoke/receipt.json",
+        "research/reviews/original-replay-review.md",
+        "research/evidence/2026-10-15/original-full/receipt.json",
+        "research/reviews/full-replay-evidence-review.md"
       ],
-      "exact_evidence_commit": null,
+      "exact_evidence_commit": "769bb12ce342b814590061ef04fdffbbe19c9990",
       "test_workflow_identifiers": [
         "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557115103",
         "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557128629",
-        "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557114938"
+        "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557114938",
+        "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38673372763",
+        "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38703569637"
       ],
       "measured_results": null,
       "known_limitations": "Archive retrieved; full generation needs credentials/model availability.",
@@ -75,7 +81,7 @@
     {
       "id": "R3",
       "title": "Reproduce key results",
-      "source_sentence": "Please study the provided paper and its codebase, reproduce the implementation and key experimental results, and explain the paper’s main concepts and methodology.",
+      "source_sentence": "Please study the provided paper and its codebase, reproduce the implementation and key experimental results, and explain the paper\u2019s main concepts and methodology.",
       "scientific_interpretation": "Fresh original evaluation, plus archived reconstruction as separate evidence.",
       "implementation_obligation": "Use exact IDs, authentic candidates and original oracle.",
       "experimental_obligation": "Attempt all 313 tasks, comparative baselines and available ablations.",
@@ -84,23 +90,32 @@
       "phase_ids": [
         "B1",
         "B2",
-        "C"
+        "C",
+        "C1",
+        "B2a",
+        "B2b"
       ],
       "status": "IN_PROGRESS",
       "evidence_paths": [
         "research/evidence/2026-10-14/original_saved_evaluation_metrics.json",
         "research/original_source_audit.md",
-        "research/evidence/2026-10-14/identity_verified_scores.json"
+        "research/evidence/2026-10-14/identity_verified_scores.json",
+        "research/evidence/2026-10-15/original-smoke/receipt.json",
+        "research/reviews/original-replay-review.md",
+        "research/evidence/2026-10-15/original-full/receipt.json",
+        "research/reviews/full-replay-evidence-review.md"
       ],
-      "exact_evidence_commit": null,
+      "exact_evidence_commit": "769bb12ce342b814590061ef04fdffbbe19c9990",
       "test_workflow_identifiers": [
         "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557115103",
         "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557128629",
-        "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557114938"
+        "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557114938",
+        "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38673372763",
+        "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38703569637"
       ],
-      "measured_results": "Archived first269/313, second265/313, union288/313; all313 IDs/order and1252 candidate hashes independently checked. No fresh secure replay yet.",
-      "known_limitations": "Archived first 269/313, second 265/313, union 288/313; fresh replay pending.",
-      "verification_reviewer": "Pending requirement acceptance; historical audit reviewed by code_review agent",
+      "measured_results": "Full1252candidate replay independently accepted:SPDZCoder268/313first,265second,288union;GPT4API-doc95first,112second,154union. Five archived/fresh differences preserved. Available ablations and source traces remain open.",
+      "known_limitations": "Smoke is not full replay. One native template has no oracle; historical generation requires separately authorized model access.",
+      "verification_reviewer": "full_replay_review; narrowB2b accepted, broaderR3 stillinprogress",
       "completion": {
         "implemented": false,
         "executed": false,
@@ -112,7 +127,7 @@
     {
       "id": "R4",
       "title": "Explain actual methodology",
-      "source_sentence": "Please study the provided paper and its codebase, reproduce the implementation and key experimental results, and explain the paper’s main concepts and methodology.",
+      "source_sentence": "Please study the provided paper and its codebase, reproduce the implementation and key experimental results, and explain the paper\u2019s main concepts and methodology.",
       "scientific_interpretation": "Explain stage relationships using real implementation traces.",
       "implementation_obligation": "Map input/refactor/generate/reflect/repair/evaluate entry points.",
       "experimental_obligation": "Capture seven category traces without fabricated responses.",
@@ -126,7 +141,7 @@
         "docs/paper_guide.md",
         "research/original_source_audit.md"
       ],
-      "exact_evidence_commit": null,
+      "exact_evidence_commit": "8d9cf2e5125fbcb8255e30c1e5b8841324223461",
       "test_workflow_identifiers": [],
       "measured_results": null,
       "known_limitations": "Conceptual notes exist; original-source traces incomplete.",
@@ -149,20 +164,31 @@
       "expected_outputs": "Limitation dossier and failing original case.",
       "acceptance_criteria": "Authentic original-system witness executes and is independently checked.",
       "phase_ids": [
-        "D"
+        "D",
+        "D1"
       ],
-      "status": "NOT_STARTED",
-      "evidence_paths": [],
-      "exact_evidence_commit": null,
-      "test_workflow_identifiers": [],
-      "measured_results": null,
-      "known_limitations": "Static reveals are indicators, not confirmed leaks; earlier tests used independent reconstruction.",
-      "verification_reviewer": "Pending requirement acceptance; historical audit reviewed by code_review agent",
+      "status": "IN_PROGRESS",
+      "evidence_paths": [
+        "research/replay/native_oracle_audit.md",
+        "research/original_source_audit.md",
+        "research/limitation_candidates.md",
+        "research/replay/diagnostic_protocol.md",
+        "research/reviews/diagnostic-review.md",
+        "research/evidence/2026-10-15/original-diagnostics/receipt.json",
+        "research/reviews/diagnostic-evidence-review.md"
+      ],
+      "exact_evidence_commit": "aa89eb661370480643a6637180b773d080009437",
+      "test_workflow_identifiers": [
+        "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38742644019"
+      ],
+      "measured_results": "Two authentic equal-output/private-input disclosure witnesses andfourknownwrongnativeoraclefalsepositives,16cases total,independentlychecked.",
+      "known_limitations": "Conditional candidate-level policy witnesses; not historical breaches or universal confidentiality findings. BroaderD prerequisites open.",
+      "verification_reviewer": "diagnostic_review acceptedD1; modificationnotaccepted",
       "completion": {
-        "implemented": false,
-        "executed": false,
-        "evidence_preserved": false,
-        "independently_checked": false
+        "implemented": true,
+        "executed": true,
+        "evidence_preserved": true,
+        "independently_checked": true
       }
     },
     {
@@ -175,20 +201,34 @@
       "expected_outputs": "Patch, source hashes, tests and run logs.",
       "acceptance_criteria": "Modification addresses demonstrated failure without hidden oracle/input changes.",
       "phase_ids": [
-        "E"
+        "E",
+        "E1"
       ],
-      "status": "NOT_STARTED",
-      "evidence_paths": [],
-      "exact_evidence_commit": null,
-      "test_workflow_identifiers": [],
-      "measured_results": null,
-      "known_limitations": "No qualifying original-source patch accepted yet.",
-      "verification_reviewer": "Pending requirement acceptance; historical audit reviewed by code_review agent",
+      "status": "IN_PROGRESS",
+      "evidence_paths": [
+        "research/modifications/README.md",
+        "research/modifications/secret_arithmetic.py",
+        "research/modifications/original-pipeline.patch",
+        "research/modifications/pinned-patch-manifest.json",
+        "scripts/apply_original_postprocess.py",
+        "research/reviews/secret-arithmetic-review-findings.md",
+        "research/reviews/paired-smoke-preexecution-review.md",
+        "research/evidence/2026-10-16/paired-smoke/receipt.json",
+        "research/evidence/2026-10-16/paired-smoke/measurements.json",
+        "research/reviews/paired-smoke-evidence-review.md"
+      ],
+      "exact_evidence_commit": "35adfb04c1132ae91d1b2c6e21cf791855eab768",
+      "test_workflow_identifiers": [
+        "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38958484872"
+      ],
+      "measured_results": "Accepted narrow32-pair/64-execution smoke:64compile/runtimePASS,4/4nativeACCEPT,all56privatecontroloutputs preserved,4syntheticfallbackexecutionspass;50observedintermediateopeningevents become0.",
+      "known_limitations": "Only comparison-bit products with a supported secret-integer invariant. Mixed opened-operand comparisons including lower_bound are unchanged. Full model-dependent pipeline not executed.",
+      "verification_reviewer": "diagnostic_review accepted targeted smoke only; full native paired acceptance remains pending",
       "completion": {
-        "implemented": false,
-        "executed": false,
-        "evidence_preserved": false,
-        "independently_checked": false
+        "implemented": true,
+        "executed": true,
+        "evidence_preserved": true,
+        "independently_checked": true
       }
     },
     {
@@ -203,17 +243,27 @@
       "phase_ids": [
         "F"
       ],
-      "status": "NOT_STARTED",
-      "evidence_paths": [],
-      "exact_evidence_commit": null,
-      "test_workflow_identifiers": [],
-      "measured_results": null,
-      "known_limitations": "Independent DomainSafety results do not satisfy this requirement.",
-      "verification_reviewer": "Pending requirement acceptance; historical audit reviewed by code_review agent",
+      "status": "IN_PROGRESS",
+      "evidence_paths": [
+        "scripts/replay_modified.py",
+        "scripts/verify_paired_replay.py",
+        "research/modifications/README.md",
+        "research/reviews/paired-smoke-preexecution-review.md",
+        "research/evidence/2026-10-16/paired-smoke/receipt.json",
+        "research/evidence/2026-10-16/paired-smoke/measurements.json",
+        "research/reviews/paired-smoke-evidence-review.md"
+      ],
+      "exact_evidence_commit": "35adfb04c1132ae91d1b2c6e21cf791855eab768",
+      "test_workflow_identifiers": [
+        "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38958484872"
+      ],
+      "measured_results": "Accepted narrow32-pair/64-execution smoke:64compile/runtimePASS,4/4nativeACCEPT,all56privatecontroloutputs preserved,4syntheticfallbackexecutionspass;50observedintermediateopeningevents become0.",
+      "known_limitations": "Targeted32-pairsmoke accepted; complete626-pair native comparison, regressions and paired uncertainty analysis remain pending.",
+      "verification_reviewer": "diagnostic_review accepted targeted smoke only; full native paired acceptance remains pending",
       "completion": {
-        "implemented": false,
+        "implemented": true,
         "executed": false,
-        "evidence_preserved": false,
+        "evidence_preserved": true,
         "independently_checked": false
       }
     },
@@ -236,13 +286,20 @@
       "evidence_paths": [
         "docs/reproduction_log.md",
         "research/reviews/pr5-independent-review.md",
-        "research/original_source_audit.md"
+        "research/original_source_audit.md",
+        "research/evidence/2026-10-15/original-smoke/receipt.json",
+        "research/reviews/original-replay-review.md",
+        "research/evidence/2026-10-15/original-full/attempt-1.json",
+        "research/evidence/2026-10-15/original-full/receipt.json",
+        "research/reviews/full-replay-evidence-review.md"
       ],
-      "exact_evidence_commit": null,
+      "exact_evidence_commit": "769bb12ce342b814590061ef04fdffbbe19c9990",
       "test_workflow_identifiers": [
         "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557115103",
         "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557128629",
-        "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557114938"
+        "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557114938",
+        "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38673372763",
+        "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38703569637"
       ],
       "measured_results": null,
       "known_limitations": "Initial failures documented; execution and full failure inventory ongoing.",
@@ -260,10 +317,10 @@
       "title": "Final report readiness",
       "source_sentence": "Please submit a brief report describing the limitation, your proposed solution, relevant code snippets, and experimental results comparing your modified implementation with the original baseline.",
       "scientific_interpretation": "Practical readiness only; report is explicitly deferred by user.",
-      "implementation_obligation": "Check R1–R8 evidence or explicit accepted exceptions.",
+      "implementation_obligation": "Check R1\u2013R8 evidence or explicit accepted exceptions.",
       "experimental_obligation": "Independent final review of every practical acceptance gate.",
       "expected_outputs": "Gate summary and user authorization record, then eventual report.",
-      "acceptance_criteria": "R1–R8 defensibly complete or exceptions accepted; user permission before drafting.",
+      "acceptance_criteria": "R1\u2013R8 defensibly complete or exceptions accepted; user permission before drafting.",
       "phase_ids": [
         "REPORT"
       ],
@@ -284,5 +341,6 @@
         "independently_checked": false
       }
     }
-  ]
+  ],
+  "updated_on": "2026-10-16"
 }

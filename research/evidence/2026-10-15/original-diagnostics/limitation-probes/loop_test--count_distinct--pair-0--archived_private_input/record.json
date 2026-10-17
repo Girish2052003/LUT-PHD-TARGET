@@ -1,0 +1,41 @@
+{
+  "case_id": "loop_test--count_distinct--pair-0--archived_private_input",
+  "task_id": "loop_test/count_distinct",
+  "source_kind": "archived_private_input",
+  "original_candidate_id": 1,
+  "original_source_sha256": "e3dcacd51d5e09ca45377f20e6ea2f11f2ac004e644bf5f00f547bc537771275",
+  "template_kind": "explicit diagnostic private-input harness",
+  "inputs": [
+    1,
+    1,
+    2
+  ],
+  "expected_authorized_output": 2,
+  "observer_sites": [],
+  "source_sha256": "e3dcacd51d5e09ca45377f20e6ea2f11f2ac004e644bf5f00f547bc537771275",
+  "template_sha256": "1ef9eaffcb966c2d4f9a5ad3e53eea998c0f12e78895a314f49088c9b0d85de8",
+  "author_oracle_accepted": false,
+  "runtime_status": "PASS",
+  "attempts": [
+    {
+      "command": "/mp-spdz/Scripts/compile-run.py -E mascot /run/diagnostic-baseline/evaluation/evaluation_storage/count_distinct.mpc",
+      "timeout_seconds": 60,
+      "returncode": 0,
+      "timed_out": false,
+      "schedule_present": true,
+      "runtime_launch_marker": true,
+      "duration_seconds": 5.4965043570000205,
+      "combined_source_sha256": "1405e129edfe028a3847f92cbddb6fb9eae7c1a5f5c42e6e148fc4ee65466934",
+      "stdout_sha256": "c74f6edf70067727afbc3a667db0dce8618c524825b318e4352fb8ab42d916a0",
+      "stderr_sha256": "0c94b9cae181993a040dd3e2bbe8ade0383777e23fb39627b717426494a3dc99",
+      "compile_status": "PASS",
+      "runtime_status": "PASS",
+      "failure_class": null
+    }
+  ],
+  "native_success_marker": false,
+  "authorized_outputs": [
+    "2"
+  ],
+  "public_openings": []
+}
