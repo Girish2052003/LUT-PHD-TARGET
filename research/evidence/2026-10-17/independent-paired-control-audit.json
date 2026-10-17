@@ -39,7 +39,9 @@
       "modified": "REJECT",
       "identical_combined_mpc": true,
       "identical_compiler_hash": true,
-      "compiler_hash": "d9e6881a06c65cfb2173c0503a0c18f2d54cc685e4354fb3ac5ae457aaaebef9"
+      "compiler_hash": "d9e6881a06c65cfb2173c0503a0c18f2d54cc685e4354fb3ac5ae457aaaebef9",
+      "baseline_execution_order": 1,
+      "modified_execution_order": 0
     },
     {
       "task_id": "math_test/next_perfect_square",
@@ -48,7 +50,9 @@
       "modified": "REJECT",
       "identical_combined_mpc": true,
       "identical_compiler_hash": true,
-      "compiler_hash": "86cde692a9aeb0dfeb98eed8c87ad59704dbcfb1b4cf9a23dc5e99ce407e0553"
+      "compiler_hash": "86cde692a9aeb0dfeb98eed8c87ad59704dbcfb1b4cf9a23dc5e99ce407e0553",
+      "baseline_execution_order": 1,
+      "modified_execution_order": 0
     },
     {
       "task_id": "math_test/pi_to_the_x",
@@ -57,7 +61,9 @@
       "modified": "ACCEPT",
       "identical_combined_mpc": true,
       "identical_compiler_hash": true,
-      "compiler_hash": "e53a7f7a8d5b45b86ac2e06d0433d1cb24122dbd5335bdc424474ff0a0a700e0"
+      "compiler_hash": "e53a7f7a8d5b45b86ac2e06d0433d1cb24122dbd5335bdc424474ff0a0a700e0",
+      "baseline_execution_order": 0,
+      "modified_execution_order": 1
     },
     {
       "task_id": "math_test/pi_to_the_x",
@@ -66,10 +72,14 @@
       "modified": "REJECT",
       "identical_combined_mpc": true,
       "identical_compiler_hash": true,
-      "compiler_hash": "e9a93c82747b3e3e7ce658e66a6027edb8a32a55cc66237b195d23a506e7c6f7"
+      "compiler_hash": "e9a93c82747b3e3e7ce658e66a6027edb8a32a55cc66237b195d23a506e7c6f7",
+      "baseline_execution_order": 1,
+      "modified_execution_order": 0
     }
   ],
   "oracle_marker_disagreements": [],
   "conclusion": "Artifact consistency verified from all split ZIP archives, without re-running MASCOT. Four unchanged-source acceptance changes cannot be attributed to patch; precise runtime cause remains unproven.",
-  "caveat": "Do not claim formal confidentiality, statistical correctness improvement, universal semantic equivalence, or historical LLM regeneration."
+  "caveat": "Do not claim formal confidentiality, statistical correctness improvement, universal semantic equivalence, or historical LLM regeneration.",
+  "all_unchanged_source_flips_accept_on_second_execution": true,
+  "execution_order_caveat": "In 4/4 discordant byte-identical pairs, the second execution returned ACCEPT and the first returned REJECT. Association is not a causal demonstration; require controlled repeated runs before diagnosing warm-up, randomness, or numerical effects."
 }
