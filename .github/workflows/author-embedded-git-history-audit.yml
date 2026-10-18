@@ -1,0 +1,44 @@
+name: Read-only embedded author Git history ablation archaeology
+on:
+  push:
+    branches: ["research/original-evaluator-replay-20261015"]
+    paths:
+      - ".github/workflows/author-embedded-git-history-audit.yml"
+      - "scripts/audit_author_embedded_git_history.py"
+      - "tests/test_author_embedded_git_history.py"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  investigate-historical-git-objects:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Synthetic Git-object parser tests and research record checks
+        run: |
+          python -m unittest discover -s tests -p test_author_embedded_git_history.py -v
+          python scripts/check_handoff.py
+      - name: Fetch exact original 65 MB source release without executing any source
+        run: |
+          mkdir -p results/author-git-archaeology
+          curl -fLsS --retry 4 --retry-delay 3 --max-time 900 \
+            "https://zenodo.org/records/18152253/files/SPDZCoder.tar?download=1" \
+            -o results/author-git-archaeology/SPDZCoder.tar
+      - name: Hash-verify original TAR and inspect inert historical objects
+        run: |
+          python scripts/audit_author_embedded_git_history.py \
+            --tar results/author-git-archaeology/SPDZCoder.tar \
+            --output results/author-git-archaeology/embedded-author-git-history.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: original-author-embedded-git-history-${{ github.sha }}
+          path: results/author-git-archaeology/embedded-author-git-history.json
+          retention-days: 90
+          if-no-files-found: warn

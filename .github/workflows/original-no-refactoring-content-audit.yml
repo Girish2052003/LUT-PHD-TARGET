@@ -1,0 +1,68 @@
+name: Independent original author no-refactoring content search
+on:
+  push:
+    branches: ["research/original-evaluator-replay-20261015"]
+    paths:
+      - ".github/workflows/original-no-refactoring-content-audit.yml"
+      - "scripts/audit_original_no_refactor_content.py"
+      - "tests/test_original_no_refactor_content.py"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  scan-original-author-content:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Check scan regression and research acceptance integrity
+        run: |
+          python -m unittest discover -s tests -p test_original_no_refactor_content.py -v
+          python scripts/check_handoff.py
+      - name: Obtain pinned original Zenodo TAR without executing author code
+        run: |
+          mkdir -p results/author-content
+          curl -fLsS --retry 4 --retry-delay 3 --max-time 900 \
+            "https://zenodo.org/records/18152253/files/SPDZCoder.tar?download=1" \
+            -o results/author-content/SPDZCoder.tar
+      - name: Scan actual original source and saved dataset/evaluation contents
+        run: |
+          python scripts/audit_original_no_refactor_content.py \
+            --tar results/author-content/SPDZCoder.tar \
+            --output results/author-content/original-content-scan.json
+      - name: Re-evaluate every original author seven-category group
+        run: |
+          python scripts/find_original_no_refactoring_evaluations.py \
+            --tar results/author-content/SPDZCoder.tar \
+            --output results/author-content/verified-original-evaluation-groups.json
+      - name: Preserve authenticated source and numerical provenance checks
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          root=Path('results/author-content')
+          s=json.loads((root/'original-content-scan.json').read_text())
+          e=json.loads((root/'verified-original-evaluation-groups.json').read_text())
+          assert s['original_archive_sha256']==e['original_archive_sha256']
+          assert s['scanned_files']>0
+          assert e['groups_evaluated']>0
+          for v in e['groups_matching_both_numbers']:
+              print('NUMERICAL MATCH, not proof of ablation provenance:',v['group'])
+          print('Source content files scanned:',s['scanned_files'])
+          print('Explicit content marker paths:',s['explicit_marker_path_count'])
+          print('No historical model calls or native MPC executions were made')
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: independent-original-no-refactoring-content-${{ github.sha }}
+          path: |
+            results/author-content/original-content-scan.json
+            results/author-content/verified-original-evaluation-groups.json
+          retention-days: 90
+          if-no-files-found: warn

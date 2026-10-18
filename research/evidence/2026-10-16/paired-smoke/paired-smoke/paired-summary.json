@@ -1,0 +1,15 @@
+{
+  "validation": {
+    "confirmed": true,
+    "pairs": 32,
+    "executions": 64,
+    "native_pairs": 2,
+    "private_pairs": 28,
+    "synthetic_pairs": 2
+  },
+  "baseline_source_unchanged": true,
+  "live_model_calls": 0,
+  "expected_executions": 64,
+  "executions": 64,
+  "scope": "Matched deterministic finalizer replay; private/synthetic probes excluded from native rates"
+}

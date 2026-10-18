@@ -1,0 +1,36 @@
+{
+  "task_id": "branch_test/pass_or_not",
+  "category": "branch_test",
+  "system": "gpt4_api_docs",
+  "candidate_id": 0,
+  "source_sha256": "a1b334853d49497506b031521529a1fcc3f20037e2f180dfc87133cdbea8a8e0",
+  "template_sha256": "a5191c4bf15f74161afde62fdbe5f0dd520e1024a896599f10ec96be30644634",
+  "compile_status": "PASS",
+  "combined_source_sha256": "061a81e20ec715711047b841e64e71b8c1f6d3daf137d6e5b41e3ee52e788ffa",
+  "runtime_status": "FAIL",
+  "oracle_status": "ACCEPT",
+  "oracle": "unmodified author insert_compile_run",
+  "output_digest": "44b2abbed3fb72d4ebb4da18abbae5a86cff7627a3cbf0260e2487b67e8fba4c",
+  "duration_seconds": 3.1026763010000025,
+  "failure_class": "runtime_failure",
+  "log_path": "logs/branch_test/pass_or_not/gpt4_api_docs/0",
+  "exception": null,
+  "attempts": [
+    {
+      "command": "/mp-spdz/Scripts/compile-run.py -E mascot /baseline/evaluation/evaluation_storage/pass_or_not.mpc",
+      "timeout_seconds": 60,
+      "returncode": 1,
+      "timed_out": false,
+      "schedule_present": true,
+      "runtime_launch_marker": true,
+      "duration_seconds": 3.1012602929999957,
+      "combined_source_sha256": "061a81e20ec715711047b841e64e71b8c1f6d3daf137d6e5b41e3ee52e788ffa",
+      "stdout_sha256": "44b2abbed3fb72d4ebb4da18abbae5a86cff7627a3cbf0260e2487b67e8fba4c",
+      "stderr_sha256": "a9a774ea9671378fbf16bc9d224652114c3b0ff8cb20b0b2d7888c68e78bcd9f",
+      "compile_status": "PASS",
+      "runtime_status": "FAIL",
+      "failure_class": "runtime_failure"
+    }
+  ],
+  "historical_author_flag": null
+}

@@ -1,0 +1,25 @@
+Default bit length: 64
+Default security parameter: 40
+Compiling file /run/diagnostic-baseline/evaluation/evaluation_storage/lower_bound.mpc
+Writing to Programs/Schedules/lower_bound.sch
+Writing to Programs/Bytecode/lower_bound-0.bc
+Hash: 9118612b3c97fab1b20f991d0a1ce74ea645f5e5ab68bc4b7399f43dea527ac3
+Program requires at most:
+           3 integer inputs from player 0
+         216 integer bits
+          10 integer opens
+         171 integer triples
+          14 virtual machine rounds
+Using security parameter 40
+AUTHORIZED=1
+Significant amount of unused triples of SPDZ gfp. For more accurate benchmarks, consider reducing the batch size with --batch-size.
+Note that some protocols have larger minimum batch sizes.
+Significant amount of unused bits of SPDZ gfp. For more accurate benchmarks, consider reducing the batch size with --batch-size.
+Note that some protocols have larger minimum batch sizes.
+The following benchmarks are including preprocessing (offline phase).
+Time = 5.177 seconds 
+Data sent = 59.5259 MB in ~141 rounds (party 0 only; use '-v' for more details)
+Global data sent = 98.5697 MB (all parties)
+This program might benefit from some protocol options.
+Consider adding the following at the beginning of your code:
+	program.use_edabit(True)

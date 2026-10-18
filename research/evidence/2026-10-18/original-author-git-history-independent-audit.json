@@ -1,0 +1,28 @@
+{
+  "review_date": "2026-10-18",
+  "review_kind": "Independent direct downloaded source-run Git object archive forensic inspection",
+  "source_tar_sha256": "a8ea14150dc1d4ddf53eb4ead450d88139d09b680683f673029877ce0c6e00ac",
+  "source_workflow_run": 39136978957,
+  "source_workflow_commit": "19abf1e9207e060076650161374c329623e9ae82",
+  "source_workflow_artifact_id": 12140132360,
+  "source_workflow_artifact_zip_sha256": "9ce2284cc09e6c2b796a4b8ad833cb4effed9389497a983d33bf5053e4e3d079",
+  "checked_original_git_objects": {
+    "commit": 3,
+    "tree": 28,
+    "blob": 579
+  },
+  "historical_commit_roots_examined": 3,
+  "unresolvable_commit_roots": 0,
+  "git_packfiles": 0,
+  "all_embedded_git_loose_object_history_resolved": true,
+  "historical_blobs_with_explicit_no_refactoring_or_ablation_markers": 0,
+  "historical_tree_paths_matching_ablation_or_refactoring": 0,
+  "original_mpc_executions": 0,
+  "model_inference_calls": 0,
+  "source_reader": "scripts/audit_author_embedded_git_history.py parses Git loose objects from SHA-256-pinned original TAR as inert zlib bytes, verifies Git object SHA-1, traverses all known commit trees, and searches text blobs without extracting .git or running Git hooks; full exact scan data retained in GitHub Actions artifact.",
+  "interpretation": "Additional strong negative evidence: no explicit author no-refactoring/ablation source or experimental data discovered in the three reachable archived commits and 579 historical loose Git blobs. Absence of recoverable matching files is NOT proof the authors never ran the experiment or proof of absolute impossibility.",
+  "links": {
+    "source_run": "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39136978957",
+    "content_sweep": "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39136184598"
+  }
+}

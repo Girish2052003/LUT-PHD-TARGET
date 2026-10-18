@@ -1,0 +1,49 @@
+{
+  "pair_id": "synthetic--zero_fold",
+  "task_id": "diagnostic/public_return",
+  "candidate_id": null,
+  "kind": "synthetic_fallback",
+  "inputs": [
+    1
+  ],
+  "input_type": "sint",
+  "expected_output": 1,
+  "expected_baseline_openings": [],
+  "rewrite_events": [],
+  "variant": "baseline",
+  "pair_index": 30,
+  "execution_order": 0,
+  "source_sha256": "da99bcce21c3db8cf31445d07444b983823b545301d790e541758838ab6a5e8b",
+  "original_source_sha256": "da99bcce21c3db8cf31445d07444b983823b545301d790e541758838ab6a5e8b",
+  "transformed_source_sha256": "da99bcce21c3db8cf31445d07444b983823b545301d790e541758838ab6a5e8b",
+  "template_sha256": "6cda487dc9afa7ab8b61bbf2f26b1f34d063353296df58ad42c77f1c3e16007b",
+  "inputs_sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865",
+  "compile_status": "PASS",
+  "runtime_status": "PASS",
+  "failure_class": "oracle_reject",
+  "oracle_status": "REJECT",
+  "duration_seconds": 6.928720971999951,
+  "exception": null,
+  "attempts": [
+    {
+      "command": "/mp-spdz/Scripts/compile-run.py -E mascot /run/paired-baseline/evaluation/evaluation_storage/public_return.mpc",
+      "timeout_seconds": 60,
+      "returncode": 0,
+      "timed_out": false,
+      "schedule_present": true,
+      "runtime_launch_marker": true,
+      "duration_seconds": 6.928332360000013,
+      "combined_source_sha256": "666323a17782685d8b4c6b855a52f1c9e342e6270734c6865d29a1c205f03bdf",
+      "stdout_sha256": "cce18a5ab5a84eb473993233a6901d1254819ecae6cbf6a68ab12b87c807bd1d",
+      "stderr_sha256": "4c6d7f700caf57f83af38dd4d3d7db2f50eea97e6921a1e49e114c3172621421",
+      "compile_status": "PASS",
+      "runtime_status": "PASS",
+      "failure_class": null
+    }
+  ],
+  "log_path": "logs/synthetic--zero_fold/baseline",
+  "authorized_outputs": [
+    "1"
+  ],
+  "public_openings": []
+}

@@ -1,6 +1,15 @@
 # My paper analysis: SPDZCoder research questions and reproduction gaps
 **Reference:** Dong et al., arXiv:2501.00363v2, 21 March 2025, 19-page arXiv v2 paper.
-**Purpose:** I use these notes to keep the published results, my measured experiments and my own hypotheses separate. I have not recovered the authors' full implementation.
+**Purpose:** Historical paper-analysis notes, retaining the distinction between published results, independent reconstruction and authentic original evidence.
+
+**Status update, 17 October 2026:** the authors' Zenodo implementation was recovered
+and pinned on 14 October. Complete final-stage SPDZCoder/GPT-4 replay and authentic
+limitation witnesses are now accepted within their scope; see
+`research/original_source_audit.md`, `research/progress.json` and the evidence
+receipts. Discovery gaps and pending-reproduction statements below describe the
+earlier paper-only stage, not the current repository. Full model generation is
+still separately blocked. This file is a technical research record, not a final
+submission report.
 
 ## Provenance and central problem
 

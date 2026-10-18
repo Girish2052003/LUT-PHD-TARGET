@@ -1,0 +1,9 @@
+{
+  "ImageOS": "ubuntu24",
+  "ImageVersion": "20261012.334.1",
+  "RUNNER_OS": "Linux",
+  "RUNNER_ARCH": "X64",
+  "GITHUB_RUN_ID": "38958484872",
+  "GITHUB_RUN_ATTEMPT": "1",
+  "GITHUB_SHA": "35adfb04c1132ae91d1b2c6e21cf791855eab768"
+}

@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "updated_on": "2026-10-15",
-  "current_pr": "https://github.com/Girish2052003/LUT-PHD-TARGET/pull/5",
+  "updated_on": "2026-10-18",
+  "current_pr": 6,
   "historical_remote_main": "0ae96a968022325f3f678b19db1fcd69de483b70",
   "historical_reviewed_head": "5ca3809f15e8e326ff2d0a9b2e23993704be3dda",
-  "resume_phase": "C",
+  "resume_phase": "G",
   "report_authorized": false,
   "phases": [
     {
@@ -136,25 +136,28 @@
     {
       "id": "A",
       "title": "Original source-to-paper audit",
-      "status": "IN_PROGRESS",
-      "completion_scope": "Complete source mapping and seven real stage traces required.",
+      "status": "PASS",
+      "completion_scope": "Original paper-to-source map and seven authentic saved stage examples independently accepted WITH disclosed paper/source discrepancies. No historical model calls reconstructed; B3 remains blocked.",
       "dependencies": [
         "M3"
       ],
       "evidence_paths": [
         "docs/deep_paper_audit.md",
         "docs/original_artifact_reproduction.md",
-        "research/original_source_audit.md"
+        "research/original_source_audit.md",
+        "research/reviews/integrated-independent-practical-acceptance-20261018.md",
+        "research/reviews/phase-a-paper-source-crosswalk-20261018.md",
+        "research/evidence/2026-10-18/seven-category-stage-receipt.json"
       ],
-      "evidence_commit": "5ca3809f15e8e326ff2d0a9b2e23993704be3dda",
+      "evidence_commit": "990bd9f9ce0c539a949df44fbca5843fefd12e8c",
       "verification": {
-        "implemented": false,
-        "executed": false,
+        "implemented": true,
+        "executed": true,
         "evidence_preserved": true,
-        "independently_checked": false,
-        "reviewer": "Pending acceptance review"
+        "independently_checked": true,
+        "reviewer": "Secondary assistant reviewer, independent raw artifact/paper/saved-stage audit 18 Oct 2026; bounded acceptance only, not external certification"
       },
-      "next_action": "Preserve source discrepancies; build authentic seven-task archived snapshot traces and connect them to controlled fresh evaluation.",
+      "next_action": "Preserve original source-vs-paper discrepancies and historical saved stage identities. Model-stage reproduction is separately B3 BLOCKED; no synthetic conversations.",
       "redo_only_if": "Relevant source, configuration, evidence, or acceptance scope changes; document why."
     },
     {
@@ -181,31 +184,91 @@
       "redo_only_if": "Relevant source, configuration, evidence, or acceptance scope changes; document why."
     },
     {
+      "id": "B2a",
+      "title": "Original evaluator and two-party MASCOT smoke",
+      "status": "PASS",
+      "completion_scope": "One authentic archived candidate compiled, executed and accepted by unchanged author oracle; no full-benchmark claim.",
+      "dependencies": [
+        "M3",
+        "C1"
+      ],
+      "evidence_paths": [
+        "research/evidence/2026-10-15/original-smoke/receipt.json",
+        "research/evidence/2026-10-15/original-smoke/smoke/outcomes.jsonl",
+        "research/reviews/original-replay-review.md"
+      ],
+      "evidence_commit": "554522da16fc22fd008b3f5b4c0a5bb6c62a5d45",
+      "verification": {
+        "implemented": true,
+        "executed": true,
+        "evidence_preserved": true,
+        "independently_checked": true,
+        "reviewer": "smoke_evidence_review independently matched all source/artifact hashes, original insertion, output and both party logs; CI38673372763"
+      },
+      "next_action": "Preserve the accepted smoke. Expand category/full coverage without counting smoke twice.",
+      "redo_only_if": "Relevant original source, harness, compiler/runtime or environment changes; record why."
+    },
+    {
+      "id": "B2b",
+      "title": "Complete two-system archived-candidate replay",
+      "status": "PASS",
+      "completion_scope": "All1252 authentic final-stage SPDZCoder/GPT-4 candidates replayed; original acceptance counts268/265/288 and95/112/154. No new model generation or universal correctness claim.",
+      "dependencies": [
+        "M3",
+        "C1",
+        "B2a"
+      ],
+      "evidence_paths": [
+        "research/evidence/2026-10-15/original-full/receipt.json",
+        "research/evidence/2026-10-15/original-full/verified-summary/summary.json",
+        "research/reviews/full-replay-evidence-review.md"
+      ],
+      "evidence_commit": "769bb12ce342b814590061ef04fdffbbe19c9990",
+      "verification": {
+        "implemented": true,
+        "executed": true,
+        "evidence_preserved": true,
+        "independently_checked": true,
+        "reviewer": "full_replay_review independently audited1252records,1280attempts,6976rawfiles and all source/runtime pins"
+      },
+      "next_action": "Preserve. Investigate recorded disagreements separately; complete ablations and source traces without relabeling this as generation.",
+      "redo_only_if": "Source, environment, candidate or comparison conditions change; record the reason."
+    },
+    {
       "id": "B2",
       "title": "Level 2: original evaluator replay",
-      "status": "IN_PROGRESS",
-      "completion_scope": "Fresh compiler, MASCOT execution and original oracle on all available original candidates.",
+      "status": "PASS",
+      "completion_scope": "Level-2 authentic original evaluator reproduction accepted for 1252 final-stage SPDZCoder/GPT4 baseline candidates and 626 saved stage2 SPDZCoder candidates, all raw native MASCOT outputs checked. B3 model generation separate.",
       "dependencies": [
         "A",
         "C"
       ],
-      "evidence_paths": [],
-      "evidence_commit": null,
+      "evidence_paths": [
+        "research/replay/README.md",
+        "research/reviews/original-replay-review.md",
+        "research/evidence/2026-10-15/original-smoke/receipt.json",
+        "research/evidence/2026-10-15/original-full/attempt-1.json",
+        "research/evidence/2026-10-15/original-full/receipt.json",
+        "research/reviews/full-replay-evidence-review.md",
+        "research/reviews/integrated-independent-practical-acceptance-20261018.md",
+        "research/evidence/2026-10-18/stage2-original-full-independent-acceptance.json"
+      ],
+      "evidence_commit": "990bd9f9ce0c539a949df44fbca5843fefd12e8c",
       "verification": {
-        "implemented": false,
-        "executed": false,
-        "evidence_preserved": false,
-        "independently_checked": false,
-        "reviewer": "Pending acceptance review"
+        "implemented": true,
+        "executed": true,
+        "evidence_preserved": true,
+        "independently_checked": true,
+        "reviewer": "Secondary assistant reviewer, independent raw artifact/paper/saved-stage audit 18 Oct 2026; bounded acceptance only, not external certification"
       },
-      "next_action": "MP-SPDZ0.3.6 pinned; local namespace sandbox blocked. Establish credential-free network-restricted CI container smoke replay before full benchmark.",
+      "next_action": "Preserve both original replay datasets. B3 exact historical model generation separately blocked and not part of this Level-2 native evidence.",
       "redo_only_if": "Relevant source, configuration, evidence, or acceptance scope changes; document why."
     },
     {
       "id": "B3",
       "title": "Level 3: original model generation",
       "status": "BLOCKED",
-      "completion_scope": "Requires authorized credentials and verified historical model availability; no paid calls or substitute model authorized.",
+      "completion_scope": "Historical original model generation NOT executed. OpenAI API gpt-4-turbo-2024-04-09 scheduled for retirement 23 October 2026; original released Azure deployment version remains unpinned. Requires explicitly authorized account/model access plus cost budget OR explicitly approved irreproducibility exception.",
       "dependencies": [
         "A"
       ],
@@ -218,107 +281,225 @@
         "independently_checked": false,
         "reviewer": "Pending acceptance review"
       },
-      "next_action": "Record exact model/dependency constraints; continue Level 2 without paid calls.",
+      "next_action": "User decision required. Official OpenAI API retirement notice: 2026-10-23 for gpt-4-turbo-2024-04-09; no proof authors' original unpinned Azure deployment remains equivalent/available. Obtain actual verified deployment plus legal authorized paid credentials and cost ceiling for separate labeled pilot OR explicitly record accepted B3/no-refactoring irreproducibility exceptions. Never make paid calls, guess historical replies or silently mark B3 PASS.",
       "redo_only_if": "Relevant source, configuration, evidence, or acceptance scope changes; document why."
     },
     {
-      "id": "C",
-      "title": "Exact task identities and evaluator semantics",
-      "status": "IN_PROGRESS",
-      "completion_scope": "Reconcile native, processed, generated and outcome IDs; audit oracle, candidate order, MASCOT and tolerances.",
+      "id": "C1",
+      "title": "Exact archived task identity and outcome semantics",
+      "status": "PASS",
+      "completion_scope": "313 IDs and order,1252 candidate hashes,313 template hashes and28 source-file hashes independently checked; saved-flag meaning verified. No fresh execution claimed.",
       "dependencies": [
         "M3"
       ],
       "evidence_paths": [
+        "research/evidence/2026-10-14/identity_verified_scores.json",
+        "research/original_source_audit.md",
+        "research/reviews/pr5-independent-review.md"
+      ],
+      "evidence_commit": "8d9cf2e5125fbcb8255e30c1e5b8841324223461",
+      "verification": {
+        "implemented": true,
+        "executed": true,
+        "evidence_preserved": true,
+        "independently_checked": true,
+        "reviewer": "original_source_audit agent; exact-head CI38640911552 and38640911559"
+      },
+      "next_action": "Preserve evidence; use it to enforce original-source pairing during Level2 replay.",
+      "redo_only_if": "Archive bytes, parser implementation or acceptance scope changes; record reason."
+    },
+    {
+      "id": "C",
+      "title": "Exact task identities and evaluator semantics",
+      "status": "PASS",
+      "completion_scope": "313 original identities, all available stage2/stage3 archived scores, independent 626-candidate fresh stage2 original MASCOT replay, original oracle limitations and available ablation search accepted WITH explicit unavailable no-refactoring group.",
+      "dependencies": [
+        "M3",
+        "C1"
+      ],
+      "evidence_paths": [
         "research/reviews/pr5-independent-review.md",
         "research/evidence/2026-10-14/identity_verified_scores.json",
-        "research/original_source_audit.md"
+        "research/original_source_audit.md",
+        "research/evidence/2026-10-18/stage2-mascot-smoke-receipt.json",
+        "research/reviews/stage2-smoke-independent-review.md",
+        "research/replay/stage2-protocol.md",
+        "research/evidence/2026-10-18/stage2-original-full-independent-acceptance.json",
+        "research/reviews/stage2-full-original-mascot-independent-acceptance.md",
+        "research/evidence/2026-10-18/stage2-full-6split-independent-audit.json",
+        "research/reviews/integrated-independent-practical-acceptance-20261018.md",
+        "research/evidence/2026-10-18/no-refactoring-numeric-collision-review.json"
       ],
-      "evidence_commit": "5ca3809f15e8e326ff2d0a9b2e23993704be3dda",
+      "evidence_commit": "990bd9f9ce0c539a949df44fbca5843fefd12e8c",
       "verification": {
-        "implemented": false,
-        "executed": false,
+        "implemented": true,
+        "executed": true,
         "evidence_preserved": true,
-        "independently_checked": false,
-        "reviewer": "Pending acceptance review"
+        "independently_checked": true,
+        "reviewer": "Secondary assistant reviewer, independent raw artifact/paper/saved-stage audit 18 Oct 2026; bounded acceptance only, not external certification"
       },
-      "next_action": "Exact ID/order joins and saved-flag semantics verified; finish runtime classification and template-specific oracle audit for fresh replay.",
+      "next_action": "Preserve full original stage2 and stage3 native artifacts and all original failures. Do not reclassify UniTrans/GPT4 numeric collision as SPDZCoder without-refactoring, nor claim LLM generation.",
       "redo_only_if": "Relevant source, configuration, evidence, or acceptance scope changes; document why."
+    },
+    {
+      "id": "D1",
+      "title": "Accepted authentic privacy witnesses",
+      "status": "PASS",
+      "completion_scope": "Two archived candidates distinguish private inputs with identical permitted outputs;16native/diagnostic controls independently checked under explicit policy.",
+      "dependencies": [
+        "B2b",
+        "C1"
+      ],
+      "evidence_paths": [
+        "research/evidence/2026-10-15/original-diagnostics/receipt.json",
+        "research/replay/diagnostic_protocol.md",
+        "research/reviews/diagnostic-evidence-review.md"
+      ],
+      "evidence_commit": "aa89eb661370480643a6637180b773d080009437",
+      "verification": {
+        "implemented": true,
+        "executed": true,
+        "evidence_preserved": true,
+        "independently_checked": true,
+        "reviewer": "diagnostic_review verified133rawfiles,16executions,exactarchivedASTs and bothpartylogs"
+      },
+      "next_action": "Preserve measured counterexamples. Validate an actual original-pipeline fix and output-preserving paired comparisons.",
+      "redo_only_if": "Candidate, input, observer, policy or runtime changes; record the reason."
     },
     {
       "id": "D",
       "title": "Demonstrated original-system limitation",
-      "status": "NOT_STARTED",
-      "completion_scope": "Investigate original 25 both-failed tasks and other candidate classes; choose one evidenced failure.",
+      "status": "PASS",
+      "completion_scope": "One authentic original-system substantive limitation accepted: candidate-level explicit intermediate comparison opening under defined private-input/output-only policy, with two runtime witnesses. Other classes not universally solved.",
       "dependencies": [
         "A",
         "B2"
       ],
-      "evidence_paths": [],
-      "evidence_commit": null,
+      "evidence_paths": [
+        "research/replay/native_oracle_audit.md",
+        "research/original_source_audit.md",
+        "research/limitation_candidates.md",
+        "research/replay/diagnostic_protocol.md",
+        "research/reviews/diagnostic-review.md",
+        "research/evidence/2026-10-15/original-diagnostics/receipt.json",
+        "research/reviews/diagnostic-evidence-review.md",
+        "research/reviews/integrated-independent-practical-acceptance-20261018.md",
+        "research/evidence/2026-10-15/original-diagnostics/limitation-probes/diagnostic-summary.json"
+      ],
+      "evidence_commit": "990bd9f9ce0c539a949df44fbca5843fefd12e8c",
       "verification": {
-        "implemented": false,
-        "executed": false,
-        "evidence_preserved": false,
-        "independently_checked": false,
-        "reviewer": "Pending acceptance review"
+        "implemented": true,
+        "executed": true,
+        "evidence_preserved": true,
+        "independently_checked": true,
+        "reviewer": "Secondary assistant reviewer, independent raw artifact/paper/saved-stage audit 18 Oct 2026; bounded acceptance only, not external certification"
       },
-      "next_action": "Use authentic failures and original evaluator witnesses; do not select the old fix by convenience.",
+      "next_action": "Preserve tested original privacy witness. Do not claim historical exploit or that all original intermediate openings are fixed.",
       "redo_only_if": "Relevant source, configuration, evidence, or acceptance scope changes; document why."
     },
     {
       "id": "E",
       "title": "Patch actual original system",
-      "status": "NOT_STARTED",
-      "completion_scope": "A runnable, narrowly scoped original-source patch with before/after regression evidence.",
+      "status": "PASS",
+      "completion_scope": "Hash-pinned patch to both authors' original pipeline entrypoints accepted within narrow supported sint mask-product transformation; target 64 executions plus full paired source-level replay, bounded fallback and original evaluator retained.",
       "dependencies": [
         "D"
       ],
-      "evidence_paths": [],
-      "evidence_commit": null,
+      "evidence_paths": [
+        "research/modifications/README.md",
+        "research/modifications/secret_arithmetic.py",
+        "research/modifications/original-pipeline.patch",
+        "research/modifications/pinned-patch-manifest.json",
+        "scripts/apply_original_postprocess.py",
+        "research/reviews/secret-arithmetic-review-findings.md",
+        "research/reviews/paired-smoke-preexecution-review.md",
+        "research/evidence/2026-10-16/paired-smoke/receipt.json",
+        "research/evidence/2026-10-16/paired-smoke/measurements.json",
+        "research/reviews/paired-smoke-evidence-review.md",
+        "research/reviews/integrated-independent-practical-acceptance-20261018.md"
+      ],
+      "evidence_commit": "990bd9f9ce0c539a949df44fbca5843fefd12e8c",
       "verification": {
-        "implemented": false,
-        "executed": false,
-        "evidence_preserved": false,
-        "independently_checked": false,
-        "reviewer": "Pending acceptance review"
+        "implemented": true,
+        "executed": true,
+        "evidence_preserved": true,
+        "independently_checked": true,
+        "reviewer": "Secondary assistant reviewer, independent raw artifact/paper/saved-stage audit 18 Oct 2026; bounded acceptance only, not external certification"
       },
-      "next_action": "Implement only after D establishes a real original-system defect.",
+      "next_action": "Preserve accepted code hash and limited invariants; mixed opened-operand lower_bound is knowingly unsupported. Do not claim general cryptographic confidentiality.",
       "redo_only_if": "Relevant source, configuration, evidence, or acceptance scope changes; document why."
+    },
+    {
+      "id": "E1",
+      "title": "Accepted original-modification paired smoke",
+      "status": "PASS",
+      "completion_scope": "32pairs/64executions;2authentictranslations preserve tested outputs and remove50observed openingevents. No full-regression or general privacy guarantee.",
+      "dependencies": [
+        "D1",
+        "B2b",
+        "C1"
+      ],
+      "evidence_paths": [
+        "research/evidence/2026-10-16/paired-smoke/receipt.json",
+        "research/evidence/2026-10-16/paired-smoke/measurements.json",
+        "research/reviews/paired-smoke-evidence-review.md"
+      ],
+      "evidence_commit": "35adfb04c1132ae91d1b2c6e21cf791855eab768",
+      "verification": {
+        "implemented": true,
+        "executed": true,
+        "evidence_preserved": true,
+        "independently_checked": true,
+        "reviewer": "diagnostic_review independently checked718files,64executions,exactpipelinepatches andoutput/openingtraces"
+      },
+      "next_action": "Preserve; run complete626candidate paired native comparison using the exact accepted modification and critical harness pins.",
+      "redo_only_if": "Modification, critical harness, input/policy or environment changes; record the reason."
     },
     {
       "id": "F",
       "title": "Paired baseline and modification comparison",
-      "status": "NOT_STARTED",
-      "completion_scope": "Matched raw baseline/modified measurements, regressions, ablation, uncertainty and full failure matrix.",
+      "status": "PASS",
+      "completion_scope": "Full fair 626-pair original-vs-patched original-native MASCOT comparison accepted WITH bounded interpretation: only 2 source changes, 4 source-identical control acceptance flips, no attributable overall correctness gain; targeted opening removal and extra protocol costs.",
       "dependencies": [
         "B2",
         "E"
       ],
-      "evidence_paths": [],
-      "evidence_commit": null,
+      "evidence_paths": [
+        "scripts/replay_modified.py",
+        "scripts/verify_paired_replay.py",
+        "research/modifications/README.md",
+        "research/reviews/paired-smoke-preexecution-review.md",
+        "research/evidence/2026-10-16/paired-smoke/receipt.json",
+        "research/reviews/paired-smoke-evidence-review.md",
+        "research/reviews/full-paired-preexecution-review.md",
+        "scripts/summarize_paired_replay.py",
+        "scripts/check_paired_smoke_gate.py",
+        "research/reviews/integrated-independent-practical-acceptance-20261018.md",
+        "research/evidence/2026-10-18/stage2-original-full-independent-acceptance.json"
+      ],
+      "evidence_commit": "990bd9f9ce0c539a949df44fbca5843fefd12e8c",
       "verification": {
-        "implemented": false,
-        "executed": false,
-        "evidence_preserved": false,
-        "independently_checked": false,
-        "reviewer": "Pending acceptance review"
+        "implemented": true,
+        "executed": true,
+        "evidence_preserved": true,
+        "independently_checked": true,
+        "reviewer": "Secondary assistant reviewer, independent raw artifact/paper/saved-stage audit 18 Oct 2026; bounded acceptance only, not external certification"
       },
-      "next_action": "Measure original and modified source with identical tasks, oracle and protocol.",
+      "next_action": "Preserve paired original/modified raw run38989067493, original-only variability run39043579023 and output-only threat model; no causal correctness claim. Independent PR7 remains to integrate in G.",
       "redo_only_if": "Relevant source, configuration, evidence, or acceptance scope changes; document why."
     },
     {
       "id": "G",
       "title": "Practical evidence acceptance",
       "status": "IN_PROGRESS",
-      "completion_scope": "Independent review, CI and durable evidence for every completed practical requirement.",
+      "completion_scope": "Final requirements/exception reconciliation and validated integration of PR #6 into main are pending. A/C/F and other listed practical subphases passed ONLY within the evidence-scoped author-native evaluation/archived methodology limits.",
       "dependencies": [
         "M6"
       ],
       "evidence_paths": [
         "research/reviews/pr5-independent-review.md"
       ],
-      "evidence_commit": "5ca3809f15e8e326ff2d0a9b2e23993704be3dda",
+      "evidence_commit": "7b79ac5dda10e53529f843242c93cb880e16ba51",
       "verification": {
         "implemented": false,
         "executed": false,
@@ -326,14 +507,14 @@
         "independently_checked": false,
         "reviewer": "Pending acceptance review"
       },
-      "next_action": "Repair audit helpers, verify task identities, obtain current CI/review before merging PR #5.",
+      "next_action": "Genuine final original TAR content recovery attempt completed at original source 211cd1f (498 scanned readable author files, 35 author evaluation groups), no attributable SPDZCoder no-refactoring experiment. Girish's explicit conditional permission to merge with both historical gaps labeled NOT REPRODUCED is documented, after the bounded credible routes were exhausted without paid API keys. Review new-head CI and exact exception record; merge PR6 research integration to main (preserve B3 BLOCKED/R2,R3,R8 IN_PROGRESS and report lock). Then independently validate new exact main and only then mark G and R9 as scoped practical readiness, with REPORT still BLOCKED.",
       "redo_only_if": "Relevant source, configuration, evidence, or acceptance scope changes; document why."
     },
     {
       "id": "REPORT",
       "title": "Final report readiness (writing locked)",
       "status": "BLOCKED",
-      "completion_scope": "Practical R1\u2013R8 accepted; report writing still requires separate explicit user authorization.",
+      "completion_scope": "Report WRITING remains BLOCKED until practical G readiness and separate explicit report authorization. Historical B3 and genuine SPDZCoder without-refactoring experiments remain NOT REPRODUCED; user accepted transparent scoped research-integration exceptions only.",
       "dependencies": [
         "A",
         "B2",
@@ -351,8 +532,21 @@
         "independently_checked": false,
         "reviewer": "Pending acceptance review"
       },
-      "next_action": "Continue practical work. Ask for report permission only when readiness gate passes.",
+      "next_action": "No professor-facing report until R1–R8 have defensibly passed or explicit exceptions are accepted AND Girish separately authorizes writing. Continue Phase G integration audit.",
       "redo_only_if": "Relevant source, configuration, evidence, or acceptance scope changes; document why."
+    }
+  ],
+  "current_branch": "research/original-evaluator-replay-20261015",
+  "validated_main_commit": "5fbc6095eb4e5a37b8818be7d1ec7596753445cd",
+  "merged_prs": [
+    {
+      "number": 5,
+      "merge_commit": "5fbc6095eb4e5a37b8818be7d1ec7596753445cd",
+      "tested_head": "8d9cf2e5125fbcb8255e30c1e5b8841324223461",
+      "ci_runs": [
+        38640911552,
+        38640911559
+      ]
     }
   ]
 }

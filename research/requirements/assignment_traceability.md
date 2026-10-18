@@ -5,15 +5,15 @@ These are practical acceptance gates. Historical milestones do not replace origi
 
 | ID | Requirement | Status | Phases |
 |---|---|---|---|
-| R1 | Study original paper | **IN_PROGRESS** | A |
+| R1 | Study original paper | **PASS** | A |
 | R2 | Reproduce original implementation | **IN_PROGRESS** | A, B2, B3 |
-| R3 | Reproduce key results | **IN_PROGRESS** | B1, B2, C |
-| R4 | Explain actual methodology | **IN_PROGRESS** | A |
-| R5 | Demonstrate substantive limitation | **NOT_STARTED** | D |
-| R6 | Implement original-source modification | **NOT_STARTED** | E |
-| R7 | Compare original and modified | **NOT_STARTED** | F |
+| R3 | Reproduce key results | **IN_PROGRESS** | B1, B2, C, C1, B2a, B2b |
+| R4 | Explain actual methodology | **PASS** | A |
+| R5 | Demonstrate substantive limitation | **PASS** | D, D1 |
+| R6 | Implement original-source modification | **PASS** | E, E1 |
+| R7 | Compare original and modified | **PASS** | F |
 | R8 | Document reproduction difficulties | **IN_PROGRESS** | A, B2, B3, G |
-| R9 | Final report readiness | **BLOCKED** | REPORT |
+| R9 | Final report readiness | **BLOCKED** | G |
 
 ## R1 — Study original paper
 
@@ -24,11 +24,11 @@ These are practical acceptance gates. Historical milestones do not replace origi
 - **Experimental obligation:** Trace representative authentic tasks through all stages.
 - **Expected outputs:** Paper-to-code map and seven task traces.
 - **Acceptance criteria:** Every major component traced with exact source paths.
-- **Known limitations:** Paper audit exists; source mapping incomplete.
-- **Verification reviewer:** Pending requirement acceptance; historical audit reviewed by code_review agent
-- **Evidence:** `docs/deep_paper_audit.md`, `research/original_source_audit.md`
-- **Evidence commit:** Pending
-- **Workflow identifiers:** https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557115103, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557128629, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557114938
+- **Known limitations:** Source-linked paper/implementation mapping and seven authentic archived stage snapshots accepted within the reviewed original-source scope. The exact historical LLM call sequence, pre-reflection outputs and full rule-by-rule transcripts cannot be recovered; original code contradicts idealized paper control-flow details. B3 remains blocked; the genuine no-refactoring ablation is unverified.
+- **Verification reviewer:** Secondary assistant independent audit of source, published paper and raw native/original ZIPs; not an external third-party certification
+- **Evidence:** `docs/deep_paper_audit.md`, `research/original_source_audit.md`, `research/reviews/integrated-independent-practical-acceptance-20261018.md`, `research/reviews/phase-a-paper-source-crosswalk-20261018.md`, `research/evidence/2026-10-18/seven-category-stage-receipt.json`
+- **Evidence commit:** 990bd9f9ce0c539a949df44fbca5843fefd12e8c
+- **Workflow identifiers:** https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557115103, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557128629, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557114938, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39073490709
 
 ## R2 — Reproduce original implementation
 
@@ -39,11 +39,11 @@ These are practical acceptance gates. Historical milestones do not replace origi
 - **Experimental obligation:** Smoke then execute intended stages; disclose historical dependency blockers.
 - **Expected outputs:** Source manifest, environment pins and run logs.
 - **Acceptance criteria:** Original execution evidenced; substitutions cannot count as PASS.
-- **Known limitations:** Archive retrieved; full generation needs credentials/model availability.
-- **Verification reviewer:** Pending requirement acceptance; historical audit reviewed by code_review agent
-- **Evidence:** `research/evidence/2026-10-14/source_provenance.json`, `research/original_source_audit.md`
-- **Evidence commit:** Pending
-- **Workflow identifiers:** https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557115103, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557128629, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557114938
+- **Known limitations:** R2 remains IN_PROGRESS: Level 2 original native MASCOT evaluation is reproduced but Level 3 exact historical model generation is not. The paper names gpt-4-turbo-2024-04-09; released Azure deployment 'gpt-4' is not a reproducible version pin. OpenAI API schedules that snapshot for Oct 23, 2026 shutdown, but authors' historical Azure deployment current availability is unverified. Model access/cost and an irreproducibility exception both require explicit Girish authorization; no substitutes or secret access presumed. User conditionally accepted precisely documented unreproduced historical B3/no-refactoring exceptions AFTER the 498-file/35-group original archive recovery audit, for research merge only. Do NOT relabel missing experiments as reproduced; B3 remains BLOCKED.
+- **Verification reviewer:** Native evaluation evidence and source/hashes reviewed in existing independent evidence records; B3 not executed or externally certified.
+- **Evidence:** `research/evidence/2026-10-14/source_provenance.json`, `research/original_source_audit.md`, `research/evidence/2026-10-15/original-smoke/receipt.json`, `research/reviews/original-replay-review.md`, `research/evidence/2026-10-15/original-full/receipt.json`, `research/reviews/full-replay-evidence-review.md`, `research/reviews/integrated-independent-practical-acceptance-20261018.md`, `research/evidence/2026-10-18/stage2-original-full-independent-acceptance.json`, `research/reviews/stage2-full-original-mascot-independent-acceptance.md`, `research/evidence/2026-10-18/stage2-native-reproduction-difficulties.json`, `research/evidence/2026-10-18/phase-g-stage2-raw-secondary-independent-audit.json`, `research/reviews/phase-g-stage2-secondary-raw-audit-20261018.md`, `scripts/audit_stage2_phase_g_secondary.py`, `research/reviews/historical-gpt4-availability-and-exception-20261018.md`, `research/evidence/2026-10-18/final-attempt-original-no-refactoring-content-audit.json`, `research/reviews/phase-g-final-recovery-and-conditional-exception-review-20261018.md`, `research/evidence/2026-10-18/original-author-git-history-independent-audit.json`, `research/reviews/phase-g-original-hidden-history-independent-review-20261018.md`
+- **Evidence commit:** 990bd9f9ce0c539a949df44fbca5843fefd12e8c
+- **Workflow identifiers:** https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557115103, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557128629, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557114938, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38673372763, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38703569637, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39075744038, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39080161119, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39136184598, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39136978957
 
 ## R3 — Reproduce key results
 
@@ -54,11 +54,11 @@ These are practical acceptance gates. Historical milestones do not replace origi
 - **Experimental obligation:** Attempt all 313 tasks, comparative baselines and available ablations.
 - **Expected outputs:** Task-level outcomes, category metrics and logs.
 - **Acceptance criteria:** Independent compile/runtime/oracle evidence; archived flags alone insufficient.
-- **Known limitations:** Archived first 269/313, second 265/313, union 288/313; fresh replay pending.
-- **Verification reviewer:** Pending requirement acceptance; historical audit reviewed by code_review agent
-- **Evidence:** `research/evidence/2026-10-14/original_saved_evaluation_metrics.json`, `research/original_source_audit.md`, `research/evidence/2026-10-14/identity_verified_scores.json`
-- **Evidence commit:** Pending
-- **Workflow identifiers:** https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557115103, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557128629, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557114938
+- **Known limitations:** R3 remains IN_PROGRESS pending explicit user decision for historical LLM generation and genuine unidentifiable SPDZCoder no-refactoring ablation. OpenAI API snapshot gpt-4-turbo-2024-04-09 is scheduled for Oct 23, 2026 shutdown but this does not establish historical Azure deployment availability. Numeric-match UniTrans/GPT-4 group is not substituted. Original oracle false positives, one missing native test and archived/native disagreement are disclosed. No general correctness/security proof. User conditionally accepted precisely documented unreproduced historical B3/no-refactoring exceptions AFTER the 498-file/35-group original archive recovery audit, for research merge only. Do NOT relabel missing experiments as reproduced; B3 remains BLOCKED.
+- **Verification reviewer:** Original native saved-source evaluation and archived flag evidence independently reviewed within the original oracle scope; no original historical model generation and no genuine original no-refactoring ablation certified.
+- **Evidence:** `research/evidence/2026-10-14/original_saved_evaluation_metrics.json`, `research/original_source_audit.md`, `research/evidence/2026-10-14/identity_verified_scores.json`, `research/evidence/2026-10-15/original-smoke/receipt.json`, `research/reviews/original-replay-review.md`, `research/evidence/2026-10-15/original-full/receipt.json`, `research/reviews/full-replay-evidence-review.md`, `research/reviews/integrated-independent-practical-acceptance-20261018.md`, `research/evidence/2026-10-18/stage2-original-full-independent-acceptance.json`, `research/evidence/2026-10-18/saved-stage2-stage3-audit-receipt.json`, `research/evidence/2026-10-18/stage2-native-reproduction-difficulties.json`, `research/reviews/stage2-full-original-mascot-independent-acceptance.md`, `research/reviews/archived-stage2-stage3-evaluation-review.md`, `research/evidence/2026-10-18/authors-no-refactoring-inventory-review.json`, `research/evidence/2026-10-18/phase-g-stage2-raw-secondary-independent-audit.json`, `research/reviews/phase-g-stage2-secondary-raw-audit-20261018.md`, `scripts/audit_stage2_phase_g_secondary.py`, `research/reviews/historical-gpt4-availability-and-exception-20261018.md`, `research/evidence/2026-10-18/final-attempt-original-no-refactoring-content-audit.json`, `research/reviews/phase-g-final-recovery-and-conditional-exception-review-20261018.md`, `research/evidence/2026-10-18/original-author-git-history-independent-audit.json`, `research/reviews/phase-g-original-hidden-history-independent-review-20261018.md`
+- **Evidence commit:** 990bd9f9ce0c539a949df44fbca5843fefd12e8c
+- **Workflow identifiers:** https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557115103, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557128629, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557114938, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38673372763, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38703569637, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39073915415, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39075744038, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39080161119, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39136184598, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39136978957
 
 ## R4 — Explain actual methodology
 
@@ -69,11 +69,11 @@ These are practical acceptance gates. Historical milestones do not replace origi
 - **Experimental obligation:** Capture seven category traces without fabricated responses.
 - **Expected outputs:** Source map and authentic intermediate representations.
 - **Acceptance criteria:** Each explanation linked to reproducible original-source traces.
-- **Known limitations:** Conceptual notes exist; original-source traces incomplete.
-- **Verification reviewer:** Pending requirement acceptance; historical audit reviewed by code_review agent
-- **Evidence:** `docs/paper_guide.md`, `research/original_source_audit.md`
-- **Evidence commit:** Pending
-- **Workflow identifiers:** Pending
+- **Known limitations:** Seven authentic saved intermediate stage snapshots and original source routes are mapped, but missing historical pre-reflection and repair conversations prevent reconstructing exact model chronology. Stage-1 early break and feedback reset discrepancies are retained. No fresh historical LLM stage claimed.
+- **Verification reviewer:** Secondary assistant independent audit of source, published paper and raw native/original ZIPs; not an external third-party certification
+- **Evidence:** `docs/paper_guide.md`, `research/original_source_audit.md`, `research/reviews/integrated-independent-practical-acceptance-20261018.md`, `research/reviews/phase-a-paper-source-crosswalk-20261018.md`, `research/evidence/2026-10-18/seven-category-stage-receipt.json`
+- **Evidence commit:** 990bd9f9ce0c539a949df44fbca5843fefd12e8c
+- **Workflow identifiers:** https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39073490709
 
 ## R5 — Demonstrate substantive limitation
 
@@ -84,11 +84,11 @@ These are practical acceptance gates. Historical milestones do not replace origi
 - **Experimental obligation:** Minimal witness, alternatives, affected scope and impact.
 - **Expected outputs:** Limitation dossier and failing original case.
 - **Acceptance criteria:** Authentic original-system witness executes and is independently checked.
-- **Known limitations:** Static reveals are indicators, not confirmed leaks; earlier tests used independent reconstruction.
-- **Verification reviewer:** Pending requirement acceptance; historical audit reviewed by code_review agent
-- **Evidence:** Pending
-- **Evidence commit:** Pending
-- **Workflow identifiers:** Pending
+- **Known limitations:** Two authentic private-input/output-only disclosure witnesses under the defined observation policy; this is not proof of a deployed historical exploit, universal noninterference or disclosure for all generated code. The mixed-operand lower_bound case remains unsupported by the selected patch.
+- **Verification reviewer:** Secondary assistant independent audit of source, published paper and raw native/original ZIPs; not an external third-party certification
+- **Evidence:** `research/replay/native_oracle_audit.md`, `research/original_source_audit.md`, `research/limitation_candidates.md`, `research/replay/diagnostic_protocol.md`, `research/reviews/diagnostic-review.md`, `research/evidence/2026-10-15/original-diagnostics/receipt.json`, `research/reviews/diagnostic-evidence-review.md`, `research/reviews/integrated-independent-practical-acceptance-20261018.md`, `research/evidence/2026-10-15/original-diagnostics/limitation-probes/diagnostic-summary.json`
+- **Evidence commit:** 990bd9f9ce0c539a949df44fbca5843fefd12e8c
+- **Workflow identifiers:** https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38742644019
 
 ## R6 — Implement original-source modification
 
@@ -99,11 +99,11 @@ These are practical acceptance gates. Historical milestones do not replace origi
 - **Experimental obligation:** Meaningful before/after regression and scope tests.
 - **Expected outputs:** Patch, source hashes, tests and run logs.
 - **Acceptance criteria:** Modification addresses demonstrated failure without hidden oracle/input changes.
-- **Known limitations:** No qualifying original-source patch accepted yet.
-- **Verification reviewer:** Pending requirement acceptance; historical audit reviewed by code_review agent
-- **Evidence:** Pending
-- **Evidence commit:** Pending
-- **Workflow identifiers:** Pending
+- **Known limitations:** Only comparison-bit products with a supported secret-integer invariant. Mixed opened-operand comparisons including lower_bound are unchanged. Full model-dependent pipeline not executed. Accepted ONLY within stated original-source/raw-native scope. Historical model regeneration and true no-refactoring original output remain unresolved; no universal correctness or security proof.
+- **Verification reviewer:** Secondary assistant independent audit of source, published paper and raw native/original ZIPs; not an external third-party certification
+- **Evidence:** `research/modifications/README.md`, `research/modifications/secret_arithmetic.py`, `research/modifications/original-pipeline.patch`, `research/modifications/pinned-patch-manifest.json`, `scripts/apply_original_postprocess.py`, `research/reviews/secret-arithmetic-review-findings.md`, `research/reviews/paired-smoke-preexecution-review.md`, `research/evidence/2026-10-16/paired-smoke/receipt.json`, `research/evidence/2026-10-16/paired-smoke/measurements.json`, `research/reviews/paired-smoke-evidence-review.md`, `research/reviews/integrated-independent-practical-acceptance-20261018.md`
+- **Evidence commit:** 990bd9f9ce0c539a949df44fbca5843fefd12e8c
+- **Workflow identifiers:** https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38958484872
 
 ## R7 — Compare original and modified
 
@@ -114,11 +114,11 @@ These are practical acceptance gates. Historical milestones do not replace origi
 - **Experimental obligation:** Same candidates/input/oracle/protocol; ablation, regressions and uncertainty.
 - **Expected outputs:** Raw paired results, metrics and complete failure matrix.
 - **Acceptance criteria:** Measured baseline and modified results independently reproducible under equal conditions.
-- **Known limitations:** Independent DomainSafety results do not satisfy this requirement.
-- **Verification reviewer:** Pending requirement acceptance; historical audit reviewed by code_review agent
-- **Evidence:** Pending
-- **Evidence commit:** Pending
-- **Workflow identifiers:** Pending
+- **Known limitations:** Full 626-pair/1,252-execution original vs patched comparison and repeatability follow-up accepted only under the original native-oracle and narrow privacy observation model. Only two candidate source programs changed, both ACCEPT→ACCEPT. Four unchanged-source controls changed native acceptance; no causal general accuracy improvement. Costs increase for measured candidates. B3 model generation unavailable.
+- **Verification reviewer:** Secondary assistant independent audit of source, published paper and raw native/original ZIPs; not an external third-party certification
+- **Evidence:** `scripts/replay_modified.py`, `scripts/verify_paired_replay.py`, `research/modifications/README.md`, `research/reviews/paired-smoke-preexecution-review.md`, `research/evidence/2026-10-16/paired-smoke/receipt.json`, `research/evidence/2026-10-16/paired-smoke/measurements.json`, `research/reviews/paired-smoke-evidence-review.md`, `research/reviews/integrated-independent-practical-acceptance-20261018.md`, `research/reviews/paired-full-independent-control-audit.md`, `research/reviews/phase-f-bounded-native-interpretation-20261018.md`, `research/evidence/2026-10-18/phase-g-paired-secondary-recomputed.json`, `research/reviews/phase-g-paired-secondary-recomputed-20261018.md`
+- **Evidence commit:** 990bd9f9ce0c539a949df44fbca5843fefd12e8c
+- **Workflow identifiers:** https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38958484872, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38989067493, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39043579023
 
 ## R8 — Document reproduction difficulties
 
@@ -129,11 +129,11 @@ These are practical acceptance gates. Historical milestones do not replace origi
 - **Experimental obligation:** Track environment, dependency, model, data, compiler and oracle failures.
 - **Expected outputs:** Difficulty register tied to commands, logs and resolutions.
 - **Acceptance criteria:** Every attempted run or failure has an inspectable cause/status.
-- **Known limitations:** Initial failures documented; execution and full failure inventory ongoing.
-- **Verification reviewer:** Pending requirement acceptance; historical audit reviewed by code_review agent
-- **Evidence:** `docs/reproduction_log.md`, `research/reviews/pr5-independent-review.md`, `research/original_source_audit.md`
-- **Evidence commit:** Pending
-- **Workflow identifiers:** https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557115103, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557128629, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557114938
+- **Known limitations:** Complete source-run stage-2 failure inventory and known stage-3, oracle, environment, repair-control-flow and ablation difficulties are preserved. Still IN_PROGRESS for top-level gate reconciliation while B3 irreproducibility exception and final Phase G acceptance remain unapproved; do not describe the completed 626-candidate replay as pending. User conditionally accepted precisely documented unreproduced historical B3/no-refactoring exceptions AFTER the 498-file/35-group original archive recovery audit, for research merge only. Do NOT relabel missing experiments as reproduced; B3 remains BLOCKED.
+- **Verification reviewer:** Secondary raw native-artifact reviews record full failure inventory, timeouts and recovery; historical-generation limits remain and final governance closure not certified.
+- **Evidence:** `docs/reproduction_log.md`, `research/reviews/pr5-independent-review.md`, `research/original_source_audit.md`, `research/evidence/2026-10-15/original-smoke/receipt.json`, `research/reviews/original-replay-review.md`, `research/evidence/2026-10-15/original-full/attempt-1.json`, `research/evidence/2026-10-15/original-full/receipt.json`, `research/reviews/full-replay-evidence-review.md`, `research/reviews/integrated-independent-practical-acceptance-20261018.md`, `research/evidence/2026-10-18/stage2-original-full-independent-acceptance.json`, `research/evidence/2026-10-18/stage2-native-reproduction-difficulties.json`, `research/reviews/stage2-full-original-mascot-independent-acceptance.md`, `research/evidence/2026-10-18/phase-g-stage2-raw-secondary-independent-audit.json`, `research/reviews/phase-g-stage2-secondary-raw-audit-20261018.md`, `scripts/audit_stage2_phase_g_secondary.py`, `research/evidence/2026-10-18/final-attempt-original-no-refactoring-content-audit.json`, `research/reviews/phase-g-final-recovery-and-conditional-exception-review-20261018.md`, `research/evidence/2026-10-18/original-author-git-history-independent-audit.json`, `research/reviews/phase-g-original-hidden-history-independent-review-20261018.md`
+- **Evidence commit:** 990bd9f9ce0c539a949df44fbca5843fefd12e8c
+- **Workflow identifiers:** https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557115103, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557128629, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557114938, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38673372763, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38703569637, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39075744038, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39080161119, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39136184598, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39136978957
 
 ## R9 — Final report readiness
 
@@ -144,7 +144,7 @@ These are practical acceptance gates. Historical milestones do not replace origi
 - **Experimental obligation:** Independent final review of every practical acceptance gate.
 - **Expected outputs:** Gate summary and user authorization record, then eventual report.
 - **Acceptance criteria:** R1–R8 defensibly complete or exceptions accepted; user permission before drafting.
-- **Known limitations:** No accepted practical exceptions and no report authorization.
+- **Known limitations:** Practical report readiness remains BLOCKED until G is accepted on exact main plus all R1–R8 are PASS or explicit user-approved, narrowly scoped exception decisions are recorded for unresolved requirements. User permission to draft the professor report is a separate later gate (REPORT), not a dependency of R9 readiness.
 - **Verification reviewer:** Pending requirement acceptance; historical audit reviewed by code_review agent
 - **Evidence:** `HANDOFF.md`, `research/requirements/execution_contract.md`
 - **Evidence commit:** Pending

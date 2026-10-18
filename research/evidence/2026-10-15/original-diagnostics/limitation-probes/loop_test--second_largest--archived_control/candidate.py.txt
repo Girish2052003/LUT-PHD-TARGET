@@ -1,0 +1,26 @@
+from Compiler.types import sint
+
+def second_largest(arr):
+    """
+    Return the second largest element in the array using secret shared integers.
+    """
+    # Assume arr is an Array of sint
+    largest = arr[0]
+    second = arr[1]
+    
+    # Initial comparison to establish first and second largest
+    condition = (arr[0] < arr[1])
+    second = condition.if_else(arr[0], arr[1])
+    largest = condition.if_else(arr[1], arr[0])
+
+    for i in range(2, len(arr)):
+        # Check if current element is larger than the largest
+        condition_1 = (arr[i] >= largest)
+        new_second = condition_1.if_else(largest, second)
+        largest = condition_1.if_else(arr[i], largest)
+
+        # Check if current element is only larger than the second
+        condition_2 = (arr[i] > second) & (1 - condition_1)
+        second = condition_2.if_else(arr[i], new_second)
+
+    return second

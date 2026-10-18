@@ -1,0 +1,16 @@
+Default bit length: 64
+Default security parameter: 40
+Compiling file /run/paired-baseline/evaluation/evaluation_storage/is_ascending.mpc
+Writing to Programs/Schedules/is_ascending.sch
+Writing to Programs/Bytecode/is_ascending-0.bc
+Hash: 2799d05f31349984ab8f15e42c5b14bf39c2c70ec603dd1500d33786774fd9c5
+Program requires at most:
+           1 integer inputs from player 0
+           1 integer opens
+           2 virtual machine rounds
+Using security parameter 40
+AUTHORIZED=1
+The following benchmarks are including preprocessing (offline phase).
+Time = 0.656462 seconds 
+Data sent = 20.5237 MB in ~55 rounds (party 0 only; use '-v' for more details)
+Global data sent = 20.5653 MB (all parties)

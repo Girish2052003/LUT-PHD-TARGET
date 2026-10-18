@@ -1,0 +1,2 @@
+Running /mp-spdz/Scripts/../mascot-party.x 0 pass_or_not -pn 14801 -h localhost -N 2
+Running /mp-spdz/Scripts/../mascot-party.x 1 pass_or_not -pn 14801 -h localhost -N 2

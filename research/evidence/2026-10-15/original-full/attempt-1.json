@@ -1,0 +1,530 @@
+{
+  "research_commit": "769bb12ce342b814590061ef04fdffbbe19c9990",
+  "run_id": 38703569637,
+  "attempt": 1,
+  "coverage_complete": false,
+  "expected_candidate_records": 1252,
+  "verified_available_candidate_records": 1176,
+  "missing_system_split": "spdzcoder/math_test",
+  "missing_candidates": 76,
+  "failure_job_id": 116319461334,
+  "failure": "Zenodo download ended early: curl18,1298300 bytes remaining; no math candidate executed",
+  "aggregate_job_id": 116340436669,
+  "aggregate_failure": "Correctly rejected incomplete1252-record denominator; observed1176",
+  "recovery": "Rerun only failed jobs and dependent aggregate at the same commit; successful candidate artifacts retained",
+  "artifacts": [
+    {
+      "id": 11960277680,
+      "name": "original-full-spdzcoder-loop_test-769bb12ce342b814590061ef04fdffbbe19c9990",
+      "size_in_bytes": 910827,
+      "url": "https://api.github.com/repos/Girish2052003/LUT-PHD-TARGET/actions/artifacts/11960277680",
+      "archive_download_url": "https://api.github.com/repos/Girish2052003/LUT-PHD-TARGET/actions/artifacts/11960277680/zip",
+      "expired": false,
+      "created_at": "2026-10-15T09:06:33Z",
+      "expires_at": "2027-01-13T08:08:36Z",
+      "updated_at": "2026-10-15T09:06:33Z",
+      "digest": "sha256:d1f4abefd1a404902a3b4b3878f7cdc606871375fb2311e69861bfba0b423c82",
+      "workflow_run": {
+        "id": 38703569637,
+        "repository_id": 1418142272,
+        "head_repository_id": 1418142272,
+        "head_branch": "research/original-evaluator-replay-20261015",
+        "head_sha": "769bb12ce342b814590061ef04fdffbbe19c9990"
+      }
+    },
+    {
+      "id": 11960200428,
+      "name": "original-environment-spdzcoder-numpy_ufunc_test-769bb12ce342b814590061ef04fdffbbe19c9990",
+      "size_in_bytes": 3418,
+      "url": "https://api.github.com/repos/Girish2052003/LUT-PHD-TARGET/actions/artifacts/11960200428",
+      "archive_download_url": "https://api.github.com/repos/Girish2052003/LUT-PHD-TARGET/actions/artifacts/11960200428/zip",
+      "expired": false,
+      "created_at": "2026-10-15T08:51:53Z",
+      "expires_at": "2027-01-13T08:08:36Z",
+      "updated_at": "2026-10-15T08:51:53Z",
+      "digest": "sha256:c96c966ef6bcfc85199a4905f00b37a8ef22bc80ca2a8e4777c8adced7c720b8",
+      "workflow_run": {
+        "id": 38703569637,
+        "repository_id": 1418142272,
+        "head_repository_id": 1418142272,
+        "head_branch": "research/original-evaluator-replay-20261015",
+        "head_sha": "769bb12ce342b814590061ef04fdffbbe19c9990"
+      }
+    },
+    {
+      "id": 11960085803,
+      "name": "original-full-spdzcoder-numpy_ufunc_test-769bb12ce342b814590061ef04fdffbbe19c9990",
+      "size_in_bytes": 361169,
+      "url": "https://api.github.com/repos/Girish2052003/LUT-PHD-TARGET/actions/artifacts/11960085803",
+      "archive_download_url": "https://api.github.com/repos/Girish2052003/LUT-PHD-TARGET/actions/artifacts/11960085803/zip",
+      "expired": false,
+      "created_at": "2026-10-15T08:51:53Z",
+      "expires_at": "2027-01-13T08:08:36Z",
+      "updated_at": "2026-10-15T08:51:53Z",
+      "digest": "sha256:b4a66aee4cbf9c5faf893218bd91c626fab32fe8bad1f2f4f2e1e9cbbfd702fc",
+      "workflow_run": {
+        "id": 38703569637,
+        "repository_id": 1418142272,
+        "head_repository_id": 1418142272,
+        "head_branch": "research/original-evaluator-replay-20261015",
+        "head_sha": "769bb12ce342b814590061ef04fdffbbe19c9990"
+      }
+    },
+    {
+      "id": 11959779367,
+      "name": "original-environment-spdzcoder-loop_test-769bb12ce342b814590061ef04fdffbbe19c9990",
+      "size_in_bytes": 3406,
+      "url": "https://api.github.com/repos/Girish2052003/LUT-PHD-TARGET/actions/artifacts/11959779367",
+      "archive_download_url": "https://api.github.com/repos/Girish2052003/LUT-PHD-TARGET/actions/artifacts/11959779367/zip",
+      "expired": false,
+      "created_at": "2026-10-15T09:06:34Z",
+      "expires_at": "2027-01-13T08:08:36Z",
+      "updated_at": "2026-10-15T09:06:34Z",
+      "digest": "sha256:d92b24e9ebf7c815b0267f3854fc1370f6b574746723b52142536f404d44ca45",
+      "workflow_run": {
+        "id": 38703569637,
+        "repository_id": 1418142272,
+        "head_repository_id": 1418142272,
+        "head_branch": "research/original-evaluator-replay-20261015",
+        "head_sha": "769bb12ce342b814590061ef04fdffbbe19c9990"
+      }
+    },
+    {
+      "id": 11959421463,
+      "name": "original-full-gpt4_api_docs-loop_test-769bb12ce342b814590061ef04fdffbbe19c9990",
+      "size_in_bytes": 818102,
+      "url": "https://api.github.com/repos/Girish2052003/LUT-PHD-TARGET/actions/artifacts/11959421463",
+      "archive_download_url": "https://api.github.com/repos/Girish2052003/LUT-PHD-TARGET/actions/artifacts/11959421463/zip",
+      "expired": false,
+      "created_at": "2026-10-15T08:45:39Z",
+      "expires_at": "2027-01-13T08:08:36Z",
+      "updated_at": "2026-10-15T08:45:39Z",
+      "digest": "sha256:15ead07a468ba5ff3c97bad07e888c585441523f3afcde264eb2ddea403260d1",
+      "workflow_run": {
+        "id": 38703569637,
+        "repository_id": 1418142272,
+        "head_repository_id": 1418142272,
+        "head_branch": "research/original-evaluator-replay-20261015",
+        "head_sha": "769bb12ce342b814590061ef04fdffbbe19c9990"
+      }
+    },
+    {
+      "id": 11959140549,
+      "name": "original-full-spdzcoder-branch_test-769bb12ce342b814590061ef04fdffbbe19c9990",
+      "size_in_bytes": 362332,
+      "url": "https://api.github.com/repos/Girish2052003/LUT-PHD-TARGET/actions/artifacts/11959140549",
+      "archive_download_url": "https://api.github.com/repos/Girish2052003/LUT-PHD-TARGET/actions/artifacts/11959140549/zip",
+      "expired": false,
+      "created_at": "2026-10-15T08:38:24Z",
+      "expires_at": "2027-01-13T08:08:36Z",
+      "updated_at": "2026-10-15T08:38:24Z",
+      "digest": "sha256:f435b4004da959ad09c1afa43aafff0961cd9f66cbbba008b0ad692c2ddcf9ee",
+      "workflow_run": {
+        "id": 38703569637,
+        "repository_id": 1418142272,
+        "head_repository_id": 1418142272,
+        "head_branch": "research/original-evaluator-replay-20261015",
+        "head_sha": "769bb12ce342b814590061ef04fdffbbe19c9990"
+      }
+    },
+    {
+      "id": 11958980812,
+      "name": "original-environment-spdzcoder-branch_test-769bb12ce342b814590061ef04fdffbbe19c9990",
+      "size_in_bytes": 3411,
+      "url": "https://api.github.com/repos/Girish2052003/LUT-PHD-TARGET/actions/artifacts/11958980812",
+      "archive_download_url": "https://api.github.com/repos/Girish2052003/LUT-PHD-TARGET/actions/artifacts/11958980812/zip",
+      "expired": false,
+      "created_at": "2026-10-15T08:38:25Z",
+      "expires_at": "2027-01-13T08:08:36Z",
+      "updated_at": "2026-10-15T08:38:25Z",
+      "digest": "sha256:c3daa6d5fc210ebaef9f1303370ea4445b1698fbc415e282867e63a5ed50d6d7",
+      "workflow_run": {
+        "id": 38703569637,
+        "repository_id": 1418142272,
+        "head_repository_id": 1418142272,
+        "head_branch": "research/original-evaluator-replay-20261015",
+        "head_sha": "769bb12ce342b814590061ef04fdffbbe19c9990"
+      }
+    },
+    {
+      "id": 11958912251,
+      "name": "original-environment-gpt4_api_docs-loop_test-769bb12ce342b814590061ef04fdffbbe19c9990",
+      "size_in_bytes": 3413,
+      "url": "https://api.github.com/repos/Girish2052003/LUT-PHD-TARGET/actions/artifacts/11958912251",
+      "archive_download_url": "https://api.github.com/repos/Girish2052003/LUT-PHD-TARGET/actions/artifacts/11958912251/zip",
+      "expired": false,
+      "created_at": "2026-10-15T08:45:40Z",
+      "expires_at": "2027-01-13T08:08:36Z",
+      "updated_at": "2026-10-15T08:45:40Z",
+      "digest": "sha256:f8e59c93eb7d688da73dccd02836ddab5fda0da2fb26247eaeb4bf8a1c6aa8e4",
+      "workflow_run": {
+        "id": 38703569637,
+        "repository_id": 1418142272,
+        "head_repository_id": 1418142272,
+        "head_branch": "research/original-evaluator-replay-20261015",
+        "head_sha": "769bb12ce342b814590061ef04fdffbbe19c9990"
+      }
+    },
+    {
+      "id": 11958881563,
+      "name": "original-full-spdzcoder-array_test-769bb12ce342b814590061ef04fdffbbe19c9990",
+      "size_in_bytes": 418753,
+      "url": "https://api.github.com/repos/Girish2052003/LUT-PHD-TARGET/actions/artifacts/11958881563",
+      "archive_download_url": "https://api.github.com/repos/Girish2052003/LUT-PHD-TARGET/actions/artifacts/11958881563/zip",
+      "expired": false,
+      "created_at": "2026-10-15T08:33:58Z",
+      "expires_at": "2027-01-13T08:08:36Z",
+      "updated_at": "2026-10-15T08:33:58Z",
+      "digest": "sha256:1ce6af8e3644f0db53b6e50620cd07937cfb6b0014017fd880cb5b3131503dab",
+      "workflow_run": {
+        "id": 38703569637,
+        "repository_id": 1418142272,
+        "head_repository_id": 1418142272,
+        "head_branch": "research/original-evaluator-replay-20261015",
+        "head_sha": "769bb12ce342b814590061ef04fdffbbe19c9990"
+      }
+    },
+    {
+      "id": 11958793621,
+      "name": "original-full-gpt4_api_docs-numpy_operation_test-769bb12ce342b814590061ef04fdffbbe19c9990",
+      "size_in_bytes": 336069,
+      "url": "https://api.github.com/repos/Girish2052003/LUT-PHD-TARGET/actions/artifacts/11958793621",
+      "archive_download_url": "https://api.github.com/repos/Girish2052003/LUT-PHD-TARGET/actions/artifacts/11958793621/zip",
+      "expired": false,
+      "created_at": "2026-10-15T08:41:15Z",
+      "expires_at": "2027-01-13T08:08:36Z",
+      "updated_at": "2026-10-15T08:41:15Z",
+      "digest": "sha256:7c29b94cd416c77800b09e81ec47e6b30e1076a82a38fae43f6d0ce42a862ab1",
+      "workflow_run": {
+        "id": 38703569637,
+        "repository_id": 1418142272,
+        "head_repository_id": 1418142272,
+        "head_branch": "research/original-evaluator-replay-20261015",
+        "head_sha": "769bb12ce342b814590061ef04fdffbbe19c9990"
+      }
+    },
+    {
+      "id": 11958766821,
+      "name": "original-environment-gpt4_api_docs-branch_test-769bb12ce342b814590061ef04fdffbbe19c9990",
+      "size_in_bytes": 3416,
+      "url": "https://api.github.com/repos/Girish2052003/LUT-PHD-TARGET/actions/artifacts/11958766821",
+      "archive_download_url": "https://api.github.com/repos/Girish2052003/LUT-PHD-TARGET/actions/artifacts/11958766821/zip",
+      "expired": false,
+      "created_at": "2026-10-15T08:31:15Z",
+      "expires_at": "2027-01-13T08:08:36Z",
+      "updated_at": "2026-10-15T08:31:15Z",
+      "digest": "sha256:7a06240977ec3252681629a50728231631811786b438902008d931ead1ab2754",
+      "workflow_run": {
+        "id": 38703569637,
+        "repository_id": 1418142272,
+        "head_repository_id": 1418142272,
+        "head_branch": "research/original-evaluator-replay-20261015",
+        "head_sha": "769bb12ce342b814590061ef04fdffbbe19c9990"
+      }
+    },
+    {
+      "id": 11958731889,
+      "name": "original-full-gpt4_api_docs-branch_test-769bb12ce342b814590061ef04fdffbbe19c9990",
+      "size_in_bytes": 308733,
+      "url": "https://api.github.com/repos/Girish2052003/LUT-PHD-TARGET/actions/artifacts/11958731889",
+      "archive_download_url": "https://api.github.com/repos/Girish2052003/LUT-PHD-TARGET/actions/artifacts/11958731889/zip",
+      "expired": false,
+      "created_at": "2026-10-15T08:31:13Z",
+      "expires_at": "2027-01-13T08:08:36Z",
+      "updated_at": "2026-10-15T08:31:13Z",
+      "digest": "sha256:a56beabb2db4dbbe6d5207db03d04ad9fe25cfd8e603ef5eca70f77d6b6d09fa",
+      "workflow_run": {
+        "id": 38703569637,
+        "repository_id": 1418142272,
+        "head_repository_id": 1418142272,
+        "head_branch": "research/original-evaluator-replay-20261015",
+        "head_sha": "769bb12ce342b814590061ef04fdffbbe19c9990"
+      }
+    },
+    {
+      "id": 11958677439,
+      "name": "original-environment-spdzcoder-array_test-769bb12ce342b814590061ef04fdffbbe19c9990",
+      "size_in_bytes": 3411,
+      "url": "https://api.github.com/repos/Girish2052003/LUT-PHD-TARGET/actions/artifacts/11958677439",
+      "archive_download_url": "https://api.github.com/repos/Girish2052003/LUT-PHD-TARGET/actions/artifacts/11958677439/zip",
+      "expired": false,
+      "created_at": "2026-10-15T08:33:59Z",
+      "expires_at": "2027-01-13T08:08:36Z",
+      "updated_at": "2026-10-15T08:33:59Z",
+      "digest": "sha256:ce7aedb4b7694a725b14d0adcc119ea4da3d7d04d78d97815532f0b2ce91efea",
+      "workflow_run": {
+        "id": 38703569637,
+        "repository_id": 1418142272,
+        "head_repository_id": 1418142272,
+        "head_branch": "research/original-evaluator-replay-20261015",
+        "head_sha": "769bb12ce342b814590061ef04fdffbbe19c9990"
+      }
+    },
+    {
+      "id": 11958613179,
+      "name": "original-full-gpt4_api_docs-numpy_ufunc_test-769bb12ce342b814590061ef04fdffbbe19c9990",
+      "size_in_bytes": 319970,
+      "url": "https://api.github.com/repos/Girish2052003/LUT-PHD-TARGET/actions/artifacts/11958613179",
+      "archive_download_url": "https://api.github.com/repos/Girish2052003/LUT-PHD-TARGET/actions/artifacts/11958613179/zip",
+      "expired": false,
+      "created_at": "2026-10-15T08:37:02Z",
+      "expires_at": "2027-01-13T08:08:36Z",
+      "updated_at": "2026-10-15T08:37:02Z",
+      "digest": "sha256:9f672b6184e67c9cdf787a69e15f48be5032949b7ce7636b4a2694bf8528fa79",
+      "workflow_run": {
+        "id": 38703569637,
+        "repository_id": 1418142272,
+        "head_repository_id": 1418142272,
+        "head_branch": "research/original-evaluator-replay-20261015",
+        "head_sha": "769bb12ce342b814590061ef04fdffbbe19c9990"
+      }
+    },
+    {
+      "id": 11958485866,
+      "name": "original-full-gpt4_api_docs-math_test-769bb12ce342b814590061ef04fdffbbe19c9990",
+      "size_in_bytes": 303363,
+      "url": "https://api.github.com/repos/Girish2052003/LUT-PHD-TARGET/actions/artifacts/11958485866",
+      "archive_download_url": "https://api.github.com/repos/Girish2052003/LUT-PHD-TARGET/actions/artifacts/11958485866/zip",
+      "expired": false,
+      "created_at": "2026-10-15T08:24:41Z",
+      "expires_at": "2027-01-13T08:08:36Z",
+      "updated_at": "2026-10-15T08:24:41Z",
+      "digest": "sha256:2100b02eb2381f8305c8732c9d5046031ad063aa6e2f3ff0a58a7264d0e983dd",
+      "workflow_run": {
+        "id": 38703569637,
+        "repository_id": 1418142272,
+        "head_repository_id": 1418142272,
+        "head_branch": "research/original-evaluator-replay-20261015",
+        "head_sha": "769bb12ce342b814590061ef04fdffbbe19c9990"
+      }
+    },
+    {
+      "id": 11958474026,
+      "name": "original-environment-gpt4_api_docs-numpy_operation_test-769bb12ce342b814590061ef04fdffbbe19c9990",
+      "size_in_bytes": 3416,
+      "url": "https://api.github.com/repos/Girish2052003/LUT-PHD-TARGET/actions/artifacts/11958474026",
+      "archive_download_url": "https://api.github.com/repos/Girish2052003/LUT-PHD-TARGET/actions/artifacts/11958474026/zip",
+      "expired": false,
+      "created_at": "2026-10-15T08:41:16Z",
+      "expires_at": "2027-01-13T08:08:36Z",
+      "updated_at": "2026-10-15T08:41:16Z",
+      "digest": "sha256:e2058b57b6984a567cfd010b6430ae41b141693381cb3b6b7f2b5d0854cdad1b",
+      "workflow_run": {
+        "id": 38703569637,
+        "repository_id": 1418142272,
+        "head_repository_id": 1418142272,
+        "head_branch": "research/original-evaluator-replay-20261015",
+        "head_sha": "769bb12ce342b814590061ef04fdffbbe19c9990"
+      }
+    },
+    {
+      "id": 11958470091,
+      "name": "original-environment-spdzcoder-syntax_test-769bb12ce342b814590061ef04fdffbbe19c9990",
+      "size_in_bytes": 3411,
+      "url": "https://api.github.com/repos/Girish2052003/LUT-PHD-TARGET/actions/artifacts/11958470091",
+      "archive_download_url": "https://api.github.com/repos/Girish2052003/LUT-PHD-TARGET/actions/artifacts/11958470091/zip",
+      "expired": false,
+      "created_at": "2026-10-15T08:20:42Z",
+      "expires_at": "2027-01-13T08:08:36Z",
+      "updated_at": "2026-10-15T08:20:42Z",
+      "digest": "sha256:de1da5e6af09dcd1b9883889f669e58fd46570f6862b0e860899f8c194af61b6",
+      "workflow_run": {
+        "id": 38703569637,
+        "repository_id": 1418142272,
+        "head_repository_id": 1418142272,
+        "head_branch": "research/original-evaluator-replay-20261015",
+        "head_sha": "769bb12ce342b814590061ef04fdffbbe19c9990"
+      }
+    },
+    {
+      "id": 11958326114,
+      "name": "original-environment-gpt4_api_docs-math_test-769bb12ce342b814590061ef04fdffbbe19c9990",
+      "size_in_bytes": 3420,
+      "url": "https://api.github.com/repos/Girish2052003/LUT-PHD-TARGET/actions/artifacts/11958326114",
+      "archive_download_url": "https://api.github.com/repos/Girish2052003/LUT-PHD-TARGET/actions/artifacts/11958326114/zip",
+      "expired": false,
+      "created_at": "2026-10-15T08:24:42Z",
+      "expires_at": "2027-01-13T08:08:36Z",
+      "updated_at": "2026-10-15T08:24:42Z",
+      "digest": "sha256:12c6c6178780ef863cc67ccbb6ed0c0df6281313be2e8ca117a52b130653c0e2",
+      "workflow_run": {
+        "id": 38703569637,
+        "repository_id": 1418142272,
+        "head_repository_id": 1418142272,
+        "head_branch": "research/original-evaluator-replay-20261015",
+        "head_sha": "769bb12ce342b814590061ef04fdffbbe19c9990"
+      }
+    },
+    {
+      "id": 11958302192,
+      "name": "original-environment-gpt4_api_docs-array_test-769bb12ce342b814590061ef04fdffbbe19c9990",
+      "size_in_bytes": 3418,
+      "url": "https://api.github.com/repos/Girish2052003/LUT-PHD-TARGET/actions/artifacts/11958302192",
+      "archive_download_url": "https://api.github.com/repos/Girish2052003/LUT-PHD-TARGET/actions/artifacts/11958302192/zip",
+      "expired": false,
+      "created_at": "2026-10-15T08:29:32Z",
+      "expires_at": "2027-01-13T08:08:36Z",
+      "updated_at": "2026-10-15T08:29:32Z",
+      "digest": "sha256:fb441809e535994dd4adf889f9a6baba4aa220be357427bca1da02db467a4aab",
+      "workflow_run": {
+        "id": 38703569637,
+        "repository_id": 1418142272,
+        "head_repository_id": 1418142272,
+        "head_branch": "research/original-evaluator-replay-20261015",
+        "head_sha": "769bb12ce342b814590061ef04fdffbbe19c9990"
+      }
+    },
+    {
+      "id": 11958298602,
+      "name": "original-environment-gpt4_api_docs-numpy_ufunc_test-769bb12ce342b814590061ef04fdffbbe19c9990",
+      "size_in_bytes": 3408,
+      "url": "https://api.github.com/repos/Girish2052003/LUT-PHD-TARGET/actions/artifacts/11958298602",
+      "archive_download_url": "https://api.github.com/repos/Girish2052003/LUT-PHD-TARGET/actions/artifacts/11958298602/zip",
+      "expired": false,
+      "created_at": "2026-10-15T08:37:03Z",
+      "expires_at": "2027-01-13T08:08:36Z",
+      "updated_at": "2026-10-15T08:37:03Z",
+      "digest": "sha256:19cbc148c184035d5261d699dc9a10642698af6376bb411c7ba5cd0886080ea7",
+      "workflow_run": {
+        "id": 38703569637,
+        "repository_id": 1418142272,
+        "head_repository_id": 1418142272,
+        "head_branch": "research/original-evaluator-replay-20261015",
+        "head_sha": "769bb12ce342b814590061ef04fdffbbe19c9990"
+      }
+    },
+    {
+      "id": 11958058418,
+      "name": "original-environment-gpt4_api_docs-syntax_test-769bb12ce342b814590061ef04fdffbbe19c9990",
+      "size_in_bytes": 3413,
+      "url": "https://api.github.com/repos/Girish2052003/LUT-PHD-TARGET/actions/artifacts/11958058418",
+      "archive_download_url": "https://api.github.com/repos/Girish2052003/LUT-PHD-TARGET/actions/artifacts/11958058418/zip",
+      "expired": false,
+      "created_at": "2026-10-15T08:29:57Z",
+      "expires_at": "2027-01-13T08:08:36Z",
+      "updated_at": "2026-10-15T08:29:57Z",
+      "digest": "sha256:e02312cde6c3cc9e7c8e32e2c12eb4c581f23b953064cf3dee6ffb638492778f",
+      "workflow_run": {
+        "id": 38703569637,
+        "repository_id": 1418142272,
+        "head_repository_id": 1418142272,
+        "head_branch": "research/original-evaluator-replay-20261015",
+        "head_sha": "769bb12ce342b814590061ef04fdffbbe19c9990"
+      }
+    },
+    {
+      "id": 11957853957,
+      "name": "original-full-gpt4_api_docs-syntax_test-769bb12ce342b814590061ef04fdffbbe19c9990",
+      "size_in_bytes": 331373,
+      "url": "https://api.github.com/repos/Girish2052003/LUT-PHD-TARGET/actions/artifacts/11957853957",
+      "archive_download_url": "https://api.github.com/repos/Girish2052003/LUT-PHD-TARGET/actions/artifacts/11957853957/zip",
+      "expired": false,
+      "created_at": "2026-10-15T08:29:56Z",
+      "expires_at": "2027-01-13T08:08:36Z",
+      "updated_at": "2026-10-15T08:29:56Z",
+      "digest": "sha256:fdb206130cd775bdbbc3b16bb2fea7021825e46ad1889b62e3b8d692cef28c28",
+      "workflow_run": {
+        "id": 38703569637,
+        "repository_id": 1418142272,
+        "head_repository_id": 1418142272,
+        "head_branch": "research/original-evaluator-replay-20261015",
+        "head_sha": "769bb12ce342b814590061ef04fdffbbe19c9990"
+      }
+    },
+    {
+      "id": 11957838791,
+      "name": "original-full-spdzcoder-numpy_operation_test-769bb12ce342b814590061ef04fdffbbe19c9990",
+      "size_in_bytes": 336293,
+      "url": "https://api.github.com/repos/Girish2052003/LUT-PHD-TARGET/actions/artifacts/11957838791",
+      "archive_download_url": "https://api.github.com/repos/Girish2052003/LUT-PHD-TARGET/actions/artifacts/11957838791/zip",
+      "expired": false,
+      "created_at": "2026-10-15T08:29:17Z",
+      "expires_at": "2027-01-13T08:08:36Z",
+      "updated_at": "2026-10-15T08:29:17Z",
+      "digest": "sha256:ee023449a367903bb4a796404fa11f251ff2b36c0cfcd23363edd086afa94af2",
+      "workflow_run": {
+        "id": 38703569637,
+        "repository_id": 1418142272,
+        "head_repository_id": 1418142272,
+        "head_branch": "research/original-evaluator-replay-20261015",
+        "head_sha": "769bb12ce342b814590061ef04fdffbbe19c9990"
+      }
+    },
+    {
+      "id": 11957773930,
+      "name": "original-full-gpt4_api_docs-array_test-769bb12ce342b814590061ef04fdffbbe19c9990",
+      "size_in_bytes": 393007,
+      "url": "https://api.github.com/repos/Girish2052003/LUT-PHD-TARGET/actions/artifacts/11957773930",
+      "archive_download_url": "https://api.github.com/repos/Girish2052003/LUT-PHD-TARGET/actions/artifacts/11957773930/zip",
+      "expired": false,
+      "created_at": "2026-10-15T08:29:31Z",
+      "expires_at": "2027-01-13T08:08:36Z",
+      "updated_at": "2026-10-15T08:29:31Z",
+      "digest": "sha256:fcd7109fcc319a958f137ce8f03f1b4dc708f86ec945f7977dd00682c63b356c",
+      "workflow_run": {
+        "id": 38703569637,
+        "repository_id": 1418142272,
+        "head_repository_id": 1418142272,
+        "head_branch": "research/original-evaluator-replay-20261015",
+        "head_sha": "769bb12ce342b814590061ef04fdffbbe19c9990"
+      }
+    },
+    {
+      "id": 11957564400,
+      "name": "original-environment-spdzcoder-numpy_operation_test-769bb12ce342b814590061ef04fdffbbe19c9990",
+      "size_in_bytes": 3421,
+      "url": "https://api.github.com/repos/Girish2052003/LUT-PHD-TARGET/actions/artifacts/11957564400",
+      "archive_download_url": "https://api.github.com/repos/Girish2052003/LUT-PHD-TARGET/actions/artifacts/11957564400/zip",
+      "expired": false,
+      "created_at": "2026-10-15T08:29:18Z",
+      "expires_at": "2027-01-13T08:08:36Z",
+      "updated_at": "2026-10-15T08:29:18Z",
+      "digest": "sha256:5c2f6c007af9c9298be7c82ff77d93ffec3e5173d78c009f332b8077e253f748",
+      "workflow_run": {
+        "id": 38703569637,
+        "repository_id": 1418142272,
+        "head_repository_id": 1418142272,
+        "head_branch": "research/original-evaluator-replay-20261015",
+        "head_sha": "769bb12ce342b814590061ef04fdffbbe19c9990"
+      }
+    },
+    {
+      "id": 11957532586,
+      "name": "original-mascot-smoke-769bb12ce342b814590061ef04fdffbbe19c9990",
+      "size_in_bytes": 464459,
+      "url": "https://api.github.com/repos/Girish2052003/LUT-PHD-TARGET/actions/artifacts/11957532586",
+      "archive_download_url": "https://api.github.com/repos/Girish2052003/LUT-PHD-TARGET/actions/artifacts/11957532586/zip",
+      "expired": false,
+      "created_at": "2026-10-15T08:14:04Z",
+      "expires_at": "2027-01-13T08:08:36Z",
+      "updated_at": "2026-10-15T08:14:04Z",
+      "digest": "sha256:c010674c5823c5b3e25cb51f65c41dc0a94e095e7b0ad87d43e256ce9d0b670e",
+      "workflow_run": {
+        "id": 38703569637,
+        "repository_id": 1418142272,
+        "head_repository_id": 1418142272,
+        "head_branch": "research/original-evaluator-replay-20261015",
+        "head_sha": "769bb12ce342b814590061ef04fdffbbe19c9990"
+      }
+    },
+    {
+      "id": 11957509289,
+      "name": "original-full-spdzcoder-syntax_test-769bb12ce342b814590061ef04fdffbbe19c9990",
+      "size_in_bytes": 343528,
+      "url": "https://api.github.com/repos/Girish2052003/LUT-PHD-TARGET/actions/artifacts/11957509289",
+      "archive_download_url": "https://api.github.com/repos/Girish2052003/LUT-PHD-TARGET/actions/artifacts/11957509289/zip",
+      "expired": false,
+      "created_at": "2026-10-15T08:20:42Z",
+      "expires_at": "2027-01-13T08:08:36Z",
+      "updated_at": "2026-10-15T08:20:42Z",
+      "digest": "sha256:0af6e09f7ed6a2f622fe811182f6f3297351af6e3ce7b7b905c3426360515b6f",
+      "workflow_run": {
+        "id": 38703569637,
+        "repository_id": 1418142272,
+        "head_repository_id": 1418142272,
+        "head_branch": "research/original-evaluator-replay-20261015",
+        "head_sha": "769bb12ce342b814590061ef04fdffbbe19c9990"
+      }
+    }
+  ]
+}

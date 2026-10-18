@@ -1,0 +1,21 @@
+{
+  "scope": "Final-output comparison-mask postprocessor in both actual original pipeline entry points",
+  "author_archive_sha256": "a8ea14150dc1d4ddf53eb4ead450d88139d09b680683f673029877ce0c6e00ac",
+  "pipeline_changes": [
+    {
+      "path": "src/pipeline.py",
+      "original_sha256": "a60dfcdc454f6da53436c5b6819bf4d3999a29ff0647bbdf78842b81137d5eaf",
+      "modified_sha256": "85cc76f388561e65d9839bdeea94d1d0cba39b6dd7af4ea3b88cce931f8b6de8"
+    },
+    {
+      "path": "src/pipeline-mp.py",
+      "original_sha256": "23c51c95a6892da6c2812e7eee65243d404c0423dd7e478758a4c0fc0b50b52f",
+      "modified_sha256": "cdc1b8cb5a37522f978f91c218ac509f1977f70dbd1e27a498b741cc01ca3511"
+    }
+  ],
+  "extension_path": "src/secret_arithmetic.py",
+  "extension_sha256": "8c93f4687569c7419b573b20b1349b2d67563a39ce50dba16fda38dd197d8aa2",
+  "patch_sha256": "21fba36fc7df71fc3e8f3053a12a3893e29cc6a09d052f204d1d217c6cbbd328",
+  "generation_executed": false,
+  "attribution": "Original SPDZCoder source: https://zenodo.org/records/18152253, CC BY 4.0. Pipeline additions and secret_arithmetic.py are Girish project modifications."
+}

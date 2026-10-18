@@ -1,0 +1,2 @@
+def median(arr):
+    return sfix(0)

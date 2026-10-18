@@ -1,0 +1,2 @@
+Running /mp-spdz/Scripts/../mascot-party.x 0 lower_bound -pn 16650 -h localhost -N 2
+Running /mp-spdz/Scripts/../mascot-party.x 1 lower_bound -pn 16650 -h localhost -N 2

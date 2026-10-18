@@ -1,0 +1,117 @@
+# Approval gate 18 Oct 2026: all seven source-run native category jobs completed successfully;
+# raw artifact recovery is authorized, but no new MPC candidate execution occurs.
+name: Independently aggregate pinned stage2 MASCOT category artifacts
+on:
+  push:
+    branches: ["research/original-stage2-mascot-20261018"]
+    paths:
+      - ".github/workflows/stage2-artifact-aggregation.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  aggregate-existing-seven-native-splits:
+    if: contains(github.event.head_commit.message, '[stage2-aggregate]') || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Check formal phase integrity and source review tests
+        run: |
+          python scripts/check_handoff.py
+          python -m unittest discover -s tests -p test_stage2_mascot_replay.py -v
+          python -m unittest discover -s tests -p test_stage2_full_zip_audit.py -v
+          python -m unittest discover -s tests -p test_stage2_author_tar_source_audit.py -v
+      - name: Download ONLY original seven native evidence artifacts from exact source run
+        uses: actions/download-artifact@v4
+        with:
+          run-id: 39075744038
+          github-token: ${{ github.token }}
+          pattern: stage2-original-native-*-1e3c95d5357cd8b913a11916e562b6de7d633ccb
+          path: results/stage2-artifacts
+          merge-multiple: true
+      - name: Rebuild 626 original native outcomes from raw stdout and pinned task identities
+        run: |
+          python scripts/verify_stage2_replay.py \
+            --root results/stage2-artifacts \
+            --output results/stage2-independent-aggregate
+      - name: Recover seven raw category ZIP views without re-executing original candidates
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from zipfile import ZipFile, ZIP_DEFLATED
+          root=Path('results/stage2-artifacts')
+          expect={'array_test','loop_test','branch_test','math_test','numpy_operation_test','numpy_ufunc_test','syntax_test'}
+          got={p.name for p in root.iterdir() if p.is_dir()}
+          if got != expect: raise ValueError('Original native category evidence incomplete')
+          target=Path('results/stage2-category-zips')
+          target.mkdir(parents=True,exist_ok=False)
+          for split in sorted(expect):
+              entries=[p for p in (root/split).rglob('*') if p.is_file()]
+              if not entries or not (root/split/'outcomes.jsonl').exists(): raise ValueError('Missing original raw files')
+              with ZipFile(target/(split+'.zip'),'w',ZIP_DEFLATED) as z:
+                  for p in sorted(entries):
+                      if p.is_symlink(): raise ValueError('Untrusted symlink in GitHub evidence')
+                      z.write(p,p.relative_to(root).as_posix())
+          print('All seven original run ZIP source views rebuilt without rerunning candidates')
+          PY
+      - name: Verify original stage2 raw ZIPs against untouched authors' program strings
+        run: |
+          mkdir -p results/stage2-verified reports
+          curl -fLsS --retry 3 --max-time 600 --speed-limit 1024 --speed-time 45 \
+            "https://zenodo.org/records/18152253/files/SPDZCoder.tar?download=1" \
+            -o results/stage2-verified/SPDZCoder.tar
+          python scripts/audit_stage2_full_zips.py results/stage2-category-zips/*.zip \
+            --output reports/independent-seven-zip-audit.json
+          python scripts/check_native_stage2_mpc_against_tar.py \
+            --author-tar results/stage2-verified/SPDZCoder.tar \
+            results/stage2-category-zips/*.zip \
+            --output reports/independent-original-tar-mpc-byte-audit.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          raw=json.loads(Path('reports/independent-seven-zip-audit.json').read_text())
+          src=json.loads(Path('reports/independent-original-tar-mpc-byte-audit.json').read_text())
+          saved=json.loads(Path('results/stage2-independent-aggregate/summary.json').read_text())
+          if raw['fresh'] != saved['fresh'] or raw['historical'] != saved['historical']:
+              raise ValueError('Independent raw acceptance differs from original harness outcome aggregator')
+          if raw['candidate_count'] != src['verified_candidate_count'] != 626:
+              raise ValueError('Independent source-in-MPC verification incomplete')
+          print('626 original author texts and original oracle outcome agreement: verified')
+          PY
+      - name: Preserve independently recomputed source audit and original run summary
+        run: |
+          cp reports/independent-seven-zip-audit.json results/stage2-independent-aggregate/
+          cp reports/independent-original-tar-mpc-byte-audit.json results/stage2-independent-aggregate/
+      - name: Record pinned experiment/run provenance and outcome coverage
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          output=Path('results/stage2-independent-aggregate')
+          summary=json.loads((output/'summary.json').read_text())
+          if summary['tasks']!=313 or summary['candidate_records']!=626:
+              raise ValueError('Stage2 full original test coverage incomplete')
+          provenance={'original_native_run_id':39075744038,
+                      'original_native_commit':'1e3c95d5357cd8b913a11916e562b6de7d633ccb',
+                      'source_archive_sha256':'a8ea14150dc1d4ddf53eb4ead450d88139d09b680683f673029877ce0c6e00ac',
+                      'stage2_live_llm_calls':0,
+                      'complete_native_records':summary['candidate_records'],
+                      'limitations':'Raw original author oracle results; not historical model regeneration, formal confidentiality, or causal repair ablation'}
+          (output/'provenance.json').write_text(json.dumps(provenance,indent=2)+'\n')
+          print(json.dumps(summary['fresh'], indent=2))
+          PY
+      - name: Preserve verified seven-category stage2 summary and complete candidate table
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: stage2-original-reaggregated-${{ github.sha }}
+          path: results/stage2-independent-aggregate
+          retention-days: 90
+          if-no-files-found: warn

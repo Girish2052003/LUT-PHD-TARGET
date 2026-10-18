@@ -1,0 +1,11 @@
+Using security parameter 40
+Pass the test
+Significant amount of unused triples of SPDZ gfp. For more accurate benchmarks, consider reducing the batch size with --batch-size.
+Note that some protocols have larger minimum batch sizes.
+The following benchmarks are including preprocessing (offline phase).
+Time = 9.23402 seconds 
+Data sent = 78.0819 MB in ~285 rounds (party 0 only; use '-v' for more details)
+Global data sent = 156.164 MB (all parties)
+This program might benefit from some protocol options.
+Consider adding the following at the beginning of your code:
+	program.use_edabit(True)

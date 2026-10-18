@@ -13,16 +13,21 @@ it does not mean the whole assignment is finished.
 | M4 — Archived score reconstruction | **PASS** | Saved author booleans: first 269/313, second 265/313, union 288/313, neither 25. Exact identity gate is tracked separately in C. |
 | M5 — Static original-output indicators | **PASS** | Syntactic screen only: 11/626 vs 182/626 reveal indicators; not confirmed leaks. |
 | M6 — Historical regression and CI checks | **PASS** | 53 passing tests and successful historical workflows at 5ca3809 only. |
-| A — Original source-to-paper audit | **IN_PROGRESS** | Complete source mapping and seven real stage traces required. |
+| A — Original source-to-paper audit | **PASS** | Original paper-to-source map and seven authentic saved stage examples independently accepted WITH disclosed paper/source discrepancies. No historical model calls reconstructed; B3 remains blocked. |
 | B1 — Level 1: archived results | **PASS** | Archived flags only, same narrow completion as M4. |
-| B2 — Level 2: original evaluator replay | **IN_PROGRESS** | Fresh compiler, MASCOT execution and original oracle on all available original candidates. |
-| B3 — Level 3: original model generation | **BLOCKED** | Requires authorized credentials and verified historical model availability; no paid calls or substitute model authorized. |
-| C — Exact task identities and evaluator semantics | **IN_PROGRESS** | Reconcile native, processed, generated and outcome IDs; audit oracle, candidate order, MASCOT and tolerances. |
-| D — Demonstrated original-system limitation | **NOT_STARTED** | Investigate original 25 both-failed tasks and other candidate classes; choose one evidenced failure. |
-| E — Patch actual original system | **NOT_STARTED** | A runnable, narrowly scoped original-source patch with before/after regression evidence. |
-| F — Paired baseline and modification comparison | **NOT_STARTED** | Matched raw baseline/modified measurements, regressions, ablation, uncertainty and full failure matrix. |
-| G — Practical evidence acceptance | **IN_PROGRESS** | Independent review, CI and durable evidence for every completed practical requirement. |
-| REPORT — Final report readiness (writing locked) | **BLOCKED** | Practical R1–R8 accepted; report writing still requires separate explicit user authorization. |
+| B2a — Original evaluator and two-party MASCOT smoke | **PASS** | One authentic archived candidate compiled, executed and accepted by unchanged author oracle; no full-benchmark claim. |
+| B2b — Complete two-system archived-candidate replay | **PASS** | All1252 authentic final-stage SPDZCoder/GPT-4 candidates replayed; original acceptance counts268/265/288 and95/112/154. No new model generation or universal correctness claim. |
+| B2 — Level 2: original evaluator replay | **PASS** | Level-2 authentic original evaluator reproduction accepted for 1252 final-stage SPDZCoder/GPT4 baseline candidates and 626 saved stage2 SPDZCoder candidates, all raw native MASCOT outputs checked. B3 model generation separate. |
+| B3 — Level 3: original model generation | **BLOCKED** | Historical original model generation NOT executed. OpenAI API gpt-4-turbo-2024-04-09 scheduled for retirement 23 October 2026; original released Azure deployment version remains unpinned. Requires explicitly authorized account/model access plus cost budget OR explicitly approved irreproducibility exception. |
+| C1 — Exact archived task identity and outcome semantics | **PASS** | 313 IDs and order,1252 candidate hashes,313 template hashes and28 source-file hashes independently checked; saved-flag meaning verified. No fresh execution claimed. |
+| C — Exact task identities and evaluator semantics | **PASS** | 313 original identities, all available stage2/stage3 archived scores, independent 626-candidate fresh stage2 original MASCOT replay, original oracle limitations and available ablation search accepted WITH explicit unavailable no-refactoring group. |
+| D1 — Accepted authentic privacy witnesses | **PASS** | Two archived candidates distinguish private inputs with identical permitted outputs;16native/diagnostic controls independently checked under explicit policy. |
+| D — Demonstrated original-system limitation | **PASS** | One authentic original-system substantive limitation accepted: candidate-level explicit intermediate comparison opening under defined private-input/output-only policy, with two runtime witnesses. Other classes not universally solved. |
+| E — Patch actual original system | **PASS** | Hash-pinned patch to both authors' original pipeline entrypoints accepted within narrow supported sint mask-product transformation; target 64 executions plus full paired source-level replay, bounded fallback and original evaluator retained. |
+| E1 — Accepted original-modification paired smoke | **PASS** | 32pairs/64executions;2authentictranslations preserve tested outputs and remove50observed openingevents. No full-regression or general privacy guarantee. |
+| F — Paired baseline and modification comparison | **PASS** | Full fair 626-pair original-vs-patched original-native MASCOT comparison accepted WITH bounded interpretation: only 2 source changes, 4 source-identical control acceptance flips, no attributable overall correctness gain; targeted opening removal and extra protocol costs. |
+| G — Practical evidence acceptance | **IN_PROGRESS** | Final requirements/exception reconciliation and validated integration of PR #6 into main are pending. A/C/F and other listed practical subphases passed ONLY within the evidence-scoped author-native evaluation/archived methodology limits. |
+| REPORT — Final report readiness (writing locked) | **BLOCKED** | Report WRITING remains BLOCKED until practical G readiness and separate explicit report authorization. Historical B3 and genuine SPDZCoder without-refactoring experiments remain NOT REPRODUCED; user accepted transparent scoped research-integration exceptions only. |
 
 Machine-readable state: [research/progress.json](research/progress.json).
 Requirement gates: [R1–R9 ledger](research/requirements/assignment_traceability.md).
@@ -54,7 +59,7 @@ I keep the source-provenance and task-count evidence in [my original-artifact re
 | Benchmark preparation | Validation of original SPDZEval files, including 313 tasks and the six published category totals | `src/spdz_audit/spdzeval_import.py` |
 | Additional numerical study | Domain-sensitive branch lowering, a reconstructed eager baseline and a masked-argument alternative | `src/spdz_audit/lowering.py` |
 
-The authors' code, dataset and prompt examples are now accessible through Zenodo, but the files under `src/spdz_audit/` remain **my independent reconstruction**, not modified copies of the authors' code. My earlier scripted responses are fixtures, not original model samples. I have not made live model API calls. I am preparing direct comparison against the authentic archived programs and test harness.
+The authors' code, dataset and prompt examples are now accessible through Zenodo, but the files under `src/spdz_audit/` remain **my independent reconstruction**, not modified copies of the authors' code. My earlier scripted responses are fixtures, not original model samples. I have not made live model API calls. Later research PR #6 and its merged PR #7–#9 contributions already performed original saved-candidate MASCOT replay and narrow original-source paired experiments. The historical model-generation stage has not been rerun.
 
 ## Results so far
 
@@ -68,7 +73,7 @@ The authors' code, dataset and prompt examples are now accessible through Zenodo
 
 I used a pinned MP-SPDZ revision (`78fe3d8bad4e654276eb3a11a88173195e672f44`) for the compiler/emulator runs. These checks use the **cleartext emulator**, not a secure multiparty deployment or a formal security proof. The Figure 4 inputs, privacy-leak example and DomainSafety-24 tasks are my independent tests; they are **not** the original SPDZEval dataset.
 
-The paper reports **85.94% pass@1** and **92.01% pass@2**. I have now confirmed the **85.94% first-candidate rate from the authors' saved evaluation records** (269 of 313). I have **not** regenerated the model results or independently rerun the complete MP-SPDZ MASCOT evaluation. The archived same-task union is **288/313 = 92.01%**; the independent task-identity and evaluator-semantic audit is still in progress. Deterministic input accuracy is not pass@k.
+The paper reports **85.94% pass@1** and **92.01% pass@2**. I have now confirmed the **85.94% first-candidate rate from the authors' saved evaluation records** (269 of 313). I have **not** regenerated the historical model results. The original MASCOT evaluator has been freshly replayed on 1,252 final-stage and 626 stage-2 archived source candidates, with preserved failures and oracle limitations. The archived same-task union is **288/313 = 92.01%**; the original native evaluator/identity research review is complete within its specified evidence scope; historical LLM generation and the genuine without-refactoring ablation remain unresolved. Deterministic input accuracy is not pass@k.
 
 ## Reproduce the tests
 
@@ -97,6 +102,8 @@ The MP-SPDZ tests run in [GitHub Actions](https://github.com/Girish2052003/LUT-P
 
 ## What I still need for the original reproduction
 
-The source and original task files are now **available from the authors' Zenodo release**. The native `.json`-named JSON Lines format and archived score totals are understood. Remaining work includes exact task-identity reconciliation, independent execution of the original evaluator, a demonstrated original-system limitation, and a matched comparison of a modification to the authentic baseline. Regenerating historic LLM outputs additionally requires API credentials and model availability; actual MASCOT runs require a separate controlled MP-SPDZ setup.
+The authors' original source and 313-task dataset are available in the checksum-verified Zenodo release. Original benchmark identities, native evaluator replay, authentic limitation witnesses, a narrow original-pipeline patch, and full paired native comparisons are now experimentally accepted **within their recorded scopes**. See the Phase A–F status table above and the exact independent acceptance files under `research/reviews/`; these are not historical LLM generation or a universal correctness/security proof.
 
-I am continuing to record results and difficulties as I work toward the 31 October submission.
+**Remaining practical work:** Phase G final requirements reconciliation, scientific exception decisions, review of PR #6 against exact GitHub evidence, approved integration to `main`, and exact-main CI. R2/R3/R8 remain `IN_PROGRESS`; original historical model-generation B3 is `BLOCKED` pending a separate explicit user decision, and the genuine SPDZCoder *without-refactoring* published ablation is not independently recoverable from an identified original output corpus. No report writing or professor email has been authorized.
+
+The dated reproduction log preserves its original chronology; current acceptance and unresolved issues are tracked in `research/progress.json` and `research/requirements/assignment_traceability.yaml`.

@@ -1,0 +1,74 @@
+{
+  "scope": "Read-only independent audit of repeated authentic original SPDZCoder MASCOT evaluator; neither LLM regeneration nor a confidentiality proof",
+  "workflow_run": 39043579023,
+  "artifact_id": 12105905095,
+  "artifact_zip_sha256": "74aa415f29c1ff63f21ce1d666d053abaa39eb36da7a983f0e5b9a2718987843",
+  "research_commit": "dd46d91d3f668a120e0c6cfaeb629b3e94cf6a60",
+  "source_manifest_sha256": "e8665e9ab89a022716f088a05ac99b478e190545e7dd93101c2ff214b4dd0326",
+  "docker_image_id": "sha256:ab41b9da07c95d77466da97bde954915c4a56205165c9a5dcd5400452dfd0350",
+  "source_archive_sha256": "a8ea14150dc1d4ddf53eb4ead450d88139d09b680683f673029877ce0c6e00ac",
+  "artifact_files": 211,
+  "records": 16,
+  "trials_per_candidate": 4,
+  "task_candidates": 4,
+  "findings": [
+    {
+      "task": "loop_test/standard_deviation",
+      "candidate": 1,
+      "outcomes": [
+        "ACCEPT",
+        "ACCEPT",
+        "ACCEPT",
+        "ACCEPT"
+      ],
+      "compiled_hash": "d9e6881a06c65cfb2173c0503a0c18f2d54cc685e4354fb3ac5ae457aaaebef9"
+    },
+    {
+      "task": "math_test/next_perfect_square",
+      "candidate": 1,
+      "outcomes": [
+        "ACCEPT",
+        "ACCEPT",
+        "ACCEPT",
+        "REJECT"
+      ],
+      "compiled_hash": "86cde692a9aeb0dfeb98eed8c87ad59704dbcfb1b4cf9a23dc5e99ce407e0553"
+    },
+    {
+      "task": "math_test/pi_to_the_x",
+      "candidate": 0,
+      "outcomes": [
+        "REJECT",
+        "REJECT",
+        "REJECT",
+        "REJECT"
+      ],
+      "compiled_hash": "e53a7f7a8d5b45b86ac2e06d0433d1cb24122dbd5335bdc424474ff0a0a700e0"
+    },
+    {
+      "task": "math_test/pi_to_the_x",
+      "candidate": 1,
+      "outcomes": [
+        "REJECT",
+        "REJECT",
+        "REJECT",
+        "REJECT"
+      ],
+      "compiled_hash": "e9a93c82747b3e3e7ce658e66a6027edb8a32a55cc66237b195d23a506e7c6f7"
+    }
+  ],
+  "checks": {
+    "all_16_native_runs_completed": true,
+    "one_attempt_each": true,
+    "original_evaluator_unchanged": true,
+    "source_archive_pin_identical": true,
+    "docker_image_identical": true,
+    "compiler_fingerprint_identical_within_candidate": true,
+    "candidate_mpc_sha_identical_within_candidate": true,
+    "individual_source_stdout_stderr_sha256_match": true,
+    "native_oracle_outcome_matches_stdout": true,
+    "original_workflow_summary_recalculated": true
+  },
+  "observed_variable_original_candidates": 1,
+  "scope_limitations": "The cause of variability was not determined; 4 isolated repeats do not support a universal second-execution effect, general nondeterminism claim, semantic preservation theorem, or information-flow guarantee. No candidate source was executed in independent evidence audit."
+}

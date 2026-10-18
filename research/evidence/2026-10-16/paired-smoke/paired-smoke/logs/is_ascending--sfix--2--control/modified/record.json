@@ -1,0 +1,63 @@
+{
+  "pair_id": "is_ascending--sfix--2--control",
+  "task_id": "loop_test/is_ascending",
+  "candidate_id": 0,
+  "kind": "private_control",
+  "inputs": [
+    1,
+    1,
+    2
+  ],
+  "input_type": "sfix",
+  "expected_output": 0,
+  "expected_baseline_openings": [],
+  "rewrite_events": [
+    {
+      "rule": "secret_product",
+      "line": 19,
+      "column": 31,
+      "original": "condition.reveal()",
+      "replacement": "condition"
+    }
+  ],
+  "observer_sites": {
+    "baseline": [],
+    "modified": []
+  },
+  "variant": "modified",
+  "pair_index": 19,
+  "execution_order": 0,
+  "source_sha256": "654715443ae4598dc08a9de626916a16b13e96713e4a52e6b920c34d7df41127",
+  "original_source_sha256": "45db3f3d0f9e87c1818458209f15727b3a4c8714a563d4ccaf2df7dc69c6c305",
+  "transformed_source_sha256": "654715443ae4598dc08a9de626916a16b13e96713e4a52e6b920c34d7df41127",
+  "template_sha256": "ba5aed4f570d97bfd7a81d4b02e76e0b40621be257f81cf9a293e5919be6d00f",
+  "inputs_sha256": "6e3efc811d40b03baab295f398ccc5f3a0b8c8c98c77fcd857540eea09e69f33",
+  "compile_status": "PASS",
+  "runtime_status": "PASS",
+  "failure_class": "oracle_reject",
+  "oracle_status": "REJECT",
+  "duration_seconds": 6.849932521000028,
+  "exception": null,
+  "attempts": [
+    {
+      "command": "/mp-spdz/Scripts/compile-run.py -E mascot /run/paired-baseline/evaluation/evaluation_storage/is_ascending.mpc",
+      "timeout_seconds": 60,
+      "returncode": 0,
+      "timed_out": false,
+      "schedule_present": true,
+      "runtime_launch_marker": true,
+      "duration_seconds": 6.849545682000041,
+      "combined_source_sha256": "bc80cec5508be33807e97e02f19704a39c7ac2037d35853f7b754da85701fe08",
+      "stdout_sha256": "53cfa654d46f6b8ddbe11294772ca18a2780167590df2aa7e83a72681e12252e",
+      "stderr_sha256": "f69c85b1f2943fc9b8e668b8e2284a490c6e07114fef34ddde78413cc8b079a3",
+      "compile_status": "PASS",
+      "runtime_status": "PASS",
+      "failure_class": null
+    }
+  ],
+  "log_path": "logs/is_ascending--sfix--2--control/modified",
+  "authorized_outputs": [
+    "0"
+  ],
+  "public_openings": []
+}

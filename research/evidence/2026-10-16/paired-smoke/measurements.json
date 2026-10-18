@@ -1,0 +1,65 @@
+{
+  "scope": "32-pair controlled smoke; excluded from full native benchmark rates",
+  "executions": 64,
+  "pairs": 32,
+  "compile_pass": 64,
+  "runtime_pass": 64,
+  "native_accepted": 4,
+  "private_control_executions": 56,
+  "synthetic_fallback_executions": 4,
+  "observed_intermediate_openings": {
+    "baseline": 50,
+    "modified": 0
+  },
+  "native_costs": [
+    {
+      "task_id": "loop_test/count_distinct",
+      "candidate_id": 1,
+      "variant": "baseline",
+      "duration_seconds": 29.093306146999993,
+      "runtime_seconds": 28.5628,
+      "global_sent_mb": 390.364,
+      "compiler_integer_opens": 191.0,
+      "compiler_integer_triples": 2917.0,
+      "compiler_integer_bits": 6811.0,
+      "compiler_vm_rounds": 17.0
+    },
+    {
+      "task_id": "loop_test/count_distinct",
+      "candidate_id": 1,
+      "variant": "modified",
+      "duration_seconds": 31.830461108999998,
+      "runtime_seconds": 31.3084,
+      "global_sent_mb": 429.331,
+      "compiler_integer_opens": 98.0,
+      "compiler_integer_triples": 3010.0,
+      "compiler_integer_bits": 6811.0,
+      "compiler_vm_rounds": 28.0
+    },
+    {
+      "task_id": "loop_test/is_ascending",
+      "candidate_id": 0,
+      "variant": "modified",
+      "duration_seconds": 14.714975941999995,
+      "runtime_seconds": 14.2445,
+      "global_sent_mb": 195.164,
+      "compiler_integer_opens": 18.0,
+      "compiler_integer_triples": 2059.0,
+      "compiler_integer_bits": 1785.0,
+      "compiler_vm_rounds": 17.0
+    },
+    {
+      "task_id": "loop_test/is_ascending",
+      "candidate_id": 0,
+      "variant": "baseline",
+      "duration_seconds": 14.679939095999998,
+      "runtime_seconds": 14.2188,
+      "global_sent_mb": 195.163,
+      "compiler_integer_opens": 35.0,
+      "compiler_integer_triples": 2042.0,
+      "compiler_integer_bits": 1785.0,
+      "compiler_vm_rounds": 11.0
+    }
+  ],
+  "cost_scope": "Single paired measurements, preprocessing included; compiler integer-open counts include internal protocol operations and are not identical to explicit candidate reveal sites."
+}

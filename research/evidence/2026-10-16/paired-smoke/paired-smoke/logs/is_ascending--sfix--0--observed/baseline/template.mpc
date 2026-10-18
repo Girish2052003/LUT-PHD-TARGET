@@ -1,0 +1,8 @@
+# Explicit new private-input diagnostic; not a native benchmark template.
+# Party 0 values are private; length, type and the returned count/bit are public.
+# insert here #
+secret_values = []
+for i in range(0):
+    secret_values[i] = sfix.get_input_from(0)
+answer = is_ascending(secret_values)
+print_ln('AUTHORIZED=%s', answer.reveal())

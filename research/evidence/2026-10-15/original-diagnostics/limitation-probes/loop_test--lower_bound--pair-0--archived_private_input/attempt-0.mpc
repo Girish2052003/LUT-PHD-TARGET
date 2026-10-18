@@ -1,0 +1,31 @@
+# Diagnostic harness, not an original native template.
+# Party 0 owns the values. Length (3), x (4 for lower_bound) and result are public.
+# insert here #
+def lower_bound(arr, x):
+    """
+    Return the index of the largest element not bigger than x in arr.
+    If such element does not exist, return -1.
+    """
+    # Initialize return value as a publicly known -1
+    ret = sint(-1)
+    # Use a large public initial value for distance
+    distance = sint(2**31 - 1)  # Assuming 32-bit integers, modify according to your security parameter
+
+    for i in range(len(arr)):
+        # Oblivious conditions using secure comparisons
+        condition_1 = arr[i] <= x
+        condition_2 = (x - arr[i]).reveal() < distance.reveal()
+
+        # Combined condition, must be computed securely
+        combined_condition = condition_1 * condition_2
+
+        # Obliviously update ret and distance using combined_condition
+        ret = combined_condition.if_else(sint(i), ret)
+        distance = combined_condition.if_else(x - arr[i], distance)
+
+    return ret
+secret_values = sfix.Array(3)
+for i in range(3):
+    secret_values[i] = sfix.get_input_from(0)
+answer = lower_bound(secret_values, 4)
+print_ln('AUTHORIZED=%s', answer.reveal())

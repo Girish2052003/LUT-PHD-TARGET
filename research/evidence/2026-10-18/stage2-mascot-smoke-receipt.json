@@ -1,0 +1,73 @@
+{
+  "source": "Independent read-only audit of GitHub Actions MASCOT smoke ZIP; prior authentic author source snapshots validated separately",
+  "run_id": 39075137852,
+  "run_commit": "53f1f2733df010db90c13cafde7b5b2bbaa9277f",
+  "artifact_id": 12116746822,
+  "artifact_sha256": "6f2f6b563cb0fb6ade2eec1799dbf90a5d31b419c9be940d36209c1c6175f36b",
+  "artifact_files": 134,
+  "original_source_archive_sha256": "a8ea14150dc1d4ddf53eb4ead450d88139d09b680683f673029877ce0c6e00ac",
+  "verified": {
+    "seven_authentic_tasks": true,
+    "14_candidate_executions": true,
+    "14_raw_attempts": true,
+    "native_templates_match": true,
+    "all_source_texts_match_saved_author_stage2_snapshots": true,
+    "all_14_stage2_sources_present_in_compiled_input_mpc": true,
+    "candidate_sha256_match_authentic_archive": true,
+    "original_evaluator_sha256_match": true,
+    "all_raw_program_stdout_stderr_attempt_hashes_match": true,
+    "original_native_decisions_match_stdout": true,
+    "original_protocol_MASCOT_2_parties": true,
+    "same_container_and_dependency_pins": true,
+    "no_model_calls": true
+  },
+  "outcomes": {
+    "accepted": 7,
+    "rejected": 7,
+    "compilation_pass": 8,
+    "compilation_fail": 6,
+    "runtime_pass": 8,
+    "runtime_not_run": 6,
+    "archived_flag_disagreements": 0
+  },
+  "observed_by_task": {
+    "array_test/reverse_and_concat": [
+      "REJECT",
+      "ACCEPT"
+    ],
+    "loop_test/max_adjacent_product": [
+      "ACCEPT",
+      "REJECT"
+    ],
+    "branch_test/sin_or_cos": [
+      "ACCEPT",
+      "ACCEPT"
+    ],
+    "math_test/sigmoid": [
+      "ACCEPT",
+      "REJECT"
+    ],
+    "numpy_operation_test/array_from_intrinsic_linspace": [
+      "ACCEPT",
+      "ACCEPT"
+    ],
+    "numpy_ufunc_test/logsumexp": [
+      "REJECT",
+      "REJECT"
+    ],
+    "syntax_test/second_largest": [
+      "REJECT",
+      "REJECT"
+    ]
+  },
+  "interpretation": "Accept narrow smoke: 14 original stage-2 candidate texts freshly passed through pinned original MASCOT; authentic failed native programs retained. Full 626-stage2 comparison NOT YET measured. No historic LLM regeneration or causal repair-ablation claim.",
+  "original_comparison_artifact": 12116316330,
+  "reproducible_independent_audit": {
+    "script": "scripts/audit_stage2_smoke_zip.py",
+    "tests": "tests/test_stage2_smoke_zip_audit.py",
+    "smoke_artifact_id": 12116746822,
+    "historical_saved_snapshot_artifact_id": 12116316330,
+    "command": "python scripts/audit_stage2_smoke_zip.py --smoke-zip /path/to/github-actions-artifact-12116746822.zip --historical-traces-zip /path/to/github-actions-artifact-12116316330.zip --output /tmp/stage2-smoke-audit.json",
+    "no_untrusted_code_execution": true
+  }
+}

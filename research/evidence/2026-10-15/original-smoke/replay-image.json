@@ -1,0 +1,81 @@
+[
+    {
+        "Id": "sha256:b0417d7e2ddd98e2b8ec7a23d09b0eac4d184bfb688f563d910d1f49b674b5e4",
+        "RepoTags": [
+            "original-spdz-replay:latest"
+        ],
+        "RepoDigests": [],
+        "Parent": "",
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2026-10-15T02:56:49.079963088Z",
+        "DockerVersion": "",
+        "Author": "",
+        "Config": {
+            "Hostname": "",
+            "Domainname": "",
+            "User": "1000:1000",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LANG=C.UTF-8",
+                "GPG_KEY=A035C8C19219BA821ECEA86B64E628F8D684696D",
+                "PYTHON_VERSION=3.11.9",
+                "PYTHON_PIP_VERSION=24.0",
+                "PYTHON_SETUPTOOLS_VERSION=65.5.1",
+                "PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/def4aec84b261b939137dd1c69eff0aabb4a7bf4/public/get-pip.py",
+                "PYTHON_GET_PIP_SHA256=bc37786ec99618416cc0a0ca32833da447f4d91ab51d2c138dd15b7af21e8e9a",
+                "PYTHONDONTWRITEBYTECODE=1",
+                "PYTHONUNBUFFERED=1"
+            ],
+            "Cmd": null,
+            "ArgsEscaped": true,
+            "Image": "",
+            "Volumes": null,
+            "WorkingDir": "/run",
+            "Entrypoint": [
+                "python",
+                "/harness/replay_original.py"
+            ],
+            "OnBuild": null,
+            "Labels": null
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 287457122,
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/h2ry2u49x85oyczbyhj11hn9r/diff:/var/lib/docker/overlay2/1qrmbkreqf2j4wn3avwoxjl6y/diff:/var/lib/docker/overlay2/0ovtaic2wevgtxo34szw1qpx4/diff:/var/lib/docker/overlay2/pnpxj8yexlhrnwdzsldx6nd75/diff:/var/lib/docker/overlay2/26uld7hzjv6qpg7drabh3asq6/diff:/var/lib/docker/overlay2/az58ceppjz4o2ml8rtbjm8qoy/diff:/var/lib/docker/overlay2/7lvhpajyfosj5cs9ekm878rly/diff:/var/lib/docker/overlay2/59162999884e4e71ffa2681468020c724f6d76813a2cef36367ab6b8da4f9230/diff:/var/lib/docker/overlay2/3db3718aac1f8ed666e6f1434c7d14164734889a2e5f9725606c00464bc8b831/diff:/var/lib/docker/overlay2/e1400f9b6bc0e4bc88fef426971de11c01239e44620b944c7d55d645f12706de/diff:/var/lib/docker/overlay2/89a9017f489cf950dbd0f1fc60853a09cfcd2c7f622578f4e53c71af619adb27/diff:/var/lib/docker/overlay2/cdc78ff4da9f4f36f182d02d61a5da3e5d00ddcd6824ccc91e33d97c72c4c597/diff",
+                "MergedDir": "/var/lib/docker/overlay2/zqyeidm32orvlfywyn2eewuu4/merged",
+                "UpperDir": "/var/lib/docker/overlay2/zqyeidm32orvlfywyn2eewuu4/diff",
+                "WorkDir": "/var/lib/docker/overlay2/zqyeidm32orvlfywyn2eewuu4/work"
+            },
+            "Name": "overlay2"
+        },
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:8e2ab394fabf557b00041a8f080b10b4e91c7027b7c174f095332c7ebb6501cb",
+                "sha256:fbc55748732d0123d94fc4db6b7a810df835cc38db45a6ad1088d41f4cb2ef40",
+                "sha256:cadfff4b36cfd18d3a844aad4bc14f304c6baad6ad1f52cec0a99ee167915833",
+                "sha256:5c7e24e4a88ec3b59fd307e1d386b482be12334f7b53b06575a10d7b0a549669",
+                "sha256:7cb94502409a1280e22fcd64bb6570e5e4fc332725a928c96477994393be09db",
+                "sha256:9db7d677946059adf45f56c92fab881f9478ce249b70395b43571d3844cdc131",
+                "sha256:1d82a31510756007f029c499d4cd457c10873f772f2fb44dba3a6c4f461ae2cd",
+                "sha256:6007d419135b8b763b1dd79714868b0b236ee30c7ca8e1d5d459ef1b51a6bbb9",
+                "sha256:b774d5dda112d4e3b3c5f075b35f1d09846ff76f407d106f414149b7fe871f67",
+                "sha256:98c3ef2b0ccee891d02f173ce861636ed61c370b2d27bfe9386feb8f0920a40f",
+                "sha256:3ddc697f9330a7e162cbb6f502aae869177f0e4d83c4ab901b8787c84604c644",
+                "sha256:c53797747d5dd8e4b6c4d52a09be3c241728a12ef96ada3edcadc36af4ef33b3",
+                "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2026-10-15T02:56:50.133204565Z"
+        }
+    }
+]

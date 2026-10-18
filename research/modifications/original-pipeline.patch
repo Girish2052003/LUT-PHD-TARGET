@@ -1,0 +1,40 @@
+--- a/src/pipeline.py
++++ b/src/pipeline.py
+@@ -13,6 +13,7 @@
+ from apply_high_rules import apply_stage_1_rules
+ from apply_low_rules import apply_stage_2_rules
+ from apply_feedback_tc import run_feedback
++from secret_arithmetic import preserve_secret_arithmetic
+ 
+ 
+ date_and_time = datetime.now()
+@@ -61,6 +62,9 @@
+                             # Stage 3: whether to use feedback, default is False unless use --feedback_flag in command.
+                             output, prompt_token_consumption_3, completion_token_consumption_3 = run_feedback(args, test_function_name, python_IR, spdz_code, cot_chat_message=cot_chat_message) if args.feedback_flag else (' ', 0 , 0)
+ 
++                            # Girish modification: preserve secret comparison masks.
++                            output, _privacy_rewrites = preserve_secret_arithmetic(output, test_function_name)
++
+                             # Update IR
+                             IR_entry = {f"response_{j}": python_IR, f"prompt_token_{j}": prompt_token_consumption_1, f"completion_token_{j}":completion_token_consumption_1}
+                             IR.update(IR_entry)
+--- a/src/pipeline-mp.py
++++ b/src/pipeline-mp.py
+@@ -13,6 +13,7 @@
+ from apply_high_rules import apply_stage_1_rules
+ from apply_low_rules import apply_stage_2_rules
+ from apply_feedback_tc import run_feedback
++from secret_arithmetic import preserve_secret_arithmetic
+ 
+ import multiprocessing
+ 
+@@ -44,6 +45,9 @@
+ 
+         # Stage 3: whether to use feedback, default is False unless use --feedback_flag in command.
+         output, prompt_token_consumption_3, completion_token_consumption_3 = run_feedback(args, test_function_name, python_IR, spdz_code, cot_chat_message=cot_chat_message) if args.feedback_flag else (' ', 0 , 0)
++
++        # Girish modification: preserve secret comparison masks.
++        output, _privacy_rewrites = preserve_secret_arithmetic(output, test_function_name)
+ 
+         # Update IR
+         IR_entry = {f"response_{j}": python_IR, f"prompt_token_{j}": prompt_token_consumption_1, f"completion_token_{j}":completion_token_consumption_1}

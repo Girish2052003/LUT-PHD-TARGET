@@ -1,0 +1,51 @@
+{
+  "pair_id": "loop_test--count_distinct--c1--native",
+  "task_id": "loop_test/count_distinct",
+  "candidate_id": 1,
+  "kind": "native",
+  "inputs": null,
+  "input_type": null,
+  "rewrite_events": [
+    {
+      "rule": "secret_product",
+      "line": 13,
+      "column": 22,
+      "original": "(arr[j] != arr[i]).reveal()",
+      "replacement": "arr[j] != arr[i]"
+    }
+  ],
+  "variant": "modified",
+  "pair_index": 0,
+  "execution_order": 1,
+  "source_sha256": "05ca25eb2994520d5ac3227a60280530df29471af89f1be64a8f7569c523478b",
+  "original_source_sha256": "e3dcacd51d5e09ca45377f20e6ea2f11f2ac004e644bf5f00f547bc537771275",
+  "transformed_source_sha256": "05ca25eb2994520d5ac3227a60280530df29471af89f1be64a8f7569c523478b",
+  "template_sha256": "fe8172ef90f7b15b2e10b32cbdb791ddf56305994ebd0701ffe782aa64a75eae",
+  "inputs_sha256": null,
+  "compile_status": "PASS",
+  "runtime_status": "PASS",
+  "failure_class": null,
+  "oracle_status": "ACCEPT",
+  "duration_seconds": 31.830461108999998,
+  "exception": null,
+  "attempts": [
+    {
+      "command": "/mp-spdz/Scripts/compile-run.py -E mascot /run/paired-baseline/evaluation/evaluation_storage/count_distinct.mpc",
+      "timeout_seconds": 60,
+      "returncode": 0,
+      "timed_out": false,
+      "schedule_present": true,
+      "runtime_launch_marker": true,
+      "duration_seconds": 31.829828217,
+      "combined_source_sha256": "1a7d7562a98d0289c97732fc1f906b047e7e8bbb8902ca95d2dee24c405bf4f4",
+      "stdout_sha256": "bf53f58fde11ee41c4bbb7396ae3b864a4e9c1be25a56f2a535bc19d4ddbbaca",
+      "stderr_sha256": "62e425d6a60409a21db5c1750c9f936b913643983e0d77acd6b867c376ffe902",
+      "compile_status": "PASS",
+      "runtime_status": "PASS",
+      "failure_class": null
+    }
+  ],
+  "log_path": "logs/loop_test--count_distinct--c1--native/modified",
+  "authorized_outputs": [],
+  "public_openings": []
+}

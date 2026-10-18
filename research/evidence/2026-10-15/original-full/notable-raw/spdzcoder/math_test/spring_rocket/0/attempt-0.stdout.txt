@@ -1,0 +1,21 @@
+Default bit length: 64
+Default security parameter: 40
+Compiling file /baseline/evaluation/evaluation_storage/spring_rocket.mpc
+Writing to Programs/Schedules/spring_rocket.sch
+Writing to Programs/Bytecode/spring_rocket-0.bc
+Hash: c24eca59f076174d5766fcb5839b206d5f7893d26b622e97d5ebff0004f94265
+Program requires at most:
+        1963 integer triples
+        9040 integer bits
+         103 integer opens
+         162 virtual machine rounds
+Using security parameter 40
+Significant amount of unused bits of SPDZ gfp. For more accurate benchmarks, consider reducing the batch size with --batch-size.
+Note that some protocols have larger minimum batch sizes.
+The following benchmarks are including preprocessing (offline phase).
+Time = 27.7688 seconds 
+Data sent = 234.211 MB in ~727 rounds (party 0 only; use '-v' for more details)
+Global data sent = 468.422 MB (all parties)
+This program might benefit from some protocol options.
+Consider adding the following at the beginning of your code:
+	program.use_edabit(True)

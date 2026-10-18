@@ -1,0 +1,63 @@
+{
+  "pair_id": "count_distinct--sfix--3--control",
+  "task_id": "loop_test/count_distinct",
+  "candidate_id": 1,
+  "kind": "private_control",
+  "inputs": [
+    1,
+    2,
+    2
+  ],
+  "input_type": "sfix",
+  "expected_output": 2,
+  "expected_baseline_openings": [],
+  "rewrite_events": [
+    {
+      "rule": "secret_product",
+      "line": 13,
+      "column": 22,
+      "original": "(arr[j] != arr[i]).reveal()",
+      "replacement": "arr[j] != arr[i]"
+    }
+  ],
+  "observer_sites": {
+    "baseline": [],
+    "modified": []
+  },
+  "variant": "modified",
+  "pair_index": 7,
+  "execution_order": 0,
+  "source_sha256": "05ca25eb2994520d5ac3227a60280530df29471af89f1be64a8f7569c523478b",
+  "original_source_sha256": "e3dcacd51d5e09ca45377f20e6ea2f11f2ac004e644bf5f00f547bc537771275",
+  "transformed_source_sha256": "05ca25eb2994520d5ac3227a60280530df29471af89f1be64a8f7569c523478b",
+  "template_sha256": "7ff78cb944076d3ac6ba8605abcd78e94cdaab4d8d9b1a2f1d228c6a5078e0cc",
+  "inputs_sha256": "d67df7df61d6152c4a61c23939931c5a90e51646e78d82e70a4e67d84eca097c",
+  "compile_status": "PASS",
+  "runtime_status": "PASS",
+  "failure_class": "oracle_reject",
+  "oracle_status": "REJECT",
+  "duration_seconds": 6.775759243999971,
+  "exception": null,
+  "attempts": [
+    {
+      "command": "/mp-spdz/Scripts/compile-run.py -E mascot /run/paired-baseline/evaluation/evaluation_storage/count_distinct.mpc",
+      "timeout_seconds": 60,
+      "returncode": 0,
+      "timed_out": false,
+      "schedule_present": true,
+      "runtime_launch_marker": true,
+      "duration_seconds": 6.775326737,
+      "combined_source_sha256": "24baec0e9ea3ca66f1b015b6e8038749f222f04cadc5e77f5b47f4b81e9ee2b6",
+      "stdout_sha256": "8a71579dd2e330b65677e673d86cdf5a57ab633a15a5635d78f907c406d1c0fe",
+      "stderr_sha256": "4d908290b5320c399a2a18bacd05f4fc8e0f0ff3b561c20cd4124c858f46a053",
+      "compile_status": "PASS",
+      "runtime_status": "PASS",
+      "failure_class": null
+    }
+  ],
+  "log_path": "logs/count_distinct--sfix--3--control/modified",
+  "authorized_outputs": [
+    "2"
+  ],
+  "public_openings": []
+}

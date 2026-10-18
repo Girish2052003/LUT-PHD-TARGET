@@ -1,0 +1,26 @@
+{
+  "python": "3.11.9 (main, Sep  4 2024, 23:15:21) [GCC 12.2.0]",
+  "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.36",
+  "protocol": "MASCOT",
+  "parties": 2,
+  "mp_spdz_commit": "6cc3fccef0904764364eb8e285519cd34028f325",
+  "mp_spdz_version": "0.3.6",
+  "source_archive_sha256": "a8ea14150dc1d4ddf53eb4ead450d88139d09b680683f673029877ce0c6e00ac",
+  "mascot_binary_sha256": "2a592fec9a9f9d0e7e8148bdf9ee7a67811dd6781c333981b386f3d1b7c8a5b3",
+  "research_commit": "554522da16fc22fd008b3f5b4c0a5bb6c62a5d45",
+  "container_image_id": "sha256:b0417d7e2ddd98e2b8ec7a23d09b0eac4d184bfb688f563d910d1f49b674b5e4",
+  "limits": {
+    "cpus": 2,
+    "memory_bytes": 6442450944,
+    "pids": 256
+  },
+  "network": "loopback only; Docker network none",
+  "api_calls": 0,
+  "randomness": "Original templates and protocol defaults; no undocumented seed substitution",
+  "adaptations": [
+    "Evaluator-only dependencies; author OS/Python unpinned",
+    "Kill subprocess group on timeout to prevent orphaned parties",
+    "Fresh Programs and party logs for each attempt; no stale execution artifacts",
+    "Non-root read-only container; compiler writes only disposable scratch"
+  ]
+}

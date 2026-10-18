@@ -1,0 +1,92 @@
+{
+  "date": "2026-10-18",
+  "status": "NARROW_ORIGINAL_STAGE2_NATIVE_REPLAY_ACCEPTED",
+  "original_native_run_id": 39075744038,
+  "original_native_run_commit": "1e3c95d5357cd8b913a11916e562b6de7d633ccb",
+  "original_native_run_conclusion": "failure_due_to_aggregate_artifact_path_only",
+  "original_native_category_jobs": "7/7 PASS",
+  "original_native_smoke": "PASS",
+  "original_aggregate_error": "ValueError: No stage-2 results discovered (incorrect extra stage2-full prefix after merged artifact download)",
+  "artifact_only_recovery_run_id": 39080161119,
+  "artifact_only_recovery_commit": "58197ee4b93c70a04cc19f4c15a319eba3b4f4d8",
+  "artifact_only_recovery_conclusion": "success",
+  "recovery_artifact_id": 12118194181,
+  "recovery_artifact_zip_sha256": "4ba5dc8c0470c1cf02633bb4722a204558b3c3d591a863c10cb5e28c572ba12c",
+  "original_source_archive_sha256": "a8ea14150dc1d4ddf53eb4ead450d88139d09b680683f673029877ce0c6e00ac",
+  "original_stage2_original_code_sources_verified_in_raw_mpc": 626,
+  "original_native_templates_verified": 313,
+  "original_task_count": 313,
+  "candidate_executions": 626,
+  "raw_native_attempts": 644,
+  "original_native_results": {
+    "first": 229,
+    "second": 216,
+    "union": 262,
+    "candidates_accepted": 445,
+    "candidates_rejected": 181
+  },
+  "authors_saved_stage2_flags": {
+    "first": 229,
+    "second": 213,
+    "union": 261,
+    "candidates_accepted": 442
+  },
+  "compiler_statuses": {
+    "PASS": 479,
+    "FAIL": 147
+  },
+  "runtime_statuses": {
+    "PASS": 479,
+    "NOT_RUN": 147
+  },
+  "native_oracle_rejects_after_runtime": 34,
+  "accepted_without_completed_runtime": 0,
+  "archived_vs_fresh_disagreements": [
+    {
+      "task_id": "branch_test/choice_of_the_knight",
+      "candidate_id": 1,
+      "saved": false,
+      "fresh": true,
+      "observation": "Timed out original MASCOT first attempt at 60s; original retry accepted within 90s budget."
+    },
+    {
+      "task_id": "math_test/pi_to_the_x",
+      "candidate_id": 1,
+      "saved": false,
+      "fresh": true,
+      "observation": "Original evaluator printed Pass the test in fresh run; underlying numeric cause not proven."
+    },
+    {
+      "task_id": "math_test/spring_rocket",
+      "candidate_id": 1,
+      "saved": false,
+      "fresh": true,
+      "observation": "Original evaluator printed Pass the test in fresh run; underlying numeric cause not proven."
+    }
+  ],
+  "source_execution_checks": [
+    "Exact original 65,761,280-byte Zenodo TAR SHA256 pinned",
+    "All 7 category source files, 313 task IDs, 626 candidate SHA256 values checked against original TAR",
+    "All 313 original native test template SHA256 values verified",
+    "Every nonempty original candidate code string found byte-for-byte in each corresponding executed .mpc input",
+    "All raw .mpc inputs, stdout and stderr SHA256 verified per recorded attempt",
+    "All per-task records uniquely joined to original task and candidate index",
+    "Original author stdout-based acceptance recomputed independently for every final attempt",
+    "All stage2 native source/environment package manifests common across seven independently built runner images",
+    "Original source, original 2-party MASCOT evaluator, original published test oracle unchanged",
+    "Two independent raw seven-ZIP auditor and original-TAR-to-MPC source reports match original aggregate results",
+    "Zero live LLM calls; no fresh original model pipeline generation",
+    "All rejection/failure categories and retries preserved"
+  ],
+  "source_run_artifact_ids": {
+    "array_test": 12117009220,
+    "loop_test": 12118480819,
+    "branch_test": 12117428647,
+    "math_test": 12118110941,
+    "numpy_operation_test": 12116744908,
+    "numpy_ufunc_test": 12118278472,
+    "syntax_test": 12117610306
+  },
+  "errors_not_masked": "Original full workflow's aggregator failed on path structure; separate artifact-only recovery reused the same original raw native executions and passed all source/identity/evaluator checks. Original red workflow status remains publicly visible.",
+  "scope_limitations": "This establishes original author-saved stage2 candidate replay under pinned MASCOT, not freshly generated model results, a controlled source-disabled refactoring ablation, semantic correctness beyond native oracles, or privacy proof. Model history and without-refactoring ablation remain separately unresolved."
+}

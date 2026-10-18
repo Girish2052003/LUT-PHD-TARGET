@@ -1,0 +1,23 @@
+{
+  "research_commit": "35adfb04c1132ae91d1b2c6e21cf791855eab768",
+  "container_image_id": "sha256:4eb19220e0bca6fde96563fa17f609c1aa5745569c8529b20f2c30274c77225d",
+  "python": "3.11.9 (main, Sep  4 2024, 23:15:21) [GCC 12.2.0]",
+  "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.36",
+  "protocol": "MASCOT",
+  "parties": 2,
+  "cpu_models": [
+    "AMD EPYC 7763 64-Core Processor"
+  ],
+  "limits": {
+    "cpus": 2,
+    "memory_bytes": 6442450944,
+    "pids": 256
+  },
+  "api_calls": 0,
+  "original_evaluator_sha256": "7b999498f06050ab4db54e19097f65cd56c09eb7446384ddca4b62165969f1a2",
+  "mode": "smoke",
+  "split": null,
+  "randomness": "Original compiler/protocol defaults; no RNG seed overridden",
+  "pair_order": "baseline first for even pair index; modified first for odd; same image and job",
+  "generation_scope": "Only exact added finalizer statements executed; no preceding model stages or responses simulated"
+}

@@ -1,0 +1,20 @@
+Default bit length: 64
+Default security parameter: 40
+Compiling file /run/paired-baseline/evaluation/evaluation_storage/count_distinct.mpc
+Writing to Programs/Schedules/count_distinct.sch
+Writing to Programs/Bytecode/count_distinct-0.bc
+Hash: 216d810a5373eb5a35459f45ddcafdc15d01a2af4a58ba47dd9892eb98ee7389
+Program requires at most:
+        6811 integer bits
+         191 integer opens
+        2917 integer triples
+          17 virtual machine rounds
+Using security parameter 40
+Pass the test
+The following benchmarks are including preprocessing (offline phase).
+Time = 28.5628 seconds 
+Data sent = 195.182 MB in ~343 rounds (party 0 only; use '-v' for more details)
+Global data sent = 390.364 MB (all parties)
+This program might benefit from some protocol options.
+Consider adding the following at the beginning of your code:
+	program.use_edabit(True)

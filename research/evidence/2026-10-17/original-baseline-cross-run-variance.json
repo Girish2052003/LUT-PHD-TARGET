@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-10-17",
+  "description": "Independent task/candidate-level cross-run comparison of authentic original SPDZCoder candidate acceptance against the unmodified author evaluator.",
+  "earlier_original_only": {
+    "run_id": 38703569637,
+    "research_commit": "769bb12ce342b814590061ef04fdffbbe19c9990",
+    "records": 626,
+    "accepted": 533,
+    "first": 268,
+    "second": 265,
+    "source_path": "research/evidence/2026-10-15/original-full/verified-summary/failure_matrix.json"
+  },
+  "later_paired_unmodified_baseline": {
+    "run_id": 38989067493,
+    "research_commit": "b5846f5be000e6f511ed319011549ed4aaa8472c",
+    "records": 626,
+    "accepted": 536,
+    "first": 270,
+    "second": 266,
+    "artifact_id": 12087032937
+  },
+  "later_paired_modified_label": {
+    "run_id": 38989067493,
+    "records": 626,
+    "accepted": 534,
+    "first": 271,
+    "second": 263,
+    "artifact_id": 12087032937
+  },
+  "earlier_to_later_unmodified_flips": [
+    {
+      "task_id": "loop_test/choppy_array",
+      "candidate_id": 0,
+      "earlier": "REJECT",
+      "later": "ACCEPT"
+    },
+    {
+      "task_id": "math_test/pi_to_the_x",
+      "candidate_id": 1,
+      "earlier": "REJECT",
+      "later": "ACCEPT"
+    },
+    {
+      "task_id": "math_test/spring_rocket",
+      "candidate_id": 0,
+      "earlier": "REJECT",
+      "later": "ACCEPT"
+    }
+  ],
+  "earlier_to_later_modified_label_flips": [
+    {
+      "task_id": "loop_test/choppy_array",
+      "candidate_id": 0,
+      "earlier": "REJECT",
+      "later": "ACCEPT"
+    },
+    {
+      "task_id": "loop_test/standard_deviation",
+      "candidate_id": 1,
+      "earlier": "ACCEPT",
+      "later": "REJECT"
+    },
+    {
+      "task_id": "math_test/next_perfect_square",
+      "candidate_id": 1,
+      "earlier": "ACCEPT",
+      "later": "REJECT"
+    },
+    {
+      "task_id": "math_test/pi_to_the_x",
+      "candidate_id": 0,
+      "earlier": "REJECT",
+      "later": "ACCEPT"
+    },
+    {
+      "task_id": "math_test/spring_rocket",
+      "candidate_id": 0,
+      "earlier": "REJECT",
+      "later": "ACCEPT"
+    }
+  ],
+  "method": "Join all 626 earlier spdzcoder failure_matrix records by exact case-sensitive (task_id,candidate_id), compare native ACCEPT/REJECT to both later paired label statuses, without changing task denominators. Later task labels ordered via Python codepoint sorting, not locale-sensitive collation.",
+  "limitations": "Outcome differences in unchanged source arise across reruns. No causal mechanism established. Earlier accepted replay and current paired experiment use pinned authentic author source. This matrix does not independently compare runtime numerical values or prove a security or correctness improvement. Reproduce targeted controlled repetitions in run 39043579023."
+}

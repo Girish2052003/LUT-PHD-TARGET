@@ -1,0 +1,31 @@
+# Explicit new private-input diagnostic; not a native benchmark template.
+# Party 0 values are private; length, type and the returned count/bit are public.
+# insert here #
+# Import the necessary modules from MP-SPDZ
+from Compiler.types import sint, Array
+
+def is_ascending(arr):
+    """
+    Return whether or not the array is in strictly ascending order.
+    If the length of input array is 1, you should return True.
+    """
+    # Assume arr is an Array of sint
+    # Initialize the result to True assuming that the array is in ascending order
+    result = sint(1)  # True is represented by sint(1)
+
+    # Loop through the array to check for any non-ascending adjacent elements
+    for i in range(len(arr)-1):
+        # Use the MP-SPDZ methods for comparison and logical operations
+        condition = arr[i] >= arr[i + 1]
+        # Convert condition to integer and calculate 1 - condition
+        # Here we need to use 1 - condition to maintain the result as True unless the condition is met
+        result = result * (1 - condition.reveal())
+
+    # Return the final result
+    return result
+
+secret_values = sfix.Array(3)
+for i in range(3):
+    secret_values[i] = sfix.get_input_from(0)
+answer = is_ascending(secret_values)
+print_ln('AUTHORIZED=%s', answer.reveal())
