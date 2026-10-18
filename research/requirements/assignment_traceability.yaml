@@ -26,7 +26,8 @@
       "test_workflow_identifiers": [
         "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557115103",
         "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557128629",
-        "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557114938"
+        "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557114938",
+        "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39073490709"
       ],
       "measured_results": "Original paper methodology and original-source implementation crosswalk plus seven real saved-stage traces independently reviewed, with unavailable historical model calls explicitly disclosed.",
       "known_limitations": "Source-linked paper/implementation mapping and seven authentic archived stage snapshots accepted within the reviewed original-source scope. The exact historical LLM call sequence, pre-reflection outputs and full rule-by-rule transcripts cannot be recovered; original code contradicts idealized paper control-flow details. B3 remains blocked; the genuine no-refactoring ablation is unverified.",
@@ -66,7 +67,7 @@
         "research/reviews/stage2-full-original-mascot-independent-acceptance.md",
         "research/evidence/2026-10-18/stage2-native-reproduction-difficulties.json"
       ],
-      "exact_evidence_commit": "769bb12ce342b814590061ef04fdffbbe19c9990",
+      "exact_evidence_commit": "990bd9f9ce0c539a949df44fbca5843fefd12e8c",
       "test_workflow_identifiers": [
         "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557115103",
         "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557128629",
@@ -121,7 +122,7 @@
         "research/reviews/archived-stage2-stage3-evaluation-review.md",
         "research/evidence/2026-10-18/authors-no-refactoring-inventory-review.json"
       ],
-      "exact_evidence_commit": "769bb12ce342b814590061ef04fdffbbe19c9990",
+      "exact_evidence_commit": "990bd9f9ce0c539a949df44fbca5843fefd12e8c",
       "test_workflow_identifiers": [
         "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557115103",
         "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557128629",
@@ -164,7 +165,9 @@
         "research/evidence/2026-10-18/seven-category-stage-receipt.json"
       ],
       "exact_evidence_commit": "990bd9f9ce0c539a949df44fbca5843fefd12e8c",
-      "test_workflow_identifiers": [],
+      "test_workflow_identifiers": [
+        "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39073490709"
+      ],
       "measured_results": "Original processed/refactor/generate-reflect/repair/evaluate code paths and real saved stage outputs independently mapped with known control-flow discrepancies and missing model transcript boundaries.",
       "known_limitations": "Seven authentic saved intermediate stage snapshots and original source routes are mapped, but missing historical pre-reflection and repair conversations prevent reconstructing exact model chronology. Stage-1 early break and feedback reset discrepancies are retained. No fresh historical LLM stage claimed.",
       "verification_reviewer": "Secondary assistant independent audit of source, published paper and raw native/original ZIPs; not an external third-party certification",
@@ -277,11 +280,15 @@
         "research/evidence/2026-10-16/paired-smoke/receipt.json",
         "research/evidence/2026-10-16/paired-smoke/measurements.json",
         "research/reviews/paired-smoke-evidence-review.md",
-        "research/reviews/integrated-independent-practical-acceptance-20261018.md"
+        "research/reviews/integrated-independent-practical-acceptance-20261018.md",
+        "research/reviews/paired-full-independent-control-audit.md",
+        "research/reviews/phase-f-bounded-native-interpretation-20261018.md"
       ],
       "exact_evidence_commit": "990bd9f9ce0c539a949df44fbca5843fefd12e8c",
       "test_workflow_identifiers": [
-        "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38958484872"
+        "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38958484872",
+        "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38989067493",
+        "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39043579023"
       ],
       "measured_results": "Full 626-pair 1252-execution controlled original vs patched comparison, bounded conditional mask-product rationale, 624 byte-identical controls, no attributable pass-rate changes, explicit 50->0 observed opening events and performance costs.",
       "known_limitations": "Full 626-pair/1,252-execution original vs patched comparison and repeatability follow-up accepted only under the original native-oracle and narrow privacy observation model. Only two candidate source programs changed, both ACCEPT→ACCEPT. Four unchanged-source controls changed native acceptance; no causal general accuracy improvement. Costs increase for measured candidates. B3 model generation unavailable.",
@@ -323,7 +330,7 @@
         "research/evidence/2026-10-18/stage2-native-reproduction-difficulties.json",
         "research/reviews/stage2-full-original-mascot-independent-acceptance.md"
       ],
-      "exact_evidence_commit": "769bb12ce342b814590061ef04fdffbbe19c9990",
+      "exact_evidence_commit": "990bd9f9ce0c539a949df44fbca5843fefd12e8c",
       "test_workflow_identifiers": [
         "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557115103",
         "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557128629",

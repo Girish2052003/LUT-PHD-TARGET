@@ -54,6 +54,21 @@ def validate_gates(phases, requirements, report_authorized, authorization_record
         if unfinished:
             raise ValueError(f"{record['id']}: unfinished prerequisite phases: {unfinished}")
     r9 = next(r for r in requirements if r["id"] == "R9")
+    report_phase = next((p for p in phases if p["id"] == "REPORT"), None)
+    if report_phase is not None:
+        if report_phase["status"] == "PASS" and r9["status"] != "PASS":
+            raise ValueError("REPORT PASS contradicts R9 practical-readiness status")
+        open_requirements = [r["id"] for r in requirements
+                             if r["id"] != "R9" and r["status"] != "PASS"]
+        # Human-readable completion claims must not override the machine ledger.
+        # Protect the specific all-practical-requirements claim; an explicitly
+        # approved exception must be recorded in the ledger first.
+        if open_requirements and re.search(
+                r"R1\s*[–-]\s*R8\s+accepted",
+                report_phase.get("completion_scope", ""), flags=re.IGNORECASE):
+            raise ValueError(
+                "REPORT scope contradicts unfinished requirements: "
+                + ", ".join(open_requirements))
     if r9["status"] == "PASS" and any(r["status"] != "PASS" for r in requirements if r["id"] != "R9"):
         raise ValueError("Report readiness requires R1–R8 PASS; accepted exceptions need explicit ledger support")
     if report_authorized:

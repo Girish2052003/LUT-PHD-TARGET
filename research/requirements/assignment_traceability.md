@@ -28,7 +28,7 @@ These are practical acceptance gates. Historical milestones do not replace origi
 - **Verification reviewer:** Secondary assistant independent audit of source, published paper and raw native/original ZIPs; not an external third-party certification
 - **Evidence:** `docs/deep_paper_audit.md`, `research/original_source_audit.md`, `research/reviews/integrated-independent-practical-acceptance-20261018.md`, `research/reviews/phase-a-paper-source-crosswalk-20261018.md`, `research/evidence/2026-10-18/seven-category-stage-receipt.json`
 - **Evidence commit:** 990bd9f9ce0c539a949df44fbca5843fefd12e8c
-- **Workflow identifiers:** https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557115103, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557128629, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557114938
+- **Workflow identifiers:** https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557115103, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557128629, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557114938, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39073490709
 
 ## R2 — Reproduce original implementation
 
@@ -42,7 +42,7 @@ These are practical acceptance gates. Historical milestones do not replace origi
 - **Known limitations:** R2 remains IN_PROGRESS because the original historical LLM-stage generation (B3) is blocked by unverified historical deployment/version and absent explicitly authorized credentials/costs. Original-source native evaluation is genuinely reproduced, but never substitute archived output replay for generation. Explicit user decision required on the blocker.
 - **Verification reviewer:** Native evaluation evidence and source/hashes reviewed in existing independent evidence records; B3 not executed or externally certified.
 - **Evidence:** `research/evidence/2026-10-14/source_provenance.json`, `research/original_source_audit.md`, `research/evidence/2026-10-15/original-smoke/receipt.json`, `research/reviews/original-replay-review.md`, `research/evidence/2026-10-15/original-full/receipt.json`, `research/reviews/full-replay-evidence-review.md`, `research/reviews/integrated-independent-practical-acceptance-20261018.md`, `research/evidence/2026-10-18/stage2-original-full-independent-acceptance.json`, `research/reviews/stage2-full-original-mascot-independent-acceptance.md`, `research/evidence/2026-10-18/stage2-native-reproduction-difficulties.json`
-- **Evidence commit:** 769bb12ce342b814590061ef04fdffbbe19c9990
+- **Evidence commit:** 990bd9f9ce0c539a949df44fbca5843fefd12e8c
 - **Workflow identifiers:** https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557115103, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557128629, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557114938, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38673372763, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38703569637, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39075744038, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39080161119
 
 ## R3 — Reproduce key results
@@ -57,7 +57,7 @@ These are practical acceptance gates. Historical milestones do not replace origi
 - **Known limitations:** R3 remains IN_PROGRESS pending an explicit decision about whether its remaining irreproducible historical generation/no-refactoring ablation are accepted limitations. No genuine identifiable SPDZCoder without-refactoring output corpus recovered; numeric-match UniTrans/GPT-4 baseline is not a substitute. Original oracle false positives, one missing native test and fresh/archived differences are disclosed. No general correctness/security proof.
 - **Verification reviewer:** Original native saved-source evaluation and archived flag evidence independently reviewed within the original oracle scope; no original historical model generation and no genuine original no-refactoring ablation certified.
 - **Evidence:** `research/evidence/2026-10-14/original_saved_evaluation_metrics.json`, `research/original_source_audit.md`, `research/evidence/2026-10-14/identity_verified_scores.json`, `research/evidence/2026-10-15/original-smoke/receipt.json`, `research/reviews/original-replay-review.md`, `research/evidence/2026-10-15/original-full/receipt.json`, `research/reviews/full-replay-evidence-review.md`, `research/reviews/integrated-independent-practical-acceptance-20261018.md`, `research/evidence/2026-10-18/stage2-original-full-independent-acceptance.json`, `research/evidence/2026-10-18/saved-stage2-stage3-audit-receipt.json`, `research/evidence/2026-10-18/stage2-native-reproduction-difficulties.json`, `research/reviews/stage2-full-original-mascot-independent-acceptance.md`, `research/reviews/archived-stage2-stage3-evaluation-review.md`, `research/evidence/2026-10-18/authors-no-refactoring-inventory-review.json`
-- **Evidence commit:** 769bb12ce342b814590061ef04fdffbbe19c9990
+- **Evidence commit:** 990bd9f9ce0c539a949df44fbca5843fefd12e8c
 - **Workflow identifiers:** https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557115103, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557128629, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557114938, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38673372763, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38703569637, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39073915415, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39075744038, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39080161119
 
 ## R4 — Explain actual methodology
@@ -73,7 +73,7 @@ These are practical acceptance gates. Historical milestones do not replace origi
 - **Verification reviewer:** Secondary assistant independent audit of source, published paper and raw native/original ZIPs; not an external third-party certification
 - **Evidence:** `docs/paper_guide.md`, `research/original_source_audit.md`, `research/reviews/integrated-independent-practical-acceptance-20261018.md`, `research/reviews/phase-a-paper-source-crosswalk-20261018.md`, `research/evidence/2026-10-18/seven-category-stage-receipt.json`
 - **Evidence commit:** 990bd9f9ce0c539a949df44fbca5843fefd12e8c
-- **Workflow identifiers:** Pending
+- **Workflow identifiers:** https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39073490709
 
 ## R5 — Demonstrate substantive limitation
 
@@ -116,9 +116,9 @@ These are practical acceptance gates. Historical milestones do not replace origi
 - **Acceptance criteria:** Measured baseline and modified results independently reproducible under equal conditions.
 - **Known limitations:** Full 626-pair/1,252-execution original vs patched comparison and repeatability follow-up accepted only under the original native-oracle and narrow privacy observation model. Only two candidate source programs changed, both ACCEPT→ACCEPT. Four unchanged-source controls changed native acceptance; no causal general accuracy improvement. Costs increase for measured candidates. B3 model generation unavailable.
 - **Verification reviewer:** Secondary assistant independent audit of source, published paper and raw native/original ZIPs; not an external third-party certification
-- **Evidence:** `scripts/replay_modified.py`, `scripts/verify_paired_replay.py`, `research/modifications/README.md`, `research/reviews/paired-smoke-preexecution-review.md`, `research/evidence/2026-10-16/paired-smoke/receipt.json`, `research/evidence/2026-10-16/paired-smoke/measurements.json`, `research/reviews/paired-smoke-evidence-review.md`, `research/reviews/integrated-independent-practical-acceptance-20261018.md`
+- **Evidence:** `scripts/replay_modified.py`, `scripts/verify_paired_replay.py`, `research/modifications/README.md`, `research/reviews/paired-smoke-preexecution-review.md`, `research/evidence/2026-10-16/paired-smoke/receipt.json`, `research/evidence/2026-10-16/paired-smoke/measurements.json`, `research/reviews/paired-smoke-evidence-review.md`, `research/reviews/integrated-independent-practical-acceptance-20261018.md`, `research/reviews/paired-full-independent-control-audit.md`, `research/reviews/phase-f-bounded-native-interpretation-20261018.md`
 - **Evidence commit:** 990bd9f9ce0c539a949df44fbca5843fefd12e8c
-- **Workflow identifiers:** https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38958484872
+- **Workflow identifiers:** https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38958484872, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38989067493, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39043579023
 
 ## R8 — Document reproduction difficulties
 
@@ -132,7 +132,7 @@ These are practical acceptance gates. Historical milestones do not replace origi
 - **Known limitations:** Complete source-run stage-2 failure inventory and known stage-3, oracle, environment, repair-control-flow and ablation difficulties are preserved. Still IN_PROGRESS for top-level gate reconciliation while B3 irreproducibility exception and final Phase G acceptance remain unapproved; do not describe the completed 626-candidate replay as pending.
 - **Verification reviewer:** Secondary raw native-artifact reviews record full failure inventory, timeouts and recovery; historical-generation limits remain and final governance closure not certified.
 - **Evidence:** `docs/reproduction_log.md`, `research/reviews/pr5-independent-review.md`, `research/original_source_audit.md`, `research/evidence/2026-10-15/original-smoke/receipt.json`, `research/reviews/original-replay-review.md`, `research/evidence/2026-10-15/original-full/attempt-1.json`, `research/evidence/2026-10-15/original-full/receipt.json`, `research/reviews/full-replay-evidence-review.md`, `research/reviews/integrated-independent-practical-acceptance-20261018.md`, `research/evidence/2026-10-18/stage2-original-full-independent-acceptance.json`, `research/evidence/2026-10-18/stage2-native-reproduction-difficulties.json`, `research/reviews/stage2-full-original-mascot-independent-acceptance.md`
-- **Evidence commit:** 769bb12ce342b814590061ef04fdffbbe19c9990
+- **Evidence commit:** 990bd9f9ce0c539a949df44fbca5843fefd12e8c
 - **Workflow identifiers:** https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557115103, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557128629, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557114938, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38673372763, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38703569637, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39075744038, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39080161119
 
 ## R9 — Final report readiness

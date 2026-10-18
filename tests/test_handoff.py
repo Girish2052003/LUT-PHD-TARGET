@@ -50,3 +50,21 @@ class HandoffGateTests(unittest.TestCase):
     def test_report_authorization_requires_practical_readiness(self):
         with self.assertRaisesRegex(ValueError, "readiness"):
             validate_gates([], [{"id": "R9", "status": "BLOCKED"}], True, "placeholder")
+
+    def test_report_phase_cannot_pass_when_r9_is_blocked(self):
+        phases = [{"id": "REPORT", "status": "PASS", "completion_scope": "Complete"}]
+        requirements = [{"id": "R9", "status": "BLOCKED"}]
+        with self.assertRaisesRegex(ValueError, "contradicts R9"):
+            validate_gates(phases, requirements, False, None)
+
+    def test_report_scope_cannot_claim_all_while_r2_remains_open(self):
+        phases = [{"id": "REPORT", "status": "BLOCKED",
+                   "completion_scope": "Practical R1–R8 accepted; report locked"}]
+        requirements = [
+            {"id": f"R{i}", "status": "IN_PROGRESS" if i == 2 else "PASS"}
+            for i in range(1, 9)
+        ] + [{"id": "R9", "status": "BLOCKED"}]
+        with self.assertRaisesRegex(ValueError, "contradicts unfinished"):
+            validate_gates(phases, requirements, False, None)
+        phases[0]["completion_scope"] = "R2 still IN_PROGRESS; final report locked"
+        validate_gates(phases, requirements, False, None)
