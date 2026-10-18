@@ -1,0 +1,141 @@
+{
+  "schema_version": 1,
+  "kind": "secondary_read_only_raw_zip_independent_audit",
+  "observed_date": "2026-10-18",
+  "original_native_run_id": 39075744038,
+  "artifact_only_recovery_run_id": 39080161119,
+  "original_native_job_result": "all_seven_categories_success_original_aggregate_failed_due_to_artifact_path",
+  "recovery_workflow_conclusion": "success_zero_native_candidate_reruns",
+  "original_source_zip_ids": {
+    "array_test": 12117009220,
+    "branch_test": 12117428647,
+    "loop_test": 12118480819,
+    "math_test": 12118110941,
+    "numpy_operation_test": 12116744908,
+    "numpy_ufunc_test": 12118278472,
+    "syntax_test": 12117610306
+  },
+  "original_source_zip_sha256_by_category": {
+    "array_test": "12ac90652fdbeed1034a555dbf140a91fe298f8b860bdbcdc385e1977977e119",
+    "branch_test": "f9ea20c2ed58d0853fc0659448a8cf5759cfbdf2b4ccdfffe5669973f5d1a3bd",
+    "loop_test": "9c19d30baa11c39a2368c6947406fe7d639920fa21f70a4966ac8c0464ee4cf0",
+    "math_test": "f8e452799031df3fac1d6e6cd818b80783b2479392ab33664a86a15c4a16c253",
+    "numpy_operation_test": "019deb164dc0d88058fbfb97cd39948616a15e7c6fa9594ba9d705b1b72b2369",
+    "numpy_ufunc_test": "52d7ca0b5a6dafc94f894bcb97138d508cc7a299d5f6090360255fcf97766480",
+    "syntax_test": "abe0ac8871153fdd8970c86435ede7e52e7341eda7f1479ea8dd31bc2304b73d"
+  },
+  "recovery_zip_artifact_id": 12118194181,
+  "recovery_zip_sha256": "4ba5dc8c0470c1cf02633bb4722a204558b3c3d591a863c10cb5e28c572ba12c",
+  "candidate_record_count": 626,
+  "task_count": 313,
+  "native_attempt_count": 644,
+  "checked_raw_mpc_stdout_stderr_sha256": 1932,
+  "rechecked_split_to_per_candidate_json": 626,
+  "rechecked_split_to_recovered_record": 626,
+  "native_compilation": {
+    "PASS": 479,
+    "FAIL": 147
+  },
+  "native_runtime": {
+    "PASS": 479,
+    "NOT_RUN": 147
+  },
+  "original_oracle": {
+    "ACCEPT": 445,
+    "REJECT": 181
+  },
+  "failure_classes": {
+    "compile_failure": 147,
+    "oracle_reject": 34,
+    "none": 445
+  },
+  "retrying_candidates": 14,
+  "timed_out_attempts": 18,
+  "fresh_first": 229,
+  "fresh_second": 216,
+  "fresh_union": 262,
+  "archived_first": 229,
+  "archived_second": 213,
+  "archived_union": 261,
+  "category_metrics": {
+    "array_test": {
+      "tasks": 43,
+      "candidates": 86,
+      "first": 32,
+      "second": 33,
+      "union": 39,
+      "compiler_failures": 19
+    },
+    "branch_test": {
+      "tasks": 34,
+      "candidates": 68,
+      "first": 29,
+      "second": 25,
+      "union": 29,
+      "compiler_failures": 6
+    },
+    "loop_test": {
+      "tasks": 97,
+      "candidates": 194,
+      "first": 70,
+      "second": 66,
+      "union": 82,
+      "compiler_failures": 47
+    },
+    "math_test": {
+      "tasks": 38,
+      "candidates": 76,
+      "first": 30,
+      "second": 31,
+      "union": 36,
+      "compiler_failures": 11
+    },
+    "numpy_operation_test": {
+      "tasks": 32,
+      "candidates": 64,
+      "first": 21,
+      "second": 19,
+      "union": 24,
+      "compiler_failures": 21
+    },
+    "numpy_ufunc_test": {
+      "tasks": 34,
+      "candidates": 68,
+      "first": 26,
+      "second": 23,
+      "union": 28,
+      "compiler_failures": 17
+    },
+    "syntax_test": {
+      "tasks": 35,
+      "candidates": 70,
+      "first": 21,
+      "second": 19,
+      "union": 24,
+      "compiler_failures": 26
+    }
+  },
+  "saved_vs_fresh_disagreements": [
+    {
+      "task_id": "branch_test/choice_of_the_knight",
+      "candidate_id": 1,
+      "saved": false,
+      "fresh": true
+    },
+    {
+      "task_id": "math_test/pi_to_the_x",
+      "candidate_id": 1,
+      "saved": false,
+      "fresh": true
+    },
+    {
+      "task_id": "math_test/spring_rocket",
+      "candidate_id": 1,
+      "saved": false,
+      "fresh": true
+    }
+  ],
+  "verification_method": "Directly downloaded and SHA256-hashed each of seven original-run ZIPs and the exact artifact-only recovery ZIP; parsed all category outcomes.jsonl records, checked 626 per-candidate outcome.json records and 626 recovery records for exact JSON equality; hashed every raw native .mpc input/stdout/stderr file against its attempt SHA256; validated original task/candidate pairing and stage/system; recomputed compiler, runtime, original author oracle, retries, timeouts and acceptance metrics; matched aggregate and existing independent audit totals.",
+  "rerun_command": "python scripts/audit_stage2_phase_g_secondary.py --directory /path/to/downloaded-eight-zips --output phase-g-stage2-raw-secondary-independent-audit.json",
+  "limits": "Secondary verification of original stage2 raw native artifacts. Does not newly execute MASCOT, original LLM generation, original TAR-to-MPC provenance, or establish oracle semantic correctness, generalized confidentiality or genuine SPDZCoder no-refactoring ablation. Original TAR-to-MPC audit and historical model blockers remain distinct."
+}

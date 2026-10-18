@@ -5,6 +5,10 @@ doing work. Do not restart completed milestones.** The assignment is due
 31 October 2026. The final report is locked pending practical evidence and
 Girish's explicit authorization.
 
+## Phase G secondary eight-ZIP direct raw rehash — 18 October 2026
+
+An additional read-only independent audit downloaded all seven original stage2 source ZIPs and the successful recovery ZIP from GitHub, pinned their eight actual ZIP SHA-256 digests, rechecked all 626 recovered original candidates, 644 attempts and 1,932 `.mpc`/stdout/stderr SHA-256 digests, and confirmed 229/216/262 fresh first/second/union outcomes, 147 compiler fails and 34 oracle rejects. The original aggregated workflow remains red and B3/no-refactoring unresolved. Reproducible auditor: `scripts/audit_stage2_phase_g_secondary.py`. New receipt: `research/evidence/2026-10-18/phase-g-stage2-raw-secondary-independent-audit.json`. No native MPC was rerun. This additional confirmation does **not** promote R2/R3/R8/R9 or authorize a report.
+
 ## Phase G latest integrated handoff — 18 October 2026 (supersedes dated intermediate sections below)
 
 **Primary active work:** [draft PR #6](https://github.com/Girish2052003/LUT-PHD-TARGET/pull/6) on `research/original-evaluator-replay-20261015` at independently fetched head `7b79ac5dda10e53529f843242c93cb880e16ba51` before this reconciliation update. `main` remains `5fbc6095eb4e5a37b8818be7d1ec7596753445cd`. PR #7 merged into the research chain; PR #9 merged into PR #8; PR #8 merged into PR #6. Do not redo these integrations or read the historical sections below as latest state.

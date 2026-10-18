@@ -65,7 +65,10 @@
         "research/reviews/integrated-independent-practical-acceptance-20261018.md",
         "research/evidence/2026-10-18/stage2-original-full-independent-acceptance.json",
         "research/reviews/stage2-full-original-mascot-independent-acceptance.md",
-        "research/evidence/2026-10-18/stage2-native-reproduction-difficulties.json"
+        "research/evidence/2026-10-18/stage2-native-reproduction-difficulties.json",
+        "research/evidence/2026-10-18/phase-g-stage2-raw-secondary-independent-audit.json",
+        "research/reviews/phase-g-stage2-secondary-raw-audit-20261018.md",
+        "scripts/audit_stage2_phase_g_secondary.py"
       ],
       "exact_evidence_commit": "990bd9f9ce0c539a949df44fbca5843fefd12e8c",
       "test_workflow_identifiers": [
@@ -120,7 +123,10 @@
         "research/evidence/2026-10-18/stage2-native-reproduction-difficulties.json",
         "research/reviews/stage2-full-original-mascot-independent-acceptance.md",
         "research/reviews/archived-stage2-stage3-evaluation-review.md",
-        "research/evidence/2026-10-18/authors-no-refactoring-inventory-review.json"
+        "research/evidence/2026-10-18/authors-no-refactoring-inventory-review.json",
+        "research/evidence/2026-10-18/phase-g-stage2-raw-secondary-independent-audit.json",
+        "research/reviews/phase-g-stage2-secondary-raw-audit-20261018.md",
+        "scripts/audit_stage2_phase_g_secondary.py"
       ],
       "exact_evidence_commit": "990bd9f9ce0c539a949df44fbca5843fefd12e8c",
       "test_workflow_identifiers": [
@@ -328,7 +334,10 @@
         "research/reviews/integrated-independent-practical-acceptance-20261018.md",
         "research/evidence/2026-10-18/stage2-original-full-independent-acceptance.json",
         "research/evidence/2026-10-18/stage2-native-reproduction-difficulties.json",
-        "research/reviews/stage2-full-original-mascot-independent-acceptance.md"
+        "research/reviews/stage2-full-original-mascot-independent-acceptance.md",
+        "research/evidence/2026-10-18/phase-g-stage2-raw-secondary-independent-audit.json",
+        "research/reviews/phase-g-stage2-secondary-raw-audit-20261018.md",
+        "scripts/audit_stage2_phase_g_secondary.py"
       ],
       "exact_evidence_commit": "990bd9f9ce0c539a949df44fbca5843fefd12e8c",
       "test_workflow_identifiers": [
