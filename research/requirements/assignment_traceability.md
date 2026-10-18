@@ -13,7 +13,7 @@ These are practical acceptance gates. Historical milestones do not replace origi
 | R6 | Implement original-source modification | **PASS** | E, E1 |
 | R7 | Compare original and modified | **PASS** | F |
 | R8 | Document reproduction difficulties | **IN_PROGRESS** | A, B2, B3, G |
-| R9 | Final report readiness | **BLOCKED** | G |
+| R9 | Final report readiness | **PASS** | G |
 
 ## R1 — Study original paper
 
@@ -144,8 +144,8 @@ These are practical acceptance gates. Historical milestones do not replace origi
 - **Experimental obligation:** Independent final review of every practical acceptance gate.
 - **Expected outputs:** Gate summary and user authorization record, then eventual report.
 - **Acceptance criteria:** R1–R8 defensibly complete or exceptions accepted; user permission before drafting.
-- **Known limitations:** Practical report readiness remains BLOCKED until G is accepted on exact main plus all R1–R8 are PASS or explicit user-approved, narrowly scoped exception decisions are recorded for unresolved requirements. User permission to draft the professor report is a separate later gate (REPORT), not a dependency of R9 readiness.
-- **Verification reviewer:** Pending requirement acceptance; historical audit reviewed by code_review agent
-- **Evidence:** `HANDOFF.md`, `research/requirements/execution_contract.md`
-- **Evidence commit:** Pending
-- **Workflow identifiers:** Pending
+- **Known limitations:** PASS is practical research **readiness only**, contingent on explicitly checked bounded irreproducibility exceptions for two STILL NOT REPRODUCED original experiments. B3 remains BLOCKED; R2/R3/R8 remain IN_PROGRESS WITH EXCEPTIONS, not experimental PASS; original evaluator has known weak oracle and selected patch is not universal security proof. The actual professor-facing report is NOT AUTHORIZED and REPORT phase remains BLOCKED.
+- **Verification reviewer:** Independent second source/evidence workflow review, exact main GH Actions checked and explicit conditional Girish quote verified against conversation; not external third-party security certification.
+- **Evidence:** `HANDOFF.md`, `research/requirements/execution_contract.md`, `research/reviews/phase-g-merged-main-practical-acceptance-20261018.md`, `research/requirements/exception_decisions.json`, `research/requirements/conditional_merge_user_decision-20261018.txt`, `research/evidence/2026-10-18/final-attempt-original-no-refactoring-content-audit.json`, `research/evidence/2026-10-18/original-author-git-history-independent-audit.json`
+- **Evidence commit:** f5a4d749964dfc0c6050bbdfdd0bdc2cf1fdfaea
+- **Workflow identifiers:** https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39137690936, https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39137690949
