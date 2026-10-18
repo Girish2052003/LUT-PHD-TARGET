@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "kind": "phase_g_secondary_independent_full_paired_raw_recalculation",
+  "scope": "Original unmodified versus original-source-patched archived candidate native MASCOT run. Direct read-only raw ZIP audit; no new MPC or LLM execution.",
+  "original_run_id": 38989067493,
+  "source_run_commit": "b5846f5be000e6f511ed319011549ed4aaa8472c",
+  "artifact_ids": {
+    "summary": 12087032937,
+    "array_test": 12085202183,
+    "loop_test": 12086621899,
+    "branch_test": 12086301260,
+    "math_test": 12087042728,
+    "numpy_operation_test": 12085025605,
+    "numpy_ufunc_test": 12086986769,
+    "syntax_test": 12084594130
+  },
+  "artifact_zip_sha256": {
+    "summary": "832531da6446c6acd1212b86c7b10a1b33caebddc600d02e5d539174a8cca31c",
+    "array_test": "0d8979f648bf4d9b60b2ccd59b9fee485ff19e0d1d20155068352e3e2b5bb6c3",
+    "branch_test": "24f05d94b95c6b18adacd4e488c3796dbe4f40a880b0f75595d143479ba0ab27",
+    "loop_test": "638d546fdbb4f8237c1694979b2577a4d268ddfd9ffaaa4ae636bf2ff03f50fc",
+    "math_test": "348138b23d1bce11c0846d445723510a08d5a37a614b596cfc5ae826e1264010",
+    "numpy_operation_test": "48019bf4cf155e9baa1634e89be54812532bd9b96ddae5a72d593687b114af49",
+    "numpy_ufunc_test": "080e2bee4869fa844257e55653413452707c1a22dc4f4808abae96892ac81a28",
+    "syntax_test": "32409fa43e702b400b010eeda06564a653d4ba6f625426bfeea7dc3046834595"
+  },
+  "task_count": 313,
+  "original_candidate_pairs": 626,
+  "execution_records": 1252,
+  "attempts": 1280,
+  "raw_input_stdout_stderr_sha256_checks": 3840,
+  "source_original_transformed_template_sha256_checks": 5008,
+  "summary_jsonl_to_category_record_exact_matches": 1252,
+  "per_task_failure_matrix_exact_matches": 626,
+  "category_execution_records": {
+    "array_test": 172,
+    "branch_test": 136,
+    "loop_test": 388,
+    "math_test": 152,
+    "numpy_operation_test": 128,
+    "numpy_ufunc_test": 136,
+    "syntax_test": 140
+  },
+  "metrics": {
+    "baseline": {
+      "first": 270,
+      "second": 266,
+      "union": 290,
+      "compile_failures": 75
+    },
+    "modified": {
+      "first": 271,
+      "second": 263,
+      "union": 290,
+      "compile_failures": 75
+    }
+  },
+  "source_changed": [
+    {
+      "task_id": "loop_test/count_distinct",
+      "candidate_id": 1,
+      "baseline_oracle": "ACCEPT",
+      "modified_oracle": "ACCEPT"
+    },
+    {
+      "task_id": "loop_test/is_ascending",
+      "candidate_id": 0,
+      "baseline_oracle": "ACCEPT",
+      "modified_oracle": "ACCEPT"
+    }
+  ],
+  "unchanged_source_acceptance_flips": [
+    {
+      "task_id": "loop_test/standard_deviation",
+      "candidate_id": 1,
+      "baseline": "ACCEPT",
+      "modified": "REJECT",
+      "compiled_input_identical": true
+    },
+    {
+      "task_id": "math_test/next_perfect_square",
+      "candidate_id": 1,
+      "baseline": "ACCEPT",
+      "modified": "REJECT",
+      "compiled_input_identical": true
+    },
+    {
+      "task_id": "math_test/pi_to_the_x",
+      "candidate_id": 1,
+      "baseline": "ACCEPT",
+      "modified": "REJECT",
+      "compiled_input_identical": true
+    },
+    {
+      "task_id": "math_test/pi_to_the_x",
+      "candidate_id": 0,
+      "baseline": "REJECT",
+      "modified": "ACCEPT",
+      "compiled_input_identical": true
+    }
+  ],
+  "failure_counts": {
+    "baseline": {
+      "compile_failure": 75,
+      "native_oracle_reject": 14,
+      "timeout": 1,
+      "none": 536
+    },
+    "modified": {
+      "compile_failure": 75,
+      "native_oracle_reject": 16,
+      "timeout": 1,
+      "none": 534
+    }
+  },
+  "audit_method": "Downloaded all eight original GitHub Action artifact ZIPs; independently recomputed ZIP SHA256, parsed category 1252 variant records and merged summary 1252 JSONL records, matched every record exactly, checked 3840 actual .mpc/stdout/stderr file SHA256 digests and 5008 candidate/original/transformed/template SHA256 digests, compared all per-task failure matrix records, recomputed paired native first/second/union and source-change set. Reproducible existing repository independently developed cross-check: scripts/audit_paired_controls.py.",
+  "limitations": "Native original evaluation oracle not universal semantic correctness; four flips in source-identical controls cannot be attributed to patch. Two changed sources only, both accepted. No historical LLM generation, true no-refactoring ablation, universal confidentiality proof, or statistically established general accuracy effect. Direct ZIP raw files preserved under original GitHub Actions artifacts subject to expiry."
+}

@@ -290,7 +290,9 @@
         "research/reviews/paired-smoke-evidence-review.md",
         "research/reviews/integrated-independent-practical-acceptance-20261018.md",
         "research/reviews/paired-full-independent-control-audit.md",
-        "research/reviews/phase-f-bounded-native-interpretation-20261018.md"
+        "research/reviews/phase-f-bounded-native-interpretation-20261018.md",
+        "research/evidence/2026-10-18/phase-g-paired-secondary-recomputed.json",
+        "research/reviews/phase-g-paired-secondary-recomputed-20261018.md"
       ],
       "exact_evidence_commit": "990bd9f9ce0c539a949df44fbca5843fefd12e8c",
       "test_workflow_identifiers": [

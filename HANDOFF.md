@@ -5,6 +5,10 @@ doing work. Do not restart completed milestones.** The assignment is due
 31 October 2026. The final report is locked pending practical evidence and
 Girish's explicit authorization.
 
+## Phase G full paired author-original ZIP independent second raw audit — 18 October 2026
+
+All eight original full-paired artifact ZIPs from run 38989067493 were independently downloaded, SHA-256 pinned, and directly re-evaluated at the raw-file level (1252 individual baseline/modified records, 1280 attempts, 3840 MPC/stdout/stderr digests, 5008 source/transform/template digests, all 626 complete failure-matrix entries). The independent totals agree: original 270/266/290, modified 271/263/290 of 313 tasks; exactly two source changes (both accepted) and four oracle acceptance flips on byte-identical source/compiled MPC controls, so **no attributable general correctness gain**. Machine-readable second receipt: `research/evidence/2026-10-18/phase-g-paired-secondary-recomputed.json`; review: `research/reviews/phase-g-paired-secondary-recomputed-20261018.md`. Raw ZIPs remain GitHub Actions artifacts; no native candidates or model outputs were rerun. Existing prior raw-auditor `scripts/audit_paired_controls.py` is a documented independent reproducibility route. No phase or report gate automatically elevated.
+
 ## B3 model retirement evidence: decision still required — 18 October 2026
 
 Official OpenAI API policy schedules `gpt-4-turbo-2024-04-09` shutdown for **23 October 2026**, before the professor's 31 October due date. The authors' launch used an unpinned Azure `gpt-4` deployment, so the actual historical deployed revision/account accessibility is *not established* by that OpenAI policy. Full source-grounded note with URLs and alternative actions: `research/reviews/historical-gpt4-availability-and-exception-20261018.md`. No API/paid calls, no substituted model, no user exception acceptance. **B3 BLOCKED; R2/R3/R8 remain IN_PROGRESS; G IN_PROGRESS; REPORT locked.**
