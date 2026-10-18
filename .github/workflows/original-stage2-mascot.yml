@@ -136,10 +136,13 @@ jobs:
           pattern: stage2-original-native-*-${{ github.sha }}
           path: results/stage2-full-artifacts
           merge-multiple: true
+      # merge-multiple places each category directory directly below the specified
+      # download root: <root>/<category>/outcomes.jsonl (no extra stage2-full layer).
+      # Preserve historical red run 39075744038 and recovery 39080161119 as-is.
       - name: Recompute all 626 stage2 original-native outcomes and historical disagreements
         run: |
           python scripts/verify_stage2_replay.py \
-            --root results/stage2-full-artifacts/stage2-full \
+            --root results/stage2-full-artifacts \
             --output results/stage2-full-summary
       - name: Preserve independent full-stage2 measured results
         if: always()

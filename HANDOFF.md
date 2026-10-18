@@ -5,6 +5,10 @@ doing work. Do not restart completed milestones.** The assignment is due
 31 October 2026. The final report is locked pending practical evidence and
 Girish's explicit authorization.
 
+## Phase G repair — future stage2 aggregate workflow source path (18 October 2026)
+
+The historical first complete original stage2 run #39075744038 has **seven green native category jobs but a red aggregate job** because the download with `merge-multiple: true` deposits seven `<category>/outcomes.jsonl` directories directly under `results/stage2-full-artifacts`, not under the extra `stage2-full` component. Recovery #39080161119 was artifact-only and passed. The original CI failure and recovery remain immutable evidence. To prevent recurrence if the original workflow is explicitly rerun in a future research environment, the source workflow's aggregator `--root` path is repaired to the actual layout and two deterministic layout regression checks were added at `tests/test_stage2_workflow_layout.py`. **This is a workflow packaging bugfix, not a rerun or improved original scientific outcome.** Do not trigger expensive full native evaluation solely for packaging verification.
+
 ## Phase G secondary eight-ZIP direct raw rehash — 18 October 2026
 
 An additional read-only independent audit downloaded all seven original stage2 source ZIPs and the successful recovery ZIP from GitHub, pinned their eight actual ZIP SHA-256 digests, rechecked all 626 recovered original candidates, 644 attempts and 1,932 `.mpc`/stdout/stderr SHA-256 digests, and confirmed 229/216/262 fresh first/second/union outcomes, 147 compiler fails and 34 oracle rejects. The original aggregated workflow remains red and B3/no-refactoring unresolved. Reproducible auditor: `scripts/audit_stage2_phase_g_secondary.py`. New receipt: `research/evidence/2026-10-18/phase-g-stage2-raw-secondary-independent-audit.json`. No native MPC was rerun. This additional confirmation does **not** promote R2/R3/R8/R9 or authorize a report.

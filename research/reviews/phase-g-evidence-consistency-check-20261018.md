@@ -34,3 +34,10 @@
 4. After justified approval, merge reviewed PR #6 without branch overwrite, run exact-main CI, preserve evidence and branch history. Report drafting is a *separate* future authorization.
 
 **No scientific source, author baseline, evaluation oracle, task identity or prior experimental artifact is altered by this status/documentation reconciliation.**
+
+
+## Phase G reproducibility maintenance: original stage2 aggregator path repair
+
+The original `.github/workflows/original-stage2-mascot.yml` uses `actions/download-artifact@v4` with `merge-multiple: true`, yielding `results/stage2-full-artifacts/<category>/outcomes.jsonl`. Its old `--root results/stage2-full-artifacts/stage2-full` was invalid; correct source workflow path is `--root results/stage2-full-artifacts`. Regression tests in `tests/test_stage2_workflow_layout.py` enforce that layout and the separately pinned artifact-only recovery behavior.
+
+This is a narrowly scoped future CI repair and **does not modify** the historical failed run, archive bytes, candidates, original author evaluator, oracle or experiment results. No new native run is warranted because same-seven-artifact recovery already passed. Historical Level-3 model generation and unidentifiable no-refactoring ablation remain blocked; Phase G still requires explicit exception disposition and main review.
