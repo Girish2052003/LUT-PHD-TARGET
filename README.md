@@ -102,6 +102,8 @@ The MP-SPDZ tests run in [GitHub Actions](https://github.com/Girish2052003/LUT-P
 
 ## What I still need for the original reproduction
 
-The source and original task files are now **available from the authors' Zenodo release**. The native `.json`-named JSON Lines format and archived score totals are understood. Remaining work includes exact task-identity reconciliation, independent execution of the original evaluator, a demonstrated original-system limitation, and a matched comparison of a modification to the authentic baseline. Regenerating historic LLM outputs additionally requires API credentials and model availability; actual MASCOT runs require a separate controlled MP-SPDZ setup.
+The authors' original source and 313-task dataset are available in the checksum-verified Zenodo release. Original benchmark identities, native evaluator replay, authentic limitation witnesses, a narrow original-pipeline patch, and full paired native comparisons are now experimentally accepted **within their recorded scopes**. See the Phase A–F status table above and the exact independent acceptance files under `research/reviews/`; these are not historical LLM generation or a universal correctness/security proof.
 
-I am continuing to record results and difficulties as I work toward the 31 October submission.
+**Remaining practical work:** Phase G final requirements reconciliation, scientific exception decisions, review of PR #6 against exact GitHub evidence, approved integration to `main`, and exact-main CI. R2/R3/R8 remain `IN_PROGRESS`; original historical model-generation B3 is `BLOCKED` pending a separate explicit user decision, and the genuine SPDZCoder *without-refactoring* published ablation is not independently recoverable from an identified original output corpus. No report writing or professor email has been authorized.
+
+The dated reproduction log preserves its original chronology; current acceptance and unresolved issues are tracked in `research/progress.json` and `research/requirements/assignment_traceability.yaml`.
