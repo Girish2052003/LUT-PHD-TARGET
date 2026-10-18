@@ -5,6 +5,10 @@ doing work. Do not restart completed milestones.** The assignment is due
 31 October 2026. The final report is locked pending practical evidence and
 Girish's explicit authorization.
 
+## B3 model retirement evidence: decision still required — 18 October 2026
+
+Official OpenAI API policy schedules `gpt-4-turbo-2024-04-09` shutdown for **23 October 2026**, before the professor's 31 October due date. The authors' launch used an unpinned Azure `gpt-4` deployment, so the actual historical deployed revision/account accessibility is *not established* by that OpenAI policy. Full source-grounded note with URLs and alternative actions: `research/reviews/historical-gpt4-availability-and-exception-20261018.md`. No API/paid calls, no substituted model, no user exception acceptance. **B3 BLOCKED; R2/R3/R8 remain IN_PROGRESS; G IN_PROGRESS; REPORT locked.**
+
 ## Phase G repair — future stage2 aggregate workflow source path (18 October 2026)
 
 The historical first complete original stage2 run #39075744038 has **seven green native category jobs but a red aggregate job** because the download with `merge-multiple: true` deposits seven `<category>/outcomes.jsonl` directories directly under `results/stage2-full-artifacts`, not under the extra `stage2-full` component. Recovery #39080161119 was artifact-only and passed. The original CI failure and recovery remain immutable evidence. To prevent recurrence if the original workflow is explicitly rerun in a future research environment, the source workflow's aggregator `--root` path is repaired to the actual layout and two deterministic layout regression checks were added at `tests/test_stage2_workflow_layout.py`. **This is a workflow packaging bugfix, not a rerun or improved original scientific outcome.** Do not trigger expensive full native evaluation solely for packaging verification.

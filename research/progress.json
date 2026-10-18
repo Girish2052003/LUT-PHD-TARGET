@@ -268,7 +268,7 @@
       "id": "B3",
       "title": "Level 3: original model generation",
       "status": "BLOCKED",
-      "completion_scope": "Requires authorized credentials and verified historical model availability; no paid calls or substitute model authorized.",
+      "completion_scope": "Historical original model generation NOT executed. OpenAI API gpt-4-turbo-2024-04-09 scheduled for retirement 23 October 2026; original released Azure deployment version remains unpinned. Requires explicitly authorized account/model access plus cost budget OR explicitly approved irreproducibility exception.",
       "dependencies": [
         "A"
       ],
@@ -281,7 +281,7 @@
         "independently_checked": false,
         "reviewer": "Pending acceptance review"
       },
-      "next_action": "User decision required: verified original historical model availability and authorized model/API credentials/costs, OR explicit acceptance of irreproducible model-stage exception. No paid calls or fabricated model traces.",
+      "next_action": "User decision required. Official OpenAI API retirement notice: 2026-10-23 for gpt-4-turbo-2024-04-09; no proof authors' original unpinned Azure deployment remains equivalent/available. Obtain actual verified deployment plus legal authorized paid credentials and cost ceiling for separate labeled pilot OR explicitly record accepted B3/no-refactoring irreproducibility exceptions. Never make paid calls, guess historical replies or silently mark B3 PASS.",
       "redo_only_if": "Relevant source, configuration, evidence, or acceptance scope changes; document why."
     },
     {

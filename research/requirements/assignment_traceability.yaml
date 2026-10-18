@@ -68,7 +68,8 @@
         "research/evidence/2026-10-18/stage2-native-reproduction-difficulties.json",
         "research/evidence/2026-10-18/phase-g-stage2-raw-secondary-independent-audit.json",
         "research/reviews/phase-g-stage2-secondary-raw-audit-20261018.md",
-        "scripts/audit_stage2_phase_g_secondary.py"
+        "scripts/audit_stage2_phase_g_secondary.py",
+        "research/reviews/historical-gpt4-availability-and-exception-20261018.md"
       ],
       "exact_evidence_commit": "990bd9f9ce0c539a949df44fbca5843fefd12e8c",
       "test_workflow_identifiers": [
@@ -81,7 +82,7 @@
         "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39080161119"
       ],
       "measured_results": "Accepted Level 2 original MASCOT replay: 1,252 final-stage SPDZCoder/GPT-4 archived candidate executions and 626 genuine archived stage-2 SPDZCoder executions (644 native attempts). All 313 original task identities covered. Original pipeline model-generation Level 3 has not been reproduced.",
-      "known_limitations": "R2 remains IN_PROGRESS because the original historical LLM-stage generation (B3) is blocked by unverified historical deployment/version and absent explicitly authorized credentials/costs. Original-source native evaluation is genuinely reproduced, but never substitute archived output replay for generation. Explicit user decision required on the blocker.",
+      "known_limitations": "R2 remains IN_PROGRESS: Level 2 original native MASCOT evaluation is reproduced but Level 3 exact historical model generation is not. The paper names gpt-4-turbo-2024-04-09; released Azure deployment 'gpt-4' is not a reproducible version pin. OpenAI API schedules that snapshot for Oct 23, 2026 shutdown, but authors' historical Azure deployment current availability is unverified. Model access/cost and an irreproducibility exception both require explicit Girish authorization; no substitutes or secret access presumed.",
       "verification_reviewer": "Native evaluation evidence and source/hashes reviewed in existing independent evidence records; B3 not executed or externally certified.",
       "completion": {
         "implemented": true,
@@ -126,7 +127,8 @@
         "research/evidence/2026-10-18/authors-no-refactoring-inventory-review.json",
         "research/evidence/2026-10-18/phase-g-stage2-raw-secondary-independent-audit.json",
         "research/reviews/phase-g-stage2-secondary-raw-audit-20261018.md",
-        "scripts/audit_stage2_phase_g_secondary.py"
+        "scripts/audit_stage2_phase_g_secondary.py",
+        "research/reviews/historical-gpt4-availability-and-exception-20261018.md"
       ],
       "exact_evidence_commit": "990bd9f9ce0c539a949df44fbca5843fefd12e8c",
       "test_workflow_identifiers": [
@@ -140,7 +142,7 @@
         "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39080161119"
       ],
       "measured_results": "Saved stage-3 SPDZCoder first/union 269/313, 288/313; genuine saved stage-2 first/union 229/313, 261/313. Fresh unmodified stage-2 MASCOT first/second/union 229/216/262 (313 tasks), 445/626 accepted, with 147 compile failures, 34 post-runtime oracle rejects, 3 archived/fresh disagreements. Fresh final-stage native: SPDZCoder 268/265/288; GPT-4 API-doc 95/112/154. See source-identity, raw-evidence and weak-oracle reviews.",
-      "known_limitations": "R3 remains IN_PROGRESS pending an explicit decision about whether its remaining irreproducible historical generation/no-refactoring ablation are accepted limitations. No genuine identifiable SPDZCoder without-refactoring output corpus recovered; numeric-match UniTrans/GPT-4 baseline is not a substitute. Original oracle false positives, one missing native test and fresh/archived differences are disclosed. No general correctness/security proof.",
+      "known_limitations": "R3 remains IN_PROGRESS pending explicit user decision for historical LLM generation and genuine unidentifiable SPDZCoder no-refactoring ablation. OpenAI API snapshot gpt-4-turbo-2024-04-09 is scheduled for Oct 23, 2026 shutdown but this does not establish historical Azure deployment availability. Numeric-match UniTrans/GPT-4 group is not substituted. Original oracle false positives, one missing native test and archived/native disagreement are disclosed. No general correctness/security proof.",
       "verification_reviewer": "Original native saved-source evaluation and archived flag evidence independently reviewed within the original oracle scope; no original historical model generation and no genuine original no-refactoring ablation certified.",
       "completion": {
         "implemented": true,
