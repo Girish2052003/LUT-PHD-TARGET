@@ -1,0 +1,114 @@
+{
+  "scope": "Read-only independent evaluation of genuine saved original-author stage snapshots, not new model execution",
+  "verified_date": "2026-10-18",
+  "original_published_archive_sha256": "a8ea14150dc1d4ddf53eb4ead450d88139d09b680683f673029877ce0c6e00ac",
+  "source_workflow_run": 39073490709,
+  "source_workflow_commit": "f3fe755c423e138c7dffc5d9a9924510a95f657c",
+  "artifact_id": 12115901735,
+  "artifact_zip_sha256": "f6678180e7fcccf90b0f77f54dd1071c3469191239ec7520c0229d93f8200718",
+  "artifact_files": 8,
+  "original_task_count": 313,
+  "reviewed_categories": 7,
+  "reviewed_authentic_tasks": 7,
+  "saved_stage_count_per_task": 4,
+  "saved_stage_outputs_by_candidate": 14,
+  "candidate_changes_between_stage2_and_stage3": 8,
+  "all_selected_task_ids_match_source": true,
+  "all_saved_stage_names_match_selected_task": true,
+  "all_final_stage_source_hashes_match_identity": true,
+  "all_stage2_to_stage3_change_flags_recomputed": true,
+  "all_seven_trace_artifact_hashes_match_manifest": true,
+  "models_reexecuted": false,
+  "stages_freshly_reexecuted": false,
+  "trace_evidence": [
+    {
+      "task_id": "array_test/reverse_and_concat",
+      "stage2_to_stage3_changed": [
+        true,
+        false
+      ],
+      "archived_final_acceptance": [
+        true,
+        true
+      ]
+    },
+    {
+      "task_id": "loop_test/max_adjacent_product",
+      "stage2_to_stage3_changed": [
+        false,
+        true
+      ],
+      "archived_final_acceptance": [
+        true,
+        true
+      ]
+    },
+    {
+      "task_id": "branch_test/sin_or_cos",
+      "stage2_to_stage3_changed": [
+        true,
+        true
+      ],
+      "archived_final_acceptance": [
+        true,
+        true
+      ],
+      "stage3_recorded_repair_tokens": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "task_id": "math_test/sigmoid",
+      "stage2_to_stage3_changed": [
+        false,
+        true
+      ],
+      "archived_final_acceptance": [
+        true,
+        true
+      ]
+    },
+    {
+      "task_id": "numpy_operation_test/array_from_intrinsic_linspace",
+      "stage2_to_stage3_changed": [
+        false,
+        false
+      ],
+      "archived_final_acceptance": [
+        true,
+        true
+      ]
+    },
+    {
+      "task_id": "numpy_ufunc_test/logsumexp",
+      "stage2_to_stage3_changed": [
+        true,
+        true
+      ],
+      "archived_final_acceptance": [
+        true,
+        true
+      ]
+    },
+    {
+      "task_id": "syntax_test/second_largest",
+      "stage2_to_stage3_changed": [
+        false,
+        true
+      ],
+      "archived_final_acceptance": [
+        false,
+        true
+      ]
+    }
+  ],
+  "completion_scope": "Narrow acceptance of seven-category saved-stage trace extraction, not full source-to-paper Phase A and not Level-3 original pipeline regeneration",
+  "independent_review_conclusion": "Original task, stage, candidate and manifest identities internally consistent. Missing per-rule and per-repair model transcripts cannot be inferred. Two changed branch-stage candidates have zero recorded stage3 repair token counts, hence saved metadata cannot explain causality."
+}

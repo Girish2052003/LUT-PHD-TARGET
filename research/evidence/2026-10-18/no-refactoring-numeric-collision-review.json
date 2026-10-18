@@ -1,0 +1,33 @@
+{
+  "date": "2026-10-18",
+  "source_run": 39079982398,
+  "source_commit": "bc880df9e4425d66eaf6610705416765a6f36c6c",
+  "source_artifact_id": 12118253572,
+  "source_archive_sha256": "a8ea14150dc1d4ddf53eb4ead450d88139d09b680683f673029877ce0c6e00ac",
+  "method": "Independently parsed every complete saved 7-category evaluation-log group by original task ID/order using original evaluator flag format; 313 exact tasks per accepted group. Per-category source file SHA-256 persisted in source artifact.",
+  "valid_original_seven_category_groups": 35,
+  "numeric_matches_to_paper_table6_no_refactoring": {
+    "first": 104,
+    "union": 142,
+    "groups": [
+      "evaluation/baseline-evaluation/unitrans-baseline/gpt-4-baseline_output"
+    ]
+  },
+  "matched_group_actual_label": "UniTrans baseline with GPT-4",
+  "matched_group_archived_first": 104,
+  "matched_group_archived_second": 111,
+  "matched_group_archived_union": 142,
+  "conclusion": "The only group numerically matching Table 6 without-refactoring first+union rates is explicitly tagged UniTrans/GPT-4 baseline, a DIFFERENT system. This is coincidental score equality and MUST NOT be relabeled as SPDZCoder without refactoring.",
+  "explicit_no_refactoring_group_identified": false,
+  "other_genuine_author_SPDZCoder_group_stage2": {
+    "first": 229,
+    "second": 213,
+    "union": 261
+  },
+  "other_genuine_author_SPDZCoder_group_stage3": {
+    "first": 269,
+    "second": 265,
+    "union": 288
+  },
+  "scientific_limits": "35 archived seven-category group flags are not freshly executed LLM generations; no-refactoring source/dataset may be stored under unknown names or absent. Do not claim the published no-refactoring experiment reproduced or impossible from filename matching alone."
+}

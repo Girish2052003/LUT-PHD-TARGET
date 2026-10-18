@@ -1,0 +1,130 @@
+{
+  "scope": "Independent descriptive reproduction-difficulty accounting over all authentic 626 stage2 MASCOT candidates; compiled actual programs from exact author stage2 sources; native archive run39075744038",
+  "source_run": 39075744038,
+  "source_candidate_count": 626,
+  "raw_native_attempt_count": 644,
+  "all_candidate_wall_seconds_sum": 11269.739585847003,
+  "candidate_wall_seconds_median": 6.206281268500007,
+  "candidate_wall_seconds_p90_nearest_observation": 38.32135288799999,
+  "candidate_wall_seconds_max": 321.9628385140004,
+  "interpretation_of_walltime": "Sum is not CI wall clock because category jobs ran in parallel; includes original retry attempts and infrastructure overhead.",
+  "original_native_candidate_status_totals": {
+    "compile_fail": 147,
+    "runtime_completed": 479,
+    "original_oracle_accept": 445,
+    "original_oracle_reject_after_runtime": 34,
+    "retrying_candidates": 14,
+    "timed_out_attempts": 18
+  },
+  "compile_terminal_exception_types": {
+    "AttributeError": 56,
+    "ImportError": 28,
+    "TypeError": 22,
+    "Compiler.exceptions.CompilerError": 18,
+    "NameError": 17,
+    "IndexError": 2,
+    "SyntaxError": 1,
+    "ValueError": 1,
+    "unclassified_terminal_stderr": 2
+  },
+  "failure_counts_by_category": {
+    "array_test": {
+      "compile_fail": 19,
+      "native_oracle_reject_after_runtime": 2
+    },
+    "loop_test": {
+      "compile_fail": 47,
+      "native_oracle_reject_after_runtime": 11
+    },
+    "branch_test": {
+      "compile_fail": 6,
+      "native_oracle_reject_after_runtime": 8
+    },
+    "math_test": {
+      "compile_fail": 11,
+      "native_oracle_reject_after_runtime": 4
+    },
+    "numpy_operation_test": {
+      "compile_fail": 21,
+      "native_oracle_reject_after_runtime": 3
+    },
+    "numpy_ufunc_test": {
+      "compile_fail": 17,
+      "native_oracle_reject_after_runtime": 2
+    },
+    "syntax_test": {
+      "compile_fail": 26,
+      "native_oracle_reject_after_runtime": 4
+    }
+  },
+  "representative_original_source_errors": [
+    {
+      "task": "array_test/array_xor",
+      "candidate_id": 0,
+      "error_type": "AttributeError",
+      "original_stderr_ending": "type object 'list' has no attribute 'malloc'"
+    },
+    {
+      "task": "array_test/array_xor",
+      "candidate_id": 1,
+      "error_type": "TypeError",
+      "original_stderr_ending": "unsupported operand type(s) for ^: 'sint' and 'sint'"
+    },
+    {
+      "task": "array_test/stock_predicator",
+      "candidate_id": 1,
+      "error_type": "ImportError",
+      "original_stderr_ending": "cannot import name 'sint' from 'Compiler'"
+    },
+    {
+      "task": "loop_test/range",
+      "candidate_id": 0,
+      "error_type": "NameError",
+      "original_stderr_ending": "name 'max_condition' is not defined"
+    },
+    {
+      "task": "loop_test/array_intersect",
+      "candidate_id": 0,
+      "error_type": "SyntaxError",
+      "original_stderr_ending": "invalid syntax"
+    },
+    {
+      "task": "loop_test/is_subarray",
+      "candidate_id": 1,
+      "error_type": "IndexError",
+      "original_stderr_ending": "index 6, length 6"
+    },
+    {
+      "task": "numpy_ufunc_test/np_ufunc_negative",
+      "candidate_id": 1,
+      "error_type": "ValueError",
+      "original_stderr_ending": "setting an array element with a sequence"
+    }
+  ],
+  "original_retry_cases": [
+    "loop_test/sum_unique c0",
+    "loop_test/variance c0",
+    "loop_test/variance c1",
+    "branch_test/elu c0",
+    "branch_test/elu c1",
+    "branch_test/median c0",
+    "branch_test/choice_of_the_knight c0",
+    "branch_test/choice_of_the_knight c1",
+    "numpy_ufunc_test/RMS_prop_step c0",
+    "numpy_ufunc_test/RMS_prop_step c1",
+    "numpy_ufunc_test/np_ufunc_arccos c0",
+    "numpy_ufunc_test/np_ufunc_arccos c1",
+    "numpy_ufunc_test/np_ufunc_arcsin c0",
+    "numpy_ufunc_test/np_ufunc_arcsin c1"
+  ],
+  "verification_method": "Read seven separately SHA256-pinned GitHub Action artifact ZIPs; count every original candidate task and candidate_id; source/runtime hashes already independently validated; read final stderr original exception lines without executing downloaded code. Sum statuses, retries, timeouts and descriptive candidate durations. All category compile+oracle failure counts sum to rejected=181.",
+  "disclosed_limits": "Original compiler exception grouping depends on recognizable terminal traceback text. Two genuine compile failures cannot be classified by simple regex; their raw stderr remains preserved. This is a descriptive failure inventory, not a security proof or causal diagnosis. Historical generation not rerun.",
+  "reported_reproduction_difficulty": [
+    "Original source archive and compiler environment version pins/requirements mismatch",
+    "Native original code contains unsupported API/sint/public-bool constructs leading to compiler failures",
+    "Long-running original MASCOT candidates time out and require original bounded retry",
+    "Original source tests contain weak oracle criteria and missing functional test",
+    "Original source stage1/repair control-flow discrepancies and missing LLM messages",
+    "Original full CI aggregate path failed despite seven successful native category jobs; same raw artifact dataset passed independent artifact-only recovery"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "date": "2026-10-18",
+  "source_workflow_run": 39079164110,
+  "source_artifact_id": 12117488710,
+  "source_commit": "d67fda2625f5865ddd7b9c1b5ef66954b4289c45",
+  "original_source_archive_sha256": "a8ea14150dc1d4ddf53eb4ead450d88139d09b680683f673029877ce0c6e00ac",
+  "methodology": "Read-only exact ZIP artifact review of filenames enumerated from every bounded regular file in original authors' TAR; .git entries excluded. All matched filenames emitted by rules for stage, baseline, refactoring, no_* and experiments. File naming evidence only, not content semantic equivalence.",
+  "matched_names_count": 577,
+  "explicitly_named_no_refactoring_files": 0,
+  "explicitly_named_without_refactoring_files": 0,
+  "explicitly_named_ablation_files": 0,
+  "generic_no_marker_paths": [
+    "Programs/Bytecode/array_no_greater_than_scalar-0.bc",
+    "Programs/Schedules/array_no_greater_than_scalar.sch",
+    "data/input_data/array_test/array_no_greater_than_scalar.mpc"
+  ],
+  "saved_stage2_evaluation_logs": 7,
+  "saved_stage3_evaluation_logs": 7,
+  "substantial_baseline_source_and_evaluation_archives": true,
+  "paper_table6_no_refactoring_first_percent": 33.23,
+  "paper_table6_no_refactoring_union_percent": 45.37,
+  "interpretation": "No explicitly named no-refactoring result artifacts found by filename search. This is NOT proof that such data are absent under an unidentified filename; no valid original no-refactoring baseline or flags have been semantically identified, reproduced or freshly generated. Do not use another model baseline as a proxy.",
+  "acceptance": "Original ablation filename inventory independently checked and accepted as an inventory only. Paper Table 6 no-refactoring numeric experiment remains an original-author claim without matched identified original source/evaluator evidence."
+}
