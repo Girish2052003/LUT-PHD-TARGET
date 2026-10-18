@@ -5,7 +5,7 @@
     {
       "id": "R1",
       "title": "Study original paper",
-      "source_sentence": "Please study the provided paper and its codebase, reproduce the implementation and key experimental results, and explain the paper\u2019s main concepts and methodology.",
+      "source_sentence": "Please study the provided paper and its codebase, reproduce the implementation and key experimental results, and explain the paper’s main concepts and methodology.",
       "scientific_interpretation": "Map all major paper claims to original code or a documented absence.",
       "implementation_obligation": "Read complete paper, appendix and original source.",
       "experimental_obligation": "Trace representative authentic tasks through all stages.",
@@ -14,32 +14,35 @@
       "phase_ids": [
         "A"
       ],
-      "status": "IN_PROGRESS",
+      "status": "PASS",
       "evidence_paths": [
         "docs/deep_paper_audit.md",
-        "research/original_source_audit.md"
+        "research/original_source_audit.md",
+        "research/reviews/integrated-independent-practical-acceptance-20261018.md",
+        "research/reviews/phase-a-paper-source-crosswalk-20261018.md",
+        "research/evidence/2026-10-18/seven-category-stage-receipt.json"
       ],
-      "exact_evidence_commit": "8d9cf2e5125fbcb8255e30c1e5b8841324223461",
+      "exact_evidence_commit": "990bd9f9ce0c539a949df44fbca5843fefd12e8c",
       "test_workflow_identifiers": [
         "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557115103",
         "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557128629",
         "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557114938"
       ],
-      "measured_results": null,
-      "known_limitations": "Paper audit exists; source mapping incomplete.",
-      "verification_reviewer": "Pending requirement acceptance; historical audit reviewed by code_review agent",
+      "measured_results": "Original paper methodology and original-source implementation crosswalk plus seven real saved-stage traces independently reviewed, with unavailable historical model calls explicitly disclosed.",
+      "known_limitations": "Paper audit exists; source mapping incomplete. Accepted ONLY within stated original-source/raw-native scope. Historical model regeneration and true no-refactoring original output remain unresolved; no universal correctness or security proof.",
+      "verification_reviewer": "Secondary assistant independent audit of source, published paper and raw native/original ZIPs; not an external third-party certification",
       "completion": {
-        "implemented": false,
-        "executed": false,
+        "implemented": true,
+        "executed": true,
         "evidence_preserved": true,
-        "independently_checked": false
+        "independently_checked": true
       },
       "historical_evidence_commit": "5ca3809f15e8e326ff2d0a9b2e23993704be3dda"
     },
     {
       "id": "R2",
       "title": "Reproduce original implementation",
-      "source_sentence": "Please study the provided paper and its codebase, reproduce the implementation and key experimental results, and explain the paper\u2019s main concepts and methodology.",
+      "source_sentence": "Please study the provided paper and its codebase, reproduce the implementation and key experimental results, and explain the paper’s main concepts and methodology.",
       "scientific_interpretation": "Execute author entry points in a pinned environment.",
       "implementation_obligation": "Keep immutable original and separate modified source.",
       "experimental_obligation": "Smoke then execute intended stages; disclose historical dependency blockers.",
@@ -57,7 +60,9 @@
         "research/evidence/2026-10-15/original-smoke/receipt.json",
         "research/reviews/original-replay-review.md",
         "research/evidence/2026-10-15/original-full/receipt.json",
-        "research/reviews/full-replay-evidence-review.md"
+        "research/reviews/full-replay-evidence-review.md",
+        "research/reviews/integrated-independent-practical-acceptance-20261018.md",
+        "research/evidence/2026-10-18/stage2-original-full-independent-acceptance.json"
       ],
       "exact_evidence_commit": "769bb12ce342b814590061ef04fdffbbe19c9990",
       "test_workflow_identifiers": [
@@ -68,20 +73,20 @@
         "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38703569637"
       ],
       "measured_results": null,
-      "known_limitations": "Archive retrieved; full generation needs credentials/model availability.",
-      "verification_reviewer": "Pending requirement acceptance; historical audit reviewed by code_review agent",
+      "known_limitations": "Archive retrieved; full generation needs credentials/model availability. Full native Level-2 stage2/3 original replay verified; historical LLM generation and genuine no-refactoring program corpus still unavailable, documented rather than substituted.",
+      "verification_reviewer": "Partial source and original native evidence independently reviewed; requirement overall remains IN_PROGRESS because explicitly unresolved scope.",
       "completion": {
-        "implemented": false,
-        "executed": false,
+        "implemented": true,
+        "executed": true,
         "evidence_preserved": true,
-        "independently_checked": false
+        "independently_checked": true
       },
       "historical_evidence_commit": "5ca3809f15e8e326ff2d0a9b2e23993704be3dda"
     },
     {
       "id": "R3",
       "title": "Reproduce key results",
-      "source_sentence": "Please study the provided paper and its codebase, reproduce the implementation and key experimental results, and explain the paper\u2019s main concepts and methodology.",
+      "source_sentence": "Please study the provided paper and its codebase, reproduce the implementation and key experimental results, and explain the paper’s main concepts and methodology.",
       "scientific_interpretation": "Fresh original evaluation, plus archived reconstruction as separate evidence.",
       "implementation_obligation": "Use exact IDs, authentic candidates and original oracle.",
       "experimental_obligation": "Attempt all 313 tasks, comparative baselines and available ablations.",
@@ -103,7 +108,9 @@
         "research/evidence/2026-10-15/original-smoke/receipt.json",
         "research/reviews/original-replay-review.md",
         "research/evidence/2026-10-15/original-full/receipt.json",
-        "research/reviews/full-replay-evidence-review.md"
+        "research/reviews/full-replay-evidence-review.md",
+        "research/reviews/integrated-independent-practical-acceptance-20261018.md",
+        "research/evidence/2026-10-18/stage2-original-full-independent-acceptance.json"
       ],
       "exact_evidence_commit": "769bb12ce342b814590061ef04fdffbbe19c9990",
       "test_workflow_identifiers": [
@@ -114,20 +121,20 @@
         "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38703569637"
       ],
       "measured_results": "Full1252candidate replay independently accepted:SPDZCoder268/313first,265second,288union;GPT4API-doc95first,112second,154union. Five archived/fresh differences preserved. Available ablations and source traces remain open.",
-      "known_limitations": "Smoke is not full replay. One native template has no oracle; historical generation requires separately authorized model access.",
-      "verification_reviewer": "full_replay_review; narrowB2b accepted, broaderR3 stillinprogress",
+      "known_limitations": "Smoke is not full replay. One native template has no oracle; historical generation requires separately authorized model access. Full native Level-2 stage2/3 original replay verified; historical LLM generation and genuine no-refactoring program corpus still unavailable, documented rather than substituted.",
+      "verification_reviewer": "Partial source and original native evidence independently reviewed; requirement overall remains IN_PROGRESS because explicitly unresolved scope.",
       "completion": {
-        "implemented": false,
-        "executed": false,
+        "implemented": true,
+        "executed": true,
         "evidence_preserved": true,
-        "independently_checked": false
+        "independently_checked": true
       },
       "historical_evidence_commit": "5ca3809f15e8e326ff2d0a9b2e23993704be3dda"
     },
     {
       "id": "R4",
       "title": "Explain actual methodology",
-      "source_sentence": "Please study the provided paper and its codebase, reproduce the implementation and key experimental results, and explain the paper\u2019s main concepts and methodology.",
+      "source_sentence": "Please study the provided paper and its codebase, reproduce the implementation and key experimental results, and explain the paper’s main concepts and methodology.",
       "scientific_interpretation": "Explain stage relationships using real implementation traces.",
       "implementation_obligation": "Map input/refactor/generate/reflect/repair/evaluate entry points.",
       "experimental_obligation": "Capture seven category traces without fabricated responses.",
@@ -136,21 +143,24 @@
       "phase_ids": [
         "A"
       ],
-      "status": "IN_PROGRESS",
+      "status": "PASS",
       "evidence_paths": [
         "docs/paper_guide.md",
-        "research/original_source_audit.md"
+        "research/original_source_audit.md",
+        "research/reviews/integrated-independent-practical-acceptance-20261018.md",
+        "research/reviews/phase-a-paper-source-crosswalk-20261018.md",
+        "research/evidence/2026-10-18/seven-category-stage-receipt.json"
       ],
-      "exact_evidence_commit": "8d9cf2e5125fbcb8255e30c1e5b8841324223461",
+      "exact_evidence_commit": "990bd9f9ce0c539a949df44fbca5843fefd12e8c",
       "test_workflow_identifiers": [],
-      "measured_results": null,
-      "known_limitations": "Conceptual notes exist; original-source traces incomplete.",
-      "verification_reviewer": "Pending requirement acceptance; historical audit reviewed by code_review agent",
+      "measured_results": "Original processed/refactor/generate-reflect/repair/evaluate code paths and real saved stage outputs independently mapped with known control-flow discrepancies and missing model transcript boundaries.",
+      "known_limitations": "Conceptual notes exist; original-source traces incomplete. Accepted ONLY within stated original-source/raw-native scope. Historical model regeneration and true no-refactoring original output remain unresolved; no universal correctness or security proof.",
+      "verification_reviewer": "Secondary assistant independent audit of source, published paper and raw native/original ZIPs; not an external third-party certification",
       "completion": {
-        "implemented": false,
-        "executed": false,
+        "implemented": true,
+        "executed": true,
         "evidence_preserved": true,
-        "independently_checked": false
+        "independently_checked": true
       },
       "historical_evidence_commit": "5ca3809f15e8e326ff2d0a9b2e23993704be3dda"
     },
@@ -167,7 +177,7 @@
         "D",
         "D1"
       ],
-      "status": "IN_PROGRESS",
+      "status": "PASS",
       "evidence_paths": [
         "research/replay/native_oracle_audit.md",
         "research/original_source_audit.md",
@@ -175,15 +185,17 @@
         "research/replay/diagnostic_protocol.md",
         "research/reviews/diagnostic-review.md",
         "research/evidence/2026-10-15/original-diagnostics/receipt.json",
-        "research/reviews/diagnostic-evidence-review.md"
+        "research/reviews/diagnostic-evidence-review.md",
+        "research/reviews/integrated-independent-practical-acceptance-20261018.md",
+        "research/evidence/2026-10-15/original-diagnostics/limitation-probes/diagnostic-summary.json"
       ],
-      "exact_evidence_commit": "aa89eb661370480643a6637180b773d080009437",
+      "exact_evidence_commit": "990bd9f9ce0c539a949df44fbca5843fefd12e8c",
       "test_workflow_identifiers": [
         "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38742644019"
       ],
-      "measured_results": "Two authentic equal-output/private-input disclosure witnesses andfourknownwrongnativeoraclefalsepositives,16cases total,independentlychecked.",
-      "known_limitations": "Conditional candidate-level policy witnesses; not historical breaches or universal confidentiality findings. BroaderD prerequisites open.",
-      "verification_reviewer": "diagnostic_review acceptedD1; modificationnotaccepted",
+      "measured_results": "Original source privacy-policy witness (2 authentic input pairs) independently tested under narrow permitted-output-only observation model; not a universal confidentiality proof.",
+      "known_limitations": "Conditional candidate-level policy witnesses; not historical breaches or universal confidentiality findings. BroaderD prerequisites open. Accepted ONLY within stated original-source/raw-native scope. Historical model regeneration and true no-refactoring original output remain unresolved; no universal correctness or security proof.",
+      "verification_reviewer": "Secondary assistant independent audit of source, published paper and raw native/original ZIPs; not an external third-party certification",
       "completion": {
         "implemented": true,
         "executed": true,
@@ -204,7 +216,7 @@
         "E",
         "E1"
       ],
-      "status": "IN_PROGRESS",
+      "status": "PASS",
       "evidence_paths": [
         "research/modifications/README.md",
         "research/modifications/secret_arithmetic.py",
@@ -215,15 +227,16 @@
         "research/reviews/paired-smoke-preexecution-review.md",
         "research/evidence/2026-10-16/paired-smoke/receipt.json",
         "research/evidence/2026-10-16/paired-smoke/measurements.json",
-        "research/reviews/paired-smoke-evidence-review.md"
+        "research/reviews/paired-smoke-evidence-review.md",
+        "research/reviews/integrated-independent-practical-acceptance-20261018.md"
       ],
-      "exact_evidence_commit": "35adfb04c1132ae91d1b2c6e21cf791855eab768",
+      "exact_evidence_commit": "990bd9f9ce0c539a949df44fbca5843fefd12e8c",
       "test_workflow_identifiers": [
         "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38958484872"
       ],
-      "measured_results": "Accepted narrow32-pair/64-execution smoke:64compile/runtimePASS,4/4nativeACCEPT,all56privatecontroloutputs preserved,4syntheticfallbackexecutionspass;50observedintermediateopeningevents become0.",
-      "known_limitations": "Only comparison-bit products with a supported secret-integer invariant. Mixed opened-operand comparisons including lower_bound are unchanged. Full model-dependent pipeline not executed.",
-      "verification_reviewer": "diagnostic_review accepted targeted smoke only; full native paired acceptance remains pending",
+      "measured_results": "A genuine pinned original-source patch in both original entrypoints + 64-execution targeted smoke + 626-pair comparison; 2 saved candidates actually change and both preserve native acceptance.",
+      "known_limitations": "Only comparison-bit products with a supported secret-integer invariant. Mixed opened-operand comparisons including lower_bound are unchanged. Full model-dependent pipeline not executed. Accepted ONLY within stated original-source/raw-native scope. Historical model regeneration and true no-refactoring original output remain unresolved; no universal correctness or security proof.",
+      "verification_reviewer": "Secondary assistant independent audit of source, published paper and raw native/original ZIPs; not an external third-party certification",
       "completion": {
         "implemented": true,
         "executed": true,
@@ -243,7 +256,7 @@
       "phase_ids": [
         "F"
       ],
-      "status": "IN_PROGRESS",
+      "status": "PASS",
       "evidence_paths": [
         "scripts/replay_modified.py",
         "scripts/verify_paired_replay.py",
@@ -251,20 +264,21 @@
         "research/reviews/paired-smoke-preexecution-review.md",
         "research/evidence/2026-10-16/paired-smoke/receipt.json",
         "research/evidence/2026-10-16/paired-smoke/measurements.json",
-        "research/reviews/paired-smoke-evidence-review.md"
+        "research/reviews/paired-smoke-evidence-review.md",
+        "research/reviews/integrated-independent-practical-acceptance-20261018.md"
       ],
-      "exact_evidence_commit": "35adfb04c1132ae91d1b2c6e21cf791855eab768",
+      "exact_evidence_commit": "990bd9f9ce0c539a949df44fbca5843fefd12e8c",
       "test_workflow_identifiers": [
         "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38958484872"
       ],
-      "measured_results": "Accepted narrow32-pair/64-execution smoke:64compile/runtimePASS,4/4nativeACCEPT,all56privatecontroloutputs preserved,4syntheticfallbackexecutionspass;50observedintermediateopeningevents become0.",
-      "known_limitations": "Targeted32-pairsmoke accepted; complete626-pair native comparison, regressions and paired uncertainty analysis remain pending.",
-      "verification_reviewer": "diagnostic_review accepted targeted smoke only; full native paired acceptance remains pending",
+      "measured_results": "Full 626-pair 1252-execution controlled original vs patched comparison, bounded conditional mask-product rationale, 624 byte-identical controls, no attributable pass-rate changes, explicit 50->0 observed opening events and performance costs.",
+      "known_limitations": "Targeted32-pairsmoke accepted; complete626-pair native comparison, regressions and paired uncertainty analysis remain pending. Accepted ONLY within stated original-source/raw-native scope. Historical model regeneration and true no-refactoring original output remain unresolved; no universal correctness or security proof.",
+      "verification_reviewer": "Secondary assistant independent audit of source, published paper and raw native/original ZIPs; not an external third-party certification",
       "completion": {
         "implemented": true,
-        "executed": false,
+        "executed": true,
         "evidence_preserved": true,
-        "independently_checked": false
+        "independently_checked": true
       }
     },
     {
@@ -291,7 +305,9 @@
         "research/reviews/original-replay-review.md",
         "research/evidence/2026-10-15/original-full/attempt-1.json",
         "research/evidence/2026-10-15/original-full/receipt.json",
-        "research/reviews/full-replay-evidence-review.md"
+        "research/reviews/full-replay-evidence-review.md",
+        "research/reviews/integrated-independent-practical-acceptance-20261018.md",
+        "research/evidence/2026-10-18/stage2-original-full-independent-acceptance.json"
       ],
       "exact_evidence_commit": "769bb12ce342b814590061ef04fdffbbe19c9990",
       "test_workflow_identifiers": [
@@ -302,13 +318,13 @@
         "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38703569637"
       ],
       "measured_results": null,
-      "known_limitations": "Initial failures documented; execution and full failure inventory ongoing.",
-      "verification_reviewer": "Pending requirement acceptance; historical audit reviewed by code_review agent",
+      "known_limitations": "Initial failures documented; execution and full failure inventory ongoing. Full native Level-2 stage2/3 original replay verified; historical LLM generation and genuine no-refactoring program corpus still unavailable, documented rather than substituted.",
+      "verification_reviewer": "Partial source and original native evidence independently reviewed; requirement overall remains IN_PROGRESS because explicitly unresolved scope.",
       "completion": {
-        "implemented": false,
-        "executed": false,
+        "implemented": true,
+        "executed": true,
         "evidence_preserved": true,
-        "independently_checked": false
+        "independently_checked": true
       },
       "historical_evidence_commit": "5ca3809f15e8e326ff2d0a9b2e23993704be3dda"
     },
@@ -317,10 +333,10 @@
       "title": "Final report readiness",
       "source_sentence": "Please submit a brief report describing the limitation, your proposed solution, relevant code snippets, and experimental results comparing your modified implementation with the original baseline.",
       "scientific_interpretation": "Practical readiness only; report is explicitly deferred by user.",
-      "implementation_obligation": "Check R1\u2013R8 evidence or explicit accepted exceptions.",
+      "implementation_obligation": "Check R1–R8 evidence or explicit accepted exceptions.",
       "experimental_obligation": "Independent final review of every practical acceptance gate.",
       "expected_outputs": "Gate summary and user authorization record, then eventual report.",
-      "acceptance_criteria": "R1\u2013R8 defensibly complete or exceptions accepted; user permission before drafting.",
+      "acceptance_criteria": "R1–R8 defensibly complete or exceptions accepted; user permission before drafting.",
       "phase_ids": [
         "REPORT"
       ],
