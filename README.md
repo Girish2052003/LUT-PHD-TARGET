@@ -27,7 +27,7 @@ it does not mean the whole assignment is finished.
 | E1 — Accepted original-modification paired smoke | **PASS** | 32pairs/64executions;2authentictranslations preserve tested outputs and remove50observed openingevents. No full-regression or general privacy guarantee. |
 | F — Paired baseline and modification comparison | **PASS** | Full fair 626-pair original-vs-patched original-native MASCOT comparison accepted WITH bounded interpretation: only 2 source changes, 4 source-identical control acceptance flips, no attributable overall correctness gain; targeted opening removal and extra protocol costs. |
 | G — Practical evidence acceptance | **IN_PROGRESS** | Final requirements/exception reconciliation and validated integration of PR #6 into main are pending. A/C/F and other listed practical subphases passed ONLY within the evidence-scoped author-native evaluation/archived methodology limits. |
-| REPORT — Final report readiness (writing locked) | **BLOCKED** | Final-report writing remains BLOCKED: R2, R3 and R8 are IN_PROGRESS, B3 awaits a documented user decision, and PR #6 has not yet been validated on main. No writing or email permission. |
+| REPORT — Final report readiness (writing locked) | **BLOCKED** | Report WRITING remains BLOCKED until practical G readiness and separate explicit report authorization. Historical B3 and genuine SPDZCoder without-refactoring experiments remain NOT REPRODUCED; user accepted transparent scoped research-integration exceptions only. |
 
 Machine-readable state: [research/progress.json](research/progress.json).
 Requirement gates: [R1–R9 ledger](research/requirements/assignment_traceability.md).

@@ -1,0 +1,7 @@
+# Conditional research merge decision — 2026-10-18
+
+Akka try to produce the non producible first and then u can merge if still no chances.
+
+Keeping them labeled not reproduced!
+
+But try hard before reaching to that option. Cuz we want sucess rather than admitting.

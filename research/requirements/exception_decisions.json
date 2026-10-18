@@ -4,7 +4,7 @@
   "decisions": [
     {
       "id": "HISTORICAL_LLM",
-      "status": "PENDING",
+      "status": "ACCEPTED",
       "requirement_ids": [
         "R2",
         "R3",
@@ -12,28 +12,32 @@
       ],
       "evidence_paths": [
         "research/reviews/historical-gpt4-availability-and-exception-20261018.md",
-        "research/reviews/integrated-independent-practical-acceptance-20261018.md"
+        "research/reviews/integrated-independent-practical-acceptance-20261018.md",
+        "research/evidence/2026-10-18/final-attempt-original-no-refactoring-content-audit.json",
+        "research/reviews/phase-g-final-recovery-and-conditional-exception-review-20261018.md"
       ],
-      "authorization_record": null,
-      "authorization_sha256": null,
-      "decision_quote": null,
-      "decision_date": null,
+      "authorization_record": "research/requirements/conditional_merge_user_decision-20261018.txt",
+      "authorization_sha256": "fbffc851beef69c527772e1e62b3ae346ceea647f2c1c30ab0c13074fba3175c",
+      "decision_quote": "Akka try to produce the non producible first and then u can merge if still no chances.",
+      "decision_date": "2026-10-18",
       "limitations": "Original paper's historical GPT-4 Turbo/particular Azure deployment cannot be independently replayed from pinned model/version/credentials; Level 2 saved-source MASCOT reproduction is accepted only in native-evaluator scope."
     },
     {
       "id": "NO_REFACTORING",
-      "status": "PENDING",
+      "status": "ACCEPTED",
       "requirement_ids": [
         "R3"
       ],
       "evidence_paths": [
         "research/evidence/2026-10-18/authors-no-refactoring-inventory-review.json",
-        "research/reviews/integrated-independent-practical-acceptance-20261018.md"
+        "research/reviews/integrated-independent-practical-acceptance-20261018.md",
+        "research/evidence/2026-10-18/final-attempt-original-no-refactoring-content-audit.json",
+        "research/reviews/phase-g-final-recovery-and-conditional-exception-review-20261018.md"
       ],
-      "authorization_record": null,
-      "authorization_sha256": null,
-      "decision_quote": null,
-      "decision_date": null,
+      "authorization_record": "research/requirements/conditional_merge_user_decision-20261018.txt",
+      "authorization_sha256": "fbffc851beef69c527772e1e62b3ae346ceea647f2c1c30ab0c13074fba3175c",
+      "decision_quote": "Akka try to produce the non producible first and then u can merge if still no chances.",
+      "decision_date": "2026-10-18",
       "limitations": "No correctly identified authentic SPDZCoder no-refactoring source corpus/evaluation was recovered. Coincidentally matching UniTrans/GPT-4 baseline numbers are not valid substitution."
     }
   ]

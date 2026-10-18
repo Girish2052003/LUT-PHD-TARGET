@@ -507,14 +507,14 @@
         "independently_checked": false,
         "reviewer": "Pending acceptance review"
       },
-      "next_action": "PRs #7, #9 and #8 are already integrated into PR #6 (verified at head 7b79ac5). Reconcile R2/R3/R8 against scope-limited evidence, correct stale README/HANDOFF, inspect review/CI, and request an explicit B3/no-refactoring irreproducibility decision BEFORE claiming all practical requirements accepted. Merge PR #6 only after approved acceptance; validate exact main afterward.",
+      "next_action": "Genuine final original TAR content recovery attempt completed at original source 211cd1f (498 scanned readable author files, 35 author evaluation groups), no attributable SPDZCoder no-refactoring experiment. Girish's explicit conditional permission to merge with both historical gaps labeled NOT REPRODUCED is documented, after the bounded credible routes were exhausted without paid API keys. Review new-head CI and exact exception record; merge PR6 research integration to main (preserve B3 BLOCKED/R2,R3,R8 IN_PROGRESS and report lock). Then independently validate new exact main and only then mark G and R9 as scoped practical readiness, with REPORT still BLOCKED.",
       "redo_only_if": "Relevant source, configuration, evidence, or acceptance scope changes; document why."
     },
     {
       "id": "REPORT",
       "title": "Final report readiness (writing locked)",
       "status": "BLOCKED",
-      "completion_scope": "Final-report writing remains BLOCKED: R2, R3 and R8 are IN_PROGRESS, B3 awaits a documented user decision, and PR #6 has not yet been validated on main. No writing or email permission.",
+      "completion_scope": "Report WRITING remains BLOCKED until practical G readiness and separate explicit report authorization. Historical B3 and genuine SPDZCoder without-refactoring experiments remain NOT REPRODUCED; user accepted transparent scoped research-integration exceptions only.",
       "dependencies": [
         "A",
         "B2",

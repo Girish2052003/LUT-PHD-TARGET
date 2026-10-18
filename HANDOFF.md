@@ -5,6 +5,12 @@ doing work. Do not restart completed milestones.** The assignment is due
 31 October 2026. The final report is locked pending practical evidence and
 Girish's explicit authorization.
 
+## Superseding Phase G full negative-recovery and conditional decision — 18 October 2026
+
+**Newest technical evidence:** original source SHA256-pinned content audit [39136184598](https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39136184598) scanned 498 actual relevant author text files (9,692,753 bytes), **no explicit no-refactoring/ablation marker in that scope**; all 35 exact task-ID matched archived evaluator groups rescanned, sole 104/313 first and 142/313 union match is **UniTrans/GPT-4, NOT SPDZCoder no-refactoring**. Evidence receipt `research/evidence/2026-10-18/final-attempt-original-no-refactoring-content-audit.json`. This is a documented bounded negative result, NOT proof of impossibility.
+
+**Girish's conditional user direction has now been satisfied within accessible evidence:** try real reproduction first, then permission to integrate while labeling historical original LLM generation and SPDZCoder no-refactoring ablation **NOT REPRODUCED**. Exact quote, scope and SHA256 recorded at `research/requirements/conditional_merge_user_decision-20261018.txt`. Two narrow exception registry entries ACCEPTED **for research integration only**; B3 BLOCKED, R2/R3/R8 IN_PROGRESS WITH EXCEPTIONS; G IN_PROGRESS pending PR6 merge/exact main CI; R9/REPORT BLOCKED. The accepted exceptions are NOT fabricated experimental PASS and no report writing or email was authorized.
+
 ## Phase G explicit exception-governance and dependency repair — 18 October 2026
 
 A formal dependency deadlock was found: `R9` (practical readiness) previously required the `REPORT` phase to PASS, while the user requires practical acceptance **before** authorizing report writing. `R9.phase_ids` now depends on `G`, not `REPORT`; this correction **does not** change the current R9 or REPORT status (both remain BLOCKED).

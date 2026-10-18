@@ -1,0 +1,58 @@
+{
+  "date": "2026-10-18",
+  "kind": "independent_expanded_original_author_content_and_saved_ablation_recovery",
+  "source_archive_sha256": "a8ea14150dc1d4ddf53eb4ead450d88139d09b680683f673029877ce0c6e00ac",
+  "source_artifact_workflow_run": 39136184598,
+  "source_artifact_id": 12139777257,
+  "source_artifact_zip_sha256": "ae789117fcdc4dc79f2274eb76dbfc233b648413e2f134045b3a6e1839bbb025",
+  "source_commit": "211cd1fbe336b1b97adf080257ae7945f5c5087e",
+  "original_archive_data_scanned": {
+    "readable_relevant_file_count": 498,
+    "readable_byte_count": 9692753,
+    "scopes": {
+      "README_md": 1,
+      "data": 204,
+      "evaluation": 259,
+      "requirement_txt": 1,
+      "scripts": 7,
+      "src": 20,
+      "utility": 6
+    },
+    "excluded_embedded_git_regular_files": 635,
+    "other_non_scanned_regular_files": 1024,
+    "explicit_no_refactoring_or_ablation_content_marker_file_count": 0
+  },
+  "original_saved_evaluation_groups": {
+    "complete_seven_category_groups": 35,
+    "original_task_count": 313,
+    "paper_without_refactoring_reported_first": 104,
+    "paper_without_refactoring_reported_union": 142,
+    "matches": [
+      {
+        "original_group": "evaluation/baseline-evaluation/unitrans-baseline/gpt-4-baseline_output",
+        "first": 104,
+        "union": 142,
+        "identified_system": "UniTrans/GPT-4 baseline",
+        "is_genuine_spdzcoder_without_refactoring": false
+      }
+    ],
+    "identified_genuine_spdzcoder_without_refactoring_group": false
+  },
+  "source_and_result_integrity": "All bounded original author regular content was extracted in memory without executing author code. Source tar SHA256 enforced; native evaluator output groups cross-checked against exact original 313 task identities. Original complete author archive contains additional unscanned compiled, embedded Git and other binary/unsupported files. The ZIP contains full author-content-search.json and verified-original-evaluation-groups.json for independent inspection.",
+  "live_historical_model": {
+    "original_pipeline_azure_deployment": "gpt-4 (snapshot not uniquely pinned)",
+    "author_saved_model_label": "gpt-4-turbo-2024-04-09",
+    "openai_public_api_shutdown_announced": "2026-10-23",
+    "original_azure_deployment_verified_available": false,
+    "authorized_model_credentials": false,
+    "authorized_paid_model_calls": false,
+    "model_inference_attempted": false
+  },
+  "scientific_disposition": "NOT REPRODUCED: the historical exact deployed model-generation stage and genuine SPDZCoder without-refactoring ablation. Extensive available author source archive contents and 35 author native evaluation groups checked; no correctly attributable original ablation source/result pair was identified. These are evidence-bounded irreproducibility exceptions accepted conditionally for merge, NOT new reproduced experiments or proof of impossibility.",
+  "user_conditional_instruction_record": "research/requirements/conditional_merge_user_decision-20261018.txt",
+  "authorization_sha256": "fbffc851beef69c527772e1e62b3ae346ceea647f2c1c30ab0c13074fba3175c",
+  "other_preserved_reproduction": "Archived model outputs recalculated and authentic original native MASCOT execution experimentally accepted within explicit bounded oracle scope; full paired privacy repair evidence unchanged.",
+  "professor_report_authorized": false,
+  "original_model_executed": false,
+  "original_no_refactoring_model_executed": false
+}
