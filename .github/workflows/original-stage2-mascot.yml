@@ -1,0 +1,151 @@
+name: Authentic original stage-2 MASCOT replay
+on:
+  push:
+    branches: ["research/original-stage2-mascot-20261018"]
+    paths:
+      - ".github/workflows/original-stage2-mascot.yml"
+      - "scripts/prepare_stage2_replay.py"
+      - "scripts/replay_stage2.py"
+      - "scripts/run_stage2_container.sh"
+      - "scripts/verify_stage2_replay.py"
+      - "tests/test_stage2_mascot_replay.py"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  smoke:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Verify original research handoff and stage2 source-binding tests
+        run: |
+          PYTHONPATH=src python -m unittest discover -s tests -v
+          python scripts/check_handoff.py
+      - name: Prepare pinned original Zenodo code and unchanged MP-SPDZ evaluator
+        run: |
+          python scripts/prepare_original_replay.py
+          python scripts/prepare_stage2_replay.py --build-dir tmp/original-replay-build
+      - name: Build isolated original-evaluator stage2 sandbox
+        run: |
+          docker build -t original-stage2-mascot tmp/original-replay-build
+          mkdir -p results/stage2-environment
+          docker image inspect original-stage2-mascot > results/stage2-environment/image.json
+          uname -a > results/stage2-environment/kernel.txt
+          lscpu > results/stage2-environment/cpu.txt
+          cp tmp/original-replay-build/stage2-harness-extension.json results/stage2-environment/
+      - name: Execute seven authentic stage2 native smoke cases (two candidates each)
+        run: |
+          set -euo pipefail
+          for task in \
+            array_test/reverse_and_concat \
+            loop_test/max_adjacent_product \
+            branch_test/sin_or_cos \
+            math_test/sigmoid \
+            numpy_operation_test/array_from_intrinsic_linspace \
+            numpy_ufunc_test/logsumexp \
+            syntax_test/second_largest; do
+            bash scripts/run_stage2_container.sh original-stage2-mascot \
+              "results/stage2-smoke/$task" --task "$task" --candidate both
+          done
+      - name: Independently recompute 14 original evaluator decisions from raw evidence
+        run: |
+          python scripts/verify_stage2_replay.py \
+            --root results/stage2-smoke --smoke --output results/stage2-smoke-summary
+      - name: Preserve every smoke program, status, failures and matched pins
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: stage2-original-smoke-${{ github.sha }}
+          path: |
+            results/stage2-smoke
+            results/stage2-smoke-summary
+            results/stage2-environment
+          retention-days: 90
+          if-no-files-found: warn
+
+  native-full:
+    needs: smoke
+    if: contains(github.event.head_commit.message, '[stage2-full]') || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    strategy:
+      fail-fast: false
+      max-parallel: 7
+      matrix:
+        category: [array_test, loop_test, branch_test, math_test, numpy_operation_test, numpy_ufunc_test, syntax_test]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Rebuild identical original source and pinned stage2 input manifest
+        run: |
+          python scripts/check_handoff.py
+          python scripts/prepare_original_replay.py
+          python scripts/prepare_stage2_replay.py --build-dir tmp/original-replay-build
+          docker build -t original-stage2-mascot tmp/original-replay-build
+      - name: Execute all original saved stage2 candidates in the native split
+        env:
+          REPLAY_CATEGORY: ${{ matrix.category }}
+        run: |
+          bash scripts/run_stage2_container.sh original-stage2-mascot \
+            "results/stage2-full/$REPLAY_CATEGORY" --split "$REPLAY_CATEGORY" --candidate both
+          python - <<'PY'
+          import os
+          from pathlib import Path
+          from scripts.verify_stage2_replay import validate_stage2_run
+          root=Path("results/stage2-full") / os.environ["REPLAY_CATEGORY"]
+          rows,_=validate_stage2_run(root)
+          from scripts.reproduce_official_scores import COUNTS
+          expected=2*COUNTS[os.environ["REPLAY_CATEGORY"]]
+          if len(rows)!=expected:
+              raise ValueError("Full original stage2 category is incomplete")
+          print("Original stage2 full category verified:",len(rows))
+          PY
+      - name: Preserve original stage2 candidates, failures, source pins, all attempts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: stage2-original-native-${{ matrix.category }}-${{ github.sha }}
+          path: results/stage2-full
+          retention-days: 90
+          if-no-files-found: warn
+
+  full-aggregate:
+    needs: native-full
+    if: always() && needs.native-full.result != 'skipped'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: stage2-original-native-*-${{ github.sha }}
+          path: results/stage2-full-artifacts
+          merge-multiple: true
+      - name: Recompute all 626 stage2 original-native outcomes and historical disagreements
+        run: |
+          python scripts/verify_stage2_replay.py \
+            --root results/stage2-full-artifacts/stage2-full \
+            --output results/stage2-full-summary
+      - name: Preserve independent full-stage2 measured results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: stage2-original-full-summary-${{ github.sha }}
+          path: results/stage2-full-summary
+          retention-days: 90
+          if-no-files-found: warn
