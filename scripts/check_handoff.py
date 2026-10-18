@@ -44,7 +44,49 @@ def safe_file(relative):
     return path
 
 
-def validate_gates(phases, requirements, report_authorized, authorization_record):
+def validate_exception_decisions(exceptions, requirements):
+    """Check decision paperwork, NOT whether a user genuinely authorized it.
+
+    Humans must check the original user instruction. A checked-in file/quote
+    cannot cryptographically prove authorship or reproduce missing experiments.
+    """
+    known = {r["id"] for r in requirements if r["id"] != "R9"}
+    seen = set()
+    accepted = {}
+    for item in exceptions:
+        name = item["id"]
+        if name in seen:
+            raise ValueError(f"Duplicate irreproducibility decision: {name}")
+        seen.add(name)
+        if item["status"] not in {"PENDING", "ACCEPTED"}:
+            raise ValueError(f"Invalid irreproducibility decision status: {name}")
+        targets = item["requirement_ids"]
+        if not targets or len(set(targets)) != len(targets) or not set(targets) <= known:
+            raise ValueError(f"Invalid irreproducibility requirements: {name}")
+        for path in item.get("evidence_paths", []):
+            safe_file(path)
+        if item["status"] != "ACCEPTED":
+            if any(item.get(k) for k in ("authorization_record", "authorization_sha256",
+                                           "decision_quote", "decision_date")):
+                raise ValueError(f"Pending exception cannot impersonate user approval: {name}")
+            continue
+        if not all(item.get(k) for k in ("authorization_record", "authorization_sha256",
+                                         "decision_quote", "decision_date", "limitations")):
+            raise ValueError(f"ACCEPTED exception lacks explicit user decision: {name}")
+        if not re.fullmatch(r"[a-f0-9]{64}", item["authorization_sha256"]):
+            raise ValueError(f"Invalid approval record SHA-256: {name}")
+        decision = safe_file(item["authorization_record"]).read_bytes()
+        if hashlib.sha256(decision).hexdigest() != item["authorization_sha256"]:
+            raise ValueError(f"Changed exception approval evidence: {name}")
+        if item["decision_quote"].encode("utf-8") not in decision:
+            raise ValueError(f"Approval quote absent from recorded decision: {name}")
+        accepted[name] = set(targets)
+    return accepted
+
+
+def validate_gates(phases, requirements, report_authorized, authorization_record,
+                   exception_decisions=()):
+    accepted = validate_exception_decisions(exception_decisions, requirements)
     phase_status = {p["id"]: p["status"] for p in phases}
     for record in phases + requirements:
         if record["status"] != "PASS":
@@ -69,8 +111,19 @@ def validate_gates(phases, requirements, report_authorized, authorization_record
             raise ValueError(
                 "REPORT scope contradicts unfinished requirements: "
                 + ", ".join(open_requirements))
-    if r9["status"] == "PASS" and any(r["status"] != "PASS" for r in requirements if r["id"] != "R9"):
-        raise ValueError("Report readiness requires R1–R8 PASS; accepted exceptions need explicit ledger support")
+    if r9["status"] == "PASS":
+        # R9 is research *readiness*, not the written REPORT phase. Unfinished
+        # requirements can be excused only by explicit matching user decisions.
+        for r in requirements:
+            if r["id"] == "R9" or r["status"] == "PASS":
+                continue
+            exception_ids = r.get("required_exception_ids", [])
+            if not exception_ids or any(
+                    r["id"] not in accepted.get(item_id, set())
+                    for item_id in exception_ids):
+                raise ValueError(
+                    f"Report readiness requires {r['id']} PASS or explicitly "
+                    f"accepted, scoped irreproducibility exceptions")
     if report_authorized:
         if r9["status"] != "PASS":
             raise ValueError("Report authorization requires practical readiness")
@@ -102,7 +155,13 @@ def load_and_check():
             raw = safe_file(item["path"]).read_bytes()
             if len(raw) != item["bytes"] or hashlib.sha256(raw).hexdigest() != item["sha256"]:
                 raise ValueError(f"Preserved evidence changed: {item['path']}")
-    validate_gates(phases, requirements, progress["report_authorized"], progress.get("report_authorization_record"))
+    exception_path = ROOT / "research/requirements/exception_decisions.json"
+    registry = json.loads(exception_path.read_text())
+    if registry["schema_version"] != 1:
+        raise ValueError("Unknown exception registry schema")
+    validate_gates(phases, requirements, progress["report_authorized"],
+                   progress.get("report_authorization_record"),
+                   registry["decisions"])
     return progress, ledger
 
 

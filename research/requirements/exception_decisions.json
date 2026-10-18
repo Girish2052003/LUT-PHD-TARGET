@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "purpose": "Fail-closed research exception decision register. This is not user authorization. Never mark ACCEPTED without an actual explicit Girish instruction and a separately recorded, reviewable exact quote/sha256.",
+  "decisions": [
+    {
+      "id": "HISTORICAL_LLM",
+      "status": "PENDING",
+      "requirement_ids": [
+        "R2",
+        "R3",
+        "R8"
+      ],
+      "evidence_paths": [
+        "research/reviews/historical-gpt4-availability-and-exception-20261018.md",
+        "research/reviews/integrated-independent-practical-acceptance-20261018.md"
+      ],
+      "authorization_record": null,
+      "authorization_sha256": null,
+      "decision_quote": null,
+      "decision_date": null,
+      "limitations": "Original paper's historical GPT-4 Turbo/particular Azure deployment cannot be independently replayed from pinned model/version/credentials; Level 2 saved-source MASCOT reproduction is accepted only in native-evaluator scope."
+    },
+    {
+      "id": "NO_REFACTORING",
+      "status": "PENDING",
+      "requirement_ids": [
+        "R3"
+      ],
+      "evidence_paths": [
+        "research/evidence/2026-10-18/authors-no-refactoring-inventory-review.json",
+        "research/reviews/integrated-independent-practical-acceptance-20261018.md"
+      ],
+      "authorization_record": null,
+      "authorization_sha256": null,
+      "decision_quote": null,
+      "decision_date": null,
+      "limitations": "No correctly identified authentic SPDZCoder no-refactoring source corpus/evaluation was recovered. Coincidentally matching UniTrans/GPT-4 baseline numbers are not valid substitution."
+    }
+  ]
+}

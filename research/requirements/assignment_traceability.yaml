@@ -90,7 +90,10 @@
         "evidence_preserved": true,
         "independently_checked": true
       },
-      "historical_evidence_commit": "5ca3809f15e8e326ff2d0a9b2e23993704be3dda"
+      "historical_evidence_commit": "5ca3809f15e8e326ff2d0a9b2e23993704be3dda",
+      "required_exception_ids": [
+        "HISTORICAL_LLM"
+      ]
     },
     {
       "id": "R3",
@@ -150,7 +153,11 @@
         "evidence_preserved": true,
         "independently_checked": true
       },
-      "historical_evidence_commit": "5ca3809f15e8e326ff2d0a9b2e23993704be3dda"
+      "historical_evidence_commit": "5ca3809f15e8e326ff2d0a9b2e23993704be3dda",
+      "required_exception_ids": [
+        "HISTORICAL_LLM",
+        "NO_REFACTORING"
+      ]
     },
     {
       "id": "R4",
@@ -362,7 +369,10 @@
         "evidence_preserved": true,
         "independently_checked": true
       },
-      "historical_evidence_commit": "5ca3809f15e8e326ff2d0a9b2e23993704be3dda"
+      "historical_evidence_commit": "5ca3809f15e8e326ff2d0a9b2e23993704be3dda",
+      "required_exception_ids": [
+        "HISTORICAL_LLM"
+      ]
     },
     {
       "id": "R9",
@@ -374,7 +384,7 @@
       "expected_outputs": "Gate summary and user authorization record, then eventual report.",
       "acceptance_criteria": "R1–R8 defensibly complete or exceptions accepted; user permission before drafting.",
       "phase_ids": [
-        "REPORT"
+        "G"
       ],
       "status": "BLOCKED",
       "evidence_paths": [
@@ -384,7 +394,7 @@
       "exact_evidence_commit": null,
       "test_workflow_identifiers": [],
       "measured_results": null,
-      "known_limitations": "Blocked: R2, R3 and R8 are still IN_PROGRESS under the presently unapproved historical model-generation/no-refactoring exceptions and final evidence integration. No final report authorization; source and CI readiness do not bypass this gate.",
+      "known_limitations": "Practical report readiness remains BLOCKED until G is accepted on exact main plus all R1–R8 are PASS or explicit user-approved, narrowly scoped exception decisions are recorded for unresolved requirements. User permission to draft the professor report is a separate later gate (REPORT), not a dependency of R9 readiness.",
       "verification_reviewer": "Pending requirement acceptance; historical audit reviewed by code_review agent",
       "completion": {
         "implemented": false,

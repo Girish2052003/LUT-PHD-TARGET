@@ -13,7 +13,7 @@ These are practical acceptance gates. Historical milestones do not replace origi
 | R6 | Implement original-source modification | **PASS** | E, E1 |
 | R7 | Compare original and modified | **PASS** | F |
 | R8 | Document reproduction difficulties | **IN_PROGRESS** | A, B2, B3, G |
-| R9 | Final report readiness | **BLOCKED** | REPORT |
+| R9 | Final report readiness | **BLOCKED** | G |
 
 ## R1 — Study original paper
 
@@ -144,7 +144,7 @@ These are practical acceptance gates. Historical milestones do not replace origi
 - **Experimental obligation:** Independent final review of every practical acceptance gate.
 - **Expected outputs:** Gate summary and user authorization record, then eventual report.
 - **Acceptance criteria:** R1–R8 defensibly complete or exceptions accepted; user permission before drafting.
-- **Known limitations:** Blocked: R2, R3 and R8 are still IN_PROGRESS under the presently unapproved historical model-generation/no-refactoring exceptions and final evidence integration. No final report authorization; source and CI readiness do not bypass this gate.
+- **Known limitations:** Practical report readiness remains BLOCKED until G is accepted on exact main plus all R1–R8 are PASS or explicit user-approved, narrowly scoped exception decisions are recorded for unresolved requirements. User permission to draft the professor report is a separate later gate (REPORT), not a dependency of R9 readiness.
 - **Verification reviewer:** Pending requirement acceptance; historical audit reviewed by code_review agent
 - **Evidence:** `HANDOFF.md`, `research/requirements/execution_contract.md`
 - **Evidence commit:** Pending

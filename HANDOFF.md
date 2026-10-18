@@ -5,6 +5,14 @@ doing work. Do not restart completed milestones.** The assignment is due
 31 October 2026. The final report is locked pending practical evidence and
 Girish's explicit authorization.
 
+## Phase G explicit exception-governance and dependency repair — 18 October 2026
+
+A formal dependency deadlock was found: `R9` (practical readiness) previously required the `REPORT` phase to PASS, while the user requires practical acceptance **before** authorizing report writing. `R9.phase_ids` now depends on `G`, not `REPORT`; this correction **does not** change the current R9 or REPORT status (both remain BLOCKED).
+
+The new `research/requirements/exception_decisions.json` records `HISTORICAL_LLM` and `NO_REFACTORING` as **PENDING only**. Their exact affected requirements are declared, not automatically waived. `scripts/check_handoff.py` and fail-closed regression tests now prevent R9 practical readiness for any remaining incomplete requirement unless *every explicitly listed required exception* has an actual verified record of an explicit Girish decision (path, SHA-256, verbatim quote). These are necessary metadata checks, not proof of who authored an approval; independent human review remains required. No fabricated approval record, paid model call, substantive experiment or output change has been made.
+
+**B3 is still BLOCKED; R2/R3/R8 remain IN_PROGRESS; G IN_PROGRESS; R9/REPORT BLOCKED.** Do not mark the exception registry accepted from a general command to continue; no user exception approval is inferred.
+
 ## Phase G full paired author-original ZIP independent second raw audit — 18 October 2026
 
 All eight original full-paired artifact ZIPs from run 38989067493 were independently downloaded, SHA-256 pinned, and directly re-evaluated at the raw-file level (1252 individual baseline/modified records, 1280 attempts, 3840 MPC/stdout/stderr digests, 5008 source/transform/template digests, all 626 complete failure-matrix entries). The independent totals agree: original 270/266/290, modified 271/263/290 of 313 tasks; exactly two source changes (both accepted) and four oracle acceptance flips on byte-identical source/compiled MPC controls, so **no attributable general correctness gain**. Machine-readable second receipt: `research/evidence/2026-10-18/phase-g-paired-secondary-recomputed.json`; review: `research/reviews/phase-g-paired-secondary-recomputed-20261018.md`. Raw ZIPs remain GitHub Actions artifacts; no native candidates or model outputs were rerun. Existing prior raw-auditor `scripts/audit_paired_controls.py` is a documented independent reproducibility route. No phase or report gate automatically elevated.
