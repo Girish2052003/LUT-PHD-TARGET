@@ -5,6 +5,12 @@ doing work. Do not restart completed milestones.** The assignment is due
 31 October 2026. The final report is locked pending practical evidence and
 Girish's explicit authorization.
 
+## Superseding Phase G integration and practical readiness PASS — 18 October 2026
+
+**Evidence-qualified source integration now verified on exact `main`:** original research PR #6 merged as `f5a4d749964dfc0c6050bbdfdd0bdc2cf1fdfaea`. Independently checked [main research verification 39137690936](https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39137690936) (**159 tests, real compiler and cleartext emulator PASS**) and [main authors' artifact provenance 39137690949](https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39137690949) (**PASS**). Final reader-oriented acceptance record: `research/reviews/phase-g-merged-main-practical-acceptance-20261018.md`.
+
+**Scoped machine gates:** Phase G PASS, R9 PASS *for practical report readiness only* under Girish's precisely recorded conditional original-reproducibility exceptions. Historical GPT-4/Azure generation **B3 BLOCKED — NOT REPRODUCED**. Authentic original SPDZCoder no-refactoring ablation **NOT REPRODUCED**. R2/R3/R8 remain IN_PROGRESS WITH separately accepted, source-grounded exceptions, never mislabeled experimentally complete. Evidence original 498-file source-content scan, 35 authentic evaluation groups, 3 historical Git commits/579 blobs remain pinned. **REPORT BLOCKED, report_authorized FALSE:** no professor-facing report or email may start without separate Girish instruction.
+
 ## Last source recovery: independently verified embedded original Git history — 18 October 2026
 
 Original checksum-pinned author's TAR embedded Git history was inspected without running Git or code: three complete historical commits, 28 trees, **579 verified original Git blobs**, zero missing trees or packfiles, and **zero** explicit ablation markers or matching historical path names. [Original Git archaeology run 39136978957](https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39136978957) passed. New receipt `research/evidence/2026-10-18/original-author-git-history-independent-audit.json` hashes and bounds all claims; the user's explicitly conditional integration acceptance stays strictly **NOT REPRODUCED** for both missing experiments. No historic LLM or native MPC rerun occurred. Main branch validation and report authorization are separate future gates.

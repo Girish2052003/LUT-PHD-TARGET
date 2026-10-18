@@ -4,7 +4,7 @@
   "current_pr": 6,
   "historical_remote_main": "0ae96a968022325f3f678b19db1fcd69de483b70",
   "historical_reviewed_head": "5ca3809f15e8e326ff2d0a9b2e23993704be3dda",
-  "resume_phase": "G",
+  "resume_phase": "REPORT",
   "report_authorized": false,
   "phases": [
     {
@@ -491,30 +491,35 @@
     {
       "id": "G",
       "title": "Practical evidence acceptance",
-      "status": "IN_PROGRESS",
-      "completion_scope": "Final requirements/exception reconciliation and validated integration of PR #6 into main are pending. A/C/F and other listed practical subphases passed ONLY within the evidence-scoped author-native evaluation/archived methodology limits.",
+      "status": "PASS",
+      "completion_scope": "Original-source native research PR #6 merged at exact main f5a4d749964dfc0c6050bbdfdd0bdc2cf1fdfaea; exact-main research regression/compiler/cleartext emulator run39137690936 and provenance run39137690949 successful (159 tests). Read-only native/original source audits and explicit bounded historical exceptions independently documented. Historical GPT-4 model generation and original no-refactoring ablation remain NOT REPRODUCED; no general security proof.",
       "dependencies": [
         "M6"
       ],
       "evidence_paths": [
-        "research/reviews/pr5-independent-review.md"
+        "research/reviews/pr5-independent-review.md",
+        "research/reviews/phase-g-merged-main-practical-acceptance-20261018.md",
+        "research/requirements/conditional_merge_user_decision-20261018.txt",
+        "research/evidence/2026-10-18/final-attempt-original-no-refactoring-content-audit.json",
+        "research/evidence/2026-10-18/original-author-git-history-independent-audit.json",
+        "research/reviews/integrated-independent-practical-acceptance-20261018.md"
       ],
-      "evidence_commit": "7b79ac5dda10e53529f843242c93cb880e16ba51",
+      "evidence_commit": "f5a4d749964dfc0c6050bbdfdd0bdc2cf1fdfaea",
       "verification": {
-        "implemented": false,
-        "executed": false,
+        "implemented": true,
+        "executed": true,
         "evidence_preserved": true,
-        "independently_checked": false,
-        "reviewer": "Pending acceptance review"
+        "independently_checked": true,
+        "reviewer": "Independent read-only original native ZIP provenance/paired source audit, original TAR/Git archaeology and verified exact-main GitHub Actions acceptance; not external security certification"
       },
-      "next_action": "Genuine final original TAR content recovery attempt completed at original source 211cd1f (498 scanned readable author files, 35 author evaluation groups), no attributable SPDZCoder no-refactoring experiment. Girish's explicit conditional permission to merge with both historical gaps labeled NOT REPRODUCED is documented, after the bounded credible routes were exhausted without paid API keys. Review new-head CI and exact exception record; merge PR6 research integration to main (preserve B3 BLOCKED/R2,R3,R8 IN_PROGRESS and report lock). Then independently validate new exact main and only then mark G and R9 as scoped practical readiness, with REPORT still BLOCKED.",
+      "next_action": "Phase G practical integration complete within stated scope. Present explicit R1–R9 and exception evidence to Girish; report writing must still be separately authorized, never draft/send automatically. Do not claim historical B3 or no-refactoring reproduced.",
       "redo_only_if": "Relevant source, configuration, evidence, or acceptance scope changes; document why."
     },
     {
       "id": "REPORT",
       "title": "Final report readiness (writing locked)",
       "status": "BLOCKED",
-      "completion_scope": "Report WRITING remains BLOCKED until practical G readiness and separate explicit report authorization. Historical B3 and genuine SPDZCoder without-refactoring experiments remain NOT REPRODUCED; user accepted transparent scoped research-integration exceptions only.",
+      "completion_scope": "Professor-facing REPORT WRITING remains BLOCKED and NOT AUTHORIZED. R9 practical readiness can pass on exact main with two explicitly accepted, prominently NOT REPRODUCED historical scientific exceptions; separate Girish permission is still mandatory before any drafting/email.",
       "dependencies": [
         "A",
         "B2",
@@ -532,7 +537,7 @@
         "independently_checked": false,
         "reviewer": "Pending acceptance review"
       },
-      "next_action": "No professor-facing report until R1–R8 have defensibly passed or explicit exceptions are accepted AND Girish separately authorizes writing. Continue Phase G integration audit.",
+      "next_action": "Present current Phase G/R9 practical readiness evidence to Girish and ask for separate explicit permission before drafting final professor-facing report. Preserve B3 NOT REPRODUCED, no-refactoring NOT REPRODUCED, R2/R3/R8 IN_PROGRESS WITH EXCEPTIONS.",
       "redo_only_if": "Relevant source, configuration, evidence, or acceptance scope changes; document why."
     }
   ],
