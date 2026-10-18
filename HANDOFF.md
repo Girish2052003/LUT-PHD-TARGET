@@ -5,6 +5,10 @@ doing work. Do not restart completed milestones.** The assignment is due
 31 October 2026. The final report is locked pending practical evidence and
 Girish's explicit authorization.
 
+## Last source recovery: independently verified embedded original Git history — 18 October 2026
+
+Original checksum-pinned author's TAR embedded Git history was inspected without running Git or code: three complete historical commits, 28 trees, **579 verified original Git blobs**, zero missing trees or packfiles, and **zero** explicit ablation markers or matching historical path names. [Original Git archaeology run 39136978957](https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39136978957) passed. New receipt `research/evidence/2026-10-18/original-author-git-history-independent-audit.json` hashes and bounds all claims; the user's explicitly conditional integration acceptance stays strictly **NOT REPRODUCED** for both missing experiments. No historic LLM or native MPC rerun occurred. Main branch validation and report authorization are separate future gates.
+
 ## Superseding Phase G full negative-recovery and conditional decision — 18 October 2026
 
 **Newest technical evidence:** original source SHA256-pinned content audit [39136184598](https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39136184598) scanned 498 actual relevant author text files (9,692,753 bytes), **no explicit no-refactoring/ablation marker in that scope**; all 35 exact task-ID matched archived evaluator groups rescanned, sole 104/313 first and 142/313 union match is **UniTrans/GPT-4, NOT SPDZCoder no-refactoring**. Evidence receipt `research/evidence/2026-10-18/final-attempt-original-no-refactoring-content-audit.json`. This is a documented bounded negative result, NOT proof of impossibility.

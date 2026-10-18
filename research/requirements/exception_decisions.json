@@ -14,7 +14,9 @@
         "research/reviews/historical-gpt4-availability-and-exception-20261018.md",
         "research/reviews/integrated-independent-practical-acceptance-20261018.md",
         "research/evidence/2026-10-18/final-attempt-original-no-refactoring-content-audit.json",
-        "research/reviews/phase-g-final-recovery-and-conditional-exception-review-20261018.md"
+        "research/reviews/phase-g-final-recovery-and-conditional-exception-review-20261018.md",
+        "research/evidence/2026-10-18/original-author-git-history-independent-audit.json",
+        "research/reviews/phase-g-original-hidden-history-independent-review-20261018.md"
       ],
       "authorization_record": "research/requirements/conditional_merge_user_decision-20261018.txt",
       "authorization_sha256": "fbffc851beef69c527772e1e62b3ae346ceea647f2c1c30ab0c13074fba3175c",
@@ -32,7 +34,9 @@
         "research/evidence/2026-10-18/authors-no-refactoring-inventory-review.json",
         "research/reviews/integrated-independent-practical-acceptance-20261018.md",
         "research/evidence/2026-10-18/final-attempt-original-no-refactoring-content-audit.json",
-        "research/reviews/phase-g-final-recovery-and-conditional-exception-review-20261018.md"
+        "research/reviews/phase-g-final-recovery-and-conditional-exception-review-20261018.md",
+        "research/evidence/2026-10-18/original-author-git-history-independent-audit.json",
+        "research/reviews/phase-g-original-hidden-history-independent-review-20261018.md"
       ],
       "authorization_record": "research/requirements/conditional_merge_user_decision-20261018.txt",
       "authorization_sha256": "fbffc851beef69c527772e1e62b3ae346ceea647f2c1c30ab0c13074fba3175c",

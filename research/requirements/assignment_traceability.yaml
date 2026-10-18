@@ -71,7 +71,9 @@
         "scripts/audit_stage2_phase_g_secondary.py",
         "research/reviews/historical-gpt4-availability-and-exception-20261018.md",
         "research/evidence/2026-10-18/final-attempt-original-no-refactoring-content-audit.json",
-        "research/reviews/phase-g-final-recovery-and-conditional-exception-review-20261018.md"
+        "research/reviews/phase-g-final-recovery-and-conditional-exception-review-20261018.md",
+        "research/evidence/2026-10-18/original-author-git-history-independent-audit.json",
+        "research/reviews/phase-g-original-hidden-history-independent-review-20261018.md"
       ],
       "exact_evidence_commit": "990bd9f9ce0c539a949df44fbca5843fefd12e8c",
       "test_workflow_identifiers": [
@@ -82,7 +84,8 @@
         "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38703569637",
         "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39075744038",
         "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39080161119",
-        "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39136184598"
+        "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39136184598",
+        "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39136978957"
       ],
       "measured_results": "Accepted Level 2 original MASCOT replay: 1,252 final-stage SPDZCoder/GPT-4 archived candidate executions and 626 genuine archived stage-2 SPDZCoder executions (644 native attempts). All 313 original task identities covered. Original pipeline model-generation Level 3 has not been reproduced.",
       "known_limitations": "R2 remains IN_PROGRESS: Level 2 original native MASCOT evaluation is reproduced but Level 3 exact historical model generation is not. The paper names gpt-4-turbo-2024-04-09; released Azure deployment 'gpt-4' is not a reproducible version pin. OpenAI API schedules that snapshot for Oct 23, 2026 shutdown, but authors' historical Azure deployment current availability is unverified. Model access/cost and an irreproducibility exception both require explicit Girish authorization; no substitutes or secret access presumed. User conditionally accepted precisely documented unreproduced historical B3/no-refactoring exceptions AFTER the 498-file/35-group original archive recovery audit, for research merge only. Do NOT relabel missing experiments as reproduced; B3 remains BLOCKED.",
@@ -136,7 +139,9 @@
         "scripts/audit_stage2_phase_g_secondary.py",
         "research/reviews/historical-gpt4-availability-and-exception-20261018.md",
         "research/evidence/2026-10-18/final-attempt-original-no-refactoring-content-audit.json",
-        "research/reviews/phase-g-final-recovery-and-conditional-exception-review-20261018.md"
+        "research/reviews/phase-g-final-recovery-and-conditional-exception-review-20261018.md",
+        "research/evidence/2026-10-18/original-author-git-history-independent-audit.json",
+        "research/reviews/phase-g-original-hidden-history-independent-review-20261018.md"
       ],
       "exact_evidence_commit": "990bd9f9ce0c539a949df44fbca5843fefd12e8c",
       "test_workflow_identifiers": [
@@ -148,7 +153,8 @@
         "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39073915415",
         "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39075744038",
         "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39080161119",
-        "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39136184598"
+        "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39136184598",
+        "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39136978957"
       ],
       "measured_results": "Saved stage-3 SPDZCoder first/union 269/313, 288/313; genuine saved stage-2 first/union 229/313, 261/313. Fresh unmodified stage-2 MASCOT first/second/union 229/216/262 (313 tasks), 445/626 accepted, with 147 compile failures, 34 post-runtime oracle rejects, 3 archived/fresh disagreements. Fresh final-stage native: SPDZCoder 268/265/288; GPT-4 API-doc 95/112/154. See source-identity, raw-evidence and weak-oracle reviews.",
       "known_limitations": "R3 remains IN_PROGRESS pending explicit user decision for historical LLM generation and genuine unidentifiable SPDZCoder no-refactoring ablation. OpenAI API snapshot gpt-4-turbo-2024-04-09 is scheduled for Oct 23, 2026 shutdown but this does not establish historical Azure deployment availability. Numeric-match UniTrans/GPT-4 group is not substituted. Original oracle false positives, one missing native test and archived/native disagreement are disclosed. No general correctness/security proof. User conditionally accepted precisely documented unreproduced historical B3/no-refactoring exceptions AFTER the 498-file/35-group original archive recovery audit, for research merge only. Do NOT relabel missing experiments as reproduced; B3 remains BLOCKED.",
@@ -356,7 +362,9 @@
         "research/reviews/phase-g-stage2-secondary-raw-audit-20261018.md",
         "scripts/audit_stage2_phase_g_secondary.py",
         "research/evidence/2026-10-18/final-attempt-original-no-refactoring-content-audit.json",
-        "research/reviews/phase-g-final-recovery-and-conditional-exception-review-20261018.md"
+        "research/reviews/phase-g-final-recovery-and-conditional-exception-review-20261018.md",
+        "research/evidence/2026-10-18/original-author-git-history-independent-audit.json",
+        "research/reviews/phase-g-original-hidden-history-independent-review-20261018.md"
       ],
       "exact_evidence_commit": "990bd9f9ce0c539a949df44fbca5843fefd12e8c",
       "test_workflow_identifiers": [
@@ -367,7 +375,8 @@
         "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38703569637",
         "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39075744038",
         "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39080161119",
-        "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39136184598"
+        "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39136184598",
+        "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39136978957"
       ],
       "measured_results": "Original stage-2 complete negative-case accounting: 626 native candidates, 644 attempts, 147 compiler failures, 34 runtime-completed oracle rejections, 18 timed-out attempts and 14 retrying candidates; exception types and unclassified stderr retained. The original aggregate job failed on artifact path; successful artifact-only recovery reused all seven original result ZIPs. Historical LLM transcript/model, original oracle weakness and unavailable no-refactoring ablation are documented blockers.",
       "known_limitations": "Complete source-run stage-2 failure inventory and known stage-3, oracle, environment, repair-control-flow and ablation difficulties are preserved. Still IN_PROGRESS for top-level gate reconciliation while B3 irreproducibility exception and final Phase G acceptance remain unapproved; do not describe the completed 626-candidate replay as pending. User conditionally accepted precisely documented unreproduced historical B3/no-refactoring exceptions AFTER the 498-file/35-group original archive recovery audit, for research merge only. Do NOT relabel missing experiments as reproduced; B3 remains BLOCKED.",
