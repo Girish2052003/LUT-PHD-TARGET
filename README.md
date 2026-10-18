@@ -26,8 +26,8 @@ it does not mean the whole assignment is finished.
 | E — Patch actual original system | **PASS** | Hash-pinned patch to both authors' original pipeline entrypoints accepted within narrow supported sint mask-product transformation; target 64 executions plus full paired source-level replay, bounded fallback and original evaluator retained. |
 | E1 — Accepted original-modification paired smoke | **PASS** | 32pairs/64executions;2authentictranslations preserve tested outputs and remove50observed openingevents. No full-regression or general privacy guarantee. |
 | F — Paired baseline and modification comparison | **PASS** | Full fair 626-pair original-vs-patched original-native MASCOT comparison accepted WITH bounded interpretation: only 2 source changes, 4 source-identical control acceptance flips, no attributable overall correctness gain; targeted opening removal and extra protocol costs. |
-| G — Practical evidence acceptance | **IN_PROGRESS** | Independent review, CI and durable evidence for every completed practical requirement. |
-| REPORT — Final report readiness (writing locked) | **BLOCKED** | Practical R1–R8 accepted; report writing still requires separate explicit user authorization. |
+| G — Practical evidence acceptance | **IN_PROGRESS** | Final requirements/exception reconciliation and validated integration of PR #6 into main are pending. A/C/F and other listed practical subphases passed ONLY within the evidence-scoped author-native evaluation/archived methodology limits. |
+| REPORT — Final report readiness (writing locked) | **BLOCKED** | Final-report writing remains BLOCKED: R2, R3 and R8 are IN_PROGRESS, B3 awaits a documented user decision, and PR #6 has not yet been validated on main. No writing or email permission. |
 
 Machine-readable state: [research/progress.json](research/progress.json).
 Requirement gates: [R1–R9 ledger](research/requirements/assignment_traceability.md).
@@ -59,7 +59,7 @@ I keep the source-provenance and task-count evidence in [my original-artifact re
 | Benchmark preparation | Validation of original SPDZEval files, including 313 tasks and the six published category totals | `src/spdz_audit/spdzeval_import.py` |
 | Additional numerical study | Domain-sensitive branch lowering, a reconstructed eager baseline and a masked-argument alternative | `src/spdz_audit/lowering.py` |
 
-The authors' code, dataset and prompt examples are now accessible through Zenodo, but the files under `src/spdz_audit/` remain **my independent reconstruction**, not modified copies of the authors' code. My earlier scripted responses are fixtures, not original model samples. I have not made live model API calls. I am preparing direct comparison against the authentic archived programs and test harness.
+The authors' code, dataset and prompt examples are now accessible through Zenodo, but the files under `src/spdz_audit/` remain **my independent reconstruction**, not modified copies of the authors' code. My earlier scripted responses are fixtures, not original model samples. I have not made live model API calls. Later research PR #6 and its merged PR #7–#9 contributions already performed original saved-candidate MASCOT replay and narrow original-source paired experiments. The historical model-generation stage has not been rerun.
 
 ## Results so far
 
@@ -73,7 +73,7 @@ The authors' code, dataset and prompt examples are now accessible through Zenodo
 
 I used a pinned MP-SPDZ revision (`78fe3d8bad4e654276eb3a11a88173195e672f44`) for the compiler/emulator runs. These checks use the **cleartext emulator**, not a secure multiparty deployment or a formal security proof. The Figure 4 inputs, privacy-leak example and DomainSafety-24 tasks are my independent tests; they are **not** the original SPDZEval dataset.
 
-The paper reports **85.94% pass@1** and **92.01% pass@2**. I have now confirmed the **85.94% first-candidate rate from the authors' saved evaluation records** (269 of 313). I have **not** regenerated the model results or independently rerun the complete MP-SPDZ MASCOT evaluation. The archived same-task union is **288/313 = 92.01%**; the independent task-identity and evaluator-semantic audit is still in progress. Deterministic input accuracy is not pass@k.
+The paper reports **85.94% pass@1** and **92.01% pass@2**. I have now confirmed the **85.94% first-candidate rate from the authors' saved evaluation records** (269 of 313). I have **not** regenerated the historical model results. The original MASCOT evaluator has been freshly replayed on 1,252 final-stage and 626 stage-2 archived source candidates, with preserved failures and oracle limitations. The archived same-task union is **288/313 = 92.01%**; the original native evaluator/identity research review is complete within its specified evidence scope; historical LLM generation and the genuine without-refactoring ablation remain unresolved. Deterministic input accuracy is not pass@k.
 
 ## Reproduce the tests
 

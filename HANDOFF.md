@@ -5,6 +5,18 @@ doing work. Do not restart completed milestones.** The assignment is due
 31 October 2026. The final report is locked pending practical evidence and
 Girish's explicit authorization.
 
+## Phase G latest integrated handoff — 18 October 2026 (supersedes dated intermediate sections below)
+
+**Primary active work:** [draft PR #6](https://github.com/Girish2052003/LUT-PHD-TARGET/pull/6) on `research/original-evaluator-replay-20261015` at independently fetched head `7b79ac5dda10e53529f843242c93cb880e16ba51` before this reconciliation update. `main` remains `5fbc6095eb4e5a37b8818be7d1ec7596753445cd`. PR #7 merged into the research chain; PR #9 merged into PR #8; PR #8 merged into PR #6. Do not redo these integrations or read the historical sections below as latest state.
+
+**Completed research scopes:** A, B2, C, D, E and F recorded PASS within narrow author-source/archived-native/unchanged-oracle boundaries. The full authentic stage2 MASCOT run was seven category jobs PASS but one aggregate job FAIL; separate artifact-only recovery PASS reused the exact seven candidate execution archives. **626 source candidates / 644 native attempts**, 445 ACCEPT, 147 compile FAIL and 34 runtime-completed oracle REJECT, with three saved/fresh disagreements. Both original native protocols and targeted privacy-opening experiments have independent evidence reviews; no historical LLM generation claimed. See `research/reviews/integrated-independent-practical-acceptance-20261018.md` and `research/reviews/stage2-full-original-mascot-independent-acceptance.md`.
+
+**Still genuinely open:** Phase G integration and exact-main verification; R2, R3 and R8 explicitly remain IN_PROGRESS while historical model-stage (B3) and genuine no-refactoring ablation exceptions are unapproved; R9/REPORT BLOCKED. The README previously described R1–R8 as accepted despite those three ledger statuses; this checkpoint corrects that contradiction, not by promoting any scientific claim. No paid model/API calls, fabricated transcripts, final professor-facing writing, or professor email are authorized.
+
+**Next sequence:** inspect this reconciliation commit and source-preserving diff → verify fresh PR #6 CI and requirement-ledger rendered consistency → obtain explicit decision on historical generation/without-refactoring exceptions → review and integrate only a scientifically defensible PR into main → verify exact main CI and provenance → present practical gate evidence and seek separate report-writing authorization. Do not delete unmerged/uncertain branch refs.
+
+Older checkpoints below are retained as **chronological evidence**, not current instructions to rerun completed work.
+
 ## Resume safely
 
 1. Fetch remote refs, read open PRs and check `git status`. Recorded SHAs are

@@ -29,7 +29,7 @@
         "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557114938"
       ],
       "measured_results": "Original paper methodology and original-source implementation crosswalk plus seven real saved-stage traces independently reviewed, with unavailable historical model calls explicitly disclosed.",
-      "known_limitations": "Paper audit exists; source mapping incomplete. Accepted ONLY within stated original-source/raw-native scope. Historical model regeneration and true no-refactoring original output remain unresolved; no universal correctness or security proof.",
+      "known_limitations": "Source-linked paper/implementation mapping and seven authentic archived stage snapshots accepted within the reviewed original-source scope. The exact historical LLM call sequence, pre-reflection outputs and full rule-by-rule transcripts cannot be recovered; original code contradicts idealized paper control-flow details. B3 remains blocked; the genuine no-refactoring ablation is unverified.",
       "verification_reviewer": "Secondary assistant independent audit of source, published paper and raw native/original ZIPs; not an external third-party certification",
       "completion": {
         "implemented": true,
@@ -62,7 +62,9 @@
         "research/evidence/2026-10-15/original-full/receipt.json",
         "research/reviews/full-replay-evidence-review.md",
         "research/reviews/integrated-independent-practical-acceptance-20261018.md",
-        "research/evidence/2026-10-18/stage2-original-full-independent-acceptance.json"
+        "research/evidence/2026-10-18/stage2-original-full-independent-acceptance.json",
+        "research/reviews/stage2-full-original-mascot-independent-acceptance.md",
+        "research/evidence/2026-10-18/stage2-native-reproduction-difficulties.json"
       ],
       "exact_evidence_commit": "769bb12ce342b814590061ef04fdffbbe19c9990",
       "test_workflow_identifiers": [
@@ -70,11 +72,13 @@
         "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557128629",
         "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557114938",
         "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38673372763",
-        "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38703569637"
+        "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38703569637",
+        "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39075744038",
+        "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39080161119"
       ],
-      "measured_results": null,
-      "known_limitations": "Archive retrieved; full generation needs credentials/model availability. Full native Level-2 stage2/3 original replay verified; historical LLM generation and genuine no-refactoring program corpus still unavailable, documented rather than substituted.",
-      "verification_reviewer": "Partial source and original native evidence independently reviewed; requirement overall remains IN_PROGRESS because explicitly unresolved scope.",
+      "measured_results": "Accepted Level 2 original MASCOT replay: 1,252 final-stage SPDZCoder/GPT-4 archived candidate executions and 626 genuine archived stage-2 SPDZCoder executions (644 native attempts). All 313 original task identities covered. Original pipeline model-generation Level 3 has not been reproduced.",
+      "known_limitations": "R2 remains IN_PROGRESS because the original historical LLM-stage generation (B3) is blocked by unverified historical deployment/version and absent explicitly authorized credentials/costs. Original-source native evaluation is genuinely reproduced, but never substitute archived output replay for generation. Explicit user decision required on the blocker.",
+      "verification_reviewer": "Native evaluation evidence and source/hashes reviewed in existing independent evidence records; B3 not executed or externally certified.",
       "completion": {
         "implemented": true,
         "executed": true,
@@ -110,7 +114,12 @@
         "research/evidence/2026-10-15/original-full/receipt.json",
         "research/reviews/full-replay-evidence-review.md",
         "research/reviews/integrated-independent-practical-acceptance-20261018.md",
-        "research/evidence/2026-10-18/stage2-original-full-independent-acceptance.json"
+        "research/evidence/2026-10-18/stage2-original-full-independent-acceptance.json",
+        "research/evidence/2026-10-18/saved-stage2-stage3-audit-receipt.json",
+        "research/evidence/2026-10-18/stage2-native-reproduction-difficulties.json",
+        "research/reviews/stage2-full-original-mascot-independent-acceptance.md",
+        "research/reviews/archived-stage2-stage3-evaluation-review.md",
+        "research/evidence/2026-10-18/authors-no-refactoring-inventory-review.json"
       ],
       "exact_evidence_commit": "769bb12ce342b814590061ef04fdffbbe19c9990",
       "test_workflow_identifiers": [
@@ -118,11 +127,14 @@
         "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557128629",
         "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557114938",
         "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38673372763",
-        "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38703569637"
+        "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38703569637",
+        "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39073915415",
+        "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39075744038",
+        "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39080161119"
       ],
-      "measured_results": "Full1252candidate replay independently accepted:SPDZCoder268/313first,265second,288union;GPT4API-doc95first,112second,154union. Five archived/fresh differences preserved. Available ablations and source traces remain open.",
-      "known_limitations": "Smoke is not full replay. One native template has no oracle; historical generation requires separately authorized model access. Full native Level-2 stage2/3 original replay verified; historical LLM generation and genuine no-refactoring program corpus still unavailable, documented rather than substituted.",
-      "verification_reviewer": "Partial source and original native evidence independently reviewed; requirement overall remains IN_PROGRESS because explicitly unresolved scope.",
+      "measured_results": "Saved stage-3 SPDZCoder first/union 269/313, 288/313; genuine saved stage-2 first/union 229/313, 261/313. Fresh unmodified stage-2 MASCOT first/second/union 229/216/262 (313 tasks), 445/626 accepted, with 147 compile failures, 34 post-runtime oracle rejects, 3 archived/fresh disagreements. Fresh final-stage native: SPDZCoder 268/265/288; GPT-4 API-doc 95/112/154. See source-identity, raw-evidence and weak-oracle reviews.",
+      "known_limitations": "R3 remains IN_PROGRESS pending an explicit decision about whether its remaining irreproducible historical generation/no-refactoring ablation are accepted limitations. No genuine identifiable SPDZCoder without-refactoring output corpus recovered; numeric-match UniTrans/GPT-4 baseline is not a substitute. Original oracle false positives, one missing native test and fresh/archived differences are disclosed. No general correctness/security proof.",
+      "verification_reviewer": "Original native saved-source evaluation and archived flag evidence independently reviewed within the original oracle scope; no original historical model generation and no genuine original no-refactoring ablation certified.",
       "completion": {
         "implemented": true,
         "executed": true,
@@ -154,7 +166,7 @@
       "exact_evidence_commit": "990bd9f9ce0c539a949df44fbca5843fefd12e8c",
       "test_workflow_identifiers": [],
       "measured_results": "Original processed/refactor/generate-reflect/repair/evaluate code paths and real saved stage outputs independently mapped with known control-flow discrepancies and missing model transcript boundaries.",
-      "known_limitations": "Conceptual notes exist; original-source traces incomplete. Accepted ONLY within stated original-source/raw-native scope. Historical model regeneration and true no-refactoring original output remain unresolved; no universal correctness or security proof.",
+      "known_limitations": "Seven authentic saved intermediate stage snapshots and original source routes are mapped, but missing historical pre-reflection and repair conversations prevent reconstructing exact model chronology. Stage-1 early break and feedback reset discrepancies are retained. No fresh historical LLM stage claimed.",
       "verification_reviewer": "Secondary assistant independent audit of source, published paper and raw native/original ZIPs; not an external third-party certification",
       "completion": {
         "implemented": true,
@@ -194,7 +206,7 @@
         "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38742644019"
       ],
       "measured_results": "Original source privacy-policy witness (2 authentic input pairs) independently tested under narrow permitted-output-only observation model; not a universal confidentiality proof.",
-      "known_limitations": "Conditional candidate-level policy witnesses; not historical breaches or universal confidentiality findings. BroaderD prerequisites open. Accepted ONLY within stated original-source/raw-native scope. Historical model regeneration and true no-refactoring original output remain unresolved; no universal correctness or security proof.",
+      "known_limitations": "Two authentic private-input/output-only disclosure witnesses under the defined observation policy; this is not proof of a deployed historical exploit, universal noninterference or disclosure for all generated code. The mixed-operand lower_bound case remains unsupported by the selected patch.",
       "verification_reviewer": "Secondary assistant independent audit of source, published paper and raw native/original ZIPs; not an external third-party certification",
       "completion": {
         "implemented": true,
@@ -272,7 +284,7 @@
         "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38958484872"
       ],
       "measured_results": "Full 626-pair 1252-execution controlled original vs patched comparison, bounded conditional mask-product rationale, 624 byte-identical controls, no attributable pass-rate changes, explicit 50->0 observed opening events and performance costs.",
-      "known_limitations": "Targeted32-pairsmoke accepted; complete626-pair native comparison, regressions and paired uncertainty analysis remain pending. Accepted ONLY within stated original-source/raw-native scope. Historical model regeneration and true no-refactoring original output remain unresolved; no universal correctness or security proof.",
+      "known_limitations": "Full 626-pair/1,252-execution original vs patched comparison and repeatability follow-up accepted only under the original native-oracle and narrow privacy observation model. Only two candidate source programs changed, both ACCEPT→ACCEPT. Four unchanged-source controls changed native acceptance; no causal general accuracy improvement. Costs increase for measured candidates. B3 model generation unavailable.",
       "verification_reviewer": "Secondary assistant independent audit of source, published paper and raw native/original ZIPs; not an external third-party certification",
       "completion": {
         "implemented": true,
@@ -307,7 +319,9 @@
         "research/evidence/2026-10-15/original-full/receipt.json",
         "research/reviews/full-replay-evidence-review.md",
         "research/reviews/integrated-independent-practical-acceptance-20261018.md",
-        "research/evidence/2026-10-18/stage2-original-full-independent-acceptance.json"
+        "research/evidence/2026-10-18/stage2-original-full-independent-acceptance.json",
+        "research/evidence/2026-10-18/stage2-native-reproduction-difficulties.json",
+        "research/reviews/stage2-full-original-mascot-independent-acceptance.md"
       ],
       "exact_evidence_commit": "769bb12ce342b814590061ef04fdffbbe19c9990",
       "test_workflow_identifiers": [
@@ -315,11 +329,13 @@
         "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557128629",
         "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38557114938",
         "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38673372763",
-        "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38703569637"
+        "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/38703569637",
+        "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39075744038",
+        "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39080161119"
       ],
-      "measured_results": null,
-      "known_limitations": "Initial failures documented; execution and full failure inventory ongoing. Full native Level-2 stage2/3 original replay verified; historical LLM generation and genuine no-refactoring program corpus still unavailable, documented rather than substituted.",
-      "verification_reviewer": "Partial source and original native evidence independently reviewed; requirement overall remains IN_PROGRESS because explicitly unresolved scope.",
+      "measured_results": "Original stage-2 complete negative-case accounting: 626 native candidates, 644 attempts, 147 compiler failures, 34 runtime-completed oracle rejections, 18 timed-out attempts and 14 retrying candidates; exception types and unclassified stderr retained. The original aggregate job failed on artifact path; successful artifact-only recovery reused all seven original result ZIPs. Historical LLM transcript/model, original oracle weakness and unavailable no-refactoring ablation are documented blockers.",
+      "known_limitations": "Complete source-run stage-2 failure inventory and known stage-3, oracle, environment, repair-control-flow and ablation difficulties are preserved. Still IN_PROGRESS for top-level gate reconciliation while B3 irreproducibility exception and final Phase G acceptance remain unapproved; do not describe the completed 626-candidate replay as pending.",
+      "verification_reviewer": "Secondary raw native-artifact reviews record full failure inventory, timeouts and recovery; historical-generation limits remain and final governance closure not certified.",
       "completion": {
         "implemented": true,
         "executed": true,
@@ -348,7 +364,7 @@
       "exact_evidence_commit": null,
       "test_workflow_identifiers": [],
       "measured_results": null,
-      "known_limitations": "No accepted practical exceptions and no report authorization.",
+      "known_limitations": "Blocked: R2, R3 and R8 are still IN_PROGRESS under the presently unapproved historical model-generation/no-refactoring exceptions and final evidence integration. No final report authorization; source and CI readiness do not bypass this gate.",
       "verification_reviewer": "Pending requirement acceptance; historical audit reviewed by code_review agent",
       "completion": {
         "implemented": false,
@@ -358,5 +374,5 @@
       }
     }
   ],
-  "updated_on": "2026-10-16"
+  "updated_on": "2026-10-18"
 }

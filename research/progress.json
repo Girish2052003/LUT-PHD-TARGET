@@ -492,14 +492,14 @@
       "id": "G",
       "title": "Practical evidence acceptance",
       "status": "IN_PROGRESS",
-      "completion_scope": "Independent review, CI and durable evidence for every completed practical requirement.",
+      "completion_scope": "Final requirements/exception reconciliation and validated integration of PR #6 into main are pending. A/C/F and other listed practical subphases passed ONLY within the evidence-scoped author-native evaluation/archived methodology limits.",
       "dependencies": [
         "M6"
       ],
       "evidence_paths": [
         "research/reviews/pr5-independent-review.md"
       ],
-      "evidence_commit": "5ca3809f15e8e326ff2d0a9b2e23993704be3dda",
+      "evidence_commit": "7b79ac5dda10e53529f843242c93cb880e16ba51",
       "verification": {
         "implemented": false,
         "executed": false,
@@ -507,14 +507,14 @@
         "independently_checked": false,
         "reviewer": "Pending acceptance review"
       },
-      "next_action": "Practical A/C/F/B2/D/E subscopes accepted in second-review record; independently review/merge PR7->PR6, PR9->PR8, PR8->PR6, and PR6->main only after latest CI and no unresolved review conflicts. Historical model B3 still needs user decision; report remains locked.",
+      "next_action": "PRs #7, #9 and #8 are already integrated into PR #6 (verified at head 7b79ac5). Reconcile R2/R3/R8 against scope-limited evidence, correct stale README/HANDOFF, inspect review/CI, and request an explicit B3/no-refactoring irreproducibility decision BEFORE claiming all practical requirements accepted. Merge PR #6 only after approved acceptance; validate exact main afterward.",
       "redo_only_if": "Relevant source, configuration, evidence, or acceptance scope changes; document why."
     },
     {
       "id": "REPORT",
       "title": "Final report readiness (writing locked)",
       "status": "BLOCKED",
-      "completion_scope": "Practical R1–R8 accepted; report writing still requires separate explicit user authorization.",
+      "completion_scope": "Final-report writing remains BLOCKED: R2, R3 and R8 are IN_PROGRESS, B3 awaits a documented user decision, and PR #6 has not yet been validated on main. No writing or email permission.",
       "dependencies": [
         "A",
         "B2",
@@ -532,7 +532,7 @@
         "independently_checked": false,
         "reviewer": "Pending acceptance review"
       },
-      "next_action": "Continue practical work. Ask for report permission only when readiness gate passes.",
+      "next_action": "No professor-facing report until R1–R8 have defensibly passed or explicit exceptions are accepted AND Girish separately authorizes writing. Continue Phase G integration audit.",
       "redo_only_if": "Relevant source, configuration, evidence, or acceptance scope changes; document why."
     }
   ],
