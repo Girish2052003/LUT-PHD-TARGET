@@ -1,0 +1,113 @@
+name: Original unchanged-source MASCOT repeats
+on:
+  push:
+    branches: ["audit/paired-control-variability-20261017"]
+    paths: [".github/workflows/unchanged-control-repeats.yml"]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  native-control-repeats:
+    if: contains(github.event.head_commit.message, '[control-repeat]') || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Check immutable research handoff and prepare pinned unmodified author baseline
+        run: |
+          python scripts/check_handoff.py
+          python scripts/prepare_original_replay.py
+      - name: Build reviewed, isolated original evaluator image
+        run: |
+          docker build -t original-spdz-control-repeat tmp/original-replay-build
+          mkdir -p results/identical-control-environment
+          docker image inspect original-spdz-control-repeat > results/identical-control-environment/image.json
+          uname -a > results/identical-control-environment/kernel.txt
+      - name: Perform sixteen original unmodified MASCOT trials
+        run: |
+          set -euo pipefail
+          for entry in loop_test/standard_deviation:1 math_test/next_perfect_square:1 math_test/pi_to_the_x:0 math_test/pi_to_the_x:1; do
+            task="$(printf '%s' "$entry" | cut -d: -f1)"
+            candidate="$(printf '%s' "$entry" | cut -d: -f2)"
+            for trial in 0 1 2 3; do
+              dest="results/identical-control-trials/$task/candidate-$candidate/trial-$trial"
+              bash scripts/run_original_replay_container.sh original-spdz-control-repeat "$dest" \
+                --task "$task" --candidate "$candidate" --system spdzcoder
+            done
+          done
+      - name: Validate identity, source hashes, attempts and native oracle for all sixteen
+        run: |
+          python - <<'PY'
+          import hashlib, json, re
+          from pathlib import Path
+          cases = [('loop_test/standard_deviation',1), ('math_test/next_perfect_square',1),
+                   ('math_test/pi_to_the_x',0), ('math_test/pi_to_the_x',1)]
+          original = json.loads(Path('research/evidence/2026-10-14/identity_verified_scores.json').read_text())
+          indexed = {r['task_id']:r for r in original['task_records']}
+          root = Path('results/identical-control-trials')
+          out = []
+          for task,c in cases:
+              s,name = task.split('/')
+              batch = []
+              for trial in range(4):
+                  folder = root/s/name/f'candidate-{c}'/f'trial-{trial}'
+                  text = (folder/'outcomes.jsonl').read_text().splitlines()
+                  if len(text) != 1:
+                      raise ValueError('Incomplete or duplicated original output')
+                  r = json.loads(text[0])
+                  env = json.loads((folder/'environment.json').read_text())
+                  manifest = json.loads((folder/'source_manifest.json').read_text())
+                  reference = indexed[task]
+                  if (r['task_id'] != task or r['candidate_id'] != c or r['system'] != 'spdzcoder'
+                      or r['source_sha256'] != reference['candidate_sha256']['spdzcoder'][c]
+                      or r['template_sha256'] != reference['template_sha256']
+                      or env['protocol'] != 'MASCOT' or env['parties'] != 2
+                      or env.get('api_calls') != 0
+                      or manifest['author_archive_sha256'] != 'a8ea14150dc1d4ddf53eb4ead450d88139d09b680683f673029877ce0c6e00ac'
+                      or r['exception'] or not r['attempts']):
+                      raise ValueError('Changed original candidate, evaluator environment or incomplete attempt')
+                  for i,attempt in enumerate(r['attempts']):
+                      log = folder / r['log_path']
+                      for ext,key in [('mpc','combined_source_sha256'),
+                                      ('stdout.txt','stdout_sha256'),
+                                      ('stderr.txt','stderr_sha256')]:
+                          raw = (log/f'attempt-{i}.{ext}').read_bytes()
+                          if hashlib.sha256(raw).hexdigest() != attempt[key]:
+                              raise ValueError('Attempt log/source digest does not match')
+                  final = (folder/r['log_path']/f'attempt-{len(r["attempts"])-1}.stdout.txt').read_text()
+                  marker = bool(re.search(r'^Pass the test\s*$', final, re.M))
+                  if (r['oracle_status'] == 'ACCEPT') != marker:
+                      raise ValueError('Original oracle / exact stdout marker mismatch')
+                  batch.append({'trial':trial,'accepted':marker,'oracle':r['oracle_status'],
+                                'combined_source_sha256':r['attempts'][-1]['combined_source_sha256'],
+                                'runtime_status':r['runtime_status'],
+                                'seconds':r['duration_seconds']})
+              if len({row['combined_source_sha256'] for row in batch}) != 1:
+                  raise ValueError('Candidate program bytes differ across identical-source trials')
+              out.append({'task_id':task,'candidate_id':c,'trials':batch,
+                          'observed_variability':len({row['accepted'] for row in batch}) > 1})
+          report = {'scope':'Unmodified author baseline, repeated clean-container MASCOT trials',
+                    'cases':out, 'task_candidates':len(out),'executions':sum(len(x['trials']) for x in out),
+                    'variable_cases_observed':sum(x['observed_variability'] for x in out),
+                    'caveat':'Fresh isolated containers test repeatability, not within-process order. No causal mechanism or universal determinism claim.'}
+          if report['executions'] != 16:
+              raise ValueError('Incomplete controlled trial matrix')
+          Path('results/identical-control-verified-summary.json').write_text(json.dumps(report,indent=2)+'\n')
+          print(json.dumps(report,indent=2))
+          PY
+      - name: Preserve authentic original-program outcomes including failures
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: original-identical-source-trials-${{ github.sha }}
+          path: |
+            results/identical-control-trials
+            results/identical-control-verified-summary.json
+            results/identical-control-environment
+          retention-days: 90
+          if-no-files-found: warn

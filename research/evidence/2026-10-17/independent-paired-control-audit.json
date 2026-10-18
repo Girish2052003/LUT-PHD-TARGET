@@ -1,0 +1,85 @@
+{
+  "source_run": 38989067493,
+  "tested_commit": "b5846f5be000e6f511ed319011549ed4aaa8472c",
+  "artifact_ids": {
+    "summary": 12087032937,
+    "math_test": 12087042728,
+    "numpy_ufunc_test": 12086986769,
+    "loop_test": 12086621899,
+    "branch_test": 12086301260,
+    "array_test": 12085202183,
+    "numpy_operation_test": 12085025605,
+    "syntax_test": 12084594130
+  },
+  "tasks": 313,
+  "pairs": 626,
+  "executions": 1252,
+  "attempts_checked": 1280,
+  "outcomes": {
+    "baseline": {
+      "first": 270,
+      "second": 266,
+      "union": 290
+    },
+    "modified": {
+      "first": 271,
+      "second": 263,
+      "union": 290
+    }
+  },
+  "changed_candidates": [
+    "loop_test/count_distinct candidate 1",
+    "loop_test/is_ascending candidate 0"
+  ],
+  "unchanged_source_flips": [
+    {
+      "task_id": "loop_test/standard_deviation",
+      "candidate_id": 1,
+      "baseline": "ACCEPT",
+      "modified": "REJECT",
+      "identical_combined_mpc": true,
+      "identical_compiler_hash": true,
+      "compiler_hash": "d9e6881a06c65cfb2173c0503a0c18f2d54cc685e4354fb3ac5ae457aaaebef9",
+      "baseline_execution_order": 1,
+      "modified_execution_order": 0
+    },
+    {
+      "task_id": "math_test/next_perfect_square",
+      "candidate_id": 1,
+      "baseline": "ACCEPT",
+      "modified": "REJECT",
+      "identical_combined_mpc": true,
+      "identical_compiler_hash": true,
+      "compiler_hash": "86cde692a9aeb0dfeb98eed8c87ad59704dbcfb1b4cf9a23dc5e99ce407e0553",
+      "baseline_execution_order": 1,
+      "modified_execution_order": 0
+    },
+    {
+      "task_id": "math_test/pi_to_the_x",
+      "candidate_id": 0,
+      "baseline": "REJECT",
+      "modified": "ACCEPT",
+      "identical_combined_mpc": true,
+      "identical_compiler_hash": true,
+      "compiler_hash": "e53a7f7a8d5b45b86ac2e06d0433d1cb24122dbd5335bdc424474ff0a0a700e0",
+      "baseline_execution_order": 0,
+      "modified_execution_order": 1
+    },
+    {
+      "task_id": "math_test/pi_to_the_x",
+      "candidate_id": 1,
+      "baseline": "ACCEPT",
+      "modified": "REJECT",
+      "identical_combined_mpc": true,
+      "identical_compiler_hash": true,
+      "compiler_hash": "e9a93c82747b3e3e7ce658e66a6027edb8a32a55cc66237b195d23a506e7c6f7",
+      "baseline_execution_order": 1,
+      "modified_execution_order": 0
+    }
+  ],
+  "oracle_marker_disagreements": [],
+  "conclusion": "Artifact consistency verified from all split ZIP archives, without re-running MASCOT. Four unchanged-source acceptance changes cannot be attributed to patch; precise runtime cause remains unproven.",
+  "caveat": "Do not claim formal confidentiality, statistical correctness improvement, universal semantic equivalence, or historical LLM regeneration.",
+  "all_unchanged_source_flips_accept_on_second_execution": true,
+  "execution_order_caveat": "In 4/4 discordant byte-identical pairs, the second execution returned ACCEPT and the first returned REJECT. Association is not a causal demonstration; require controlled repeated runs before diagnosing warm-up, randomness, or numerical effects."
+}
