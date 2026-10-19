@@ -1,0 +1,7 @@
+# Official v1 README / embedded Git remote provenance recovery — 19 October 2026
+
+The official Zenodo API confirms record `18152253` (2026-01-02, released 65,761,280-byte TAR plus 3,112-byte separate README) and earlier record `17974883` (2025-12-18, **only a 2,872-byte README**, MD5 `c3169b06f6cb0a18ec248f91de234e6f`). Both are children of concept `17974882`. The separate v2 README is independently checksum-verified and **not byte-identical** to the 2,872-byte in-TAR README, although it contained no recovered genuine original no-refactoring result. The previous original TAR embedded Git-object archaeology verified 3 commits, 28 trees and 579 blobs, but it did **not** independently evaluate the `.git/config` remote URL.
+
+This read-only provenance workflow obtains the separately published **v1 README** and checks whether it equals the original v2-TAR embedded root README. It inspects only inert author TAR `.git/config`, HEAD and packed-ref metadata to identify safe *public* repository remote pointers. For safety, unknown/nonpublic URLs are hashed and redacted; no secrets or private URLs are committed. A recovered public repo would require separate actual source-identity and ablation-output verification. Nothing about this inspection proves the missing historical model or ablation experiment has been reproduced.
+
+The already verified main stays unchanged; G/R9 PASS within evidence-qualified scope, B3 and original SPDZCoder no-refactoring **NOT REPRODUCED**, R2/R3/R8 IN_PROGRESS with user-accepted exceptions, REPORT BLOCKED until separately authorized.
