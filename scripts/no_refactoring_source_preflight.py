@@ -71,9 +71,16 @@ def analyze(tar,counts=COUNTS):
             raise ValueError("Original stage task identity/order differs: "+category)
         for i,test_name in enumerate(ids[0]):
             raw=data["original_input"][i][0]
+            if not isinstance(raw.get("input"),str) or not isinstance(raw.get("instruction"),str):
+                raise ValueError("Missing original input/instruction: "+category+"/"+test_name)
             candidates=source_fields(raw)
             by_field.update(x["field"] for x in candidates)
             out.append({
+                "original_input_code_sha256":h(raw["input"].encode("utf-8")),
+                "original_instruction_sha256":h(raw["instruction"].encode("utf-8")),
+                "original_input_bytes":len(raw["input"].encode("utf-8")),
+                "original_instruction_bytes":len(raw["instruction"].encode("utf-8")),
+                "original_input_parses_as_python":any(x["field"]=="input" for x in candidates),
                 "task_id":category+"/"+test_name,"position_in_split":i,
                 "original_input_row_sha256":data["original_input"][i][1],
                 "refactored_row_sha256":data["refactored"][i][1],
@@ -88,6 +95,9 @@ def analyze(tar,counts=COUNTS):
        "source":"Official original author Zenodo TAR; three author-stage input files per category",
        "original_archive_sha256":SHA,"task_count":len(out),
        "categories":file_provenance,"task_records":out,
+       "original_raw_input_and_instruction_tasks":len(out),
+       "parseable_original_input_fields":sum(r["original_input_parses_as_python"] for r in out),
+       "unparseable_original_input_task_ids":[r["task_id"] for r in out if not r["original_input_parses_as_python"]],
        "parseable_top_level_python_source_tasks":sum(bool(r["plausible_unmodified_python_fields"]) for r in out),
        "source_field_occurrence_counts":dict(by_field),
        "live_model_api_calls":0,"native_mpc_executions":0,
@@ -108,7 +118,8 @@ def main():
     args.output.parent.mkdir(parents=True,exist_ok=True)
     args.output.write_text(json.dumps(r,indent=2,ensure_ascii=False)+"\n")
     print(json.dumps({k:r[k] for k in [
-        "task_count","parseable_top_level_python_source_tasks",
+        "task_count","original_raw_input_and_instruction_tasks","parseable_original_input_fields",
+        "parseable_top_level_python_source_tasks",
         "source_field_occurrence_counts","live_model_api_calls","paper_no_refactoring_reproduced"
     ]},indent=2))
 if __name__=="__main__":main()
