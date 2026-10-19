@@ -1,0 +1,49 @@
+name: Identify original author embedded Git remote and v1 README identity
+on:
+  push:
+    branches: ["research/zenodo-companion-audit-20261019"]
+    paths:
+      - ".github/workflows/original-embedded-remote-provenance.yml"
+      - "scripts/audit_original_git_remote_metadata.py"
+      - "tests/test_original_git_remote_metadata.py"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  check-original-remote:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 28
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Test safe remote detection, model lock and readme identity
+        run: |
+          python -m unittest discover -s tests -p test_original_git_remote_metadata.py -v
+          python scripts/check_handoff.py
+      - name: Download verified v1 standalone README and original v2 65MB TAR
+        run: |
+          mkdir -p results/original-remote
+          curl -fLsS --retry 4 --retry-delay 4 --max-time 900 \
+            "https://zenodo.org/records/17974883/files/README.md?download=1" \
+            -o results/original-remote/author-v1-README.md
+          curl -fLsS --retry 4 --retry-delay 4 --max-time 900 \
+            "https://zenodo.org/records/18152253/files/SPDZCoder.tar?download=1" \
+            -o results/original-remote/SPDZCoder.tar
+      - name: Examine inert embedded author Git configuration, redact nonpublic URL
+        run: |
+          python scripts/audit_original_git_remote_metadata.py \
+            --tar results/original-remote/SPDZCoder.tar \
+            --v1-readme results/original-remote/author-v1-README.md \
+            --output results/original-remote/public-git-remote-receipt.json
+      - name: Preserve only sanitized original-version provenance evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: original-author-remote-provenance
+          path: results/original-remote/public-git-remote-receipt.json
+          retention-days: 60
+          if-no-files-found: warn

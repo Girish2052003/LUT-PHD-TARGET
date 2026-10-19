@@ -1,0 +1,52 @@
+name: Audit original SPDZCoder Zenodo version lineage
+on:
+  push:
+    branches: ["research/zenodo-companion-audit-20261019"]
+    paths:
+      - ".github/workflows/zenodo-original-version-lineage.yml"
+      - "scripts/audit_zenodo_record_versions.py"
+      - "tests/test_zenodo_record_versions.py"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  inspect-author-release-lineage:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Unit tests and existing research state unchanged
+        run: |
+          python -m unittest discover -s tests -p test_zenodo_record_versions.py -v
+          python scripts/check_handoff.py
+      - name: Fetch publisher version-list and parent record metadata
+        run: |
+          mkdir -p results/author-version-lineage
+          if ! curl -fLsS --retry 3 --retry-delay 2 --max-time 90 \
+            "https://zenodo.org/api/records/18152253/versions" \
+            -o results/author-version-lineage/versions.json; then
+              printf 'ZENODO_VERSION_API_UNAVAILABLE\n' > results/author-version-lineage/versions.json
+          fi
+          if ! curl -fLsS --retry 3 --retry-delay 2 --max-time 90 \
+            "https://zenodo.org/api/records/17974882" \
+            -o results/author-version-lineage/parent.json; then
+              printf 'ZENODO_PARENT_API_UNAVAILABLE\n' > results/author-version-lineage/parent.json
+          fi
+      - name: Preserve exact publisher identifiers, released filenames and version DOIs
+        run: |
+          python scripts/audit_zenodo_record_versions.py \
+            --versions results/author-version-lineage/versions.json \
+            --parent results/author-version-lineage/parent.json \
+            --output results/author-version-lineage/version-lineage-receipt.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: spdzcoder-zenodo-version-lineage
+          path: results/author-version-lineage/version-lineage-receipt.json
+          retention-days: 60
+          if-no-files-found: warn

@@ -1,0 +1,59 @@
+name: Independent separate Zenodo README and record metadata audit
+on:
+  push:
+    branches: ["research/zenodo-companion-audit-20261019"]
+    paths:
+      - ".github/workflows/zenodo-companion-original-readme-audit.yml"
+      - "scripts/audit_zenodo_companion_readme.py"
+      - "tests/test_zenodo_companion_readme.py"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  inspect-zenodo-companion-release:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Execute read-only README comparison regression tests
+        run: |
+          python -m unittest discover -s tests -p 'test_zenodo_companion_readme.py' -v
+          python scripts/check_handoff.py
+      - name: Fetch publisher-side companion README and original full tar, without execution
+        run: |
+          mkdir -p results/zenodo-companion
+          curl -fLsS --retry 5 --retry-delay 3 --max-time 900 \
+            "https://zenodo.org/records/18152253/files/README.md?download=1" \
+            -o results/zenodo-companion/separate-record-README.md
+          curl -fLsS --retry 5 --retry-delay 3 --max-time 900 \
+            "https://zenodo.org/records/18152253/files/SPDZCoder.tar?download=1" \
+            -o results/zenodo-companion/SPDZCoder.tar
+      - name: Request Zenodo record JSON metadata for linked source/version identifiers
+        run: |
+          if ! curl -fLsS --retry 2 --retry-delay 2 --max-time 90 \
+              "https://zenodo.org/api/records/18152253" \
+              -o results/zenodo-companion/record-metadata.json; then
+            printf 'ZENODO_API_UNAVAILABLE\n' > results/zenodo-companion/record-metadata.json
+          fi
+      - name: Compare exact publisher README and author TAR root README
+        run: |
+          python scripts/audit_zenodo_companion_readme.py \
+            --tar results/zenodo-companion/SPDZCoder.tar \
+            --companion-readme results/zenodo-companion/separate-record-README.md \
+            --api-metadata results/zenodo-companion/record-metadata.json \
+            --output results/zenodo-companion/companion-source-identity-receipt.json
+      - name: Preserve source-identity evidence including actual separate README
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: zenodo-publisher-companion-audit
+          path: |
+            results/zenodo-companion/separate-record-README.md
+            results/zenodo-companion/companion-source-identity-receipt.json
+          retention-days: 60
+          if-no-files-found: warn
