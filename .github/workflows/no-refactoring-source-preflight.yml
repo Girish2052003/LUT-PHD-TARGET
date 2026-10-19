@@ -1,0 +1,45 @@
+name: Original no-refactoring input preflight, zero model calls
+on:
+  push:
+    branches: ["research/no-refactoring-verified-preflight-20261019"]
+    paths:
+      - "scripts/no_refactoring_source_preflight.py"
+      - "tests/test_no_refactoring_source_preflight.py"
+      - ".github/workflows/no-refactoring-source-preflight.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-only-preflight:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Synthetic tests and locked research-state verification
+        run: |
+          python -m unittest discover -s tests -p test_no_refactoring_source_preflight.py -v
+          python scripts/check_handoff.py
+      - name: Download original author TAR as INERT source only
+        run: |
+          mkdir -p results/no-refactor-source
+          curl -fLsS --retry 4 --retry-delay 4 --max-time 900 \
+            "https://zenodo.org/records/18152253/files/SPDZCoder.tar?download=1" \
+            -o results/no-refactor-source/SPDZCoder.tar
+      - name: Verify source hashes and all original task/stage identities
+        run: |
+          python scripts/no_refactoring_source_preflight.py \
+            --tar results/no-refactor-source/SPDZCoder.tar \
+            --output results/no-refactor-source/preflight.json
+      - name: Preserve reproducible source-only readiness evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: original-author-no-refactoring-source-preflight
+          path: results/no-refactor-source/preflight.json
+          retention-days: 60
+          if-no-files-found: warn

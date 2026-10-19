@@ -1,0 +1,41 @@
+{
+  "date": "2026-10-19",
+  "kind": "original no-refactoring source-only preflight first real run",
+  "workflow_run": 39253242974,
+  "artifact_id": 12185609886,
+  "artifact_zip_sha256": "d3da6593adabe1b0cc74962c541d373cd5aa8c20614de2c4847147f0740eb33f",
+  "source_commit": "ea28bc970b41756a33838783dd09e1e979d0414e",
+  "original_author_tar_sha256": "a8ea14150dc1d4ddf53eb4ead450d88139d09b680683f673029877ce0c6e00ac",
+  "source_task_count": 313,
+  "source_category_counts": {
+    "array_test": 43,
+    "loop_test": 97,
+    "branch_test": 34,
+    "math_test": 38,
+    "numpy_operation_test": 32,
+    "numpy_ufunc_test": 34,
+    "syntax_test": 35
+  },
+  "original_input_field_string_count": 313,
+  "original_instruction_field_string_count": 313,
+  "top_level_input_python_parseable_count": 307,
+  "top_level_input_not_directly_python_parseable_tasks": [
+    "numpy_operation_test/np_zeros",
+    "numpy_operation_test/np_eye_2",
+    "numpy_operation_test/array_from_python_structure",
+    "numpy_operation_test/np_ones",
+    "numpy_operation_test/np_eye",
+    "numpy_operation_test/np_diag"
+  ],
+  "at_least_one_parseable_code_field_count": 310,
+  "source_field_occurrences": {
+    "input": 307,
+    "output": 309
+  },
+  "all_stage_input_task_identity_orders_match": true,
+  "model_api_calls": 0,
+  "native_mpc_executions": 0,
+  "no_refactoring_outputs_produced": 0,
+  "authentic_paper_no_refactoring_ablation_reproduced": false,
+  "limits": "Task-level author INPUT and INSTRUCTION strings are present and bound to historical stages; this is an input preparation result, not original unseen model output. Raw 'input' field may not be a complete identical generation prompt; 6 nonparseable NumPy inputs are retained, not excluded. A model reproduction needs exact prompts, correct original model/deployment, lawful credentials, explicit cost budget, and original evaluator. Historical nondeterministic generation may remain irrecoverable."
+}

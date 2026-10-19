@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "independently_reviewed_date": "2026-10-19",
+  "scope": "Original author unmodified instruction+input source inventory ONLY. Original model no-refactoring experiment outputs NOT generated; does not replace historical model responses.",
+  "real_source_workflow_run": 39253932391,
+  "source_workflow_commit": "1eadb23c6d74477530a77eae374aee6c49c98ac6",
+  "original_author_publisher_tar_sha256": "a8ea14150dc1d4ddf53eb4ead450d88139d09b680683f673029877ce0c6e00ac",
+  "artifact_id": 12187166016,
+  "artifact_zip_sha256": "f39af5d49925ca4a2585ec31e13620f0ca50169b33612dfe57ab85c75a66edc8",
+  "source_artifact_filename": "original-author-no-refactoring-source-preflight",
+  "raw_archive_json_path": "preflight.json",
+  "original_task_count": 313,
+  "category_counts": {
+    "array_test": 43,
+    "loop_test": 97,
+    "branch_test": 34,
+    "math_test": 38,
+    "numpy_operation_test": 32,
+    "numpy_ufunc_test": 34,
+    "syntax_test": 35
+  },
+  "stage_sources_consistently_joined": [
+    "original_input",
+    "refactored",
+    "generated"
+  ],
+  "raw_input_and_instruction_strings_present": 313,
+  "raw_input_and_instruction_sha256_pairs_verified": 313,
+  "directly_python_parseable_original_input_count": 307,
+  "unparseable_original_input_ids": [
+    "numpy_operation_test/np_zeros",
+    "numpy_operation_test/np_eye_2",
+    "numpy_operation_test/array_from_python_structure",
+    "numpy_operation_test/np_ones",
+    "numpy_operation_test/np_eye",
+    "numpy_operation_test/np_diag"
+  ],
+  "historical_ablated_generated_output_count": 0,
+  "original_author_no_refactor_pass1_reproduced": false,
+  "original_author_no_refactor_pass2_reproduced": false,
+  "actual_llm_api_calls": 0,
+  "actual_mpc_executions": 0,
+  "unresolved_dependency": "Exact original author no-refactoring prompt/low-rule route, historical Azure model deployment, original response transcripts and authorized billed API access. A newly generated no-refactor run is a NEW experiment, not historical replication. Original full-task native evaluator and saved original native stage results already verified in other research phases.",
+  "unmodified_original_scientific_results": true,
+  "report_authorized": false
+}
