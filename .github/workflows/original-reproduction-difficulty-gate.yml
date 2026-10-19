@@ -1,0 +1,40 @@
+name: Original stage2 reproduction difficulty independent accounting
+on:
+  push:
+    branches: ["research/r8-difficulty-acceptance-20261019"]
+    paths:
+      - "scripts/verify_reproduction_difficulty_coverage.py"
+      - "tests/test_original_reproduction_difficulty_coverage.py"
+      - ".github/workflows/original-reproduction-difficulty-gate.yml"
+      - "research/requirements/assignment_traceability.yaml"
+      - "research/requirements/assignment_traceability.md"
+      - "research/reviews/r8-independent-difficulty-documentation-20261019.md"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  difficulty-documentation:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Test R8 source-execution failure taxonomy and no invented results
+        run: |
+          python -m unittest discover -s tests -p test_original_reproduction_difficulty_coverage.py -v
+          python scripts/check_handoff.py
+      - name: Independently recheck all native failure counts and fail-closed source-run status
+        run: |
+          python scripts/verify_reproduction_difficulty_coverage.py \
+            --output results/reproduction-difficulties/acceptance.json
+      - name: Upload pure evidence without source program execution
+        uses: actions/upload-artifact@v4
+        with:
+          name: original-reproduction-difficulty-reconciliation
+          path: results/reproduction-difficulties/acceptance.json
+          retention-days: 90
+          if-no-files-found: error
