@@ -1,0 +1,9 @@
+# Another original-output recovery route — separate publisher README and Zenodo record metadata
+
+**19 October 2026 — narrowly scoped research continuation, NOT the professor-facing report.**
+
+The author record https://zenodo.org/records/18152253 lists **two independent top-level files**: a 65.8 MB `SPDZCoder.tar` (previously independently audited down to 35 seven-category saved result groups, 498 readable author source/data/evaluator files and 579 historical Git blobs) and a **separately distributed `README.md` of about 3.1 KB, MD5 `1d3416063a6d7e4adc84ace62e082694`**. The original root README inside TAR may or may not be identical to this separately uploaded file. The publisher record metadata could also identify additional versions or related dataset/code releases outside the previously inspected TAR.
+
+This read-only GitHub Action fetches BOTH publisher files from Zenodo, pins the original TAR SHA-256 `a8ea14150dc1d4ddf53eb4ead450d88139d09b680683f673029877ce0c6e00ac` and companion README MD5 before analysis; it directly compares the separate README byte-for-byte against the unique root `SPDZCoder/README.md` member in the original TAR. It records any new source/experiment/model instructions or external link candidates with line positions, and inspects optional Zenodo API metadata for actual creator-uploaded release links, versioned records and related_identifiers. The metadata call failing is explicitly reported rather than fabricating links.
+
+This is source provenance discovery **only**: it does not generate a model output, run candidate code/MASCOT, reproduce the paper's unidentifiable SPDZCoder no-refactoring experiment, or change the final verified `main` branch. R2/R3/R8 IN_PROGRESS with accepted integration exceptions; B3 and original no-refactoring remain **NOT REPRODUCED**; G/R9 practical readiness PASS within scope; REPORT remains BLOCKED/NOT AUTHORIZED.
