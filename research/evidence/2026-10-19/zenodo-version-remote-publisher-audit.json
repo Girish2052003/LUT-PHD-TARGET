@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-10-19",
+  "kind": "post_merge_original_author_publisher_companion_version_and_embedded_remote_audit",
+  "authoritative_original_tar_sha256": "a8ea14150dc1d4ddf53eb4ead450d88139d09b680683f673029877ce0c6e00ac",
+  "source_workflows": {
+    "publisher_readme": {
+      "run": 39184484101,
+      "artifact_id": 12157052882,
+      "zip_sha256": "7c015d57de65847b286ad6acb6c6ffb79a004c6410b5dce24b409b425e36a9ca"
+    },
+    "version_lineage": {
+      "run": 39184705693,
+      "artifact_id": 12156993495,
+      "zip_sha256": "27bfcb216ba3a190a04e6f5aaaa4de5a8b62c8e4dae2493c10441745b17b79f1"
+    },
+    "git_remote": {
+      "run": 39184842468,
+      "artifact_id": 12158005256,
+      "zip_sha256": "62a0e4d931f4cd871e7fb69e8bd74303a96814c6c78041dbe8d970789326c610"
+    }
+  },
+  "publisher_versions": [
+    {
+      "record_id": 17974883,
+      "published": "2025-12-18",
+      "files": [
+        {
+          "name": "README.md",
+          "bytes": 2872,
+          "md5": "c3169b06f6cb0a18ec248f91de234e6f"
+        }
+      ]
+    },
+    {
+      "record_id": 18152253,
+      "published": "2026-01-02",
+      "files": [
+        {
+          "name": "SPDZCoder.tar",
+          "bytes": 65761280,
+          "md5": "3c6d7707d7aecc051d35312f81405c66"
+        },
+        {
+          "name": "README.md",
+          "bytes": 3112,
+          "md5": "1d3416063a6d7e4adc84ace62e082694"
+        }
+      ]
+    }
+  ],
+  "zenodo_concept_recid": 17974882,
+  "zenodo_concept_doi": "10.5281/zenodo.17974882",
+  "publisher_version_api_status": "AVAILABLE",
+  "publisher_related_identifiers": [],
+  "readme_bytes": {
+    "v1_matches_embedded_v2_tar_root_readme": true,
+    "v1_sha256": "1e805298b47a282a7c386496e8ca0c476fb6f5e65fc5724b48b8d25494826a22",
+    "v2_separate_sha256": "831df05c13886ac7f59decb2fe0117af478f6071f1ed212e9ac025db50ef4775",
+    "v2_separate_matches_v2_tar_root_readme": false,
+    "v2_separate_diffs": "Editorial description and whitespace only; no source-linked no-refactoring experiment instructions or authentic output corpus",
+    "separate_readme_diff_total_lines": 29
+  },
+  "author_embedded_git_config": {
+    "present": true,
+    "source_file": "SPDZCoder/.git/config",
+    "remote": "xndong/Spdzcoder",
+    "remote_host": "github.com",
+    "remote_sha256": "7c3a9c75a7d918d56588ce1f548ad0830b1937a9c48aed7f1d4c1f987ed4489c",
+    "remote_public_http_status": 404,
+    "observation": "2026-10-19, GitHub repository GET and branch/release listings return 404 through connected GitHub access",
+    "explanation": "This means not publicly accessible to this connector at review time; it does NOT determine whether the author repo was deleted, renamed, private, blocked or moved.",
+    "no_extra_author_output_recovered_from_remote": true
+  },
+  "historical_llm_generation_not_reproduced": true,
+  "genuine_spdzcoder_no_refactoring_ablation_not_reproduced": true,
+  "previous_original_author_research_pass_scopes_unmodified": true,
+  "main_scientific_status_at_review": {
+    "G": "PASS",
+    "R9": "PASS practical readiness with exceptions",
+    "B3": "BLOCKED",
+    "R2": "IN_PROGRESS with exception",
+    "R3": "IN_PROGRESS with exceptions",
+    "R8": "IN_PROGRESS with exception",
+    "REPORT": "BLOCKED",
+    "report_authorized": false
+  },
+  "original_model_api_calls": 0,
+  "native_original_mpc_executions_in_this_audit": 0,
+  "next_reproducibility_dependency": "Authors could voluntarily provide exact historical Azure deployment/model identifier, prompt/response traces or a genuine 313-task SPDZCoder no-refactoring output corpus with source/provenance. Any new experiment requires legal verified matching model access and separate explicit billable-cost approval; do not infer it from prior merge permission.",
+  "limits": "Version listing shows two published versions only as of source checks; does not prove absence of unpublished/private archives. Original Git remote GitHub 404 does not prove permanent inaccessibility. No claim of historical impossibility or reproduction."
+}
