@@ -32,4 +32,31 @@ class OriginalR8CoverageTests(unittest.TestCase):
         stage=copy.deepcopy(self.stage)
         stage["accepted_without_completed_runtime"]=1
         with self.assertRaisesRegex(ValueError,"never completed"):verify(stage,self.secondary,self.issues)
+
+    def test_wrong_original_archive_pin_is_rejected(self):
+        stage=copy.deepcopy(self.stage)
+        stage["original_source_archive_sha256"]="0"*64
+        with self.assertRaises(ValueError):verify(stage,self.secondary,self.issues)
+    def test_wrong_original_run_identity_is_rejected(self):
+        stage=copy.deepcopy(self.stage)
+        stage["original_native_run_id"]=1
+        with self.assertRaises(ValueError):verify(stage,self.secondary,self.issues)
+    def test_unknown_category_is_rejected_even_when_totals_match(self):
+        issues=copy.deepcopy(self.issues)
+        issues["failure_counts_by_category"]["fabricated_test"]=issues["failure_counts_by_category"].pop("array_test")
+        with self.assertRaises(ValueError):verify(self.stage,self.secondary,issues)
+    def test_per_category_failures_must_match_independent_audit(self):
+        issues=copy.deepcopy(self.issues)
+        issues["failure_counts_by_category"]["array_test"]["compile_fail"]-=1
+        issues["failure_counts_by_category"]["loop_test"]["compile_fail"]+=1
+        with self.assertRaises(ValueError):verify(self.stage,self.secondary,issues)
+    def test_disagreement_identities_must_match(self):
+        secondary=copy.deepcopy(self.secondary)
+        secondary["saved_vs_fresh_disagreements"][0]["task_id"]="branch_test/fabricated"
+        with self.assertRaises(ValueError):verify(self.stage,secondary,self.issues)
+    def test_runtime_partition_must_match(self):
+        stage=copy.deepcopy(self.stage)
+        stage["runtime_statuses"]={"PASS":478,"NOT_RUN":148}
+        with self.assertRaises(ValueError):verify(stage,self.secondary,self.issues)
+
 if __name__=="__main__":unittest.main()
