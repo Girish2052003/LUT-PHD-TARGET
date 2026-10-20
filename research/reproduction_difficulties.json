@@ -1,0 +1,198 @@
+{
+  "schema_version": 1,
+  "updated_on": "2026-10-20",
+  "scope": "Documentation index of substantive original-source reproduction difficulties, separate independent experiments, and evidence-recovery failures. Not a claim that every incidental CI cancellation is a scientific experiment.",
+  "entries": [
+    {
+      "id": "initial_artifact_discovery",
+      "problem": "Original source was not identified at the initial 14 October search; independent reconstruction used a separate MP-SPDZ 0.3.9 compatibility target.",
+      "resolution": "Professor's 14 October Zenodo link enabled checksum-pinned original-source replay on MP-SPDZ 0.3.6. Earlier independent experiments remain separately labeled.",
+      "status": "RESOLVED_WITH_SCOPE",
+      "runs": [
+        38557115103
+      ],
+      "evidence_paths": [
+        "docs/reproduction_log.md",
+        "research/original_source_audit.md",
+        "research/evidence/2026-10-14/source_provenance.json"
+      ]
+    },
+    {
+      "id": "environment_and_confinement",
+      "problem": "Author OS/Python unpinned, requirement.txt differs from README spelling, tiktoken not directly pinned; local namespace confinement unavailable.",
+      "resolution": "Recorded exact evaluator-only dependencies and compiler/runtime pins; downloaded programs executed only in restricted non-root network-none Docker. Full generation dependencies remain untested.",
+      "status": "RESOLVED_WITH_SCOPE",
+      "runs": [
+        38673372763
+      ],
+      "evidence_paths": [
+        "research/original_source_audit.md",
+        "research/replay/README.md",
+        "research/evidence/2026-10-15/original-smoke/receipt.json"
+      ]
+    },
+    {
+      "id": "final_native_download_and_recovery",
+      "problem": "Initial full final-stage run lost the SPDZCoder math artifact after an incomplete source download; first aggregate was incomplete.",
+      "resolution": "Retry only failed jobs in attempt 2; preserve failed attempt and later complete 1252-record dataset separately.",
+      "status": "RESOLVED",
+      "runs": [
+        38703569637
+      ],
+      "evidence_paths": [
+        "research/evidence/2026-10-15/original-full/attempt-1.json",
+        "research/evidence/2026-10-15/original-full/receipt.json",
+        "research/reviews/full-replay-evidence-review.md"
+      ]
+    },
+    {
+      "id": "final_native_failures",
+      "problem": "Final-stage source replay has compiler failures, 66 GPT-4 missing-input failures, four nonexistent-player-2 requests, three final timeouts and five archived/fresh acceptance disagreements.",
+      "resolution": "Retain original inputs, 313-task denominators, all attempt streams and original weak oracle; do not replace failures with later successes. Root causes for numerical disagreements remain unproven.",
+      "status": "DOCUMENTED_LIMITATION",
+      "runs": [
+        38703569637
+      ],
+      "evidence_paths": [
+        "research/evidence/2026-10-15/original-full/verified-summary/summary.json",
+        "research/reviews/full-replay-evidence-review.md"
+      ]
+    },
+    {
+      "id": "stage2_native_failures",
+      "problem": "Stage2 native replay yields 147 compile failures, 34 completed-runtime oracle rejects, 14 retrying candidates and 18 timed-out attempts; two terminal compiler errors unclassified.",
+      "resolution": "Preserve all 626 candidates/644 attempts, exact category taxonomy, three archived/fresh disagreements and raw stderr, including unclassified errors.",
+      "status": "DOCUMENTED_LIMITATION",
+      "runs": [
+        39075744038,
+        39080161119
+      ],
+      "evidence_paths": [
+        "research/evidence/2026-10-18/stage2-original-full-independent-acceptance.json",
+        "research/evidence/2026-10-18/phase-g-stage2-raw-secondary-independent-audit.json",
+        "research/evidence/2026-10-18/stage2-native-reproduction-difficulties.json"
+      ]
+    },
+    {
+      "id": "stage2_aggregation_recovery",
+      "problem": "Seven original category jobs succeeded but original aggregation failed because the root path contained an extra stage2-full prefix.",
+      "resolution": "Separate artifact-only recovery reused the same seven ZIPs and succeeded without rerunning candidates. Historical run stays failure; workflow path fix and regression tests prevent recurrence.",
+      "status": "RESOLVED",
+      "runs": [
+        39075744038,
+        39080161119
+      ],
+      "evidence_paths": [
+        "research/evidence/2026-10-18/stage2-original-full-independent-acceptance.json",
+        ".github/workflows/original-stage2-mascot.yml",
+        "tests/test_stage2_workflow_layout.py"
+      ]
+    },
+    {
+      "id": "native_oracle_limits",
+      "problem": "Original substring pass oracle ignores returncode; signed-relative tests accept known wrong results; one native template lacks a functional oracle.",
+      "resolution": "Preserve original evaluation as the benchmark estimand. Separately demonstrate four false positives and disclose missing/faulty tests; do not label native acceptance universal correctness.",
+      "status": "DOCUMENTED_LIMITATION",
+      "runs": [
+        38742644019
+      ],
+      "evidence_paths": [
+        "research/replay/native_oracle_audit.md",
+        "research/evidence/2026-10-15/original-diagnostics/receipt.json",
+        "research/reviews/diagnostic-evidence-review.md"
+      ]
+    },
+    {
+      "id": "source_and_trace_discrepancies",
+      "problem": "Released stage1 early-break and repair candidate/feedback resets conflict with idealized method; saved states omit intermediate messages; 50 branch source changes have zero saved repair tokens.",
+      "resolution": "Map exact original source and seven authentic saved-state exemplars. Missing chronology and token billing are explicitly unavailable, never synthesized.",
+      "status": "DOCUMENTED_LIMITATION",
+      "runs": [
+        39073490709
+      ],
+      "evidence_paths": [
+        "research/original_source_audit.md",
+        "research/evidence/2026-10-18/seven-category-stage-receipt.json",
+        "research/reviews/phase-a-paper-source-crosswalk-20261018.md"
+      ]
+    },
+    {
+      "id": "patch_scope_and_costs",
+      "problem": "Secret multiplication rewriting can be unsound with zero folding/rebinding/unsupported types; mixed lower_bound disclosure remains outside supported scope.",
+      "resolution": "Restrict transformation, preserve unchanged fallback and review regression history. Tested two authentic translations preserve outputs and reduce observed explicit intermediate opening events 50 to zero, with extra multiplication/communication costs.",
+      "status": "RESOLVED_WITH_SCOPE",
+      "runs": [
+        38958484872,
+        38989067493
+      ],
+      "evidence_paths": [
+        "research/reviews/secret-arithmetic-review-findings.md",
+        "research/modifications/README.md",
+        "research/evidence/2026-10-16/paired-smoke/measurements.json",
+        "research/reviews/phase-f-bounded-native-interpretation-20261018.md"
+      ]
+    },
+    {
+      "id": "paired_control_variability",
+      "problem": "Four native acceptance flips occur on source-identical controls; 626-pair aggregate rates therefore cannot establish a causal accuracy gain from the two actual changes.",
+      "resolution": "Preserve all flips, costs and uncertainty; 16 original-only repeated executions confirmed at least one unstable decision (3/4 accepts). Underlying cause remains unproven.",
+      "status": "DOCUMENTED_LIMITATION",
+      "runs": [
+        38989067493,
+        39043579023
+      ],
+      "evidence_paths": [
+        "research/evidence/2026-10-18/phase-g-paired-secondary-recomputed.json",
+        "research/reviews/paired-full-independent-control-audit.md",
+        "research/reviews/phase-f-bounded-native-interpretation-20261018.md"
+      ]
+    },
+    {
+      "id": "historical_generation",
+      "problem": "Original Azure deployment gpt-4 is not pinned to an independently accessible historical revision; full prompts/responses and repair history absent; no paid model access authorized.",
+      "resolution": "NOT REPRODUCED. Author-provided historical provenance and transcripts would recover history; verified provider/model and separate cost approval could support a clearly labeled NEW experiment. OpenAI retirement does not prove Azure availability.",
+      "status": "BLOCKED",
+      "runs": [],
+      "evidence_paths": [
+        "research/reviews/historical-gpt4-availability-and-exception-20261018.md",
+        "research/requirements/exception_decisions.json",
+        "research/original_source_audit.md"
+      ]
+    },
+    {
+      "id": "genuine_no_refactoring",
+      "problem": "No attributable historical SPDZCoder without-refactoring candidate corpus or prompt route recovered. Matching UniTrans counts are a different system. Six original inputs fail direct Python parsing.",
+      "resolution": "NOT REPRODUCED. Preserve 498-file/35-group search, embedded Git/Zenodo lineage and 313 raw input/instruction pairs. Do not substitute baseline flags or silently alter/exclude six inputs.",
+      "status": "BLOCKED",
+      "runs": [
+        39136184598,
+        39136978957,
+        39184484101,
+        39184705693,
+        39184842468,
+        39253932391
+      ],
+      "evidence_paths": [
+        "research/evidence/2026-10-18/final-attempt-original-no-refactoring-content-audit.json",
+        "research/evidence/2026-10-18/original-author-git-history-independent-audit.json",
+        "research/evidence/2026-10-19/zenodo-version-remote-publisher-audit.json",
+        "research/evidence/2026-10-19/no-refactor-input-final-receipt.json"
+      ]
+    },
+    {
+      "id": "readiness_accounting_repair",
+      "problem": "R8 checker initially validated only stage2 counts and accepted altered provenance/category/disagreement fields; main status and 14 October documents were stale.",
+      "resolution": "PR13 adds mutation regressions and cross-project difficulty index. Six added guards demonstrably failed at 26ccdb0 in run39492627095; acceptance depends on corrected checks and independent final review.",
+      "status": "IN_PROGRESS",
+      "runs": [
+        39261150673,
+        39492627095
+      ],
+      "evidence_paths": [
+        "scripts/verify_reproduction_difficulty_coverage.py",
+        "tests/test_original_reproduction_difficulty_coverage.py",
+        "research/reviews/r8-independent-difficulty-documentation-20261019.md"
+      ]
+    }
+  ]
+}

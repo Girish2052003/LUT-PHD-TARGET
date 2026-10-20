@@ -59,4 +59,26 @@ class OriginalR8CoverageTests(unittest.TestCase):
         stage["runtime_statuses"]={"PASS":478,"NOT_RUN":148}
         with self.assertRaises(ValueError):verify(stage,self.secondary,self.issues)
 
+
+    def test_same_total_taxonomy_cannot_hide_unclassified_errors(self):
+        issues=copy.deepcopy(self.issues)
+        issues["compile_terminal_exception_types"]["AttributeError"]+=2
+        del issues["compile_terminal_exception_types"]["unclassified_terminal_stderr"]
+        with self.assertRaises(ValueError):verify(self.stage,self.secondary,issues)
+    def test_recovery_artifact_identity_must_match(self):
+        secondary=copy.deepcopy(self.secondary)
+        secondary["recovery_zip_artifact_id"]=1
+        with self.assertRaises(ValueError):verify(self.stage,secondary,self.issues)
+    def test_project_register_rejects_missing_family(self):
+        from scripts.verify_reproduction_difficulty_coverage import verify_register
+        register=json.loads((ROOT/"research/reproduction_difficulties.json").read_text())
+        register["entries"]=[r for r in register["entries"] if r["id"]!="final_native_failures"]
+        with self.assertRaises(ValueError):verify_register(register,ROOT)
+    def test_project_register_requires_inspectable_evidence(self):
+        from scripts.verify_reproduction_difficulty_coverage import verify_register
+        register=json.loads((ROOT/"research/reproduction_difficulties.json").read_text())
+        register["entries"][0]["evidence_paths"]=["does-not-exist.json"]
+        with self.assertRaises(ValueError):verify_register(register,ROOT)
+
 if __name__=="__main__":unittest.main()
+
