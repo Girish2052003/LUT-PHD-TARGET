@@ -1,0 +1,34 @@
+name: Final original evidence readiness audit
+on:
+  push:
+    branches: ["research/r8-difficulty-acceptance-20261019"]
+    paths:
+      - "scripts/audit_final_evidence.py"
+      - "research/final_audit_artifacts.json"
+      - ".github/workflows/final-evidence-audit.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  raw-evidence:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Recheck preserved native evidence and original source bytes
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python scripts/audit_final_evidence.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: final-original-evidence-readiness
+          path: results/final-audit
+          retention-days: 90
+          if-no-files-found: error

@@ -1,0 +1,254 @@
+{
+  "schema_version": 1,
+  "scope": "Exact pre-existing raw artifacts; audit only, zero model/native candidate reruns.",
+  "artifacts": [
+    {
+      "family": "final",
+      "key": "spdzcoder-math_test",
+      "id": 11980067743,
+      "sha256": "bc9247c6262bca603c898edb5656c54f3b9cc61bd7825dc986eb27b301b2437c",
+      "run": 38703569637,
+      "commit": "769bb12ce342b814590061ef04fdffbbe19c9990"
+    },
+    {
+      "family": "final",
+      "key": "summary",
+      "id": 11979427642,
+      "sha256": "96c82b4a50365b45e43583149ec29735319025e007b1bfb6fb042aede3537d3f",
+      "run": 38703569637,
+      "commit": "769bb12ce342b814590061ef04fdffbbe19c9990"
+    },
+    {
+      "family": "final",
+      "key": "spdzcoder-loop_test",
+      "id": 11960277680,
+      "sha256": "d1f4abefd1a404902a3b4b3878f7cdc606871375fb2311e69861bfba0b423c82",
+      "run": 38703569637,
+      "commit": "769bb12ce342b814590061ef04fdffbbe19c9990"
+    },
+    {
+      "family": "final",
+      "key": "spdzcoder-numpy_ufunc_test",
+      "id": 11960085803,
+      "sha256": "b4a66aee4cbf9c5faf893218bd91c626fab32fe8bad1f2f4f2e1e9cbbfd702fc",
+      "run": 38703569637,
+      "commit": "769bb12ce342b814590061ef04fdffbbe19c9990"
+    },
+    {
+      "family": "final",
+      "key": "gpt4_api_docs-loop_test",
+      "id": 11959421463,
+      "sha256": "15ead07a468ba5ff3c97bad07e888c585441523f3afcde264eb2ddea403260d1",
+      "run": 38703569637,
+      "commit": "769bb12ce342b814590061ef04fdffbbe19c9990"
+    },
+    {
+      "family": "final",
+      "key": "spdzcoder-branch_test",
+      "id": 11959140549,
+      "sha256": "f435b4004da959ad09c1afa43aafff0961cd9f66cbbba008b0ad692c2ddcf9ee",
+      "run": 38703569637,
+      "commit": "769bb12ce342b814590061ef04fdffbbe19c9990"
+    },
+    {
+      "family": "final",
+      "key": "spdzcoder-array_test",
+      "id": 11958881563,
+      "sha256": "1ce6af8e3644f0db53b6e50620cd07937cfb6b0014017fd880cb5b3131503dab",
+      "run": 38703569637,
+      "commit": "769bb12ce342b814590061ef04fdffbbe19c9990"
+    },
+    {
+      "family": "final",
+      "key": "gpt4_api_docs-numpy_operation_test",
+      "id": 11958793621,
+      "sha256": "7c29b94cd416c77800b09e81ec47e6b30e1076a82a38fae43f6d0ce42a862ab1",
+      "run": 38703569637,
+      "commit": "769bb12ce342b814590061ef04fdffbbe19c9990"
+    },
+    {
+      "family": "final",
+      "key": "gpt4_api_docs-branch_test",
+      "id": 11958731889,
+      "sha256": "a56beabb2db4dbbe6d5207db03d04ad9fe25cfd8e603ef5eca70f77d6b6d09fa",
+      "run": 38703569637,
+      "commit": "769bb12ce342b814590061ef04fdffbbe19c9990"
+    },
+    {
+      "family": "final",
+      "key": "gpt4_api_docs-numpy_ufunc_test",
+      "id": 11958613179,
+      "sha256": "9f672b6184e67c9cdf787a69e15f48be5032949b7ce7636b4a2694bf8528fa79",
+      "run": 38703569637,
+      "commit": "769bb12ce342b814590061ef04fdffbbe19c9990"
+    },
+    {
+      "family": "final",
+      "key": "gpt4_api_docs-math_test",
+      "id": 11958485866,
+      "sha256": "2100b02eb2381f8305c8732c9d5046031ad063aa6e2f3ff0a58a7264d0e983dd",
+      "run": 38703569637,
+      "commit": "769bb12ce342b814590061ef04fdffbbe19c9990"
+    },
+    {
+      "family": "final",
+      "key": "gpt4_api_docs-syntax_test",
+      "id": 11957853957,
+      "sha256": "fdb206130cd775bdbbc3b16bb2fea7021825e46ad1889b62e3b8d692cef28c28",
+      "run": 38703569637,
+      "commit": "769bb12ce342b814590061ef04fdffbbe19c9990"
+    },
+    {
+      "family": "final",
+      "key": "spdzcoder-numpy_operation_test",
+      "id": 11957838791,
+      "sha256": "ee023449a367903bb4a796404fa11f251ff2b36c0cfcd23363edd086afa94af2",
+      "run": 38703569637,
+      "commit": "769bb12ce342b814590061ef04fdffbbe19c9990"
+    },
+    {
+      "family": "final",
+      "key": "gpt4_api_docs-array_test",
+      "id": 11957773930,
+      "sha256": "fcd7109fcc319a958f137ce8f03f1b4dc708f86ec945f7977dd00682c63b356c",
+      "run": 38703569637,
+      "commit": "769bb12ce342b814590061ef04fdffbbe19c9990"
+    },
+    {
+      "family": "final",
+      "key": "spdzcoder-syntax_test",
+      "id": 11957509289,
+      "sha256": "0af6e09f7ed6a2f622fe811182f6f3297351af6e3ce7b7b905c3426360515b6f",
+      "run": 38703569637,
+      "commit": "769bb12ce342b814590061ef04fdffbbe19c9990"
+    },
+    {
+      "family": "stage2",
+      "key": "array_test",
+      "id": 12117009220,
+      "sha256": "12ac90652fdbeed1034a555dbf140a91fe298f8b860bdbcdc385e1977977e119",
+      "run": 39075744038,
+      "commit": "1e3c95d5357cd8b913a11916e562b6de7d633ccb"
+    },
+    {
+      "family": "stage2",
+      "key": "branch_test",
+      "id": 12117428647,
+      "sha256": "f9ea20c2ed58d0853fc0659448a8cf5759cfbdf2b4ccdfffe5669973f5d1a3bd",
+      "run": 39075744038,
+      "commit": "1e3c95d5357cd8b913a11916e562b6de7d633ccb"
+    },
+    {
+      "family": "stage2",
+      "key": "loop_test",
+      "id": 12118480819,
+      "sha256": "9c19d30baa11c39a2368c6947406fe7d639920fa21f70a4966ac8c0464ee4cf0",
+      "run": 39075744038,
+      "commit": "1e3c95d5357cd8b913a11916e562b6de7d633ccb"
+    },
+    {
+      "family": "stage2",
+      "key": "math_test",
+      "id": 12118110941,
+      "sha256": "f8e452799031df3fac1d6e6cd818b80783b2479392ab33664a86a15c4a16c253",
+      "run": 39075744038,
+      "commit": "1e3c95d5357cd8b913a11916e562b6de7d633ccb"
+    },
+    {
+      "family": "stage2",
+      "key": "numpy_operation_test",
+      "id": 12116744908,
+      "sha256": "019deb164dc0d88058fbfb97cd39948616a15e7c6fa9594ba9d705b1b72b2369",
+      "run": 39075744038,
+      "commit": "1e3c95d5357cd8b913a11916e562b6de7d633ccb"
+    },
+    {
+      "family": "stage2",
+      "key": "numpy_ufunc_test",
+      "id": 12118278472,
+      "sha256": "52d7ca0b5a6dafc94f894bcb97138d508cc7a299d5f6090360255fcf97766480",
+      "run": 39075744038,
+      "commit": "1e3c95d5357cd8b913a11916e562b6de7d633ccb"
+    },
+    {
+      "family": "stage2",
+      "key": "syntax_test",
+      "id": 12117610306,
+      "sha256": "abe0ac8871153fdd8970c86435ede7e52e7341eda7f1479ea8dd31bc2304b73d",
+      "run": 39075744038,
+      "commit": "1e3c95d5357cd8b913a11916e562b6de7d633ccb"
+    },
+    {
+      "family": "stage2",
+      "key": "recovery",
+      "id": 12118194181,
+      "sha256": "4ba5dc8c0470c1cf02633bb4722a204558b3c3d591a863c10cb5e28c572ba12c",
+      "run": 39080161119,
+      "commit": "58197ee4b93c70a04cc19f4c15a319eba3b4f4d8"
+    },
+    {
+      "family": "paired",
+      "key": "summary",
+      "id": 12087032937,
+      "sha256": "832531da6446c6acd1212b86c7b10a1b33caebddc600d02e5d539174a8cca31c",
+      "run": 38989067493,
+      "commit": "b5846f5be000e6f511ed319011549ed4aaa8472c"
+    },
+    {
+      "family": "paired",
+      "key": "array_test",
+      "id": 12085202183,
+      "sha256": "0d8979f648bf4d9b60b2ccd59b9fee485ff19e0d1d20155068352e3e2b5bb6c3",
+      "run": 38989067493,
+      "commit": "b5846f5be000e6f511ed319011549ed4aaa8472c"
+    },
+    {
+      "family": "paired",
+      "key": "loop_test",
+      "id": 12086621899,
+      "sha256": "638d546fdbb4f8237c1694979b2577a4d268ddfd9ffaaa4ae636bf2ff03f50fc",
+      "run": 38989067493,
+      "commit": "b5846f5be000e6f511ed319011549ed4aaa8472c"
+    },
+    {
+      "family": "paired",
+      "key": "branch_test",
+      "id": 12086301260,
+      "sha256": "24f05d94b95c6b18adacd4e488c3796dbe4f40a880b0f75595d143479ba0ab27",
+      "run": 38989067493,
+      "commit": "b5846f5be000e6f511ed319011549ed4aaa8472c"
+    },
+    {
+      "family": "paired",
+      "key": "math_test",
+      "id": 12087042728,
+      "sha256": "348138b23d1bce11c0846d445723510a08d5a37a614b596cfc5ae826e1264010",
+      "run": 38989067493,
+      "commit": "b5846f5be000e6f511ed319011549ed4aaa8472c"
+    },
+    {
+      "family": "paired",
+      "key": "numpy_operation_test",
+      "id": 12085025605,
+      "sha256": "48019bf4cf155e9baa1634e89be54812532bd9b96ddae5a72d593687b114af49",
+      "run": 38989067493,
+      "commit": "b5846f5be000e6f511ed319011549ed4aaa8472c"
+    },
+    {
+      "family": "paired",
+      "key": "numpy_ufunc_test",
+      "id": 12086986769,
+      "sha256": "080e2bee4869fa844257e55653413452707c1a22dc4f4808abae96892ac81a28",
+      "run": 38989067493,
+      "commit": "b5846f5be000e6f511ed319011549ed4aaa8472c"
+    },
+    {
+      "family": "paired",
+      "key": "syntax_test",
+      "id": 12084594130,
+      "sha256": "32409fa43e702b400b010eeda06564a653d4ba6f625426bfeea7dc3046834595",
+      "run": 38989067493,
+      "commit": "b5846f5be000e6f511ed319011549ed4aaa8472c"
+    }
+  ]
+}
