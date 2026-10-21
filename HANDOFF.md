@@ -1,6 +1,6 @@
 # Start here — research handoff
 
-## Active checkpoint — report draft prepared, 22 October 2026
+## Active checkpoint — report draft accepted for user review, 22 October 2026
 
 Girish's 21 October acceptance of the two historical gaps and drafting authorization
 is recorded. On 22 October he asked for a fresh check against the professor's email.
@@ -9,8 +9,11 @@ It confirms the original scope and deadline, with no professor waiver of the gap
 
 - Complete: five-page report Markdown, editable Word and PDF draft; evidence guide;
   all five rendered pages inspected; 190 local regression tests pass.
-- Active: preserve final independent review, create the report PR, run full CI,
-  merge verified changes and validate actual main.
+- Complete: independent scientific review preserved with exact report/guide hashes
+  in `research/reviews/final-report-independent-review-20261022.md`; package receipt
+  in `research/evidence/2026-10-22/report-draft/receipt.json`. REPORT PASS is draft-only.
+- Active: PR #14 current-head CI, verified merge, actual-main validation.
+  Report content commit: `5e90d232f4d5aeadad3686c546e762b170749f00`.
 - Preserve: R2/R3 IN_PROGRESS and B3 BLOCKED/NOT REPRODUCED. R8 PASS documents the
   difficulties; R9 PASS permits this report with Girish's accepted exceptions.
 - No report has been sent or externally submitted. Girish must review the draft.

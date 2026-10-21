@@ -425,7 +425,10 @@
         "research/reviews/final-readiness-review-20261021.md",
         "research/evidence/2026-10-21/final-readiness/permission-scope-red.log",
         "research/evidence/2026-10-21/final-readiness/permission-scope-green.log",
-        "research/requirements/report_authorization_user_decision-20261021.txt"
+        "research/requirements/report_authorization_user_decision-20261021.txt",
+        "research/reviews/professor-requirements-recheck-20261022.md",
+        "research/reviews/final-report-independent-review-20261022.md",
+        "research/evidence/2026-10-22/report-draft/receipt.json"
       ],
       "exact_evidence_commit": "c237aa4a6d98a16b141a9b178a046a121ea1e659",
       "test_workflow_identifiers": [
@@ -437,7 +440,7 @@
         "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39541724665"
       ],
       "measured_results": "All four workflows passed on merged main c237aa4, including 189 tests, compiler/emulator, provenance, R8 and the 31-artifact audit. Girish then explicitly accepted the two disclosed historical gaps for report scope and authorized drafting. R2/R3 remain incomplete and B3 remains NOT REPRODUCED.",
-      "known_limitations": "R9 PASS means readiness for the authorized report, not completion of missing historical experiments or approval to submit. REPORT draft/deliverable validation is in progress; no email or external submission is authorized.",
+      "known_limitations": "R9 PASS is readiness with user-accepted historical exceptions, not completion of missing experiments or professor acceptance. REPORT is PASS for the prepared and independently reviewed draft only. No email or external submission is authorized; PR #14 integration and Girish review remain separate.",
       "verification_reviewer": "Prior independent code/evidence review, exact-main workflow inspection and explicit Girish response on 21 October; the report requires separate content/render review.",
       "completion": {
         "implemented": true,

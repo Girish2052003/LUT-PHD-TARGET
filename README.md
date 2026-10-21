@@ -27,7 +27,7 @@ it does not mean the whole assignment is finished.
 | E1 — Accepted original-modification paired smoke | **PASS** | 32pairs/64executions;2authentictranslations preserve tested outputs and remove50observed openingevents. No full-regression or general privacy guarantee. |
 | F — Paired baseline and modification comparison | **PASS** | Full fair 626-pair original-vs-patched original-native MASCOT comparison accepted WITH bounded interpretation: only 2 source changes, 4 source-identical control acceptance flips, no attributable overall correctness gain; targeted opening removal and extra protocol costs. |
 | G — Practical evidence acceptance | **PASS** | Original-source native research PR #6 merged at exact main f5a4d749964dfc0c6050bbdfdd0bdc2cf1fdfaea; exact-main research regression/compiler/cleartext emulator run39137690936 and provenance run39137690949 successful (159 tests). Read-only native/original source audits and explicit bounded historical exceptions independently documented. Historical GPT-4 model generation and original no-refactoring ablation remain NOT REPRODUCED; no general security proof. |
-| REPORT — Final report draft and deliverables | **IN_PROGRESS** | Five-page Markdown/Word/PDF draft prepared; all pages inspected and 190 local tests pass. Professor email rechecked on 22 October. Final independent-review preservation and PR/CI integration are pending; external submission is not authorized. |
+| REPORT — Final report draft and deliverables | **PASS** | Five-page evidence-grounded Markdown/Word/PDF draft prepared for Girish review; independently checked against source/results; all five rendered pages inspected; 190 local tests pass. PASS covers the draft deliverable only. R2/R3 remain incomplete, and no professor waiver or external submission is implied. PR #14 integration is separately pending current-head CI. |
 
 Machine-readable state: [research/progress.json](research/progress.json).
 Requirement gates: [R1–R9 ledger](research/requirements/assignment_traceability.md).
@@ -60,7 +60,9 @@ and authorized the final draft on 21 October. **R9 readiness PASS** does not
 mean the historical experiments were reproduced.
 
 The [final report draft](docs/final_report.md) and [evidence guide](docs/final_report_evidence.md)
-are being independently checked and formatted for Girish's review. See the
+are independently checked and formatted for Girish's review. Download the
+[editable Word draft](docs/submission/SPDZCoder_Report_Girish.docx) or
+[five-page PDF](docs/submission/SPDZCoder_Report_Girish.pdf). See the
 [current handoff](HANDOFF.md) for deliverable acceptance. Earlier interim reports
 are preserved as historical records. No email or external submission is authorized.
 
@@ -124,8 +126,9 @@ The MP-SPDZ tests run in [GitHub Actions](https://github.com/Girish2052003/LUT-P
 
 The authors' original source and 313-task dataset are available in the checksum-verified Zenodo release. Original benchmark identities, native evaluator replay, authentic limitation witnesses, a narrow original-pipeline patch, and full paired native comparisons are now experimentally accepted **within their recorded scopes**. See the Phase A–F status table above and the exact independent acceptance files under `research/reviews/`; these are not historical LLM generation or a universal correctness/security proof.
 
-**Remaining work:** finish and independently review the authorized final report
-and Word/PDF deliverables, merge the verified package, then obtain Girish's
-approval before any external submission. R2/R3 remain IN_PROGRESS; the two
+**Remaining work:** complete PR #14 CI and integration, then obtain Girish's
+review and approval before any external submission. The report draft is prepared
+and independently checked; the [email requirements reconciliation](research/reviews/professor-requirements-recheck-20261022.md)
+explicitly records that the assignment is not 100% reproduced. R2/R3 remain IN_PROGRESS; the two
 historical gaps are accepted report-scope exceptions. PR #13 and the native
 experiments are complete; do not repeat those phases. See [HANDOFF.md](HANDOFF.md).
