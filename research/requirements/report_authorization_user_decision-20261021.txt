@@ -1,0 +1,13 @@
+# Report scope and drafting authorization — 21 October 2026 Europe/Helsinki
+
+The assistant explicitly disclosed these two outstanding historical experiments:
+1. The original GPT-4/Azure generation sequence: missing verified historical deployment provenance and complete transcripts.
+2. The genuine SPDZCoder without-refactoring ablation: no attributable original candidate corpus recovered.
+
+Immediately preceding assistant question (verbatim):
+Do you accept these two limitations for the report and authorize the final draft now?
+
+Girish's reply (verbatim):
+yes go for it!
+
+Scope: accept the two disclosed NOT REPRODUCED items for report readiness and authorize the final report draft, editable document and PDF for Girish's review. This records the actual conversation decision; it is not a model-generated substitute for user permission. It does not authorize paid model calls, substitution of historical results, email or external submission.

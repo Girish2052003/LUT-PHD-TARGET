@@ -5,8 +5,9 @@
 > privacy patch and paired experiments were subsequently completed within their
 > documented limits. Use the [current difficulty log](reproduction_log.md),
 > [requirement ledger](../research/requirements/assignment_traceability.md) and
-> [handoff](../HANDOFF.md) for current status. Final-report writing awaits Girish's
-> separate authorization; this file has not been rewritten as a final report.
+> [handoff](../HANDOFF.md) for current status. Girish authorized the final draft on
+> 21 October; see [final_report.md](final_report.md). This earlier text is preserved
+> as a dated interim record and must not be used as the current report.
 
 **Author:** Girish Nallan Chakravathy  
 **Assignment deadline:** 31 October 2026  

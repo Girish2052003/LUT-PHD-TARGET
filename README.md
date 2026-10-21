@@ -18,7 +18,7 @@ it does not mean the whole assignment is finished.
 | B2a — Original evaluator and two-party MASCOT smoke | **PASS** | One authentic archived candidate compiled, executed and accepted by unchanged author oracle; no full-benchmark claim. |
 | B2b — Complete two-system archived-candidate replay | **PASS** | All1252 authentic final-stage SPDZCoder/GPT-4 candidates replayed; original acceptance counts268/265/288 and95/112/154. No new model generation or universal correctness claim. |
 | B2 — Level 2: original evaluator replay | **PASS** | Level-2 authentic original evaluator reproduction accepted for 1252 final-stage SPDZCoder/GPT4 baseline candidates and 626 saved stage2 SPDZCoder candidates, all raw native MASCOT outputs checked. B3 model generation separate. |
-| B3 — Level 3: original model generation | **BLOCKED** | Historical original model generation NOT executed. OpenAI API gpt-4-turbo-2024-04-09 scheduled for retirement 23 October 2026; original released Azure deployment version remains unpinned. Requires explicitly authorized account/model access plus cost budget OR explicitly approved irreproducibility exception. |
+| B3 — Level 3: original model generation | **BLOCKED** | Historical original model generation NOT REPRODUCED: exact Azure deployment revision and full call history are unverified. Girish accepted the disclosed gap for report scope on 21 October; this acceptance does not reproduce the experiment. No new model calls are authorized. |
 | C1 — Exact archived task identity and outcome semantics | **PASS** | 313 IDs and order,1252 candidate hashes,313 template hashes and28 source-file hashes independently checked; saved-flag meaning verified. No fresh execution claimed. |
 | C — Exact task identities and evaluator semantics | **PASS** | 313 original identities, all available stage2/stage3 archived scores, independent 626-candidate fresh stage2 original MASCOT replay, original oracle limitations and available ablation search accepted WITH explicit unavailable no-refactoring group. |
 | D1 — Accepted authentic privacy witnesses | **PASS** | Two archived candidates distinguish private inputs with identical permitted outputs;16native/diagnostic controls independently checked under explicit policy. |
@@ -27,11 +27,11 @@ it does not mean the whole assignment is finished.
 | E1 — Accepted original-modification paired smoke | **PASS** | 32pairs/64executions;2authentictranslations preserve tested outputs and remove50observed openingevents. No full-regression or general privacy guarantee. |
 | F — Paired baseline and modification comparison | **PASS** | Full fair 626-pair original-vs-patched original-native MASCOT comparison accepted WITH bounded interpretation: only 2 source changes, 4 source-identical control acceptance flips, no attributable overall correctness gain; targeted opening removal and extra protocol costs. |
 | G — Practical evidence acceptance | **PASS** | Original-source native research PR #6 merged at exact main f5a4d749964dfc0c6050bbdfdd0bdc2cf1fdfaea; exact-main research regression/compiler/cleartext emulator run39137690936 and provenance run39137690949 successful (159 tests). Read-only native/original source audits and explicit bounded historical exceptions independently documented. Historical GPT-4 model generation and original no-refactoring ablation remain NOT REPRODUCED; no general security proof. |
-| REPORT — Final report readiness (writing locked) | **BLOCKED** | Report writing is BLOCKED and NOT AUTHORIZED. R9 is BLOCKED pending explicit report-scope acceptance of two disclosed NOT REPRODUCED historical experiments; the18October quote permits research integration only. R8 documentation PASS does not promote R2/R3/B3. |
+| REPORT — Final report draft and deliverables | **IN_PROGRESS** | Five-page Markdown/Word/PDF draft prepared; all pages inspected and 190 local tests pass. Professor email rechecked on 22 October. Final independent-review preservation and PR/CI integration are pending; external submission is not authorized. |
 
 Machine-readable state: [research/progress.json](research/progress.json).
 Requirement gates: [R1–R9 ledger](research/requirements/assignment_traceability.md).
-Final report writing remains locked until practical acceptance and explicit authorization.
+Final report drafting is authorized for Girish's review. External submission is not authorized.
 
 <!-- PHASE_STATUS:END -->
 
@@ -50,16 +50,19 @@ native acceptance. Targeted private-input probes reduce observed explicit
 intermediate opening events **50 to 0**. Four acceptance flips on unchanged-source
 controls prevent attributing aggregate accuracy changes to the patch.
 
-[PR #13](https://github.com/Girish2052003/LUT-PHD-TARGET/pull/13) reconciles difficulty
-documentation, fixes fail-open evidence checks, and preserves a successful
-[31-artifact raw audit](https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39493312330).
+[PR #13](https://github.com/Girish2052003/LUT-PHD-TARGET/pull/13) is merged at
+`c237aa4a6d98a16b141a9b178a046a121ea1e659`, with all four main checks successful,
+including the [31-artifact raw audit](https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39541724665).
 **R8 documentation PASS** is separate from **R2/R3 IN_PROGRESS**. Historical
 GPT-4/Azure generation and the genuine SPDZCoder without-refactoring ablation
-remain **NOT REPRODUCED**. R9 and report writing are blocked pending Girish's
-report-scope decision and explicit writing authorization. The recorded conditional
-permission permits research integration only. See the [current handoff](HANDOFF.md)
-and [difficulty log](docs/reproduction_log.md); dated interim reports are not ready
-for submission.
+remain **NOT REPRODUCED**. Girish explicitly accepted both gaps for report scope
+and authorized the final draft on 21 October. **R9 readiness PASS** does not
+mean the historical experiments were reproduced.
+
+The [final report draft](docs/final_report.md) and [evidence guide](docs/final_report_evidence.md)
+are being independently checked and formatted for Girish's review. See the
+[current handoff](HANDOFF.md) for deliverable acceptance. Earlier interim reports
+are preserved as historical records. No email or external submission is authorized.
 
 ## Official-source reproduction track
 
@@ -111,7 +114,8 @@ The MP-SPDZ tests run in [GitHub Actions](https://github.com/Girish2052003/LUT-P
 
 - [Paper and methodology notes](docs/paper_guide.md) — what each SPDZCoder stage does.
 - [Detailed paper analysis](docs/deep_paper_audit.md) — the four research questions and reported results.
-- [Historical interim draft](docs/professor_submission_interim.md) — preserved for history; not an accepted final report. Final-report work is locked by the current execution contract.
+- [Final report draft](docs/final_report.md) and [evidence guide](docs/final_report_evidence.md) — current professor-facing draft and reproducibility details.
+- [Historical interim draft](docs/professor_submission_interim.md) — preserved for history; superseded by the final draft.
 - [Original artifact search](docs/artifact_discovery_log.md) — what I checked and what I still need.
 - [Experiment log](docs/reproduction_log.md) — environment, commit pin and links to test runs.
 - [Domain-safe lowering design](docs/engineering/domain_safe_lowering.md) — supported language and constraints.
@@ -120,12 +124,8 @@ The MP-SPDZ tests run in [GitHub Actions](https://github.com/Girish2052003/LUT-P
 
 The authors' original source and 313-task dataset are available in the checksum-verified Zenodo release. Original benchmark identities, native evaluator replay, authentic limitation witnesses, a narrow original-pipeline patch, and full paired native comparisons are now experimentally accepted **within their recorded scopes**. See the Phase A–F status table above and the exact independent acceptance files under `research/reviews/`; these are not historical LLM generation or a universal correctness/security proof.
 
-**Remaining work:** review/merge PR #13 with exact-head CI, then validate actual
-merged main. R8 difficulty documentation is PASS; R2/R3 remain IN_PROGRESS.
-Historical model generation (B3) and genuine SPDZCoder without-refactoring remain
-NOT REPRODUCED. Girish must explicitly decide whether to accept those two gaps
-for report scope and authorize final-report writing. PR #6 and the native paired
-experiments are already integrated; do not repeat them. No email/submission is
-authorized.
-
-The dated reproduction log preserves its original chronology; current acceptance and unresolved issues are tracked in `research/progress.json` and `research/requirements/assignment_traceability.yaml`.
+**Remaining work:** finish and independently review the authorized final report
+and Word/PDF deliverables, merge the verified package, then obtain Girish's
+approval before any external submission. R2/R3 remain IN_PROGRESS; the two
+historical gaps are accepted report-scope exceptions. PR #13 and the native
+experiments are complete; do not repeat those phases. See [HANDOFF.md](HANDOFF.md).

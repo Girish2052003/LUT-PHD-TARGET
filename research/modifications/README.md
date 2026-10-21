@@ -1,6 +1,6 @@
 # Scoped original-pipeline comparison-mask modification
 
-Status: narrow E1 paired smoke independently accepted; complete native regression pending.
+Status: narrow E1 paired smoke and full Phase F native paired comparison accepted within the scopes below.
 This is a technical experiment record, not the professor-facing report.
 
 ## Defect and supported correction

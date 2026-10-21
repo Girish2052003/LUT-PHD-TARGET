@@ -3,10 +3,21 @@ import hashlib
 import unittest
 from unittest.mock import patch, Mock
 
-from scripts.check_handoff import validate_records, validate_gates, validate_exception_decisions
+from scripts.check_handoff import validate_records, validate_gates, validate_exception_decisions, render
 
 
 class HandoffGateTests(unittest.TestCase):
+    def test_render_reflects_drafting_permission_without_granting_submission(self):
+        progress = {"phases": [], "report_authorized": True}
+        text = render(progress, {"requirements": []})["README.md"]
+        marker = text.split("<!-- PHASE_STATUS:BEGIN -->")[1].split("<!-- PHASE_STATUS:END -->")[0]
+        self.assertIn("Final report drafting is authorized", marker)
+        self.assertIn("External submission is not authorized", marker)
+        self.assertNotIn("writing remains locked", marker)
+        progress["report_authorized"] = False
+        text = render(progress, {"requirements": []})["README.md"]
+        self.assertIn("Final report writing remains locked", text)
+
     def setUp(self):
         self.phase = {
             "id": "A", "status": "PASS", "evidence_paths": ["HANDOFF.md"],

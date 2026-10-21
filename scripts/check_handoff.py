@@ -178,9 +178,12 @@ def render(progress, ledger):
             "| Phase | Status | Completion scope |", "|---|---|---|"]
     for p in progress["phases"]:
         rows.append(f"| {p['id']} — {p['title']} | **{p['status']}** | {p['completion_scope']} |")
+    report_note = ("Final report drafting is authorized for Girish's review. External submission is not authorized."
+                   if progress["report_authorized"] else
+                   "Final report writing remains locked until practical acceptance and explicit authorization.")
     rows.extend(["", "Machine-readable state: [research/progress.json](research/progress.json).",
                  "Requirement gates: [R1–R9 ledger](research/requirements/assignment_traceability.md).",
-                 "Final report writing remains locked until practical acceptance and explicit authorization.", "", END])
+                 report_note, "", END])
     block = "\n".join(rows)
     readme = (ROOT / "README.md").read_text()
     if BEGIN in readme and END in readme:

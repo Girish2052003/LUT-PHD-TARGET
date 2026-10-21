@@ -19,7 +19,9 @@ class OriginalR8CoverageTests(unittest.TestCase):
         self.assertEqual(x["nonaccepted"],181)
         self.assertFalse(x["historical_GPT4_Azure_model_stage_reproduced"])
         self.assertFalse(x["paper_original_no_refactoring_ablation_reproduced"])
-        self.assertFalse(x["professor_report_authorized"])
+        # Evidence accounting cannot grant or deny a separate user decision.
+        self.assertNotIn("professor_report_authorized", x)
+        self.assertFalse(x.get("report_authorization_granted_by_this_audit", True))
     def test_missing_failure_classification_is_rejected(self):
         issues=copy.deepcopy(self.issues)
         issues["original_native_candidate_status_totals"]["compile_fail"]-=1
