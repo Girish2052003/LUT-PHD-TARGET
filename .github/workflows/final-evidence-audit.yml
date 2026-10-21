@@ -1,10 +1,14 @@
 name: Final original evidence readiness audit
 on:
   push:
-    branches: ["research/r8-difficulty-acceptance-20261019"]
+    branches: ["main", "research/r8-difficulty-acceptance-20261019"]
     paths:
-      - "scripts/audit_final_evidence.py"
+      - "scripts/**"
       - "research/final_audit_artifacts.json"
+      - "research/reproduction_difficulties.json"
+      - "research/replay/**"
+      - "research/modifications/**"
+      - "research/evidence/**"
       - ".github/workflows/final-evidence-audit.yml"
   workflow_dispatch:
 permissions:

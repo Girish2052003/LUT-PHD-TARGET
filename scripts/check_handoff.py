@@ -80,7 +80,14 @@ def validate_exception_decisions(exceptions, requirements):
             raise ValueError(f"Changed exception approval evidence: {name}")
         if item["decision_quote"].encode("utf-8") not in decision:
             raise ValueError(f"Approval quote absent from recorded decision: {name}")
-        accepted[name] = set(targets)
+        scope = item.get("authorization_scope")
+        if scope not in {"RESEARCH_INTEGRATION", "REPORT_READINESS"}:
+            raise ValueError(f"Unknown or missing authorization scope: {name}")
+        # Conditional permission to merge preserves the research record; it
+        # cannot silently accept incomplete experiments for the report gate.
+        # The scope still needs independent review against the actual quote.
+        if scope == "REPORT_READINESS":
+            accepted[name] = set(targets)
     return accepted
 
 

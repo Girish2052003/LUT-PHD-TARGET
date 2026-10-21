@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "updated_on": "2026-10-18",
-  "current_pr": 6,
+  "updated_on": "2026-10-21",
+  "current_pr": 13,
   "historical_remote_main": "0ae96a968022325f3f678b19db1fcd69de483b70",
   "historical_reviewed_head": "5ca3809f15e8e326ff2d0a9b2e23993704be3dda",
   "resume_phase": "REPORT",
@@ -67,7 +67,7 @@
         "independently_checked": true,
         "reviewer": "code_review agent and primary-agent evidence check"
       },
-      "next_action": "Reuse the pinned archive; never repeat the artifact search.",
+      "next_action": "Preserve the pinned official archive. Repeat source discovery only if authors release new relevant material.",
       "redo_only_if": "Relevant source, configuration, evidence, or acceptance scope changes; document why."
     },
     {
@@ -88,7 +88,7 @@
         "independently_checked": true,
         "reviewer": "code_review agent and primary-agent evidence check"
       },
-      "next_action": "Preserve totals; extend with task-ID joins and original-evaluator semantics.",
+      "next_action": "Preserve archived scores and completed C identity checks; do not repeat as a new experiment.",
       "redo_only_if": "Relevant source, configuration, evidence, or acceptance scope changes; document why."
     },
     {
@@ -180,7 +180,7 @@
         "independently_checked": true,
         "reviewer": "code_review agent and primary-agent evidence check"
       },
-      "next_action": "Do not repeat as a new experiment; finish the independent identity gate C.",
+      "next_action": "Preserve archived flags and completed C identity gate; historical model generation remains separate.",
       "redo_only_if": "Relevant source, configuration, evidence, or acceptance scope changes; document why."
     },
     {
@@ -205,7 +205,7 @@
         "independently_checked": true,
         "reviewer": "smoke_evidence_review independently matched all source/artifact hashes, original insertion, output and both party logs; CI38673372763"
       },
-      "next_action": "Preserve the accepted smoke. Expand category/full coverage without counting smoke twice.",
+      "next_action": "Preserve accepted smoke; full B2b and stage2 replay are already completed.",
       "redo_only_if": "Relevant original source, harness, compiler/runtime or environment changes; record why."
     },
     {
@@ -231,7 +231,7 @@
         "independently_checked": true,
         "reviewer": "full_replay_review independently audited1252records,1280attempts,6976rawfiles and all source/runtime pins"
       },
-      "next_action": "Preserve. Investigate recorded disagreements separately; complete ablations and source traces without relabeling this as generation.",
+      "next_action": "Preserve complete final-stage evidence and the31-artifact re-audit. Missing historical generation/no-refactoring are separately documented; do not rerun completed native experiments without a concrete reason.",
       "redo_only_if": "Source, environment, candidate or comparison conditions change; record the reason."
     },
     {
@@ -363,7 +363,7 @@
         "independently_checked": true,
         "reviewer": "diagnostic_review verified133rawfiles,16executions,exactarchivedASTs and bothpartylogs"
       },
-      "next_action": "Preserve measured counterexamples. Validate an actual original-pipeline fix and output-preserving paired comparisons.",
+      "next_action": "Preserve accepted witnesses and completed E/F comparison. Mixed-operand lower_bound remains outside patch scope.",
       "redo_only_if": "Candidate, input, observer, policy or runtime changes; record the reason."
     },
     {
@@ -452,7 +452,7 @@
         "independently_checked": true,
         "reviewer": "diagnostic_review independently checked718files,64executions,exactpipelinepatches andoutput/openingtraces"
       },
-      "next_action": "Preserve; run complete626candidate paired native comparison using the exact accepted modification and critical harness pins.",
+      "next_action": "Preserve64-execution smoke and completed626-pair F comparison; no duplicate native rerun is needed.",
       "redo_only_if": "Modification, critical harness, input/policy or environment changes; record the reason."
     },
     {
@@ -485,7 +485,7 @@
         "independently_checked": true,
         "reviewer": "Secondary assistant reviewer, independent raw artifact/paper/saved-stage audit 18 Oct 2026; bounded acceptance only, not external certification"
       },
-      "next_action": "Preserve paired original/modified raw run38989067493, original-only variability run39043579023 and output-only threat model; no causal correctness claim. Independent PR7 remains to integrate in G.",
+      "next_action": "Preserve full paired run38989067493 and original-only variability run39043579023. Earlier PR7/8/9 integration is complete. No causal overall correctness gain is supported.",
       "redo_only_if": "Relevant source, configuration, evidence, or acceptance scope changes; document why."
     },
     {
@@ -502,7 +502,9 @@
         "research/requirements/conditional_merge_user_decision-20261018.txt",
         "research/evidence/2026-10-18/final-attempt-original-no-refactoring-content-audit.json",
         "research/evidence/2026-10-18/original-author-git-history-independent-audit.json",
-        "research/reviews/integrated-independent-practical-acceptance-20261018.md"
+        "research/reviews/integrated-independent-practical-acceptance-20261018.md",
+        "research/reviews/final-readiness-review-20261021.md",
+        "research/evidence/2026-10-21/final-readiness/raw-audit-acceptance.json"
       ],
       "evidence_commit": "f5a4d749964dfc0c6050bbdfdd0bdc2cf1fdfaea",
       "verification": {
@@ -512,14 +514,14 @@
         "independently_checked": true,
         "reviewer": "Independent read-only original native ZIP provenance/paired source audit, original TAR/Git archaeology and verified exact-main GitHub Actions acceptance; not external security certification"
       },
-      "next_action": "Phase G practical integration complete within stated scope. Present explicit R1–R9 and exception evidence to Girish; report writing must still be separately authorized, never draft/send automatically. Do not claim historical B3 or no-refactoring reproduced.",
+      "next_action": "PR13 reconciles difficulty documentation and authorization scope. Review the exact PR head and require normal CI, R8 and raw-audit checks before merge; validate the actual merged main. Preserve historical failed runs and the31-artifact audit.",
       "redo_only_if": "Relevant source, configuration, evidence, or acceptance scope changes; document why."
     },
     {
       "id": "REPORT",
       "title": "Final report readiness (writing locked)",
       "status": "BLOCKED",
-      "completion_scope": "Professor-facing REPORT WRITING remains BLOCKED and NOT AUTHORIZED. R9 practical readiness can pass on exact main with two explicitly accepted, prominently NOT REPRODUCED historical scientific exceptions; separate Girish permission is still mandatory before any drafting/email.",
+      "completion_scope": "Report writing is BLOCKED and NOT AUTHORIZED. R9 is BLOCKED pending explicit report-scope acceptance of two disclosed NOT REPRODUCED historical experiments; the18October quote permits research integration only. R8 documentation PASS does not promote R2/R3/B3.",
       "dependencies": [
         "A",
         "B2",
@@ -528,7 +530,9 @@
         "F",
         "G"
       ],
-      "evidence_paths": [],
+      "evidence_paths": [
+        "research/reviews/final-readiness-review-20261021.md"
+      ],
       "evidence_commit": null,
       "verification": {
         "implemented": false,
@@ -537,7 +541,7 @@
         "independently_checked": false,
         "reviewer": "Pending acceptance review"
       },
-      "next_action": "Present current Phase G/R9 practical readiness evidence to Girish and ask for separate explicit permission before drafting final professor-facing report. Preserve B3 NOT REPRODUCED, no-refactoring NOT REPRODUCED, R2/R3/R8 IN_PROGRESS WITH EXCEPTIONS.",
+      "next_action": "R8difficulty documentation is PASS. R2/R3remain IN_PROGRESS; B3and genuine no-refactoring NOT REPRODUCED. Present the completed practical evidence and ask Girish to accept those two gaps for report scope and explicitly authorize writing. Do not draft or send before that decision.",
       "redo_only_if": "Relevant source, configuration, evidence, or acceptance scope changes; document why."
     }
   ],

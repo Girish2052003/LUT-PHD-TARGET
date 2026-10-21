@@ -36,6 +36,6 @@ A separate raw-artifact audit rechecks original insertion, author oracle outcome
 negative evidence, stage2 taxonomy, paired comparisons and targeted smoke
 without executing any downloaded candidate or calling a model.
 
-**Current acceptance: pending fresh GREEN execution and final independent review.**
+**21 October update:** GREEN raw-audit run39493312330 and R8 run39493312087 at45a51e6 have been inspected. Independent r8_pr13_review found no critical or important code/evidence defect at that commit. Final documentation/governance and exact PR/main integration are recorded separately in `final-readiness-review-20261021.md`.
 R8 documentation may pass separately from B3/R2/R3 experimental requirements.
 The latter must remain unreproduced/incomplete where evidence is missing.

@@ -1,0 +1,897 @@
+{
+  "difficulty_documentation": {
+    "archived_fresh_disagreement_count": 3,
+    "artifact_only_recovery_conclusion": "SUCCESS: artifact-only recovery; no candidate reruns",
+    "artifact_only_recovery_run_id": 39080161119,
+    "attempts": 644,
+    "candidates": 626,
+    "category_failure_taxonomy": {
+      "array_test": {
+        "compile_fail": 19,
+        "native_oracle_reject_after_runtime": 2
+      },
+      "branch_test": {
+        "compile_fail": 6,
+        "native_oracle_reject_after_runtime": 8
+      },
+      "loop_test": {
+        "compile_fail": 47,
+        "native_oracle_reject_after_runtime": 11
+      },
+      "math_test": {
+        "compile_fail": 11,
+        "native_oracle_reject_after_runtime": 4
+      },
+      "numpy_operation_test": {
+        "compile_fail": 21,
+        "native_oracle_reject_after_runtime": 3
+      },
+      "numpy_ufunc_test": {
+        "compile_fail": 17,
+        "native_oracle_reject_after_runtime": 2
+      },
+      "syntax_test": {
+        "compile_fail": 26,
+        "native_oracle_reject_after_runtime": 4
+      }
+    },
+    "compiler_failures": 147,
+    "historical_GPT4_Azure_model_stage_reproduced": false,
+    "limits": "This proves complete categorization for the enumerated 626 saved stage-2 candidates only, NOT every run in the whole project or underlying mathematical correctness; missing original model calls/ablation remain NOT REPRODUCED.",
+    "native_MPC_executions_this_audit": 0,
+    "native_oracle_rejections_after_runtime": 34,
+    "native_runtime_completed": 479,
+    "nonaccepted": 181,
+    "original_author_archive_sha256": "a8ea14150dc1d4ddf53eb4ead450d88139d09b680683f673029877ce0c6e00ac",
+    "original_author_model_calls_this_audit": 0,
+    "original_native_run_conclusion": "FAIL: aggregator artifact prefix, despite seven category jobs SUCCESS",
+    "original_native_run_id": 39075744038,
+    "original_oracle_acceptances": 445,
+    "other_documented_difficulties": [
+      "Original source archive and compiler environment version pins/requirements mismatch",
+      "Native original code contains unsupported API/sint/public-bool constructs leading to compiler failures",
+      "Long-running original MASCOT candidates time out and require original bounded retry",
+      "Original source tests contain weak oracle criteria and missing functional test",
+      "Original source stage1/repair control-flow discrepancies and missing LLM messages",
+      "Original full CI aggregate path failed despite seven successful native category jobs; same raw artifact dataset passed independent artifact-only recovery"
+    ],
+    "paper_original_no_refactoring_ablation_reproduced": false,
+    "professor_report_authorized": false,
+    "project_difficulty_index": {
+      "evidence_sha256": {
+        ".github/workflows/original-stage2-mascot.yml": "57a18f964cd0505abc6dfa1c4fbd31e3d8542ba794731b5768ffb1a21a3d65cb",
+        "docs/reproduction_log.md": "15c0d3bba5d2b00423f62cd7c0f0ae324b6460b0602376610dde68e9c58ac89b",
+        "research/evidence/2026-10-14/source_provenance.json": "3eb3ddfcde26853c463ffe4d7a873cb26fc280a8687a03dc86ea9a55bd59f3f1",
+        "research/evidence/2026-10-15/original-diagnostics/receipt.json": "2c1e9002529faf9f95cb945404c57501297c7b66406b778ceb22ccf227a86f09",
+        "research/evidence/2026-10-15/original-full/attempt-1.json": "5b009e40f2478ac5656d8ed06d897ce5fff3b79beed5cdd2f01b1dbf8d91e4b3",
+        "research/evidence/2026-10-15/original-full/receipt.json": "b2b93cffcaa4c4d6e871d9e422c594a1fe14558b643d581b45fd3701b20230a0",
+        "research/evidence/2026-10-15/original-full/verified-summary/summary.json": "613e2cc9d4902e49f2d1e61cd86c059225f1fff6776f3a3fb628df00553f20a1",
+        "research/evidence/2026-10-15/original-smoke/receipt.json": "e0879767e39376f79877212d448a26f50b1ad82cb29ce33dce0ea4d49501c597",
+        "research/evidence/2026-10-16/paired-smoke/measurements.json": "6af7a56bca213042bf123ba18e54f49cc6277e5380366745240f45ea8d912641",
+        "research/evidence/2026-10-18/final-attempt-original-no-refactoring-content-audit.json": "c54d58ee6e9eece7373b93bdd1b0499a80d71b769dc8692fc98f15ebcc73278d",
+        "research/evidence/2026-10-18/original-author-git-history-independent-audit.json": "85085c6f4d6f1f8c778e20777b6f7db173d91fb100d5174d0ea25da092a52e92",
+        "research/evidence/2026-10-18/phase-g-paired-secondary-recomputed.json": "2f0b7256553416173f62d1c05bfde28cbaa722646da69dc11bb23f86b4ca0d25",
+        "research/evidence/2026-10-18/phase-g-stage2-raw-secondary-independent-audit.json": "10d7bce74a81d71326f6b4e45f1da16e858ae9c6c8051d70be86bcb829f8f3b6",
+        "research/evidence/2026-10-18/seven-category-stage-receipt.json": "d5cf04d4531d83b7bf242df178edc024632fa9d52f4d9984a101f6853c326268",
+        "research/evidence/2026-10-18/stage2-native-reproduction-difficulties.json": "8c30f3f8ee8966b3f42b7ce32a87abbb949ec62f36f3be533ac5277dbc3a4574",
+        "research/evidence/2026-10-18/stage2-original-full-independent-acceptance.json": "dd98cb007b39486aeba911cc128c24442d6511adda2afda50deb600cf018785c",
+        "research/evidence/2026-10-19/no-refactor-input-final-receipt.json": "241bf900f289d9e490c945ef424328282d42d3dea5020161761d7e37d1712c96",
+        "research/evidence/2026-10-19/zenodo-version-remote-publisher-audit.json": "62a5de29168e658c8e4ef1bdbdf03f8ffa8a10bdf729f0a4679b58b8dc2bb017",
+        "research/modifications/README.md": "79c38bee71bfbece62d3e7fd1cb929898156d209575db82d36fcfd337a9a5afc",
+        "research/original_source_audit.md": "af58a0a7bf7b3b43216c8c0b92e1bc430752af0f2cc43e376b4ec7da59eb398a",
+        "research/replay/README.md": "d0f155cf16c104877a0b4d75c5027b41e920c3938c6c08b2d2c9fd0dc4b334ca",
+        "research/replay/native_oracle_audit.md": "2b3e9cb57a4cdebecd68a09ca3c08eacdb5abe031f44f0236753045b39ff5124",
+        "research/requirements/exception_decisions.json": "7475bc07c83998b3ef68af3334a94119a87e62943ad687d3ff13352504eec864",
+        "research/reviews/diagnostic-evidence-review.md": "6bc46561a8161f24c6d44a6e698ab6266f440bc5590518cc787725e37b0c2643",
+        "research/reviews/full-replay-evidence-review.md": "7dfa0aad081c84e6a1b6684f195b475f6d5006098e76a17f22d55ebaf8ec8359",
+        "research/reviews/historical-gpt4-availability-and-exception-20261018.md": "659227f4fc563647397b56f39b53fa7f3865b60b1c04293b6f5a597491511840",
+        "research/reviews/paired-full-independent-control-audit.md": "c64a7c5a768334f074ee597718b8850ecd5ba12d624785f024d46cdea3956a87",
+        "research/reviews/phase-a-paper-source-crosswalk-20261018.md": "463cc6c680889e4a54f3f4ded3243249d52d1cfea5d0032ecba30482d42ad77f",
+        "research/reviews/phase-f-bounded-native-interpretation-20261018.md": "95468dbb0e52a46724d2522a39ac8db5f60ebaddfbc75aee25b3c9e365e49e08",
+        "research/reviews/r8-independent-difficulty-documentation-20261019.md": "67370217fa28f57ccc7eb4b6d9da36c20618f7390d9ed87d11d5a7a2df468d0e",
+        "research/reviews/secret-arithmetic-review-findings.md": "32b57744a43b721e2bf709d0310321ca63ee91da9bed8646596d556ba1be79ed",
+        "scripts/verify_reproduction_difficulty_coverage.py": "7e0ffc0c5abf9f1efb3b3d929aa770f79682abddd7e795d1773da9cccef71059",
+        "tests/test_original_reproduction_difficulty_coverage.py": "0f7df0ab015ed8ce060742e49cb4b8e9542042e6777005d8d32e7f261a455fe9",
+        "tests/test_stage2_workflow_layout.py": "5041e09e12e0f2ce9a27cdf4f83d82ff82fd3430a03dfc928a342ea75ec6642f"
+      },
+      "families": 13,
+      "scope": "Index coverage and linked file integrity; scientific truth requires raw audit and review."
+    },
+    "retrying_candidates": 14,
+    "scope": "R8 honest documentation: all enumerated original stage-2 626 candidates and 644 native attempts; source identity, original oracle limits, actual red aggregator + separate green artifact recovery",
+    "source_failure_taxonomy": {
+      "AttributeError": 56,
+      "Compiler.exceptions.CompilerError": 18,
+      "ImportError": 28,
+      "IndexError": 2,
+      "NameError": 17,
+      "SyntaxError": 1,
+      "TypeError": 22,
+      "ValueError": 1,
+      "unclassified_terminal_stderr": 2
+    },
+    "tasks": 313,
+    "timed_out_attempts": 18
+  },
+  "final_native_attempts": 1280,
+  "final_native_candidate_records": 1252,
+  "final_native_exact_source_insertion": 1252,
+  "genuine_no_refactoring_reproduced": false,
+  "historical_generation_reproduced": false,
+  "historical_workflows": {
+    "38703569637": {
+      "conclusion": "success",
+      "head_sha": "769bb12ce342b814590061ef04fdffbbe19c9990",
+      "run_attempt": 2,
+      "status": "completed"
+    },
+    "38989067493": {
+      "conclusion": "success",
+      "head_sha": "b5846f5be000e6f511ed319011549ed4aaa8472c",
+      "run_attempt": 1,
+      "status": "completed"
+    },
+    "39075744038": {
+      "conclusion": "failure",
+      "head_sha": "1e3c95d5357cd8b913a11916e562b6de7d633ccb",
+      "run_attempt": 1,
+      "status": "completed"
+    },
+    "39080161119": {
+      "conclusion": "success",
+      "head_sha": "58197ee4b93c70a04cc19f4c15a319eba3b4f4d8",
+      "run_attempt": 1,
+      "status": "completed"
+    }
+  },
+  "new_model_calls": 0,
+  "new_native_executions": 0,
+  "paired": {
+    "all_unchanged_source_flips_accept_on_second_execution": true,
+    "attempts_checked": 1280,
+    "changed_candidates": [
+      "loop_test/count_distinct candidate 1",
+      "loop_test/is_ascending candidate 0"
+    ],
+    "executions": 1252,
+    "interpretation": "Identical-source flips cannot be credited to the postprocessor. Causes of outcome variability not established. The audit does not rerun MASCOT or prove confidentiality.",
+    "oracle_marker_disagreements": [],
+    "outcomes": {
+      "baseline": {
+        "first": 270,
+        "second": 266,
+        "union": 290
+      },
+      "modified": {
+        "first": 271,
+        "second": 263,
+        "union": 290
+      }
+    },
+    "pairs": 626,
+    "source_run": 38989067493,
+    "tasks": 313,
+    "unchanged_source_flips": [
+      {
+        "baseline": "ACCEPT",
+        "baseline_execution_order": 1,
+        "candidate_id": 1,
+        "compiler_hash": "d9e6881a06c65cfb2173c0503a0c18f2d54cc685e4354fb3ac5ae457aaaebef9",
+        "modified": "REJECT",
+        "modified_execution_order": 0,
+        "same_compiler_hash": true,
+        "same_mpc_sha256": true,
+        "source_changed": false,
+        "task_id": "loop_test/standard_deviation"
+      },
+      {
+        "baseline": "ACCEPT",
+        "baseline_execution_order": 1,
+        "candidate_id": 1,
+        "compiler_hash": "86cde692a9aeb0dfeb98eed8c87ad59704dbcfb1b4cf9a23dc5e99ce407e0553",
+        "modified": "REJECT",
+        "modified_execution_order": 0,
+        "same_compiler_hash": true,
+        "same_mpc_sha256": true,
+        "source_changed": false,
+        "task_id": "math_test/next_perfect_square"
+      },
+      {
+        "baseline": "REJECT",
+        "baseline_execution_order": 0,
+        "candidate_id": 0,
+        "compiler_hash": "e53a7f7a8d5b45b86ac2e06d0433d1cb24122dbd5335bdc424474ff0a0a700e0",
+        "modified": "ACCEPT",
+        "modified_execution_order": 1,
+        "same_compiler_hash": true,
+        "same_mpc_sha256": true,
+        "source_changed": false,
+        "task_id": "math_test/pi_to_the_x"
+      },
+      {
+        "baseline": "ACCEPT",
+        "baseline_execution_order": 1,
+        "candidate_id": 1,
+        "compiler_hash": "e9a93c82747b3e3e7ce658e66a6027edb8a32a55cc66237b195d23a506e7c6f7",
+        "modified": "REJECT",
+        "modified_execution_order": 0,
+        "same_compiler_hash": true,
+        "same_mpc_sha256": true,
+        "source_changed": false,
+        "task_id": "math_test/pi_to_the_x"
+      }
+    ]
+  },
+  "raw_artifacts": [
+    {
+      "bytes": 387784,
+      "commit": "769bb12ce342b814590061ef04fdffbbe19c9990",
+      "expires_at": "2027-01-13T13:04:31Z",
+      "family": "final",
+      "id": 11980067743,
+      "key": "spdzcoder-math_test",
+      "run": 38703569637,
+      "sha256": "bc9247c6262bca603c898edb5656c54f3b9cc61bd7825dc986eb27b301b2437c"
+    },
+    {
+      "bytes": 302347,
+      "commit": "769bb12ce342b814590061ef04fdffbbe19c9990",
+      "expires_at": "2027-01-13T13:04:31Z",
+      "family": "final",
+      "id": 11979427642,
+      "key": "summary",
+      "run": 38703569637,
+      "sha256": "96c82b4a50365b45e43583149ec29735319025e007b1bfb6fb042aede3537d3f"
+    },
+    {
+      "bytes": 910827,
+      "commit": "769bb12ce342b814590061ef04fdffbbe19c9990",
+      "expires_at": "2027-01-13T08:08:36Z",
+      "family": "final",
+      "id": 11960277680,
+      "key": "spdzcoder-loop_test",
+      "run": 38703569637,
+      "sha256": "d1f4abefd1a404902a3b4b3878f7cdc606871375fb2311e69861bfba0b423c82"
+    },
+    {
+      "bytes": 361169,
+      "commit": "769bb12ce342b814590061ef04fdffbbe19c9990",
+      "expires_at": "2027-01-13T08:08:36Z",
+      "family": "final",
+      "id": 11960085803,
+      "key": "spdzcoder-numpy_ufunc_test",
+      "run": 38703569637,
+      "sha256": "b4a66aee4cbf9c5faf893218bd91c626fab32fe8bad1f2f4f2e1e9cbbfd702fc"
+    },
+    {
+      "bytes": 818102,
+      "commit": "769bb12ce342b814590061ef04fdffbbe19c9990",
+      "expires_at": "2027-01-13T08:08:36Z",
+      "family": "final",
+      "id": 11959421463,
+      "key": "gpt4_api_docs-loop_test",
+      "run": 38703569637,
+      "sha256": "15ead07a468ba5ff3c97bad07e888c585441523f3afcde264eb2ddea403260d1"
+    },
+    {
+      "bytes": 362332,
+      "commit": "769bb12ce342b814590061ef04fdffbbe19c9990",
+      "expires_at": "2027-01-13T08:08:36Z",
+      "family": "final",
+      "id": 11959140549,
+      "key": "spdzcoder-branch_test",
+      "run": 38703569637,
+      "sha256": "f435b4004da959ad09c1afa43aafff0961cd9f66cbbba008b0ad692c2ddcf9ee"
+    },
+    {
+      "bytes": 418753,
+      "commit": "769bb12ce342b814590061ef04fdffbbe19c9990",
+      "expires_at": "2027-01-13T08:08:36Z",
+      "family": "final",
+      "id": 11958881563,
+      "key": "spdzcoder-array_test",
+      "run": 38703569637,
+      "sha256": "1ce6af8e3644f0db53b6e50620cd07937cfb6b0014017fd880cb5b3131503dab"
+    },
+    {
+      "bytes": 336069,
+      "commit": "769bb12ce342b814590061ef04fdffbbe19c9990",
+      "expires_at": "2027-01-13T08:08:36Z",
+      "family": "final",
+      "id": 11958793621,
+      "key": "gpt4_api_docs-numpy_operation_test",
+      "run": 38703569637,
+      "sha256": "7c29b94cd416c77800b09e81ec47e6b30e1076a82a38fae43f6d0ce42a862ab1"
+    },
+    {
+      "bytes": 308733,
+      "commit": "769bb12ce342b814590061ef04fdffbbe19c9990",
+      "expires_at": "2027-01-13T08:08:36Z",
+      "family": "final",
+      "id": 11958731889,
+      "key": "gpt4_api_docs-branch_test",
+      "run": 38703569637,
+      "sha256": "a56beabb2db4dbbe6d5207db03d04ad9fe25cfd8e603ef5eca70f77d6b6d09fa"
+    },
+    {
+      "bytes": 319970,
+      "commit": "769bb12ce342b814590061ef04fdffbbe19c9990",
+      "expires_at": "2027-01-13T08:08:36Z",
+      "family": "final",
+      "id": 11958613179,
+      "key": "gpt4_api_docs-numpy_ufunc_test",
+      "run": 38703569637,
+      "sha256": "9f672b6184e67c9cdf787a69e15f48be5032949b7ce7636b4a2694bf8528fa79"
+    },
+    {
+      "bytes": 303363,
+      "commit": "769bb12ce342b814590061ef04fdffbbe19c9990",
+      "expires_at": "2027-01-13T08:08:36Z",
+      "family": "final",
+      "id": 11958485866,
+      "key": "gpt4_api_docs-math_test",
+      "run": 38703569637,
+      "sha256": "2100b02eb2381f8305c8732c9d5046031ad063aa6e2f3ff0a58a7264d0e983dd"
+    },
+    {
+      "bytes": 331373,
+      "commit": "769bb12ce342b814590061ef04fdffbbe19c9990",
+      "expires_at": "2027-01-13T08:08:36Z",
+      "family": "final",
+      "id": 11957853957,
+      "key": "gpt4_api_docs-syntax_test",
+      "run": 38703569637,
+      "sha256": "fdb206130cd775bdbbc3b16bb2fea7021825e46ad1889b62e3b8d692cef28c28"
+    },
+    {
+      "bytes": 336293,
+      "commit": "769bb12ce342b814590061ef04fdffbbe19c9990",
+      "expires_at": "2027-01-13T08:08:36Z",
+      "family": "final",
+      "id": 11957838791,
+      "key": "spdzcoder-numpy_operation_test",
+      "run": 38703569637,
+      "sha256": "ee023449a367903bb4a796404fa11f251ff2b36c0cfcd23363edd086afa94af2"
+    },
+    {
+      "bytes": 393007,
+      "commit": "769bb12ce342b814590061ef04fdffbbe19c9990",
+      "expires_at": "2027-01-13T08:08:36Z",
+      "family": "final",
+      "id": 11957773930,
+      "key": "gpt4_api_docs-array_test",
+      "run": 38703569637,
+      "sha256": "fcd7109fcc319a958f137ce8f03f1b4dc708f86ec945f7977dd00682c63b356c"
+    },
+    {
+      "bytes": 343528,
+      "commit": "769bb12ce342b814590061ef04fdffbbe19c9990",
+      "expires_at": "2027-01-13T08:08:36Z",
+      "family": "final",
+      "id": 11957509289,
+      "key": "spdzcoder-syntax_test",
+      "run": 38703569637,
+      "sha256": "0af6e09f7ed6a2f622fe811182f6f3297351af6e3ce7b7b905c3426360515b6f"
+    },
+    {
+      "bytes": 451972,
+      "commit": "1e3c95d5357cd8b913a11916e562b6de7d633ccb",
+      "expires_at": "2027-01-15T22:36:13Z",
+      "family": "stage2",
+      "id": 12117009220,
+      "key": "array_test",
+      "run": 39075744038,
+      "sha256": "12ac90652fdbeed1034a555dbf140a91fe298f8b860bdbcdc385e1977977e119"
+    },
+    {
+      "bytes": 403871,
+      "commit": "1e3c95d5357cd8b913a11916e562b6de7d633ccb",
+      "expires_at": "2027-01-15T22:36:13Z",
+      "family": "stage2",
+      "id": 12117428647,
+      "key": "branch_test",
+      "run": 39075744038,
+      "sha256": "f9ea20c2ed58d0853fc0659448a8cf5759cfbdf2b4ccdfffe5669973f5d1a3bd"
+    },
+    {
+      "bytes": 903920,
+      "commit": "1e3c95d5357cd8b913a11916e562b6de7d633ccb",
+      "expires_at": "2027-01-15T22:36:13Z",
+      "family": "stage2",
+      "id": 12118480819,
+      "key": "loop_test",
+      "run": 39075744038,
+      "sha256": "9c19d30baa11c39a2368c6947406fe7d639920fa21f70a4966ac8c0464ee4cf0"
+    },
+    {
+      "bytes": 403613,
+      "commit": "1e3c95d5357cd8b913a11916e562b6de7d633ccb",
+      "expires_at": "2027-01-15T22:36:13Z",
+      "family": "stage2",
+      "id": 12118110941,
+      "key": "math_test",
+      "run": 39075744038,
+      "sha256": "f8e452799031df3fac1d6e6cd818b80783b2479392ab33664a86a15c4a16c253"
+    },
+    {
+      "bytes": 365175,
+      "commit": "1e3c95d5357cd8b913a11916e562b6de7d633ccb",
+      "expires_at": "2027-01-15T22:36:13Z",
+      "family": "stage2",
+      "id": 12116744908,
+      "key": "numpy_operation_test",
+      "run": 39075744038,
+      "sha256": "019deb164dc0d88058fbfb97cd39948616a15e7c6fa9594ba9d705b1b72b2369"
+    },
+    {
+      "bytes": 400464,
+      "commit": "1e3c95d5357cd8b913a11916e562b6de7d633ccb",
+      "expires_at": "2027-01-15T22:36:13Z",
+      "family": "stage2",
+      "id": 12118278472,
+      "key": "numpy_ufunc_test",
+      "run": 39075744038,
+      "sha256": "52d7ca0b5a6dafc94f894bcb97138d508cc7a299d5f6090360255fcf97766480"
+    },
+    {
+      "bytes": 373793,
+      "commit": "1e3c95d5357cd8b913a11916e562b6de7d633ccb",
+      "expires_at": "2027-01-15T22:36:13Z",
+      "family": "stage2",
+      "id": 12117610306,
+      "key": "syntax_test",
+      "run": 39075744038,
+      "sha256": "abe0ac8871153fdd8970c86435ede7e52e7341eda7f1479ea8dd31bc2304b73d"
+    },
+    {
+      "bytes": 150111,
+      "commit": "58197ee4b93c70a04cc19f4c15a319eba3b4f4d8",
+      "expires_at": "2027-01-15T23:44:19Z",
+      "family": "stage2",
+      "id": 12118194181,
+      "key": "recovery",
+      "run": 39080161119,
+      "sha256": "4ba5dc8c0470c1cf02633bb4722a204558b3c3d591a863c10cb5e28c572ba12c"
+    },
+    {
+      "bytes": 271931,
+      "commit": "b5846f5be000e6f511ed319011549ed4aaa8472c",
+      "expires_at": "2027-01-15T01:01:49Z",
+      "family": "paired",
+      "id": 12087032937,
+      "key": "summary",
+      "run": 38989067493,
+      "sha256": "832531da6446c6acd1212b86c7b10a1b33caebddc600d02e5d539174a8cca31c"
+    },
+    {
+      "bytes": 1301666,
+      "commit": "b5846f5be000e6f511ed319011549ed4aaa8472c",
+      "expires_at": "2027-01-15T01:01:49Z",
+      "family": "paired",
+      "id": 12085202183,
+      "key": "array_test",
+      "run": 38989067493,
+      "sha256": "0d8979f648bf4d9b60b2ccd59b9fee485ff19e0d1d20155068352e3e2b5bb6c3"
+    },
+    {
+      "bytes": 2841091,
+      "commit": "b5846f5be000e6f511ed319011549ed4aaa8472c",
+      "expires_at": "2027-01-15T01:01:49Z",
+      "family": "paired",
+      "id": 12086621899,
+      "key": "loop_test",
+      "run": 38989067493,
+      "sha256": "638d546fdbb4f8237c1694979b2577a4d268ddfd9ffaaa4ae636bf2ff03f50fc"
+    },
+    {
+      "bytes": 1125829,
+      "commit": "b5846f5be000e6f511ed319011549ed4aaa8472c",
+      "expires_at": "2027-01-15T01:01:49Z",
+      "family": "paired",
+      "id": 12086301260,
+      "key": "branch_test",
+      "run": 38989067493,
+      "sha256": "24f05d94b95c6b18adacd4e488c3796dbe4f40a880b0f75595d143479ba0ab27"
+    },
+    {
+      "bytes": 1151194,
+      "commit": "b5846f5be000e6f511ed319011549ed4aaa8472c",
+      "expires_at": "2027-01-15T01:01:49Z",
+      "family": "paired",
+      "id": 12087042728,
+      "key": "math_test",
+      "run": 38989067493,
+      "sha256": "348138b23d1bce11c0846d445723510a08d5a37a614b596cfc5ae826e1264010"
+    },
+    {
+      "bytes": 1045231,
+      "commit": "b5846f5be000e6f511ed319011549ed4aaa8472c",
+      "expires_at": "2027-01-15T01:01:49Z",
+      "family": "paired",
+      "id": 12085025605,
+      "key": "numpy_operation_test",
+      "run": 38989067493,
+      "sha256": "48019bf4cf155e9baa1634e89be54812532bd9b96ddae5a72d593687b114af49"
+    },
+    {
+      "bytes": 1130138,
+      "commit": "b5846f5be000e6f511ed319011549ed4aaa8472c",
+      "expires_at": "2027-01-15T01:01:49Z",
+      "family": "paired",
+      "id": 12086986769,
+      "key": "numpy_ufunc_test",
+      "run": 38989067493,
+      "sha256": "080e2bee4869fa844257e55653413452707c1a22dc4f4808abae96892ac81a28"
+    },
+    {
+      "bytes": 1080587,
+      "commit": "b5846f5be000e6f511ed319011549ed4aaa8472c",
+      "expires_at": "2027-01-15T01:01:49Z",
+      "family": "paired",
+      "id": 12084594130,
+      "key": "syntax_test",
+      "run": 38989067493,
+      "sha256": "32409fa43e702b400b010eeda06564a653d4ba6f625426bfeea7dc3046834595"
+    }
+  ],
+  "report_authorized": false,
+  "research_commit": "45a51e612453bab03c34e66bd9fe8977e2290e75",
+  "scope": "Independent re-audit of preserved original native data; no new native MPC or model execution",
+  "stage2": {
+    "candidate_count": 626,
+    "categories": {
+      "array_test": {
+        "archived_disagreements": 0,
+        "compile_failures": 19,
+        "fresh": {
+          "first": 32,
+          "second": 33,
+          "tasks": 43,
+          "union": 39
+        },
+        "historical": {
+          "first": 32,
+          "second": 33,
+          "tasks": 43,
+          "union": 39
+        }
+      },
+      "branch_test": {
+        "archived_disagreements": 1,
+        "compile_failures": 6,
+        "fresh": {
+          "first": 29,
+          "second": 25,
+          "tasks": 34,
+          "union": 29
+        },
+        "historical": {
+          "first": 29,
+          "second": 24,
+          "tasks": 34,
+          "union": 29
+        }
+      },
+      "loop_test": {
+        "archived_disagreements": 0,
+        "compile_failures": 47,
+        "fresh": {
+          "first": 70,
+          "second": 66,
+          "tasks": 97,
+          "union": 82
+        },
+        "historical": {
+          "first": 70,
+          "second": 66,
+          "tasks": 97,
+          "union": 82
+        }
+      },
+      "math_test": {
+        "archived_disagreements": 2,
+        "compile_failures": 11,
+        "fresh": {
+          "first": 30,
+          "second": 31,
+          "tasks": 38,
+          "union": 36
+        },
+        "historical": {
+          "first": 30,
+          "second": 29,
+          "tasks": 38,
+          "union": 35
+        }
+      },
+      "numpy_operation_test": {
+        "archived_disagreements": 0,
+        "compile_failures": 21,
+        "fresh": {
+          "first": 21,
+          "second": 19,
+          "tasks": 32,
+          "union": 24
+        },
+        "historical": {
+          "first": 21,
+          "second": 19,
+          "tasks": 32,
+          "union": 24
+        }
+      },
+      "numpy_ufunc_test": {
+        "archived_disagreements": 0,
+        "compile_failures": 17,
+        "fresh": {
+          "first": 26,
+          "second": 23,
+          "tasks": 34,
+          "union": 28
+        },
+        "historical": {
+          "first": 26,
+          "second": 23,
+          "tasks": 34,
+          "union": 28
+        }
+      },
+      "syntax_test": {
+        "archived_disagreements": 0,
+        "compile_failures": 26,
+        "fresh": {
+          "first": 21,
+          "second": 19,
+          "tasks": 35,
+          "union": 24
+        },
+        "historical": {
+          "first": 21,
+          "second": 19,
+          "tasks": 35,
+          "union": 24
+        }
+      }
+    },
+    "common_source_ledger_and_dependency_digests": [
+      "e8665e9ab89a022716f088a05ac99b478e190545e7dd93101c2ff214b4dd0326",
+      "ecb275c1cb189398e8b0747afbb37f85848e37a855f961a386c7d02ac644fc09",
+      "482062e5a1fa575904bd36c369852227e57124059e098ca83d6c0bbd4bbad423",
+      "ef4477b1efd34b0dd98e1440815b468df79abcadbefcf814a217937bd2ad9c71"
+    ],
+    "fresh": {
+      "first": 229,
+      "second": 216,
+      "tasks": 313,
+      "union": 262
+    },
+    "historical": {
+      "first": 229,
+      "second": 213,
+      "tasks": 313,
+      "union": 261
+    },
+    "independently_built_category_image_ids": {
+      "array_test": "sha256:7d98026bfdaa29ff91315748242102395fa9a2bfb9642c79d207da6e4d4de02d",
+      "branch_test": "sha256:3f51ae59204de9761d4accbe2845c6d589b310d5451c7aba4aafb2787ae0f827",
+      "loop_test": "sha256:abad24ca9d32b494123b56b13da09a3b4fd4313c0a5b3aefe6ab70b185f9e28b",
+      "math_test": "sha256:30aec8c508e874f53803cf21bbea4eeaac5fd8a48b0750e9ebef84f740bfb9a7",
+      "numpy_operation_test": "sha256:dd03bc20683d2c56a0e711f8bb5eb9b75d1f15fbc9e3a0eb649f726c7a9775bc",
+      "numpy_ufunc_test": "sha256:0835e5a7600e68f65033b24f3775434bbd5b29659b4b89a0214bff639f1a59a7",
+      "syntax_test": "sha256:052b37b878714f1274c72dbda070bf1f003c6e7209942fb05231d3d6638af384"
+    },
+    "limitations": "Authentic saved candidate replay only. Original weak stdout oracle retained; not proof of semantic equivalence, security, or model regeneration.",
+    "live_model_calls": 0,
+    "native_compile_statuses": {
+      "FAIL": 147,
+      "PASS": 479
+    },
+    "native_runtime_statuses": {
+      "NOT_RUN": 147,
+      "PASS": 479
+    },
+    "original_evaluator_unchanged": true,
+    "saved_to_fresh_disagreements": [
+      {
+        "candidate_id": 1,
+        "fresh": true,
+        "saved": false,
+        "task_id": "branch_test/choice_of_the_knight"
+      },
+      {
+        "candidate_id": 1,
+        "fresh": true,
+        "saved": false,
+        "task_id": "math_test/pi_to_the_x"
+      },
+      {
+        "candidate_id": 1,
+        "fresh": true,
+        "saved": false,
+        "task_id": "math_test/spring_rocket"
+      }
+    ],
+    "scope": "Independent read-only ZIP audit of seven fresh original-MASCOT stage-2 candidate runs",
+    "source_archive_sha256": "a8ea14150dc1d4ddf53eb4ead450d88139d09b680683f673029877ce0c6e00ac",
+    "source_research_commit": "1e3c95d5357cd8b913a11916e562b6de7d633ccb",
+    "source_run_id": 39075744038,
+    "task_count": 313
+  },
+  "stage2_raw_taxonomy": {
+    "AttributeError": 56,
+    "Compiler.exceptions.CompilerError": 18,
+    "ImportError": 28,
+    "IndexError": 2,
+    "NameError": 17,
+    "SyntaxError": 1,
+    "TypeError": 22,
+    "ValueError": 1,
+    "unclassified_terminal_stderr": 2
+  },
+  "stage2_secondary": {
+    "attempt_count": 644,
+    "candidate_count": 626,
+    "category_metrics": {
+      "array_test": {
+        "candidates": 86,
+        "compiler_failures": 19,
+        "first": 32,
+        "second": 33,
+        "tasks": 43,
+        "union": 39
+      },
+      "branch_test": {
+        "candidates": 68,
+        "compiler_failures": 6,
+        "first": 29,
+        "second": 25,
+        "tasks": 34,
+        "union": 29
+      },
+      "loop_test": {
+        "candidates": 194,
+        "compiler_failures": 47,
+        "first": 70,
+        "second": 66,
+        "tasks": 97,
+        "union": 82
+      },
+      "math_test": {
+        "candidates": 76,
+        "compiler_failures": 11,
+        "first": 30,
+        "second": 31,
+        "tasks": 38,
+        "union": 36
+      },
+      "numpy_operation_test": {
+        "candidates": 64,
+        "compiler_failures": 21,
+        "first": 21,
+        "second": 19,
+        "tasks": 32,
+        "union": 24
+      },
+      "numpy_ufunc_test": {
+        "candidates": 68,
+        "compiler_failures": 17,
+        "first": 26,
+        "second": 23,
+        "tasks": 34,
+        "union": 28
+      },
+      "syntax_test": {
+        "candidates": 70,
+        "compiler_failures": 26,
+        "first": 21,
+        "second": 19,
+        "tasks": 35,
+        "union": 24
+      }
+    },
+    "compiler_statuses": {
+      "FAIL": 147,
+      "PASS": 479
+    },
+    "disagreements": [
+      {
+        "candidate_id": 1,
+        "task_id": "branch_test/choice_of_the_knight"
+      },
+      {
+        "candidate_id": 1,
+        "task_id": "math_test/pi_to_the_x"
+      },
+      {
+        "candidate_id": 1,
+        "task_id": "math_test/spring_rocket"
+      }
+    ],
+    "failure_classes": {
+      "None": 445,
+      "compile_failure": 147,
+      "oracle_reject": 34
+    },
+    "first": 229,
+    "original_oracle_statuses": {
+      "ACCEPT": 445,
+      "REJECT": 181
+    },
+    "raw_execution_files_sha256_checked": 1932,
+    "recovery_run": 39080161119,
+    "retries": 14,
+    "runtime_statuses": {
+      "NOT_RUN": 147,
+      "PASS": 479
+    },
+    "second": 216,
+    "source_run": 39075744038,
+    "task_count": 313,
+    "timed_out_attempts": 18,
+    "union": 262
+  },
+  "stage2_source": {
+    "categories": {
+      "array_test": {
+        "authentic_stage2_file_sha256": "77b547de4c81dd132e793500940338d39ed15e486990ea667daa9853d99e497d",
+        "candidates": 86,
+        "source_texts_found_in_mpc": 86,
+        "tasks": 43
+      },
+      "branch_test": {
+        "authentic_stage2_file_sha256": "8519a67c95d10dc3dcd4f91d50a1e4276338cebce1af36c6ee4c29617803830e",
+        "candidates": 68,
+        "source_texts_found_in_mpc": 68,
+        "tasks": 34
+      },
+      "loop_test": {
+        "authentic_stage2_file_sha256": "0477364bd0643bda87e612ae014a7e5c786bebb7eeeca40921a0055f12101007",
+        "candidates": 194,
+        "source_texts_found_in_mpc": 194,
+        "tasks": 97
+      },
+      "math_test": {
+        "authentic_stage2_file_sha256": "ffdd64718ac13973b665646eaa748322c3f22f779e8338f29e3b3d5980ee1649",
+        "candidates": 76,
+        "source_texts_found_in_mpc": 76,
+        "tasks": 38
+      },
+      "numpy_operation_test": {
+        "authentic_stage2_file_sha256": "3cef668c6279454b7609cc2fdda82778d6999b20365b632fb5f6b3b3f6b99814",
+        "candidates": 64,
+        "source_texts_found_in_mpc": 64,
+        "tasks": 32
+      },
+      "numpy_ufunc_test": {
+        "authentic_stage2_file_sha256": "23e41b4efd864f9407125fafba43bf7d665922c406a4f6089122374d3da3fc79",
+        "candidates": 68,
+        "source_texts_found_in_mpc": 68,
+        "tasks": 34
+      },
+      "syntax_test": {
+        "authentic_stage2_file_sha256": "d19cb4144cf3356db52989622f9699b3a8f6f9c31bcb98161d482f3530b2bcf4",
+        "candidates": 70,
+        "source_texts_found_in_mpc": 70,
+        "tasks": 35
+      }
+    },
+    "limitations": "Exact text inclusion and source identity, not proof of native functional correctness, privacy, or fresh LLM generation.",
+    "models_called": 0,
+    "scope": "Independent author-Zenodo-TAR to original native source input bytes",
+    "source_archive_sha256": "a8ea14150dc1d4ddf53eb4ead450d88139d09b680683f673029877ce0c6e00ac",
+    "source_strings_reconstructed": 0,
+    "verified_candidate_count": 626
+  },
+  "targeted_smoke": {
+    "records": 64,
+    "validation": {
+      "confirmed": true,
+      "executions": 64,
+      "native_pairs": 2,
+      "pairs": 32,
+      "private_pairs": 28,
+      "synthetic_pairs": 2
+    }
+  },
+  "workflow_run": "39493312330"
+}

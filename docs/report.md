@@ -1,5 +1,13 @@
 # Domain-safe branch lowering: supplementary experiment
 
+> **Historical 14 October draft — not the final submission.** The statements below
+> describe that earlier evidence scope. Original MASCOT replay, the original-source
+> privacy patch and paired experiments were subsequently completed within their
+> documented limits. Use the [current difficulty log](reproduction_log.md),
+> [requirement ledger](../research/requirements/assignment_traceability.md) and
+> [handoff](../HANDOFF.md) for current status. Final-report writing awaits Girish's
+> separate authorization; this file has not been rewritten as a final report.
+
 **Author:** Girish Nallan Chakravathy  
 **Assignment deadline:** 31 October 2026  
 **Status as of:** 14 October 2026 — partial, independently validated extension; **not** a full reproduction.  

@@ -1,0 +1,279 @@
+{
+  "scope": "Unchanged original oracle acceptance on complete authentic final-stage native data; not independent functional correctness or model generation",
+  "tasks": 313,
+  "candidate_pairs": 626,
+  "executions": 1252,
+  "live_model_calls": 0,
+  "variants": {
+    "baseline": {
+      "overall": {
+        "tasks": 313,
+        "first_accepted": 270,
+        "second_accepted": 266,
+        "union_accepted": 290,
+        "first_percent": 86.26198083067092,
+        "second_percent": 84.98402555910543,
+        "union_percent": 92.65175718849841
+      },
+      "categories": {
+        "array_test": {
+          "tasks": 43,
+          "first_accepted": 36,
+          "second_accepted": 35,
+          "union_accepted": 40,
+          "first_percent": 83.72093023255815,
+          "second_percent": 81.3953488372093,
+          "union_percent": 93.02325581395348
+        },
+        "branch_test": {
+          "tasks": 34,
+          "first_accepted": 34,
+          "second_accepted": 29,
+          "union_accepted": 34,
+          "first_percent": 100.0,
+          "second_percent": 85.29411764705883,
+          "union_percent": 100.0
+        },
+        "loop_test": {
+          "tasks": 97,
+          "first_accepted": 83,
+          "second_accepted": 85,
+          "union_accepted": 91,
+          "first_percent": 85.56701030927834,
+          "second_percent": 87.62886597938144,
+          "union_percent": 93.81443298969072
+        },
+        "math_test": {
+          "tasks": 38,
+          "first_accepted": 36,
+          "second_accepted": 37,
+          "union_accepted": 38,
+          "first_percent": 94.73684210526316,
+          "second_percent": 97.36842105263158,
+          "union_percent": 100.0
+        },
+        "numpy_operation_test": {
+          "tasks": 32,
+          "first_accepted": 24,
+          "second_accepted": 24,
+          "union_accepted": 25,
+          "first_percent": 75.0,
+          "second_percent": 75.0,
+          "union_percent": 78.125
+        },
+        "numpy_ufunc_test": {
+          "tasks": 34,
+          "first_accepted": 31,
+          "second_accepted": 31,
+          "union_accepted": 32,
+          "first_percent": 91.17647058823529,
+          "second_percent": 91.17647058823529,
+          "union_percent": 94.11764705882354
+        },
+        "syntax_test": {
+          "tasks": 35,
+          "first_accepted": 26,
+          "second_accepted": 25,
+          "union_accepted": 30,
+          "first_percent": 74.28571428571429,
+          "second_percent": 71.42857142857143,
+          "union_percent": 85.71428571428571
+        }
+      },
+      "compile_statuses": {
+        "FAIL": 75,
+        "PASS": 551
+      },
+      "runtime_statuses": {
+        "NOT_RUN": 75,
+        "PASS": 550,
+        "TIMEOUT": 1
+      },
+      "failure_classes": {
+        "compile_failure": 75,
+        "none": 536,
+        "oracle_reject": 14,
+        "timeout": 1
+      },
+      "accepted_without_completed_runtime": 0,
+      "candidate_wall_seconds": {
+        "total": 11447.602943991997,
+        "mean": 18.286905661329065,
+        "median": 7.3626276750001125
+      }
+    },
+    "modified": {
+      "overall": {
+        "tasks": 313,
+        "first_accepted": 271,
+        "second_accepted": 263,
+        "union_accepted": 290,
+        "first_percent": 86.5814696485623,
+        "second_percent": 84.02555910543131,
+        "union_percent": 92.65175718849841
+      },
+      "categories": {
+        "array_test": {
+          "tasks": 43,
+          "first_accepted": 36,
+          "second_accepted": 35,
+          "union_accepted": 40,
+          "first_percent": 83.72093023255815,
+          "second_percent": 81.3953488372093,
+          "union_percent": 93.02325581395348
+        },
+        "branch_test": {
+          "tasks": 34,
+          "first_accepted": 34,
+          "second_accepted": 29,
+          "union_accepted": 34,
+          "first_percent": 100.0,
+          "second_percent": 85.29411764705883,
+          "union_percent": 100.0
+        },
+        "loop_test": {
+          "tasks": 97,
+          "first_accepted": 83,
+          "second_accepted": 84,
+          "union_accepted": 91,
+          "first_percent": 85.56701030927834,
+          "second_percent": 86.5979381443299,
+          "union_percent": 93.81443298969072
+        },
+        "math_test": {
+          "tasks": 38,
+          "first_accepted": 37,
+          "second_accepted": 35,
+          "union_accepted": 38,
+          "first_percent": 97.36842105263158,
+          "second_percent": 92.10526315789474,
+          "union_percent": 100.0
+        },
+        "numpy_operation_test": {
+          "tasks": 32,
+          "first_accepted": 24,
+          "second_accepted": 24,
+          "union_accepted": 25,
+          "first_percent": 75.0,
+          "second_percent": 75.0,
+          "union_percent": 78.125
+        },
+        "numpy_ufunc_test": {
+          "tasks": 34,
+          "first_accepted": 31,
+          "second_accepted": 31,
+          "union_accepted": 32,
+          "first_percent": 91.17647058823529,
+          "second_percent": 91.17647058823529,
+          "union_percent": 94.11764705882354
+        },
+        "syntax_test": {
+          "tasks": 35,
+          "first_accepted": 26,
+          "second_accepted": 25,
+          "union_accepted": 30,
+          "first_percent": 74.28571428571429,
+          "second_percent": 71.42857142857143,
+          "union_percent": 85.71428571428571
+        }
+      },
+      "compile_statuses": {
+        "FAIL": 75,
+        "PASS": 551
+      },
+      "runtime_statuses": {
+        "NOT_RUN": 75,
+        "PASS": 550,
+        "TIMEOUT": 1
+      },
+      "failure_classes": {
+        "compile_failure": 75,
+        "none": 534,
+        "oracle_reject": 16,
+        "timeout": 1
+      },
+      "accepted_without_completed_runtime": 0,
+      "candidate_wall_seconds": {
+        "total": 11465.480443022005,
+        "mean": 18.315463966488828,
+        "median": 7.3835871009998755
+      }
+    }
+  },
+  "paired_task_outcomes": {
+    "first": {
+      "tasks": 313,
+      "baseline_accepted": 270,
+      "modified_accepted": 271,
+      "gained": 1,
+      "lost": 0,
+      "unchanged": 312,
+      "difference_percentage_points": 0.3194888178913738,
+      "mcnemar_exact_two_sided_p": 1.0,
+      "bootstrap_95_percentile_pp": [
+        0.0,
+        0.9584664536741214
+      ],
+      "bootstrap_replicates": 10000,
+      "bootstrap_seed": 20261016,
+      "uncertainty_scope": "Exploratory task-resampling interval for this fixed archive; a degenerate interval with no observed discordance is not a population-equivalence proof. No multiplicity-adjusted significance claim."
+    },
+    "second": {
+      "tasks": 313,
+      "baseline_accepted": 266,
+      "modified_accepted": 263,
+      "gained": 0,
+      "lost": 3,
+      "unchanged": 310,
+      "difference_percentage_points": -0.9584664536741214,
+      "mcnemar_exact_two_sided_p": 0.25,
+      "bootstrap_95_percentile_pp": [
+        -2.236421725239617,
+        0.0
+      ],
+      "bootstrap_replicates": 10000,
+      "bootstrap_seed": 20261016,
+      "uncertainty_scope": "Exploratory task-resampling interval for this fixed archive; a degenerate interval with no observed discordance is not a population-equivalence proof. No multiplicity-adjusted significance claim."
+    },
+    "union": {
+      "tasks": 313,
+      "baseline_accepted": 290,
+      "modified_accepted": 290,
+      "gained": 0,
+      "lost": 0,
+      "unchanged": 313,
+      "difference_percentage_points": 0.0,
+      "mcnemar_exact_two_sided_p": 1.0,
+      "bootstrap_95_percentile_pp": [
+        0.0,
+        0.0
+      ],
+      "bootstrap_replicates": 10000,
+      "bootstrap_seed": 20261016,
+      "uncertainty_scope": "Exploratory task-resampling interval for this fixed archive; a degenerate interval with no observed discordance is not a population-equivalence proof. No multiplicity-adjusted significance claim."
+    }
+  },
+  "candidate_transitions": {
+    "rejected_to_accepted": 1,
+    "accepted_to_rejected": 3,
+    "unchanged_decision": 622
+  },
+  "source_change_groups": {
+    "byte_identical_source": {
+      "candidate_pairs": 624,
+      "accepted_to_rejected": 3,
+      "rejected_to_accepted": 1,
+      "wall_seconds_difference_mean": 0.025385036948733227,
+      "note": "One paired run per candidate; variation in byte-identical sources is not a postprocessing effect. Timing is descriptive."
+    },
+    "changed_source": {
+      "candidate_pairs": 2,
+      "accepted_to_rejected": 0,
+      "rejected_to_accepted": 0,
+      "wall_seconds_difference_mean": 1.0186179869999705,
+      "note": "One paired run per candidate; variation in byte-identical sources is not a postprocessing effect. Timing is descriptive."
+    }
+  },
+  "ablation": "Only postprocessor enabled versus disabled; same authentic candidate bytes, template, native oracle, compiler, resource budget and protocol within each pair",
+  "research_commit": "b5846f5be000e6f511ed319011549ed4aaa8472c"
+}

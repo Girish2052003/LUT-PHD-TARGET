@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_on": "2026-10-20",
+  "updated_on": "2026-10-21",
   "scope": "Documentation index of substantive original-source reproduction difficulties, separate independent experiments, and evidence-recovery failures. Not a claim that every incidental CI cancellation is a scientific experiment.",
   "entries": [
     {
@@ -182,16 +182,24 @@
     {
       "id": "readiness_accounting_repair",
       "problem": "R8 checker initially validated only stage2 counts and accepted altered provenance/category/disagreement fields; main status and 14 October documents were stale.",
-      "resolution": "PR13 adds mutation regressions and cross-project difficulty index. Six added guards demonstrably failed at 26ccdb0 in run39492627095; acceptance depends on corrected checks and independent final review.",
-      "status": "IN_PROGRESS",
+      "resolution": "PR13 repairs fail-open provenance and category/disagreement accounting, adds 13-family cross-project documentation, and preserves intentional RED mutation runs followed by GREEN execution at45a51e6. Raw audit39493312330 rechecks31pinnedZIPs without native/model execution. Independent review found no critical/important defect at45a51e6. A separate tested authorization-scope guard preserves merge-only permission and leaves R9/report writing blocked; final PR CI and review govern integration.",
+      "status": "RESOLVED_WITH_SCOPE",
       "runs": [
         39261150673,
-        39492627095
+        39492627095,
+        39492946695,
+        39493312087,
+        39493312330
       ],
       "evidence_paths": [
         "scripts/verify_reproduction_difficulty_coverage.py",
         "tests/test_original_reproduction_difficulty_coverage.py",
-        "research/reviews/r8-independent-difficulty-documentation-20261019.md"
+        "research/reviews/r8-independent-difficulty-documentation-20261019.md",
+        "docs/reproduction_log.md",
+        "research/reviews/final-readiness-findings-20261020.md",
+        "research/reviews/final-readiness-review-20261021.md",
+        "research/evidence/2026-10-21/final-readiness/receipt.json",
+        "tests/test_handoff.py"
       ]
     }
   ]

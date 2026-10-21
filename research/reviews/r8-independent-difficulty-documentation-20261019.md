@@ -1,5 +1,11 @@
 # R8 evidence audit: exact original native failure inventory and reproduction difficulties — 19 October 2026
 
+> **Superseded acceptance scope, 21 October:** This dated memo describes the initial
+> stage-2 checker. Its fail-open provenance and project-coverage gaps were found
+> and repaired in PR #13. See `final-readiness-findings-20261020.md` and
+> `final-readiness-review-20261021.md`. Its historical R9 PASS statement is no
+> longer current: merge permission is not report-readiness exception acceptance.
+
 **Not a professor-facing report.** The original professor's requirement is to `document any difficulties encountered during reproduction`. R8 is a **documentation** obligation; reproducing inaccessible historical model calls is a *different* R2/R3/B3 experimental requirement.
 
 The complete original source-run first-stage evaluator receipt and independent second-stage raw 7-category ZIP review, `research/evidence/2026-10-18/stage2-original-full-independent-acceptance.json`, `research/evidence/2026-10-18/phase-g-stage2-raw-secondary-independent-audit.json` and `research/evidence/2026-10-18/stage2-native-reproduction-difficulties.json`, preserve **313 exact original tasks, 626 candidate results, 644 native attempts**, all seven categories, original SHA-256 source pin and original unchanged native stdout oracle. A new fail-closed read-only `scripts/verify_reproduction_difficulty_coverage.py` reconciles all three recorded independent reviews and refuses to count an unsuccessful aggregation as success.

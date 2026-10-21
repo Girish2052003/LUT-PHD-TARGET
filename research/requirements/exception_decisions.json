@@ -7,8 +7,7 @@
       "status": "ACCEPTED",
       "requirement_ids": [
         "R2",
-        "R3",
-        "R8"
+        "R3"
       ],
       "evidence_paths": [
         "research/reviews/historical-gpt4-availability-and-exception-20261018.md",
@@ -22,7 +21,9 @@
       "authorization_sha256": "fbffc851beef69c527772e1e62b3ae346ceea647f2c1c30ab0c13074fba3175c",
       "decision_quote": "Akka try to produce the non producible first and then u can merge if still no chances.",
       "decision_date": "2026-10-18",
-      "limitations": "Original paper's historical GPT-4 Turbo/particular Azure deployment cannot be independently replayed from pinned model/version/credentials; Level 2 saved-source MASCOT reproduction is accepted only in native-evaluator scope."
+      "limitations": "Original paper's historical GPT-4 Turbo/particular Azure deployment cannot be independently replayed from pinned model/version/credentials; Level 2 saved-source MASCOT reproduction is accepted only in native-evaluator scope. The preserved quote permits conditional research integration only; it does not accept these missing experiments for the separate report-readiness gate or authorize writing.",
+      "authorization_scope": "RESEARCH_INTEGRATION",
+      "report_readiness_status": "PENDING_USER_DECISION"
     },
     {
       "id": "NO_REFACTORING",
@@ -42,7 +43,10 @@
       "authorization_sha256": "fbffc851beef69c527772e1e62b3ae346ceea647f2c1c30ab0c13074fba3175c",
       "decision_quote": "Akka try to produce the non producible first and then u can merge if still no chances.",
       "decision_date": "2026-10-18",
-      "limitations": "No correctly identified authentic SPDZCoder no-refactoring source corpus/evaluation was recovered. Coincidentally matching UniTrans/GPT-4 baseline numbers are not valid substitution."
+      "limitations": "No correctly identified authentic SPDZCoder no-refactoring source corpus/evaluation was recovered. Numerically matching UniTrans/GPT-4 baseline numbers are not valid substitution. The preserved quote permits conditional research integration only; it does not accept these missing experiments for the separate report-readiness gate or authorize writing.",
+      "authorization_scope": "RESEARCH_INTEGRATION",
+      "report_readiness_status": "PENDING_USER_DECISION"
     }
-  ]
+  ],
+  "scope_reconciliation_on": "2026-10-21"
 }

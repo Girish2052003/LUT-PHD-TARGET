@@ -27,7 +27,7 @@ it does not mean the whole assignment is finished.
 | E1 — Accepted original-modification paired smoke | **PASS** | 32pairs/64executions;2authentictranslations preserve tested outputs and remove50observed openingevents. No full-regression or general privacy guarantee. |
 | F — Paired baseline and modification comparison | **PASS** | Full fair 626-pair original-vs-patched original-native MASCOT comparison accepted WITH bounded interpretation: only 2 source changes, 4 source-identical control acceptance flips, no attributable overall correctness gain; targeted opening removal and extra protocol costs. |
 | G — Practical evidence acceptance | **PASS** | Original-source native research PR #6 merged at exact main f5a4d749964dfc0c6050bbdfdd0bdc2cf1fdfaea; exact-main research regression/compiler/cleartext emulator run39137690936 and provenance run39137690949 successful (159 tests). Read-only native/original source audits and explicit bounded historical exceptions independently documented. Historical GPT-4 model generation and original no-refactoring ablation remain NOT REPRODUCED; no general security proof. |
-| REPORT — Final report readiness (writing locked) | **BLOCKED** | Professor-facing REPORT WRITING remains BLOCKED and NOT AUTHORIZED. R9 practical readiness can pass on exact main with two explicitly accepted, prominently NOT REPRODUCED historical scientific exceptions; separate Girish permission is still mandatory before any drafting/email. |
+| REPORT — Final report readiness (writing locked) | **BLOCKED** | Report writing is BLOCKED and NOT AUTHORIZED. R9 is BLOCKED pending explicit report-scope acceptance of two disclosed NOT REPRODUCED historical experiments; the18October quote permits research integration only. R8 documentation PASS does not promote R2/R3/B3. |
 
 Machine-readable state: [research/progress.json](research/progress.json).
 Requirement gates: [R1–R9 ledger](research/requirements/assignment_traceability.md).
@@ -39,17 +39,33 @@ I'm studying [SPDZCoder](https://arxiv.org/abs/2501.00363), which translates ord
 
 This repository is my working record for the coding assignment from Professor Prabhat Kumar at LUT University, due **31 October 2026**.
 
-## Where the work stands
+## Where the work stands — 21 October 2026
 
-I've implemented and tested a reconstruction of the paper's refactoring, generation, self-reflection and repair workflow. I also reproduced the specific bubble-sort repair shown in Figure 4 and tested an additional privacy-validation step using the MP-SPDZ compiler and its cleartext emulator.
+The authentic author-source reproduction, narrow privacy modification and full
+paired experiment have been executed and independently checked within their
+recorded scopes. Final-stage original MASCOT replay covers **1,252 candidates**;
+stage 2 covers **626 candidates / 644 attempts**. The modified-original experiment
+covers **626 matched pairs**. Only two candidate programs change; both preserve
+native acceptance. Targeted private-input probes reduce observed explicit
+intermediate opening events **50 to 0**. Four acceptance flips on unchanged-source
+controls prevent attributing aggregate accuracy changes to the patch.
 
-**The original release has now been located.** On 14 October Professor Kumar supplied the [published ACM paper](https://doi.org/10.1145/3845985) and the [official Zenodo artifact](https://zenodo.org/records/18152253). I downloaded and checksum-verified the authors' 65,761,280-byte archive and identified all 313 original MPC task programs, seven processed input splits, their pipeline code and generated baseline/final-stage outputs. I also independently summed the authors' saved **first-candidate** evaluation flags: **269/313 = 85.94%**, matching the published pass@1. That is a recalculation from **archived author-evaluated outcomes**, not a fresh LLM generation or secure-protocol rerun. The saved same-task union is **288/313 = 92.01%**. Exact task-identity reconciliation and fresh evaluator replay are separate gates.
+[PR #13](https://github.com/Girish2052003/LUT-PHD-TARGET/pull/13) reconciles difficulty
+documentation, fixes fail-open evidence checks, and preserves a successful
+[31-artifact raw audit](https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39493312330).
+**R8 documentation PASS** is separate from **R2/R3 IN_PROGRESS**. Historical
+GPT-4/Azure generation and the genuine SPDZCoder without-refactoring ablation
+remain **NOT REPRODUCED**. R9 and report writing are blocked pending Girish's
+report-scope decision and explicit writing authorization. The recorded conditional
+permission permits research integration only. See the [current handoff](HANDOFF.md)
+and [difficulty log](docs/reproduction_log.md); dated interim reports are not ready
+for submission.
 
 ## Official-source reproduction track
 
 I keep the source-provenance and task-count evidence in [my original-artifact report](docs/original_artifact_reproduction.md). The GitHub workflow [inspects the exact published Zenodo TAR](.github/workflows/professor-artifacts.yml), checks its published MD5, and records the native benchmark/evaluation metadata. The original code is downloaded at run time and is **not silently substituted for the independently implemented code here**.
 
-## What I've implemented
+## Earlier independent reconstruction (supporting work)
 
 | Part | What it covers | Evidence |
 |---|---|---|
@@ -61,7 +77,7 @@ I keep the source-provenance and task-count evidence in [my original-artifact re
 
 The authors' code, dataset and prompt examples are now accessible through Zenodo, but the files under `src/spdz_audit/` remain **my independent reconstruction**, not modified copies of the authors' code. My earlier scripted responses are fixtures, not original model samples. I have not made live model API calls. Later research PR #6 and its merged PR #7–#9 contributions already performed original saved-candidate MASCOT replay and narrow original-source paired experiments. The historical model-generation stage has not been rerun.
 
-## Results so far
+## Earlier independent results (separate from original MASCOT)
 
 | Experiment | Measured result | What it establishes |
 |---|---|---|
@@ -104,6 +120,12 @@ The MP-SPDZ tests run in [GitHub Actions](https://github.com/Girish2052003/LUT-P
 
 The authors' original source and 313-task dataset are available in the checksum-verified Zenodo release. Original benchmark identities, native evaluator replay, authentic limitation witnesses, a narrow original-pipeline patch, and full paired native comparisons are now experimentally accepted **within their recorded scopes**. See the Phase A–F status table above and the exact independent acceptance files under `research/reviews/`; these are not historical LLM generation or a universal correctness/security proof.
 
-**Remaining practical work:** Phase G final requirements reconciliation, scientific exception decisions, review of PR #6 against exact GitHub evidence, approved integration to `main`, and exact-main CI. R2/R3/R8 remain `IN_PROGRESS`; original historical model-generation B3 is `BLOCKED` pending a separate explicit user decision, and the genuine SPDZCoder *without-refactoring* published ablation is not independently recoverable from an identified original output corpus. No report writing or professor email has been authorized.
+**Remaining work:** review/merge PR #13 with exact-head CI, then validate actual
+merged main. R8 difficulty documentation is PASS; R2/R3 remain IN_PROGRESS.
+Historical model generation (B3) and genuine SPDZCoder without-refactoring remain
+NOT REPRODUCED. Girish must explicitly decide whether to accept those two gaps
+for report scope and authorize final-report writing. PR #6 and the native paired
+experiments are already integrated; do not repeat them. No email/submission is
+authorized.
 
 The dated reproduction log preserves its original chronology; current acceptance and unresolved issues are tracked in `research/progress.json` and `research/requirements/assignment_traceability.yaml`.

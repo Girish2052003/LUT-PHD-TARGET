@@ -1,0 +1,31 @@
+{
+  "scope": "Re-audit receipt retrieved and independently reviewed 21 October; workflow executed 20 October. No new native executions or model calls.",
+  "source_research_commit": "45a51e612453bab03c34e66bd9fe8977e2290e75",
+  "workflow_run_id": 39493312330,
+  "workflow_job_id": 118871808535,
+  "workflow_conclusion": "success",
+  "artifact_id": 12296548051,
+  "artifact_name": "final-original-evidence-readiness",
+  "artifact_size_bytes": 583101,
+  "artifact_sha256": "912dd08ff6d57ba9c8607217ec189be6a6279ec284ec0f0f26be695f77202e17",
+  "artifact_created_at": "2026-10-20T20:37:20Z",
+  "artifact_expires_at": "2027-01-18T20:35:44Z",
+  "retrieved_on": "2026-10-21",
+  "files": [
+    {
+      "path": "research/evidence/2026-10-21/final-readiness/final-native-summary.json",
+      "bytes": 5969,
+      "sha256": "613e2cc9d4902e49f2d1e61cd86c059225f1fff6776f3a3fb628df00553f20a1"
+    },
+    {
+      "path": "research/evidence/2026-10-21/final-readiness/paired-native-summary.json",
+      "bytes": 8941,
+      "sha256": "252276b77f7e1d9b27a70d1b0e143ce1d19fe59cbc766112c54ffc7890234f1f"
+    },
+    {
+      "path": "research/evidence/2026-10-21/final-readiness/raw-audit-acceptance.json",
+      "bytes": 32044,
+      "sha256": "994cc7b49aa8a52c8d6f4b16a6596a55b090b96c6f5cc5c666b1e5564fbff249"
+    }
+  ]
+}

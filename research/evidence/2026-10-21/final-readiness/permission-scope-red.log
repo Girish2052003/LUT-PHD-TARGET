@@ -1,0 +1,38 @@
+test_accepted_decision_requires_a_known_authorization_scope (tests.test_handoff.HandoffGateTests.test_accepted_decision_requires_a_known_authorization_scope) ... FAIL
+test_completed_phase_cannot_skip_unfinished_dependency (tests.test_handoff.HandoffGateTests.test_completed_phase_cannot_skip_unfinished_dependency) ... ok
+test_duplicate_and_unknown_status_rejected (tests.test_handoff.HandoffGateTests.test_duplicate_and_unknown_status_rejected) ... ok
+test_exception_cannot_cover_unrelated_unfinished_requirement (tests.test_handoff.HandoffGateTests.test_exception_cannot_cover_unrelated_unfinished_requirement) ... ok
+test_missing_or_changed_exception_approval_rejected (tests.test_handoff.HandoffGateTests.test_missing_or_changed_exception_approval_rejected) ... ok
+test_pass_requires_evidence_and_exact_commit (tests.test_handoff.HandoffGateTests.test_pass_requires_evidence_and_exact_commit) ... ok
+test_pass_requires_execution_and_independent_check (tests.test_handoff.HandoffGateTests.test_pass_requires_execution_and_independent_check) ... ok
+test_passed_requirement_requires_its_phases (tests.test_handoff.HandoffGateTests.test_passed_requirement_requires_its_phases) ... ok
+test_pending_exception_cannot_claim_approval (tests.test_handoff.HandoffGateTests.test_pending_exception_cannot_claim_approval) ... ok
+test_r9_readiness_can_be_independent_from_report_phase (tests.test_handoff.HandoffGateTests.test_r9_readiness_can_be_independent_from_report_phase) ... ok
+test_report_authorization_requires_practical_readiness (tests.test_handoff.HandoffGateTests.test_report_authorization_requires_practical_readiness) ... ok
+test_report_phase_cannot_pass_when_r9_is_blocked (tests.test_handoff.HandoffGateTests.test_report_phase_cannot_pass_when_r9_is_blocked) ... ok
+test_report_readiness_requires_both_scoped_exceptions (tests.test_handoff.HandoffGateTests.test_report_readiness_requires_both_scoped_exceptions) ... ok
+test_report_scope_cannot_claim_all_while_r2_remains_open (tests.test_handoff.HandoffGateTests.test_report_scope_cannot_claim_all_while_r2_remains_open) ... ok
+test_research_merge_permission_cannot_accept_report_scope (tests.test_handoff.HandoffGateTests.test_research_merge_permission_cannot_accept_report_scope) ... FAIL
+
+======================================================================
+FAIL: test_accepted_decision_requires_a_known_authorization_scope (tests.test_handoff.HandoffGateTests.test_accepted_decision_requires_a_known_authorization_scope)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/7cbc31894eab/LUT-PHD-TARGET/tests/test_handoff.py", line 118, in test_accepted_decision_requires_a_known_authorization_scope
+    with self.assertRaisesRegex(ValueError, "authorization scope"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_research_merge_permission_cannot_accept_report_scope (tests.test_handoff.HandoffGateTests.test_research_merge_permission_cannot_accept_report_scope)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/7cbc31894eab/LUT-PHD-TARGET/tests/test_handoff.py", line 107, in test_research_merge_permission_cannot_accept_report_scope
+    with self.assertRaisesRegex(ValueError, "scoped irreproducibility"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.029s
+
+FAILED (failures=2)
