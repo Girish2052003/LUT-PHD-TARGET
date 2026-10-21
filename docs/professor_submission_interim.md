@@ -1,5 +1,13 @@
 # SPDZCoder: reproduction progress and privacy-aware validation
 
+> **Historical 14 October draft — not the final submission.** The statements below
+> describe that earlier evidence scope. Original MASCOT replay, the original-source
+> privacy patch and paired experiments were subsequently completed within their
+> documented limits. Use the [current difficulty log](reproduction_log.md),
+> [requirement ledger](../research/requirements/assignment_traceability.md) and
+> [handoff](../HANDOFF.md) for current status. Final-report writing awaits Girish's
+> separate authorization; this file has not been rewritten as a final report.
+
 **14 October update:** Professor Kumar has since provided the [original source and benchmark on Zenodo](https://zenodo.org/records/18152253) and the [ACM version](https://doi.org/10.1145/3845985). The historical limitations in this interim report describe the state *before receiving those links*. The original package has now been checksum-verified; its 313 task programs and saved outputs were inventoried, and 269/313 first-candidate successes were independently counted from the archived evaluation records. I have **not yet** run the original secure-protocol evaluator or regenerated historic model outputs. See [original artifact reproduction](original_artifact_reproduction.md).
 
 **Girish Nallan Chakravathy** · Research progress as of 14 October 2026  

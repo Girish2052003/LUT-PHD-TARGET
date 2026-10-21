@@ -81,8 +81,8 @@ candidates execute only in the read-only, non-root, network-none MASCOT containe
 
 The smoke workflow records CPU/kernel/runner information and both variants' raw
 cost output. Timing is descriptive; no speed advantage is asserted from one run.
-Complete native paired coverage and statistical/regression analysis remain a
-separate Phase F gate after the smoke evidence is accepted.
+Complete native paired coverage and its bounded analysis were subsequently accepted
+in Phase F; see the full comparison checkpoint below.
 
 ## Accepted E1 result
 
@@ -120,3 +120,28 @@ python scripts/verify_paired_replay.py --root results/paired-smoke \
 
 Run only the reviewed Docker workflow. Never import/execute downloaded candidate
 source on a host containing user credentials or sensitive files.
+
+## Accepted full comparison — current checkpoint, 21 October 2026
+
+Phase F completed in run **38989067493** at
+`b5846f5be000e6f511ed319011549ed4aaa8472c`: **313 tasks, 626 matched candidate
+pairs, 1,252 executions and 1,280 attempts**. Baseline first/second/union acceptance
+is **270/266/290**; modified acceptance is **271/263/290**. Exactly two candidate
+sources change (`count_distinct` candidate 1 and `is_ascending` candidate 0), both
+ACCEPT to ACCEPT. Four acceptance flips occur among the 624 byte-identical source
+controls; no causal aggregate accuracy gain is established.
+
+The targeted smoke's native runtime measurements are count_distinct
+**28.5628 to 31.3084 seconds** and is_ascending **14.2188 to 14.2445 seconds**.
+The separate full-paired run measured **18.6831 to 20.6538 seconds** and
+**8.822 to 8.86707 seconds**, respectively. Keep these single-run measurements
+attached to their own run; neither proves general speed or precision behavior.
+
+The patch is exercised as its exact added deterministic finalization step on
+authentic saved candidates. The preceding model-dependent original pipeline was
+not rerun. Mixed opened-operand `lower_bound` remains unchanged. See
+`research/reviews/phase-f-bounded-native-interpretation-20261018.md`,
+`research/reviews/paired-full-independent-control-audit.md` and
+`research/evidence/2026-10-21/final-readiness/raw-audit-acceptance.json`.
+Do not rerun accepted native experiments merely because an older dated note says
+Phase F is pending.

@@ -6,9 +6,11 @@ candidate bytes and native templates. It does not generate model responses.
 The wrapper collects per-candidate evidence; it does not replace the acceptance
 decision with a new oracle.
 
-The initial workflow attempts only `array_test/indicate_positive`, candidate 0
-from the original final-stage output. Expand only after a healthy smoke result.
-No full-benchmark result is established merely by adding this runner.
+The initial smoke used `array_test/indicate_positive`, candidate 0. Full coverage
+was subsequently completed: 1,252 final-stage original candidates and 626 stage-2
+candidates, with independent raw-evidence review. See `HANDOFF.md` and
+`research/reviews/final-readiness-review-20261021.md` for current state. Preserve
+the original failures; do not repeat the completed smoke/full phases.
 
 ## Pins and disclosed differences
 

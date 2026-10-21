@@ -5,6 +5,44 @@ doing work. Do not restart completed milestones.** The assignment is due
 31 October 2026. The final report is locked pending practical evidence and
 Girish's explicit authorization.
 
+## Current checkpoint — 21 October 2026, PR #13
+
+Resume from **[PR #13](https://github.com/Girish2052003/LUT-PHD-TARGET/pull/13)**,
+`research/r8-difficulty-acceptance-20261019`; prior main is
+`b8c94068e1fecfcd716c1ce2f71bf95a05a5f038`. Fetch live refs before acting.
+The initial audit implementation at `45a51e612453bab03c34e66bd9fe8977e2290e75`
+passed [raw evidence audit 39493312330](https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39493312330),
+R8 accounting and regression/compiler/emulator/provenance workflows. The audit
+rechecked 31 preserved ZIPs without new native or model executions. Independent
+code/evidence review found no critical or important defect at that commit.
+See `research/reviews/final-readiness-review-20261021.md` for exact scope and receipts.
+
+**Current requirement markers:** R1/R4/R5/R6/R7/**R8 PASS** in bounded scopes;
+**R2/R3 IN_PROGRESS**, **B3 BLOCKED**, genuine without-refactoring **NOT REPRODUCED**.
+**R9 BLOCKED**: the 18 October quote accepted conditional research integration only,
+not report-readiness exceptions. **REPORT BLOCKED; report_authorized false.**
+R8 is documentation of difficulties, so it no longer depends on B3 succeeding.
+This is a permission-scope correction, not lost experimental progress.
+
+**Completed phases to preserve:** M1–M6, A, B1, B2a, B2b, B2, C1, C, D1, D, E,
+E1, F, G. Original-source execution, limitation, patch and full comparisons are
+already verified in their declared scopes. Do not repeat them because an old
+chronological entry says they are pending. Four identical-source outcome flips
+cannot be credited to the patch; only two of 626 candidate sources changed.
+
+**Resume sequence:** check live PR13 review/checks. If still open, finish exact-head
+CI and review, merge verified changes, then inspect actual merged-main workflows.
+If merged and main checks pass, do not repeat integration: present the two missing
+historical experiments and ask Girish to accept them for report scope and authorize
+writing. Then draft/verify the brief report in a separate phase. No paid calls,
+substitute historical outputs, email or submission are authorized.
+
+`docs/report.md` and `docs/professor_submission_interim.md` are explicitly historical
+14 October material. Current difficulties and their resolutions are in
+`docs/reproduction_log.md` and `research/reproduction_difficulties.json`.
+
+**All dated checkpoints below are preserved chronology, not current instructions.**
+
 ## Superseding Phase G integration and practical readiness PASS — 18 October 2026
 
 **Evidence-qualified source integration now verified on exact `main`:** original research PR #6 merged as `f5a4d749964dfc0c6050bbdfdd0bdc2cf1fdfaea`. Independently checked [main research verification 39137690936](https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39137690936) (**159 tests, real compiler and cleartext emulator PASS**) and [main authors' artifact provenance 39137690949](https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39137690949) (**PASS**). Final reader-oriented acceptance record: `research/reviews/phase-g-merged-main-practical-acceptance-20261018.md`.

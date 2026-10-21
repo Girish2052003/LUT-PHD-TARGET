@@ -92,8 +92,31 @@ class HandoffGateTests(unittest.TestCase):
             "authorization_sha256": hashlib.sha256(text).hexdigest(),
             "decision_quote": "Explicitly accepted by Girish for this fictional unit-test fixture.",
             "decision_date": "2026-10-18",
+            "authorization_scope": "REPORT_READINESS",
         })
         return approved, text
+
+    def test_research_merge_permission_cannot_accept_report_scope(self):
+        item, fake_bytes = self._approved(self._pending(targets=["R2"]))
+        item["authorization_scope"] = "RESEARCH_INTEGRATION"
+        req = [{"id": "R2", "status": "IN_PROGRESS", "phase_ids": [],
+                "required_exception_ids": ["HISTORICAL_LLM"]},
+               {"id": "R9", "status": "PASS", "phase_ids": []}]
+        with patch("scripts.check_handoff.safe_file",
+                   return_value=Mock(read_bytes=lambda: fake_bytes)):
+            with self.assertRaisesRegex(ValueError, "scoped irreproducibility"):
+                validate_gates([], req, False, None, [item])
+            req[-1]["status"] = "BLOCKED"
+            validate_gates([], req, False, None, [item])
+
+    def test_accepted_decision_requires_a_known_authorization_scope(self):
+        for scope in (None, "ALL_ACTIONS"):
+            item, fake_bytes = self._approved(self._pending(targets=["R2"]))
+            item["authorization_scope"] = scope
+            with patch("scripts.check_handoff.safe_file",
+                       return_value=Mock(read_bytes=lambda: fake_bytes)):
+                with self.assertRaisesRegex(ValueError, "authorization scope"):
+                    validate_exception_decisions([item], [{"id": "R2"}])
 
     def test_pending_exception_cannot_claim_approval(self):
         invalid = self._pending()

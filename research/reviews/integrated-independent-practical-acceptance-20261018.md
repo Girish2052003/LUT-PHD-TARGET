@@ -1,5 +1,12 @@
 # Independent practical-science acceptance review — 18 October 2026
 
+> **21 October attribution correction:** The 18.6831 to 20.6538 s and 8.822 to
+> 8.867 s runtime values in the cost paragraph below belong to full paired run
+> **38989067493**, not targeted smoke **38958484872**. Smoke runtime values are
+> 28.5628 to 31.3084 s and 14.2188 to 14.2445 s. The original observations are
+> preserved; this correction separates their run attribution. Current gate
+> status is in `research/requirements/assignment_traceability.yaml`.
+
 **Status:** Evidence-qualified independent review by the second assistant workstream, not an independent third-party security certification, not a mathematical noninterference proof, and **NOT the professor-facing final report**.
 
 ## Source and task integrity
