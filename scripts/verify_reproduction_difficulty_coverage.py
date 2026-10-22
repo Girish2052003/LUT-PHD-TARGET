@@ -165,7 +165,7 @@ def verify(stage, secondary, issues):
         "paper_original_no_refactoring_ablation_reproduced":False,
         "original_author_model_calls_this_audit":0,
         "native_MPC_executions_this_audit":0,
-        "professor_report_authorized":False,
+        "report_authorization_granted_by_this_audit":False,
         "limits":"This proves complete categorization for the enumerated 626 saved stage-2 candidates only, NOT every run in the whole project or underlying mathematical correctness; missing original model calls/ablation remain NOT REPRODUCED."
     }
 

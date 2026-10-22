@@ -1,0 +1,73 @@
+{
+  "scope": "Report draft artifact acceptance only; not professor acceptance, completion of missing historical experiments, or permission to submit",
+  "prepared_on": "2026-10-22",
+  "timezone": "Europe/Helsinki",
+  "research_base_commit": "c237aa4a6d98a16b141a9b178a046a121ea1e659",
+  "report_content_commit": "5e90d232f4d5aeadad3686c546e762b170749f00",
+  "report_pages": 5,
+  "report_markdown_words": 2031,
+  "local_regression_tests": 190,
+  "local_regression_conclusion": "PASS",
+  "independent_focused_tests": 30,
+  "independent_scientific_review": "PASS within documented scope; no remaining critical/important findings",
+  "visual_qa": {
+    "all_five_page_images_inspected": true,
+    "overflow_or_clipping_observed": false,
+    "tables": 3,
+    "pdf_external_hyperlinks": 14,
+    "pdf_out_of_bounds_word_count": 0,
+    "renderer": "documents/render_docx.py with --emit_pdf; LibreOfficeDev 26.8.0.0.alpha0; fitz geometry/text checks"
+  },
+  "original_professor_emails_rechecked": [
+    "2026-10-12",
+    "2026-10-14"
+  ],
+  "professor_assignment_fully_completed": false,
+  "missing_historical_experiments": [
+    "Original GPT-4/Azure generation sequence",
+    "Genuine SPDZCoder without-refactoring ablation"
+  ],
+  "user_accepted_disclosure_of_historical_gaps": true,
+  "professor_waiver_observed": false,
+  "external_submission_authorized": false,
+  "submitted": false,
+  "new_native_executions": 0,
+  "new_model_calls": 0,
+  "files": [
+    {
+      "path": "docs/final_report.md",
+      "bytes": 16512,
+      "sha256": "2a319b87c30dee25caf1fddc91758c598789bccb4c8daa4ab5b1352f39415271"
+    },
+    {
+      "path": "docs/final_report_evidence.md",
+      "bytes": 12920,
+      "sha256": "b2dfc5e475be6a048ae30ac7246a117526cde9213a3ee11e47fcff3b6a485b12"
+    },
+    {
+      "path": "docs/submission/SPDZCoder_Report_Girish.docx",
+      "bytes": 46268,
+      "sha256": "8cff387ace4b023cbec0240c0fabebbe246bb4d190efe59a9f08e60e140f8772"
+    },
+    {
+      "path": "docs/submission/SPDZCoder_Report_Girish.pdf",
+      "bytes": 190098,
+      "sha256": "10b298d7007a2decb71fa59cc2e459db4903eb258e248627f3a8dfe7f2d56b59"
+    },
+    {
+      "path": "scripts/build_final_report.py",
+      "bytes": 8292,
+      "sha256": "5b4cb55a7141abca78786be4da91fb08a46c7cc06bfbf8a8576d178d35cc9f1d"
+    },
+    {
+      "path": "research/reviews/final-report-independent-review-20261022.md",
+      "bytes": 11088,
+      "sha256": "c4a65009d4b202cfcb5fb87f70e1e1374fed581593de9883248a9fd4800dbb3f"
+    },
+    {
+      "path": "research/reviews/professor-requirements-recheck-20261022.md",
+      "bytes": 4601,
+      "sha256": "e951b1251fc45ac148bb638d87b58e92198552ee4c26e1296d09eedaed012338"
+    }
+  ]
+}

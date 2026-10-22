@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
-  "updated_on": "2026-10-21",
-  "current_pr": 13,
+  "updated_on": "2026-10-22",
+  "current_pr": 14,
   "historical_remote_main": "0ae96a968022325f3f678b19db1fcd69de483b70",
   "historical_reviewed_head": "5ca3809f15e8e326ff2d0a9b2e23993704be3dda",
   "resume_phase": "REPORT",
-  "report_authorized": false,
+  "report_authorized": true,
   "phases": [
     {
       "id": "M1",
@@ -268,7 +268,7 @@
       "id": "B3",
       "title": "Level 3: original model generation",
       "status": "BLOCKED",
-      "completion_scope": "Historical original model generation NOT executed. OpenAI API gpt-4-turbo-2024-04-09 scheduled for retirement 23 October 2026; original released Azure deployment version remains unpinned. Requires explicitly authorized account/model access plus cost budget OR explicitly approved irreproducibility exception.",
+      "completion_scope": "Historical original model generation NOT REPRODUCED: exact Azure deployment revision and full call history are unverified. Girish accepted the disclosed gap for report scope on 21 October; this acceptance does not reproduce the experiment. No new model calls are authorized.",
       "dependencies": [
         "A"
       ],
@@ -281,7 +281,7 @@
         "independently_checked": false,
         "reviewer": "Pending acceptance review"
       },
-      "next_action": "User decision required. Official OpenAI API retirement notice: 2026-10-23 for gpt-4-turbo-2024-04-09; no proof authors' original unpinned Azure deployment remains equivalent/available. Obtain actual verified deployment plus legal authorized paid credentials and cost ceiling for separate labeled pilot OR explicitly record accepted B3/no-refactoring irreproducibility exceptions. Never make paid calls, guess historical replies or silently mark B3 PASS.",
+      "next_action": "Preserve NOT REPRODUCED status. Girish accepted the disclosed historical gap for report scope on 21 October. Only additional authentic author provenance could close it; any newly authorized model run must be labeled NEW EXPERIMENT and requires separate provider/model/budget approval.",
       "redo_only_if": "Relevant source, configuration, evidence, or acceptance scope changes; document why."
     },
     {
@@ -514,14 +514,14 @@
         "independently_checked": true,
         "reviewer": "Independent read-only original native ZIP provenance/paired source audit, original TAR/Git archaeology and verified exact-main GitHub Actions acceptance; not external security certification"
       },
-      "next_action": "PR13 reconciles difficulty documentation and authorization scope. Review the exact PR head and require normal CI, R8 and raw-audit checks before merge; validate the actual merged main. Preserve historical failed runs and the31-artifact audit.",
+      "next_action": "PR #13 integration and exact-main verification completed at c237aa4 (all four main workflows PASS). Continue authorized report drafting; preserve the completed native experiments.",
       "redo_only_if": "Relevant source, configuration, evidence, or acceptance scope changes; document why."
     },
     {
       "id": "REPORT",
-      "title": "Final report readiness (writing locked)",
-      "status": "BLOCKED",
-      "completion_scope": "Report writing is BLOCKED and NOT AUTHORIZED. R9 is BLOCKED pending explicit report-scope acceptance of two disclosed NOT REPRODUCED historical experiments; the18October quote permits research integration only. R8 documentation PASS does not promote R2/R3/B3.",
+      "title": "Final report draft and deliverables",
+      "status": "PASS",
+      "completion_scope": "Five-page evidence-grounded Markdown/Word/PDF draft prepared for Girish review; independently checked against source/results; all five rendered pages inspected; 190 local tests pass. PASS covers the draft deliverable only. R2/R3 remain incomplete, and no professor waiver or external submission is implied. PR #14 integration is separately pending current-head CI.",
       "dependencies": [
         "A",
         "B2",
@@ -531,22 +531,30 @@
         "G"
       ],
       "evidence_paths": [
-        "research/reviews/final-readiness-review-20261021.md"
+        "research/reviews/final-readiness-review-20261021.md",
+        "research/requirements/report_authorization_user_decision-20261021.txt",
+        "docs/final_report.md",
+        "docs/final_report_evidence.md",
+        "docs/submission/SPDZCoder_Report_Girish.docx",
+        "docs/submission/SPDZCoder_Report_Girish.pdf",
+        "research/reviews/professor-requirements-recheck-20261022.md",
+        "research/reviews/final-report-independent-review-20261022.md",
+        "research/evidence/2026-10-22/report-draft/receipt.json"
       ],
-      "evidence_commit": null,
+      "evidence_commit": "5e90d232f4d5aeadad3686c546e762b170749f00",
       "verification": {
-        "implemented": false,
-        "executed": false,
-        "evidence_preserved": false,
-        "independently_checked": false,
-        "reviewer": "Pending acceptance review"
+        "implemented": true,
+        "executed": true,
+        "evidence_preserved": true,
+        "independently_checked": true,
+        "reviewer": "Separate-context scientific/source/evidence reviewer; primary-agent five-page render and exact artifact verification. This is not external certification."
       },
-      "next_action": "R8difficulty documentation is PASS. R2/R3remain IN_PROGRESS; B3and genuine no-refactoring NOT REPRODUCED. Present the completed practical evidence and ask Girish to accept those two gaps for report scope and explicitly authorize writing. Do not draft or send before that decision.",
+      "next_action": "Finish PR #14 current-head CI and merge, validate actual merged main, then present Word/PDF draft for Girish review. Historical model generation and genuine without-refactoring remain NOT REPRODUCED. No submission without explicit final authorization.",
       "redo_only_if": "Relevant source, configuration, evidence, or acceptance scope changes; document why."
     }
   ],
-  "current_branch": "research/original-evaluator-replay-20261015",
-  "validated_main_commit": "5fbc6095eb4e5a37b8818be7d1ec7596753445cd",
+  "current_branch": "research/final-report-20261021",
+  "validated_main_commit": "c237aa4a6d98a16b141a9b178a046a121ea1e659",
   "merged_prs": [
     {
       "number": 5,
@@ -556,6 +564,19 @@
         38640911552,
         38640911559
       ]
+    },
+    {
+      "number": 13,
+      "merge_commit": "c237aa4a6d98a16b141a9b178a046a121ea1e659",
+      "tested_head": "2758e5687eb956a47115c9bfa3b7384878bb2284",
+      "ci_runs": [
+        39541724306,
+        39541724468,
+        39541724568,
+        39541724665
+      ]
     }
-  ]
+  ],
+  "report_authorization_record": "research/requirements/report_authorization_user_decision-20261021.txt",
+  "report_authorization_sha256": "ee6d16f86c937e6984dbab0211ce94c4ca638c2d6d5450bb6d6a6a89a24d082b"
 }

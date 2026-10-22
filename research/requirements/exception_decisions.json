@@ -15,15 +15,23 @@
         "research/evidence/2026-10-18/final-attempt-original-no-refactoring-content-audit.json",
         "research/reviews/phase-g-final-recovery-and-conditional-exception-review-20261018.md",
         "research/evidence/2026-10-18/original-author-git-history-independent-audit.json",
-        "research/reviews/phase-g-original-hidden-history-independent-review-20261018.md"
+        "research/reviews/phase-g-original-hidden-history-independent-review-20261018.md",
+        "research/requirements/report_authorization_user_decision-20261021.txt"
       ],
-      "authorization_record": "research/requirements/conditional_merge_user_decision-20261018.txt",
-      "authorization_sha256": "fbffc851beef69c527772e1e62b3ae346ceea647f2c1c30ab0c13074fba3175c",
-      "decision_quote": "Akka try to produce the non producible first and then u can merge if still no chances.",
-      "decision_date": "2026-10-18",
-      "limitations": "Original paper's historical GPT-4 Turbo/particular Azure deployment cannot be independently replayed from pinned model/version/credentials; Level 2 saved-source MASCOT reproduction is accepted only in native-evaluator scope. The preserved quote permits conditional research integration only; it does not accept these missing experiments for the separate report-readiness gate or authorize writing.",
-      "authorization_scope": "RESEARCH_INTEGRATION",
-      "report_readiness_status": "PENDING_USER_DECISION"
+      "authorization_record": "research/requirements/report_authorization_user_decision-20261021.txt",
+      "authorization_sha256": "ee6d16f86c937e6984dbab0211ce94c4ca638c2d6d5450bb6d6a6a89a24d082b",
+      "decision_quote": "yes go for it!",
+      "decision_date": "2026-10-21",
+      "limitations": "Original paper's historical GPT-4 Turbo/particular Azure deployment cannot be independently replayed from pinned model/version/credentials; Level 2 saved-source MASCOT reproduction is accepted only in native-evaluator scope. On21October Girish explicitly accepted this NOT REPRODUCED item for report scope and authorized drafting. This does not claim historical reproduction or authorize paid calls/submission.",
+      "authorization_scope": "REPORT_READINESS",
+      "report_readiness_status": "ACCEPTED",
+      "prior_integration_decision": {
+        "authorization_record": "research/requirements/conditional_merge_user_decision-20261018.txt",
+        "authorization_sha256": "fbffc851beef69c527772e1e62b3ae346ceea647f2c1c30ab0c13074fba3175c",
+        "decision_quote": "Akka try to produce the non producible first and then u can merge if still no chances.",
+        "decision_date": "2026-10-18",
+        "authorization_scope": "RESEARCH_INTEGRATION"
+      }
     },
     {
       "id": "NO_REFACTORING",
@@ -37,15 +45,23 @@
         "research/evidence/2026-10-18/final-attempt-original-no-refactoring-content-audit.json",
         "research/reviews/phase-g-final-recovery-and-conditional-exception-review-20261018.md",
         "research/evidence/2026-10-18/original-author-git-history-independent-audit.json",
-        "research/reviews/phase-g-original-hidden-history-independent-review-20261018.md"
+        "research/reviews/phase-g-original-hidden-history-independent-review-20261018.md",
+        "research/requirements/report_authorization_user_decision-20261021.txt"
       ],
-      "authorization_record": "research/requirements/conditional_merge_user_decision-20261018.txt",
-      "authorization_sha256": "fbffc851beef69c527772e1e62b3ae346ceea647f2c1c30ab0c13074fba3175c",
-      "decision_quote": "Akka try to produce the non producible first and then u can merge if still no chances.",
-      "decision_date": "2026-10-18",
-      "limitations": "No correctly identified authentic SPDZCoder no-refactoring source corpus/evaluation was recovered. Numerically matching UniTrans/GPT-4 baseline numbers are not valid substitution. The preserved quote permits conditional research integration only; it does not accept these missing experiments for the separate report-readiness gate or authorize writing.",
-      "authorization_scope": "RESEARCH_INTEGRATION",
-      "report_readiness_status": "PENDING_USER_DECISION"
+      "authorization_record": "research/requirements/report_authorization_user_decision-20261021.txt",
+      "authorization_sha256": "ee6d16f86c937e6984dbab0211ce94c4ca638c2d6d5450bb6d6a6a89a24d082b",
+      "decision_quote": "yes go for it!",
+      "decision_date": "2026-10-21",
+      "limitations": "No correctly identified authentic SPDZCoder no-refactoring source corpus/evaluation was recovered. Numerically matching UniTrans/GPT-4 baseline numbers are not valid substitution. On21October Girish explicitly accepted this NOT REPRODUCED item for report scope and authorized drafting. This does not claim historical reproduction or authorize paid calls/submission.",
+      "authorization_scope": "REPORT_READINESS",
+      "report_readiness_status": "ACCEPTED",
+      "prior_integration_decision": {
+        "authorization_record": "research/requirements/conditional_merge_user_decision-20261018.txt",
+        "authorization_sha256": "fbffc851beef69c527772e1e62b3ae346ceea647f2c1c30ab0c13074fba3175c",
+        "decision_quote": "Akka try to produce the non producible first and then u can merge if still no chances.",
+        "decision_date": "2026-10-18",
+        "authorization_scope": "RESEARCH_INTEGRATION"
+      }
     }
   ],
   "scope_reconciliation_on": "2026-10-21"

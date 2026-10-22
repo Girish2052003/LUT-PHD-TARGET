@@ -1,7 +1,7 @@
 name: Final original evidence readiness audit
 on:
   push:
-    branches: ["main", "research/r8-difficulty-acceptance-20261019"]
+    branches: ["main", "research/r8-difficulty-acceptance-20261019", "research/final-report-20261021"]
     paths:
       - "scripts/**"
       - "research/final_audit_artifacts.json"

@@ -1,7 +1,7 @@
 name: Original stage2 reproduction difficulty independent accounting
 on:
   push:
-    branches: ["main", "research/r8-difficulty-acceptance-20261019"]
+    branches: ["main", "research/r8-difficulty-acceptance-20261019", "research/final-report-20261021"]
     paths:
       - "scripts/verify_reproduction_difficulty_coverage.py"
       - "tests/test_original_reproduction_difficulty_coverage.py"

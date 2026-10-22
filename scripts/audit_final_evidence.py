@@ -155,7 +155,7 @@ def main():
         "targeted_smoke":{"records":len(smoke),"validation":smoke_validation},
         "difficulty_documentation":r8,"new_model_calls":0,"new_native_executions":0,
         "historical_generation_reproduced":False,"genuine_no_refactoring_reproduced":False,
-        "report_authorized":False}
+        "report_authorization_granted_by_this_audit":False}
     (a.output/"acceptance.json").write_text(json.dumps(result,indent=2,sort_keys=True)+"\n")
     print(json.dumps({"source_insertion_records":len(final_rows),"stage2_records":secondary["candidate_count"],
         "paired_records":paired_audit["executions"],"smoke_records":len(smoke),

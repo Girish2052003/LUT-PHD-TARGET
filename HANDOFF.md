@@ -1,9 +1,37 @@
 # Start here — research handoff
 
+## Active checkpoint — report draft accepted for user review, 22 October 2026
+
+Girish's 21 October acceptance of the two historical gaps and drafting authorization
+is recorded. On 22 October he asked for a fresh check against the professor's email.
+That check is now in `research/reviews/professor-requirements-recheck-20261022.md`.
+It confirms the original scope and deadline, with no professor waiver of the gaps.
+
+- Complete: five-page report Markdown, editable Word and PDF draft; evidence guide;
+  all five rendered pages inspected; 190 local regression tests pass.
+- Complete: independent scientific review preserved with exact report/guide hashes
+  in `research/reviews/final-report-independent-review-20261022.md`; package receipt
+  in `research/evidence/2026-10-22/report-draft/receipt.json`. REPORT PASS is draft-only.
+- Active: PR #14 current-head CI, verified merge, actual-main validation.
+  Report content commit: `5e90d232f4d5aeadad3686c546e762b170749f00`.
+- Preserve: R2/R3 IN_PROGRESS and B3 BLOCKED/NOT REPRODUCED. R8 PASS documents the
+  difficulties; R9 PASS permits this report with Girish's accepted exceptions.
+- No report has been sent or externally submitted. Girish must review the draft.
+- Report source: `docs/final_report.md`; artifacts: `docs/submission/`.
+  Do not repeat completed native experiments or PR #13 integration.
+
 **Read this file, `research/progress.json`, and the requirement ledger before
 doing work. Do not restart completed milestones.** The assignment is due
-31 October 2026. The final report is locked pending practical evidence and
-Girish's explicit authorization.
+31 October 2026. Girish authorized report drafting on21October; external
+submission remains a separate decision.
+
+## Active report phase — 21 October 2026
+
+PR13 is merged at `c237aa4a6d98a16b141a9b178a046a121ea1e659`; all four exact-main workflows passed (39541724306,39541724468,39541724568,39541724665), including189tests and the31-artifact audit. Do not redo that completed checkpoint.
+
+Girish answered **yes go for it!** to the explicit question accepting both historical gaps for report scope and authorizing the final draft. Exact context and hash: `research/requirements/report_authorization_user_decision-20261021.txt` and the exception registry. **R9PASS; report_authorized true; REPORT IN_PROGRESS.** R2/R3 stay IN_PROGRESS; B3 and genuine without-refactoring stay NOT REPRODUCED. No paid calls, email or external submission are authorized.
+
+Active branch: `research/final-report-20261021`. Next: brief evidence-grounded report, independent scientific/code-snippet review, DOCX/PDF visual verification, reviewed PR and exact-main checks. Preserve the14October drafts as historical. Current decisions supersede the dated authorization/status wording below.
 
 ## Current checkpoint — 21 October 2026, PR #13
 

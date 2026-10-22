@@ -5,7 +5,7 @@
     {
       "id": "R1",
       "title": "Study original paper",
-      "source_sentence": "Please study the provided paper and its codebase, reproduce the implementation and key experimental results, and explain the paper’s main concepts and methodology.",
+      "source_sentence": "Please study the provided paper and its codebase, reproduce the implementation and key experimental results, and explain the paper\u2019s main concepts and methodology.",
       "scientific_interpretation": "Map all major paper claims to original code or a documented absence.",
       "implementation_obligation": "Read complete paper, appendix and original source.",
       "experimental_obligation": "Trace representative authentic tasks through all stages.",
@@ -43,7 +43,7 @@
     {
       "id": "R2",
       "title": "Reproduce original implementation",
-      "source_sentence": "Please study the provided paper and its codebase, reproduce the implementation and key experimental results, and explain the paper’s main concepts and methodology.",
+      "source_sentence": "Please study the provided paper and its codebase, reproduce the implementation and key experimental results, and explain the paper\u2019s main concepts and methodology.",
       "scientific_interpretation": "Execute author entry points in a pinned environment.",
       "implementation_obligation": "Keep immutable original and separate modified source.",
       "experimental_obligation": "Smoke then execute intended stages; disclose historical dependency blockers.",
@@ -90,7 +90,7 @@
         "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39136978957"
       ],
       "measured_results": "Accepted Level 2 original MASCOT replay: 1,252 final-stage SPDZCoder/GPT-4 archived candidate executions and 626 genuine archived stage-2 SPDZCoder executions (644 native attempts). All 313 original task identities covered. Original pipeline model-generation Level 3 has not been reproduced.",
-      "known_limitations": "R2 remains IN_PROGRESS: Level 2 original native MASCOT evaluation is reproduced but Level 3 exact historical model generation is not. The paper names gpt-4-turbo-2024-04-09; released Azure deployment 'gpt-4' is not a reproducible version pin. OpenAI API schedules that snapshot for Oct 23, 2026 shutdown, but authors' historical Azure deployment current availability is unverified. Model access/cost and an irreproducibility exception both require explicit Girish authorization; no substitutes or secret access presumed. User conditionally accepted precisely documented unreproduced historical B3/no-refactoring exceptions AFTER the 498-file/35-group original archive recovery audit, for research merge only. Do NOT relabel missing experiments as reproduced; B3 remains BLOCKED. Scope reconciliation21October: the existing exception quote authorizes research integration only; acceptance for report readiness is pending. This does not erase original evidence or authorize a new model run.",
+      "known_limitations": "R2 remains IN_PROGRESS: original native evaluation is reproduced, but exact historical GPT-4/Azure generation is NOT REPRODUCED. The paper names gpt-4-turbo-2024-04-09; the released Azure deployment name is not a verified revision pin, and full call history is unavailable. Girish accepted this disclosed historical gap for report scope and authorized drafting on 21 October. B3 remains BLOCKED. No new model access, expenditure or substitute model is authorized.",
       "verification_reviewer": "Native evaluation evidence and source/hashes reviewed in existing independent evidence records; B3 not executed or externally certified.",
       "completion": {
         "implemented": true,
@@ -106,7 +106,7 @@
     {
       "id": "R3",
       "title": "Reproduce key results",
-      "source_sentence": "Please study the provided paper and its codebase, reproduce the implementation and key experimental results, and explain the paper’s main concepts and methodology.",
+      "source_sentence": "Please study the provided paper and its codebase, reproduce the implementation and key experimental results, and explain the paper\u2019s main concepts and methodology.",
       "scientific_interpretation": "Fresh original evaluation, plus archived reconstruction as separate evidence.",
       "implementation_obligation": "Use exact IDs, authentic candidates and original oracle.",
       "experimental_obligation": "Attempt all 313 tasks, comparative baselines and available ablations.",
@@ -161,7 +161,7 @@
         "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39136978957"
       ],
       "measured_results": "Saved stage-3 SPDZCoder first/union 269/313, 288/313; genuine saved stage-2 first/union 229/313, 261/313. Fresh unmodified stage-2 MASCOT first/second/union 229/216/262 (313 tasks), 445/626 accepted, with 147 compile failures, 34 post-runtime oracle rejects, 3 archived/fresh disagreements. Fresh final-stage native: SPDZCoder 268/265/288; GPT-4 API-doc 95/112/154. See source-identity, raw-evidence and weak-oracle reviews.",
-      "known_limitations": "R3 remains IN_PROGRESS pending explicit user decision for historical LLM generation and genuine unidentifiable SPDZCoder no-refactoring ablation. OpenAI API snapshot gpt-4-turbo-2024-04-09 is scheduled for Oct 23, 2026 shutdown but this does not establish historical Azure deployment availability. Numeric-match UniTrans/GPT-4 group is not substituted. Original oracle false positives, one missing native test and archived/native disagreement are disclosed. No general correctness/security proof. User conditionally accepted precisely documented unreproduced historical B3/no-refactoring exceptions AFTER the 498-file/35-group original archive recovery audit, for research merge only. Do NOT relabel missing experiments as reproduced; B3 remains BLOCKED. Scope reconciliation21October: the existing exception quote authorizes research integration only; acceptance for report readiness is pending. This does not erase original evidence or authorize a new model run.",
+      "known_limitations": "R3 remains IN_PROGRESS: historical LLM generation and the genuine SPDZCoder without-refactoring ablation are NOT REPRODUCED. The matching UniTrans/GPT-4 group is a different baseline. Original-oracle false positives, one missing native functional test and archived/fresh disagreements remain disclosed. Girish accepted both historical gaps for report scope on 21 October; the decision does not reproduce missing experiments or prove general correctness/security.",
       "verification_reviewer": "Original native saved-source evaluation and archived flag evidence independently reviewed within the original oracle scope; no original historical model generation and no genuine original no-refactoring ablation certified.",
       "completion": {
         "implemented": true,
@@ -178,7 +178,7 @@
     {
       "id": "R4",
       "title": "Explain actual methodology",
-      "source_sentence": "Please study the provided paper and its codebase, reproduce the implementation and key experimental results, and explain the paper’s main concepts and methodology.",
+      "source_sentence": "Please study the provided paper and its codebase, reproduce the implementation and key experimental results, and explain the paper\u2019s main concepts and methodology.",
       "scientific_interpretation": "Explain stage relationships using real implementation traces.",
       "implementation_obligation": "Map input/refactor/generate/reflect/repair/evaluate entry points.",
       "experimental_obligation": "Capture seven category traces without fabricated responses.",
@@ -324,7 +324,7 @@
         "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39043579023"
       ],
       "measured_results": "Full 626-pair 1252-execution controlled original vs patched comparison, bounded conditional mask-product rationale, 624 byte-identical controls, no attributable pass-rate changes, explicit 50->0 observed opening events and performance costs.",
-      "known_limitations": "Full 626-pair/1,252-execution original vs patched comparison and repeatability follow-up accepted only under the original native-oracle and narrow privacy observation model. Only two candidate source programs changed, both ACCEPT→ACCEPT. Four unchanged-source controls changed native acceptance; no causal general accuracy improvement. Costs increase for measured candidates. B3 model generation unavailable.",
+      "known_limitations": "Full 626-pair/1,252-execution original vs patched comparison and repeatability follow-up accepted only under the original native-oracle and narrow privacy observation model. Only two candidate source programs changed, both ACCEPT\u2192ACCEPT. Four unchanged-source controls changed native acceptance; no causal general accuracy improvement. Costs increase for measured candidates. B3 model generation unavailable.",
       "verification_reviewer": "Secondary assistant independent audit of source, published paper and raw native/original ZIPs; not an external third-party certification",
       "completion": {
         "implemented": true,
@@ -391,7 +391,7 @@
         "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39493312330"
       ],
       "measured_results": "Project-wide documentation reconciles13substantive difficulty families with source runs and evidence, including negative results, partial download, failed aggregation/recovery, native failures, weak oracle, source/trace discrepancies, patch limits/costs, identical-source variability and both missing historical experiments. Independent raw re-audit checks31pinnedZIPs,1252final-stage records/insertion,626stage2candidates/644attempts and626paired comparisons. R8PASS means documented failures, not successful reproduction of blocked experiments.",
-      "known_limitations": "Documentation acceptance is independent of whether each difficulty is solved. B3 remains BLOCKED; R2/R3 remain IN_PROGRESS, and historical generation plus genuine without-refactoring remain NOT REPRODUCED. Numerical variability causes and two compiler stderr classifications remain unknown. Register validation checks index/schema/path hashes, not truth of prose or all incidental CI events; independent evidence review supplies scientific assessment. R9 is separately BLOCKED pending explicit report-scope exception acceptance.",
+      "known_limitations": "Documentation acceptance is independent of whether each difficulty is solved. B3 remains BLOCKED; R2/R3 remain IN_PROGRESS. Historical generation and genuine without-refactoring remain NOT REPRODUCED. Numerical variability causes and two compiler stderr classifications remain unknown. Register checks validate schema/path hashes; independent review supplies scientific assessment. Report-scope exceptions and drafting were separately accepted by Girish on 21 October.",
       "verification_reviewer": "Independent r8_pr13_review assistant context checked audit code,31-artifact receipt and14R8tests at45a51e6; final documentation/governance reviewed separately in final-readiness-review-20261021.md. Not external certification.",
       "completion": {
         "implemented": true,
@@ -405,15 +405,15 @@
       "id": "R9",
       "title": "Final report readiness",
       "source_sentence": "Please submit a brief report describing the limitation, your proposed solution, relevant code snippets, and experimental results comparing your modified implementation with the original baseline.",
-      "scientific_interpretation": "Practical readiness only; report is explicitly deferred by user.",
-      "implementation_obligation": "Check R1–R8 evidence or explicit accepted exceptions.",
+      "scientific_interpretation": "Practical report readiness with explicitly accepted historical exceptions; deliverable completion is tracked in REPORT.",
+      "implementation_obligation": "Check R1\u2013R8 evidence or explicit accepted exceptions.",
       "experimental_obligation": "Independent final review of every practical acceptance gate.",
       "expected_outputs": "Gate summary and user authorization record, then eventual report.",
-      "acceptance_criteria": "R1–R8 defensibly complete or exceptions accepted; user permission before drafting.",
+      "acceptance_criteria": "R1\u2013R8 defensibly complete or exceptions accepted; user permission before drafting.",
       "phase_ids": [
         "G"
       ],
-      "status": "BLOCKED",
+      "status": "PASS",
       "evidence_paths": [
         "HANDOFF.md",
         "research/requirements/execution_contract.md",
@@ -424,21 +424,29 @@
         "research/evidence/2026-10-18/original-author-git-history-independent-audit.json",
         "research/reviews/final-readiness-review-20261021.md",
         "research/evidence/2026-10-21/final-readiness/permission-scope-red.log",
-        "research/evidence/2026-10-21/final-readiness/permission-scope-green.log"
+        "research/evidence/2026-10-21/final-readiness/permission-scope-green.log",
+        "research/requirements/report_authorization_user_decision-20261021.txt",
+        "research/reviews/professor-requirements-recheck-20261022.md",
+        "research/reviews/final-report-independent-review-20261022.md",
+        "research/evidence/2026-10-22/report-draft/receipt.json"
       ],
-      "exact_evidence_commit": "f5a4d749964dfc0c6050bbdfdd0bdc2cf1fdfaea",
+      "exact_evidence_commit": "c237aa4a6d98a16b141a9b178a046a121ea1e659",
       "test_workflow_identifiers": [
         "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39137690936",
-        "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39137690949"
+        "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39137690949",
+        "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39541724306",
+        "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39541724468",
+        "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39541724568",
+        "https://github.com/Girish2052003/LUT-PHD-TARGET/actions/runs/39541724665"
       ],
-      "measured_results": "The 18October conditional quote authorizes research integration while retaining NOT REPRODUCED labels. The earlier R9PASS overextended that scope. The explicit authorization_scope guard now prevents research-merge permission from satisfying report-readiness exceptions. R1/R4/R5/R6/R7/R8 pass in bounded scopes; R2/R3 remain incomplete. Final PR/main CI is an integration check, not acceptance of missing historical experiments.",
-      "known_limitations": "R9BLOCKED until Girish explicitly accepts the two disclosed unreproduced historical items for report scope; REPORT remains BLOCKED and report_authorized false until separate writing authorization. The brief professor-facing final report remains unprepared. No emails/submission are authorized.",
-      "verification_reviewer": "Independent r8_pr13_review agreed the preserved quote permits integration only; explicit report-scope exception decision remains outstanding.",
+      "measured_results": "All four workflows passed on merged main c237aa4, including 189 tests, compiler/emulator, provenance, R8 and the 31-artifact audit. Girish then explicitly accepted the two disclosed historical gaps for report scope and authorized drafting. R2/R3 remain incomplete and B3 remains NOT REPRODUCED.",
+      "known_limitations": "R9 PASS is readiness with user-accepted historical exceptions, not completion of missing experiments or professor acceptance. REPORT is PASS for the prepared and independently reviewed draft only. No email or external submission is authorized; PR #14 integration and Girish review remain separate.",
+      "verification_reviewer": "Prior independent code/evidence review, exact-main workflow inspection and explicit Girish response on 21 October; the report requires separate content/render review.",
       "completion": {
         "implemented": true,
         "executed": true,
         "evidence_preserved": true,
-        "independently_checked": false
+        "independently_checked": true
       }
     }
   ],
